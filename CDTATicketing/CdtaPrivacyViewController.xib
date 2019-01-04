@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrivacyViewController">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                    <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="textView" destination="tcJ-hr-uWh" id="XeB-iK-EhX"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-hr-uWh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <attributedString key="attributedText">
+                        <fragment content="PRIVACY POLICY">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+Thank you for using the Capital District Transportation Authority (CDTA) iRide Application. This application is designed to make it easier and more efficient for Capital District residents and businesses to interact with CDTA. CDTA recognize that customers of this application are concerned about their privacy. CDTA is committed to preserving your privacy when using this application.
+
+Consistent with the provisions of the Internet Security and Privacy Act, the Freedom of Information Law and the Personal Privacy Protection Law, this policy describes CDTA’s privacy practices regarding information collected from users of this application. This policy describes what data is collected and how that information is used. CDTA may, at its sole discretion, change modify, add, or delete portions of this policy. Because this privacy policy only applies to this application, you should examine the privacy policy of any application or website, including other application or websites, you access through this application.
+
+For purposes of this policy, “personal information” means any information concerning a natural person, as opposed for instance to a corporate entity, which, because of name, number, symbol, mark, or other identifier, can be used to identify that natural person. CDTA only collects personal information about you when you provide that information voluntarily by sending an e-mail or by initiating an online transaction, such as a survey, registration or order form.
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Information Collected When You Use this Application">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+When using the CDTA iride application automatically collects and stores the following information about your usage:
+1. The type of phone and operating system you used
+2. The date and time you used the application
+3. The information or services you accessed from the application
+4. The GPS coordinates of request such as Near Stops
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="None of the foregoing information is deemed to constitute personal information.">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+This information that is collected automatically is used to improve this applications content and to help CDTA understand how people are using this application. This information is collected for statistical analysis, to determine what information is of most and of least interest to our customers, and to identify system performance or problem areas. The information is not collected for commercial marketing purposes and CDTA does not sell or distribute the information collected from the application for commercial marketing purposes.
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Information Collected When You Email CDTA">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+If during your usage of this application you send an email to CDTA, your email address and the contents of your email will be collected. The information collected is not limited to text characters and may include audio, video, and graphic information formats you send us. Your email address and the information contained in your email will be used to respond to you, to address issues you identify, to further improve this application, or to forward your email to another party for appropriate action. Your email address is not collected for commercial marketing purposes and CDTA does not sell or distribute your email address for any purposes.
+
+During your usages of this application you may initiate a transaction such as a survey, registration or order. The information, including personal information, volunteered by you in initiating the transaction is used by CDTA to operate CDTA programs, which include the provision of goods, services and information. The information collected by CDTA may be disclosed by CDTA for those purposes that may be reasonably ascertained from the nature and terms of the transaction in connection with which the information was submitted by you.
+
+Currently, CDTA does not knowingly collect personal information from children or create profiles of children through this application. People are cautioned that the collection of personal information provided by any individual in an email or through an online transaction will be treated the same as information given by an adult, and may, unless exempted from access by federal or State law, be subject to public access. CDTA encourages parents and teachers to be involved in children's Internet activities and to provide guidance whenever children are asked to provide personal information on-line.
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Personal Information and Choice">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+As noted above, CDTA does not collect any personal information about you during your use of this application, unless you provide that information voluntarily by sending an e-mail or initiating an online transaction such as a survey, registration, or order. You may choose not to send us an e-mail, respond to a survey or complete an order. While your choice not to participate in these activities may limit your ability to receive specific services or products through this application, it will not prevent you from requesting services or products from CDTA by other means, and will not normally have an impact on your ability to take advantage of other features of the application, including browsing or downloading most publicly available information.
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Disclosure of Information Collected Through This Application">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+CDTA will only collect personal information through this application, or disclose such personal information, if the user has consented to the collection and disclosure of such personal information. The voluntary disclosure of personal information to CDTA by the user, whether solicited or unsolicited, constitutes consent to the collection and disclosure of the information by CDTA for the purposes for which the user disclosed the information to CDTA, as was reasonably ascertainable from the nature and terms of the disclosure.
+
+However, CDTA may collect or disclose personal information without user consent if the collection or disclosure is: 
+
+(1) necessary to perform the statutory duties of CDTA, or necessary for CDTA to operate a program authorized by law, or authorized by state or federal statute or regulation 
+
+(2) made pursuant to a court order or by law
+
+(3) for the purpose of validating the identity of the user; or 
+
+(4) of information to be used solely for statistical purposes that is in a form that cannot be used to identify any particular person.
+
+Further, the disclosure of information, including personal information, collected through this application is subject to the provisions of the Freedom of Information Law and the Personal Privacy Protection Law. Additionally, CDTA may disclose personal information to federal or State law enforcement authorities to enforce its rights against unauthorized access or attempted unauthorized access to CDTA's information technology assets and any other inappropriate use of its application.
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Confidentiality and Integrity of Personal Information Collected Through this Application">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+CDTA limits employee access to personal information collected through this application to only those employees who need access to the information in the performance of their official duties. Employees who have access to this information are required to follow appropriate procedures in connection with any disclosures of personal information.
+
+In addition, CDTA has implemented procedures to safeguard the integrity of its information technology assets, including, but not limited to, authentication, monitoring, auditing and encryption. These Security measures have been integrated into the design, implementation, and day-to-day operations of this application as part of our continuing commitment to the security of electronic content as well as the electronic transmission of information.
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="NOTE">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">:
+
+ The information contained in this policy should not be construed in any way as giving business, legal, or other advice, or warranting as fail proof, the security of information provided via this application. For site security purposes and to ensure that this application remains available to all users, CDTA employs software to monitor traffic to identify unauthorized attempts to upload or change information or otherwise cause damage to this application.
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Links Disclaimer">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+In order to provide visitors with certain information, this application may provide links to local, State and federal government agencies, and websites of other organizations. A link does not constitute an endorsement of the content, viewpoint, accuracy, opinions, policies, products, services, or accessibility of that website. Once you link to another website from this application you are subject to the terms and conditions of that website, including, but not limited to, its privacy policy.
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Information Disclaimer">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+Information provided by this application is intended to allow the public immediate access to public information. While all attempts are made to provide accurate, current, and reliable information, CDTA recognizes the possibility of human and/or mechanical error. Therefore, CDTA, its employees, officers and agents make no representations as to the accuracy, completeness, currency, or suitability of the information provided by this application, and deny any expressed or implied warranty as to the same.
+
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Contact Information">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+For questions regarding the Privacy Policy please contact:
+Email: iphonesupport@cdta.org
+Phone: 518-482-8822
+Mail:
+</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="CDTA">
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="Arial-BoldMT"/>
+                                <font key="NSOriginalFont" size="14" name="Arial-BoldMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+
+110 Watervliet Avenue
+Albany, New York 12206
+Policy Reviewed: January 9, 2014.</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <font key="NSOriginalFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="27.149999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops>
+                                        <textTab alignment="left" location="27.149999618530273">
+                                            <options/>
+                                        </textTab>
+                                    </tabStops>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                            <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="tcJ-hr-uWh" secondAttribute="trailing" id="48K-yO-Wqc"/>
+                <constraint firstItem="tcJ-hr-uWh" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="GCK-P5-2UM"/>
+                <constraint firstAttribute="bottom" secondItem="tcJ-hr-uWh" secondAttribute="bottom" id="PZ3-rM-u2u"/>
+                <constraint firstItem="tcJ-hr-uWh" firstAttribute="top" secondItem="1" secondAttribute="top" id="ecK-uD-CYS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

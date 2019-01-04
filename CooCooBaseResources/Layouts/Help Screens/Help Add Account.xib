@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="DCm-Wr-BW7">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdl-QD-4o2">
+                    <rect key="frame" x="8" y="8" width="304" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="vQl-6j-lQX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyO-fo-eJ8" customClass="HelpAddAccountLabel">
+                    <rect key="frame" x="8" y="34" width="304" height="299"/>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <mutableString key="content">New Customer : Use this option to setup an account. After an account is setup, you will be prompted to create and name your Mobile Wallet.   Existing Customer: Sign in to your account to Add Fund, access your Mobile Wallet and manage Pass Activations.   You can save a Payment Method, which is stored in the account for quick checkouts. Payment receipts are sent to the registered email address.  In the event your mobile phone becomes unavailable (lost, stolen, device upgrade, etc.), your Mobile Wallet can be transferred to the new device.</mutableString>
+                            <attributes>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="ArialMT"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUh-pg-TZO" userLabel="ContactContentView">
+                    <rect key="frame" x="0.0" y="341" width="320" height="66"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlf-Pe-EzH">
+                            <rect key="frame" x="8" y="0.0" width="304" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="6ip-PA-mSx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="For customer service call 614-228-1776 or email COTA at Requests@cota.com. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hoc-ZY-5TR" customClass="HelpContactsTextView">
+                            <rect key="frame" x="8" y="26" width="304" height="41"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                    <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="hoc-ZY-5TR" firstAttribute="top" secondItem="Xlf-Pe-EzH" secondAttribute="bottom" constant="8" symbolic="YES" id="9P3-ec-fKT"/>
+                        <constraint firstAttribute="height" constant="66" id="EQT-fr-Xei"/>
+                        <constraint firstItem="Xlf-Pe-EzH" firstAttribute="leading" secondItem="WUh-pg-TZO" secondAttribute="leadingMargin" id="NnI-GY-fQ8"/>
+                        <constraint firstItem="Xlf-Pe-EzH" firstAttribute="trailing" secondItem="WUh-pg-TZO" secondAttribute="trailingMargin" id="WkL-tE-21L"/>
+                        <constraint firstAttribute="bottom" secondItem="hoc-ZY-5TR" secondAttribute="bottom" constant="-1" id="YPe-bA-Aj8"/>
+                        <constraint firstItem="Xlf-Pe-EzH" firstAttribute="trailing" secondItem="hoc-ZY-5TR" secondAttribute="trailing" id="bbe-dq-afH"/>
+                        <constraint firstItem="Xlf-Pe-EzH" firstAttribute="top" secondItem="WUh-pg-TZO" secondAttribute="top" id="c5N-aC-o7a"/>
+                        <constraint firstItem="Xlf-Pe-EzH" firstAttribute="leading" secondItem="hoc-ZY-5TR" secondAttribute="leading" id="tGk-bI-jdi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Tdl-QD-4o2" firstAttribute="centerX" secondItem="DCm-Wr-BW7" secondAttribute="centerX" id="2Uf-Lf-lzy"/>
+                <constraint firstItem="Tdl-QD-4o2" firstAttribute="leading" secondItem="xyO-fo-eJ8" secondAttribute="leading" id="5B7-yu-gAb"/>
+                <constraint firstItem="WUh-pg-TZO" firstAttribute="leading" secondItem="DCm-Wr-BW7" secondAttribute="leading" id="9Qg-tk-agZ"/>
+                <constraint firstItem="xyO-fo-eJ8" firstAttribute="top" secondItem="Tdl-QD-4o2" secondAttribute="bottom" constant="8" symbolic="YES" id="Adl-Cw-rlw"/>
+                <constraint firstItem="Tdl-QD-4o2" firstAttribute="top" secondItem="DCm-Wr-BW7" secondAttribute="top" constant="8" id="Hgu-su-Mfg"/>
+                <constraint firstItem="Tdl-QD-4o2" firstAttribute="leading" secondItem="DCm-Wr-BW7" secondAttribute="leading" constant="8" id="Ruw-9U-SsV"/>
+                <constraint firstItem="WUh-pg-TZO" firstAttribute="top" secondItem="xyO-fo-eJ8" secondAttribute="bottom" constant="8" symbolic="YES" id="g53-2g-lr4"/>
+                <constraint firstItem="Tdl-QD-4o2" firstAttribute="trailing" secondItem="xyO-fo-eJ8" secondAttribute="trailing" id="gxE-St-jlc"/>
+                <constraint firstItem="xyO-fo-eJ8" firstAttribute="centerX" secondItem="WUh-pg-TZO" secondAttribute="centerX" id="nfL-4b-Dte"/>
+                <constraint firstAttribute="trailing" secondItem="WUh-pg-TZO" secondAttribute="trailing" id="yeC-GD-zo8"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="324.5" y="447.5"/>
+        </view>
+    </objects>
+</document>

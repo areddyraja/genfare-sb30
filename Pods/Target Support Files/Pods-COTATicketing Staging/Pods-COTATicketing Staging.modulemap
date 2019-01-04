@@ -1,0 +1,6 @@
+module Pods_COTATicketing_Staging {
+  umbrella header "Pods-COTATicketing Staging-umbrella.h"
+
+  export *
+  module * { export * }
+}

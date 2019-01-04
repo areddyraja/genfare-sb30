@@ -1,0 +1,6 @@
+module Pods_CDTATicketing_QA {
+  umbrella header "Pods-CDTATicketing QA-umbrella.h"
+
+  export *
+  module * { export * }
+}

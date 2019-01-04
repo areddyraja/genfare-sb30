@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoutesSearchViewController">
+            <connections>
+                <outlet property="searchBar" destination="Rii-l3-dxl" id="AWd-3A-aEJ"/>
+                <outlet property="searchDisplayController" destination="fmI-1U-1Mk" id="69o-4d-FyM"/>
+                <outlet property="tableView" destination="v91-Q3-BVF" id="onj-nl-3sR"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="Address / Stop Name / Landmark" translatesAutoresizingMaskIntoConstraints="NO" id="Rii-l3-dxl">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <scopeButtonTitles>
+                        <string>Address</string>
+                        <string>Stop Name</string>
+                    </scopeButtonTitles>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Mm1-Th-dz2"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="v91-Q3-BVF">
+                    <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="k50-l9-HtM"/>
+                        <outlet property="delegate" destination="-1" id="1FY-Ei-dc2"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="v91-Q3-BVF" firstAttribute="trailing" secondItem="Rii-l3-dxl" secondAttribute="trailing" id="DOb-NA-8vo"/>
+                <constraint firstItem="v91-Q3-BVF" firstAttribute="top" secondItem="Rii-l3-dxl" secondAttribute="bottom" id="KWf-69-Gs4"/>
+                <constraint firstAttribute="bottom" secondItem="v91-Q3-BVF" secondAttribute="bottom" id="ODt-Kv-PsL"/>
+                <constraint firstItem="Rii-l3-dxl" firstAttribute="leading" secondItem="v91-Q3-BVF" secondAttribute="leading" id="VfE-sc-jHj"/>
+                <constraint firstAttribute="trailing" secondItem="v91-Q3-BVF" secondAttribute="trailing" id="g0V-dg-c4C"/>
+                <constraint firstItem="Rii-l3-dxl" firstAttribute="top" secondItem="1" secondAttribute="top" id="giT-Xt-pef"/>
+                <constraint firstItem="Rii-l3-dxl" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="x05-cB-fWO"/>
+            </constraints>
+        </view>
+        <searchDisplayController id="fmI-1U-1Mk">
+            <connections>
+                <outlet property="delegate" destination="-1" id="svC-65-mIY"/>
+                <outlet property="searchBar" destination="Rii-l3-dxl" id="cGV-Ds-P00"/>
+                <outlet property="searchContentsController" destination="-1" id="Xd3-VI-eld"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="XEV-gi-Cz2"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="FcX-vX-f1N"/>
+            </connections>
+        </searchDisplayController>
+    </objects>
+</document>

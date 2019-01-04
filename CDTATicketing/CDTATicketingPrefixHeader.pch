@@ -1,0 +1,16 @@
+//
+//  CDTATicketingPrefixHeader.pch
+//  CDTATicketing
+//
+//  Created by omniwyse on 28/05/18.
+//  Copyright © 2018 CooCoo. All rights reserved.
+//
+
+#import "CooCooBase.h"
+#ifndef CDTATicketingPrefixHeader_pch
+#define CDTATicketingPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* CDTATicketingPrefixHeader_pch */

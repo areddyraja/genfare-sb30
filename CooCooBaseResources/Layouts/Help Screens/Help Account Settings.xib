@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="16">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLw-Bm-EAP">
+                    <rect key="frame" x="8" y="8" width="304" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="niJ-xx-dPO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cv8-wg-0wP" customClass="HelpAccountSettingsLabel">
+                    <rect key="frame" x="8" y="34" width="304" height="50.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="This page allows you to easily manage your account settings. You can change the account’s email and/or password.">
+                            <attributes>
+                                <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTF-e1-ddM" userLabel="ContactContentView">
+                    <rect key="frame" x="0.0" y="91.5" width="320" height="66"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jR-l9-YjH">
+                            <rect key="frame" x="8" y="0.0" width="304" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="mQY-jC-go3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="For customer service call 614-228-1776 or email COTA at Requests@cota.com. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BCK-bU-Tmm" customClass="HelpContactsTextView">
+                            <rect key="frame" x="8" y="26" width="304" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                    <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="2XW-bF-eek"/>
+                        <constraint firstItem="BCK-bU-Tmm" firstAttribute="top" secondItem="7jR-l9-YjH" secondAttribute="bottom" constant="8" symbolic="YES" id="Ah7-7d-5SD"/>
+                        <constraint firstAttribute="bottom" secondItem="BCK-bU-Tmm" secondAttribute="bottom" id="IVT-PM-AFX"/>
+                        <constraint firstItem="7jR-l9-YjH" firstAttribute="trailing" secondItem="BCK-bU-Tmm" secondAttribute="trailing" id="PPg-vs-aoI"/>
+                        <constraint firstItem="7jR-l9-YjH" firstAttribute="trailing" secondItem="CTF-e1-ddM" secondAttribute="trailingMargin" id="UFK-pM-Mvy"/>
+                        <constraint firstItem="7jR-l9-YjH" firstAttribute="top" secondItem="CTF-e1-ddM" secondAttribute="top" id="ZPu-Xk-uwS"/>
+                        <constraint firstItem="7jR-l9-YjH" firstAttribute="leading" secondItem="BCK-bU-Tmm" secondAttribute="leading" id="gvJ-qU-6l8"/>
+                        <constraint firstItem="7jR-l9-YjH" firstAttribute="leading" secondItem="CTF-e1-ddM" secondAttribute="leadingMargin" id="iqr-Hu-F9B"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xLw-Bm-EAP" firstAttribute="centerX" secondItem="16" secondAttribute="centerX" id="1Pb-O9-hzK"/>
+                <constraint firstItem="xLw-Bm-EAP" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="8" id="3s1-uH-QRL"/>
+                <constraint firstItem="xLw-Bm-EAP" firstAttribute="leading" secondItem="cv8-wg-0wP" secondAttribute="leading" id="7AQ-eH-dvQ"/>
+                <constraint firstItem="cv8-wg-0wP" firstAttribute="top" secondItem="xLw-Bm-EAP" secondAttribute="bottom" constant="8" id="ED8-qa-6cL"/>
+                <constraint firstItem="CTF-e1-ddM" firstAttribute="leading" secondItem="16" secondAttribute="leading" id="K3v-1t-lMz"/>
+                <constraint firstItem="xLw-Bm-EAP" firstAttribute="top" secondItem="16" secondAttribute="top" constant="8" id="Pfg-hA-dXd"/>
+                <constraint firstItem="CTF-e1-ddM" firstAttribute="centerX" secondItem="cv8-wg-0wP" secondAttribute="centerX" id="gjx-t5-zTk"/>
+                <constraint firstItem="CTF-e1-ddM" firstAttribute="top" secondItem="cv8-wg-0wP" secondAttribute="bottom" constant="7" id="gvj-Zj-w3O"/>
+                <constraint firstItem="xLw-Bm-EAP" firstAttribute="trailing" secondItem="cv8-wg-0wP" secondAttribute="trailing" id="pSJ-9g-IIG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="320.5" y="203.5"/>
+        </view>
+    </objects>
+</document>

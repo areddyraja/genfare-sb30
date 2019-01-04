@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SavedCardsTableViewCell">
+            <connections>
+                <outlet property="CardBgview" destination="8nR-Zh-QHm" id="9GZ-2M-Kah"/>
+                <outlet property="Cardimage" destination="r1D-0G-gyk" id="VB6-BB-kJd"/>
+                <outlet property="canrdNumberLabel" destination="yF8-O2-Yng" id="NiU-Sq-Cin"/>
+                <outlet property="deleteButton" destination="e6C-4N-TIp" id="f7Z-bc-Wuo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SavedCardsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nR-Zh-QHm">
+                        <rect key="frame" x="10" y="5" width="258" height="33.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r1D-0G-gyk">
+                                <rect key="frame" x="100" y="5" width="48" height="23.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="352-K3-r8U"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF8-O2-Yng">
+                                <rect key="frame" x="158" y="0.0" width="100" height="33.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="r1D-0G-gyk" secondAttribute="bottom" constant="5" id="8iD-5f-Nko"/>
+                            <constraint firstAttribute="bottom" secondItem="yF8-O2-Yng" secondAttribute="bottom" id="9NE-Cm-h5g"/>
+                            <constraint firstItem="r1D-0G-gyk" firstAttribute="leading" secondItem="8nR-Zh-QHm" secondAttribute="leading" constant="100" id="9iO-3Z-OPw"/>
+                            <constraint firstAttribute="trailing" secondItem="yF8-O2-Yng" secondAttribute="trailing" id="C3h-Zg-gI0"/>
+                            <constraint firstItem="yF8-O2-Yng" firstAttribute="top" secondItem="8nR-Zh-QHm" secondAttribute="top" id="Sc4-3u-FUa"/>
+                            <constraint firstItem="yF8-O2-Yng" firstAttribute="leading" secondItem="r1D-0G-gyk" secondAttribute="trailing" constant="10" id="Tqv-qz-YT8"/>
+                            <constraint firstItem="r1D-0G-gyk" firstAttribute="top" secondItem="8nR-Zh-QHm" secondAttribute="top" constant="5" id="lkZ-qV-1Ot"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6C-4N-TIp">
+                        <rect key="frame" x="278" y="5" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="4wn-Yj-0wz"/>
+                            <constraint firstAttribute="height" constant="32" id="Nsj-TB-cpE"/>
+                        </constraints>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="8nR-Zh-QHm" secondAttribute="bottom" constant="5" id="83C-6l-chk"/>
+                    <constraint firstItem="e6C-4N-TIp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AxI-UY-IHA"/>
+                    <constraint firstAttribute="trailing" secondItem="e6C-4N-TIp" secondAttribute="trailing" constant="10" id="FAF-ZY-uUK"/>
+                    <constraint firstItem="e6C-4N-TIp" firstAttribute="leading" secondItem="8nR-Zh-QHm" secondAttribute="trailing" constant="10" id="eQX-5r-rd9"/>
+                    <constraint firstItem="8nR-Zh-QHm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="feC-0u-bTw"/>
+                    <constraint firstItem="8nR-Zh-QHm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="mgm-WR-hqI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="CardBgview" destination="8nR-Zh-QHm" id="VGf-Q8-Oie"/>
+                <outlet property="Cardimage" destination="r1D-0G-gyk" id="QHa-hu-dXW"/>
+                <outlet property="canrdNumberLabel" destination="yF8-O2-Yng" id="jlu-av-mLL"/>
+                <outlet property="deleteButton" destination="e6C-4N-TIp" id="ALK-vl-5TI"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

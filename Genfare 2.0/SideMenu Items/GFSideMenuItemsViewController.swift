@@ -239,10 +239,13 @@ class GFSideMenuItemsViewController: UIViewController {
     
     func showSettings() {
         let singlet:Singleton = Singleton.sharedManager() as! Singleton
-        let controller:AccountSettingsViewController = AccountSettingsViewController(nibName: "AccountSettingsViewController", bundle: nil)
-        controller.managedObjectContext = singlet.managedContext
-        attachControllerToMainWindow(controller: controller)
-        GFBaseViewController.currentMenuItem = Constants.SideMenuAction.Settings
+        if let controller:AccountSettingsViewController = AccountSettingsViewController(nibName: "AccountSettingsViewController", bundle: nil) {
+            controller.managedObjectContext = singlet.managedContext
+            attachControllerToMainWindow(controller: controller)
+            GFBaseViewController.currentMenuItem = Constants.SideMenuAction.Settings
+        }else{
+            popupAlert(title: "ERROR", message: "Settings Screen not found", actionTitles: ["OK"], actions: [nil])
+        }
     }
     
     func showAccountHome() {

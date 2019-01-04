@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="543"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99f-DP-cr1">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="543"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpq-V5-rMY">
+                            <rect key="frame" x="8" y="8" width="304" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="2v3-cP-Kk3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmA-ch-LhN" customClass="HelpTicketPurchaseLabel">
+                            <rect key="frame" x="8" y="34" width="304" height="313"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <mutableString key="content">Add Fund to your account in order to purchase and activate a pass. Review the amount entered in the cart before checkout, select a payment method and enter a valid email address if you wish to receive a receipt.  You can save your payment method to allow quick future purchases. In order to quick purchase, you will be required to enter your account password. A receipt will be emailed to your registered email address.  After a successful purchase, go to the </mutableString>
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="ArialMT"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <tabStops/>
+                                        </paragraphStyle>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="My Connector ">
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="ArialMT"/>
+                                        <font key="NSOriginalFont" size="14" name="Arial-ItalicMT"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <tabStops/>
+                                        </paragraphStyle>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="screen to check your ">
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="ArialMT"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <tabStops/>
+                                        </paragraphStyle>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="Account Balance">
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="ArialMT"/>
+                                        <font key="NSOriginalFont" size="14" name="Arial-ItalicMT"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <tabStops/>
+                                        </paragraphStyle>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content">.  If you are using a COTA Key, Senior, or ADA pass, a valid identification card maybe required to be presented to the operator every time the pass is used.</string>
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="ArialMT"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <tabStops/>
+                                        </paragraphStyle>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPb-GS-3O8" userLabel="ContactContentView">
+                            <rect key="frame" x="0.0" y="355" width="320" height="66"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tU1-Bd-dWu">
+                                    <rect key="frame" x="8" y="0.0" width="304" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="qg3-ZW-dwt"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="For customer service call 614-228-1776 or email COTA at Requests@cota.com. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VmY-J2-bxO" customClass="HelpContactsTextView">
+                                    <rect key="frame" x="8" y="26" width="304" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="yrJ-ZV-kuK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                            <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="tU1-Bd-dWu" firstAttribute="top" secondItem="vPb-GS-3O8" secondAttribute="top" id="5Ej-6v-lFS"/>
+                                <constraint firstItem="VmY-J2-bxO" firstAttribute="centerX" secondItem="vPb-GS-3O8" secondAttribute="centerX" id="6G8-RC-VuP"/>
+                                <constraint firstItem="tU1-Bd-dWu" firstAttribute="leading" secondItem="vPb-GS-3O8" secondAttribute="leadingMargin" id="Abu-On-Fh4"/>
+                                <constraint firstItem="tU1-Bd-dWu" firstAttribute="centerX" secondItem="vPb-GS-3O8" secondAttribute="centerX" id="DQg-83-ehi"/>
+                                <constraint firstItem="tU1-Bd-dWu" firstAttribute="leading" secondItem="VmY-J2-bxO" secondAttribute="leading" id="KTO-Xc-2u5"/>
+                                <constraint firstAttribute="bottom" secondItem="VmY-J2-bxO" secondAttribute="bottom" id="MGE-Ea-kmp"/>
+                                <constraint firstAttribute="trailing" secondItem="VmY-J2-bxO" secondAttribute="trailing" constant="8" id="P2z-p1-mZI"/>
+                                <constraint firstItem="tU1-Bd-dWu" firstAttribute="trailing" secondItem="VmY-J2-bxO" secondAttribute="trailing" id="StQ-uj-LHW"/>
+                                <constraint firstItem="VmY-J2-bxO" firstAttribute="top" secondItem="tU1-Bd-dWu" secondAttribute="bottom" constant="8" symbolic="YES" id="WjT-5X-ZLc"/>
+                                <constraint firstItem="VmY-J2-bxO" firstAttribute="leading" secondItem="vPb-GS-3O8" secondAttribute="leading" constant="8" id="jIQ-zA-b7H"/>
+                                <constraint firstAttribute="height" constant="66" id="mKh-Na-m03"/>
+                                <constraint firstItem="tU1-Bd-dWu" firstAttribute="trailing" secondItem="vPb-GS-3O8" secondAttribute="trailingMargin" id="q3Y-0K-Y34"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="vPb-GS-3O8" firstAttribute="leading" secondItem="99f-DP-cr1" secondAttribute="leading" id="Rnv-ch-onn"/>
+                        <constraint firstAttribute="bottom" secondItem="vPb-GS-3O8" secondAttribute="bottom" id="SNt-54-8EU"/>
+                        <constraint firstItem="vPb-GS-3O8" firstAttribute="top" secondItem="dmA-ch-LhN" secondAttribute="bottom" constant="8" symbolic="YES" id="TQE-X2-z20"/>
+                        <constraint firstItem="dmA-ch-LhN" firstAttribute="top" secondItem="kpq-V5-rMY" secondAttribute="bottom" constant="8" symbolic="YES" id="Xri-Pr-HMi"/>
+                        <constraint firstItem="dmA-ch-LhN" firstAttribute="centerX" secondItem="vPb-GS-3O8" secondAttribute="centerX" id="cjW-9z-aG5"/>
+                        <constraint firstItem="kpq-V5-rMY" firstAttribute="leading" secondItem="dmA-ch-LhN" secondAttribute="leading" id="eXm-tP-JlA"/>
+                        <constraint firstItem="kpq-V5-rMY" firstAttribute="top" secondItem="99f-DP-cr1" secondAttribute="top" constant="8" id="gR1-s9-2iL"/>
+                        <constraint firstItem="kpq-V5-rMY" firstAttribute="leading" secondItem="99f-DP-cr1" secondAttribute="leadingMargin" id="hhs-iK-prg"/>
+                        <constraint firstAttribute="trailing" secondItem="vPb-GS-3O8" secondAttribute="trailing" id="jd7-Np-DSJ"/>
+                        <constraint firstItem="kpq-V5-rMY" firstAttribute="centerX" secondItem="99f-DP-cr1" secondAttribute="centerX" id="qnS-LE-ipa"/>
+                        <constraint firstItem="kpq-V5-rMY" firstAttribute="trailing" secondItem="dmA-ch-LhN" secondAttribute="trailing" id="uxt-Lm-Lrl"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="99f-DP-cr1" secondAttribute="bottom" id="5KO-Mh-mIG"/>
+                <constraint firstItem="99f-DP-cr1" firstAttribute="top" secondItem="2" secondAttribute="top" id="6ER-gF-EkY"/>
+                <constraint firstItem="99f-DP-cr1" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="CLN-ug-Ugu"/>
+                <constraint firstAttribute="trailing" secondItem="99f-DP-cr1" secondAttribute="trailing" id="u0v-AF-FBx"/>
+                <constraint firstItem="99f-DP-cr1" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="wgW-Ec-AeG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="54" y="553"/>
+        </view>
+    </objects>
+</document>

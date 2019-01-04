@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Arrival" representedClassName="Arrival" syncable="YES">
+        <attribute name="direction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minutes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="routeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stopId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="stopName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uri" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FavoriteStop" representedClassName="FavoriteStop" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="servicedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stopId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Route" representedClassName="Route" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="directions" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="directionUri" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mapImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mapKmlUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routeDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scheduleUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="textColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uri" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Stop" representedClassName="Stop" syncable="YES">
+        <attribute name="arrivalUri" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="direction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="servicedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stopId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="StoredValueAccount" representedClassName="StoredValueAccount" syncable="YES">
+        <attribute name="accountId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="association" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modifiedDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoredValueEvent" inverseName="account" inverseEntity="StoredValueEvent" syncable="YES"/>
+    </entity>
+    <entity name="StoredValueEvent" representedClassName="StoredValueEvent" syncable="YES">
+        <attribute name="accountId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tenantId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="account" maxCount="1" deletionRule="Nullify" destinationEntity="StoredValueAccount" inverseName="events" inverseEntity="StoredValueAccount" syncable="YES"/>
+    </entity>
+    <entity name="StoredValueLoyalty" representedClassName="StoredValueLoyalty" syncable="YES">
+        <attribute name="activationCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="bonusAmount" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cardUuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="expirationDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modifiedDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="productCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requirementMagnitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="riderCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="StoredValueProduct" representedClassName="StoredValueProduct" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entrants" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="isForSale" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="memberId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="revisionId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="ticketGroupId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ticketSettings" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="partOfLoyalty" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StoredValueLoyalty" syncable="YES"/>
+    </entity>
+    <entity name="StoredValueProgramRule" representedClassName="StoredValueProgramRule" syncable="YES">
+        <attribute name="benefit" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="requirement" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="TripHistory" representedClassName="TripHistory" syncable="YES">
+        <attribute name="destinationLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="destinationLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="destinationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destinationStopId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="originLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="originLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="originName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originStopId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Arrival" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="FavoriteStop" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Route" positionX="-54" positionY="18" width="128" height="208"/>
+        <element name="Stop" positionX="-36" positionY="99" width="128" height="163"/>
+        <element name="StoredValueAccount" positionX="-27" positionY="117" width="128" height="195"/>
+        <element name="StoredValueEvent" positionX="-27" positionY="126" width="128" height="30"/>
+        <element name="StoredValueLoyalty" positionX="-18" positionY="144" width="128" height="180"/>
+        <element name="StoredValueProduct" positionX="-18" positionY="126" width="128" height="255"/>
+        <element name="StoredValueProgramRule" positionX="-27" positionY="135" width="128" height="75"/>
+        <element name="TripHistory" positionX="-18" positionY="126" width="128" height="163"/>
+    </elements>
+</model>

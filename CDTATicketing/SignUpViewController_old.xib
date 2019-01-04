@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular_0.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController">
+            <connections>
+                <outlet property="btnConfirmPassword" destination="VGo-1o-hQ2" id="NYj-of-6OX"/>
+                <outlet property="btnEmail" destination="TLg-Vg-8Qj" id="PmF-MT-Pvc"/>
+                <outlet property="btnFirstName" destination="FKr-LL-Cdx" id="KN7-5d-LUf"/>
+                <outlet property="btnLastName" destination="dNx-ZO-xAn" id="9uI-Tc-Gie"/>
+                <outlet property="btnPassword" destination="dGc-zk-grI" id="vFN-mE-Mph"/>
+                <outlet property="btnSignUp" destination="tc9-Os-Jnk" id="DJ6-He-qRt"/>
+                <outlet property="confirmPassword" destination="Zi7-T7-CEP" id="Yf6-vj-D98"/>
+                <outlet property="emailAddress" destination="C7G-Dm-v2b" id="H16-rN-dGp"/>
+                <outlet property="firstName" destination="Zdn-Rz-hx0" id="zWK-TC-whK"/>
+                <outlet property="imgUser" destination="Ea7-y4-TAl" id="gfG-A5-hvZ"/>
+                <outlet property="lastName" destination="3f3-oq-uPY" id="4ua-J6-E8K"/>
+                <outlet property="password" destination="Zy1-jf-0Qb" id="EBF-E0-roc"/>
+                <outlet property="viConfirmPassword" destination="aef-SZ-Y54" id="aHN-34-tpB"/>
+                <outlet property="viEmail" destination="jMD-DK-WA9" id="tfd-4U-blU"/>
+                <outlet property="viFirstName" destination="a4I-Pj-7UV" id="sFO-Et-Td9"/>
+                <outlet property="viLastName" destination="hen-c1-S7d" id="RGX-nN-PlL"/>
+                <outlet property="viPassword" destination="GN0-yy-83k" id="Blp-3Q-J9c"/>
+                <outlet property="view" destination="3vj-vK-DDK" id="4L4-Qb-TdW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3vj-vK-DDK">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-hZ-LgS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4I-Pj-7UV">
+                            <rect key="frame" x="20" y="120" width="335" height="45"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zdn-Rz-hx0">
+                                    <rect key="frame" x="60" y="3" width="236" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKr-LL-Cdx" customClass="FontAwesomeButton">
+                                    <rect key="frame" x="13" y="5" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="EGS-gH-kYM"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hen-c1-S7d">
+                            <rect key="frame" x="20" y="180" width="335" height="45"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3f3-oq-uPY">
+                                    <rect key="frame" x="60" y="3" width="236" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNx-ZO-xAn" customClass="FontAwesomeButton">
+                                    <rect key="frame" x="13" y="5" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="cVa-8T-36E"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMD-DK-WA9">
+                            <rect key="frame" x="20" y="240" width="335" height="45"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C7G-Dm-v2b">
+                                    <rect key="frame" x="60" y="3" width="236" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLg-Vg-8Qj" customClass="FontAwesomeButton">
+                                    <rect key="frame" x="13" y="5" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="DVI-Lm-iMI"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GN0-yy-83k">
+                            <rect key="frame" x="20" y="300" width="335" height="45"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zy1-jf-0Qb">
+                                    <rect key="frame" x="60" y="3" width="236" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGc-zk-grI" customClass="FontAwesomeButton">
+                                    <rect key="frame" x="13" y="5" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="e2P-8l-Ane"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aef-SZ-Y54">
+                            <rect key="frame" x="20" y="360" width="335" height="45"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zi7-T7-CEP">
+                                    <rect key="frame" x="60" y="3" width="236" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGo-1o-hQ2" customClass="FontAwesomeButton">
+                                    <rect key="frame" x="13" y="5" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="chJ-78-yQk"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tc9-Os-Jnk">
+                            <rect key="frame" x="20" y="424" width="335" height="45"/>
+                            <color key="backgroundColor" red="0.91372549020000005" green="0.68235294120000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="W5I-Yi-HRQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                            <state key="normal" title="Sign Up">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="signUpHandler:" destination="-1" eventType="touchUpInside" id="TgT-v8-Vvh"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="existing-and-newuser.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ea7-y4-TAl">
+                            <rect key="frame" x="149" y="31" width="61" height="61"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="61" id="uhC-KD-cWN"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="jMD-DK-WA9" firstAttribute="top" secondItem="hen-c1-S7d" secondAttribute="bottom" constant="15" id="3HM-8A-x1Y"/>
+                        <constraint firstItem="GN0-yy-83k" firstAttribute="trailing" secondItem="jMD-DK-WA9" secondAttribute="trailing" id="3TS-rr-kgM"/>
+                        <constraint firstItem="a4I-Pj-7UV" firstAttribute="leading" secondItem="GRO-hZ-LgS" secondAttribute="leading" constant="20" id="4GN-jT-k8P"/>
+                        <constraint firstItem="jMD-DK-WA9" firstAttribute="leading" secondItem="GRO-hZ-LgS" secondAttribute="leading" constant="20" id="7YG-li-ccW"/>
+                        <constraint firstItem="GN0-yy-83k" firstAttribute="leading" secondItem="GRO-hZ-LgS" secondAttribute="leading" constant="20" id="B7Z-dE-p8J"/>
+                        <constraint firstAttribute="trailing" secondItem="aef-SZ-Y54" secondAttribute="trailing" constant="20" id="HF8-MY-E9W"/>
+                        <constraint firstItem="a4I-Pj-7UV" firstAttribute="centerX" secondItem="GRO-hZ-LgS" secondAttribute="centerX" id="IXN-Fh-tdD"/>
+                        <constraint firstItem="GN0-yy-83k" firstAttribute="top" secondItem="jMD-DK-WA9" secondAttribute="bottom" constant="15" id="MIg-m4-IP2"/>
+                        <constraint firstAttribute="trailing" secondItem="GN0-yy-83k" secondAttribute="trailing" constant="20" id="OFR-ES-HW8"/>
+                        <constraint firstItem="aef-SZ-Y54" firstAttribute="leading" secondItem="GRO-hZ-LgS" secondAttribute="leading" constant="20" id="Pw8-EO-Fkk"/>
+                        <constraint firstItem="a4I-Pj-7UV" firstAttribute="top" secondItem="GRO-hZ-LgS" secondAttribute="top" constant="120" id="PyT-8R-cmv"/>
+                        <constraint firstItem="aef-SZ-Y54" firstAttribute="top" secondItem="GN0-yy-83k" secondAttribute="bottom" constant="15" id="Rhd-UB-Fwb"/>
+                        <constraint firstItem="hen-c1-S7d" firstAttribute="leading" secondItem="a4I-Pj-7UV" secondAttribute="leading" id="Xzb-Ap-bkC"/>
+                        <constraint firstItem="tc9-Os-Jnk" firstAttribute="top" secondItem="aef-SZ-Y54" secondAttribute="bottom" constant="19" id="b7T-i4-vHs"/>
+                        <constraint firstAttribute="trailing" secondItem="jMD-DK-WA9" secondAttribute="trailing" constant="20" id="bHb-Bi-8As"/>
+                        <constraint firstAttribute="trailing" secondItem="a4I-Pj-7UV" secondAttribute="trailing" constant="20" id="cd3-na-ATf"/>
+                        <constraint firstAttribute="trailing" secondItem="tc9-Os-Jnk" secondAttribute="trailing" constant="20" id="ffg-zI-xfb"/>
+                        <constraint firstItem="a4I-Pj-7UV" firstAttribute="top" secondItem="Ea7-y4-TAl" secondAttribute="bottom" constant="28" id="gpY-H1-e7P"/>
+                        <constraint firstItem="GN0-yy-83k" firstAttribute="top" secondItem="jMD-DK-WA9" secondAttribute="bottom" constant="15" id="iTr-Py-drY"/>
+                        <constraint firstAttribute="bottom" secondItem="a4I-Pj-7UV" secondAttribute="bottom" constant="537" id="k0Y-rI-dVQ"/>
+                        <constraint firstItem="hen-c1-S7d" firstAttribute="trailing" secondItem="a4I-Pj-7UV" secondAttribute="trailing" id="tN3-SC-WEb"/>
+                        <constraint firstItem="tc9-Os-Jnk" firstAttribute="leading" secondItem="GRO-hZ-LgS" secondAttribute="leading" constant="20" id="wLV-s8-34b"/>
+                        <constraint firstItem="Ea7-y4-TAl" firstAttribute="top" secondItem="GRO-hZ-LgS" secondAttribute="top" constant="31" id="x96-fQ-wYD"/>
+                        <constraint firstItem="Ea7-y4-TAl" firstAttribute="centerX" secondItem="a4I-Pj-7UV" secondAttribute="centerX" constant="-8.5" id="xyg-ex-V6q"/>
+                        <constraint firstItem="hen-c1-S7d" firstAttribute="top" secondItem="a4I-Pj-7UV" secondAttribute="bottom" constant="15" id="zAf-AS-D9J"/>
+                        <constraint firstItem="GN0-yy-83k" firstAttribute="leading" secondItem="jMD-DK-WA9" secondAttribute="leading" id="zBH-vX-2rh"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="GRO-hZ-LgS" secondAttribute="bottom" id="NWV-K2-q4c"/>
+                <constraint firstAttribute="trailing" secondItem="GRO-hZ-LgS" secondAttribute="trailing" id="ZW3-cZ-JUG"/>
+                <constraint firstItem="GRO-hZ-LgS" firstAttribute="leading" secondItem="3vj-vK-DDK" secondAttribute="leading" id="ldE-Zg-84x"/>
+                <constraint firstItem="GRO-hZ-LgS" firstAttribute="top" secondItem="3vj-vK-DDK" secondAttribute="top" id="zuq-qK-lr8"/>
+            </constraints>
+            <point key="canvasLocation" x="1515" y="547"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="existing-and-newuser.png" width="215" height="213"/>
+    </resources>
+</document>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Logged in as</string>
+			<key>Key</key>
+			<string>email_preference</string>
+			<key>DefaultValue</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Email verified</string>
+			<key>Key</key>
+			<string>verified_preference</string>
+			<key>DefaultValue</key>
+			<string>No</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Change Email</string>
+			<key>IASKViewControllerClass</key>
+			<string>EmailSettingsViewController</string>
+			<key>IASKViewControllerSelector</key>
+			<string>initWithFile:specifier:</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Change Password</string>
+			<key>IASKViewControllerClass</key>
+			<string>PasswordSettingsViewController</string>
+			<key>IASKViewControllerSelector</key>
+			<string>initWithFile:specifier:</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Device Management</string>
+			<key>IASKViewControllerClass</key>
+			<string>RegistrationManagementViewController</string>
+			<key>IASKViewControllerSelector</key>
+			<string>initWithFile:specifier:</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Card Management</string>
+			<key>IASKViewControllerClass</key>
+			<string>CardManagementViewController</string>
+			<key>IASKViewControllerSelector</key>
+			<string>initWithFile:specifier:</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>

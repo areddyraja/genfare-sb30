@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="TfL-a4-lxO" userLabel="Nearby Stop Cell" customClass="NearbyStopCell">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TfL-a4-lxO" id="Jcz-x7-aqR">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="bxg-CW-RI8">
+                        <rect key="frame" x="8" y="8" width="344" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Stw-cf-dSL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Next Arrivals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cik-Zl-sdM">
+                        <rect key="frame" x="108" y="58" width="144" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bxg-CW-RI8" firstAttribute="trailing" secondItem="Jcz-x7-aqR" secondAttribute="trailingMargin" id="Hso-rU-sgE"/>
+                    <constraint firstItem="bxg-CW-RI8" firstAttribute="leading" secondItem="Jcz-x7-aqR" secondAttribute="leadingMargin" id="U4v-kj-5kb"/>
+                    <constraint firstItem="bxg-CW-RI8" firstAttribute="top" secondItem="Jcz-x7-aqR" secondAttribute="topMargin" id="bar-iw-4aK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="showArrivalsLabel" destination="cik-Zl-sdM" id="KFj-ps-1hf"/>
+                <outlet property="stopName" destination="bxg-CW-RI8" id="O8R-Vx-sYR"/>
+            </connections>
+            <point key="canvasLocation" x="269" y="305"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SMSVerficationViewController">
+            <connections>
+                <outlet property="accountStatusLbl" destination="BgU-OD-n2I" id="XXr-on-qaU"/>
+                <outlet property="sendSMSBtn" destination="rcg-2Z-1ZF" id="jQn-H1-fIT"/>
+                <outlet property="smsVerificationLbl" destination="chj-cj-IuP" id="s5r-vu-osq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account created successfully" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgU-OD-n2I">
+                    <rect key="frame" x="20" y="40" width="335" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="GPD-Ea-Bzk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need to send an SMS for Verification." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chj-cj-IuP">
+                    <rect key="frame" x="20" y="209" width="335" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="cfv-s2-EWy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukB-HL-51B">
+                    <rect key="frame" x="345" y="40" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                    <state key="normal" title="X">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissController:" destination="-2" eventType="touchUpInside" id="TGi-r5-dXe"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcg-2Z-1ZF" customClass="GFMenuButton" customModule="COTATicketing_Beta" customModuleProvider="target">
+                    <rect key="frame" x="118" y="314" width="139" height="51"/>
+                    <color key="backgroundColor" red="0.15686274510000001" green="0.59999999999999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="51" id="lDn-Ne-m5I"/>
+                        <constraint firstAttribute="width" constant="139" id="m1D-EV-btr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                    <state key="normal" title="SEND SMS">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="sendSMS:" destination="-1" eventType="touchUpInside" id="I0D-Lx-J3q"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.12156862745098039" green="0.16078431372549018" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="chj-cj-IuP" secondAttribute="trailing" constant="20" id="0ja-dH-uX5"/>
+                <constraint firstItem="chj-cj-IuP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="43v-KD-HBT"/>
+                <constraint firstItem="chj-cj-IuP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="D3Y-3d-Uo1"/>
+                <constraint firstItem="chj-cj-IuP" firstAttribute="top" secondItem="BgU-OD-n2I" secondAttribute="bottom" constant="129" id="DOb-Pa-8h7"/>
+                <constraint firstItem="BgU-OD-n2I" firstAttribute="leading" secondItem="chj-cj-IuP" secondAttribute="leading" id="dZH-IG-wbt"/>
+                <constraint firstItem="rcg-2Z-1ZF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="har-iJ-gsy"/>
+                <constraint firstItem="rcg-2Z-1ZF" firstAttribute="top" secondItem="chj-cj-IuP" secondAttribute="bottom" constant="15" id="vOQ-De-HLl"/>
+                <constraint firstItem="BgU-OD-n2I" firstAttribute="trailing" secondItem="chj-cj-IuP" secondAttribute="trailing" id="vrX-v0-NoG"/>
+                <constraint firstItem="BgU-OD-n2I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="yGc-dr-GMc"/>
+            </constraints>
+            <point key="canvasLocation" x="90.400000000000006" y="54.422788605697157"/>
+        </view>
+    </objects>
+</document>

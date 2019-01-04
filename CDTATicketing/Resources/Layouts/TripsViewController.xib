@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TripsViewController">
+            <connections>
+                <outlet property="tableView" destination="mRK-Cb-5gw" id="RS5-JO-fhg"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mRK-Cb-5gw">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="hqY-AY-60s"/>
+                        <outlet property="delegate" destination="-1" id="AVB-V6-0wk"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="mRK-Cb-5gw" firstAttribute="top" secondItem="1" secondAttribute="top" id="4t2-Ty-VTk"/>
+                <constraint firstAttribute="trailing" secondItem="mRK-Cb-5gw" secondAttribute="trailing" id="94p-sk-q4g"/>
+                <constraint firstAttribute="bottom" secondItem="mRK-Cb-5gw" secondAttribute="bottom" id="AJf-hp-PQP"/>
+                <constraint firstItem="mRK-Cb-5gw" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Jx6-cE-dia"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

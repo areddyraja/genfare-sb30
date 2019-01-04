@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="hKf-Zm-dBS">
+            <rect key="frame" x="0.0" y="0.0" width="312" height="337"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="View your Account Settings by selecting the desired account from the accounts list and verifying account’s password. " translatesAutoresizingMaskIntoConstraints="NO" id="Pgk-wD-ZJ2">
+                    <rect key="frame" x="8" y="8" width="304" height="240"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Pgk-wD-ZJ2" firstAttribute="leading" secondItem="hKf-Zm-dBS" secondAttribute="leadingMargin" id="2i1-ZU-WjW"/>
+                <constraint firstAttribute="bottom" secondItem="Pgk-wD-ZJ2" secondAttribute="bottom" constant="5" id="4pu-s8-iE3"/>
+                <constraint firstItem="Pgk-wD-ZJ2" firstAttribute="trailing" secondItem="hKf-Zm-dBS" secondAttribute="trailingMargin" id="LV3-k1-WCE"/>
+                <constraint firstItem="Pgk-wD-ZJ2" firstAttribute="top" secondItem="hKf-Zm-dBS" secondAttribute="topMargin" id="MG3-Ie-b8F"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="308" y="461.5"/>
+        </view>
+    </objects>
+</document>

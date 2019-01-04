@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClaimCardsViewController">
+            <connections>
+                <outlet property="forgotPassword" destination="i1L-v8-c6L" id="4cf-ut-LG6"/>
+                <outlet property="password" destination="Bm3-2D-NdQ" id="tKo-Cw-ihs"/>
+                <outlet property="selectOrEnterEmail" destination="lhc-hm-2ti" id="DmS-9X-xWM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You may retrieve mobile cards that were released for transfer by entering your account credentials below. " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cZ-R9-MJ7">
+                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select of Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhc-hm-2ti">
+                    <rect key="frame" x="8" y="59" width="359" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="562-pp-7OQ"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bm3-2D-NdQ">
+                    <rect key="frame" x="8" y="119" width="359" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Teg-Ep-64H" customClass="BorderedButton">
+                    <rect key="frame" x="8" y="179" width="359" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="View Cards"/>
+                    <connections>
+                        <action selector="viewCards:" destination="-1" eventType="touchUpInside" id="PTR-QT-G9l"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Forgot your password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1L-v8-c6L">
+                    <rect key="frame" x="37.5" y="239" width="300" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="rCd-jR-lO2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.62352941179999999" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Bm3-2D-NdQ" secondAttribute="trailing" constant="8" id="3Hm-tq-Qho"/>
+                <constraint firstItem="i1L-v8-c6L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4SG-g8-ovT"/>
+                <constraint firstItem="lhc-hm-2ti" firstAttribute="top" secondItem="1cZ-R9-MJ7" secondAttribute="bottom" constant="30" id="8Dg-lP-J2g"/>
+                <constraint firstItem="Teg-Ep-64H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="DFy-06-L0F"/>
+                <constraint firstItem="lhc-hm-2ti" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="FUl-me-Sx5"/>
+                <constraint firstItem="Teg-Ep-64H" firstAttribute="top" secondItem="Bm3-2D-NdQ" secondAttribute="bottom" constant="30" id="FUy-iQ-IaI"/>
+                <constraint firstItem="1cZ-R9-MJ7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="IMe-qu-sA8"/>
+                <constraint firstAttribute="trailing" secondItem="lhc-hm-2ti" secondAttribute="trailing" constant="8" id="KwV-q1-uNB"/>
+                <constraint firstItem="Bm3-2D-NdQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Ljx-XM-iPh"/>
+                <constraint firstAttribute="trailing" secondItem="1cZ-R9-MJ7" secondAttribute="trailing" constant="8" id="Lt0-Bp-P8D"/>
+                <constraint firstItem="Bm3-2D-NdQ" firstAttribute="top" secondItem="lhc-hm-2ti" secondAttribute="bottom" constant="30" id="YOL-Jq-HDk"/>
+                <constraint firstAttribute="trailing" secondItem="Teg-Ep-64H" secondAttribute="trailing" constant="8" id="d7Z-1C-lvb"/>
+                <constraint firstItem="lhc-hm-2ti" firstAttribute="top" secondItem="1cZ-R9-MJ7" secondAttribute="bottom" constant="30" id="dhd-PD-XzF"/>
+                <constraint firstItem="i1L-v8-c6L" firstAttribute="top" secondItem="Teg-Ep-64H" secondAttribute="bottom" constant="30" id="eal-m0-Ga4"/>
+                <constraint firstItem="Bm3-2D-NdQ" firstAttribute="top" secondItem="lhc-hm-2ti" secondAttribute="bottom" constant="30" id="hg6-a7-DWR"/>
+                <constraint firstItem="i1L-v8-c6L" firstAttribute="top" secondItem="Teg-Ep-64H" secondAttribute="bottom" constant="30" id="mJp-5e-xnZ"/>
+                <constraint firstItem="1cZ-R9-MJ7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="mrV-SG-D0b"/>
+                <constraint firstItem="Teg-Ep-64H" firstAttribute="top" secondItem="Bm3-2D-NdQ" secondAttribute="bottom" constant="30" id="vYe-3w-SWk"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

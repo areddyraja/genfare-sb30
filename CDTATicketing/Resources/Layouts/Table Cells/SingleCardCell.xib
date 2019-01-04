@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="singleCardCell" rowHeight="256" id="yh4-lE-XL8" customClass="SingleCardCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yh4-lE-XL8" id="cUF-Gq-fTe">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card.png" translatesAutoresizingMaskIntoConstraints="NO" id="sEn-WO-t2K">
+                        <rect key="frame" x="36" y="7" width="249" height="136"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="249" id="2aC-At-SyP"/>
+                            <constraint firstAttribute="height" constant="136" id="bGA-4J-5ro"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sEn-WO-t2K" firstAttribute="trailing" secondItem="cUF-Gq-fTe" secondAttribute="trailingMargin" id="685-uq-aoh"/>
+                    <constraint firstItem="sEn-WO-t2K" firstAttribute="top" secondItem="cUF-Gq-fTe" secondAttribute="topMargin" id="G0t-8J-L9b"/>
+                    <constraint firstItem="sEn-WO-t2K" firstAttribute="centerY" secondItem="cUF-Gq-fTe" secondAttribute="centerY" id="TLg-ye-wzo"/>
+                    <constraint firstItem="sEn-WO-t2K" firstAttribute="centerY" secondItem="cUF-Gq-fTe" secondAttribute="centerY" id="l1i-Zt-7jj"/>
+                    <constraint firstItem="sEn-WO-t2K" firstAttribute="leading" secondItem="cUF-Gq-fTe" secondAttribute="leadingMargin" id="tDJ-Lr-nLI"/>
+                    <constraint firstItem="sEn-WO-t2K" firstAttribute="centerX" secondItem="cUF-Gq-fTe" secondAttribute="centerX" id="zzX-Rn-wZS"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="685-uq-aoh"/>
+                        <exclude reference="G0t-8J-L9b"/>
+                        <exclude reference="TLg-ye-wzo"/>
+                        <exclude reference="tDJ-Lr-nLI"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="139" y="338"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="card.png" width="249" height="159"/>
+    </resources>
+</document>

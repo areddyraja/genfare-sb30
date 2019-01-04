@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 4.3">
+    <entity name="Account" representedClassName="Account" syncable="YES">
+        <attribute name="accountId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="authToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isEmailVerified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isLoggedIn" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loginDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Card" representedClassName="Card" syncable="YES">
+        <attribute name="accountAuthToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="accountEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="accountId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="cvv" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="huuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isTemporary" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="modifiedDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walletHuuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walletUuid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CardEvent" representedClassName="CardEvent" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occurredOnDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Content" representedClassName="Content" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="idNum" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isLocal" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="storageType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ContentDescription" representedClassName="ContentDescription" syncable="YES">
+        <attribute name="cDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idNum" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transitName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ContentReference" representedClassName="ContentRefrence" syncable="YES">
+        <attribute name="contentDescriptionIDNum" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="contentIDNum" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="EncryptionSet" syncable="YES">
+        <attribute name="currentKey" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="disableTimestamp" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="enabled" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="enabledTimestamp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="idNum" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="keyType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="primaryData" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="secondaryData" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ServiceDay" representedClassName="ServiceDay" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="createdDateTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="idNum" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="serviceSeconds" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="serviceSpan" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="startSeconds" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="ticketTypes" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="typeSpecific" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="updatedDateTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="StationInfo" representedClassName="StationInfo" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stationId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="transitId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Ticket" representedClassName="Ticket" syncable="YES">
+        <attribute name="activatedSeconds" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="activationCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="activationCountMax" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="activationDateTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="activationLiveTime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="activationResetTime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="activationTransitionTime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="activationType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="arrivalStation" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="arriveId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="arriveStationId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bfp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creditCard" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departStationId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departureStation" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventLat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="eventLng" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="eventType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expirationDateTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="expirationSpan" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fareCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fareZoneCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fareZoneCodeDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstActivationDateTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inspections" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="invoiceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAdjustedForDst" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isHistory" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isStaging" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isStoredValue" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="memberId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchaseDateTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="riderCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="riderTypeCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="riderTypeDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sellerId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="statusCode" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="szType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ticketAmount" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="ticketGroupId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ticketTypeCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ticketTypeDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ticketTypeNote" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transitId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="validStartDateTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Token" representedClassName="Token" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" valueTransformerName="Base64ValueTransformer" syncable="YES"/>
+    </entity>
+    <entity name="Wallet" representedClassName="Wallet" syncable="YES">
+        <attribute name="createdDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="cvv" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="huuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modifiedDateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walletDescription" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Account" positionX="162" positionY="342" width="128" height="180"/>
+        <element name="Card" positionX="171" positionY="351" width="128" height="255"/>
+        <element name="CardEvent" positionX="162" positionY="342" width="128" height="135"/>
+        <element name="Content" positionX="162" positionY="342" width="128" height="148"/>
+        <element name="ContentDescription" positionX="162" positionY="342" width="128" height="133"/>
+        <element name="ContentReference" positionX="171" positionY="360" width="128" height="75"/>
+        <element name="EncryptionSet" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="ServiceDay" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="StationInfo" positionX="162" positionY="342" width="128" height="150"/>
+        <element name="Ticket" positionX="160" positionY="192" width="128" height="870"/>
+        <element name="Token" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Wallet" positionX="162" positionY="342" width="128" height="165"/>
+    </elements>
+</model>

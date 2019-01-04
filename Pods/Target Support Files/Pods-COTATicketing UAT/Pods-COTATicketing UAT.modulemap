@@ -1,0 +1,6 @@
+module Pods_COTATicketing_UAT {
+  umbrella header "Pods-COTATicketing UAT-umbrella.h"
+
+  export *
+  module * { export * }
+}

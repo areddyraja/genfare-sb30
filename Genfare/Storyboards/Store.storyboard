@@ -1,0 +1,1547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xfT-WR-k78">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Passes View Controller-->
+        <scene sceneID="wTl-KB-v6K">
+            <objects>
+                <viewController storyboardIdentifier="GFNAVIGATETOSTORE" id="xfT-WR-k78" customClass="GFMyPassesViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BLe-8V-ze7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RF-CS-XMW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <color key="backgroundColor" name="Cello Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="baM-EH-ZNx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGO-tY-g1H">
+                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS7-Af-tAf">
+                                        <rect key="frame" x="13" y="40" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" image="Hamburger"/>
+                                        <connections>
+                                            <segue destination="NM7-Ry-ZaM" kind="presentation" id="JQu-v4-fvz"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="2yR-on-svL">
+                                        <rect key="frame" x="134" y="30" width="108" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="c5I-ns-V09"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="XBF-LE-Emp"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cA1-9G-kmh" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="37.666666666666657" y="163" width="300" height="88"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WV0-8e-tHz">
+                                        <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8B-o3-qXH" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="23" y="13" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="05" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yl4-LG-bGs">
+                                                <rect key="frame" x="0.0" y="12" width="60" height="29"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQd-7D-pN2">
+                                                <rect key="frame" x="8" y="40" width="44" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="31-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wJ-jx-xqO">
+                                        <rect key="frame" x="110" y="13" width="167" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" name="Cello Blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expires 09/28/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0C-3M-9hS">
+                                        <rect key="frame" x="134" y="56" width="128" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <color key="textColor" name="Dusty Gray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCf-l0-QFr">
+                                        <rect key="frame" x="3" y="0.0" width="294" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="showDetails:" destination="xfT-WR-k78" eventType="touchUpInside" id="Yrl-Zm-2iw"/>
+                                            <segue destination="vrR-8O-hAN" kind="show" id="Qxq-v8-V0g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Hcv-JI-HmY"/>
+                                    <constraint firstAttribute="height" constant="88" id="lIY-Yy-Yjb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzX-sX-hIU" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="117.66666666666669" y="272" width="140" height="38"/>
+                                <color key="backgroundColor" name="Cello Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="IMM-Dl-pB7"/>
+                                    <constraint firstAttribute="width" constant="140" id="uhd-0p-PYo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Buy Pass">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="09f-3d-asQ" kind="show" id="VgW-Zf-DSX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-cz-dwf">
+                                <rect key="frame" x="167.66666666666666" y="114" width="60" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="b3K-uY-KBS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ej8-Pd-hlg" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="37.666666666666657" y="383" width="300" height="88"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zwr-4v-mX7">
+                                        <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qAS-t6-jpc" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="23" y="13" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$23.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spd-Am-vtj">
+                                                <rect key="frame" x="4" y="12" width="54" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQK-ix-wnx">
+                                                <rect key="frame" x="8" y="40" width="47" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pay As You Go" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeN-9g-EvO">
+                                        <rect key="frame" x="110" y="30" width="167" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" name="Cello Blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e6-fP-pCS">
+                                        <rect key="frame" x="3" y="0.0" width="294" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="showDetails:" destination="xfT-WR-k78" eventType="touchUpInside" id="NzT-Iq-3xj"/>
+                                            <segue destination="vrR-8O-hAN" kind="show" id="7er-Cc-jGI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2fk-Bu-Tm2"/>
+                                    <constraint firstAttribute="height" constant="88" id="AvK-It-fFJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqr-ou-TkE" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="117.66666666666669" y="492" width="140" height="38"/>
+                                <color key="backgroundColor" name="Cello Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="7Pe-F8-LUJ"/>
+                                    <constraint firstAttribute="width" constant="140" id="mEd-Ji-GSW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Add Value">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Alto Gray"/>
+                        <constraints>
+                            <constraint firstItem="U2B-cz-dwf" firstAttribute="centerX" secondItem="BLe-8V-ze7" secondAttribute="centerX" constant="10" id="5dE-9a-EdH"/>
+                            <constraint firstItem="xzX-sX-hIU" firstAttribute="top" secondItem="cA1-9G-kmh" secondAttribute="bottom" constant="21" id="6bG-Vz-nxX"/>
+                            <constraint firstItem="cA1-9G-kmh" firstAttribute="centerX" secondItem="BLe-8V-ze7" secondAttribute="centerX" id="Dh7-jd-a17"/>
+                            <constraint firstItem="U2B-cz-dwf" firstAttribute="top" secondItem="HGO-tY-g1H" secondAttribute="bottom" constant="14" id="Hfc-E7-kXy"/>
+                            <constraint firstItem="cA1-9G-kmh" firstAttribute="top" secondItem="U2B-cz-dwf" secondAttribute="bottom" constant="21" id="KHe-eJ-WaJ"/>
+                            <constraint firstAttribute="trailing" secondItem="2RF-CS-XMW" secondAttribute="trailing" id="NNz-3F-2OC"/>
+                            <constraint firstItem="xzX-sX-hIU" firstAttribute="centerX" secondItem="BLe-8V-ze7" secondAttribute="centerX" id="PuT-vI-qad"/>
+                            <constraint firstItem="2RF-CS-XMW" firstAttribute="leading" secondItem="BLe-8V-ze7" secondAttribute="leading" id="TAO-fQ-TZe"/>
+                            <constraint firstItem="Ej8-Pd-hlg" firstAttribute="centerX" secondItem="BLe-8V-ze7" secondAttribute="centerX" id="gbw-mA-SPH"/>
+                            <constraint firstItem="wqr-ou-TkE" firstAttribute="centerX" secondItem="BLe-8V-ze7" secondAttribute="centerX" id="hoS-kG-aiC"/>
+                            <constraint firstItem="wqr-ou-TkE" firstAttribute="top" secondItem="Ej8-Pd-hlg" secondAttribute="bottom" constant="21" id="lhG-0V-S0f"/>
+                            <constraint firstItem="HGO-tY-g1H" firstAttribute="leading" secondItem="n9t-V8-8SC" secondAttribute="leading" id="o3m-IR-8cZ"/>
+                            <constraint firstItem="2RF-CS-XMW" firstAttribute="top" secondItem="BLe-8V-ze7" secondAttribute="top" id="r48-q4-UTg"/>
+                            <constraint firstItem="HGO-tY-g1H" firstAttribute="top" secondItem="n9t-V8-8SC" secondAttribute="top" constant="-20" id="sSd-EV-Eys"/>
+                            <constraint firstItem="HGO-tY-g1H" firstAttribute="trailing" secondItem="n9t-V8-8SC" secondAttribute="trailing" id="u4Z-LK-ScS"/>
+                            <constraint firstItem="Ej8-Pd-hlg" firstAttribute="top" secondItem="xzX-sX-hIU" secondAttribute="bottom" constant="73" id="xAt-Nn-BLC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n9t-V8-8SC"/>
+                    </view>
+                    <connections>
+                        <outlet property="dayPassBtn" destination="YCf-l0-QFr" id="Ith-HY-u7c"/>
+                        <outlet property="daysRemainingLabel" destination="yl4-LG-bGs" id="Pvj-XG-E1S"/>
+                        <outlet property="payGoBtn" destination="5e6-fP-pCS" id="it4-d5-AZx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDo-fb-oZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104.8" y="-35.467980295566505"/>
+        </scene>
+        <!--Payment View Controller-->
+        <scene sceneID="ivM-l1-eTS">
+            <objects>
+                <viewController id="d1F-ro-ePF" customClass="GFPaymentViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vlx-63-z8p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ad-DL-W45">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <color key="backgroundColor" name="Cello Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CuR-lM-V9j"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBU-Fz-f4g">
+                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ii7-QY-p1e">
+                                        <rect key="frame" x="13" y="40" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" image="Hamburger"/>
+                                        <connections>
+                                            <segue destination="NM7-Ry-ZaM" kind="presentation" id="KvB-xL-79y"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="hyn-bw-MAf">
+                                        <rect key="frame" x="134" y="30" width="108" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="0cY-Ck-lDB"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="lGB-aR-z09"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="7yV-I1-wCv">
+                                <rect key="frame" x="0.0" y="101" width="375" height="710"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10 Purchase Process 3" translatesAutoresizingMaskIntoConstraints="NO" id="DDZ-cQ-PuS">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="735" id="dcA-DX-nOw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxk-zC-sAC">
+                                        <rect key="frame" x="91" y="663" width="193" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="verifyPayment:" destination="d1F-ro-ePF" eventType="touchUpInside" id="dDk-pJ-ELv"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: $65.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS8-xf-cEd">
+                                        <rect key="frame" x="78" y="318" width="220" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="Oce-4J-4vO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xS8-xf-cEd" firstAttribute="leading" secondItem="7yV-I1-wCv" secondAttribute="leading" constant="78" id="3jP-ii-1Jq"/>
+                                    <constraint firstAttribute="trailing" secondItem="xS8-xf-cEd" secondAttribute="trailing" constant="77" id="5SF-uT-J7e"/>
+                                    <constraint firstItem="DDZ-cQ-PuS" firstAttribute="top" secondItem="7yV-I1-wCv" secondAttribute="top" id="L86-q5-06i"/>
+                                    <constraint firstAttribute="trailing" secondItem="DDZ-cQ-PuS" secondAttribute="trailing" id="PV0-X9-p3W"/>
+                                    <constraint firstItem="DDZ-cQ-PuS" firstAttribute="leading" secondItem="7yV-I1-wCv" secondAttribute="leading" id="apj-ys-eys"/>
+                                    <constraint firstItem="xS8-xf-cEd" firstAttribute="top" secondItem="7yV-I1-wCv" secondAttribute="top" constant="318" id="kQU-mR-xrc"/>
+                                    <constraint firstAttribute="bottom" secondItem="DDZ-cQ-PuS" secondAttribute="bottom" constant="-1" id="oMH-ao-KLU"/>
+                                    <constraint firstItem="DDZ-cQ-PuS" firstAttribute="centerX" secondItem="7yV-I1-wCv" secondAttribute="centerX" id="vAj-uj-Gw7"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BBU-Fz-f4g" firstAttribute="leading" secondItem="ym8-Te-OyD" secondAttribute="leading" id="0Y4-iC-hQp"/>
+                            <constraint firstItem="7yV-I1-wCv" firstAttribute="top" secondItem="BBU-Fz-f4g" secondAttribute="bottom" constant="1" id="9re-Hd-Hd9"/>
+                            <constraint firstItem="7yV-I1-wCv" firstAttribute="leading" secondItem="BBU-Fz-f4g" secondAttribute="leading" id="EKt-hO-4yg"/>
+                            <constraint firstItem="BBU-Fz-f4g" firstAttribute="top" secondItem="ym8-Te-OyD" secondAttribute="top" constant="-20" id="IlU-s7-LOi"/>
+                            <constraint firstItem="7yV-I1-wCv" firstAttribute="trailing" secondItem="BBU-Fz-f4g" secondAttribute="trailing" id="N0j-G3-qFp"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ad-DL-W45" secondAttribute="trailing" id="P6f-Eq-n2e"/>
+                            <constraint firstItem="BBU-Fz-f4g" firstAttribute="trailing" secondItem="ym8-Te-OyD" secondAttribute="trailing" id="cbV-8i-Gdg"/>
+                            <constraint firstItem="6Ad-DL-W45" firstAttribute="top" secondItem="vlx-63-z8p" secondAttribute="top" id="is2-ku-dHs"/>
+                            <constraint firstItem="6Ad-DL-W45" firstAttribute="leading" secondItem="vlx-63-z8p" secondAttribute="leading" id="mnK-On-YQW"/>
+                            <constraint firstItem="7yV-I1-wCv" firstAttribute="bottom" secondItem="vlx-63-z8p" secondAttribute="bottom" constant="-1" id="xbl-9P-gup"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ym8-Te-OyD"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="7yV-I1-wCv" id="Liw-4d-dCs"/>
+                        <outlet property="totalLabel" destination="xS8-xf-cEd" id="BGg-nO-6YF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLG-iI-Afa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="-37.684729064039409"/>
+        </scene>
+        <!--Sidemenu-->
+        <scene sceneID="8Po-LO-SQ9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Sidemenu" id="NM7-Ry-ZaM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77O-KO-Un0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2253" y="183"/>
+        </scene>
+        <!--Activate Pass View Controller-->
+        <scene sceneID="haf-Pd-zAl">
+            <objects>
+                <viewController id="vrR-8O-hAN" customClass="GFActivatePassViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PMc-pW-Ff5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwC-ky-C2K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <color key="backgroundColor" name="Cello Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="y2O-W5-fis"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gh8-Rk-n8M">
+                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2P-Tt-5sp">
+                                        <rect key="frame" x="13" y="40" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" image="Hamburger"/>
+                                        <connections>
+                                            <segue destination="NM7-Ry-ZaM" kind="presentation" id="47J-C3-ocP"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="dr4-Ts-v9P">
+                                        <rect key="frame" x="134" y="30" width="108" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="mbY-aa-4Fy"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="9Lb-eF-ATG"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76N-0P-A8x" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="319" y="117" width="39" height="37"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnf-pQ-ddd">
+                                        <rect key="frame" x="3" y="3" width="32" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Cello Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="TwY-lw-teu"/>
+                                    <constraint firstAttribute="width" constant="39" id="p1b-gJ-1UK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0im-wI-k2X" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="100" y="611" width="175" height="38"/>
+                                <color key="backgroundColor" name="Cello Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="aej-wk-dRt"/>
+                                    <constraint firstAttribute="height" constant="38" id="eV1-vv-yRt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Buy Pass">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="09f-3d-asQ" kind="show" id="taz-gd-cKh"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikk-3q-GnI" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="37.666666666666657" y="195" width="300" height="348"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nBl-4R-eH0">
+                                        <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XJp-pf-oih" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="23" y="13" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$23.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyB-fI-Gzh">
+                                                <rect key="frame" x="4" y="12" width="54" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pki-RD-NI2">
+                                                <rect key="frame" x="8" y="40" width="47" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LKm-b3-Pwg" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="23" y="13" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="05" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ6-wZ-wuv">
+                                                <rect key="frame" x="0.0" y="12" width="60" height="29"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3C-r7-P7J">
+                                                <rect key="frame" x="8" y="40" width="44" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="31-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-Ht-SjI">
+                                        <rect key="frame" x="110" y="13" width="167" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" name="Cello Blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expires 09/28/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JZ-JN-BB3">
+                                        <rect key="frame" x="134" y="56" width="128" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <color key="textColor" name="Dusty Gray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QR Code" translatesAutoresizingMaskIntoConstraints="NO" id="KYe-i2-GQs">
+                                        <rect key="frame" x="49" y="116" width="202" height="203"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="SFi-2S-MGh"/>
+                                    <constraint firstAttribute="height" constant="348" id="lOg-b4-Vi3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUg-Ls-6Xi">
+                                <rect key="frame" x="144.33333333333334" y="115" width="86.333333333333343" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="vfl-pL-52V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Alto Gray"/>
+                        <constraints>
+                            <constraint firstItem="Ikk-3q-GnI" firstAttribute="centerX" secondItem="PMc-pW-Ff5" secondAttribute="centerX" id="1OI-ic-XcP"/>
+                            <constraint firstItem="OwC-ky-C2K" firstAttribute="top" secondItem="PMc-pW-Ff5" secondAttribute="top" id="DkB-TT-h6Y"/>
+                            <constraint firstItem="0im-wI-k2X" firstAttribute="top" secondItem="Ikk-3q-GnI" secondAttribute="bottom" constant="68" id="M1t-RT-CQP"/>
+                            <constraint firstItem="ZUg-Ls-6Xi" firstAttribute="top" secondItem="Gh8-Rk-n8M" secondAttribute="bottom" constant="15" id="NEH-YB-dSW"/>
+                            <constraint firstItem="0im-wI-k2X" firstAttribute="centerX" secondItem="PMc-pW-Ff5" secondAttribute="centerX" id="OQt-GX-QQ7"/>
+                            <constraint firstItem="76N-0P-A8x" firstAttribute="leading" secondItem="PMc-pW-Ff5" secondAttribute="trailing" constant="-56" id="Qce-aH-Qpt"/>
+                            <constraint firstItem="76N-0P-A8x" firstAttribute="top" secondItem="Gh8-Rk-n8M" secondAttribute="bottom" constant="17" id="QhX-ol-g7y"/>
+                            <constraint firstItem="OwC-ky-C2K" firstAttribute="leading" secondItem="PMc-pW-Ff5" secondAttribute="leading" id="Sed-1C-AC4"/>
+                            <constraint firstItem="Gh8-Rk-n8M" firstAttribute="trailing" secondItem="CE3-cR-s39" secondAttribute="trailing" id="VCE-4G-85s"/>
+                            <constraint firstItem="Gh8-Rk-n8M" firstAttribute="leading" secondItem="CE3-cR-s39" secondAttribute="leading" id="Zdo-4o-GJ1"/>
+                            <constraint firstItem="ZUg-Ls-6Xi" firstAttribute="centerX" secondItem="PMc-pW-Ff5" secondAttribute="centerX" id="fYb-I5-vSs"/>
+                            <constraint firstItem="Gh8-Rk-n8M" firstAttribute="top" secondItem="CE3-cR-s39" secondAttribute="top" constant="-20" id="ily-S1-O9x"/>
+                            <constraint firstAttribute="trailing" secondItem="OwC-ky-C2K" secondAttribute="trailing" id="lgB-k5-7H6"/>
+                            <constraint firstItem="Ikk-3q-GnI" firstAttribute="top" secondItem="ZUg-Ls-6Xi" secondAttribute="bottom" constant="52" id="qFA-Tr-eGO"/>
+                            <constraint firstItem="CE3-cR-s39" firstAttribute="trailing" secondItem="76N-0P-A8x" secondAttribute="trailing" constant="17" id="qVa-e1-g2O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CE3-cR-s39"/>
+                    </view>
+                    <connections>
+                        <outlet property="daysRemainLabel" destination="MJ6-wZ-wuv" id="a02-H5-Lb3"/>
+                        <outlet property="expiresLabel" destination="8JZ-JN-BB3" id="2vx-bQ-cQf"/>
+                        <outlet property="passTitleLabel" destination="0Sk-Ht-SjI" id="zlw-hn-ZlH"/>
+                        <outlet property="remainDaysView" destination="LKm-b3-Pwg" id="i82-Fr-7oA"/>
+                        <outlet property="remainValueView" destination="XJp-pf-oih" id="jZd-hN-Cdj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xxs-pf-3hx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-105.79710144927537" y="723.09782608695662"/>
+        </scene>
+        <!--Pass List View Controller-->
+        <scene sceneID="7mL-V3-BmO">
+            <objects>
+                <viewController storyboardIdentifier="GFPASSLIST" id="09f-3d-asQ" customClass="GFPassListViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="el2-wx-Fn2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nj3-6e-ipr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <color key="backgroundColor" name="Cello Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3Ls-LW-H1e"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoZ-ie-QMy">
+                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-h0-FT6">
+                                        <rect key="frame" x="13" y="40" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" image="Hamburger"/>
+                                        <connections>
+                                            <segue destination="NM7-Ry-ZaM" kind="presentation" id="MC3-Vo-1PN"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="mCp-Xa-LaG">
+                                        <rect key="frame" x="134" y="30" width="108" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="xRg-M0-yDj"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="K3V-gX-bl2"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="ix5-FX-pTG">
+                                <rect key="frame" x="0.0" y="100" width="375" height="713"/>
+                                <subviews>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12 Passes screen" translatesAutoresizingMaskIntoConstraints="NO" id="vPm-5R-t0H">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="750" id="abN-Mq-ogt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzy-U7-aMt" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="68" width="311" height="93"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ukv-kx-QCp">
+                                                <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XT-X6-Qxj" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                                <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$4.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndz-yf-uTj">
+                                                        <rect key="frame" x="11" y="5" width="51" height="26"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Cello Blue"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mny-9K-P9u">
+                                                <rect key="frame" x="9" y="26" width="107" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                                <color key="textColor" name="Cello Blue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="106" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imz-id-SRq">
+                                                <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="MZK-qr-slL"/>
+                                                    <segue destination="OJ1-x8-6UG" kind="show" id="iVK-Mu-Jio"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="311" id="89F-IG-irZ"/>
+                                            <constraint firstAttribute="height" constant="93" id="TwY-0a-VDI"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSX-qJ-Zmh" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="186" width="311" height="93"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gPv-W0-r4H">
+                                                <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K9t-SY-x3s" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                                <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$24.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kr-AT-7Uw">
+                                                        <rect key="frame" x="6" y="5" width="62" height="26"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Cello Blue"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMg-RS-ZGz">
+                                                <rect key="frame" x="18" y="26" width="119" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                                <color key="textColor" name="Cello Blue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="105" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6B-tp-AdJ">
+                                                <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="Dzc-3h-Kh8"/>
+                                                    <segue destination="OJ1-x8-6UG" kind="show" id="SHY-rg-XfO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="93" id="94Y-j8-XGo"/>
+                                            <constraint firstAttribute="width" constant="311" id="AAF-vg-cKe"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6o-aS-g17" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="299" width="311" height="93"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="tni-Qi-mt2">
+                                                <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLq-Q7-isO" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                                <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$64.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCJ-W6-S8A">
+                                                        <rect key="frame" x="6" y="5" width="62" height="26"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Cello Blue"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="31-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLU-Tw-eXA">
+                                                <rect key="frame" x="16" y="26" width="133" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                                <color key="textColor" name="Cello Blue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHT-hv-GC0">
+                                                <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="jVy-hY-dHJ"/>
+                                                    <segue destination="OJ1-x8-6UG" kind="show" id="XAQ-g2-oiS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="311" id="F0m-tS-PpS"/>
+                                            <constraint firstAttribute="height" constant="93" id="yUS-Rm-0R4"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRg-FG-7WL" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="413" width="311" height="93"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2Mb-lr-SrP">
+                                                <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvA-x2-qFy" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                                <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$85.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYC-aO-LhJ">
+                                                        <rect key="frame" x="6" y="5" width="62" height="26"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Cello Blue"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="31-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYj-U5-Iov">
+                                                <rect key="frame" x="16" y="26" width="133" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RUSH HOUR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8Y-6I-Xad">
+                                                <rect key="frame" x="197" y="5" width="98" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lt4-eh-2eT">
+                                                <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="r33-Kv-aA3"/>
+                                                    <segue destination="OJ1-x8-6UG" kind="show" id="E0R-bm-6I0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Havelock Blue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="93" id="YPZ-dL-GxP"/>
+                                            <constraint firstAttribute="width" constant="311" id="hcz-L3-IRJ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpP-T7-VJE" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="529" width="311" height="93"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Fnn-UN-oj7">
+                                                <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUI-zd-N38" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                                <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$31.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="www-j4-rQq">
+                                                        <rect key="frame" x="6" y="5" width="62" height="26"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Cello Blue"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="31-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyR-Yv-xha">
+                                                <rect key="frame" x="16" y="26" width="133" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DISCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIo-U6-42b">
+                                                <rect key="frame" x="212" y="5" width="88" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIt-P1-d26">
+                                                <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="5Xp-nz-e5J"/>
+                                                    <segue destination="OJ1-x8-6UG" kind="show" id="G93-ed-WRA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Buttercup Orange"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="93" id="2bN-eA-TUH"/>
+                                            <constraint firstAttribute="width" constant="311" id="l8c-pE-G9Q"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PtB-fW-WHT" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="644" width="311" height="93"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dwx-vU-C4r">
+                                                <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-lm-fBL" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                                <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$7.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCB-p8-w8k">
+                                                        <rect key="frame" x="12" y="5" width="51" height="26"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Cello Blue"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pay As You Go" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yw0-F9-Mph">
+                                                <rect key="frame" x="15" y="28" width="158" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6OL-AF-q7a">
+                                                <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="Hbt-zE-dLY"/>
+                                                    <segue destination="OJ1-x8-6UG" kind="show" id="gMi-hL-mym"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="311" id="ASs-rA-P2m"/>
+                                            <constraint firstAttribute="height" constant="93" id="y3B-Q3-vIN"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvm-ac-ues">
+                                        <rect key="frame" x="137" y="13" width="101" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="6gs-FI-rdV"/>
+                                            <constraint firstAttribute="width" constant="101" id="u5I-Wf-ErH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mSX-qJ-Zmh" firstAttribute="top" secondItem="jzy-U7-aMt" secondAttribute="bottom" constant="25" id="21p-mV-nmr"/>
+                                    <constraint firstItem="zRg-FG-7WL" firstAttribute="top" secondItem="w6o-aS-g17" secondAttribute="bottom" constant="21" id="3Vl-Y1-9Tr"/>
+                                    <constraint firstItem="w6o-aS-g17" firstAttribute="centerX" secondItem="ix5-FX-pTG" secondAttribute="centerX" id="FVQ-Du-XPq"/>
+                                    <constraint firstItem="EpP-T7-VJE" firstAttribute="centerX" secondItem="ix5-FX-pTG" secondAttribute="centerX" id="KlG-BQ-a8W"/>
+                                    <constraint firstItem="EpP-T7-VJE" firstAttribute="top" secondItem="zRg-FG-7WL" secondAttribute="bottom" constant="23" id="OsF-Ya-q2T"/>
+                                    <constraint firstItem="jzy-U7-aMt" firstAttribute="centerX" secondItem="ix5-FX-pTG" secondAttribute="centerX" id="SfE-dV-fx9"/>
+                                    <constraint firstItem="mSX-qJ-Zmh" firstAttribute="centerX" secondItem="ix5-FX-pTG" secondAttribute="centerX" id="U5Q-Hn-r3U"/>
+                                    <constraint firstItem="PtB-fW-WHT" firstAttribute="centerX" secondItem="ix5-FX-pTG" secondAttribute="centerX" id="adZ-d3-9kG"/>
+                                    <constraint firstItem="PtB-fW-WHT" firstAttribute="top" secondItem="EpP-T7-VJE" secondAttribute="bottom" constant="22" id="dh0-AS-wS2"/>
+                                    <constraint firstItem="wvm-ac-ues" firstAttribute="top" secondItem="ix5-FX-pTG" secondAttribute="top" constant="13" id="e7X-md-F9Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="vPm-5R-t0H" secondAttribute="trailing" id="hTU-QD-oMw"/>
+                                    <constraint firstItem="wvm-ac-ues" firstAttribute="centerX" secondItem="ix5-FX-pTG" secondAttribute="centerX" id="ibZ-Wp-1zc"/>
+                                    <constraint firstItem="zRg-FG-7WL" firstAttribute="centerX" secondItem="ix5-FX-pTG" secondAttribute="centerX" id="kMj-ph-mmi"/>
+                                    <constraint firstAttribute="bottom" secondItem="vPm-5R-t0H" secondAttribute="bottom" constant="-1" id="mFb-Iu-JDg"/>
+                                    <constraint firstItem="vPm-5R-t0H" firstAttribute="leading" secondItem="ix5-FX-pTG" secondAttribute="leading" id="nL8-vO-Pi4"/>
+                                    <constraint firstItem="vPm-5R-t0H" firstAttribute="centerX" secondItem="ix5-FX-pTG" secondAttribute="centerX" id="rcf-qO-gWL"/>
+                                    <constraint firstItem="jzy-U7-aMt" firstAttribute="top" secondItem="wvm-ac-ues" secondAttribute="bottom" constant="27" id="ssp-4W-9NI"/>
+                                    <constraint firstItem="w6o-aS-g17" firstAttribute="top" secondItem="mSX-qJ-Zmh" secondAttribute="bottom" constant="20" id="u7U-yE-7zV"/>
+                                    <constraint firstItem="vPm-5R-t0H" firstAttribute="top" secondItem="ix5-FX-pTG" secondAttribute="top" id="wBP-PL-hI4"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ix5-FX-pTG" firstAttribute="leading" secondItem="JLG-jb-H9O" secondAttribute="leading" id="2V8-F7-jor"/>
+                            <constraint firstItem="hoZ-ie-QMy" firstAttribute="leading" secondItem="JLG-jb-H9O" secondAttribute="leading" id="9am-dB-8rC"/>
+                            <constraint firstItem="nj3-6e-ipr" firstAttribute="top" secondItem="el2-wx-Fn2" secondAttribute="top" id="CGS-s8-wfn"/>
+                            <constraint firstItem="ix5-FX-pTG" firstAttribute="top" secondItem="hoZ-ie-QMy" secondAttribute="bottom" id="GO0-QY-IOI"/>
+                            <constraint firstItem="ix5-FX-pTG" firstAttribute="trailing" secondItem="JLG-jb-H9O" secondAttribute="trailing" id="LB6-3J-wgQ"/>
+                            <constraint firstAttribute="trailing" secondItem="nj3-6e-ipr" secondAttribute="trailing" id="Ptp-ma-P1n"/>
+                            <constraint firstItem="nj3-6e-ipr" firstAttribute="leading" secondItem="el2-wx-Fn2" secondAttribute="leading" id="kES-i3-cMU"/>
+                            <constraint firstItem="hoZ-ie-QMy" firstAttribute="top" secondItem="JLG-jb-H9O" secondAttribute="top" constant="-20" id="mOR-jo-qHG"/>
+                            <constraint firstItem="hoZ-ie-QMy" firstAttribute="trailing" secondItem="JLG-jb-H9O" secondAttribute="trailing" id="wew-cV-svg"/>
+                            <constraint firstAttribute="bottom" secondItem="ix5-FX-pTG" secondAttribute="bottom" constant="-1" id="zjM-zY-NQC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JLG-jb-H9O"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hx9-76-PMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1034.7826086956522" y="723.09782608695662"/>
+        </scene>
+        <!--Pass Details View Controller-->
+        <scene sceneID="ITT-mQ-wrE">
+            <objects>
+                <viewController id="OJ1-x8-6UG" customClass="GFPassDetailsViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gb2-9F-LQf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaz-n6-DgV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <color key="backgroundColor" name="Cello Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bOC-Aa-f1A"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMf-Si-riT">
+                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPe-qM-Ote">
+                                        <rect key="frame" x="13" y="40" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" image="Hamburger"/>
+                                        <connections>
+                                            <segue destination="NM7-Ry-ZaM" kind="presentation" id="v1G-Ll-dcZ"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="7Ef-M5-csK">
+                                        <rect key="frame" x="134" y="30" width="108" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="dJJ-c3-6xJ"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="pNs-Fk-LhB"/>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1N-SF-g71" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-ZQ-DFV">
+                                        <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6b-th-6wn" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$7.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sd4-Ex-cti">
+                                                <rect key="frame" x="12" y="5" width="51" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pay As You Go" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="na2-rU-1Ic">
+                                        <rect key="frame" x="15" y="28" width="158" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="105" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkb-C6-tP9">
+                                        <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="yhU-O6-rMk"/>
+                                            <action selector="showDetails:" destination="xfT-WR-k78" eventType="touchUpInside" id="wJd-9L-vIa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="edF-b5-F77"/>
+                                    <constraint firstAttribute="height" constant="93" id="ndo-WI-0oS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVR-y9-kX0" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="S46-S9-wmH">
+                                        <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3v-tI-tHM" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$31.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8M-Sc-S68">
+                                                <rect key="frame" x="6" y="5" width="62" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="31-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIG-Jo-dQA">
+                                        <rect key="frame" x="16" y="26" width="133" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DISCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeP-89-xWf">
+                                        <rect key="frame" x="212" y="5" width="88" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="105" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldY-8o-bff">
+                                        <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="sNG-kZ-A5w"/>
+                                            <action selector="showDetails:" destination="xfT-WR-k78" eventType="touchUpInside" id="0TF-FY-87v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="Buttercup Orange"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="OAl-sp-sNc"/>
+                                    <constraint firstAttribute="width" constant="311" id="kdu-FQ-iej"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Daz-EP-iTO" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DL5-Dk-GaH">
+                                        <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5c-Bq-aeo" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$85.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5g-Oq-oG7">
+                                                <rect key="frame" x="6" y="5" width="62" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="31-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d9-Hl-zA0">
+                                        <rect key="frame" x="16" y="26" width="133" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RUSH HOUR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z6-jU-orh">
+                                        <rect key="frame" x="197" y="5" width="98" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2q-pO-l1y">
+                                        <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="i8a-Mj-jiS"/>
+                                            <action selector="showDetails:" destination="xfT-WR-k78" eventType="touchUpInside" id="2cb-hk-1dO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="Havelock Blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="CbA-oJ-WwP"/>
+                                    <constraint firstAttribute="height" constant="93" id="Xqi-z7-Jdz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hve-UC-96I" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="YJi-8L-rEu">
+                                        <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4AS-KX-0xb" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$64.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rn-UM-lLZ">
+                                                <rect key="frame" x="6" y="5" width="62" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="31-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEd-64-Zyx">
+                                        <rect key="frame" x="16" y="26" width="133" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" name="Cello Blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5n-62-6x6">
+                                        <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="wEP-Ys-rDK"/>
+                                            <action selector="showDetails:" destination="xfT-WR-k78" eventType="touchUpInside" id="96U-Jb-zuS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="IGa-ZX-U2c"/>
+                                    <constraint firstAttribute="width" constant="311" id="Pro-B3-uwQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrd-Hp-UKd" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RP1-Yj-ac8">
+                                        <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g76-dz-u0Y" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$24.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOA-Nz-NgS">
+                                                <rect key="frame" x="6" y="5" width="62" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7-Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-1a-SpG">
+                                        <rect key="frame" x="18" y="26" width="119" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" name="Cello Blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YT-lq-7nD">
+                                        <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="P6z-vq-wrc"/>
+                                            <action selector="showDetails:" destination="xfT-WR-k78" eventType="touchUpInside" id="eWa-mv-2Y6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="K0Y-vj-xiY"/>
+                                    <constraint firstAttribute="height" constant="93" id="j9A-6I-OVW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWV-Ry-D6u" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-r5-Axv">
+                                        <rect key="frame" x="213" y="0.0" width="88" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nwz-78-Aw3" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="27" width="76" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$4.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBE-eZ-db1">
+                                                <rect key="frame" x="11" y="5" width="51" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Cello Blue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDO-j2-CiN">
+                                        <rect key="frame" x="9" y="26" width="107" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" name="Cello Blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqv-SD-ZTX">
+                                        <rect key="frame" x="3" y="0.0" width="308" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="selectPass:" destination="09f-3d-asQ" eventType="touchUpInside" id="b5R-B0-fhl"/>
+                                            <action selector="showDetails:" destination="xfT-WR-k78" eventType="touchUpInside" id="lhX-bh-daE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="ouG-yN-61k"/>
+                                    <constraint firstAttribute="height" constant="93" id="p0y-7K-ydy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pass Selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vw-hi-9NK">
+                                <rect key="frame" x="122" y="115" width="131" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="YyA-ee-jsK"/>
+                                    <constraint firstAttribute="height" constant="29" id="ni5-2Q-jGb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRm-rN-3cs">
+                                <rect key="frame" x="0.0" y="100" width="99" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Zca-Dx-POk"/>
+                                    <constraint firstAttribute="width" constant="99" id="cr8-CP-eFQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="&lt; back to Passes"/>
+                                <connections>
+                                    <action selector="goBack:" destination="OJ1-x8-6UG" eventType="touchUpInside" id="rcH-lH-cjj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31-Day Pass (Rush Hour)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45T-cH-OO6">
+                                <rect key="frame" x="37" y="164" width="301" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP7-eB-rt4" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                                <rect key="frame" x="81" y="512" width="213" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="213" id="1PK-uN-vWQ"/>
+                                    <constraint firstAttribute="height" constant="38" id="87V-Yf-yxz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Proceed to payment">
+                                    <color key="titleColor" name="Cello Blue"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="d1F-ro-ePF" kind="show" id="Gf8-TW-hh5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Alto Gray"/>
+                        <constraints>
+                            <constraint firstItem="3vw-hi-9NK" firstAttribute="centerX" secondItem="gb2-9F-LQf" secondAttribute="centerX" id="2EY-yv-zgA"/>
+                            <constraint firstItem="hve-UC-96I" firstAttribute="centerX" secondItem="gb2-9F-LQf" secondAttribute="centerX" id="37n-dI-VWK"/>
+                            <constraint firstItem="HP7-eB-rt4" firstAttribute="centerX" secondItem="gb2-9F-LQf" secondAttribute="centerX" id="6vf-JB-zRu"/>
+                            <constraint firstItem="45T-cH-OO6" firstAttribute="top" secondItem="3vw-hi-9NK" secondAttribute="bottom" constant="20" id="7m4-RG-0FQ"/>
+                            <constraint firstItem="OqP-Wo-b9p" firstAttribute="trailing" secondItem="45T-cH-OO6" secondAttribute="trailing" constant="37" id="8Fn-aZ-jmX"/>
+                            <constraint firstItem="Zrd-Hp-UKd" firstAttribute="top" secondItem="45T-cH-OO6" secondAttribute="bottom" constant="27" id="D4B-ox-vzn"/>
+                            <constraint firstItem="hve-UC-96I" firstAttribute="top" secondItem="45T-cH-OO6" secondAttribute="bottom" constant="27" id="DLI-OB-1nX"/>
+                            <constraint firstItem="uMf-Si-riT" firstAttribute="top" secondItem="OqP-Wo-b9p" secondAttribute="top" constant="-20" id="EUD-8W-Eaa"/>
+                            <constraint firstItem="Zrd-Hp-UKd" firstAttribute="centerX" secondItem="gb2-9F-LQf" secondAttribute="centerX" id="LsE-Fk-4sT"/>
+                            <constraint firstItem="cWV-Ry-D6u" firstAttribute="top" secondItem="45T-cH-OO6" secondAttribute="bottom" constant="27" id="PGo-NQ-JZu"/>
+                            <constraint firstItem="n1N-SF-g71" firstAttribute="centerX" secondItem="gb2-9F-LQf" secondAttribute="centerX" id="TRZ-Il-Rq0"/>
+                            <constraint firstItem="uMf-Si-riT" firstAttribute="trailing" secondItem="OqP-Wo-b9p" secondAttribute="trailing" id="VDb-hj-vGf"/>
+                            <constraint firstItem="45T-cH-OO6" firstAttribute="leading" secondItem="OqP-Wo-b9p" secondAttribute="leading" constant="37" id="WUZ-lG-rdc"/>
+                            <constraint firstItem="nVR-y9-kX0" firstAttribute="centerX" secondItem="gb2-9F-LQf" secondAttribute="centerX" id="Wch-F3-sew"/>
+                            <constraint firstItem="nVR-y9-kX0" firstAttribute="top" secondItem="45T-cH-OO6" secondAttribute="bottom" constant="27" id="X1I-gK-rNx"/>
+                            <constraint firstItem="gRm-rN-3cs" firstAttribute="top" secondItem="uMf-Si-riT" secondAttribute="bottom" id="Xby-fW-Jfe"/>
+                            <constraint firstItem="3vw-hi-9NK" firstAttribute="top" secondItem="uMf-Si-riT" secondAttribute="bottom" constant="15" id="Xts-97-vCe"/>
+                            <constraint firstItem="Daz-EP-iTO" firstAttribute="centerX" secondItem="gb2-9F-LQf" secondAttribute="centerX" id="YoA-zJ-WWE"/>
+                            <constraint firstItem="Daz-EP-iTO" firstAttribute="top" secondItem="45T-cH-OO6" secondAttribute="bottom" constant="27" id="Z0G-QG-gOL"/>
+                            <constraint firstAttribute="trailing" secondItem="qaz-n6-DgV" secondAttribute="trailing" id="bAE-0Z-Ths"/>
+                            <constraint firstItem="qaz-n6-DgV" firstAttribute="leading" secondItem="gb2-9F-LQf" secondAttribute="leading" id="cO3-A8-TqN"/>
+                            <constraint firstItem="cWV-Ry-D6u" firstAttribute="centerX" secondItem="gb2-9F-LQf" secondAttribute="centerX" id="d1t-Xc-W1k"/>
+                            <constraint firstItem="gRm-rN-3cs" firstAttribute="leading" secondItem="OqP-Wo-b9p" secondAttribute="leading" id="hTM-0l-Ibj"/>
+                            <constraint firstItem="HP7-eB-rt4" firstAttribute="top" secondItem="n1N-SF-g71" secondAttribute="bottom" constant="199" id="iAF-lr-zvE"/>
+                            <constraint firstItem="n1N-SF-g71" firstAttribute="top" secondItem="45T-cH-OO6" secondAttribute="bottom" constant="27" id="v36-ET-5rf"/>
+                            <constraint firstItem="uMf-Si-riT" firstAttribute="leading" secondItem="OqP-Wo-b9p" secondAttribute="leading" id="waC-Vb-OlR"/>
+                            <constraint firstItem="qaz-n6-DgV" firstAttribute="top" secondItem="gb2-9F-LQf" secondAttribute="top" id="wbS-Lb-e5k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OqP-Wo-b9p"/>
+                    </view>
+                    <connections>
+                        <outlet property="passTitle" destination="45T-cH-OO6" id="Qhr-0c-25q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXC-1j-yRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2140" y="724.13793103448279"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="10 Purchase Process 3" width="375" height="737"/>
+        <image name="12 Passes screen" width="390" height="764"/>
+        <image name="BusIcon" width="20" height="20"/>
+        <image name="Hamburger" width="20" height="13"/>
+        <image name="QR Code" width="202" height="202"/>
+        <image name="cota-logo-blue" width="114" height="36"/>
+        <namedColor name="Alto Gray">
+            <color red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Buttercup Orange">
+            <color red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Cello Blue">
+            <color red="0.1333333333" green="0.21176470589999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dusty Gray">
+            <color red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Havelock Blue">
+            <color red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gMi-hL-mym"/>
+        <segue reference="taz-gd-cKh"/>
+        <segue reference="Qxq-v8-V0g"/>
+        <segue reference="47J-C3-ocP"/>
+    </inferredMetricsTieBreakers>
+</document>

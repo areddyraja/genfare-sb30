@@ -1,1 +1,0 @@
-../../../libpng/pngstruct.h

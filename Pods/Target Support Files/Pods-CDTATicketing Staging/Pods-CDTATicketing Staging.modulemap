@@ -1,6 +1,0 @@
-module Pods_CDTATicketing_Staging {
-  umbrella header "Pods-CDTATicketing Staging-umbrella.h"
-
-  export *
-  module * { export * }
-}

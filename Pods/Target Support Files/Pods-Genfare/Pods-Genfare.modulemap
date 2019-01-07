@@ -1,0 +1,6 @@
+framework module Pods_Genfare {
+  umbrella header "Pods-Genfare-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,6 +1,0 @@
-module Pods_CDTATicketing_Integration {
-  umbrella header "Pods-CDTATicketing Integration-umbrella.h"
-
-  export *
-  module * { export * }
-}

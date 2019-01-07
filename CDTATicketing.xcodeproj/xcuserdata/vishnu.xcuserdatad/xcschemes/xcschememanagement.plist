@@ -7,72 +7,72 @@
 		<key>BCTTicketing Staging.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>38</integer>
+			<integer>11</integer>
 		</dict>
 		<key>BCTTicketing UAT.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>39</integer>
+			<integer>12</integer>
 		</dict>
 		<key>BVTATicketing Staging.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>40</integer>
+			<integer>13</integer>
 		</dict>
 		<key>CDTATicketing Beta.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>27</integer>
+			<integer>0</integer>
 		</dict>
 		<key>CDTATicketing Demo.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>31</integer>
+			<integer>4</integer>
 		</dict>
 		<key>CDTATicketing Dev.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>32</integer>
+			<integer>5</integer>
 		</dict>
 		<key>CDTATicketing Integration.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>30</integer>
+			<integer>3</integer>
 		</dict>
 		<key>CDTATicketing Local.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>34</integer>
+			<integer>7</integer>
 		</dict>
 		<key>CDTATicketing QA.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>33</integer>
+			<integer>6</integer>
 		</dict>
 		<key>CDTATicketing Staging.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>28</integer>
+			<integer>1</integer>
 		</dict>
 		<key>CDTATicketing UAT.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>29</integer>
+			<integer>2</integer>
 		</dict>
 		<key>COTATicketing Beta.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>37</integer>
+			<integer>10</integer>
 		</dict>
 		<key>COTATicketing Staging.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>35</integer>
+			<integer>8</integer>
 		</dict>
 		<key>COTATicketing UAT.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>36</integer>
+			<integer>9</integer>
 		</dict>
 	</dict>
 </dict>

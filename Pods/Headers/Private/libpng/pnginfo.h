@@ -1,1 +1,0 @@
-../../../libpng/pnginfo.h

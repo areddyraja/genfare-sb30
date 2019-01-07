@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CNi-5a-VkN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="GnP-h2-dKg">
+            <objects>
+                <viewController storyboardIdentifier="GFNAVIGATEMENUSETTINGS" id="CNi-5a-VkN" customClass="GFSettingsViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aV7-7B-3ra">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRR-uC-tpU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hF-AR-Cuu">
+                                        <rect key="frame" x="13" y="40" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" image="Hamburger"/>
+                                        <connections>
+                                            <segue destination="BoL-4L-H9s" kind="presentation" id="81F-8F-M1m"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="y0R-Ep-O5f">
+                                        <rect key="frame" x="134" y="30" width="108" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="Gf6-vn-SBO"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="wFD-u8-bY7"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1z-yh-h66">
+                                <rect key="frame" x="0.0" y="76" width="375" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfe-N1-Vsv">
+                                        <rect key="frame" x="151" y="11" width="72" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.84590773809999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="v6X-eh-wfx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbP-UW-X8t">
+                                <rect key="frame" x="0.0" y="123" width="375" height="544"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11 Settings screen" translatesAutoresizingMaskIntoConstraints="NO" id="gQv-Ig-cZG">
+                                        <rect key="frame" x="8" y="8" width="359" height="422"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <viewLayoutGuide key="safeArea" id="0sC-Hq-HdW"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.84590773809523812" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vRR-uC-tpU" firstAttribute="trailing" secondItem="zEA-DM-Lqe" secondAttribute="trailing" id="BPC-u0-Xse"/>
+                            <constraint firstItem="n1z-yh-h66" firstAttribute="top" secondItem="vRR-uC-tpU" secondAttribute="bottom" id="CxT-Co-yfn"/>
+                            <constraint firstItem="EbP-UW-X8t" firstAttribute="bottom" secondItem="zEA-DM-Lqe" secondAttribute="bottom" id="EU4-Jf-GEz"/>
+                            <constraint firstItem="n1z-yh-h66" firstAttribute="trailing" secondItem="zEA-DM-Lqe" secondAttribute="trailing" id="GRB-hQ-aLz"/>
+                            <constraint firstItem="EbP-UW-X8t" firstAttribute="leading" secondItem="zEA-DM-Lqe" secondAttribute="leading" id="L6W-eZ-TGl"/>
+                            <constraint firstItem="EbP-UW-X8t" firstAttribute="trailing" secondItem="zEA-DM-Lqe" secondAttribute="trailing" id="byP-NI-vMM"/>
+                            <constraint firstItem="EbP-UW-X8t" firstAttribute="top" secondItem="n1z-yh-h66" secondAttribute="bottom" id="ckb-LO-cUO"/>
+                            <constraint firstItem="vRR-uC-tpU" firstAttribute="top" secondItem="zEA-DM-Lqe" secondAttribute="top" constant="-20" id="fwh-Gj-xnd"/>
+                            <constraint firstItem="vRR-uC-tpU" firstAttribute="leading" secondItem="zEA-DM-Lqe" secondAttribute="leading" id="vr7-OA-x26"/>
+                            <constraint firstItem="n1z-yh-h66" firstAttribute="leading" secondItem="zEA-DM-Lqe" secondAttribute="leading" id="zxq-fN-j25"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zEA-DM-Lqe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAN-oY-bsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-247.19999999999999" y="165.06746626686657"/>
+        </scene>
+        <!--Sidemenu-->
+        <scene sceneID="OE3-we-2Ya">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Sidemenu" id="BoL-4L-H9s" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adG-KK-PCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398" y="163"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="11 Settings screen" width="363" height="417"/>
+        <image name="Hamburger" width="20" height="13"/>
+        <image name="cota-logo-blue" width="114" height="36"/>
+    </resources>
+</document>

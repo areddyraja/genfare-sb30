@@ -10,9 +10,14 @@ target 'Genfare' do
   pod 'Alamofire', '~> 4.7'
   pod 'GoogleMaps'
   pod 'Alamofire-SwiftyJSON'
+  pod 'NetworkStack'
+  pod 'Decodable'
+  pod 'RxSwift'
 
   target 'GenfareTests' do
     inherit! :search_paths
+    pod 'OHHTTPStubs'
+    pod 'OHHTTPStubs/Swift'
   end
 
 end

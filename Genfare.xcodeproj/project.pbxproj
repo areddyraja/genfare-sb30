@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2712E7F121DF862800FF19CA /* GFUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712E7F021DF862800FF19CA /* GFUtilities.swift */; };
+		2E56112DD7339EAE91ADA62C /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
 		4809717D2137D23000B4445A /* GFLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809717C2137D23000B4445A /* GFLocation.swift */; };
 		4809717F2137DBF600B4445A /* GFStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809717E2137DBF600B4445A /* GFStation.swift */; };
 		480971812137DFD900B4445A /* GFSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480971802137DFD900B4445A /* GFSampleViewController.swift */; };
@@ -89,7 +90,6 @@
 		486DA5A721674F67006B8BA5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48656FF82122EA4200E94556 /* HomeViewController.swift */; };
 		486DA5A821674F67006B8BA5 /* GFNavigateTimingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849088D2136C048008D0B6F /* GFNavigateTimingsViewController.swift */; };
 		486DA5A921674F67006B8BA5 /* GFPassDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718D213FFCAA00B4445A /* GFPassDetailsViewController.swift */; };
-		486DA5AB21674F67006B8BA5 /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
 		486DA5AD21674F67006B8BA5 /* Store.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088621367886008D0B6F /* Store.storyboard */; };
 		486DA5AE21674F67006B8BA5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088421367885008D0B6F /* Login.storyboard */; };
 		486DA5AF21674F67006B8BA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CD2122A85F003A1289 /* LaunchScreen.storyboard */; };
@@ -130,6 +130,7 @@
 
 /* Begin PBXFileReference section */
 		0949D0D0E678181FECD6BDE3 /* Pods-GenfareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenfareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests.release.xcconfig"; sourceTree = "<group>"; };
+		0DD4A1612DEEB412E5FCB5FE /* Pods-Genfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.release.xcconfig"; sourceTree = "<group>"; };
 		182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Genfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2712E7F021DF862800FF19CA /* GFUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUtilities.swift; sourceTree = "<group>"; };
 		4809717C2137D23000B4445A /* GFLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFLocation.swift; sourceTree = "<group>"; };
@@ -195,8 +196,7 @@
 		48C6BFD32148DA0000E2065F /* GFRouteLegsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRouteLegsScrollView.swift; sourceTree = "<group>"; };
 		48C6BFD52149244E00E2065F /* GFMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFMenuButton.swift; sourceTree = "<group>"; };
 		71ACF688C296F64A851CE270 /* Pods-GenfareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenfareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8D03F2693F38696933B16459 /* Pods-Genfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.release.xcconfig"; sourceTree = "<group>"; };
-		CAA5B0E6A99917B381985455 /* Pods-Genfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.debug.xcconfig"; sourceTree = "<group>"; };
+		9D1ADE31BC003EA18FBD231F /* Pods-Genfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.debug.xcconfig"; sourceTree = "<group>"; };
 		D10D27795AB4339957A57FF4 /* Pods_GenfareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenfareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -205,7 +205,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				486DA5AB21674F67006B8BA5 /* Pods_Genfare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BAC9B3158A6CF08A5C00CBE /* Pods_Genfare.framework in Frameworks */,
+				2E56112DD7339EAE91ADA62C /* Pods_Genfare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,10 +407,10 @@
 		6A6B6813CCBA84703B94100C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CAA5B0E6A99917B381985455 /* Pods-Genfare.debug.xcconfig */,
-				8D03F2693F38696933B16459 /* Pods-Genfare.release.xcconfig */,
 				71ACF688C296F64A851CE270 /* Pods-GenfareTests.debug.xcconfig */,
 				0949D0D0E678181FECD6BDE3 /* Pods-GenfareTests.release.xcconfig */,
+				9D1ADE31BC003EA18FBD231F /* Pods-Genfare.debug.xcconfig */,
+				0DD4A1612DEEB412E5FCB5FE /* Pods-Genfare.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -422,12 +422,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 486DA5B721674F67006B8BA5 /* Build configuration list for PBXNativeTarget "Genfare CDTA UAT" */;
 			buildPhases = (
-				486DA57D21674F67006B8BA5 /* [CP] Check Pods Manifest.lock */,
 				486DA57E21674F67006B8BA5 /* Sources */,
 				486DA5AA21674F67006B8BA5 /* Frameworks */,
 				486DA5AC21674F67006B8BA5 /* Resources */,
-				486DA5B521674F67006B8BA5 /* [CP] Embed Pods Frameworks */,
-				486DA5B621674F67006B8BA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -466,6 +463,7 @@
 				4884E6D12122A85F003A1289 /* Sources */,
 				4884E6D22122A85F003A1289 /* Frameworks */,
 				4884E6D32122A85F003A1289 /* Resources */,
+				94E346B5746BEB2DCDC0427B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -576,66 +574,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		486DA57D21674F67006B8BA5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Genfare-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		486DA5B521674F67006B8BA5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		486DA5B621674F67006B8BA5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		94B798631C3A52AEBE6CF7A8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -645,6 +583,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/NetworkStack/NetworkStack.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -652,12 +595,39 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NetworkStack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94E346B5746BEB2DCDC0427B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D637D821C53F5F9B09E0F0CE /* [CP] Check Pods Manifest.lock */ = {
@@ -842,7 +812,6 @@
 /* Begin XCBuildConfiguration section */
 		486DA5B821674F67006B8BA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAA5B0E6A99917B381985455 /* Pods-Genfare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -867,7 +836,6 @@
 		};
 		486DA5B921674F67006B8BA5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D03F2693F38696933B16459 /* Pods-Genfare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1005,7 +973,7 @@
 		};
 		4884E6DF2122A85F003A1289 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAA5B0E6A99917B381985455 /* Pods-Genfare.debug.xcconfig */;
+			baseConfigurationReference = 9D1ADE31BC003EA18FBD231F /* Pods-Genfare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1013,7 +981,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q7E57UKAF;
 				INFOPLIST_FILE = Genfare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1031,7 +999,7 @@
 		};
 		4884E6E02122A85F003A1289 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D03F2693F38696933B16459 /* Pods-Genfare.release.xcconfig */;
+			baseConfigurationReference = 0DD4A1612DEEB412E5FCB5FE /* Pods-Genfare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1039,7 +1007,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q7E57UKAF;
 				INFOPLIST_FILE = Genfare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

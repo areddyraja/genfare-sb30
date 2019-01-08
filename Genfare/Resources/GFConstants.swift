@@ -32,7 +32,7 @@ struct Constants {
     }
     
     struct Path {
-        
+        static let KeychainService = "com.genfare.mobile2.service"
     }
     
     struct Address {

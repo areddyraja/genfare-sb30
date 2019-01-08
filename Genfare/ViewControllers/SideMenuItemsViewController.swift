@@ -35,28 +35,33 @@ class SideMenuItemsViewController: UIViewController {
     }
     
     @IBAction func homeButtonTap(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-        NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.HomeScreen), object: nil)
+        dismiss(animated: false) {
+            NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.HomeScreen), object: nil)
+        }
     }
     
     @IBAction func planTrip(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-        NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.PlanTrip), object: nil)
+        dismiss(animated: false) {
+            NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.PlanTrip), object: nil)
+        }
     }
     
     @IBAction func showPasses(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-        NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.PassPurchase), object: nil)
+        dismiss(animated: false) {
+            NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.PassPurchase), object: nil)
+        }
     }
 
     @IBAction func showSettings(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-        NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.Settings), object: nil)
+        dismiss(animated: false) {
+            NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.Settings), object: nil)
+        }
     }
     
     @IBAction func userLogin(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-        NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.Login), object: nil)
+        dismiss(animated: false) {
+            NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.Login), object: nil)
+        }
     }
 
     /*

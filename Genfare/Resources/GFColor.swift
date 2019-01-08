@@ -45,8 +45,9 @@ extension UIColor {
     }
     
     static func colorForString(str:String) -> UIColor {
-        let bgColor:String = Utilities.colorHexString(fromId: String.init(format: "%@%@", Utilities.tenantId()?.lowercased() ?? "", str))
-        return UIColor.init(hexString: bgColor)
+        return UIColor.white
+//        let bgColor:String = Utilities.colorHexString(fromId: String.init(format: "%@%@", Utilities.tenantId()?.lowercased() ?? "", str))
+//        return UIColor.init(hexString: bgColor)
     }
     
     convenience init(hexString: String, alpha: CGFloat = 1.0) {

@@ -114,6 +114,146 @@
 		48C6BFD22148C8C900E2065F /* EncodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD12148C8C900E2065F /* EncodeUtil.m */; };
 		48C6BFD42148DA0000E2065F /* GFRouteLegsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD32148DA0000E2065F /* GFRouteLegsScrollView.swift */; };
 		48C6BFD62149244E00E2065F /* GFMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD52149244E00E2065F /* GFMenuButton.swift */; };
+		4A39165B21E496B90063D6F4 /* GFBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA57A21674F4E006B8BA5 /* GFBaseService.swift */; };
+		4A39165C21E496B90063D6F4 /* GFConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486570A6212D5DEA00E94556 /* GFConstants.swift */; };
+		4A39165D21E496B90063D6F4 /* GFHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA572215E03B8006B8BA5 /* GFHistoryTableViewCell.swift */; };
+		4A39165E21E496B90063D6F4 /* GFRecentTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48490876212FE754008D0B6F /* GFRecentTripsViewController.swift */; };
+		4A39165F21E496B90063D6F4 /* SideMenuItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486570A2212C207300E94556 /* SideMenuItemsViewController.swift */; };
+		4A39166021E496B90063D6F4 /* GFMapsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486570A4212C29CD00E94556 /* GFMapsUtility.swift */; };
+		4A39166121E496B90063D6F4 /* GFTextFieldBackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A004A212EAF070027D8D4 /* GFTextFieldBackGround.swift */; };
+		4A39166221E496B90063D6F4 /* GFRouteLegsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD32148DA0000E2065F /* GFRouteLegsScrollView.swift */; };
+		4A39166321E496B90063D6F4 /* GFMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD52149244E00E2065F /* GFMenuButton.swift */; };
+		4A39166421E496B90063D6F4 /* GFSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA5762165E69F006B8BA5 /* GFSignupViewController.swift */; };
+		4A39166521E496B90063D6F4 /* GFTripHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881C42A215BAE690088CF5F /* GFTripHistoryManager.swift */; };
+		4A39166621E496B90063D6F4 /* GFTripDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4865709A212ACEDE00E94556 /* GFTripDataManager.swift */; };
+		4A39166721E496B90063D6F4 /* GFTransitStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD5582146C42500E88AAA /* GFTransitStop.swift */; };
+		4A39166821E496B90063D6F4 /* GFStationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718221391AF700B4445A /* GFStationListTableViewCell.swift */; };
+		4A39166921E496B90063D6F4 /* GFOAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA5BC21676C96006B8BA5 /* GFOAuthService.swift */; };
+		4A39166A21E496B90063D6F4 /* GFActivatePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48097191213FFCEF00B4445A /* GFActivatePassViewController.swift */; };
+		4A39166B21E496B90063D6F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884E6C32122A85D003A1289 /* ViewController.swift */; };
+		4A39166C21E496B90063D6F4 /* Genfare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4884E6C82122A85D003A1289 /* Genfare.xcdatamodeld */; };
+		4A39166D21E496B90063D6F4 /* GFSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480971802137DFD900B4445A /* GFSampleViewController.swift */; };
+		4A39166E21E496B90063D6F4 /* GFNavigateRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849088F2136C08A008D0B6F /* GFNavigateRouteViewController.swift */; };
+		4A39166F21E496B90063D6F4 /* GFRecentTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881C428215B8A210088CF5F /* GFRecentTrip.swift */; };
+		4A39167021E496B90063D6F4 /* GFPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48097193213FFD1D00B4445A /* GFPaymentViewController.swift */; };
+		4A39167121E496B90063D6F4 /* GFMyPassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718A213FEEE400B4445A /* GFMyPassesViewController.swift */; };
+		4A39167221E496B90063D6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884E6C12122A85D003A1289 /* AppDelegate.swift */; };
+		4A39167321E496B90063D6F4 /* GFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849087821351CE3008D0B6F /* GFBaseViewController.swift */; };
+		4A39167421E496B90063D6F4 /* GFCustomTableViewCellShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A0048212EA9BE0027D8D4 /* GFCustomTableViewCellShadowView.swift */; };
+		4A39167521E496B90063D6F4 /* GFWhiteButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA57821663076006B8BA5 /* GFWhiteButtonTextField.swift */; };
+		4A39167621E496B90063D6F4 /* EncodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD12148C8C900E2065F /* EncodeUtil.m */; };
+		4A39167721E496B90063D6F4 /* GFLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849088B2136B123008D0B6F /* GFLoginViewController.swift */; };
+		4A39167821E496B90063D6F4 /* GFRouteOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718421392DDF00B4445A /* GFRouteOptionTableViewCell.swift */; };
+		4A39167921E496B90063D6F4 /* GFStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809717E2137DBF600B4445A /* GFStation.swift */; };
+		4A39167A21E496B90063D6F4 /* NavigateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48656FFB2122F21900E94556 /* NavigateViewController.swift */; };
+		4A39167B21E496B90063D6F4 /* GFRouteLeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD5542146848300E88AAA /* GFRouteLeg.swift */; };
+		4A39167C21E496B90063D6F4 /* GFSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48097188213E8A4500B4445A /* GFSettingsViewController.swift */; };
+		4A39167D21E496B90063D6F4 /* GFForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA5BE216787A1006B8BA5 /* GFForgotPasswordViewController.swift */; };
+		4A39167E21E496B90063D6F4 /* GFAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA5742164D934006B8BA5 /* GFAccountManager.swift */; };
+		4A39167F21E496B90063D6F4 /* GFReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA570215CDD58006B8BA5 /* GFReachability.swift */; };
+		4A39168021E496B90063D6F4 /* GFUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712E7F021DF862800FF19CA /* GFUtilities.swift */; };
+		4A39168121E496B90063D6F4 /* GFIconBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD55021464CAC00E88AAA /* GFIconBadge.swift */; };
+		4A39168221E496B90063D6F4 /* GFPassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718F213FFCD100B4445A /* GFPassListViewController.swift */; };
+		4A39168321E496B90063D6F4 /* GFRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD55621468DA300E88AAA /* GFRoute.swift */; };
+		4A39168421E496B90063D6F4 /* GFLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809717C2137D23000B4445A /* GFLocation.swift */; };
+		4A39168521E496B90063D6F4 /* GFColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD54E21464BA100E88AAA /* GFColor.swift */; };
+		4A39168621E496B90063D6F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48656FF82122EA4200E94556 /* HomeViewController.swift */; };
+		4A39168721E496B90063D6F4 /* GFNavigateTimingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849088D2136C048008D0B6F /* GFNavigateTimingsViewController.swift */; };
+		4A39168821E496B90063D6F4 /* GFPassDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718D213FFCAA00B4445A /* GFPassDetailsViewController.swift */; };
+		4A39168A21E496B90063D6F4 /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
+		4A39168B21E496B90063D6F4 /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
+		4A39168D21E496B90063D6F4 /* Store.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088621367886008D0B6F /* Store.storyboard */; };
+		4A39168E21E496B90063D6F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088421367885008D0B6F /* Login.storyboard */; };
+		4A39168F21E496B90063D6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CD2122A85F003A1289 /* LaunchScreen.storyboard */; };
+		4A39169021E496B90063D6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CB2122A85F003A1289 /* Assets.xcassets */; };
+		4A39169121E496B90063D6F4 /* Sidemenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088521367886008D0B6F /* Sidemenu.storyboard */; };
+		4A39169221E496B90063D6F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 486BD54C21464A3600E88AAA /* Colors.xcassets */; };
+		4A39169321E496B90063D6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6C52122A85D003A1289 /* Main.storyboard */; };
+		4A39169421E496B90063D6F4 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48097186213E845500B4445A /* Settings.storyboard */; };
+		4A3916A521E498990063D6F4 /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169D21E498960063D6F4 /* Colors.plist */; };
+		4A3916A621E498990063D6F4 /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169D21E498960063D6F4 /* Colors.plist */; };
+		4A3916A721E498990063D6F4 /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169D21E498960063D6F4 /* Colors.plist */; };
+		4A3916A821E498990063D6F4 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169E21E498960063D6F4 /* Features.plist */; };
+		4A3916A921E498990063D6F4 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169E21E498960063D6F4 /* Features.plist */; };
+		4A3916AA21E498990063D6F4 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169E21E498960063D6F4 /* Features.plist */; };
+		4A3916AB21E498990063D6F4 /* Strings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169F21E498960063D6F4 /* Strings.plist */; };
+		4A3916AC21E498990063D6F4 /* Strings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169F21E498960063D6F4 /* Strings.plist */; };
+		4A3916AD21E498990063D6F4 /* Strings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169F21E498960063D6F4 /* Strings.plist */; };
+		4A3916AE21E498990063D6F4 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A121E498990063D6F4 /* AppIcons.xcassets */; };
+		4A3916AF21E498990063D6F4 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A121E498990063D6F4 /* AppIcons.xcassets */; };
+		4A3916B021E498990063D6F4 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A121E498990063D6F4 /* AppIcons.xcassets */; };
+		4A3916B121E498990063D6F4 /* CDTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A221E498990063D6F4 /* CDTAImages.xcassets */; };
+		4A3916B221E498990063D6F4 /* CDTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A221E498990063D6F4 /* CDTAImages.xcassets */; };
+		4A3916B321E498990063D6F4 /* CDTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A221E498990063D6F4 /* CDTAImages.xcassets */; };
+		4A3916B421E498990063D6F4 /* CommonImages .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A321E498990063D6F4 /* CommonImages .xcassets */; };
+		4A3916B521E498990063D6F4 /* CommonImages .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A321E498990063D6F4 /* CommonImages .xcassets */; };
+		4A3916B621E498990063D6F4 /* CommonImages .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A321E498990063D6F4 /* CommonImages .xcassets */; };
+		4A3916B721E498990063D6F4 /* COTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A421E498990063D6F4 /* COTAImages.xcassets */; };
+		4A3916B821E498990063D6F4 /* COTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A421E498990063D6F4 /* COTAImages.xcassets */; };
+		4A3916B921E498990063D6F4 /* COTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A421E498990063D6F4 /* COTAImages.xcassets */; };
+		4A3916C521E4A0FD0063D6F4 /* GFBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA57A21674F4E006B8BA5 /* GFBaseService.swift */; };
+		4A3916C621E4A0FD0063D6F4 /* GFConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486570A6212D5DEA00E94556 /* GFConstants.swift */; };
+		4A3916C721E4A0FD0063D6F4 /* GFHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA572215E03B8006B8BA5 /* GFHistoryTableViewCell.swift */; };
+		4A3916C821E4A0FD0063D6F4 /* GFRecentTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48490876212FE754008D0B6F /* GFRecentTripsViewController.swift */; };
+		4A3916C921E4A0FD0063D6F4 /* SideMenuItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486570A2212C207300E94556 /* SideMenuItemsViewController.swift */; };
+		4A3916CA21E4A0FD0063D6F4 /* GFMapsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486570A4212C29CD00E94556 /* GFMapsUtility.swift */; };
+		4A3916CB21E4A0FD0063D6F4 /* GFTextFieldBackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A004A212EAF070027D8D4 /* GFTextFieldBackGround.swift */; };
+		4A3916CC21E4A0FD0063D6F4 /* GFRouteLegsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD32148DA0000E2065F /* GFRouteLegsScrollView.swift */; };
+		4A3916CD21E4A0FD0063D6F4 /* GFMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD52149244E00E2065F /* GFMenuButton.swift */; };
+		4A3916CE21E4A0FD0063D6F4 /* GFSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA5762165E69F006B8BA5 /* GFSignupViewController.swift */; };
+		4A3916CF21E4A0FD0063D6F4 /* GFTripHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881C42A215BAE690088CF5F /* GFTripHistoryManager.swift */; };
+		4A3916D021E4A0FD0063D6F4 /* GFTripDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4865709A212ACEDE00E94556 /* GFTripDataManager.swift */; };
+		4A3916D121E4A0FD0063D6F4 /* GFTransitStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD5582146C42500E88AAA /* GFTransitStop.swift */; };
+		4A3916D221E4A0FD0063D6F4 /* GFStationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718221391AF700B4445A /* GFStationListTableViewCell.swift */; };
+		4A3916D321E4A0FD0063D6F4 /* GFOAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA5BC21676C96006B8BA5 /* GFOAuthService.swift */; };
+		4A3916D421E4A0FD0063D6F4 /* GFActivatePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48097191213FFCEF00B4445A /* GFActivatePassViewController.swift */; };
+		4A3916D521E4A0FD0063D6F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884E6C32122A85D003A1289 /* ViewController.swift */; };
+		4A3916D621E4A0FD0063D6F4 /* Genfare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4884E6C82122A85D003A1289 /* Genfare.xcdatamodeld */; };
+		4A3916D721E4A0FD0063D6F4 /* GFSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480971802137DFD900B4445A /* GFSampleViewController.swift */; };
+		4A3916D821E4A0FD0063D6F4 /* GFNavigateRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849088F2136C08A008D0B6F /* GFNavigateRouteViewController.swift */; };
+		4A3916D921E4A0FD0063D6F4 /* GFRecentTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881C428215B8A210088CF5F /* GFRecentTrip.swift */; };
+		4A3916DA21E4A0FD0063D6F4 /* GFPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48097193213FFD1D00B4445A /* GFPaymentViewController.swift */; };
+		4A3916DB21E4A0FD0063D6F4 /* GFMyPassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718A213FEEE400B4445A /* GFMyPassesViewController.swift */; };
+		4A3916DC21E4A0FD0063D6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884E6C12122A85D003A1289 /* AppDelegate.swift */; };
+		4A3916DD21E4A0FD0063D6F4 /* GFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849087821351CE3008D0B6F /* GFBaseViewController.swift */; };
+		4A3916DE21E4A0FD0063D6F4 /* GFCustomTableViewCellShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A0048212EA9BE0027D8D4 /* GFCustomTableViewCellShadowView.swift */; };
+		4A3916DF21E4A0FD0063D6F4 /* GFWhiteButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA57821663076006B8BA5 /* GFWhiteButtonTextField.swift */; };
+		4A3916E021E4A0FD0063D6F4 /* EncodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD12148C8C900E2065F /* EncodeUtil.m */; };
+		4A3916E121E4A0FD0063D6F4 /* GFLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849088B2136B123008D0B6F /* GFLoginViewController.swift */; };
+		4A3916E221E4A0FD0063D6F4 /* GFRouteOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718421392DDF00B4445A /* GFRouteOptionTableViewCell.swift */; };
+		4A3916E321E4A0FD0063D6F4 /* GFStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809717E2137DBF600B4445A /* GFStation.swift */; };
+		4A3916E421E4A0FD0063D6F4 /* NavigateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48656FFB2122F21900E94556 /* NavigateViewController.swift */; };
+		4A3916E521E4A0FD0063D6F4 /* GFRouteLeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD5542146848300E88AAA /* GFRouteLeg.swift */; };
+		4A3916E621E4A0FD0063D6F4 /* GFSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48097188213E8A4500B4445A /* GFSettingsViewController.swift */; };
+		4A3916E721E4A0FD0063D6F4 /* GFForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA5BE216787A1006B8BA5 /* GFForgotPasswordViewController.swift */; };
+		4A3916E821E4A0FD0063D6F4 /* GFAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA5742164D934006B8BA5 /* GFAccountManager.swift */; };
+		4A3916E921E4A0FD0063D6F4 /* GFReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA570215CDD58006B8BA5 /* GFReachability.swift */; };
+		4A3916EA21E4A0FD0063D6F4 /* GFUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712E7F021DF862800FF19CA /* GFUtilities.swift */; };
+		4A3916EB21E4A0FD0063D6F4 /* GFIconBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD55021464CAC00E88AAA /* GFIconBadge.swift */; };
+		4A3916EC21E4A0FD0063D6F4 /* GFPassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718F213FFCD100B4445A /* GFPassListViewController.swift */; };
+		4A3916ED21E4A0FD0063D6F4 /* GFRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD55621468DA300E88AAA /* GFRoute.swift */; };
+		4A3916EE21E4A0FD0063D6F4 /* GFLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809717C2137D23000B4445A /* GFLocation.swift */; };
+		4A3916EF21E4A0FD0063D6F4 /* GFColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD54E21464BA100E88AAA /* GFColor.swift */; };
+		4A3916F021E4A0FD0063D6F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48656FF82122EA4200E94556 /* HomeViewController.swift */; };
+		4A3916F121E4A0FD0063D6F4 /* GFNavigateTimingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849088D2136C048008D0B6F /* GFNavigateTimingsViewController.swift */; };
+		4A3916F221E4A0FD0063D6F4 /* GFPassDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718D213FFCAA00B4445A /* GFPassDetailsViewController.swift */; };
+		4A3916F421E4A0FD0063D6F4 /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
+		4A3916F521E4A0FD0063D6F4 /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
+		4A3916F721E4A0FD0063D6F4 /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169D21E498960063D6F4 /* Colors.plist */; };
+		4A3916F821E4A0FD0063D6F4 /* Store.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088621367886008D0B6F /* Store.storyboard */; };
+		4A3916F921E4A0FD0063D6F4 /* COTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A421E498990063D6F4 /* COTAImages.xcassets */; };
+		4A3916FA21E4A0FD0063D6F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088421367885008D0B6F /* Login.storyboard */; };
+		4A3916FB21E4A0FD0063D6F4 /* Strings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169F21E498960063D6F4 /* Strings.plist */; };
+		4A3916FC21E4A0FD0063D6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CD2122A85F003A1289 /* LaunchScreen.storyboard */; };
+		4A3916FD21E4A0FD0063D6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CB2122A85F003A1289 /* Assets.xcassets */; };
+		4A3916FE21E4A0FD0063D6F4 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A121E498990063D6F4 /* AppIcons.xcassets */; };
+		4A3916FF21E4A0FD0063D6F4 /* CommonImages .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A321E498990063D6F4 /* CommonImages .xcassets */; };
+		4A39170021E4A0FD0063D6F4 /* Sidemenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088521367886008D0B6F /* Sidemenu.storyboard */; };
+		4A39170121E4A0FD0063D6F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 486BD54C21464A3600E88AAA /* Colors.xcassets */; };
+		4A39170221E4A0FD0063D6F4 /* CDTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A221E498990063D6F4 /* CDTAImages.xcassets */; };
+		4A39170321E4A0FD0063D6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6C52122A85D003A1289 /* Main.storyboard */; };
+		4A39170421E4A0FD0063D6F4 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48097186213E845500B4445A /* Settings.storyboard */; };
+		4A39170521E4A0FD0063D6F4 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169E21E498960063D6F4 /* Features.plist */; };
 		6BAC9B3158A6CF08A5C00CBE /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
 		933BC90C36FBC12511536946 /* Pods_GenfareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10D27795AB4339957A57FF4 /* Pods_GenfareTests.framework */; };
 /* End PBXBuildFile section */
@@ -195,6 +335,17 @@
 		48C6BFD12148C8C900E2065F /* EncodeUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncodeUtil.m; sourceTree = "<group>"; };
 		48C6BFD32148DA0000E2065F /* GFRouteLegsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRouteLegsScrollView.swift; sourceTree = "<group>"; };
 		48C6BFD52149244E00E2065F /* GFMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFMenuButton.swift; sourceTree = "<group>"; };
+		4A39169A21E496B90063D6F4 /* CotaGenfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CotaGenfare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A39169B21E496BB0063D6F4 /* CotaGenfare.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CotaGenfare.plist; path = /Users/omniwyse/Documents/NEWAPPS/SINGLEBACKENDSWIFT/master/CotaGenfare.plist; sourceTree = "<absolute>"; };
+		4A39169D21E498960063D6F4 /* Colors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Colors.plist; sourceTree = "<group>"; };
+		4A39169E21E498960063D6F4 /* Features.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Features.plist; sourceTree = "<group>"; };
+		4A39169F21E498960063D6F4 /* Strings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Strings.plist; sourceTree = "<group>"; };
+		4A3916A121E498990063D6F4 /* AppIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcons.xcassets; sourceTree = "<group>"; };
+		4A3916A221E498990063D6F4 /* CDTAImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CDTAImages.xcassets; sourceTree = "<group>"; };
+		4A3916A321E498990063D6F4 /* CommonImages .xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "CommonImages .xcassets"; sourceTree = "<group>"; };
+		4A3916A421E498990063D6F4 /* COTAImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = COTAImages.xcassets; sourceTree = "<group>"; };
+		4A39170B21E4A0FD0063D6F4 /* CdtaGenfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CdtaGenfare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A39170C21E4A0FE0063D6F4 /* CdtaGenfare.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CdtaGenfare.plist; path = /Users/omniwyse/Documents/NEWAPPS/SINGLEBACKENDSWIFT/master/CdtaGenfare.plist; sourceTree = "<absolute>"; };
 		71ACF688C296F64A851CE270 /* Pods-GenfareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenfareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1ADE31BC003EA18FBD231F /* Pods-Genfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.debug.xcconfig"; sourceTree = "<group>"; };
 		D10D27795AB4339957A57FF4 /* Pods_GenfareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenfareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +373,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				933BC90C36FBC12511536946 /* Pods_GenfareTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A39168921E496B90063D6F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A39168A21E496B90063D6F4 /* Pods_Genfare.framework in Frameworks */,
+				4A39168B21E496B90063D6F4 /* Pods_Genfare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A3916F321E4A0FD0063D6F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3916F421E4A0FD0063D6F4 /* Pods_Genfare.framework in Frameworks */,
+				4A3916F521E4A0FD0063D6F4 /* Pods_Genfare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +519,8 @@
 				6A6B6813CCBA84703B94100C /* Pods */,
 				05F8F27BEF3052CA5F91705B /* Frameworks */,
 				486DA5BB21674F68006B8BA5 /* Genfare copy-Info.plist */,
+				4A39169B21E496BB0063D6F4 /* CotaGenfare.plist */,
+				4A39170C21E4A0FE0063D6F4 /* CdtaGenfare.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -359,6 +530,8 @@
 				4884E6BE2122A85D003A1289 /* Genfare.app */,
 				4884E6D52122A85F003A1289 /* GenfareTests.xctest */,
 				486DA5BA21674F67006B8BA5 /* Genfare CDTA UAT.app */,
+				4A39169A21E496B90063D6F4 /* CotaGenfare.app */,
+				4A39170B21E4A0FD0063D6F4 /* CdtaGenfare.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,13 +547,13 @@
 				48657099212ACE7C00E94556 /* Service Managers */,
 				48656FFA2122F1D600E94556 /* ViewControllers */,
 				4884E6C12122A85D003A1289 /* AppDelegate.swift */,
+				4A39169C21E498960063D6F4 /* Values */,
+				4A3916A021E498990063D6F4 /* Xcassets */,
 				4849088A21367899008D0B6F /* Storyboards */,
 				4884E6C52122A85D003A1289 /* Main.storyboard */,
-				4884E6CB2122A85F003A1289 /* Assets.xcassets */,
 				4884E6CD2122A85F003A1289 /* LaunchScreen.storyboard */,
 				4884E6D02122A85F003A1289 /* Info.plist */,
 				4884E6C82122A85D003A1289 /* Genfare.xcdatamodeld */,
-				486BD54C21464A3600E88AAA /* Colors.xcassets */,
 			);
 			path = Genfare;
 			sourceTree = "<group>";
@@ -402,6 +575,29 @@
 				48C6BFCF2148C8C800E2065F /* Genfare-Bridging-Header.h */,
 			);
 			path = Encription;
+			sourceTree = "<group>";
+		};
+		4A39169C21E498960063D6F4 /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				4A39169D21E498960063D6F4 /* Colors.plist */,
+				4A39169E21E498960063D6F4 /* Features.plist */,
+				4A39169F21E498960063D6F4 /* Strings.plist */,
+			);
+			path = Values;
+			sourceTree = "<group>";
+		};
+		4A3916A021E498990063D6F4 /* Xcassets */ = {
+			isa = PBXGroup;
+			children = (
+				4A3916A121E498990063D6F4 /* AppIcons.xcassets */,
+				4A3916A221E498990063D6F4 /* CDTAImages.xcassets */,
+				4A3916A321E498990063D6F4 /* CommonImages .xcassets */,
+				486BD54C21464A3600E88AAA /* Colors.xcassets */,
+				4884E6CB2122A85F003A1289 /* Assets.xcassets */,
+				4A3916A421E498990063D6F4 /* COTAImages.xcassets */,
+			);
+			path = Xcassets;
 			sourceTree = "<group>";
 		};
 		6A6B6813CCBA84703B94100C /* Pods */ = {
@@ -475,6 +671,46 @@
 			productReference = 4884E6D52122A85F003A1289 /* GenfareTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		4A39165821E496B90063D6F4 /* CotaGenfare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A39169721E496B90063D6F4 /* Build configuration list for PBXNativeTarget "CotaGenfare" */;
+			buildPhases = (
+				4A39165921E496B90063D6F4 /* [CP] Check Pods Manifest.lock */,
+				4A39165A21E496B90063D6F4 /* Sources */,
+				4A39168921E496B90063D6F4 /* Frameworks */,
+				4A39168C21E496B90063D6F4 /* Resources */,
+				4A39169521E496B90063D6F4 /* [CP] Embed Pods Frameworks */,
+				4A39169621E496B90063D6F4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CotaGenfare;
+			productName = Genfare;
+			productReference = 4A39169A21E496B90063D6F4 /* CotaGenfare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A3916C221E4A0FD0063D6F4 /* CdtaGenfare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A39170821E4A0FD0063D6F4 /* Build configuration list for PBXNativeTarget "CdtaGenfare" */;
+			buildPhases = (
+				4A3916C321E4A0FD0063D6F4 /* [CP] Check Pods Manifest.lock */,
+				4A3916C421E4A0FD0063D6F4 /* Sources */,
+				4A3916F321E4A0FD0063D6F4 /* Frameworks */,
+				4A3916F621E4A0FD0063D6F4 /* Resources */,
+				4A39170621E4A0FD0063D6F4 /* [CP] Embed Pods Frameworks */,
+				4A39170721E4A0FD0063D6F4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CdtaGenfare;
+			productName = Genfare;
+			productReference = 4A39170B21E4A0FD0063D6F4 /* CdtaGenfare.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -511,6 +747,8 @@
 				4884E6BD2122A85D003A1289 /* Genfare */,
 				486DA57C21674F67006B8BA5 /* Genfare CDTA UAT */,
 				4884E6D42122A85F003A1289 /* GenfareTests */,
+				4A39165821E496B90063D6F4 /* CotaGenfare */,
+				4A3916C221E4A0FD0063D6F4 /* CdtaGenfare */,
 			);
 		};
 /* End PBXProject section */
@@ -520,14 +758,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A3916A621E498990063D6F4 /* Colors.plist in Resources */,
 				486DA5AD21674F67006B8BA5 /* Store.storyboard in Resources */,
+				4A3916B821E498990063D6F4 /* COTAImages.xcassets in Resources */,
 				486DA5AE21674F67006B8BA5 /* Login.storyboard in Resources */,
+				4A3916AC21E498990063D6F4 /* Strings.plist in Resources */,
 				486DA5AF21674F67006B8BA5 /* LaunchScreen.storyboard in Resources */,
 				486DA5B021674F67006B8BA5 /* Assets.xcassets in Resources */,
+				4A3916AF21E498990063D6F4 /* AppIcons.xcassets in Resources */,
+				4A3916B521E498990063D6F4 /* CommonImages .xcassets in Resources */,
 				486DA5B121674F67006B8BA5 /* Sidemenu.storyboard in Resources */,
 				486DA5B221674F67006B8BA5 /* Colors.xcassets in Resources */,
+				4A3916B221E498990063D6F4 /* CDTAImages.xcassets in Resources */,
 				486DA5B321674F67006B8BA5 /* Main.storyboard in Resources */,
 				486DA5B421674F67006B8BA5 /* Settings.storyboard in Resources */,
+				4A3916A921E498990063D6F4 /* Features.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,14 +780,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A3916A521E498990063D6F4 /* Colors.plist in Resources */,
 				4849088921367886008D0B6F /* Store.storyboard in Resources */,
+				4A3916B721E498990063D6F4 /* COTAImages.xcassets in Resources */,
 				4849088721367886008D0B6F /* Login.storyboard in Resources */,
+				4A3916AB21E498990063D6F4 /* Strings.plist in Resources */,
 				4884E6CF2122A85F003A1289 /* LaunchScreen.storyboard in Resources */,
 				4884E6CC2122A85F003A1289 /* Assets.xcassets in Resources */,
+				4A3916AE21E498990063D6F4 /* AppIcons.xcassets in Resources */,
+				4A3916B421E498990063D6F4 /* CommonImages .xcassets in Resources */,
 				4849088821367886008D0B6F /* Sidemenu.storyboard in Resources */,
 				486BD54D21464A3600E88AAA /* Colors.xcassets in Resources */,
+				4A3916B121E498990063D6F4 /* CDTAImages.xcassets in Resources */,
 				4884E6C72122A85D003A1289 /* Main.storyboard in Resources */,
 				48097187213E845500B4445A /* Settings.storyboard in Resources */,
+				4A3916A821E498990063D6F4 /* Features.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +802,50 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A39168C21E496B90063D6F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3916A721E498990063D6F4 /* Colors.plist in Resources */,
+				4A39168D21E496B90063D6F4 /* Store.storyboard in Resources */,
+				4A3916B921E498990063D6F4 /* COTAImages.xcassets in Resources */,
+				4A39168E21E496B90063D6F4 /* Login.storyboard in Resources */,
+				4A3916AD21E498990063D6F4 /* Strings.plist in Resources */,
+				4A39168F21E496B90063D6F4 /* LaunchScreen.storyboard in Resources */,
+				4A39169021E496B90063D6F4 /* Assets.xcassets in Resources */,
+				4A3916B021E498990063D6F4 /* AppIcons.xcassets in Resources */,
+				4A3916B621E498990063D6F4 /* CommonImages .xcassets in Resources */,
+				4A39169121E496B90063D6F4 /* Sidemenu.storyboard in Resources */,
+				4A39169221E496B90063D6F4 /* Colors.xcassets in Resources */,
+				4A3916B321E498990063D6F4 /* CDTAImages.xcassets in Resources */,
+				4A39169321E496B90063D6F4 /* Main.storyboard in Resources */,
+				4A39169421E496B90063D6F4 /* Settings.storyboard in Resources */,
+				4A3916AA21E498990063D6F4 /* Features.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A3916F621E4A0FD0063D6F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3916F721E4A0FD0063D6F4 /* Colors.plist in Resources */,
+				4A3916F821E4A0FD0063D6F4 /* Store.storyboard in Resources */,
+				4A3916F921E4A0FD0063D6F4 /* COTAImages.xcassets in Resources */,
+				4A3916FA21E4A0FD0063D6F4 /* Login.storyboard in Resources */,
+				4A3916FB21E4A0FD0063D6F4 /* Strings.plist in Resources */,
+				4A3916FC21E4A0FD0063D6F4 /* LaunchScreen.storyboard in Resources */,
+				4A3916FD21E4A0FD0063D6F4 /* Assets.xcassets in Resources */,
+				4A3916FE21E4A0FD0063D6F4 /* AppIcons.xcassets in Resources */,
+				4A3916FF21E4A0FD0063D6F4 /* CommonImages .xcassets in Resources */,
+				4A39170021E4A0FD0063D6F4 /* Sidemenu.storyboard in Resources */,
+				4A39170121E4A0FD0063D6F4 /* Colors.xcassets in Resources */,
+				4A39170221E4A0FD0063D6F4 /* CDTAImages.xcassets in Resources */,
+				4A39170321E4A0FD0063D6F4 /* Main.storyboard in Resources */,
+				4A39170421E4A0FD0063D6F4 /* Settings.storyboard in Resources */,
+				4A39170521E4A0FD0063D6F4 /* Features.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +868,146 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A39165921E496B90063D6F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Genfare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A39169521E496B90063D6F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/NetworkStack/NetworkStack.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NetworkStack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A39169621E496B90063D6F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A3916C321E4A0FD0063D6F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Genfare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A39170621E4A0FD0063D6F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/NetworkStack/NetworkStack.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NetworkStack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A39170721E4A0FD0063D6F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		94B798631C3A52AEBE6CF7A8 /* [CP] Embed Pods Frameworks */ = {
@@ -777,6 +1213,112 @@
 			buildActionMask = 2147483647;
 			files = (
 				4884E6DA2122A85F003A1289 /* GenfareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A39165A21E496B90063D6F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A39165B21E496B90063D6F4 /* GFBaseService.swift in Sources */,
+				4A39165C21E496B90063D6F4 /* GFConstants.swift in Sources */,
+				4A39165D21E496B90063D6F4 /* GFHistoryTableViewCell.swift in Sources */,
+				4A39165E21E496B90063D6F4 /* GFRecentTripsViewController.swift in Sources */,
+				4A39165F21E496B90063D6F4 /* SideMenuItemsViewController.swift in Sources */,
+				4A39166021E496B90063D6F4 /* GFMapsUtility.swift in Sources */,
+				4A39166121E496B90063D6F4 /* GFTextFieldBackGround.swift in Sources */,
+				4A39166221E496B90063D6F4 /* GFRouteLegsScrollView.swift in Sources */,
+				4A39166321E496B90063D6F4 /* GFMenuButton.swift in Sources */,
+				4A39166421E496B90063D6F4 /* GFSignupViewController.swift in Sources */,
+				4A39166521E496B90063D6F4 /* GFTripHistoryManager.swift in Sources */,
+				4A39166621E496B90063D6F4 /* GFTripDataManager.swift in Sources */,
+				4A39166721E496B90063D6F4 /* GFTransitStop.swift in Sources */,
+				4A39166821E496B90063D6F4 /* GFStationListTableViewCell.swift in Sources */,
+				4A39166921E496B90063D6F4 /* GFOAuthService.swift in Sources */,
+				4A39166A21E496B90063D6F4 /* GFActivatePassViewController.swift in Sources */,
+				4A39166B21E496B90063D6F4 /* ViewController.swift in Sources */,
+				4A39166C21E496B90063D6F4 /* Genfare.xcdatamodeld in Sources */,
+				4A39166D21E496B90063D6F4 /* GFSampleViewController.swift in Sources */,
+				4A39166E21E496B90063D6F4 /* GFNavigateRouteViewController.swift in Sources */,
+				4A39166F21E496B90063D6F4 /* GFRecentTrip.swift in Sources */,
+				4A39167021E496B90063D6F4 /* GFPaymentViewController.swift in Sources */,
+				4A39167121E496B90063D6F4 /* GFMyPassesViewController.swift in Sources */,
+				4A39167221E496B90063D6F4 /* AppDelegate.swift in Sources */,
+				4A39167321E496B90063D6F4 /* GFBaseViewController.swift in Sources */,
+				4A39167421E496B90063D6F4 /* GFCustomTableViewCellShadowView.swift in Sources */,
+				4A39167521E496B90063D6F4 /* GFWhiteButtonTextField.swift in Sources */,
+				4A39167621E496B90063D6F4 /* EncodeUtil.m in Sources */,
+				4A39167721E496B90063D6F4 /* GFLoginViewController.swift in Sources */,
+				4A39167821E496B90063D6F4 /* GFRouteOptionTableViewCell.swift in Sources */,
+				4A39167921E496B90063D6F4 /* GFStation.swift in Sources */,
+				4A39167A21E496B90063D6F4 /* NavigateViewController.swift in Sources */,
+				4A39167B21E496B90063D6F4 /* GFRouteLeg.swift in Sources */,
+				4A39167C21E496B90063D6F4 /* GFSettingsViewController.swift in Sources */,
+				4A39167D21E496B90063D6F4 /* GFForgotPasswordViewController.swift in Sources */,
+				4A39167E21E496B90063D6F4 /* GFAccountManager.swift in Sources */,
+				4A39167F21E496B90063D6F4 /* GFReachability.swift in Sources */,
+				4A39168021E496B90063D6F4 /* GFUtilities.swift in Sources */,
+				4A39168121E496B90063D6F4 /* GFIconBadge.swift in Sources */,
+				4A39168221E496B90063D6F4 /* GFPassListViewController.swift in Sources */,
+				4A39168321E496B90063D6F4 /* GFRoute.swift in Sources */,
+				4A39168421E496B90063D6F4 /* GFLocation.swift in Sources */,
+				4A39168521E496B90063D6F4 /* GFColor.swift in Sources */,
+				4A39168621E496B90063D6F4 /* HomeViewController.swift in Sources */,
+				4A39168721E496B90063D6F4 /* GFNavigateTimingsViewController.swift in Sources */,
+				4A39168821E496B90063D6F4 /* GFPassDetailsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A3916C421E4A0FD0063D6F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3916C521E4A0FD0063D6F4 /* GFBaseService.swift in Sources */,
+				4A3916C621E4A0FD0063D6F4 /* GFConstants.swift in Sources */,
+				4A3916C721E4A0FD0063D6F4 /* GFHistoryTableViewCell.swift in Sources */,
+				4A3916C821E4A0FD0063D6F4 /* GFRecentTripsViewController.swift in Sources */,
+				4A3916C921E4A0FD0063D6F4 /* SideMenuItemsViewController.swift in Sources */,
+				4A3916CA21E4A0FD0063D6F4 /* GFMapsUtility.swift in Sources */,
+				4A3916CB21E4A0FD0063D6F4 /* GFTextFieldBackGround.swift in Sources */,
+				4A3916CC21E4A0FD0063D6F4 /* GFRouteLegsScrollView.swift in Sources */,
+				4A3916CD21E4A0FD0063D6F4 /* GFMenuButton.swift in Sources */,
+				4A3916CE21E4A0FD0063D6F4 /* GFSignupViewController.swift in Sources */,
+				4A3916CF21E4A0FD0063D6F4 /* GFTripHistoryManager.swift in Sources */,
+				4A3916D021E4A0FD0063D6F4 /* GFTripDataManager.swift in Sources */,
+				4A3916D121E4A0FD0063D6F4 /* GFTransitStop.swift in Sources */,
+				4A3916D221E4A0FD0063D6F4 /* GFStationListTableViewCell.swift in Sources */,
+				4A3916D321E4A0FD0063D6F4 /* GFOAuthService.swift in Sources */,
+				4A3916D421E4A0FD0063D6F4 /* GFActivatePassViewController.swift in Sources */,
+				4A3916D521E4A0FD0063D6F4 /* ViewController.swift in Sources */,
+				4A3916D621E4A0FD0063D6F4 /* Genfare.xcdatamodeld in Sources */,
+				4A3916D721E4A0FD0063D6F4 /* GFSampleViewController.swift in Sources */,
+				4A3916D821E4A0FD0063D6F4 /* GFNavigateRouteViewController.swift in Sources */,
+				4A3916D921E4A0FD0063D6F4 /* GFRecentTrip.swift in Sources */,
+				4A3916DA21E4A0FD0063D6F4 /* GFPaymentViewController.swift in Sources */,
+				4A3916DB21E4A0FD0063D6F4 /* GFMyPassesViewController.swift in Sources */,
+				4A3916DC21E4A0FD0063D6F4 /* AppDelegate.swift in Sources */,
+				4A3916DD21E4A0FD0063D6F4 /* GFBaseViewController.swift in Sources */,
+				4A3916DE21E4A0FD0063D6F4 /* GFCustomTableViewCellShadowView.swift in Sources */,
+				4A3916DF21E4A0FD0063D6F4 /* GFWhiteButtonTextField.swift in Sources */,
+				4A3916E021E4A0FD0063D6F4 /* EncodeUtil.m in Sources */,
+				4A3916E121E4A0FD0063D6F4 /* GFLoginViewController.swift in Sources */,
+				4A3916E221E4A0FD0063D6F4 /* GFRouteOptionTableViewCell.swift in Sources */,
+				4A3916E321E4A0FD0063D6F4 /* GFStation.swift in Sources */,
+				4A3916E421E4A0FD0063D6F4 /* NavigateViewController.swift in Sources */,
+				4A3916E521E4A0FD0063D6F4 /* GFRouteLeg.swift in Sources */,
+				4A3916E621E4A0FD0063D6F4 /* GFSettingsViewController.swift in Sources */,
+				4A3916E721E4A0FD0063D6F4 /* GFForgotPasswordViewController.swift in Sources */,
+				4A3916E821E4A0FD0063D6F4 /* GFAccountManager.swift in Sources */,
+				4A3916E921E4A0FD0063D6F4 /* GFReachability.swift in Sources */,
+				4A3916EA21E4A0FD0063D6F4 /* GFUtilities.swift in Sources */,
+				4A3916EB21E4A0FD0063D6F4 /* GFIconBadge.swift in Sources */,
+				4A3916EC21E4A0FD0063D6F4 /* GFPassListViewController.swift in Sources */,
+				4A3916ED21E4A0FD0063D6F4 /* GFRoute.swift in Sources */,
+				4A3916EE21E4A0FD0063D6F4 /* GFLocation.swift in Sources */,
+				4A3916EF21E4A0FD0063D6F4 /* GFColor.swift in Sources */,
+				4A3916F021E4A0FD0063D6F4 /* HomeViewController.swift in Sources */,
+				4A3916F121E4A0FD0063D6F4 /* GFNavigateTimingsViewController.swift in Sources */,
+				4A3916F221E4A0FD0063D6F4 /* GFPassDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1064,6 +1606,110 @@
 			};
 			name = Release;
 		};
+		4A39169821E496B90063D6F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1ADE31BC003EA18FBD231F /* Pods-Genfare.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = COTAAppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Q7E57UKAF;
+				INFOPLIST_FILE = CotaGenfare.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.dev.genfare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Genfare/Encription/Genfare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4A39169921E496B90063D6F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DD4A1612DEEB412E5FCB5FE /* Pods-Genfare.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = COTAAppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Q7E57UKAF;
+				INFOPLIST_FILE = CotaGenfare.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.dev.genfare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Genfare/Encription/Genfare-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4A39170921E4A0FD0063D6F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1ADE31BC003EA18FBD231F /* Pods-Genfare.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = CDTAAppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Q7E57UKAF;
+				INFOPLIST_FILE = CdtaGenfare.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.dev.genfare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Genfare/Encription/Genfare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4A39170A21E4A0FD0063D6F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DD4A1612DEEB412E5FCB5FE /* Pods-Genfare.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = CDTAAppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Q7E57UKAF;
+				INFOPLIST_FILE = CdtaGenfare.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.dev.genfare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Genfare/Encription/Genfare-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1099,6 +1745,24 @@
 			buildConfigurations = (
 				4884E6E22122A85F003A1289 /* Debug */,
 				4884E6E32122A85F003A1289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A39169721E496B90063D6F4 /* Build configuration list for PBXNativeTarget "CotaGenfare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A39169821E496B90063D6F4 /* Debug */,
+				4A39169921E496B90063D6F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A39170821E4A0FD0063D6F4 /* Build configuration list for PBXNativeTarget "CdtaGenfare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A39170921E4A0FD0063D6F4 /* Debug */,
+				4A39170A21E4A0FD0063D6F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

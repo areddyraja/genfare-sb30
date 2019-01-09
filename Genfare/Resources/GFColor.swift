@@ -49,6 +49,25 @@ extension UIColor {
 //        let bgColor:String = Utilities.colorHexString(fromId: String.init(format: "%@%@", Utilities.tenantId()?.lowercased() ?? "", str))
 //        return UIColor.init(hexString: bgColor)
     }
+    class func colorFromHexString(hexString: String?, withAlpha alpha : CGFloat) -> UIColor {
+        if hexString!.isEmpty {
+            return UIColor.gray
+        }
+        var rgbValue: UInt32 = 0
+        let scanner: Scanner = Scanner(string: hexString!)
+        scanner.scanLocation = 1
+        // bypass '#' character
+        scanner.scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(alpha)
+        )
+        
+    }
+    
     
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
         let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)

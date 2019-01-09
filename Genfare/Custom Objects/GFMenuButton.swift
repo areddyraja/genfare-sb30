@@ -12,11 +12,12 @@ import UIKit
 class GFMenuButton: UIButton {
 
     @IBInspectable var cornerRadius: CGFloat = 3.0
-    @IBInspectable var bgColor:CGColor = UIColor.buttonBGBlue.cgColor
+    @IBInspectable var bgColor = UIColor.colorFromHexString(hexString:  GFUtilities.sharedResource().colorHexString(fromId: GFUtilities.sharedResource().bgcolor()), withAlpha: 1.0)      //UIColor.buttonBGBlue.cgColor
     
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = cornerRadius
+        layer.backgroundColor = bgColor.cgColor
     }
     
     /*

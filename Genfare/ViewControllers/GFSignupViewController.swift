@@ -16,11 +16,15 @@ class GFSignupViewController: GFBaseViewController, UITableViewDelegate {
     @IBOutlet weak var passwordTxt2: GFWhiteButtonTextField!
     @IBOutlet weak var emailTxt: GFWhiteButtonTextField!
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

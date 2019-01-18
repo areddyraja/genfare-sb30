@@ -94,7 +94,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jb2-9r-DAL">
                                 <rect key="frame" x="48" y="34" width="279" height="107"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="90s-hg-ygN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ticket_logo" translatesAutoresizingMaskIntoConstraints="NO" id="90s-hg-ygN">
                                         <rect key="frame" x="0.0" y="0.0" width="279" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -235,7 +235,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffT-L8-ISm">
                                 <rect key="frame" x="48" y="34" width="279" height="107"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="unV-mC-PvL">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ticket_logo" translatesAutoresizingMaskIntoConstraints="NO" id="unV-mC-PvL">
                                         <rect key="frame" x="0.0" y="0.0" width="279" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -365,7 +365,7 @@
                                 <rect key="frame" x="44" y="37" width="279" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logobct" translatesAutoresizingMaskIntoConstraints="NO" id="nrb-Qh-QlM">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ticket_logo" translatesAutoresizingMaskIntoConstraints="NO" id="nrb-Qh-QlM">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -509,8 +509,7 @@
     </scenes>
     <resources>
         <image name="BrandTag" width="220" height="19"/>
-        <image name="Logo" width="279" height="80"/>
-        <image name="Logobct" width="16" height="16"/>
+        <image name="ticket_logo" width="150" height="44"/>
         <namedColor name="Alto Gray">
             <color red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -165,7 +165,6 @@
 		4A39168D21E496B90063D6F4 /* Store.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088621367886008D0B6F /* Store.storyboard */; };
 		4A39168E21E496B90063D6F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088421367885008D0B6F /* Login.storyboard */; };
 		4A39168F21E496B90063D6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CD2122A85F003A1289 /* LaunchScreen.storyboard */; };
-		4A39169021E496B90063D6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CB2122A85F003A1289 /* Assets.xcassets */; };
 		4A39169121E496B90063D6F4 /* Sidemenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088521367886008D0B6F /* Sidemenu.storyboard */; };
 		4A39169221E496B90063D6F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 486BD54C21464A3600E88AAA /* Colors.xcassets */; };
 		4A39169321E496B90063D6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6C52122A85D003A1289 /* Main.storyboard */; };
@@ -182,15 +181,11 @@
 		4A3916AE21E498990063D6F4 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A121E498990063D6F4 /* AppIcons.xcassets */; };
 		4A3916AF21E498990063D6F4 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A121E498990063D6F4 /* AppIcons.xcassets */; };
 		4A3916B021E498990063D6F4 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A121E498990063D6F4 /* AppIcons.xcassets */; };
-		4A3916B121E498990063D6F4 /* CDTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A221E498990063D6F4 /* CDTAImages.xcassets */; };
-		4A3916B221E498990063D6F4 /* CDTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A221E498990063D6F4 /* CDTAImages.xcassets */; };
-		4A3916B321E498990063D6F4 /* CDTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A221E498990063D6F4 /* CDTAImages.xcassets */; };
 		4A3916B421E498990063D6F4 /* CommonImages .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A321E498990063D6F4 /* CommonImages .xcassets */; };
 		4A3916B521E498990063D6F4 /* CommonImages .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A321E498990063D6F4 /* CommonImages .xcassets */; };
 		4A3916B621E498990063D6F4 /* CommonImages .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A321E498990063D6F4 /* CommonImages .xcassets */; };
 		4A3916B721E498990063D6F4 /* COTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A421E498990063D6F4 /* COTAImages.xcassets */; };
 		4A3916B821E498990063D6F4 /* COTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A421E498990063D6F4 /* COTAImages.xcassets */; };
-		4A3916B921E498990063D6F4 /* COTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A421E498990063D6F4 /* COTAImages.xcassets */; };
 		4A3916C521E4A0FD0063D6F4 /* GFBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA57A21674F4E006B8BA5 /* GFBaseService.swift */; };
 		4A3916C621E4A0FD0063D6F4 /* GFConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486570A6212D5DEA00E94556 /* GFConstants.swift */; };
 		4A3916C721E4A0FD0063D6F4 /* GFHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA572215E03B8006B8BA5 /* GFHistoryTableViewCell.swift */; };
@@ -241,19 +236,20 @@
 		4A3916F521E4A0FD0063D6F4 /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
 		4A3916F721E4A0FD0063D6F4 /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169D21E498960063D6F4 /* Colors.plist */; };
 		4A3916F821E4A0FD0063D6F4 /* Store.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088621367886008D0B6F /* Store.storyboard */; };
-		4A3916F921E4A0FD0063D6F4 /* COTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A421E498990063D6F4 /* COTAImages.xcassets */; };
 		4A3916FA21E4A0FD0063D6F4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088421367885008D0B6F /* Login.storyboard */; };
 		4A3916FB21E4A0FD0063D6F4 /* Strings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169F21E498960063D6F4 /* Strings.plist */; };
 		4A3916FC21E4A0FD0063D6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CD2122A85F003A1289 /* LaunchScreen.storyboard */; };
-		4A3916FD21E4A0FD0063D6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CB2122A85F003A1289 /* Assets.xcassets */; };
 		4A3916FE21E4A0FD0063D6F4 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A121E498990063D6F4 /* AppIcons.xcassets */; };
 		4A3916FF21E4A0FD0063D6F4 /* CommonImages .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A321E498990063D6F4 /* CommonImages .xcassets */; };
 		4A39170021E4A0FD0063D6F4 /* Sidemenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088521367886008D0B6F /* Sidemenu.storyboard */; };
 		4A39170121E4A0FD0063D6F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 486BD54C21464A3600E88AAA /* Colors.xcassets */; };
-		4A39170221E4A0FD0063D6F4 /* CDTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A221E498990063D6F4 /* CDTAImages.xcassets */; };
 		4A39170321E4A0FD0063D6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6C52122A85D003A1289 /* Main.storyboard */; };
 		4A39170421E4A0FD0063D6F4 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48097186213E845500B4445A /* Settings.storyboard */; };
 		4A39170521E4A0FD0063D6F4 /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A39169E21E498960063D6F4 /* Features.plist */; };
+		4A39189F21E609E20081BB91 /* COTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A421E498990063D6F4 /* COTAImages.xcassets */; };
+		4A3918A021E6122C0081BB91 /* CDTAImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3916A221E498990063D6F4 /* CDTAImages.xcassets */; };
+		4A99D1A521E870A600E64122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CB2122A85F003A1289 /* Assets.xcassets */; };
+		4A99D1A621E870A600E64122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884E6CB2122A85F003A1289 /* Assets.xcassets */; };
 		6BAC9B3158A6CF08A5C00CBE /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
 		933BC90C36FBC12511536946 /* Pods_GenfareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10D27795AB4339957A57FF4 /* Pods_GenfareTests.framework */; };
 /* End PBXBuildFile section */
@@ -769,7 +765,6 @@
 				4A3916B521E498990063D6F4 /* CommonImages .xcassets in Resources */,
 				486DA5B121674F67006B8BA5 /* Sidemenu.storyboard in Resources */,
 				486DA5B221674F67006B8BA5 /* Colors.xcassets in Resources */,
-				4A3916B221E498990063D6F4 /* CDTAImages.xcassets in Resources */,
 				486DA5B321674F67006B8BA5 /* Main.storyboard in Resources */,
 				486DA5B421674F67006B8BA5 /* Settings.storyboard in Resources */,
 				4A3916A921E498990063D6F4 /* Features.plist in Resources */,
@@ -791,7 +786,6 @@
 				4A3916B421E498990063D6F4 /* CommonImages .xcassets in Resources */,
 				4849088821367886008D0B6F /* Sidemenu.storyboard in Resources */,
 				486BD54D21464A3600E88AAA /* Colors.xcassets in Resources */,
-				4A3916B121E498990063D6F4 /* CDTAImages.xcassets in Resources */,
 				4884E6C72122A85D003A1289 /* Main.storyboard in Resources */,
 				48097187213E845500B4445A /* Settings.storyboard in Resources */,
 				4A3916A821E498990063D6F4 /* Features.plist in Resources */,
@@ -811,16 +805,15 @@
 			files = (
 				4A3916A721E498990063D6F4 /* Colors.plist in Resources */,
 				4A39168D21E496B90063D6F4 /* Store.storyboard in Resources */,
-				4A3916B921E498990063D6F4 /* COTAImages.xcassets in Resources */,
+				4A39189F21E609E20081BB91 /* COTAImages.xcassets in Resources */,
 				4A39168E21E496B90063D6F4 /* Login.storyboard in Resources */,
+				4A99D1A521E870A600E64122 /* Assets.xcassets in Resources */,
 				4A3916AD21E498990063D6F4 /* Strings.plist in Resources */,
 				4A39168F21E496B90063D6F4 /* LaunchScreen.storyboard in Resources */,
-				4A39169021E496B90063D6F4 /* Assets.xcassets in Resources */,
 				4A3916B021E498990063D6F4 /* AppIcons.xcassets in Resources */,
 				4A3916B621E498990063D6F4 /* CommonImages .xcassets in Resources */,
 				4A39169121E496B90063D6F4 /* Sidemenu.storyboard in Resources */,
 				4A39169221E496B90063D6F4 /* Colors.xcassets in Resources */,
-				4A3916B321E498990063D6F4 /* CDTAImages.xcassets in Resources */,
 				4A39169321E496B90063D6F4 /* Main.storyboard in Resources */,
 				4A39169421E496B90063D6F4 /* Settings.storyboard in Resources */,
 				4A3916AA21E498990063D6F4 /* Features.plist in Resources */,
@@ -833,16 +826,15 @@
 			files = (
 				4A3916F721E4A0FD0063D6F4 /* Colors.plist in Resources */,
 				4A3916F821E4A0FD0063D6F4 /* Store.storyboard in Resources */,
-				4A3916F921E4A0FD0063D6F4 /* COTAImages.xcassets in Resources */,
 				4A3916FA21E4A0FD0063D6F4 /* Login.storyboard in Resources */,
 				4A3916FB21E4A0FD0063D6F4 /* Strings.plist in Resources */,
+				4A99D1A621E870A600E64122 /* Assets.xcassets in Resources */,
 				4A3916FC21E4A0FD0063D6F4 /* LaunchScreen.storyboard in Resources */,
-				4A3916FD21E4A0FD0063D6F4 /* Assets.xcassets in Resources */,
 				4A3916FE21E4A0FD0063D6F4 /* AppIcons.xcassets in Resources */,
+				4A3918A021E6122C0081BB91 /* CDTAImages.xcassets in Resources */,
 				4A3916FF21E4A0FD0063D6F4 /* CommonImages .xcassets in Resources */,
 				4A39170021E4A0FD0063D6F4 /* Sidemenu.storyboard in Resources */,
 				4A39170121E4A0FD0063D6F4 /* Colors.xcassets in Resources */,
-				4A39170221E4A0FD0063D6F4 /* CDTAImages.xcassets in Resources */,
 				4A39170321E4A0FD0063D6F4 /* Main.storyboard in Resources */,
 				4A39170421E4A0FD0063D6F4 /* Settings.storyboard in Resources */,
 				4A39170521E4A0FD0063D6F4 /* Features.plist in Resources */,

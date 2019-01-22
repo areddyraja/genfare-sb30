@@ -32,7 +32,7 @@ struct Constants {
     }
     
     struct Path {
-        static let KeychainService = "com.genfare.mobile2.service"
+        static let KeychainService = "com.genfare.mobile.service.keychain"
     }
     
     struct Address {
@@ -67,6 +67,7 @@ struct Constants {
     
     struct LocalStorage {
         static let RecentTrips = "UserRecentTrips"
+        static let accessToken = "common_key_access_token"
     }
 }
 

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -62,9 +61,6 @@
                                         <real key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="loginUser:" destination="Kgf-bJ-1ln" eventType="touchUpInside" id="2Rr-RY-2e3"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5E1-tu-gzt">
                                 <rect key="frame" x="48" y="308" width="275" height="2"/>
@@ -264,7 +260,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Sr-Sm-9cx">
-                                <rect key="frame" x="82" y="435" width="207" height="36"/>
+                                <rect key="frame" x="82" y="435" width="206.5" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CM-VY-FZ3">
@@ -319,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6AO-WX-yuq">
-                                <rect key="frame" x="80" y="631" width="207" height="36"/>
+                                <rect key="frame" x="80" y="631" width="206.5" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvX-bQ-PLc">
@@ -340,7 +336,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQC-Wu-e4b" customClass="GFMenuButton" customModule="COTATicketing_Beta" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQC-Wu-e4b" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
                                 <rect key="frame" x="47" y="579" width="274" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.59999999999999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -354,19 +350,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llO-d1-odO">
-                                <rect key="frame" x="341" y="43" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llO-d1-odO">
+                                <rect key="frame" x="341" y="43" width="30" height="20"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="X">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4N2-na-5Gh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4N2-na-5Gh">
                                 <rect key="frame" x="44" y="37" width="279" height="107"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logobct" translatesAutoresizingMaskIntoConstraints="NO" id="nrb-Qh-QlM">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="nrb-Qh-QlM">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -376,8 +370,12 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="4jH-3h-hZK"/>
+                                    <constraint firstAttribute="width" constant="279" id="iWG-iC-B8F"/>
+                                </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-gX-aQ4">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-gX-aQ4">
                                 <rect key="frame" x="42" y="152" width="284" height="408"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsF-vV-936" userLabel="contentView">
@@ -390,7 +388,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KJz-GM-MGG" customClass="GFWhiteButtonTextField" customModule="COTATicketing_Beta" customModuleProvider="target">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KJz-GM-MGG" customClass="GFWhiteButtonTextField" customModule="Genfare" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="30" width="275" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <color key="textColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -409,7 +407,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3wl-lu-sin" customClass="GFWhiteButtonTextField" customModule="COTATicketing_Beta" customModuleProvider="target">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3wl-lu-sin" customClass="GFWhiteButtonTextField" customModule="Genfare" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="105" width="275" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <color key="textColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -428,7 +426,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dFQ-0Y-IMx" customClass="GFWhiteButtonTextField" customModule="COTATicketing_Beta" customModuleProvider="target">
+                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dFQ-0Y-IMx" customClass="GFWhiteButtonTextField" customModule="Genfare" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="175" width="275" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <color key="textColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -447,7 +445,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f8b-1M-ppv" customClass="GFWhiteButtonTextField" customModule="COTATicketing_Beta" customModuleProvider="target">
+                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f8b-1M-ppv" customClass="GFWhiteButtonTextField" customModule="Genfare" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="245" width="275" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <color key="textColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -466,7 +464,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Cfm-Wj-Ir4" customClass="GFWhiteButtonTextField" customModule="COTATicketing_Beta" customModuleProvider="target">
+                                            <textField opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Cfm-Wj-Ir4" customClass="GFWhiteButtonTextField" customModule="Genfare" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="315" width="275" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <color key="textColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -497,11 +495,23 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1632847785949707" green="0.21876779198646545" blue="0.35415393114089966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="4N2-na-5Gh" firstAttribute="top" secondItem="fzx-ce-dcf" secondAttribute="top" constant="17" id="0cS-vo-Y3b"/>
+                            <constraint firstItem="cBj-gX-aQ4" firstAttribute="top" secondItem="4N2-na-5Gh" secondAttribute="bottom" constant="8" id="191-az-yUE"/>
+                            <constraint firstItem="4N2-na-5Gh" firstAttribute="leading" secondItem="fzx-ce-dcf" secondAttribute="leading" constant="44" id="MT7-Gh-LhL"/>
                             <constraint firstItem="cBj-gX-aQ4" firstAttribute="leading" secondItem="fzx-ce-dcf" secondAttribute="leading" constant="42" id="VUv-qC-EwF"/>
+                            <constraint firstItem="llO-d1-odO" firstAttribute="leading" secondItem="4N2-na-5Gh" secondAttribute="trailing" constant="18" id="sUq-dT-2BX"/>
                             <constraint firstItem="fzx-ce-dcf" firstAttribute="trailing" secondItem="cBj-gX-aQ4" secondAttribute="trailing" constant="49" id="ugK-uZ-DOS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fzx-ce-dcf"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTxt" destination="dFQ-0Y-IMx" id="o7F-eq-7kU"/>
+                        <outlet property="firstNameTxt" destination="KJz-GM-MGG" id="YPT-EN-Wfe"/>
+                        <outlet property="lastNameTxt" destination="3wl-lu-sin" id="D3D-WG-EOU"/>
+                        <outlet property="passwordTxt1" destination="f8b-1M-ppv" id="6Hs-uk-Edl"/>
+                        <outlet property="passwordTxt2" destination="Cfm-Wj-Ir4" id="9A9-Js-BVP"/>
+                        <outlet property="signUpBtn" destination="xQC-Wu-e4b" id="jGn-TI-Zr7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5K-k6-oEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -511,7 +521,6 @@
     <resources>
         <image name="BrandTag" width="220" height="19"/>
         <image name="Logo" width="279" height="80"/>
-        <image name="Logobct" width="16" height="16"/>
         <namedColor name="Alto Gray">
             <color red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

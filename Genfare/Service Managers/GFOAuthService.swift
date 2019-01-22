@@ -7,7 +7,18 @@
 //
 
 import Foundation
+import NetworkStack
+import RxSwift
+import Alamofire
 
-class OAuthService {
+struct OAuthService {
     
+    let networkStack:NetworkStack
+    
+//    func fetchAuthToken() -> Observable<SigninModel> {
+//        return nil
+//    }
+    
+    let sessionManager = SessionManager()
+
 }

@@ -13,7 +13,7 @@ import Alamofire
 
 class GFSigninViewModel  {
     
-    let model: SigninModel
+    let model: LoginModel
     private let disposeBag = DisposeBag()
     
     let emailFieldViewModel = GFEmailViewModel()
@@ -24,7 +24,7 @@ class GFSigninViewModel  {
     var isSuccess = Variable(false)
     var errorMessage = Variable<String?>(nil)
     
-    init(model: SigninModel) {
+    init(model: LoginModel) {
         self.model = model
     }
     
@@ -39,7 +39,7 @@ class GFSigninViewModel  {
         
         // launch request
         let loginURL = "/services/data-api/mobile/login?tenant=BCT"
-        let fullURL = String(format: "%@%@", Utilities.apiURL(),loginURL)
+        let fullURL = String(format: "%@%@", Utilities.apiHost(),loginURL)
         
         let headers:HTTPHeaders = ["Authorization":String(format: "bearer %@", Utilities.accessToken()),
                                    "Accept":"application/json",

@@ -14,7 +14,7 @@ class GFSignupViewController: GFBaseViewController, UITableViewDelegate {
 
     let viewModel = SignUpViewModel()
     let disposeBag = DisposeBag()
-
+    
     @IBOutlet weak var firstNameTxt: GFWhiteButtonTextField!
     @IBOutlet weak var lastNameTxt: GFWhiteButtonTextField!
     @IBOutlet weak var passwordTxt1: GFWhiteButtonTextField!
@@ -61,12 +61,14 @@ class GFSignupViewController: GFBaseViewController, UITableViewDelegate {
             self.view.resignFirstResponder()
         }).subscribe(onNext: { [unowned self] in
             if self.viewModel.validateCredentials() {
+                self.spinnerView = UIViewController.displaySpinner(onView: self.view)
                 self.viewModel.signUpUser{ result, error in
                     if(error != nil){
                         self.popupAlert(title: "Error", message: error as! String, actionTitles: ["OK"], actions: [nil])
                     }else{
                         self.popupAlert(title: "Success", message: "Registration Successful...!!!", actionTitles: ["OK"], actions: [nil])
                     }
+                    UIViewController.removeSpinner(spinner: self.spinnerView!)
                 }
             }else{
                 self.popupAlert(title: "Error", message: self.viewModel.formErrorString(), actionTitles: ["OK"], actions: [nil])

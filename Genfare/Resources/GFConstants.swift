@@ -69,6 +69,12 @@ struct Constants {
         static let RecentTrips = "UserRecentTrips"
         static let accessToken = "common_key_access_token"
     }
+    
+    struct KeyChain {
+        static let UserName = "GF_USER_NAME"
+        static let Password = "GF_USER_PASSWORD"
+        static let SecretKey = "GF_SECRET_AUTH_KEY"
+    }
 }
 
 //AIzaSyD20t9-cmgZ_zgDgJO3R4y-tehsscNnHkA

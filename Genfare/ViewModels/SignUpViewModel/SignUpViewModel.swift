@@ -63,22 +63,9 @@ class SignUpViewModel {
         self.isLoading.value = true
         
         // launch request
-        let registerURL = "/services/data-api/mobile/users?tenant=BCT"
-        let fullURL = String(format: "%@%@", Utilities.apiURL(),registerURL)
-        
-        let headers:HTTPHeaders = ["Authorization":String(format: "bearer %@", Utilities.accessToken()),
-                                   "Accept":"application/json",
-                                   "Content-Type":"application/json",
-                                   "app_version":"5.2",
-                                   "app_os":"ios",
-                                   "DeviceId":"02e1c84df688a47c"]
-        
-        let parameters:[String:String] = ["emailaddress":model.email,
-                                          "password":model.password,
-                                          "firstname":model.firstName,
-                                          "lastname":model.lastName]
-        
-        Alamofire.request(fullURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        let endpoint = GFEndpoint.RegisterUser(email: model.email, password: model.password, firstname: model.firstName, lastname: model.lastName)
+
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default, headers: endpoint.headers)
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):

@@ -14,7 +14,6 @@ import Alamofire
 class LaunchScreenViewModel {
 
     private let disposeBag = DisposeBag()
-    private var accessToken = ""
     
     // RX
     let isLoading = Variable(false)
@@ -22,60 +21,36 @@ class LaunchScreenViewModel {
     var errorMessage = Variable<String?>(nil)
     
     init () {
-        self.getAuthToken()
+        //Initialise the class here
     }
     
-    func getAuthToken() {
+    func getAuthToken(completionHandler:@escaping (_ result:Any?,_ error:Any?) -> Void) {
         
-        let auth_url = "/authenticate/oauth/token?grant_type=client_credentials&client_id=genfareclient"
-        
-        let fullURL = String(format: "%@%@", Utilities.authURL(),auth_url)
-        
-        var headers:HTTPHeaders = [:]
-        
-        if let authorizationHeader = Request.authorizationHeader(user: Utilities.authUserID(),password: Utilities.authPassword()) {
-            headers[authorizationHeader.key] = authorizationHeader.value
-        }
-        
-        Alamofire.request(fullURL,headers:headers)
+        let endpoint = GFEndpoint.GetAuthToken(clientId: Utilities.authUserID())
+
+        Alamofire.request(endpoint.url,headers:endpoint.headers)
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
-                    let response = JSON as! NSDictionary
-                    let accesstoken = response.object(forKey: "access_token")
+                    let response = JSON as! [String: Any]
+                    if let accesstoken = response["access_token"] {
+                        Utilities.saveAccessToken(token: accesstoken as! String)
+                    }
                     
-                    print("Token : \(accesstoken)")
-                    self.accessToken = accesstoken as! String
-                    
-
-                    Utilities.saveAccessToken(token: accesstoken as! String)
+                    completionHandler(JSON,nil)
                     //self.loginUser(username: "ttt1@gm.com", password: "12345678")
-                    
+                    //self.registerUser(username: "ttt1@gm.com", password: "12345678", firstname: "test", lastname: "t")
                 case .failure(let error):
                     print("Request failed with error: \(error)")
-
+                    completionHandler(nil,error.localizedDescription)
                 }
         }
     }
     
     func registerUser(username:String,password:String,firstname:String,lastname:String) {
-        
-        let registerURL = "/services/data-api/mobile/users?tenant=BCT"
-        let fullURL = String(format: "%@%@", Utilities.apiURL(),registerURL)
-        
-        let headers:HTTPHeaders = ["Authorization":String(format: "bearer %@", self.accessToken),
-                                   "Accept":"application/json",
-                                   "Content-Type":"application/json",
-                                   "app_version":"5.2",
-                                   "app_os":"ios",
-                                   "DeviceId":"02e1c84df688a47c"]
-        
-        let parameters:[String:String] = ["emailaddress":username,
-                                             "password":password,
-                                             "firstname":firstname,
-                                             "lastname":lastname]
-        
-        Alamofire.request(fullURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        let endpoint = GFEndpoint.RegisterUser(email: username, password: password, firstname: firstname, lastname: lastname)
+
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default, headers: endpoint.headers)
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
@@ -88,21 +63,9 @@ class LaunchScreenViewModel {
     }
     
     func loginUser(username:String,password:String) {
-        let loginURL = "/services/data-api/mobile/login?tenant=BCT"
-        let fullURL = String(format: "%@%@", Utilities.apiURL(),loginURL)
+        let endpoint = GFEndpoint.LoginUser(email: username, password: password)
         
-        let headers:HTTPHeaders = ["Authorization":String(format: "bearer %@", self.accessToken),
-                                   "Accept":"application/json",
-                                   "Content-Type":"application/json",
-                                   "app_version":"5.2",
-                                   "app_os":"ios",
-                                   "DeviceId":"02e1c84df688a47c"]
-        
-        let parameters:[String:String] = ["deviceUUid":"02e1c84df688a47c",
-                                          "emailaddress":username,
-                                          "password":password]
-        
-        Alamofire.request(fullURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default, headers: endpoint.headers)
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
@@ -115,22 +78,16 @@ class LaunchScreenViewModel {
     }
     
     func refreshToken(username:String,password:String) {
-        let tokenURL = "/authenticate/oauth/token?grant_type=password"
-        let fullURL = String(format: "%@%@", Utilities.authURL(),tokenURL)
-        
-        let headers:HTTPHeaders = ["Authorization":String(format: "Basic %@", self.accessToken),
-                                   "Content-Type":"application/x-www-form-urlencoded",
-                                   "DeviceId":"02e1c84df688a47c"]
-        
-        let parameters:[String:String] = ["emailaddress":username,
-                                          "password":password]
-        
-        
-        Alamofire.request(fullURL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+        let endpoint = GFEndpoint.RefreshToken(email: username, password: password)
+
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: URLEncoding.default, headers: endpoint.headers)
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
+                    let response = JSON as! NSDictionary
+                    let accesstoken = response.object(forKey: "access_token")
+                    print("Token : \(accesstoken)")
+                    
                 case .failure(let error):
                     print("Request failed with error: \(error)")
                 }

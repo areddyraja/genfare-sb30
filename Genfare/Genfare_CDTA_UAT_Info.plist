@@ -45,15 +45,15 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>api_host</key>
-	<string>api.uat.gfcp.io</string>
+	<string>https://api.uat.gfcp.io</string>
 	<key>auth_host</key>
-	<string>cdta-uat.gfcp.io</string>
+	<string>https://cdta-uat.gfcp.io</string>
 	<key>auth_password</key>
 	<string>GMPyqc1l40XSSus</string>
 	<key>auth_username</key>
 	<string>genfareclient</string>
 	<key>dev_api_host</key>
-	<string>api.uat.gfcp.io</string>
+	<string>https://api.uat.gfcp.io</string>
 	<key>forgot_pass_link</key>
 	<string>https://gfl-uat-tickets.gfmobilelink.com</string>
 	<key>tenantId</key>

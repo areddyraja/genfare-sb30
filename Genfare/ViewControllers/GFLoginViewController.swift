@@ -10,10 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFLoginViewController: GFBaseViewController {
-
+class GFLoginViewController: GFBaseViewController, LoginServiceDelegate {
+    
     let viewModel = LoginViewModel()
     let disposeBag = DisposeBag()
+    var loginService:GFLoginService?
     
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -35,7 +36,6 @@ class GFLoginViewController: GFBaseViewController {
     }
 
     func createViewModelBinding(){
-        
         emailTxt.rx.text.orEmpty
             .bind(to: viewModel.emailIdViewModel.data)
             .disposed(by: disposeBag)
@@ -49,13 +49,10 @@ class GFLoginViewController: GFBaseViewController {
             self.passwordTxt.resignFirstResponder()
         }).subscribe(onNext: { [unowned self] in
             if self.viewModel.validateCredentials() {
-                self.viewModel.loginUser{result,error in
-                    if(error != nil){
-                        self.popupAlert(title: "Failed", message: error as! String, actionTitles: ["OK"], actions: [nil])
-                    }else{
-                        self.popupAlert(title: "Success", message: "Login Successful...!!!", actionTitles: ["OK"], actions: [nil])
-                    }
-                }
+                self.spinnerView = UIViewController.displaySpinner(onView: self.view)
+                self.loginService = GFLoginService(username: self.emailTxt.text!, password: self.passwordTxt.text!)
+                self.loginService?.delegate = self
+                self.loginService?.loginUser()
             }else{
                 self.popupAlert(title: "Error", message: self.viewModel.formErrorString(), actionTitles: ["OK"], actions: [nil])
             }
@@ -76,5 +73,26 @@ class GFLoginViewController: GFBaseViewController {
                 NSLog("Failure")
             }.disposed(by: disposeBag)
         
+    }
+    
+    //Pragma mark - LoginService Delegate methods
+
+    func didFinishLoginSuccessfully(_ sender: Any) {
+        UIViewController.removeSpinner(spinner: self.spinnerView!)
+        popupAlert(title: "Success", message: "Login Successful...!!!", actionTitles: ["OK"], actions: [nil])
+        
+    }
+    
+    func didLoginNeedSMSAuth(_ sender: Any) {
+        //
+    }
+    
+    func didLoginNeedWallet(_ sender: Any) {
+        //
+    }
+    
+    func didFailLoginWithError(_ error: Any) {
+        UIViewController.removeSpinner(spinner: self.spinnerView!)
+        popupAlert(title: "Failed", message: error as! String, actionTitles: ["OK"], actions: [nil])
     }
 }

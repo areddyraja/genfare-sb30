@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class SigninModel {
+class LoginModel {
     var email: String = ""
     var password: String = ""
     

@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.3</string>
+	<string>3.1</string>
 	<key>CFBundleVersion</key>
 	<string>12</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -44,5 +44,21 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>api_host</key>
+	<string>https://api.staging.gfcp.io</string>
+	<key>auth_host</key>
+	<string>https://bct-staging.gfcp.io</string>
+	<key>auth_password</key>
+	<string>GMPyqc1l40XSSus</string>
+	<key>auth_username</key>
+	<string>genfareclient</string>
+	<key>dev_api_host</key>
+	<string>https://api.uat.gfcp.io</string>
+	<key>forgot_pass_link</key>
+	<string>https://gfl-uat-tickets.gfmobilelink.com</string>
+	<key>tenantId</key>
+	<string>BCT</string>
+	<key>transit_id</key>
+	<string>50001</string>
 </dict>
 </plist>

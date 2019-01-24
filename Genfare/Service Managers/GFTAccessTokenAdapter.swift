@@ -20,7 +20,7 @@ final class GFTAccessTokenAdapter: RequestAdapter {
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
         var urlRequest = urlRequest
         
-        if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(Utilities.apiURL()) {
+        if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(Utilities.apiHost()) {
             /// Set the Authorization header value using the access token.
             urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
         }

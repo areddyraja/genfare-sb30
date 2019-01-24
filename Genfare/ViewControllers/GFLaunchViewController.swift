@@ -14,6 +14,14 @@ class GFLaunchViewController: UIViewController {
         super.viewDidLoad()
 
         let launchScreenViewModel = LaunchScreenViewModel()
+        launchScreenViewModel.getAuthToken { (result, error) in
+            //
+            if(error != nil){
+                print(error)
+            }
+            //UIViewController.removeSpinner(spinner: self.spinnerView!)
+            self.gotoHomeScreen()
+        }
         print(launchScreenViewModel)
         // Do any additional setup after loading the view.
     }
@@ -22,6 +30,14 @@ class GFLaunchViewController: UIViewController {
         super.viewWillAppear(animated)
     }
 
+    func gotoHomeScreen() {
+        let mainStory = UIStoryboard(name: "Main", bundle: nil)
+        let vc:HomeViewController = mainStory.instantiateViewController(withIdentifier: "GFNAVIGATEMENUHOME") as! HomeViewController
+        let navController = UINavigationController(rootViewController: vc)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = navController
+    }
+    
     /*
     // MARK: - Navigation
 

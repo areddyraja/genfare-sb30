@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.7.3)
+  - Alamofire (4.8.1)
   - Alamofire-SwiftyJSON (3.0.0):
     - Alamofire (~> 4.5)
     - SwiftyJSON (~> 4.0.0)
@@ -30,9 +30,11 @@ PODS:
   - OHHTTPStubs/Swift (6.1.0):
     - OHHTTPStubs/Default
   - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
-  - SideMenu (4.0.0)
+  - SideMenu (5.0.3)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -43,6 +45,7 @@ DEPENDENCIES:
   - NetworkStack
   - OHHTTPStubs
   - OHHTTPStubs/Swift
+  - RxCocoa
   - RxSwift
   - SideMenu
 
@@ -56,12 +59,13 @@ SPEC REPOS:
     - NetworkStack
     - OHHTTPStubs
     - RxAtomic
+    - RxCocoa
     - RxSwift
     - SideMenu
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
   Decodable: f0b95fa2fcf8633dd097aa8f7f09838ab3524f5d
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
@@ -69,10 +73,11 @@ SPEC CHECKSUMS:
   NetworkStack: b3b64b19fb27bbe323a7f1b1ca18325df4fc4e2a
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
-  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 75c611eb528a7c03d7703a83030f2b931db2d0da
+PODFILE CHECKSUM: 64a54e836e4abc23eecc17e88e0b094008ef7629
 
 COCOAPODS: 1.5.3

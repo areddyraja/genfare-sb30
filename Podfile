@@ -13,6 +13,7 @@ target 'Genfare' do
   pod 'NetworkStack'
   pod 'Decodable'
   pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'GenfareTests' do
     inherit! :search_paths

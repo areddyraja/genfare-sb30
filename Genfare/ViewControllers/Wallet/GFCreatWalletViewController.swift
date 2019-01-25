@@ -10,9 +10,8 @@ import UIKit
 
 class GFCreatWalletViewController: GFBaseViewController {
 
-    
     @IBOutlet weak var walletNameTxt: UITextField!
-    @IBOutlet weak var createBtn: ThemeButton!
+    @IBOutlet weak var createBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

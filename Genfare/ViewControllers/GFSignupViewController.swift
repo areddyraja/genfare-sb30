@@ -10,10 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFSignupViewController: GFBaseViewController, UITableViewDelegate {
+class GFSignupViewController: GFBaseViewController, SignUpServiceDelegate {
 
     let viewModel = SignUpViewModel()
     let disposeBag = DisposeBag()
+    var signUpService:GFSignUpService?
     
     @IBOutlet weak var firstNameTxt: GFWhiteButtonTextField!
     @IBOutlet weak var lastNameTxt: GFWhiteButtonTextField!
@@ -62,14 +63,9 @@ class GFSignupViewController: GFBaseViewController, UITableViewDelegate {
         }).subscribe(onNext: { [unowned self] in
             if self.viewModel.validateCredentials() {
                 self.spinnerView = UIViewController.displaySpinner(onView: self.view)
-                self.viewModel.signUpUser{ result, error in
-                    if(error != nil){
-                        self.popupAlert(title: "Error", message: error as! String, actionTitles: ["OK"], actions: [nil])
-                    }else{
-                        self.popupAlert(title: "Success", message: "Registration Successful...!!!", actionTitles: ["OK"], actions: [nil])
-                    }
-                    UIViewController.removeSpinner(spinner: self.spinnerView!)
-                }
+                self.signUpService = GFSignUpService(email: self.emailTxt.text!, password: self.passwordTxt1.text!, firstname: self.firstNameTxt.text!, lastname: self.lastNameTxt.text!)
+                self.signUpService?.delegate = self
+                self.signUpService?.registerUser()
             }else{
                 self.popupAlert(title: "Error", message: self.viewModel.formErrorString(), actionTitles: ["OK"], actions: [nil])
             }
@@ -91,4 +87,15 @@ class GFSignupViewController: GFBaseViewController, UITableViewDelegate {
             }.disposed(by: disposeBag)
         
     }
+    
+    func didRegisterSuccessfully() {
+        UIViewController.removeSpinner(spinner: spinnerView!)
+        popupAlert(title: "Success", message: "Registration Successful...!!!", actionTitles: ["OK"], actions: [nil])
+    }
+    
+    func didFailRegistration(_ error: Any) {
+        UIViewController.removeSpinner(spinner: spinnerView!)
+        popupAlert(title: "Error", message: error as! String, actionTitles: ["OK"], actions: [nil])
+    }
+
 }

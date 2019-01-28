@@ -38,24 +38,24 @@ class GFWalletsService {
                 }
         }
     }
-    /*
-     accMemberId = "<null>";
-     accTicketGroupId = "<null>";
-     accountType = "Card-Based";
-     cardType = Full;
-     deviceId = 621CB9DEA4A345928441D1B3CC227AFC;
-     deviceUUID = 621CB9DEA4A345928441D1B3CC227AFC;
-     farecode = 1;
-     "farecode_expiry" = "<null>";
-     id = 577;
-     nickname = "T1 Wallet";
-     personId = 257;
-     printedId = CC3EFB02F2459F8A;
-     status = Active;
-     statusId = 2;
-     walletId = 577;
-     walletUUID = "53e16e12-7434-4435-9fdf-95108671dbbf";
- */
+
+    func createWallet(nickname:String,completionHandler:@escaping (_ success:Bool?,_ error:Any?) -> Void) {
+        let endpoint = GFEndpoint.CreateWallet(wallet: nickname)
+        
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default, headers: endpoint.headers)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let JSON):
+                    print(JSON)
+                    self.saveWalletData(data: JSON as! [String : Any])
+                    completionHandler(true,nil)
+                case .failure(let error):
+                    print("Request failed with error: \(error)")
+                    completionHandler(false,error)
+                }
+        }
+    }
+    
     func saveWalletData(data:[String:Any]) {
         print(data)
         GFDataService.deleteAllRecords(entity: "Wallet")
@@ -80,22 +80,6 @@ class GFWalletsService {
         userObj.walletUUID = data["walletUUID"] as? String
         
         GFDataService.saveContext()
-    }
-    
-    func createWallet(nickname:String,completionHandler:@escaping (_ success:Bool?,_ error:Any?) -> Void) {
-        let endpoint = GFEndpoint.CreateWallet(wallet: nickname)
-        
-        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: URLEncoding.default, headers: endpoint.headers)
-            .responseJSON { response in
-                switch response.result {
-                case .success(let JSON):
-                    print(JSON)
-                    completionHandler(true,nil)
-                case .failure(let error):
-                    print("Request failed with error: \(error)")
-                    completionHandler(false,error)
-                }
-        }
     }
     
     static func userWallet() -> Wallet? {

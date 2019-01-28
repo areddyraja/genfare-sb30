@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xfT-WR-k78">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xfT-WR-k78">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="GFNAVIGATETOSTORE" id="xfT-WR-k78" customClass="GFMyPassesViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BLe-8V-ze7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RF-CS-XMW">
@@ -27,7 +26,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGO-tY-g1H">
-                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS7-Af-tAf">
                                         <rect key="frame" x="13" y="40" width="20" height="22"/>
@@ -50,7 +49,7 @@
                                 <viewLayoutGuide key="safeArea" id="XBF-LE-Emp"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cA1-9G-kmh" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666657" y="163" width="300" height="88"/>
+                                <rect key="frame" x="37.5" y="139" width="300" height="88"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WV0-8e-tHz">
                                         <rect key="frame" x="213" y="0.0" width="88" height="88"/>
@@ -120,7 +119,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzX-sX-hIU" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="117.66666666666669" y="272" width="140" height="38"/>
+                                <rect key="frame" x="117.5" y="248" width="140" height="38"/>
                                 <color key="backgroundColor" name="Cello Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="IMM-Dl-pB7"/>
@@ -140,7 +139,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-cz-dwf">
-                                <rect key="frame" x="167.66666666666666" y="114" width="60" height="28"/>
+                                <rect key="frame" x="167.5" y="90" width="60" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="b3K-uY-KBS"/>
                                 </constraints>
@@ -149,7 +148,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ej8-Pd-hlg" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666657" y="383" width="300" height="88"/>
+                                <rect key="frame" x="37.5" y="359" width="300" height="88"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zwr-4v-mX7">
                                         <rect key="frame" x="213" y="0.0" width="88" height="88"/>
@@ -212,7 +211,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqr-ou-TkE" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="117.66666666666669" y="492" width="140" height="38"/>
+                                <rect key="frame" x="117.5" y="468" width="140" height="38"/>
                                 <color key="backgroundColor" name="Cello Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="7Pe-F8-LUJ"/>
@@ -265,7 +264,7 @@
             <objects>
                 <viewController id="d1F-ro-ePF" customClass="GFPaymentViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vlx-63-z8p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ad-DL-W45">
@@ -276,7 +275,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBU-Fz-f4g">
-                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ii7-QY-p1e">
                                         <rect key="frame" x="13" y="40" width="20" height="22"/>
@@ -299,7 +298,7 @@
                                 <viewLayoutGuide key="safeArea" id="lGB-aR-z09"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="7yV-I1-wCv">
-                                <rect key="frame" x="0.0" y="101" width="375" height="710"/>
+                                <rect key="frame" x="0.0" y="77" width="375" height="589"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10 Purchase Process 3" translatesAutoresizingMaskIntoConstraints="NO" id="DDZ-cQ-PuS">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
@@ -373,7 +372,7 @@
             <objects>
                 <viewController id="vrR-8O-hAN" customClass="GFActivatePassViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PMc-pW-Ff5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwC-ky-C2K">
@@ -384,7 +383,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gh8-Rk-n8M">
-                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2P-Tt-5sp">
                                         <rect key="frame" x="13" y="40" width="20" height="22"/>
@@ -407,7 +406,7 @@
                                 <viewLayoutGuide key="safeArea" id="9Lb-eF-ATG"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76N-0P-A8x" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="319" y="117" width="39" height="37"/>
+                                <rect key="frame" x="319" y="93" width="39" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnf-pQ-ddd">
                                         <rect key="frame" x="3" y="3" width="32" height="31"/>
@@ -432,7 +431,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0im-wI-k2X" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="100" y="611" width="175" height="38"/>
+                                <rect key="frame" x="100" y="587" width="175" height="38"/>
                                 <color key="backgroundColor" name="Cello Blue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="aej-wk-dRt"/>
@@ -452,7 +451,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikk-3q-GnI" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666657" y="195" width="300" height="348"/>
+                                <rect key="frame" x="37.5" y="171" width="300" height="348"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nBl-4R-eH0">
                                         <rect key="frame" x="213" y="0.0" width="88" height="88"/>
@@ -547,7 +546,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUg-Ls-6Xi">
-                                <rect key="frame" x="144.33333333333334" y="115" width="86.333333333333343" height="28"/>
+                                <rect key="frame" x="144.5" y="91" width="86" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="vfl-pL-52V"/>
                                 </constraints>
@@ -593,7 +592,7 @@
             <objects>
                 <viewController storyboardIdentifier="GFPASSLIST" id="09f-3d-asQ" customClass="GFPassListViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="el2-wx-Fn2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nj3-6e-ipr">
@@ -604,7 +603,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoZ-ie-QMy">
-                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-h0-FT6">
                                         <rect key="frame" x="13" y="40" width="20" height="22"/>
@@ -627,7 +626,7 @@
                                 <viewLayoutGuide key="safeArea" id="K3V-gX-bl2"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="ix5-FX-pTG">
-                                <rect key="frame" x="0.0" y="100" width="375" height="713"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="592"/>
                                 <subviews>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12 Passes screen" translatesAutoresizingMaskIntoConstraints="NO" id="vPm-5R-t0H">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
@@ -1043,7 +1042,7 @@
             <objects>
                 <viewController id="OJ1-x8-6UG" customClass="GFPassDetailsViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gb2-9F-LQf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaz-n6-DgV">
@@ -1054,7 +1053,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMf-Si-riT">
-                                <rect key="frame" x="0.0" y="24" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPe-qM-Ote">
                                         <rect key="frame" x="13" y="40" width="20" height="22"/>
@@ -1077,7 +1076,7 @@
                                 <viewLayoutGuide key="safeArea" id="pNs-Fk-LhB"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1N-SF-g71" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <rect key="frame" x="32" y="196" width="311" height="93"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-ZQ-DFV">
                                         <rect key="frame" x="213" y="0.0" width="88" height="88"/>
@@ -1132,7 +1131,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVR-y9-kX0" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <rect key="frame" x="32" y="196" width="311" height="93"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="S46-S9-wmH">
                                         <rect key="frame" x="213" y="0.0" width="88" height="88"/>
@@ -1195,7 +1194,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Daz-EP-iTO" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <rect key="frame" x="32" y="196" width="311" height="93"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DL5-Dk-GaH">
                                         <rect key="frame" x="213" y="0.0" width="88" height="88"/>
@@ -1258,7 +1257,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hve-UC-96I" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <rect key="frame" x="32" y="196" width="311" height="93"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="YJi-8L-rEu">
                                         <rect key="frame" x="213" y="0.0" width="88" height="88"/>
@@ -1314,7 +1313,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrd-Hp-UKd" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <rect key="frame" x="32" y="196" width="311" height="93"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RP1-Yj-ac8">
                                         <rect key="frame" x="213" y="0.0" width="88" height="88"/>
@@ -1370,7 +1369,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWV-Ry-D6u" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="32" y="220" width="311" height="93"/>
+                                <rect key="frame" x="32" y="196" width="311" height="93"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-r5-Axv">
                                         <rect key="frame" x="213" y="0.0" width="88" height="88"/>
@@ -1426,7 +1425,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pass Selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vw-hi-9NK">
-                                <rect key="frame" x="122" y="115" width="131" height="29"/>
+                                <rect key="frame" x="122" y="91" width="131" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="131" id="YyA-ee-jsK"/>
                                     <constraint firstAttribute="height" constant="29" id="ni5-2Q-jGb"/>
@@ -1436,7 +1435,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRm-rN-3cs">
-                                <rect key="frame" x="0.0" y="100" width="99" height="24"/>
+                                <rect key="frame" x="0.0" y="76" width="99" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Zca-Dx-POk"/>
                                     <constraint firstAttribute="width" constant="99" id="cr8-CP-eFQ"/>
@@ -1448,13 +1447,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31-Day Pass (Rush Hour)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45T-cH-OO6">
-                                <rect key="frame" x="37" y="164" width="301" height="29"/>
+                                <rect key="frame" x="37" y="140" width="301" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP7-eB-rt4" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="81" y="512" width="213" height="38"/>
+                                <rect key="frame" x="81" y="488" width="213" height="38"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="213" id="1PK-uN-vWQ"/>
@@ -1516,26 +1515,26 @@
         </scene>
     </scenes>
     <resources>
-        <image name="10 Purchase Process 3" width="375" height="737"/>
-        <image name="12 Passes screen" width="390" height="764"/>
+        <image name="10 Purchase Process 3" width="750" height="1474"/>
+        <image name="12 Passes screen" width="374.8800048828125" height="733.91998291015625"/>
         <image name="BusIcon" width="20" height="20"/>
         <image name="Hamburger" width="20" height="13"/>
-        <image name="QR Code" width="202" height="202"/>
-        <image name="cota-logo-blue" width="114" height="36"/>
+        <image name="QR Code" width="405" height="405"/>
+        <image name="cota-logo-blue" width="228" height="72"/>
         <namedColor name="Alto Gray">
             <color red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Buttercup Orange">
-            <color red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Cello Blue">
-            <color red="0.1333333333" green="0.21176470589999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13333333333333333" green="0.21176470588235294" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Dusty Gray">
-            <color red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Havelock Blue">
-            <color red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.29019607843137257" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>

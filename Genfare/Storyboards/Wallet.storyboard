@@ -149,7 +149,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="closeWalletWindow:" destination="M2A-oO-9V7" eventType="touchUpInside" id="88W-yR-B07"/>
+                                    <action selector="dismissCurrent:" destination="M2A-oO-9V7" eventType="touchUpInside" id="A4f-Rw-Jeu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ4-KQ-f5q" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">

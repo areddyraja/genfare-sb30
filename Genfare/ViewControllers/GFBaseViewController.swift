@@ -133,12 +133,31 @@ class GFBaseViewController: UIViewController {
 //        }
 
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let account:Account? = GFAccountManager.currentAccount()
+        if account != nil {
+            GFAccountManager.logout()
+            return
+        }
+        
         if let controller = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATETOLOGIN") as? GFLoginViewController {
             let navController = UINavigationController(rootViewController: controller)
 //            appDelegate.window?.rootViewController = navController
             present(navController, animated: true, completion: nil)
         }
         GFBaseViewController.currentMenuItem = Constants.SideMenuAction.Login
+    }
+    
+    func showUserHome(){
+        let account:Account? = GFAccountManager.currentAccount()
+        var homeID:String = Constants.StoryBoard.CardBased
+        if account?.profileType != "Card Based" {
+            homeID = Constants.StoryBoard.AccountBased
+        }
+        //show account home
+        if let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateViewController(withIdentifier: homeID) as? GFLoginViewController {
+            let navController = UINavigationController(rootViewController: controller)
+            present(navController, animated: true, completion: nil)
+        }
     }
     
     /*

@@ -9,133 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Side Menu Items View Controller-->
-        <scene sceneID="4k8-0V-deW">
-            <objects>
-                <viewController id="nLs-OS-qqR" customClass="SideMenuItemsViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QzT-zW-qg5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kcQ-vs-6Mk">
-                                <rect key="frame" x="0.0" y="425" width="375" height="242"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqq-8a-tFD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="jim.collins@business.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N34-JN-luB">
-                                        <rect key="frame" x="63" y="54" width="145" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.53017729920000001" green="0.53017729920000001" blue="0.53017729920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_icon_default" translatesAutoresizingMaskIntoConstraints="NO" id="1nz-RD-ukl">
-                                        <rect key="frame" x="11" y="33" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jim Collins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6c-h4-ZF8">
-                                        <rect key="frame" x="63" y="30" width="124" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="Ge3-Oo-RoA"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F9q-oW-RGm">
-                                <rect key="frame" x="0.0" y="95" width="375" height="322"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-0X-2ef">
-                                        <rect key="frame" x="9" y="11" width="276" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="Menu Home"/>
-                                        <connections>
-                                            <action selector="homeButtonTap:" destination="nLs-OS-qqR" eventType="touchUpInside" id="Jv2-x8-rXt"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkZ-JM-Tm2">
-                                        <rect key="frame" x="9" y="73" width="276" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="Menu Plan Trip"/>
-                                        <connections>
-                                            <action selector="planTrip:" destination="nLs-OS-qqR" eventType="touchUpInside" id="nti-3d-CB5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNa-c7-CJg">
-                                        <rect key="frame" x="9" y="146" width="196" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="MenuPurchase"/>
-                                        <connections>
-                                            <action selector="showPasses:" destination="nLs-OS-qqR" eventType="touchUpInside" id="B7S-3o-U5A"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX9-do-7iJ">
-                                        <rect key="frame" x="8" y="198" width="276" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="Menu Settings"/>
-                                        <connections>
-                                            <action selector="showSettings:" destination="nLs-OS-qqR" eventType="touchUpInside" id="d8p-a9-DDH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bL4-FV-bME">
-                                        <rect key="frame" x="8" y="261" width="276" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="Menu Logout"/>
-                                        <connections>
-                                            <action selector="userLogin:" destination="nLs-OS-qqR" eventType="touchUpInside" id="AYw-JJ-ZPS"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0S-I7-jsZ">
-                                        <rect key="frame" x="68" y="268" width="136" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.13453206419944763" green="0.19054561853408813" blue="0.42394348978996277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="cqq-8a-tFD" firstAttribute="top" secondItem="WUP-nj-GNF" secondAttribute="top" constant="-20" id="Ot3-rx-XWt"/>
-                            <constraint firstItem="cqq-8a-tFD" firstAttribute="leading" secondItem="WUP-nj-GNF" secondAttribute="leading" id="bCs-Pm-ngk"/>
-                            <constraint firstItem="cqq-8a-tFD" firstAttribute="trailing" secondItem="WUP-nj-GNF" secondAttribute="trailing" id="hYf-2n-mai"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="WUP-nj-GNF"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="eNw-A2-kro"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="emailLabel" destination="N34-JN-luB" id="8yV-uj-u3p"/>
-                        <outlet property="menuHomeScreen" destination="1Tf-0X-2ef" id="l4O-jI-zAu"/>
-                        <outlet property="menuLogin" destination="bL4-FV-bME" id="sLj-wK-i7N"/>
-                        <outlet property="menuPassPurchase" destination="eNa-c7-CJg" id="ZyG-re-2FD"/>
-                        <outlet property="menuPlanTrip" destination="bkZ-JM-Tm2" id="IML-lj-vgG"/>
-                        <outlet property="menuSettings" destination="eX9-do-7iJ" id="R92-sT-BDN"/>
-                        <outlet property="tableView" destination="kcQ-vs-6Mk" id="P7S-Lx-K7k"/>
-                        <outlet property="userImage" destination="1nz-RD-ukl" id="I4w-BG-0rQ"/>
-                        <outlet property="userNameLabel" destination="e6c-h4-ZF8" id="GCO-lc-KQ0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FMu-MF-JDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5.5999999999999996" y="164.16791604197903"/>
-        </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="gZU-W4-ZGW">
             <objects>
@@ -148,20 +21,162 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="nLs-OS-qqR" kind="relationship" relationship="rootViewController" id="KRP-uZ-ead"/>
+                        <segue destination="ITu-0n-Zy3" kind="relationship" relationship="rootViewController" id="meD-pE-qQB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="443-jF-XvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-900" y="164"/>
         </scene>
+        <!--Side Menu Items View Controller-->
+        <scene sceneID="Vbq-up-B8T">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="ITu-0n-Zy3" customClass="SideMenuItemsViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="16S-Yd-yVt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6as-pr-6cQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GB-iL-7Sl">
+                                        <rect key="frame" x="63" y="54" width="203" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.53017729920000001" green="0.53017729920000001" blue="0.53017729920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_icon_default" translatesAutoresizingMaskIntoConstraints="NO" id="DUa-v9-1yG">
+                                        <rect key="frame" x="11" y="33" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSJ-67-wd8">
+                                        <rect key="frame" x="63" y="30" width="203" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="FZH-dL-55B"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="L3U-n4-0bR">
+                                <rect key="frame" x="16" y="101" width="304" height="324"/>
+                                <subviews>
+                                    <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyv-qc-Vv5">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Plan Trip" image="bus-solid-white">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="planTrip:" destination="ITu-0n-Zy3" eventType="touchUpInside" id="Ico-Yn-sAs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msb-Y2-oxD">
+                                        <rect key="frame" x="0.0" y="60" width="304" height="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="My Passes" image="ticket-alt-light">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showPasses:" destination="ITu-0n-Zy3" eventType="touchUpInside" id="O4x-eJ-edK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKz-v8-Xw1">
+                                        <rect key="frame" x="0.0" y="120" width="304" height="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Alerts" image="exclamation-triangle-solid-white">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showAlerts:" destination="ITu-0n-Zy3" eventType="touchUpInside" id="oQK-iz-cuR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9C-7V-sF2">
+                                        <rect key="frame" x="0.0" y="180" width="304" height="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Settings" image="cog-regular">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showSettings:" destination="ITu-0n-Zy3" eventType="touchUpInside" id="cZO-i3-uID"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WzY-Xx-pZB">
+                                        <rect key="frame" x="0.0" y="240" width="304" height="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Contact Us" image="phone-solid">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showContactus:" destination="ITu-0n-Zy3" eventType="touchUpInside" id="IvZ-Ws-PNP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC7-cQ-RiB">
+                                        <rect key="frame" x="0.0" y="300" width="304" height="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Log Out" image="sign-out-alt-light">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="userLogin:" destination="ITu-0n-Zy3" eventType="touchUpInside" id="XNS-KO-fDZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6as-pr-6cQ" firstAttribute="top" secondItem="IEn-2c-SRF" secondAttribute="top" constant="-20" id="E9h-xW-bVA"/>
+                            <constraint firstItem="6as-pr-6cQ" firstAttribute="leading" secondItem="IEn-2c-SRF" secondAttribute="leading" id="EBw-4p-mXk"/>
+                            <constraint firstItem="IEn-2c-SRF" firstAttribute="trailing" secondItem="L3U-n4-0bR" secondAttribute="trailing" constant="55" id="bkz-cM-vTm"/>
+                            <constraint firstItem="6as-pr-6cQ" firstAttribute="trailing" secondItem="IEn-2c-SRF" secondAttribute="trailing" id="nKy-oa-rbs"/>
+                            <constraint firstItem="L3U-n4-0bR" firstAttribute="top" secondItem="6as-pr-6cQ" secondAttribute="bottom" constant="25" id="qwU-Fd-exz"/>
+                            <constraint firstItem="L3U-n4-0bR" firstAttribute="leading" secondItem="IEn-2c-SRF" secondAttribute="leading" constant="16" id="weG-bG-3Fc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IEn-2c-SRF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="feI-qi-6oS"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="0GB-iL-7Sl" id="GmE-9F-47z"/>
+                        <outlet property="menuAlerts" destination="KKz-v8-Xw1" id="Kho-Nc-nK1"/>
+                        <outlet property="menuContactus" destination="WzY-Xx-pZB" id="glV-dL-5mY"/>
+                        <outlet property="menuLogin" destination="sC7-cQ-RiB" id="sDb-19-icZ"/>
+                        <outlet property="menuPassPurchase" destination="msb-Y2-oxD" id="DKy-Ch-YaD"/>
+                        <outlet property="menuPlanTrip" destination="eyv-qc-Vv5" id="Fqy-AD-DUf"/>
+                        <outlet property="menuSettings" destination="T9C-7V-sF2" id="BaT-Oh-OeL"/>
+                        <outlet property="userImage" destination="DUa-v9-1yG" id="YVL-uN-DEA"/>
+                        <outlet property="userNameLabel" destination="HSJ-67-wd8" id="pn7-VV-gOM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0a-Vv-vNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="163"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Menu Home" width="97" height="25"/>
-        <image name="Menu Logout" width="114" height="25"/>
-        <image name="Menu Plan Trip" width="119" height="25"/>
-        <image name="Menu Settings" width="113" height="25"/>
-        <image name="MenuPurchase" width="181" height="25"/>
+        <image name="bus-solid-white" width="22" height="21"/>
+        <image name="cog-regular" width="23" height="23"/>
+        <image name="exclamation-triangle-solid-white" width="26" height="23.5"/>
+        <image name="phone-solid" width="23" height="23"/>
+        <image name="sign-out-alt-light" width="27" height="20"/>
+        <image name="ticket-alt-light" width="26" height="17"/>
         <image name="user_icon_default" width="600" height="600"/>
     </resources>
 </document>

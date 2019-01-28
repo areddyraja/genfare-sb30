@@ -118,6 +118,16 @@
 		2747556121FB1CB100D62268 /* GFCheckWalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747556021FB1CB100D62268 /* GFCheckWalletService.swift */; };
 		2747556221FB1CB100D62268 /* GFCheckWalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747556021FB1CB100D62268 /* GFCheckWalletService.swift */; };
 		2747556321FB1CB100D62268 /* GFCheckWalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747556021FB1CB100D62268 /* GFCheckWalletService.swift */; };
+		2747556521FEE45F00D62268 /* AccountHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2747556421FEE45F00D62268 /* AccountHome.storyboard */; };
+		2747556621FEE45F00D62268 /* AccountHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2747556421FEE45F00D62268 /* AccountHome.storyboard */; };
+		2747556721FEE45F00D62268 /* AccountHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2747556421FEE45F00D62268 /* AccountHome.storyboard */; };
+		2747556921FEE4B100D62268 /* GFCardBasedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747556821FEE4B100D62268 /* GFCardBasedHomeViewController.swift */; };
+		2747556A21FEE4B100D62268 /* GFCardBasedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747556821FEE4B100D62268 /* GFCardBasedHomeViewController.swift */; };
+		2747556B21FEE4B100D62268 /* GFCardBasedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747556821FEE4B100D62268 /* GFCardBasedHomeViewController.swift */; };
+		2747556D21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747556C21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift */; };
+		2747556E21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747556C21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift */; };
+		2747556F21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747556C21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift */; };
+		2747557421FEE52F00D62268 /* GFSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48097188213E8A4500B4445A /* GFSettingsViewController.swift */; };
 		2757D2AE21F47EAD00413713 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757D2AD21F47EAD00413713 /* PasswordViewModel.swift */; };
 		2757D2AF21F47EAD00413713 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757D2AD21F47EAD00413713 /* PasswordViewModel.swift */; };
 		2757D2B021F47EAD00413713 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757D2AD21F47EAD00413713 /* PasswordViewModel.swift */; };
@@ -321,6 +331,9 @@
 		2747551D21FADF4A00D62268 /* Ticket+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticket+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2747555A21FAE0B500D62268 /* GFDataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataUtility.swift; sourceTree = "<group>"; };
 		2747556021FB1CB100D62268 /* GFCheckWalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFCheckWalletService.swift; sourceTree = "<group>"; };
+		2747556421FEE45F00D62268 /* AccountHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountHome.storyboard; sourceTree = "<group>"; };
+		2747556821FEE4B100D62268 /* GFCardBasedHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFCardBasedHomeViewController.swift; sourceTree = "<group>"; };
+		2747556C21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAccountBasedHomeViewController.swift; sourceTree = "<group>"; };
 		2757D2AD21F47EAD00413713 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		2757D2B121F47EEE00413713 /* EmailIdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailIdViewModel.swift; sourceTree = "<group>"; };
 		2757D2B621F47FDF00413713 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -496,6 +509,38 @@
 			path = ManagedObjects;
 			sourceTree = "<group>";
 		};
+		2747557021FEE4DB00D62268 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2747556821FEE4B100D62268 /* GFCardBasedHomeViewController.swift */,
+				2747556C21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift */,
+				48097188213E8A4500B4445A /* GFSettingsViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		2747557121FEE4F500D62268 /* TripPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				48656FF82122EA4200E94556 /* HomeViewController.swift */,
+				48656FFB2122F21900E94556 /* NavigateViewController.swift */,
+				4849088D2136C048008D0B6F /* GFNavigateTimingsViewController.swift */,
+				4849088F2136C08A008D0B6F /* GFNavigateRouteViewController.swift */,
+				48490876212FE754008D0B6F /* GFRecentTripsViewController.swift */,
+			);
+			path = TripPlanner;
+			sourceTree = "<group>";
+		};
+		2747557521FEE55A00D62268 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4849088B2136B123008D0B6F /* GFLoginViewController.swift */,
+				486DA5762165E69F006B8BA5 /* GFSignupViewController.swift */,
+				486DA5BE216787A1006B8BA5 /* GFForgotPasswordViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		2757D2AC21F45D5500413713 /* LoginViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,6 +621,7 @@
 				48097186213E845500B4445A /* Settings.storyboard */,
 				273B2CF621E5F07100208012 /* Splashscreen.storyboard */,
 				274754A221F9BAFA00D62268 /* Wallet.storyboard */,
+				2747556421FEE45F00D62268 /* AccountHome.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -583,21 +629,15 @@
 		48656FFA2122F1D600E94556 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2747557521FEE55A00D62268 /* Login */,
+				2747557121FEE4F500D62268 /* TripPlanner */,
+				2747557021FEE4DB00D62268 /* Account */,
 				274754A621F9BD7F00D62268 /* Wallet */,
 				4809718C213FFC8400B4445A /* Passes */,
 				4884E6C32122A85D003A1289 /* ViewController.swift */,
-				48656FF82122EA4200E94556 /* HomeViewController.swift */,
-				48656FFB2122F21900E94556 /* NavigateViewController.swift */,
 				486570A2212C207300E94556 /* SideMenuItemsViewController.swift */,
-				48490876212FE754008D0B6F /* GFRecentTripsViewController.swift */,
-				4849088B2136B123008D0B6F /* GFLoginViewController.swift */,
 				4849087821351CE3008D0B6F /* GFBaseViewController.swift */,
-				4849088D2136C048008D0B6F /* GFNavigateTimingsViewController.swift */,
-				4849088F2136C08A008D0B6F /* GFNavigateRouteViewController.swift */,
 				480971802137DFD900B4445A /* GFSampleViewController.swift */,
-				48097188213E8A4500B4445A /* GFSettingsViewController.swift */,
-				486DA5762165E69F006B8BA5 /* GFSignupViewController.swift */,
-				486DA5BE216787A1006B8BA5 /* GFForgotPasswordViewController.swift */,
 				273B2CF921E5F1AE00208012 /* GFLaunchViewController.swift */,
 			);
 			path = ViewControllers;
@@ -840,6 +880,7 @@
 				486DA5AE21674F67006B8BA5 /* Login.storyboard in Resources */,
 				486DA5AF21674F67006B8BA5 /* LaunchScreen.storyboard in Resources */,
 				486DA5B021674F67006B8BA5 /* Assets.xcassets in Resources */,
+				2747556621FEE45F00D62268 /* AccountHome.storyboard in Resources */,
 				486DA5B121674F67006B8BA5 /* Sidemenu.storyboard in Resources */,
 				486DA5B221674F67006B8BA5 /* Colors.xcassets in Resources */,
 				486DA5B321674F67006B8BA5 /* Main.storyboard in Resources */,
@@ -862,6 +903,7 @@
 				4884E6C72122A85D003A1289 /* Main.storyboard in Resources */,
 				273B2CF721E5F07100208012 /* Splashscreen.storyboard in Resources */,
 				48097187213E845500B4445A /* Settings.storyboard in Resources */,
+				2747556521FEE45F00D62268 /* AccountHome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,6 +914,7 @@
 				2757D2F221F8530200413713 /* Genfare_CDTA_UAT_Info.plist in Resources */,
 				273B2CF821E5F07100208012 /* Splashscreen.storyboard in Resources */,
 				274754A521F9BAFA00D62268 /* Wallet.storyboard in Resources */,
+				2747556721FEE45F00D62268 /* AccountHome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1033,6 +1076,7 @@
 				2747554621FADF4A00D62268 /* Product+CoreDataProperties.swift in Sources */,
 				486DA59021674F67006B8BA5 /* GFSampleViewController.swift in Sources */,
 				2757D2FB21F89CF700413713 /* GenfareDataResources.xcdatamodeld in Sources */,
+				2747556E21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */,
 				486DA59121674F67006B8BA5 /* GFNavigateRouteViewController.swift in Sources */,
 				2747553D21FADF4A00D62268 /* LoyaltyBonus+CoreDataClass.swift in Sources */,
 				2747553421FADF4A00D62268 /* WalletContents+CoreDataProperties.swift in Sources */,
@@ -1075,6 +1119,7 @@
 				2757D2CE21F72DAD00413713 /* GFAPIServiceManager.swift in Sources */,
 				2757D2C621F5BA9100413713 /* NameTextViewModel.swift in Sources */,
 				486DA5A421674F67006B8BA5 /* GFRoute.swift in Sources */,
+				2747556A21FEE4B100D62268 /* GFCardBasedHomeViewController.swift in Sources */,
 				274754B121F9D09D00D62268 /* GFWalletService.swift in Sources */,
 				2757D2B321F47EEE00413713 /* EmailIdViewModel.swift in Sources */,
 				2747553121FADF4A00D62268 /* WalletContents+CoreDataClass.swift in Sources */,
@@ -1115,6 +1160,7 @@
 				4881C42B215BAE690088CF5F /* GFTripHistoryManager.swift in Sources */,
 				2747553921FADF4A00D62268 /* Account+CoreDataProperties.swift in Sources */,
 				274754C021FA24B100D62268 /* GFDataService.swift in Sources */,
+				2747556921FEE4B100D62268 /* GFCardBasedHomeViewController.swift in Sources */,
 				4865709B212ACEDE00E94556 /* GFTripDataManager.swift in Sources */,
 				486BD5592146C42500E88AAA /* GFTransitStop.swift in Sources */,
 				2757D2C121F5B12300413713 /* SignUpViewModel.swift in Sources */,
@@ -1158,6 +1204,7 @@
 				2747549F21F9979300D62268 /* GFLoginService.swift in Sources */,
 				2747555421FADF4A00D62268 /* Ticket+CoreDataClass.swift in Sources */,
 				486BD5552146848300E88AAA /* GFRouteLeg.swift in Sources */,
+				2747556D21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */,
 				2747553F21FADF4A00D62268 /* LoyaltyBonus+CoreDataProperties.swift in Sources */,
 				48097189213E8A4500B4445A /* GFSettingsViewController.swift in Sources */,
 				2747551E21FADF4A00D62268 /* WalletActivity+CoreDataClass.swift in Sources */,
@@ -1206,6 +1253,7 @@
 				2747553E21FADF4A00D62268 /* LoyaltyBonus+CoreDataClass.swift in Sources */,
 				2747554D21FADF4A00D62268 /* TicketActivation+CoreDataProperties.swift in Sources */,
 				2747553821FADF4A00D62268 /* Account+CoreDataClass.swift in Sources */,
+				2747556F21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */,
 				273B2CFE21E5F35700208012 /* LaunchScreenViewModel.swift in Sources */,
 				2747555921FADF4A00D62268 /* Ticket+CoreDataProperties.swift in Sources */,
 				2747555021FADF4A00D62268 /* LoyaltyCapped+CoreDataClass.swift in Sources */,
@@ -1217,6 +1265,7 @@
 				274754B221F9D09D00D62268 /* GFWalletService.swift in Sources */,
 				2747552C21FADF4A00D62268 /* Card+CoreDataClass.swift in Sources */,
 				2747554421FADF4A00D62268 /* Product+CoreDataClass.swift in Sources */,
+				2747557421FEE52F00D62268 /* GFSettingsViewController.swift in Sources */,
 				2747554121FADF4A00D62268 /* LoyaltyBonus+CoreDataProperties.swift in Sources */,
 				273B2CEE21E48A1500208012 /* LoginModel.swift in Sources */,
 				2747554A21FADF4A00D62268 /* TicketActivation+CoreDataClass.swift in Sources */,
@@ -1238,6 +1287,7 @@
 				2747556321FB1CB100D62268 /* GFCheckWalletService.swift in Sources */,
 				2757D2FC21F89CF700413713 /* GenfareDataResources.xcdatamodeld in Sources */,
 				2757D2C721F5BA9100413713 /* NameTextViewModel.swift in Sources */,
+				2747556B21FEE4B100D62268 /* GFCardBasedHomeViewController.swift in Sources */,
 				274754AA21F9BDBA00D62268 /* GFWalletSelectionViewController.swift in Sources */,
 				2757D2CB21F7289C00413713 /* KeychainWrapper.swift in Sources */,
 				2757D2D921F7404500413713 /* KeychainItemAccessibility.swift in Sources */,

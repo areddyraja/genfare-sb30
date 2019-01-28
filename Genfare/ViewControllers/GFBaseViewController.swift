@@ -56,59 +56,8 @@ class GFBaseViewController: UIViewController {
         print("Add MENU Observers")
 
         //Prevent adding observers multipletimes
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.HomeScreen), object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.PlanTrip), object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.PassPurchase), object: nil)
         NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.Settings), object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.Login), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToHome(notification:)), name: Notification.Name(Constants.NotificationKey.HomeScreen), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToPlanTrip(notification:)), name: Notification.Name(Constants.NotificationKey.PlanTrip), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToPasses(notification:)), name: Notification.Name(Constants.NotificationKey.PassPurchase), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToSettings(notification:)), name: Notification.Name(Constants.NotificationKey.Settings), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToLogin(notification:)), name: Notification.Name(Constants.NotificationKey.Login), object: nil)
-    }
-    
-    @objc func navigateToHome(notification:Notification) {
-        print("SIDEMENU - Home")
-        if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.HomeScreen {
-            navigationController?.popToRootViewController(animated: false)
-            return
-        }
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATEMENUHOME") as? HomeViewController {
-            let navController = UINavigationController(rootViewController: controller)
-            appDelegate.window?.rootViewController = navController
-        }
-        GFBaseViewController.currentMenuItem = Constants.SideMenuAction.HomeScreen
-    }
-    
-    @objc func navigateToPlanTrip(notification:Notification) {
-        print("SIDEMENU - Plan Trip")
-        if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.PlanTrip {
-            navigationController?.popToRootViewController(animated: false)
-            return
-        }
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATEMENUHOME") as? HomeViewController {
-            let navController = UINavigationController(rootViewController: controller)
-            appDelegate.window?.rootViewController = navController
-        }
-        GFBaseViewController.currentMenuItem = Constants.SideMenuAction.PlanTrip
-    }
-    
-    @objc func navigateToPasses(notification:Notification) {
-        print("SIDEMENU - My Passes")
-        if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.PassPurchase {
-            navigationController?.popToRootViewController(animated: false)
-            return
-        }
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        if let controller = UIStoryboard(name: "Store", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATETOSTORE") as? GFMyPassesViewController {
-            let navController = UINavigationController(rootViewController: controller)
-            appDelegate.window?.rootViewController = navController
-        }
-        GFBaseViewController.currentMenuItem = Constants.SideMenuAction.PassPurchase
     }
     
     @objc func navigateToSettings(notification:Notification) {
@@ -125,28 +74,6 @@ class GFBaseViewController: UIViewController {
         GFBaseViewController.currentMenuItem = Constants.SideMenuAction.Settings
     }
     
-    @objc func navigateToLogin(notification:Notification) {
-        print("SIDEMENU - Login")
-//        if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.Login {
-//            navigationController?.popToRootViewController(animated: false)
-//            return
-//        }
-
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let account:Account? = GFAccountManager.currentAccount()
-        if account != nil {
-            GFAccountManager.logout()
-            return
-        }
-        
-        if let controller = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATETOLOGIN") as? GFLoginViewController {
-            let navController = UINavigationController(rootViewController: controller)
-//            appDelegate.window?.rootViewController = navController
-            present(navController, animated: true, completion: nil)
-        }
-        GFBaseViewController.currentMenuItem = Constants.SideMenuAction.Login
-    }
-    
     func showUserHome(){
         let account:Account? = GFAccountManager.currentAccount()
         var homeID:String = Constants.StoryBoard.CardBased
@@ -160,25 +87,8 @@ class GFBaseViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-     
-     if let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATEHOME") as? NavigateViewController {
-     if let navigator = navigationController {
-     navigator.pushViewController(navController, animated: false)
-     }
-     }
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     deinit {
         print("Controller is being removed -============================================== \(self)")
-        
     }
 }
 

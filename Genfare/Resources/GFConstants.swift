@@ -29,8 +29,10 @@ struct Constants {
         static let PassPurchase = "kPassPurchaseScreenNavigation"
         static let Settings = "kSettingsScreenNavigation"
         static let Login = "kLoginScreenNavigation"
+        static let Alerts = "kAlertsScreenNavigation"
+        static let ContactUs = "kContactusScreenNavigation"
     }
-    
+
     struct Path {
         static let KeychainService = "com.genfare.mobile.service.keychain"
     }
@@ -74,6 +76,12 @@ struct Constants {
         static let UserName = "GF_USER_NAME"
         static let Password = "GF_USER_PASSWORD"
         static let SecretKey = "GF_SECRET_AUTH_KEY"
+    }
+    
+    struct StoryBoard {
+        static let CardBased = "GFCARDBASEDCONTROLLER"
+        static let AccountBased = "GFACCOUNTBASEDCONTROLLER"
+        static let CreateWallet = "CREATEWALLET"
     }
 }
 

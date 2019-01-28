@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GFLaunchViewController: UIViewController {
 
@@ -31,11 +32,21 @@ class GFLaunchViewController: UIViewController {
     }
 
     func gotoHomeScreen() {
+        displayAccount()
         let mainStory = UIStoryboard(name: "Main", bundle: nil)
         let vc:HomeViewController = mainStory.instantiateViewController(withIdentifier: "GFNAVIGATEMENUHOME") as! HomeViewController
         let navController = UINavigationController(rootViewController: vc)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = navController
+    }
+    
+    func displayAccount() {
+        
+        if let account:Account = GFDataService.currentAccount() {
+            print(account.emailaddress)
+        }else{
+            print("Account not found")
+        }
     }
     
     /*

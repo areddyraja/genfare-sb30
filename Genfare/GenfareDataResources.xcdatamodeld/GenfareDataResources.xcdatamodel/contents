@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Xcode 4.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Account" representedClassName="Account" syncable="YES">
         <attribute name="accountId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="active" optional="YES" attributeType="String" syncable="YES"/>
@@ -99,7 +99,7 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="walletContentUsageIdentifier" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="LoyaltyBonus" syncable="YES">
+    <entity name="LoyaltyBonus" representedClassName=".LoyaltyBonus" syncable="YES">
         <attribute name="activatedTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="productId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
@@ -108,7 +108,7 @@
         <attribute name="ticketId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="walletId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="LoyaltyCapped" syncable="YES">
+    <entity name="LoyaltyCapped" representedClassName=".LoyaltyCapped" syncable="YES">
         <attribute name="activatedTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="productId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
@@ -117,7 +117,7 @@
         <attribute name="ticketId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="walletId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Product" syncable="YES">
+    <entity name="Product" representedClassName="Product" syncable="YES">
         <attribute name="barcodeTimer" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="bonusThreshold" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="cappedThreshold" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
@@ -213,7 +213,7 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="validStartDateTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
     </entity>
-    <entity name="TicketActivation" syncable="YES">
+    <entity name="TicketActivation" representedClassName=".TicketActivation" syncable="YES">
         <attribute name="activationDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="activationExpDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ticketIdentifier" optional="YES" attributeType="String" syncable="YES"/>
@@ -223,25 +223,30 @@
         <attribute name="image" optional="YES" attributeType="Transformable" valueTransformerName="Base64ValueTransformer" syncable="YES"/>
     </entity>
     <entity name="Wallet" representedClassName="Wallet" syncable="YES">
+        <attribute name="accMemberId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="accountType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="accTicketGroupId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cardType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="cvv" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="deviceUUID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="farecodeExpiryDateTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="farecode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="farecode_expiry" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="huuid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="modifiedDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="printedId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="statusId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="walletDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walletId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="walletUUID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="WalletActivity" syncable="YES">
+    <entity name="WalletActivity" representedClassName="WalletActivity" syncable="YES">
         <attribute name="activityId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="activityTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="amountCharged" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
@@ -250,7 +255,7 @@
         <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ticketId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
     </entity>
-    <entity name="WalletContents" syncable="YES">
+    <entity name="WalletContents" representedClassName="WalletContents" syncable="YES">
         <attribute name="activationCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="activationDate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="agencyId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
@@ -296,7 +301,7 @@
         <element name="Ticket" positionX="160" positionY="192" width="128" height="870"/>
         <element name="TicketActivation" positionX="234" positionY="387" width="128" height="90"/>
         <element name="Token" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="Wallet" positionX="162" positionY="342" width="128" height="300"/>
+        <element name="Wallet" positionX="162" positionY="342" width="128" height="375"/>
         <element name="WalletActivity" positionX="252" positionY="396" width="128" height="150"/>
         <element name="WalletContents" positionX="207" positionY="342" width="128" height="435"/>
     </elements>

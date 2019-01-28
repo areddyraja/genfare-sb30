@@ -8,6 +8,8 @@
 
 import Foundation
 import Alamofire
+import AERecord
+import CoreData
 
 class GFLoginService {
     
@@ -36,9 +38,11 @@ class GFLoginService {
                     }else{
                         KeychainWrapper.standard.set(self.username!, forKey:Constants.KeyChain.UserName)
                         KeychainWrapper.standard.set(self.password!, forKey: Constants.KeyChain.Password)
+                        self.saveData(data: dict!["result"] as! [String : Any])
                         GFRefreshAuthToken.refresh(completionHandler: { success, error in
                             if(success!){
-                                self.delegate?.didFinishLoginSuccessfully(self)
+                                //self.delegate?.didFinishLoginSuccessfully(self)
+                                self.checkForWallets()
                             }else{
                                 self.delegate?.didFailLoginWithError(error)
                             }
@@ -51,6 +55,61 @@ class GFLoginService {
                 }
         }
     }
+    
+    func checkForWallets() {
+        let walletService = GFWalletsService()
+        walletService.fetchWallets { (success, error) in
+            if success! {
+                print("Wallet retreived successfully")
+                //Check for wallets availability and present with respectiv e screen
+                //if wallet is there present account screen
+                //else create wallet screen
+                if let wallet = GFWalletsService.userWallet() {
+                    print(wallet)
+                    self.delegate?.didFinishLoginSuccessfully(self)
+                }else{
+                    //self.presentCreateWallet()
+                    self.delegate?.didLoginNeedWallet(self)
+                }
+            }else{
+                print(error)
+            }
+        }
+    }
+    
+    func presentCreateWallet(){
+        let walletService = GFWalletsService()
+        walletService.createWallet(nickname: "Test Wallet") { (success, error) in
+            if (error != nil) {
+                print("Wallet created successfully")
+            }
+        }
+    }
+    
+    func saveData(data:[String:Any]) {
+        //Delete existing records if any before saving Account details
+        GFDataService.deleteAllRecords(entity: "Account")
+        
+        let managedContext = GFDataService.context
+        let account = NSEntityDescription.entity(forEntityName: "Account", in: managedContext)
+        let userObj:Account = NSManagedObject(entity: account!, insertInto: managedContext) as! Account
+        
+        userObj.accountId = data["accountid"] as? String
+        userObj.created = data["created"] as? String
+        userObj.emailaddress = data["emailaddress"] as? String
+        //userObj.farecode = data["farecode"] as! String
+        userObj.firstName = data["firstname"] as? String
+        userObj.id = data["id"] as? NSNumber
+        userObj.lastlogin = data["lastlogin"] as? String
+        userObj.lastName = data["lastname"] as? String
+        userObj.mobilenumber = data["mobilenumber"] as? String
+        userObj.needs_additional_auth = data["needs_additional_auth"] as? NSNumber
+        userObj.profileType = data["profiletype"] as? String
+        userObj.status = data["status"] as? String
+        
+        GFDataService.saveContext()
+    }
+    
 }
 
 protocol LoginServiceDelegate {

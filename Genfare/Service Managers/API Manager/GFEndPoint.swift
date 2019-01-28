@@ -14,6 +14,9 @@ enum GFEndpoint {
     case RegisterUser(email: String,password:String,firstname:String,lastname:String)
     case LoginUser(email:String,password:String)
     case RefreshToken(email:String,password:String)
+    case GetWallets()
+    case CheckWalletService()
+    case CreateWallet(wallet:String)
     
     // MARK: - Public Properties
     var method: Alamofire.HTTPMethod {
@@ -26,9 +29,42 @@ enum GFEndpoint {
             return .post
         case .RefreshToken:
             return .post
+        case .GetWallets:
+            return .post
+        case .CheckWalletService:
+            return .get
+        case .CreateWallet:
+            return .post
         }
     }
     
+    var url: String {
+        let baseUrl:String = Utilities.authHost()
+        switch self {
+        case .GetAuthToken(let clientId):
+            let auth_url = "/authenticate/oauth/token?grant_type=client_credentials&client_id=\(clientId)"
+            return baseUrl+auth_url
+        case .RegisterUser:
+            let reg_url = "/services/data-api/mobile/users?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+reg_url
+        case .LoginUser:
+            let loginurl = "/services/data-api/mobile/login?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+loginurl
+        case .RefreshToken:
+            let url = "/authenticate/oauth/token?grant_type=password"
+            return baseUrl+url
+        case .GetWallets:
+            let url = "/services/data-api/mobile/wallets?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        case .CheckWalletService:
+            let url = "/services/data-api/mobile/wallets/for/\(String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.UserName)!))?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        case .CreateWallet:
+            let url = "/services/data-api/mobile/wallets/?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        }
+    }
+
     var headers:HTTPHeaders {
         var commonHeaders = ["Accept" : "application/json",
                              "Content-Type":"application/json",
@@ -52,6 +88,20 @@ enum GFEndpoint {
         case .LoginUser:
             commonHeaders["Authorization"] = String(format: "bearer %@", Utilities.accessToken())
             return commonHeaders
+        case .GetWallets:
+            commonHeaders["Content-Type"] = "application/x-www-form-urlencoded"
+            if let authorizationHeader = Request.authorizationHeader(user: Utilities.authUserID(),password: Utilities.authPassword()) {
+                commonHeaders[authorizationHeader.key] = authorizationHeader.value
+            }
+            return commonHeaders
+        case .CheckWalletService:
+            let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
+            commonHeaders["Authorization"] = String(format: "bearer %@", token)
+            return commonHeaders
+        case .CreateWallet:
+            let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
+            commonHeaders["Authorization"] = String(format: "bearer %@", token)
+            return commonHeaders
         }
     }
     
@@ -74,24 +124,18 @@ enum GFEndpoint {
             parameters = ["username":username,
                           "password":password]
             return parameters
-        }
-    }
-    
-    var url: String {
-        let baseUrl:String = Utilities.authHost()
-        switch self {
-        case .GetAuthToken(let clientId):
-            let auth_url = "/authenticate/oauth/token?grant_type=client_credentials&client_id=\(clientId)"
-            return baseUrl+auth_url
-        case .RegisterUser:
-            let reg_url = "/services/data-api/mobile/users?tenant=\(Utilities.tenantId())"
-            return Utilities.apiHost()+reg_url
-        case .LoginUser:
-            let loginurl = "/services/data-api/mobile/login?tenant=\(Utilities.tenantId())"
-            return Utilities.apiHost()+loginurl
-        case .RefreshToken:
-            let url = "/authenticate/oauth/token?grant_type=password"
-            return baseUrl+url
+        case .GetWallets():
+            parameters = [:]
+            return parameters
+        case .CheckWalletService():
+            parameters = [:]
+            return parameters
+        case .CreateWallet(let nickname):
+            let account:Account = GFAccountManager.currentAccount()!
+            parameters = ["nickname":nickname,
+                          "personId":account.accountId!,
+                          "deviceUUID":Utilities.deviceId()]
+            return parameters
         }
     }
 }

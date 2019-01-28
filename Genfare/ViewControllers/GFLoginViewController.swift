@@ -88,7 +88,11 @@ class GFLoginViewController: GFBaseViewController, LoginServiceDelegate {
     }
     
     func didLoginNeedWallet(_ sender: Any) {
-        //
+        if let navController = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: "CREATEWALLET") as? GFCreatWalletViewController {
+            if let navigator = navigationController {
+                navigator.pushViewController(navController, animated: false)
+            }
+        }
     }
     
     func didFailLoginWithError(_ error: Any) {

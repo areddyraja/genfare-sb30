@@ -10,7 +10,6 @@ import UIKit
 
 class GFRecentTripsViewController: GFBaseViewController,UITableViewDataSource {
 
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {

@@ -41,7 +41,7 @@ class GFLoginService {
                         self.saveData(data: dict!["result"] as! [String : Any])
                         GFRefreshAuthToken.refresh(completionHandler: { success, error in
                             if(success!){
-                                self.delegate?.didFinishLoginSuccessfully(self)
+                                //self.delegate?.didFinishLoginSuccessfully(self)
                                 self.checkForWallets()
                             }else{
                                 self.delegate?.didFailLoginWithError(error)
@@ -64,8 +64,24 @@ class GFLoginService {
                 //Check for wallets availability and present with respectiv e screen
                 //if wallet is there present account screen
                 //else create wallet screen
+                if let wallet = GFWalletsService.userWallet() {
+                    print(wallet)
+                    self.delegate?.didFinishLoginSuccessfully(self)
+                }else{
+                    //self.presentCreateWallet()
+                    self.delegate?.didLoginNeedWallet(self)
+                }
             }else{
                 print(error)
+            }
+        }
+    }
+    
+    func presentCreateWallet(){
+        let walletService = GFWalletsService()
+        walletService.createWallet(nickname: "Test Wallet") { (success, error) in
+            if (error != nil) {
+                print("Wallet created successfully")
             }
         }
     }

@@ -12,10 +12,6 @@ class GFAccountManager {
     
     init(){}
     
-    static func currentAccount() -> Account? {
-        return GFDataService.currentAccount()
-    }
-    
     static func logout() -> Void {
         KeychainWrapper.standard.removeAllKeys()
         
@@ -34,4 +30,15 @@ class GFAccountManager {
         KeychainWrapper.standard.set(password, forKey: Constants.KeyChain.Password)
         KeychainWrapper.standard.set(token, forKey: Constants.KeyChain.SecretKey)
     }
+    
+    static func currentAccount() -> Account? {
+        let records:Array<Account> = GFDataService.fetchRecords(entity: "Account") as! Array<Account>
+        
+        if records.count > 0 {
+            return records.first
+        }
+        
+        return nil
+    }
+
 }

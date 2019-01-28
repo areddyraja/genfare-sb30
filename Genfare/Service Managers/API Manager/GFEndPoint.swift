@@ -16,6 +16,7 @@ enum GFEndpoint {
     case RefreshToken(email:String,password:String)
     case GetWallets()
     case CheckWalletService()
+    case CreateWallet(wallet:String)
     
     // MARK: - Public Properties
     var method: Alamofire.HTTPMethod {
@@ -32,6 +33,8 @@ enum GFEndpoint {
             return .post
         case .CheckWalletService:
             return .get
+        case .CreateWallet:
+            return .post
         }
     }
     
@@ -55,6 +58,9 @@ enum GFEndpoint {
             return Utilities.apiHost()+url
         case .CheckWalletService:
             let url = "/services/data-api/mobile/wallets/for/\(String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.UserName)!))?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        case .CreateWallet:
+            let url = "/services/data-api/mobile/wallets/?tenant=\(Utilities.tenantId())"
             return Utilities.apiHost()+url
         }
     }
@@ -92,6 +98,10 @@ enum GFEndpoint {
             let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
             commonHeaders["Authorization"] = String(format: "bearer %@", token)
             return commonHeaders
+        case .CreateWallet:
+            let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
+            commonHeaders["Authorization"] = String(format: "bearer %@", token)
+            return commonHeaders
         }
     }
     
@@ -119,6 +129,12 @@ enum GFEndpoint {
             return parameters
         case .CheckWalletService():
             parameters = [:]
+            return parameters
+        case .CreateWallet(let nickname):
+            let account:Account = GFAccountManager.currentAccount()!
+            parameters = ["nickname":nickname,
+                          "personId":account.accountId!,
+                          "deviceUUID":Utilities.deviceId()]
             return parameters
         }
     }

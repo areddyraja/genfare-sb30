@@ -74,6 +74,7 @@ class GFBaseViewController: UIViewController {
             navigationController?.popToRootViewController(animated: false)
             return
         }
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATEMENUHOME") as? HomeViewController {
             let navController = UINavigationController(rootViewController: controller)

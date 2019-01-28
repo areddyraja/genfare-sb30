@@ -27,6 +27,8 @@ class GFWalletsService {
                         print("Wallet length - \(wallets.count)")
                         if wallets.count > 0 {
                             self.saveWalletData(data: wallets.first as! [String:Any])
+                        }else{
+                            GFDataService.deleteAllRecords(entity: "Wallet")
                         }
                         completionHandler(true,nil)
                     }
@@ -76,7 +78,41 @@ class GFWalletsService {
         userObj.statusId = data["statusId"] as? NSNumber
         userObj.walletId = data["walletId"] as? NSNumber
         userObj.walletUUID = data["walletUUID"] as? String
-
+        
         GFDataService.saveContext()
+    }
+    
+    func createWallet(nickname:String,completionHandler:@escaping (_ success:Bool?,_ error:Any?) -> Void) {
+        let endpoint = GFEndpoint.CreateWallet(wallet: nickname)
+        
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: URLEncoding.default, headers: endpoint.headers)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let JSON):
+                    print(JSON)
+                    completionHandler(true,nil)
+                case .failure(let error):
+                    print("Request failed with error: \(error)")
+                    completionHandler(false,error)
+                }
+        }
+    }
+    
+    static func userWallet() -> Wallet? {
+        let records:Array<Wallet> = GFDataService.fetchRecords(entity: "Wallet") as! Array<Wallet>
+        
+        if records.count > 0 {
+            return records.first
+        }
+        
+        return nil
+    }
+    
+    static func isWalletAvailable() -> Bool {
+        if userWallet() != nil {
+            return true
+        }else{
+            return false
+        }
     }
 }

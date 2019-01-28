@@ -264,6 +264,15 @@
 		48C6BFD22148C8C900E2065F /* EncodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD12148C8C900E2065F /* EncodeUtil.m */; };
 		48C6BFD42148DA0000E2065F /* GFRouteLegsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD32148DA0000E2065F /* GFRouteLegsScrollView.swift */; };
 		48C6BFD62149244E00E2065F /* GFMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD52149244E00E2065F /* GFMenuButton.swift */; };
+		4A4CF15E21FEF701007BB42C /* GFEncryptionKeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF15D21FEF701007BB42C /* GFEncryptionKeysService.swift */; };
+		4A4CF15F21FEF701007BB42C /* GFEncryptionKeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF15D21FEF701007BB42C /* GFEncryptionKeysService.swift */; };
+		4A4CF16021FEF701007BB42C /* GFEncryptionKeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF15D21FEF701007BB42C /* GFEncryptionKeysService.swift */; };
+		4A4CF16221FF0F0F007BB42C /* GFConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16121FF0F0F007BB42C /* GFConfigService.swift */; };
+		4A4CF16321FF0F10007BB42C /* GFConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16121FF0F0F007BB42C /* GFConfigService.swift */; };
+		4A4CF16421FF0F10007BB42C /* GFConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16121FF0F0F007BB42C /* GFConfigService.swift */; };
+		4A4CF16621FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */; };
+		4A4CF16721FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */; };
+		4A4CF16821FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */; };
 		6BAC9B3158A6CF08A5C00CBE /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182811BCDD5A9F088C0A2ADF /* Pods_Genfare.framework */; };
 		933BC90C36FBC12511536946 /* Pods_GenfareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10D27795AB4339957A57FF4 /* Pods_GenfareTests.framework */; };
 /* End PBXBuildFile section */
@@ -395,6 +404,9 @@
 		48C6BFD12148C8C900E2065F /* EncodeUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncodeUtil.m; sourceTree = "<group>"; };
 		48C6BFD32148DA0000E2065F /* GFRouteLegsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRouteLegsScrollView.swift; sourceTree = "<group>"; };
 		48C6BFD52149244E00E2065F /* GFMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFMenuButton.swift; sourceTree = "<group>"; };
+		4A4CF15D21FEF701007BB42C /* GFEncryptionKeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEncryptionKeysService.swift; sourceTree = "<group>"; };
+		4A4CF16121FF0F0F007BB42C /* GFConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFConfigService.swift; sourceTree = "<group>"; };
+		4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountBalanceService.swift; sourceTree = "<group>"; };
 		71ACF688C296F64A851CE270 /* Pods-GenfareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenfareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1ADE31BC003EA18FBD231F /* Pods-Genfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.debug.xcconfig"; sourceTree = "<group>"; };
 		D10D27795AB4339957A57FF4 /* Pods_GenfareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenfareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -618,6 +630,9 @@
 				273B2D0021E6165A00208012 /* GFTAccessTokenAdapter.swift */,
 				2757D2CC21F72DAD00413713 /* GFAPIServiceManager.swift */,
 				2747549E21F9979300D62268 /* GFLoginService.swift */,
+				4A4CF16121FF0F0F007BB42C /* GFConfigService.swift */,
+				4A4CF15D21FEF701007BB42C /* GFEncryptionKeysService.swift */,
+				4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */,
 				274754AF21F9D09D00D62268 /* GFWalletService.swift */,
 				274754B321F9D22B00D62268 /* GFRefreshAuthToken.swift */,
 				274754BB21F9F35300D62268 /* GFSignUpService.swift */,
@@ -1004,14 +1019,17 @@
 				274754B521F9D22B00D62268 /* GFRefreshAuthToken.swift in Sources */,
 				486DA58021674F67006B8BA5 /* GFConstants.swift in Sources */,
 				2747552B21FADF4A00D62268 /* Card+CoreDataClass.swift in Sources */,
+				4A4CF15F21FEF701007BB42C /* GFEncryptionKeysService.swift in Sources */,
 				2747554C21FADF4A00D62268 /* TicketActivation+CoreDataProperties.swift in Sources */,
 				486DA58121674F67006B8BA5 /* GFHistoryTableViewCell.swift in Sources */,
 				2757D2BE21F5AFE200413713 /* SignUpModel.swift in Sources */,
 				486DA58221674F67006B8BA5 /* GFRecentTripsViewController.swift in Sources */,
 				2747554921FADF4A00D62268 /* TicketActivation+CoreDataClass.swift in Sources */,
+				4A4CF16721FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */,
 				274754C121FA24B100D62268 /* GFDataService.swift in Sources */,
 				2747556221FB1CB100D62268 /* GFCheckWalletService.swift in Sources */,
 				486DA58321674F67006B8BA5 /* SideMenuItemsViewController.swift in Sources */,
+				4A4CF16321FF0F10007BB42C /* GFConfigService.swift in Sources */,
 				2747555E21FB07AF00D62268 /* GFLaunchViewController.swift in Sources */,
 				486DA58421674F67006B8BA5 /* GFMapsUtility.swift in Sources */,
 				2757D2D321F73F6F00413713 /* GFEndPoint.swift in Sources */,
@@ -1124,14 +1142,17 @@
 				48097192213FFCEF00B4445A /* GFActivatePassViewController.swift in Sources */,
 				4884E6C42122A85D003A1289 /* ViewController.swift in Sources */,
 				2757D2AE21F47EAD00413713 /* PasswordViewModel.swift in Sources */,
+				4A4CF16621FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */,
 				2747554B21FADF4A00D62268 /* TicketActivation+CoreDataProperties.swift in Sources */,
 				2757D2B721F47FDF00413713 /* LoginViewModel.swift in Sources */,
 				4884E6CA2122A85D003A1289 /* Genfare.xcdatamodeld in Sources */,
 				480971812137DFD900B4445A /* GFSampleViewController.swift in Sources */,
 				484908902136C08A008D0B6F /* GFNavigateRouteViewController.swift in Sources */,
+				4A4CF16221FF0F0F007BB42C /* GFConfigService.swift in Sources */,
 				4881C429215B8A210088CF5F /* GFRecentTrip.swift in Sources */,
 				2747552721FADF4A00D62268 /* Wallet+CoreDataProperties.swift in Sources */,
 				2747552121FADF4A00D62268 /* WalletActivity+CoreDataProperties.swift in Sources */,
+				4A4CF15E21FEF701007BB42C /* GFEncryptionKeysService.swift in Sources */,
 				2757D2D221F73F6F00413713 /* GFEndPoint.swift in Sources */,
 				48097194213FFD1D00B4445A /* GFPaymentViewController.swift in Sources */,
 				4809718B213FEEE400B4445A /* GFMyPassesViewController.swift in Sources */,
@@ -1199,6 +1220,7 @@
 				2747552021FADF4A00D62268 /* WalletActivity+CoreDataClass.swift in Sources */,
 				2747554721FADF4A00D62268 /* Product+CoreDataProperties.swift in Sources */,
 				2747553B21FADF4A00D62268 /* Account+CoreDataProperties.swift in Sources */,
+				4A4CF16021FEF701007BB42C /* GFEncryptionKeysService.swift in Sources */,
 				2747552621FADF4A00D62268 /* Wallet+CoreDataClass.swift in Sources */,
 				2747553221FADF4A00D62268 /* WalletContents+CoreDataClass.swift in Sources */,
 				273B2CFB21E5F1AE00208012 /* GFLaunchViewController.swift in Sources */,
@@ -1222,12 +1244,14 @@
 				2747554A21FADF4A00D62268 /* TicketActivation+CoreDataClass.swift in Sources */,
 				2747553521FADF4A00D62268 /* WalletContents+CoreDataProperties.swift in Sources */,
 				2757D2CF21F72DAD00413713 /* GFAPIServiceManager.swift in Sources */,
+				4A4CF16821FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */,
 				274754BA21F9E2C800D62268 /* GFCreateWalletViewModel.swift in Sources */,
 				2757D2BF21F5AFE200413713 /* SignUpModel.swift in Sources */,
 				2747555621FADF4A00D62268 /* Ticket+CoreDataClass.swift in Sources */,
 				274754B621F9D22B00D62268 /* GFRefreshAuthToken.swift in Sources */,
 				2747555F21FB12CC00D62268 /* GFAccountManager.swift in Sources */,
 				2757D2C321F5B12300413713 /* SignUpViewModel.swift in Sources */,
+				4A4CF16421FF0F10007BB42C /* GFConfigService.swift in Sources */,
 				273B2CFF21E5F89300208012 /* GFUtilities.swift in Sources */,
 				2757D2B421F47EEE00413713 /* EmailIdViewModel.swift in Sources */,
 				273B2CF521E4AAD400208012 /* GFNetworkReachability.swift in Sources */,

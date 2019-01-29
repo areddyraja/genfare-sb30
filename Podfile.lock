@@ -1,72 +1,87 @@
 PODS:
-  - AFNetworking (2.5.1):
-    - AFNetworking/NSURLConnection (= 2.5.1)
-    - AFNetworking/NSURLSession (= 2.5.1)
-    - AFNetworking/Reachability (= 2.5.1)
-    - AFNetworking/Security (= 2.5.1)
-    - AFNetworking/Serialization (= 2.5.1)
-    - AFNetworking/UIKit (= 2.5.1)
-  - AFNetworking/NSURLConnection (2.5.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.1)
-  - AFNetworking/Security (2.5.1)
-  - AFNetworking/Serialization (2.5.1)
-  - AFNetworking/UIKit (2.5.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
+  - AERecord (4.1.2)
+  - Alamofire (4.8.1)
+  - Alamofire-SwiftyJSON (3.0.0):
+    - Alamofire (~> 4.5)
+    - SwiftyJSON (~> 4.0.0)
+  - Decodable (0.6.0)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
   - GoogleMaps/Base (2.7.0)
   - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
-  - InAppSettingsKit (2.6)
-  - libpng (1.6.18)
-  - RaptureXML (1.0.1)
-  - RNCryptor-objc (3.0.5)
-  - SSKeychain (1.2.0)
-  - SVProgressHUD (2.2.5)
-  - TPKeyboardAvoiding (1.2.6)
+  - KeychainAccess (3.1.2)
+  - NetworkStack (0.1.6):
+    - Alamofire (~> 4.0)
+    - KeychainAccess (~> 3.1)
+    - RxSwift (~> 4.0)
+  - OHHTTPStubs (6.1.0):
+    - OHHTTPStubs/Default (= 6.1.0)
+  - OHHTTPStubs/Core (6.1.0)
+  - OHHTTPStubs/Default (6.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (6.1.0)
+  - OHHTTPStubs/Swift (6.1.0):
+    - OHHTTPStubs/Default
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - SideMenu (5.0.3)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
-  - AFNetworking (= 2.5.1)
+  - AERecord
+  - Alamofire (~> 4.7)
+  - Alamofire-SwiftyJSON
+  - Decodable
   - GoogleMaps
-  - InAppSettingsKit (= 2.6)
-  - libpng (= 1.6.18)
-  - RaptureXML (= 1.0.1)
-  - RNCryptor-objc (= 3.0.5)
-  - SSKeychain (= 1.2.0)
-  - SVProgressHUD
-  - TPKeyboardAvoiding (= 1.2.6)
+  - NetworkStack
+  - OHHTTPStubs
+  - OHHTTPStubs/Swift
+  - RxCocoa
+  - RxSwift
+  - SideMenu
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - AFNetworking
+    - AERecord
+    - Alamofire
+    - Alamofire-SwiftyJSON
+    - Decodable
     - GoogleMaps
-    - InAppSettingsKit
-    - libpng
-    - RaptureXML
-    - RNCryptor-objc
-    - SSKeychain
-    - SVProgressHUD
-    - TPKeyboardAvoiding
+    - KeychainAccess
+    - NetworkStack
+    - OHHTTPStubs
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+    - SideMenu
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
-  AFNetworking: 10e85a00bb0f475124e4ff2677bf15693b2c1523
+  AERecord: ee8e773baa650731f06e89546a8f97e28fe00c32
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
+  Decodable: f0b95fa2fcf8633dd097aa8f7f09838ab3524f5d
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
-  InAppSettingsKit: cc56d3ec45f11352a16d5b210da8a3fa1b9d05ed
-  libpng: 9c661ee692282485a9cf7fcf0159458c91b4f943
-  RaptureXML: b5c33c04c1a4adfd8ad0d5463329a31820596e82
-  RNCryptor-objc: a65b15493de05dda4af0f392c70372b7a5625aab
-  SSKeychain: f8f2bd6ff794090d0c403f70eb7289d23985d353
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  TPKeyboardAvoiding: ee4dd35e3bb7bb64bfbda47e7cc9ba872ff10f77
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  NetworkStack: b3b64b19fb27bbe323a7f1b1ca18325df4fc4e2a
+  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 8b89a7f537ddd54f6f329f8ea3bddf7874020950
+PODFILE CHECKSUM: e55a85459a7644188edbe42a2f60da3b5ebda545
 
 COCOAPODS: 1.5.3

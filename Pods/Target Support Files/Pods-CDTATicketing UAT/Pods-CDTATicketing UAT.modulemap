@@ -1,6 +1,0 @@
-module Pods_CDTATicketing_UAT {
-  umbrella header "Pods-CDTATicketing UAT-umbrella.h"
-
-  export *
-  module * { export * }
-}

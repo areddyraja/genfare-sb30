@@ -82,6 +82,9 @@ struct Constants {
         static let CardBased = "GFCARDBASEDCONTROLLER"
         static let AccountBased = "GFACCOUNTBASEDCONTROLLER"
         static let CreateWallet = "CREATEWALLET"
+        static let Login = "GFNAVIGATETOLOGIN"
+        static let SignUp = "GFREGISTRATION"
+        static let ForgotPassword = "GFFORGOTPASSWORD"
     }
 }
 

@@ -57,7 +57,10 @@ class GFBaseViewController: UIViewController {
 
         //Prevent adding observers multipletimes
         NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.Settings), object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.Login), object: nil)
+
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToSettings(notification:)), name: Notification.Name(Constants.NotificationKey.Settings), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showUserLogin(notification:)), name: Notification.Name(Constants.NotificationKey.Login), object: nil)
     }
     
     @objc func navigateToSettings(notification:Notification) {
@@ -74,6 +77,13 @@ class GFBaseViewController: UIViewController {
         GFBaseViewController.currentMenuItem = Constants.SideMenuAction.Settings
     }
     
+    @objc func showUserLogin(notification:Notification) {
+        if let controller = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.Login) as? GFLoginViewController {
+            let navController = UINavigationController(rootViewController: controller)
+            present(navController, animated: true, completion: nil)
+        }
+    }
+
     func showUserHome(){
         let account:Account? = GFAccountManager.currentAccount()
         var homeID:String = Constants.StoryBoard.CardBased

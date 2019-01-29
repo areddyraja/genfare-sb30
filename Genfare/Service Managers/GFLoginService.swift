@@ -43,6 +43,9 @@ class GFLoginService {
                             if(success!){
                                 //self.delegate?.didFinishLoginSuccessfully(self)
                                 self.checkForWallets()
+                                self.getEncryptionKeys()
+                                self.getConfigApi()
+                                self.getAccountBalance()
                             }else{
                                 self.delegate?.didFailLoginWithError(error)
                             }
@@ -76,7 +79,44 @@ class GFLoginService {
             }
         }
     }
+    func getEncryptionKeys(){
+        let encryptionkeys = GFEncryptionKeysService()
+        encryptionkeys.fetchEncryptionKeys { (success, error) in
+            if success! {
+             print("got keys")
+                    self.delegate?.didFinishLoginSuccessfully(self)
+                }
+            else{
+                print(error)
+            }
+        }
+        
+    }
     
+    func getAccountBalance()  {
+        let balance = GFAccountBalanceService()
+        balance.fetchAccountBalance{ (success, error) in
+            if success! {
+                print("got balance")
+                self.delegate?.didFinishLoginSuccessfully(self)
+            }
+            else{
+                print(error)
+            }
+        }
+    }
+    func getConfigApi(){
+        let configValues = GFConfigService()
+        configValues.fetchConfigurationValues { (success,error) in
+            if success! {
+                print("configured")
+            }
+            else{
+                print("error")
+            }
+            
+        }
+    }
     func presentCreateWallet(){
         let walletService = GFWalletsService()
         walletService.createWallet(nickname: "Test Wallet") { (success, error) in

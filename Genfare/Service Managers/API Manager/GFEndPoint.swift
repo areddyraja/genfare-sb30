@@ -17,6 +17,9 @@ enum GFEndpoint {
     case GetWallets()
     case CheckWalletService()
     case CreateWallet(wallet:String)
+    case GetEncryptionKeys()
+    case GetConfigApi()
+    case GetAccountBalance()
     
     // MARK: - Public Properties
     var method: Alamofire.HTTPMethod {
@@ -35,6 +38,12 @@ enum GFEndpoint {
             return .get
         case .CreateWallet:
             return .post
+        case .GetEncryptionKeys:
+            return .get
+        case .GetConfigApi:
+            return .get
+        case .GetAccountBalance:
+            return .get
         }
     }
     
@@ -62,7 +71,20 @@ enum GFEndpoint {
         case .CreateWallet:
             let url = "/services/data-api/mobile/wallets/?tenant=\(Utilities.tenantId())"
             return Utilities.apiHost()+url
+        case .GetEncryptionKeys:
+            let url = "/services/data-api/mobile/encryptionkey?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        case .GetConfigApi:
+            let url  = "/services/data-api/mobile/config?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        case .GetAccountBalance:
+            let  url = "/services/data-api/mobile/account/balance?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+
+            
         }
+        
+        
     }
 
     var headers:HTTPHeaders {
@@ -102,6 +124,18 @@ enum GFEndpoint {
             let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
             commonHeaders["Authorization"] = String(format: "bearer %@", token)
             return commonHeaders
+        case .GetEncryptionKeys:
+            let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
+            commonHeaders["Authorization"] = String(format: "bearer %@", token)
+            return commonHeaders
+        case .GetConfigApi:
+            let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
+            commonHeaders["Authorization"] = String(format: "bearer %@", token)
+            return commonHeaders
+        case .GetAccountBalance:
+            let  token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
+            commonHeaders["Authorization"] = String(format: "bearer %@", token)
+            return commonHeaders
         }
     }
     
@@ -136,6 +170,16 @@ enum GFEndpoint {
                           "personId":account.accountId!,
                           "deviceUUID":Utilities.deviceId()]
             return parameters
+        case .GetEncryptionKeys:
+            parameters = [:]
+            return parameters
+        case .GetConfigApi:
+            parameters = [:]
+            return parameters
+        case .GetAccountBalance:
+            parameters = [:]
+            return parameters
+            
         }
     }
 }

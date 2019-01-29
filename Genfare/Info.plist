@@ -47,7 +47,7 @@
 	<key>api_host</key>
 	<string>https://api.staging.gfcp.io</string>
 	<key>auth_host</key>
-	<string>https://bct-staging.gfcp.io</string>
+	<string>https://cota-staging.gfcp.io</string>
 	<key>auth_password</key>
 	<string>GMPyqc1l40XSSus</string>
 	<key>auth_username</key>
@@ -57,7 +57,7 @@
 	<key>forgot_pass_link</key>
 	<string>https://gfl-uat-tickets.gfmobilelink.com</string>
 	<key>tenantId</key>
-	<string>BCT</string>
+	<string>COTA</string>
 	<key>transit_id</key>
 	<string>50001</string>
 </dict>

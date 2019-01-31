@@ -15,16 +15,12 @@ class GFLaunchViewController: UIViewController {
         super.viewDidLoad()
 
         let launchScreenViewModel = LaunchScreenViewModel()
-        launchScreenViewModel.getAuthToken { (result, error) in
-            //
-            if(error != nil){
-                print(error)
+        launchScreenViewModel.getAuthToken { [unowned self] (success, error) in
+            if(success){
+                print("got token")
             }
-            //UIViewController.removeSpinner(spinner: self.spinnerView!)
             self.gotoHomeScreen()
         }
-        print(launchScreenViewModel)
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,14 +45,4 @@ class GFLaunchViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

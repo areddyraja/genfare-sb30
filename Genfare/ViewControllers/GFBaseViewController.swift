@@ -52,6 +52,12 @@ class GFBaseViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @objc func showSideMenu() {
+        if let controller = UIStoryboard(name: "Sidemenu", bundle: nil).instantiateInitialViewController() {
+            present(controller, animated: true, completion: nil)
+        }
+    }
+    
     func addMenuObservers() {
         print("Add MENU Observers")
 
@@ -70,7 +76,7 @@ class GFBaseViewController: UIViewController {
             return
         }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        if let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATEMENUSETTINGS") as? GFSettingsViewController {
+        if let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.Settings) as? GFSettingsViewController {
             let navController = UINavigationController(rootViewController: controller)
             appDelegate.window?.rootViewController = navController
         }

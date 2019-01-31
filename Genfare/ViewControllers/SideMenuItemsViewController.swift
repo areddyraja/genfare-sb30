@@ -73,7 +73,7 @@ class SideMenuItemsViewController: UIViewController {
         currentAction = Constants.SideMenuAction.Settings
 
         dismiss(animated: false) {
-            NotificationCenter.default.post(name: Notification.Name(Constants.NotificationKey.Settings), object: nil)
+            self.navigateToSettings()
         }
     }
     
@@ -114,7 +114,7 @@ class SideMenuItemsViewController: UIViewController {
         }
         
         if shouldShowLogin() {
-            showAccountHome()
+            navigateToLogin()
             return
         }
         
@@ -147,8 +147,10 @@ class SideMenuItemsViewController: UIViewController {
             navigationController?.popToRootViewController(animated: false)
             return
         }
-        //TODO - Alerts need to be integrated
-        popupAlert(title: "Alert", message: "Settings are not ready yet", actionTitles: ["OK"], actions: [nil])
+
+        if let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.Settings) as? GFSettingsViewController {
+            attachControllerToMainWindow(controller: controller)
+        }
         GFBaseViewController.currentMenuItem = Constants.SideMenuAction.Settings
     }
     
@@ -184,7 +186,9 @@ class SideMenuItemsViewController: UIViewController {
 
     func showAccountHome() {
         //TODO - Passes need to be integrated
-        popupAlert(title: "Alert", message: "Passes are not ready yet", actionTitles: ["OK"], actions: [nil])
+        if let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.AccountBased) as? GFAccountBasedHomeViewController {
+            attachControllerToMainWindow(controller: controller)
+        }
     }
 
     func shouldShowLogin() -> Bool {
@@ -202,7 +206,6 @@ class SideMenuItemsViewController: UIViewController {
         return false
     }
     
-
     func showLoginButton(status:Bool) {
         if status {
             menuLogin.setTitle("Log In", for: .normal)

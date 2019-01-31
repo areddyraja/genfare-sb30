@@ -10,6 +10,9 @@ import UIKit
 
 class GFSettingsViewController: GFBaseViewController {
 
+    
+    @IBOutlet weak var walletIDTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +24,63 @@ class GFSettingsViewController: GFBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func fetchWallets(_ sender: Any) {
+        let walletService = GFCheckWalletService()
+        walletService.fetchWallets { (result, error) in
+            print(result)
+        }
+    }
+
+    @IBAction func getEncryptionKeys(_ sender: Any){
+        let encryptionkeys = GFEncryptionKeysService()
+        encryptionkeys.fetchEncryptionKeys { (success, error) in
+            if success! {
+                print("got keys")
+            }
+            else{
+                print(error)
+            }
+        }
+        
+    }
+    
+    @IBAction func getAccountBalance(_ sender: Any)  {
+        GFAccountBalanceService.fetchAccountBalance{ (success, error) in
+            if success {
+                print("got balance")
+            }
+            else{
+                print(error)
+            }
+        }
+    }
+    
+    @IBAction func getConfigApi(_ sender: Any){
+        let configValues = GFConfigService()
+        configValues.fetchConfigurationValues { (success,error) in
+            if success! {
+                print("configured")
+            }
+            else{
+                print("error")
+            }
+            
+        }
+    }
+    
+    @IBAction func releaseWallet(_ sender: Any){
+        let walletid = NSNumber(value: Int(walletIDTxt.text!)!)
+        let configValues = GFReleaseWalletService(walletID: walletid)
+        configValues.releaseWallet { (success,error) in
+            if success {
+                print("released")
+            }
+            else{
+                print("error")
+            }
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

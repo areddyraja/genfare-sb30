@@ -81,10 +81,12 @@ struct Constants {
     struct StoryBoard {
         static let CardBased = "GFCARDBASEDCONTROLLER"
         static let AccountBased = "GFACCOUNTBASEDCONTROLLER"
-        static let CreateWallet = "CREATEWALLET"
         static let Login = "GFNAVIGATETOLOGIN"
         static let SignUp = "GFREGISTRATION"
         static let ForgotPassword = "GFFORGOTPASSWORD"
+        static let Settings = "GFNAVIGATEMENUSETTINGS"
+        static let SelectWallet = "GFSELECTWALLET"
+        static let CreateWallet = "CREATEWALLET"
     }
 }
 

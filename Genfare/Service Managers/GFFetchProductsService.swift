@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import CoreData
 
 class GFFetchProductsService {
     
@@ -38,6 +39,7 @@ class GFFetchProductsService {
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)
+                    self.saveProducts(data: JSON as! Array<Any>)
                     completionHandler(true,nil)
                 case .failure(let error):
                     print("Request failed with error: \(error)")
@@ -46,10 +48,44 @@ class GFFetchProductsService {
         }
     }
     
-    func saveProducts(data:[String:Any]) {
-//        let managedContext = GFDataService.context
-//        let wallet = NSEntityDescription.entity(forEntityName: "Wallet", in: managedContext)
-//        let userObj:Wallet = NSManagedObject(entity: wallet!, insertInto: managedContext) as! Wallet
+    func saveProducts(data:Array<Any>) {
+        GFDataService.deleteAllRecords(entity: "Product")
+
+        let managedContext = GFDataService.context
+        let product = NSEntityDescription.entity(forEntityName: "Product", in: managedContext)
+        
+        for prod in data {
+            let userObj:Product = NSManagedObject(entity: product!, insertInto: managedContext) as! Product
+
+            if let prodItem = prod as? [String:Any] {
+                userObj.barcodeTimer = prodItem["barcodeTimer"] as? NSNumber
+                userObj.designator = prodItem["designator"] as? String
+                userObj.displayOrder = prodItem["displayOrder"] as? NSNumber
+                userObj.fareCode = prodItem["fareCode"] as? String
+                userObj.isActivationOnly = prodItem["isActivationOnly"] as? NSNumber
+                userObj.isBonusRideEnabled = prodItem["isBonusRideEnabled"] as? NSNumber
+                userObj.isCappedRideEnabled = prodItem["isCappedRideEnabled"] as? NSNumber
+                userObj.offeringId = prodItem["offeringId"] as? NSNumber
+                userObj.price = prodItem["price"] as? String
+                userObj.productDescription = prodItem["productDescription"] as? String
+                userObj.ticketId = prodItem["ticketId"] as? NSNumber
+                userObj.ticketSubTypeId = prodItem["ticketSubTypeId"] as? String
+                userObj.ticketTypeDescription = prodItem["ticketTypeDescription"] as? String
+                userObj.ticketTypeId = prodItem["ticketTypeId"] as? String
+            }
+        }
+        
+        GFDataService.saveContext()
+        print(GFFetchProductsService.getProducts())
     }
     
+    static func getProducts() -> Array<Product> {
+        let records:Array<Product> = GFDataService.fetchRecords(entity: "Product") as! Array<Product>
+        
+        if records.count > 0 {
+            return records
+        }
+        
+        return []
+    }
 }

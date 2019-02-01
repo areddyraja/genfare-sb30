@@ -96,7 +96,7 @@ class LoginViewModel {
         
         let cuuid = Utilities.deviceId()
         
-        for (index,witem) in list.enumerated() {
+        for (_,witem) in list.enumerated() {
             
             let item:[String:Any] = witem as! [String:Any]
             

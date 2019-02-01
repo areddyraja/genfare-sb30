@@ -69,7 +69,8 @@ class GFWalletSelectionViewController: GFBaseViewController {
         products.getProducts { [unowned self] (success, error) in
             if success! {
                 print("Got Product contents successfully")
-                self.fetchWalletContents()
+                self.dismiss(animated: true, completion: nil)
+                //self.fetchWalletContents()
             }else{
                 self.popupAlert(title: "Error", message: error as! String, actionTitles: ["OK"], actions: [nil])
             }

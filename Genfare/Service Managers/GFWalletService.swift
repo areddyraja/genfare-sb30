@@ -60,6 +60,11 @@ class GFWalletsService {
         return userObj
     }
     
+    static var walletID:NSNumber? {
+        let wallet = userWallet()
+        return wallet?.walletId
+    }
+    
     static func userWallet() -> Wallet? {
         let records:Array<Wallet> = GFDataService.fetchRecords(entity: "Wallet") as! Array<Wallet>
         

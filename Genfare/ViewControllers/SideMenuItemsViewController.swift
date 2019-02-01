@@ -186,7 +186,7 @@ class SideMenuItemsViewController: UIViewController {
 
     func showAccountHome() {
         //TODO - Passes need to be integrated
-        if let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.AccountBased) as? GFAccountBasedHomeViewController {
+        if let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateInitialViewController() {
             attachControllerToMainWindow(controller: controller)
         }
     }

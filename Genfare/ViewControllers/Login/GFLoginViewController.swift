@@ -62,7 +62,8 @@ class GFLoginViewController: GFBaseViewController {
             .bind{ [unowned self] value in
                 NSLog("Successfull \(value)")
                 if value{
-                    self.popupAlert(title: "Success", message: "Login Successful...!!!", actionTitles: ["OK"], actions: [nil])
+                    //self.popupAlert(title: "Success", message: "Login Successful...!!!", actionTitles: ["OK"], actions: [nil])
+                    self.dismiss(animated: true, completion: nil)
                 }
             }.disposed(by: disposeBag)
         

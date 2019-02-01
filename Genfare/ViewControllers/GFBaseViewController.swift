@@ -103,6 +103,14 @@ class GFBaseViewController: UIViewController {
         }
     }
     
+    func updateNavBarUI() {
+        let barButton:UIBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "Hamburger"), style: .plain, target: self, action:#selector(showSideMenu))
+        barButton.tintColor = UIColor.white
+        self.navigationItem.leftItemsSupplementBackButton = false
+        self.navigationItem.leftBarButtonItem = barButton
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "\(Utilities.tenantId().lowercased())NavBarLogo"))
+    }
+
     deinit {
         print("Controller is being removed -============================================== \(self)")
     }

@@ -87,6 +87,9 @@ struct Constants {
         static let Settings = "GFNAVIGATEMENUSETTINGS"
         static let SelectWallet = "GFSELECTWALLET"
         static let CreateWallet = "CREATEWALLET"
+        static let PayAsYouGoList = "PAYASYOUGOPASSES"
+        static let MyPassesList = "MYPASSESLIST"
+        static let MyHistoryList = "HISTORYLIST"
     }
 }
 

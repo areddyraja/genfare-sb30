@@ -36,14 +36,15 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         viewModel.updateWalletStatus()
+        attachPassList()
     }
     
-    func updateNavBarUI() {
-        let barButton:UIBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "Hamburger"), style: .plain, target: self, action:#selector(showSideMenu))
-        barButton.tintColor = UIColor.white
-        self.navigationItem.leftItemsSupplementBackButton = true
-        self.navigationItem.leftBarButtonItem = barButton
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "cotaNavBarLogo"))
+    func attachPassList() {
+        if let controller = UIStoryboard(name: "Passes", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.PayAsYouGoList) as? GFPayGoPassTableViewController {
+            self.addChildViewController(controller)
+            self.pageControlHolder.addSubview(controller.view)
+            controller.didMove(toParentViewController: self)
+        }
     }
     
     func createViewModelBinding(){

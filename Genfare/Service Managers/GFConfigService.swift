@@ -8,14 +8,27 @@
 
 import Foundation
 import Alamofire
+
 class GFConfigService{
     
     init(){}
     
+    func headers() -> HTTPHeaders {
+        var headers = GFEndpoint.commonHeaders
+        let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
+        headers["Authorization"] = String(format: "bearer %@", token)
+        
+        return headers
+    }
+    
+    func parameters() -> [String:String] {
+        return [:]
+    }
+
     func fetchConfigurationValues(completionHandler:@escaping (_ success:Bool?,_ error:Any?) -> Void) {
         let endpoint = GFEndpoint.GetConfigApi()
         
-        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: URLEncoding.default, headers: endpoint.headers)
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: parameters(), encoding: URLEncoding.default, headers: headers())
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):

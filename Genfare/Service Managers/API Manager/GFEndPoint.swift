@@ -14,14 +14,27 @@ enum GFEndpoint {
     case RegisterUser(email: String,password:String,firstname:String,lastname:String)
     case LoginUser(email:String,password:String)
     case RefreshToken(email:String,password:String)
-    case GetWallets()
     case CheckWalletService()
     case CreateWallet(wallet:String)
     case GetEncryptionKeys()
     case GetConfigApi()
     case GetAccountBalance()
+    case WalletContents(walledId:NSNumber)
+    case AssignWallet(walletId:NSNumber)
+    case ReleaseWallet(walletId:NSNumber)
+    case FetchProducts(walletId:NSNumber)
     
     // MARK: - Public Properties
+    static var commonHeaders:HTTPHeaders {
+        let commonHeaders = ["Accept" : "application/json",
+                             "Content-Type":"application/json",
+                             "app_version":Utilities.appCurrentVersion(),
+                             "app_os":"iOS",
+                             "DeviceId":Utilities.deviceId()]
+        
+        return commonHeaders
+    }
+
     var method: Alamofire.HTTPMethod {
         switch self {
         case .GetAuthToken:
@@ -32,8 +45,6 @@ enum GFEndpoint {
             return .post
         case .RefreshToken:
             return .post
-        case .GetWallets:
-            return .post
         case .CheckWalletService:
             return .get
         case .CreateWallet:
@@ -43,6 +54,14 @@ enum GFEndpoint {
         case .GetConfigApi:
             return .get
         case .GetAccountBalance:
+            return .get
+        case .WalletContents:
+            return .get
+        case .AssignWallet:
+            return .post
+        case .ReleaseWallet:
+            return .post
+        case .FetchProducts:
             return .get
         }
     }
@@ -62,9 +81,6 @@ enum GFEndpoint {
         case .RefreshToken:
             let url = "/authenticate/oauth/token?grant_type=password"
             return baseUrl+url
-        case .GetWallets:
-            let url = "/services/data-api/mobile/wallets?tenant=\(Utilities.tenantId())"
-            return Utilities.apiHost()+url
         case .CheckWalletService:
             let url = "/services/data-api/mobile/wallets/for/\(String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.UserName)!))?tenant=\(Utilities.tenantId())"
             return Utilities.apiHost()+url
@@ -80,106 +96,19 @@ enum GFEndpoint {
         case .GetAccountBalance:
             let  url = "/services/data-api/mobile/account/balance?tenant=\(Utilities.tenantId())"
             return Utilities.apiHost()+url
+        case .WalletContents(let walletId):
+            let  url = "/services/data-api/mobile/wallets/\(walletId)/contents?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        case .AssignWallet(let walletId):
+            let  url = "/services/data-api/mobile/wallets/\(walletId)/assignto/\(Utilities.deviceId())?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        case .ReleaseWallet(let walletId):
+            let  url = "/services/data-api/mobile/wallets/\(walletId)/release?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        case .FetchProducts(let walletId):
+            let  url = "/services/data-api/mobile/products?tenant=\(Utilities.tenantId())&walletId=\(walletId)"
+            return Utilities.apiHost()+url
 
-            
-        }
-        
-        
-    }
-
-    var headers:HTTPHeaders {
-        var commonHeaders = ["Accept" : "application/json",
-                             "Content-Type":"application/json",
-                             "app_version":Utilities.appCurrentVersion(),
-                             "app_os":"iOS",
-                             "DeviceId":Utilities.deviceId()]
-        switch self {
-        case .GetAuthToken:
-            if let authorizationHeader = Request.authorizationHeader(user: Utilities.authUserID(),password: Utilities.authPassword()) {
-                commonHeaders[authorizationHeader.key] = authorizationHeader.value
-            }
-            return commonHeaders
-        case .RefreshToken:
-            commonHeaders["Content-Type"] = "application/x-www-form-urlencoded"
-            if let authorizationHeader = Request.authorizationHeader(user: Utilities.authUserID(),password: Utilities.authPassword()) {
-                commonHeaders[authorizationHeader.key] = authorizationHeader.value
-            }
-            return commonHeaders
-        case .RegisterUser:
-            fallthrough
-        case .LoginUser:
-            commonHeaders["Authorization"] = String(format: "bearer %@", Utilities.accessToken())
-            return commonHeaders
-        case .GetWallets:
-            commonHeaders["Content-Type"] = "application/x-www-form-urlencoded"
-            if let authorizationHeader = Request.authorizationHeader(user: Utilities.authUserID(),password: Utilities.authPassword()) {
-                commonHeaders[authorizationHeader.key] = authorizationHeader.value
-            }
-            return commonHeaders
-        case .CheckWalletService:
-            let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
-            commonHeaders["Authorization"] = String(format: "bearer %@", token)
-            return commonHeaders
-        case .CreateWallet:
-            let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
-            commonHeaders["Authorization"] = String(format: "bearer %@", token)
-            return commonHeaders
-        case .GetEncryptionKeys:
-            let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
-            commonHeaders["Authorization"] = String(format: "bearer %@", token)
-            return commonHeaders
-        case .GetConfigApi:
-            let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
-            commonHeaders["Authorization"] = String(format: "bearer %@", token)
-            return commonHeaders
-        case .GetAccountBalance:
-            let  token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
-            commonHeaders["Authorization"] = String(format: "bearer %@", token)
-            return commonHeaders
-        }
-    }
-    
-    var parameters:[String:String] {
-        var parameters:[String:String] = [:]
-        switch self {
-        case .GetAuthToken:
-            return parameters
-        case .RegisterUser(let email,let password,let firstname,let lastname):
-            parameters = ["emailaddress":email,
-             "password":password,
-             "firstname":firstname,
-             "lastname":lastname]
-            return parameters
-        case .LoginUser(let username,let password):
-            parameters = ["emailaddress":username,
-                          "password":password]
-            return parameters
-        case .RefreshToken(let username,let password):
-            parameters = ["username":username,
-                          "password":password]
-            return parameters
-        case .GetWallets():
-            parameters = [:]
-            return parameters
-        case .CheckWalletService():
-            parameters = [:]
-            return parameters
-        case .CreateWallet(let nickname):
-            let account:Account = GFAccountManager.currentAccount()!
-            parameters = ["nickname":nickname,
-                          "personId":account.accountId!,
-                          "deviceUUID":Utilities.deviceId()]
-            return parameters
-        case .GetEncryptionKeys:
-            parameters = [:]
-            return parameters
-        case .GetConfigApi:
-            parameters = [:]
-            return parameters
-        case .GetAccountBalance:
-            parameters = [:]
-            return parameters
-            
         }
     }
 }

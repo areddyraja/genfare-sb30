@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GFPassListViewController: GFBaseViewController {
+class GFPassListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

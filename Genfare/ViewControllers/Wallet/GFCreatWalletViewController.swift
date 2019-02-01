@@ -15,7 +15,7 @@ class GFCreatWalletViewController: GFBaseViewController {
     let viewModel = CreateWalletViewModel()
     let disposeBag = DisposeBag()
 
-    var createWalletService:GFWalletsService?
+    var createWalletService:GFCreateWalletService?
 
     @IBOutlet weak var walletNameTxt: UITextField!
     @IBOutlet weak var createBtn: UIButton!
@@ -38,7 +38,7 @@ class GFCreatWalletViewController: GFBaseViewController {
         }).subscribe(onNext: { [unowned self] in
             if self.viewModel.validateCredentials() {
                 self.spinnerView = UIViewController.displaySpinner(onView: self.view)
-                self.createWalletService = GFWalletsService()
+                self.createWalletService = GFCreateWalletService(nickname: self.walletNameTxt.text!)
                 self.createWalletService?.createWallet(nickname: self.walletNameTxt.text!, completionHandler: { (success, error) in
                     if (success!){
                         print("Wallet created successfully")

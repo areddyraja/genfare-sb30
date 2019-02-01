@@ -25,10 +25,25 @@ class GFSignUpService {
         self.lastName = lastname
     }
     
+    func headers() -> HTTPHeaders {
+        var headers = GFEndpoint.commonHeaders
+        headers["Authorization"] = String(format: "bearer %@", Utilities.accessToken())
+
+        return headers
+    }
+    
+    func parameters() -> [String:String] {
+        let parameters = ["emailaddress":useremail,
+                      "password":password,
+                      "firstname":firstName,
+                      "lastname":lastName]
+        return parameters
+    }
+
     func registerUser(){
         let endpoint = GFEndpoint.RegisterUser(email: useremail, password: password, firstname: firstName, lastname: lastName)
         
-        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default, headers: endpoint.headers)
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: parameters(), encoding: JSONEncoding.default, headers: headers())
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):

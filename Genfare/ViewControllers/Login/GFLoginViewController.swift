@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFLoginViewController: GFBaseViewController, LoginServiceDelegate {
+class GFLoginViewController: GFBaseViewController {
     
     let viewModel = LoginViewModel()
     let disposeBag = DisposeBag()
@@ -49,10 +49,7 @@ class GFLoginViewController: GFBaseViewController, LoginServiceDelegate {
             self.passwordTxt.resignFirstResponder()
         }).subscribe(onNext: { [unowned self] in
             if self.viewModel.validateCredentials() {
-                self.spinnerView = UIViewController.displaySpinner(onView: self.view)
-                self.loginService = GFLoginService(username: self.emailTxt.text!, password: self.passwordTxt.text!)
-                self.loginService?.delegate = self
-                self.loginService?.loginUser()
+                self.viewModel.loginUser()
             }else{
                 self.popupAlert(title: "Error", message: self.viewModel.formErrorString(), actionTitles: ["OK"], actions: [nil])
             }
@@ -62,41 +59,52 @@ class GFLoginViewController: GFBaseViewController, LoginServiceDelegate {
     func createCallbacks (){
         // success
         viewModel.isSuccess.asObservable()
-            .bind{ value in
-                NSLog("Successfull")
+            .bind{ [unowned self] value in
+                NSLog("Successfull \(value)")
+                if value{
+                    //self.popupAlert(title: "Success", message: "Login Successful...!!!", actionTitles: ["OK"], actions: [nil])
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }.disposed(by: disposeBag)
+        
+        // Loading
+        viewModel.isLoading.asObservable()
+            .bind{[unowned self] value in
+                NSLog("Loading \(value)")
+                if value {
+                    self.spinnerView = UIViewController.displaySpinner(onView: self.view)
+                }else{
+                    if let _ = self.spinnerView {
+                        UIViewController.removeSpinner(spinner: self.spinnerView!)
+                    }
+                }
             }.disposed(by: disposeBag)
         
         // errors
         viewModel.errorMsg.asObservable()
-            .bind { errorMessage in
+            .bind {[unowned self] errorMessage in
                 // Show error
-                NSLog("Failure")
+                if errorMessage != ""{
+                    self.popupAlert(title: "ERROR", message: errorMessage, actionTitles: ["OK"], actions: [nil])
+                }
+            }.disposed(by: disposeBag)
+
+        // Walletcreation
+        viewModel.walletNeeded.asObservable()
+            .bind{ [unowned self] value in
+                NSLog("Need Wallet \(value)")
             }.disposed(by: disposeBag)
         
-    }
-    
-    //Pragma mark - LoginService Delegate methods
-
-    func didFinishLoginSuccessfully(_ sender: Any) {
-        UIViewController.removeSpinner(spinner: self.spinnerView!)
-        popupAlert(title: "Success", message: "Login Successful...!!!", actionTitles: ["OK"], actions: [nil])
-        
-    }
-    
-    func didLoginNeedSMSAuth(_ sender: Any) {
-        //
-    }
-    
-    func didLoginNeedWallet(_ sender: Any) {
-        if let navController = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.CreateWallet) as? GFCreatWalletViewController {
-            if let navigator = navigationController {
-                navigator.pushViewController(navController, animated: false)
-            }
-        }
-    }
-    
-    func didFailLoginWithError(_ error: Any) {
-        UIViewController.removeSpinner(spinner: self.spinnerView!)
-        popupAlert(title: "Failed", message: error as! String, actionTitles: ["OK"], actions: [nil])
+        // Walletselection
+        viewModel.showWalletList.asObservable()
+            .bind{ [unowned self] value in
+                if let list = value as? Array<Any>, list.count > 0 {
+                    NSLog("Need Wallet \(value)")
+                    if let controller = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.SelectWallet) as? GFWalletSelectionViewController {
+                        controller.walletList = list
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    }
+                }
+            }.disposed(by: disposeBag)
     }
 }

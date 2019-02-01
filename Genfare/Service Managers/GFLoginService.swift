@@ -8,13 +8,12 @@
 
 import Foundation
 import Alamofire
-import AERecord
 import CoreData
 
 class GFLoginService {
     
-    var username:String?
-    var password:String?
+    var username:String = ""
+    var password:String = ""
     
     var delegate:LoginServiceDelegate?
     
@@ -23,10 +22,23 @@ class GFLoginService {
         self.password = password
     }
     
-    func loginUser(){
-        let endpoint = GFEndpoint.LoginUser(email: username!, password: password!)
+    func headers() -> HTTPHeaders {
+        var headers = GFEndpoint.commonHeaders
+        headers["Authorization"] = String(format: "bearer %@", Utilities.accessToken())
         
-        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default, headers: endpoint.headers)
+        return headers
+    }
+
+    func parameters() -> [String:String] {
+        let parameters = ["emailaddress":username,
+                      "password":password]
+        return parameters
+    }
+
+    func loginUser(completionHandler:@escaping (_ result:Bool,_ error:Any?) -> Void){
+        let endpoint = GFEndpoint.LoginUser(email: username, password: password)
+        
+        Alamofire.request(endpoint.url, method: endpoint.method, parameters: parameters(), encoding: JSONEncoding.default, headers: headers())
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
@@ -34,95 +46,18 @@ class GFLoginService {
                     let dict = JSON as? [String:Any]
                     let success:Bool = dict!["success"] as! Bool
                     if(!success){
-                        self.delegate?.didFailLoginWithError(dict?["message"])
+                        completionHandler(false,dict?["message"])
                     }else{
-                        KeychainWrapper.standard.set(self.username!, forKey:Constants.KeyChain.UserName)
-                        KeychainWrapper.standard.set(self.password!, forKey: Constants.KeyChain.Password)
+                        KeychainWrapper.standard.set(self.username, forKey:Constants.KeyChain.UserName)
+                        KeychainWrapper.standard.set(self.password, forKey: Constants.KeyChain.Password)
                         self.saveData(data: dict!["result"] as! [String : Any])
-                        GFRefreshAuthToken.refresh(completionHandler: { success, error in
-                            if(success!){
-                                //self.delegate?.didFinishLoginSuccessfully(self)
-                                self.checkForWallets()
-                                self.getEncryptionKeys()
-                                self.getConfigApi()
-                                self.getAccountBalance()
-                            }else{
-                                self.delegate?.didFailLoginWithError(error)
-                            }
-                        })
+                        completionHandler(true,dict?["message"])
                     }
                     //testpp@test.comtself.refreshToken(username: username, password: password)
                 case .failure(let error):
                     print("Request failed with error: \(error)")
-                    self.delegate?.didFailLoginWithError(error)
+                    completionHandler(false,error.localizedDescription)
                 }
-        }
-    }
-    
-    func checkForWallets() {
-        let walletService = GFWalletsService()
-        walletService.fetchWallets { (success, error) in
-            if success! {
-                print("Wallet retreived successfully")
-                //Check for wallets availability and present with respectiv e screen
-                //if wallet is there present account screen
-                //else create wallet screen
-                if let wallet = GFWalletsService.userWallet() {
-                    print(wallet)
-                    self.delegate?.didFinishLoginSuccessfully(self)
-                }else{
-                    //self.presentCreateWallet()
-                    self.delegate?.didLoginNeedWallet(self)
-                }
-            }else{
-                print(error)
-            }
-        }
-    }
-    func getEncryptionKeys(){
-        let encryptionkeys = GFEncryptionKeysService()
-        encryptionkeys.fetchEncryptionKeys { (success, error) in
-            if success! {
-             print("got keys")
-                    self.delegate?.didFinishLoginSuccessfully(self)
-                }
-            else{
-                print(error)
-            }
-        }
-        
-    }
-    
-    func getAccountBalance()  {
-        let balance = GFAccountBalanceService()
-        balance.fetchAccountBalance{ (success, error) in
-            if success! {
-                print("got balance")
-                self.delegate?.didFinishLoginSuccessfully(self)
-            }
-            else{
-                print(error)
-            }
-        }
-    }
-    func getConfigApi(){
-        let configValues = GFConfigService()
-        configValues.fetchConfigurationValues { (success,error) in
-            if success! {
-                print("configured")
-            }
-            else{
-                print("error")
-            }
-            
-        }
-    }
-    func presentCreateWallet(){
-        let walletService = GFWalletsService()
-        walletService.createWallet(nickname: "Test Wallet") { (success, error) in
-            if (error != nil) {
-                print("Wallet created successfully")
-            }
         }
     }
     
@@ -137,7 +72,9 @@ class GFLoginService {
         userObj.accountId = data["accountid"] as? String
         userObj.created = data["created"] as? String
         userObj.emailaddress = data["emailaddress"] as? String
-        //userObj.farecode = data["farecode"] as! String
+        if let farecodearr:Array<String> = data["farecode"] as! Array<String>, farecodearr.count > 0 {
+            userObj.farecode = farecodearr.first
+        }
         userObj.firstName = data["firstname"] as? String
         userObj.id = data["id"] as? NSNumber
         userObj.lastlogin = data["lastlogin"] as? String

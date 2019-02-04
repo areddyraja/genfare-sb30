@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFSignupViewController: GFBaseViewController, SignUpServiceDelegate {
+class GFSignupViewController: GFBaseViewController {
 
     let viewModel = SignUpViewModel()
     let disposeBag = DisposeBag()
@@ -62,12 +62,9 @@ class GFSignupViewController: GFBaseViewController, SignUpServiceDelegate {
             self.view.resignFirstResponder()
         }).subscribe(onNext: { [unowned self] in
             if self.viewModel.validateCredentials() {
-                self.spinnerView = UIViewController.displaySpinner(onView: self.view)
-                self.signUpService = GFSignUpService(email: self.emailTxt.text!, password: self.passwordTxt1.text!, firstname: self.firstNameTxt.text!, lastname: self.lastNameTxt.text!)
-                self.signUpService?.delegate = self
-                self.signUpService?.registerUser()
+                self.viewModel.signupUser()
             }else{
-                self.popupAlert(title: "Error", message: self.viewModel.formErrorString(), actionTitles: ["OK"], actions: [nil])
+                self.showErrorMessage(message: self.viewModel.formErrorString())
             }
         }).disposed(by: disposeBag)
     }
@@ -76,26 +73,26 @@ class GFSignupViewController: GFBaseViewController, SignUpServiceDelegate {
         // success
         viewModel.isSuccess.asObservable()
             .bind{ value in
-                NSLog("Successfull")
+                //Present create wallet controller
+                if value {
+                    if let controller = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.CreateWallet) as? GFCreatWalletViewController {
+                        self.navigationController?.viewControllers = [controller]
+                    }
+                }
+            }.disposed(by: disposeBag)
+        
+        // Loading
+        viewModel.isLoading.asObservable()
+            .bind{[unowned self] value in
+                self.attachSpinner(value: value)
             }.disposed(by: disposeBag)
         
         // errors
         viewModel.errorMsg.asObservable()
-            .bind { errorMessage in
+            .bind {[unowned self] errorMessage in
                 // Show error
-                NSLog("Failure")
+                self.showErrorMessage(message: errorMessage)
             }.disposed(by: disposeBag)
         
     }
-    
-    func didRegisterSuccessfully() {
-        UIViewController.removeSpinner(spinner: spinnerView!)
-        popupAlert(title: "Success", message: "Registration Successful...!!!", actionTitles: ["OK"], actions: [nil])
-    }
-    
-    func didFailRegistration(_ error: Any) {
-        UIViewController.removeSpinner(spinner: spinnerView!)
-        popupAlert(title: "Error", message: error as! String, actionTitles: ["OK"], actions: [nil])
-    }
-
 }

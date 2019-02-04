@@ -56,7 +56,7 @@ class GFWalletSelectionViewController: GFBaseViewController {
     func fetchWalletContents() {
         let wContents:GFWalletContentsService = GFWalletContentsService(walletID: walletID!)
         wContents.getWalletContents { [unowned self] (success, error) in
-            if success! {
+            if success {
                 print("Got wallet contents successfully")
             }else{
                 self.popupAlert(title: "Error", message: error as! String, actionTitles: ["OK"], actions: [nil])
@@ -67,7 +67,7 @@ class GFWalletSelectionViewController: GFBaseViewController {
     func fetchProducts() {
         let products:GFFetchProductsService = GFFetchProductsService(walletID: walletID!)
         products.getProducts { [unowned self] (success, error) in
-            if success! {
+            if success {
                 print("Got Product contents successfully")
                 self.dismiss(animated: true, completion: nil)
                 //self.fetchWalletContents()

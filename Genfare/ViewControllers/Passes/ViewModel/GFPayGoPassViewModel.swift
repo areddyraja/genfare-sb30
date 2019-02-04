@@ -38,11 +38,12 @@ class GFPayGoPassViewModel {
     func fetchProducts() {
         let products:GFFetchProductsService = GFFetchProductsService(walletID: GFWalletsService.walletID!)
         isLoading.value = true
-        
+        isSuccess.value = false
+
         products.getProducts { [unowned self] (success, error) in
             self.isLoading.value = false
             
-            if success! {
+            if success {
                 print("Got Product contents successfully")
                 self.isSuccess.value = true
                 //self.fetchWalletContents()

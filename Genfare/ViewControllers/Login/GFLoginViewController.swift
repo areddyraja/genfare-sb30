@@ -14,7 +14,6 @@ class GFLoginViewController: GFBaseViewController {
     
     let viewModel = LoginViewModel()
     let disposeBag = DisposeBag()
-    var loginService:GFLoginService?
     
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -70,39 +69,34 @@ class GFLoginViewController: GFBaseViewController {
         // Loading
         viewModel.isLoading.asObservable()
             .bind{[unowned self] value in
-                NSLog("Loading \(value)")
-                if value {
-                    self.spinnerView = UIViewController.displaySpinner(onView: self.view)
-                }else{
-                    if let _ = self.spinnerView {
-                        UIViewController.removeSpinner(spinner: self.spinnerView!)
-                    }
-                }
+                self.attachSpinner(value: value)
             }.disposed(by: disposeBag)
         
         // errors
         viewModel.errorMsg.asObservable()
             .bind {[unowned self] errorMessage in
                 // Show error
-                if errorMessage != ""{
-                    self.popupAlert(title: "ERROR", message: errorMessage, actionTitles: ["OK"], actions: [nil])
-                }
+                self.showErrorMessage(message: errorMessage)
             }.disposed(by: disposeBag)
 
         // Walletcreation
         viewModel.walletNeeded.asObservable()
             .bind{ [unowned self] value in
-                NSLog("Need Wallet \(value)")
+                if value {
+                    if let controller = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.CreateWallet) as? GFCreatWalletViewController {
+                        self.navigationController?.viewControllers = [controller]
+                    }
+                }
             }.disposed(by: disposeBag)
         
         // Walletselection
         viewModel.showWalletList.asObservable()
             .bind{ [unowned self] value in
                 if let list = value as? Array<Any>, list.count > 0 {
-                    NSLog("Need Wallet \(value)")
+                    NSLog("Need to select Wallet \(value)")
                     if let controller = UIStoryboard(name: "Wallet", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.SelectWallet) as? GFWalletSelectionViewController {
                         controller.walletList = list
-                        self.navigationController?.pushViewController(controller, animated: true)
+                        self.navigationController?.viewControllers = [controller]
                     }
                 }
             }.disposed(by: disposeBag)

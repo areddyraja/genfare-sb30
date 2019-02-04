@@ -111,6 +111,22 @@ class GFBaseViewController: UIViewController {
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "\(Utilities.tenantId().lowercased())NavBarLogo"))
     }
 
+    func attachSpinner(value:Bool) {
+        if value {
+            self.spinnerView = UIViewController.displaySpinner(onView: self.view)
+        }else{
+            if let _ = self.spinnerView {
+                UIViewController.removeSpinner(spinner: self.spinnerView!)
+            }
+        }
+    }
+    
+    func showErrorMessage(message:String) {
+        if message != ""{
+            self.popupAlert(title: "ERROR", message: message, actionTitles: ["OK"], actions: [nil])
+        }
+    }
+    
     deinit {
         print("Controller is being removed -============================================== \(self)")
     }

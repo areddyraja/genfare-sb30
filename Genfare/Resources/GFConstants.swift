@@ -89,7 +89,7 @@ struct Constants {
         static let CreateWallet = "CREATEWALLET"
         static let PayAsYouGoList = "PAYASYOUGOPASSES"
         static let MyPassesList = "MYPASSESLIST"
-        static let MyHistoryList = "HISTORYLIST"
+        static let MyHistoryList = "PASSACTIVITYLIST"
     }
 }
 

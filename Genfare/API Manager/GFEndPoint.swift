@@ -23,6 +23,7 @@ enum GFEndpoint {
     case AssignWallet(walletId:NSNumber)
     case ReleaseWallet(walletId:NSNumber)
     case FetchProducts(walletId:NSNumber)
+    case FetchWalletActivity(walletId:NSNumber)
     
     // MARK: - Public Properties
     static var commonHeaders:HTTPHeaders {
@@ -62,6 +63,8 @@ enum GFEndpoint {
         case .ReleaseWallet:
             return .post
         case .FetchProducts:
+            return .get
+        case .FetchWalletActivity:
             return .get
         }
     }
@@ -108,7 +111,9 @@ enum GFEndpoint {
         case .FetchProducts(let walletId):
             let  url = "/services/data-api/mobile/products?tenant=\(Utilities.tenantId())&walletId=\(walletId)"
             return Utilities.apiHost()+url
-
+        case .FetchWalletActivity(let walletId):
+            let  url = "/services/data-api/mobile/wallets/\(walletId)/activity/after/0?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
         }
     }
 }

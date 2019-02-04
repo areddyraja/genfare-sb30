@@ -51,6 +51,7 @@ class Utilities {
     }
     
     class func deviceId() -> String {
+        return "76B2B88F48B74E7995E9B70BB08F21BA"
         return UIDevice.current.identifierForVendor!.uuidString
     }
     

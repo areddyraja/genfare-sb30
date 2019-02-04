@@ -33,7 +33,7 @@ class GFCreateWalletService {
         return parameters
     }
 
-    func createWallet(nickname:String,completionHandler:@escaping (_ success:Bool?,_ error:Any?) -> Void) {
+    func createWallet(completionHandler:@escaping (_ success:Bool,_ error:Any?) -> Void) {
         let endpoint = GFEndpoint.CreateWallet(wallet: nickname)
         
         Alamofire.request(endpoint.url, method: endpoint.method, parameters: parameters(), encoding: JSONEncoding.default, headers: headers())

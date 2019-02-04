@@ -1,17 +1,18 @@
 //
-//  GFAccountLandingViewModel.swift
+//  GFMyPassesViewModel.swift
 //  Genfare
 //
-//  Created by vishnu on 01/02/19.
+//  Created by vishnu on 04/02/19.
 //  Copyright © 2019 Omniwyse. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-class GFAccountLandingViewModel {
+class GFMyPassesViewModel {
     
     let disposebag = DisposeBag()
+    var model:Array<WalletContents> = []
     
     // Initialise ViewModel's
     //let firstNameViewModel = NameTextViewModel()
@@ -20,26 +21,29 @@ class GFAccountLandingViewModel {
     let isSuccess : Variable<Bool> = Variable(false)
     let isLoading : Variable<Bool> = Variable(false)
     let errorMsg : Variable<String> = Variable("")
-    let accountBased : Variable<Bool> = Variable(false)
-    let cardBased : Variable<Bool> = Variable(false)
     
     func formErrorString() -> String {
         return ""
     }
-
-    func checkWalletStatus() {
-        fetchProducts()
+    
+    func showProducts() {
+        model = GFWalletContentsService.getContents()
+//        model = products.filter({ (product:Product) -> Bool in
+//            return product.ticketTypeDescription == "Stored Value"
+//        })
+        isSuccess.value = true
     }
     
-    func fetchProducts() {
-        let products:GFFetchProductsService = GFFetchProductsService(walletID: GFWalletsService.walletID!)
+    func fetchWalletContents() {
+        let products:GFWalletContentsService = GFWalletContentsService(walletID: GFWalletsService.walletID!)
         isLoading.value = true
+        isSuccess.value = false
 
-        products.getProducts { [unowned self] (success, error) in
+        products.getWalletContents { [unowned self] (success, error) in
             self.isLoading.value = false
-
+            
             if success {
-                print("Got Product contents successfully")
+                print("Got Wallet contents successfully")
                 self.isSuccess.value = true
                 //self.fetchWalletContents()
             }else{
@@ -48,3 +52,4 @@ class GFAccountLandingViewModel {
         }
     }
 }
+

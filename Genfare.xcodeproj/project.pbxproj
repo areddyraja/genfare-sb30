@@ -191,6 +191,40 @@
 		2757D2FA21F89CF700413713 /* GenfareDataResources.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2757D2F821F89CF700413713 /* GenfareDataResources.xcdatamodeld */; };
 		2757D2FB21F89CF700413713 /* GenfareDataResources.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2757D2F821F89CF700413713 /* GenfareDataResources.xcdatamodeld */; };
 		2757D2FC21F89CF700413713 /* GenfareDataResources.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2757D2F821F89CF700413713 /* GenfareDataResources.xcdatamodeld */; };
+		2772BA5722059F78003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5022059F77003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */; };
+		2772BA5822059F78003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5022059F77003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */; };
+		2772BA5922059F78003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5022059F77003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */; };
+		2772BA5A22059F78003AA1ED /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5122059F77003AA1ED /* CAPSPageMenu+Options.swift */; };
+		2772BA5B22059F78003AA1ED /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5122059F77003AA1ED /* CAPSPageMenu+Options.swift */; };
+		2772BA5C22059F78003AA1ED /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5122059F77003AA1ED /* CAPSPageMenu+Options.swift */; };
+		2772BA5D22059F78003AA1ED /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5222059F77003AA1ED /* MenuItemView.swift */; };
+		2772BA5E22059F78003AA1ED /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5222059F77003AA1ED /* MenuItemView.swift */; };
+		2772BA5F22059F78003AA1ED /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5222059F77003AA1ED /* MenuItemView.swift */; };
+		2772BA6022059F78003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5322059F77003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift */; };
+		2772BA6122059F78003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5322059F77003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift */; };
+		2772BA6222059F78003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5322059F77003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift */; };
+		2772BA6322059F78003AA1ED /* CAPSPageMenu+UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5422059F77003AA1ED /* CAPSPageMenu+UIConfiguration.swift */; };
+		2772BA6422059F78003AA1ED /* CAPSPageMenu+UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5422059F77003AA1ED /* CAPSPageMenu+UIConfiguration.swift */; };
+		2772BA6522059F78003AA1ED /* CAPSPageMenu+UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5422059F77003AA1ED /* CAPSPageMenu+UIConfiguration.swift */; };
+		2772BA6622059F78003AA1ED /* CAPSPageMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5522059F77003AA1ED /* CAPSPageMenuConfiguration.swift */; };
+		2772BA6722059F78003AA1ED /* CAPSPageMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5522059F77003AA1ED /* CAPSPageMenuConfiguration.swift */; };
+		2772BA6822059F78003AA1ED /* CAPSPageMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5522059F77003AA1ED /* CAPSPageMenuConfiguration.swift */; };
+		2772BA6922059F78003AA1ED /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5622059F77003AA1ED /* CAPSPageMenu.swift */; };
+		2772BA6A22059F78003AA1ED /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5622059F77003AA1ED /* CAPSPageMenu.swift */; };
+		2772BA6B22059F78003AA1ED /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA5622059F77003AA1ED /* CAPSPageMenu.swift */; };
+		2772BA6D2208225D003AA1ED /* GFMyPassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA6C2208225D003AA1ED /* GFMyPassesTableViewController.swift */; };
+		2772BA6E2208225D003AA1ED /* GFMyPassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA6C2208225D003AA1ED /* GFMyPassesTableViewController.swift */; };
+		2772BA6F2208225D003AA1ED /* GFMyPassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA6C2208225D003AA1ED /* GFMyPassesTableViewController.swift */; };
+		2772BA7122082277003AA1ED /* GFActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA7022082277003AA1ED /* GFActivityTableViewController.swift */; };
+		2772BA7222082277003AA1ED /* GFActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA7022082277003AA1ED /* GFActivityTableViewController.swift */; };
+		2772BA7322082277003AA1ED /* GFActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA7022082277003AA1ED /* GFActivityTableViewController.swift */; };
+		2772BA7422085375003AA1ED /* GFSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486DA5762165E69F006B8BA5 /* GFSignupViewController.swift */; };
+		2772BA762208718F003AA1ED /* GFMyPassesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA752208718F003AA1ED /* GFMyPassesViewModel.swift */; };
+		2772BA772208718F003AA1ED /* GFMyPassesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA752208718F003AA1ED /* GFMyPassesViewModel.swift */; };
+		2772BA782208718F003AA1ED /* GFMyPassesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772BA752208718F003AA1ED /* GFMyPassesViewModel.swift */; };
+		27C3D863220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
+		27C3D864220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
+		27C3D865220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
 		27F6C5252202E634009052D0 /* GFFetchProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6C5242202E634009052D0 /* GFFetchProductsService.swift */; };
 		27F6C5262202E634009052D0 /* GFFetchProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6C5242202E634009052D0 /* GFFetchProductsService.swift */; };
 		27F6C5272202E634009052D0 /* GFFetchProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6C5242202E634009052D0 /* GFFetchProductsService.swift */; };
@@ -416,6 +450,17 @@
 		2757D2DE21F83FCE00413713 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		2757D2EF21F8530200413713 /* Genfare_CDTA_UAT_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Genfare_CDTA_UAT_Info.plist; sourceTree = "<group>"; };
 		2757D2F921F89CF700413713 /* GenfareDataResources.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GenfareDataResources.xcdatamodel; sourceTree = "<group>"; };
+		2772BA5022059F77003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		2772BA5122059F77003AA1ED /* CAPSPageMenu+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+Options.swift"; sourceTree = "<group>"; };
+		2772BA5222059F77003AA1ED /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		2772BA5322059F77003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		2772BA5422059F77003AA1ED /* CAPSPageMenu+UIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIConfiguration.swift"; sourceTree = "<group>"; };
+		2772BA5522059F77003AA1ED /* CAPSPageMenuConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenuConfiguration.swift; sourceTree = "<group>"; };
+		2772BA5622059F77003AA1ED /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		2772BA6C2208225D003AA1ED /* GFMyPassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFMyPassesTableViewController.swift; sourceTree = "<group>"; };
+		2772BA7022082277003AA1ED /* GFActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFActivityTableViewController.swift; sourceTree = "<group>"; };
+		2772BA752208718F003AA1ED /* GFMyPassesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFMyPassesViewModel.swift; sourceTree = "<group>"; };
+		27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFWalletActivityService.swift; sourceTree = "<group>"; };
 		27F6C5242202E634009052D0 /* GFFetchProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFetchProductsService.swift; sourceTree = "<group>"; };
 		27F6C5282202F66B009052D0 /* COTA.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = COTA.xcassets; sourceTree = "<group>"; };
 		27F6C52C2202FB2E009052D0 /* BCT.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BCT.xcassets; sourceTree = "<group>"; };
@@ -545,10 +590,7 @@
 		273B2CE821E47D3C00208012 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2757D2BB21F590E500413713 /* ForgotPasswordViewModel */,
-				2757D2BA21F590C500413713 /* SignUpViewModel */,
 				273B2CFC21E5F35700208012 /* LaunchScreenViewModel.swift */,
-				274754B721F9E2C800D62268 /* GFCreateWalletViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -556,6 +598,7 @@
 		274754A621F9BD7F00D62268 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				274754B721F9E2C800D62268 /* GFCreateWalletViewModel.swift */,
 				274754A721F9BDBA00D62268 /* GFWalletSelectionViewController.swift */,
 				274754AB21F9BF3100D62268 /* GFCreatWalletViewController.swift */,
 			);
@@ -616,6 +659,7 @@
 		2747557521FEE55A00D62268 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				2757D2BA21F590C500413713 /* SignUpViewModel */,
 				2757D2AC21F45D5500413713 /* ViewModel */,
 				4849088B2136B123008D0B6F /* GFLoginViewController.swift */,
 				486DA5762165E69F006B8BA5 /* GFSignupViewController.swift */,
@@ -655,13 +699,6 @@
 			path = SignUpViewModel;
 			sourceTree = "<group>";
 		};
-		2757D2BB21F590E500413713 /* ForgotPasswordViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ForgotPasswordViewModel;
-			sourceTree = "<group>";
-		};
 		2757D2D021F73F4100413713 /* API Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,10 +717,33 @@
 			path = KeyChain;
 			sourceTree = "<group>";
 		};
+		2772BA4E22059F57003AA1ED /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				2772BA4F22059F77003AA1ED /* CAPSMenu */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		2772BA4F22059F77003AA1ED /* CAPSMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2772BA5022059F77003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */,
+				2772BA5122059F77003AA1ED /* CAPSPageMenu+Options.swift */,
+				2772BA5222059F77003AA1ED /* MenuItemView.swift */,
+				2772BA5322059F77003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift */,
+				2772BA5422059F77003AA1ED /* CAPSPageMenu+UIConfiguration.swift */,
+				2772BA5522059F77003AA1ED /* CAPSPageMenuConfiguration.swift */,
+				2772BA5622059F77003AA1ED /* CAPSPageMenu.swift */,
+			);
+			path = CAPSMenu;
+			sourceTree = "<group>";
+		};
 		27F6C53C220445A7009052D0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				27F6C54A22045044009052D0 /* GFPayGoPassViewModel.swift */,
+				2772BA752208718F003AA1ED /* GFMyPassesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -707,6 +767,8 @@
 				48097191213FFCEF00B4445A /* GFActivatePassViewController.swift */,
 				48097193213FFD1D00B4445A /* GFPaymentViewController.swift */,
 				27F6C54622044ED6009052D0 /* GFPayGoPassTableViewController.swift */,
+				2772BA6C2208225D003AA1ED /* GFMyPassesTableViewController.swift */,
+				2772BA7022082277003AA1ED /* GFActivityTableViewController.swift */,
 			);
 			path = Passes;
 			sourceTree = "<group>";
@@ -759,7 +821,6 @@
 		48657099212ACE7C00E94556 /* Service Managers */ = {
 			isa = PBXGroup;
 			children = (
-				2757D2D021F73F4100413713 /* API Manager */,
 				4865709A212ACEDE00E94556 /* GFTripDataManager.swift */,
 				486570A4212C29CD00E94556 /* GFMapsUtility.swift */,
 				4881C42A215BAE690088CF5F /* GFTripHistoryManager.swift */,
@@ -785,6 +846,7 @@
 				274755902201DA6200D62268 /* GFCreateWalletService.swift */,
 				274755942201E1FD00D62268 /* GFFirstAuthToken.swift */,
 				27F6C5242202E634009052D0 /* GFFetchProductsService.swift */,
+				27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */,
 			);
 			path = "Service Managers";
 			sourceTree = "<group>";
@@ -839,6 +901,7 @@
 		4884E6C02122A85D003A1289 /* Genfare */ = {
 			isa = PBXGroup;
 			children = (
+				2772BA4E22059F57003AA1ED /* Third Party */,
 				48C6BFCE2148C88300E2065F /* Encription */,
 				4849088321367676008D0B6F /* Models */,
 				274754C321FADDC400D62268 /* ManagedObjects */,
@@ -846,6 +909,7 @@
 				27F6C53D22044BFB009052D0 /* Custom Views */,
 				4865709E212C11BB00E94556 /* Resources */,
 				2712E7EF21DF850100FF19CA /* Utility */,
+				2757D2D021F73F4100413713 /* API Manager */,
 				48657099212ACE7C00E94556 /* Service Managers */,
 				273B2CE821E47D3C00208012 /* ViewModels */,
 				48656FFA2122F1D600E94556 /* ViewControllers */,
@@ -1084,7 +1148,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AERecord/AERecord.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
@@ -1098,7 +1161,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AERecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
@@ -1187,6 +1249,7 @@
 				486DA58021674F67006B8BA5 /* GFConstants.swift in Sources */,
 				2747552B21FADF4A00D62268 /* Card+CoreDataClass.swift in Sources */,
 				4A4CF15F21FEF701007BB42C /* GFEncryptionKeysService.swift in Sources */,
+				2772BA6122059F78003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
 				27F6C54822044ED6009052D0 /* GFPayGoPassTableViewController.swift in Sources */,
 				2747554C21FADF4A00D62268 /* TicketActivation+CoreDataProperties.swift in Sources */,
 				486DA58121674F67006B8BA5 /* GFHistoryTableViewCell.swift in Sources */,
@@ -1198,17 +1261,21 @@
 				4A4CF16721FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */,
 				274754C121FA24B100D62268 /* GFDataService.swift in Sources */,
 				2747556221FB1CB100D62268 /* GFCheckWalletService.swift in Sources */,
+				2772BA6422059F78003AA1ED /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				486DA58321674F67006B8BA5 /* SideMenuItemsViewController.swift in Sources */,
 				4A4CF16321FF0F10007BB42C /* GFConfigService.swift in Sources */,
 				2747555E21FB07AF00D62268 /* GFLaunchViewController.swift in Sources */,
 				486DA58421674F67006B8BA5 /* GFMapsUtility.swift in Sources */,
 				2757D2D321F73F6F00413713 /* GFEndPoint.swift in Sources */,
 				486DA58521674F67006B8BA5 /* GFTextFieldBackGround.swift in Sources */,
+				2772BA6A22059F78003AA1ED /* CAPSPageMenu.swift in Sources */,
+				2772BA5E22059F78003AA1ED /* MenuItemView.swift in Sources */,
 				486DA58621674F67006B8BA5 /* GFRouteLegsScrollView.swift in Sources */,
 				486DA58721674F67006B8BA5 /* GFMenuButton.swift in Sources */,
 				486DA58821674F67006B8BA5 /* GFSignupViewController.swift in Sources */,
 				486DA58921674F67006B8BA5 /* GFTripHistoryManager.swift in Sources */,
 				274754BD21F9F35300D62268 /* GFSignUpService.swift in Sources */,
+				2772BA772208718F003AA1ED /* GFMyPassesViewModel.swift in Sources */,
 				486DA58A21674F67006B8BA5 /* GFTripDataManager.swift in Sources */,
 				486DA58B21674F67006B8BA5 /* GFTransitStop.swift in Sources */,
 				2757D2B521F47FB500413713 /* LoginModel.swift in Sources */,
@@ -1221,6 +1288,7 @@
 				2747554621FADF4A00D62268 /* Product+CoreDataProperties.swift in Sources */,
 				486DA59021674F67006B8BA5 /* GFSampleViewController.swift in Sources */,
 				2757D2FB21F89CF700413713 /* GenfareDataResources.xcdatamodeld in Sources */,
+				2772BA5822059F78003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				27F6C54C22045044009052D0 /* GFPayGoPassViewModel.swift in Sources */,
 				2747556E21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */,
 				486DA59121674F67006B8BA5 /* GFNavigateRouteViewController.swift in Sources */,
@@ -1233,6 +1301,7 @@
 				2747557922001EB600D62268 /* GFCardBasedHomeViewModel.swift in Sources */,
 				2747557D22001ED600D62268 /* GFAccountBasedHomeViewModel.swift in Sources */,
 				274754A921F9BDBA00D62268 /* GFWalletSelectionViewController.swift in Sources */,
+				27C3D864220471F2004B3B0E /* GFWalletActivityService.swift in Sources */,
 				486DA59321674F67006B8BA5 /* GFPaymentViewController.swift in Sources */,
 				2757D2AF21F47EAD00413713 /* PasswordViewModel.swift in Sources */,
 				486DA59421674F67006B8BA5 /* GFMyPassesViewController.swift in Sources */,
@@ -1254,6 +1323,7 @@
 				274754A021F9979300D62268 /* GFLoginService.swift in Sources */,
 				2747552521FADF4A00D62268 /* Wallet+CoreDataClass.swift in Sources */,
 				486DA59B21674F67006B8BA5 /* GFRouteOptionTableViewCell.swift in Sources */,
+				2772BA6722059F78003AA1ED /* CAPSPageMenuConfiguration.swift in Sources */,
 				486DA59C21674F67006B8BA5 /* GFStation.swift in Sources */,
 				2747554F21FADF4A00D62268 /* LoyaltyCapped+CoreDataClass.swift in Sources */,
 				27F6C53222041C3F009052D0 /* GFAccountLandingViewController.swift in Sources */,
@@ -1273,6 +1343,8 @@
 				27F6C54422044DA9009052D0 /* PayAsYouGoCell.swift in Sources */,
 				2747558A22019D0000D62268 /* GFAssignWalletService.swift in Sources */,
 				486DA5A421674F67006B8BA5 /* GFRoute.swift in Sources */,
+				2772BA5B22059F78003AA1ED /* CAPSPageMenu+Options.swift in Sources */,
+				2772BA6E2208225D003AA1ED /* GFMyPassesTableViewController.swift in Sources */,
 				2747556A21FEE4B100D62268 /* GFCardBasedHomeViewController.swift in Sources */,
 				274754B121F9D09D00D62268 /* GFWalletService.swift in Sources */,
 				27F6C5262202E634009052D0 /* GFFetchProductsService.swift in Sources */,
@@ -1282,6 +1354,7 @@
 				486DA5A621674F67006B8BA5 /* GFColor.swift in Sources */,
 				274754B921F9E2C800D62268 /* GFCreateWalletViewModel.swift in Sources */,
 				486DA5A721674F67006B8BA5 /* HomeViewController.swift in Sources */,
+				2772BA7222082277003AA1ED /* GFActivityTableViewController.swift in Sources */,
 				486DA5A821674F67006B8BA5 /* GFNavigateTimingsViewController.swift in Sources */,
 				2757D2E021F83FCE00413713 /* Api.swift in Sources */,
 				274754AD21F9BF3100D62268 /* GFCreatWalletViewController.swift in Sources */,
@@ -1297,6 +1370,7 @@
 				2747555721FADF4A00D62268 /* Ticket+CoreDataProperties.swift in Sources */,
 				486DA57B21674F4E006B8BA5 /* GFBaseService.swift in Sources */,
 				486570A7212D5DEA00E94556 /* GFConstants.swift in Sources */,
+				2772BA5D22059F78003AA1ED /* MenuItemView.swift in Sources */,
 				486DA573215E03B8006B8BA5 /* GFHistoryTableViewCell.swift in Sources */,
 				273B2CFA21E5F1AE00208012 /* GFLaunchViewController.swift in Sources */,
 				48490877212FE754008D0B6F /* GFRecentTripsViewController.swift in Sources */,
@@ -1311,6 +1385,7 @@
 				2757D2C921F7289C00413713 /* KeychainWrapper.swift in Sources */,
 				2747557C22001ED600D62268 /* GFAccountBasedHomeViewModel.swift in Sources */,
 				274754B821F9E2C800D62268 /* GFCreateWalletViewModel.swift in Sources */,
+				2772BA6322059F78003AA1ED /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				273B2D0121E6165A00208012 /* GFTAccessTokenAdapter.swift in Sources */,
 				48C6BFD62149244E00E2065F /* GFMenuButton.swift in Sources */,
 				486DA5772165E69F006B8BA5 /* GFSignupViewController.swift in Sources */,
@@ -1330,6 +1405,7 @@
 				4884E6C42122A85D003A1289 /* ViewController.swift in Sources */,
 				2757D2AE21F47EAD00413713 /* PasswordViewModel.swift in Sources */,
 				4A4CF16621FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */,
+				2772BA762208718F003AA1ED /* GFMyPassesViewModel.swift in Sources */,
 				2747554B21FADF4A00D62268 /* TicketActivation+CoreDataProperties.swift in Sources */,
 				27F6C53122041C3F009052D0 /* GFAccountLandingViewController.swift in Sources */,
 				2757D2B721F47FDF00413713 /* LoginViewModel.swift in Sources */,
@@ -1341,6 +1417,7 @@
 				2747557822001EB600D62268 /* GFCardBasedHomeViewModel.swift in Sources */,
 				2747552721FADF4A00D62268 /* Wallet+CoreDataProperties.swift in Sources */,
 				2747552121FADF4A00D62268 /* WalletActivity+CoreDataProperties.swift in Sources */,
+				2772BA6622059F78003AA1ED /* CAPSPageMenuConfiguration.swift in Sources */,
 				4A4CF15E21FEF701007BB42C /* GFEncryptionKeysService.swift in Sources */,
 				2757D2D221F73F6F00413713 /* GFEndPoint.swift in Sources */,
 				48097194213FFD1D00B4445A /* GFPaymentViewController.swift in Sources */,
@@ -1352,6 +1429,7 @@
 				2747553021FADF4A00D62268 /* WalletContents+CoreDataClass.swift in Sources */,
 				487A0049212EA9BE0027D8D4 /* GFCustomTableViewCellShadowView.swift in Sources */,
 				486DA57921663076006B8BA5 /* GFWhiteButtonTextField.swift in Sources */,
+				2772BA6922059F78003AA1ED /* CAPSPageMenu.swift in Sources */,
 				273B2CF421E4AAD400208012 /* GFNetworkReachability.swift in Sources */,
 				27F6C53522041C65009052D0 /* GFAccountLandingViewModel.swift in Sources */,
 				48C6BFD22148C8C900E2065F /* EncodeUtil.m in Sources */,
@@ -1365,15 +1443,18 @@
 				48656FFC2122F21900E94556 /* NavigateViewController.swift in Sources */,
 				2757D2B221F47EEE00413713 /* EmailIdViewModel.swift in Sources */,
 				274754B421F9D22B00D62268 /* GFRefreshAuthToken.swift in Sources */,
+				2772BA5A22059F78003AA1ED /* CAPSPageMenu+Options.swift in Sources */,
 				274754A821F9BDBA00D62268 /* GFWalletSelectionViewController.swift in Sources */,
 				2747549F21F9979300D62268 /* GFLoginService.swift in Sources */,
 				2747555421FADF4A00D62268 /* Ticket+CoreDataClass.swift in Sources */,
 				2747558D2201BF3B00D62268 /* GFReleaseWalletService.swift in Sources */,
 				486BD5552146848300E88AAA /* GFRouteLeg.swift in Sources */,
+				2772BA6022059F78003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
 				2747556D21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */,
 				2747558422007F7000D62268 /* GFCoreDataContextObserver.swift in Sources */,
 				27F6C54722044ED6009052D0 /* GFPayGoPassTableViewController.swift in Sources */,
 				2747553F21FADF4A00D62268 /* LoyaltyBonus+CoreDataProperties.swift in Sources */,
+				2772BA7122082277003AA1ED /* GFActivityTableViewController.swift in Sources */,
 				48097189213E8A4500B4445A /* GFSettingsViewController.swift in Sources */,
 				2747551E21FADF4A00D62268 /* WalletActivity+CoreDataClass.swift in Sources */,
 				486DA5BF216787A1006B8BA5 /* GFForgotPasswordViewController.swift in Sources */,
@@ -1382,6 +1463,7 @@
 				274754B021F9D09D00D62268 /* GFWalletService.swift in Sources */,
 				2747553C21FADF4A00D62268 /* LoyaltyBonus+CoreDataClass.swift in Sources */,
 				273B2CED21E48A1500208012 /* LoginModel.swift in Sources */,
+				2772BA5722059F78003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				486DA571215CDD58006B8BA5 /* GFReachability.swift in Sources */,
 				274755952201E1FD00D62268 /* GFFirstAuthToken.swift in Sources */,
 				274755912201DA6300D62268 /* GFCreateWalletService.swift in Sources */,
@@ -1391,10 +1473,12 @@
 				2747552D21FADF4A00D62268 /* Card+CoreDataProperties.swift in Sources */,
 				2747554E21FADF4A00D62268 /* LoyaltyCapped+CoreDataClass.swift in Sources */,
 				2747553621FADF4A00D62268 /* Account+CoreDataClass.swift in Sources */,
+				27C3D863220471F2004B3B0E /* GFWalletActivityService.swift in Sources */,
 				2747554221FADF4A00D62268 /* Product+CoreDataClass.swift in Sources */,
 				486BD55121464CAC00E88AAA /* GFIconBadge.swift in Sources */,
 				48097190213FFCD100B4445A /* GFPassListViewController.swift in Sources */,
 				27F6C54B22045044009052D0 /* GFPayGoPassViewModel.swift in Sources */,
+				2772BA6D2208225D003AA1ED /* GFMyPassesTableViewController.swift in Sources */,
 				2757D2DF21F83FCE00413713 /* Api.swift in Sources */,
 				274754AC21F9BF3100D62268 /* GFCreatWalletViewController.swift in Sources */,
 				486BD55721468DA300E88AAA /* GFRoute.swift in Sources */,
@@ -1417,13 +1501,16 @@
 				2747552F21FADF4A00D62268 /* Card+CoreDataProperties.swift in Sources */,
 				2747552021FADF4A00D62268 /* WalletActivity+CoreDataClass.swift in Sources */,
 				2747554721FADF4A00D62268 /* Product+CoreDataProperties.swift in Sources */,
+				2772BA6522059F78003AA1ED /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				2747553B21FADF4A00D62268 /* Account+CoreDataProperties.swift in Sources */,
 				4A4CF16021FEF701007BB42C /* GFEncryptionKeysService.swift in Sources */,
 				2747552621FADF4A00D62268 /* Wallet+CoreDataClass.swift in Sources */,
 				2747553221FADF4A00D62268 /* WalletContents+CoreDataClass.swift in Sources */,
 				273B2CFB21E5F1AE00208012 /* GFLaunchViewController.swift in Sources */,
 				2757D2D421F73F6F00413713 /* GFEndPoint.swift in Sources */,
+				2772BA5C22059F78003AA1ED /* CAPSPageMenu+Options.swift in Sources */,
 				2747553E21FADF4A00D62268 /* LoyaltyBonus+CoreDataClass.swift in Sources */,
+				2772BA6222059F78003AA1ED /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
 				2747554D21FADF4A00D62268 /* TicketActivation+CoreDataProperties.swift in Sources */,
 				2747553821FADF4A00D62268 /* Account+CoreDataClass.swift in Sources */,
 				2747556F21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */,
@@ -1433,6 +1520,7 @@
 				2747555921FADF4A00D62268 /* Ticket+CoreDataProperties.swift in Sources */,
 				2747555021FADF4A00D62268 /* LoyaltyCapped+CoreDataClass.swift in Sources */,
 				2747557A22001EB600D62268 /* GFCardBasedHomeViewModel.swift in Sources */,
+				2772BA7322082277003AA1ED /* GFActivityTableViewController.swift in Sources */,
 				2747552321FADF4A00D62268 /* WalletActivity+CoreDataProperties.swift in Sources */,
 				2747555321FADF4A00D62268 /* LoyaltyCapped+CoreDataProperties.swift in Sources */,
 				2747558B22019D0000D62268 /* GFAssignWalletService.swift in Sources */,
@@ -1440,9 +1528,11 @@
 				2747555D21FAE0B500D62268 /* GFDataUtility.swift in Sources */,
 				274754B221F9D09D00D62268 /* GFWalletService.swift in Sources */,
 				27475582220058FE00D62268 /* GFWalletContentsService.swift in Sources */,
+				2772BA6F2208225D003AA1ED /* GFMyPassesTableViewController.swift in Sources */,
 				2747552C21FADF4A00D62268 /* Card+CoreDataClass.swift in Sources */,
 				27F6C53722041C65009052D0 /* GFAccountLandingViewModel.swift in Sources */,
 				27F6C5272202E634009052D0 /* GFFetchProductsService.swift in Sources */,
+				2772BA6B22059F78003AA1ED /* CAPSPageMenu.swift in Sources */,
 				2747554421FADF4A00D62268 /* Product+CoreDataClass.swift in Sources */,
 				2747557421FEE52F00D62268 /* GFSettingsViewController.swift in Sources */,
 				27F6C53322041C3F009052D0 /* GFAccountLandingViewController.swift in Sources */,
@@ -1455,15 +1545,20 @@
 				274754BA21F9E2C800D62268 /* GFCreateWalletViewModel.swift in Sources */,
 				27F6C54D22045044009052D0 /* GFPayGoPassViewModel.swift in Sources */,
 				2747558F2201BF3B00D62268 /* GFReleaseWalletService.swift in Sources */,
+				2772BA7422085375003AA1ED /* GFSignupViewController.swift in Sources */,
 				27F6C54922044ED6009052D0 /* GFPayGoPassTableViewController.swift in Sources */,
 				2757D2BF21F5AFE200413713 /* SignUpModel.swift in Sources */,
 				2747555621FADF4A00D62268 /* Ticket+CoreDataClass.swift in Sources */,
 				274754B621F9D22B00D62268 /* GFRefreshAuthToken.swift in Sources */,
 				2747555F21FB12CC00D62268 /* GFAccountManager.swift in Sources */,
+				2772BA5F22059F78003AA1ED /* MenuItemView.swift in Sources */,
 				2757D2C321F5B12300413713 /* SignUpViewModel.swift in Sources */,
+				2772BA6822059F78003AA1ED /* CAPSPageMenuConfiguration.swift in Sources */,
 				4A4CF16421FF0F10007BB42C /* GFConfigService.swift in Sources */,
 				273B2CFF21E5F89300208012 /* GFUtilities.swift in Sources */,
 				2757D2B421F47EEE00413713 /* EmailIdViewModel.swift in Sources */,
+				27C3D865220471F2004B3B0E /* GFWalletActivityService.swift in Sources */,
+				2772BA782208718F003AA1ED /* GFMyPassesViewModel.swift in Sources */,
 				273B2CF521E4AAD400208012 /* GFNetworkReachability.swift in Sources */,
 				2757D2E121F83FCE00413713 /* Api.swift in Sources */,
 				2757D2B921F47FDF00413713 /* LoginViewModel.swift in Sources */,
@@ -1480,6 +1575,7 @@
 				2757D2CB21F7289C00413713 /* KeychainWrapper.swift in Sources */,
 				2757D2D921F7404500413713 /* KeychainItemAccessibility.swift in Sources */,
 				274754C221FA24B100D62268 /* GFDataService.swift in Sources */,
+				2772BA5922059F78003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				273B2D0221E6165A00208012 /* GFTAccessTokenAdapter.swift in Sources */,
 				2757D2B021F47EAD00413713 /* PasswordViewModel.swift in Sources */,
 				2747552921FADF4A00D62268 /* Wallet+CoreDataProperties.swift in Sources */,

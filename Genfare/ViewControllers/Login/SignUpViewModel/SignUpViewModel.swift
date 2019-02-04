@@ -51,4 +51,52 @@ class SignUpViewModel {
         return passwordViewModel2.data.value == passwordViewModel.data.value
     }
     
+    func signupUser() {
+        isLoading.value = true
+
+        let signUpService:GFSignUpService = GFSignUpService(email: emailIdViewModel.data.value,
+                                                            password: passwordViewModel.data.value,
+                                                            firstname: firstNameViewModel.data.value,
+                                                            lastname: lastNameViewModel.data.value)
+        signUpService.registerUser(completionHandler: { [weak self] (success, error) in
+            self?.isLoading.value = false
+
+            if success {
+                self?.loginUser()
+            }else{
+                self?.errorMsg.value = error as! String
+            }
+        })
+    }
+    
+    func loginUser() {
+        isLoading.value = true
+        
+        let loginService = GFLoginService(username: emailIdViewModel.data.value,
+                                   password: passwordViewModel.data.value)
+        loginService.loginUser { [weak self] (success, error) in
+            self?.isLoading.value = false
+            
+            if success {
+                self?.refreshToken()
+            }else{
+                self?.errorMsg.value = error as! String
+            }
+        }
+    }
+    
+    func refreshToken(){
+        isLoading.value = true
+        
+        GFRefreshAuthToken.refresh { [weak self] (success, error) in
+            self?.isLoading.value = false
+            
+            if success {
+                self?.isSuccess.value = true
+            }else{
+                self?.errorMsg.value = error as! String
+            }
+        }
+    }
+    
 }

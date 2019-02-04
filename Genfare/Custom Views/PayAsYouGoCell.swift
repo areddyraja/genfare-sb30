@@ -12,6 +12,11 @@ class PayAsYouGoCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    
+    @IBOutlet weak var activeBtn: GFMenuButton!
+    @IBOutlet weak var activeRideBtn: GFMenuButton!
+    @IBOutlet weak var inactiveBtn: GFMenuButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

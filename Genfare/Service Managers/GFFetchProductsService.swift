@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import CoreData
 
-class GFFetchProductsService {
+class GFFetchProductsService: GFBaseService {
     
     var walletID:NSNumber?
     
@@ -30,7 +30,7 @@ class GFFetchProductsService {
         return [:]
     }
     
-    func getProducts(completionHandler:@escaping (_ success:Bool?,_ error:Any?) -> Void) {
+    func getProducts(completionHandler:@escaping (_ success:Bool,_ error:Any?) -> Void) {
         
         let endpoint = GFEndpoint.FetchProducts(walletId: walletID!)
         
@@ -39,8 +39,28 @@ class GFFetchProductsService {
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)
-                    self.saveProducts(data: JSON as! Array<Any>)
-                    completionHandler(true,nil)
+                    if let json = JSON as? Array<Any> {
+                        self.saveProducts(data: json)
+                        completionHandler(true,nil)
+                    }else{
+                        if let json = JSON as? [String:Any] {
+                            if let code = json["code"] as? String, code == "401" {
+                                GFRefreshAuthToken.refresh(completionHandler: { [weak self] (success, error) in
+                                    if success, (self != nil) {
+                                        self!.getProducts(completionHandler: { (success, error) in
+                                            completionHandler(success,error)
+                                        })
+                                    }else{
+                                        completionHandler(false,error)
+                                    }
+                                })
+                            }else{
+                                completionHandler(false,"Unknown Error Occoured")
+                            }
+                        }else{
+                            completionHandler(false,"Unknown Error Occoured")
+                        }
+                    }
                 case .failure(let error):
                     print("Request failed with error: \(error)")
                     completionHandler(false,error.localizedDescription)

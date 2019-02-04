@@ -48,8 +48,7 @@ class GFSettingsViewController: GFBaseViewController {
         GFAccountBalanceService.fetchAccountBalance{ (success, error) in
             if success {
                 print("got balance")
-            }
-            else{
+            }else{
                 print(error)
             }
         }
@@ -68,6 +67,19 @@ class GFSettingsViewController: GFBaseViewController {
         }
     }
     
+    @IBAction func fetchWalletContents(_ sender: Any){
+        let walletid = NSNumber(value: Int(walletIDTxt.text!)!)
+
+        let configValues:GFWalletContentsService = GFWalletContentsService(walletID: walletid)
+        configValues.getWalletContents { (success,error) in
+            if success {
+                print("got contents")
+            }else{
+                print("error")
+            }
+        }
+    }
+
     @IBAction func releaseWallet(_ sender: Any){
         let walletid = NSNumber(value: Int(walletIDTxt.text!)!)
         let configValues = GFReleaseWalletService(walletID: walletid)

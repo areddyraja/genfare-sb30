@@ -37,16 +37,7 @@ class GFCreatWalletViewController: GFBaseViewController {
             self.walletNameTxt.resignFirstResponder()
         }).subscribe(onNext: { [unowned self] in
             if self.viewModel.validateCredentials() {
-                self.spinnerView = UIViewController.displaySpinner(onView: self.view)
-                self.createWalletService = GFCreateWalletService(nickname: self.walletNameTxt.text!)
-                self.createWalletService?.createWallet(nickname: self.walletNameTxt.text!, completionHandler: { (success, error) in
-                    if (success!){
-                        print("Wallet created successfully")
-                    }else{
-                        print("Error creating wallet")
-                    }
-                    UIViewController.removeSpinner(spinner: self.spinnerView!)
-                })
+                self.viewModel.createWallet()
             }else{
                 self.popupAlert(title: "Error", message: self.viewModel.formErrorString(), actionTitles: ["OK"], actions: [nil])
             }
@@ -56,17 +47,23 @@ class GFCreatWalletViewController: GFBaseViewController {
     func createCallbacks (){
         // success
         viewModel.isSuccess.asObservable()
-            .bind{ value in
-                NSLog("Successfull")
+            .bind{ [unowned self] value in
+                if value{
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }.disposed(by: disposeBag)
+        
+        // Loading
+        viewModel.isLoading.asObservable()
+            .bind{[unowned self] value in
+                self.attachSpinner(value: value)
             }.disposed(by: disposeBag)
         
         // errors
         viewModel.errorMsg.asObservable()
-            .bind { errorMessage in
-                // Show error
-                NSLog("Failure")
+            .bind {[unowned self] errorMessage in
+                self.showErrorMessage(message: errorMessage)
             }.disposed(by: disposeBag)
-        
+
     }
-    
 }

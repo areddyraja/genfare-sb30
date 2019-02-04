@@ -9,7 +9,6 @@
 import UIKit
 
 class GFMyPassesViewController: GFBaseViewController {
-
     
     @IBOutlet weak var daysRemainingLabel: UILabel!
     
@@ -31,7 +30,6 @@ class GFMyPassesViewController: GFBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     @IBAction func showDetails(_ sender: UIButton) {
         print(sender)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BaseService {
+class GFBaseService {
     
     var method:Int = Constants.NetService.METHOD_POST
     

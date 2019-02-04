@@ -1,8 +1,8 @@
 //
-//  GFPayGoPassTableViewController.swift
+//  GFMyPassesTableViewController.swift
 //  Genfare
 //
-//  Created by vishnu on 01/02/19.
+//  Created by vishnu on 04/02/19.
 //  Copyright © 2019 Omniwyse. All rights reserved.
 //
 
@@ -10,20 +10,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFPayGoPassTableViewController: UITableViewController {
+class GFMyPassesTableViewController: UITableViewController {
 
-    let viewModel = GFPayGoPassViewModel()
+    let viewModel = GFMyPassesViewModel()
     let disposeBag = DisposeBag()
     var spinnerView:UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.clearsSelectionOnViewWillAppear = false
         createCallbacks()
         createViewModelBinding()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.showProducts()
@@ -57,7 +57,6 @@ class GFPayGoPassTableViewController: UITableViewController {
             .bind {[unowned self] errorMessage in
                 // Show error
                 if errorMessage != ""{
-                    //self.popupAlert(title: "ERROR", message: errorMessage, actionTitles: ["OK"], actions: [nil])
                     print(errorMessage)
                 }
             }.disposed(by: disposeBag)
@@ -81,15 +80,19 @@ class GFPayGoPassTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PAYGOCELL", for: indexPath) as! PayAsYouGoCell
+        
+        cell.activeBtn.isHidden = true
+        cell.inactiveBtn.isHidden = true
+        cell.activeRideBtn.isHidden = true
 
-        if let product:Product = viewModel.model[indexPath.row] as Product {
-            cell.titleLabel.text = product.productDescription
-            cell.subTitleLabel.text = product.ticketTypeDescription
+        if let product:WalletContents = viewModel.model[indexPath.row] as WalletContents {
+            cell.titleLabel.text = product.descriptation
+            cell.subTitleLabel.text = product.type
         }
-
+        
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         //Handle selection

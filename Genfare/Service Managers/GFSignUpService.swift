@@ -16,8 +16,6 @@ class GFSignUpService {
     var firstName:String = ""
     var lastName:String = ""
     
-    var delegate:SignUpServiceDelegate?
-    
     init(email:String,password:String,firstname:String,lastname:String) {
         self.useremail = email
         self.password = password
@@ -40,33 +38,24 @@ class GFSignUpService {
         return parameters
     }
 
-    func registerUser(){
+    func registerUser(completionHandler:@escaping (_ success:Bool,_ error:Any?) -> Void){
         let endpoint = GFEndpoint.RegisterUser(email: useremail, password: password, firstname: firstName, lastname: lastName)
         
         Alamofire.request(endpoint.url, method: endpoint.method, parameters: parameters(), encoding: JSONEncoding.default, headers: headers())
-            .responseJSON { response in
+            .responseJSON { [weak self] response in
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)
                     let dict = JSON as? [String:Any]
-                    let success:Bool = dict!["success"] as! Bool
-                    if(!success){
-                        self.delegate?.didFailRegistration(dict?["message"] ?? "Registration failed.")
+                    if let success = dict!["success"] as? Bool, success {
+                        completionHandler(true,nil)
                     }else{
-                        KeychainWrapper.standard.set(self.useremail, forKey:Constants.KeyChain.UserName)
-                        KeychainWrapper.standard.set(self.password, forKey: Constants.KeyChain.Password)
-                        self.delegate?.didRegisterSuccessfully()
+                        completionHandler(false,"Registration failed.")
                     }
-                    
                 case .failure(let error):
-                    self.delegate?.didFailRegistration(error.localizedDescription)
+                    completionHandler(false,error.localizedDescription)
                     print("Request failed with error: \(error)")
                 }
         }
     }
-}
-
-protocol SignUpServiceDelegate {
-    func didRegisterSuccessfully()
-    func didFailRegistration(_ error:Any)
 }

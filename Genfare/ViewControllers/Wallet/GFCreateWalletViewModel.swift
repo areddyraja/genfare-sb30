@@ -33,4 +33,14 @@ class CreateWalletViewModel {
         return ""
     }
 
+    func createWallet(){
+        let createWalletService = GFCreateWalletService(nickname:walletNameViewModel.data.value)
+        createWalletService.createWallet(completionHandler: {[weak self] (success, error) in
+            if success {
+                self?.isSuccess.value = true
+            }else{
+                self?.errorMsg.value = error as! String
+            }
+        })
+    }
 }

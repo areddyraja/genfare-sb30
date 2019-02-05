@@ -30,7 +30,7 @@ class GFWalletActivityService {
         return [:]
     }
     
-    func fetchHistory(completionHandler:@escaping (_ success:Bool?,_ error:Any?) -> Void) {
+    func fetchHistory(completionHandler:@escaping (_ success:Bool,_ error:Any?) -> Void) {
         
         let endpoint = GFEndpoint.FetchWalletActivity(walletId: walletID!)
         
@@ -38,8 +38,11 @@ class GFWalletActivityService {
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
-                    self.saveHistory(data: JSON as! Array<Any>)
+                    if let json = JSON as? [String:Any] {
+                        if let items = json["result"] as? Array<Any> {
+                            self.saveHistory(data: items)
+                        }
+                    }
                     completionHandler(true,nil)
                 case .failure(let error):
                     print("Request failed with error: \(error)")

@@ -27,6 +27,7 @@ class GFMyPassesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.showProducts()
+        viewModel.fetchWalletContents()
     }
     
     func createCallbacks (){

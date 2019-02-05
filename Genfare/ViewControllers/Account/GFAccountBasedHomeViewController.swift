@@ -30,6 +30,69 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         createCallbacks()
         createViewModelBinding()
         
+        attachPassList()
+    }
+    
+    override func viewWillAppear( _ animated:Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = .black
+        navigationController?.setNavigationBarHidden(false, animated: false);
+        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+        viewModel.updateWalletStatus()
+        //attachPassList()
+    }
+    
+    func createViewModelBinding(){
+        addFundsBtn.rx.tap.do(onNext:  { [unowned self] in
+        }).subscribe(onNext: { [unowned self] in
+            //show products page
+        }).disposed(by: disposeBag)
+        
+        acctMgtBtn.rx.tap.do(onNext:  { [unowned self] in
+        }).subscribe(onNext: { [unowned self] in
+            //show account management
+        }).disposed(by: disposeBag)
+    }
+    
+    func createCallbacks (){
+        // success
+        viewModel.isSuccess.asObservable()
+            .bind{ [unowned self] value in
+                NSLog("Successfull \(value)")
+                if value{
+                    //self.popupAlert(title: "Success", message: "Login Successful...!!!", actionTitles: ["OK"], actions: [nil])
+                }
+            }.disposed(by: disposeBag)
+        
+        // Loading
+        viewModel.isLoading.asObservable()
+            .bind{[unowned self] value in
+                self.attachSpinner(value: value)
+            }.disposed(by: disposeBag)
+        
+        //Update balance
+        viewModel.balance.asObservable()
+            .bind{ [unowned self] value in
+                NSLog(" \(value)")
+                self.balanceLabel.text = "$\(value)"
+            }.disposed(by: disposeBag)
+        
+        //Update wallet status
+        viewModel.walletState.asObservable()
+            .bind{ [unowned self] value in
+                NSLog(" \(value)")
+                self.addFundsBtn.isEnabled = value
+            }.disposed(by: disposeBag)
+        
+        //Update wallet name
+        viewModel.walletName.asObservable()
+            .bind{ [unowned self] value in
+                NSLog(" \(value)")
+                self.walletTitleLabel.text = value
+            }.disposed(by: disposeBag)
+    }
+    
+    func attachPassList() {
         var controllerArray : [UIViewController] = []
         
         // Create variables for all view controllers you want to put in the
@@ -65,77 +128,4 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         self.pageControlHolder.addSubview(pageMenu!.view)
     }
     
-    override func viewWillAppear( _ animated:Bool) {
-        super.viewWillAppear(animated)
-        view.backgroundColor = .black
-        navigationController?.setNavigationBarHidden(false, animated: false);
-        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
-        viewModel.updateWalletStatus()
-        //attachPassList()
-    }
-    
-    func attachPassList() {
-        if let controller = UIStoryboard(name: "Passes", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.PayAsYouGoList) as? GFPayGoPassTableViewController {
-            self.addChildViewController(controller)
-            self.pageControlHolder.addSubview(controller.view)
-            controller.didMove(toParentViewController: self)
-        }
-    }
-    
-    func createViewModelBinding(){
-        addFundsBtn.rx.tap.do(onNext:  { [unowned self] in
-        }).subscribe(onNext: { [unowned self] in
-            //show products page
-        }).disposed(by: disposeBag)
-        
-        acctMgtBtn.rx.tap.do(onNext:  { [unowned self] in
-        }).subscribe(onNext: { [unowned self] in
-            //show account management
-        }).disposed(by: disposeBag)
-    }
-    
-    func createCallbacks (){
-        // success
-        viewModel.isSuccess.asObservable()
-            .bind{ [unowned self] value in
-                NSLog("Successfull \(value)")
-                if value{
-                    self.popupAlert(title: "Success", message: "Login Successful...!!!", actionTitles: ["OK"], actions: [nil])
-                }
-            }.disposed(by: disposeBag)
-        
-        // Loading
-        viewModel.isLoading.asObservable()
-            .bind{[unowned self] value in
-                NSLog("Loading \(value)")
-                if value {
-                    self.spinnerView = UIViewController.displaySpinner(onView: self.view)
-                }else{
-                    if let _ = self.spinnerView {
-                        UIViewController.removeSpinner(spinner: self.spinnerView!)
-                    }
-                }
-            }.disposed(by: disposeBag)
-        
-        //Update balance
-        viewModel.balance.asObservable()
-            .bind{ [unowned self] value in
-                NSLog(" \(value)")
-                self.balanceLabel.text = "$\(value)"
-            }.disposed(by: disposeBag)
-        
-        //Update wallet status
-        viewModel.walletState.asObservable()
-            .bind{ [unowned self] value in
-                NSLog(" \(value)")
-                self.addFundsBtn.isEnabled = value
-            }.disposed(by: disposeBag)
-        
-        //Update wallet name
-        viewModel.walletName.asObservable()
-            .bind{ [unowned self] value in
-                NSLog(" \(value)")
-                self.walletTitleLabel.text = value
-            }.disposed(by: disposeBag)
-    }
 }

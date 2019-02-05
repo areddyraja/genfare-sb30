@@ -94,6 +94,20 @@ class GFSettingsViewController: GFBaseViewController {
         }
     }
 
+    @IBAction func fetchTickets(_ sender: Any){
+        let walletid = GFWalletsService.walletID
+        let tickets = GFTicketsService(walletID: walletid!)
+        tickets.fetchTickets { (success,error) in
+            if success {
+                print("released")
+            }
+            else{
+                print("error")
+            }
+            
+        }
+    }
+
     /*
     // MARK: - Navigation
 

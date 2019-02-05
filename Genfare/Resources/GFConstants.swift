@@ -91,6 +91,12 @@ struct Constants {
         static let MyPassesList = "MYPASSESLIST"
         static let MyHistoryList = "PASSACTIVITYLIST"
     }
+    
+    struct Ticket {
+        static let InActive = "pending_activation"
+        static let Active = "active"
+        static let ActiveRide = "active_ride"
+    }
 }
 
 //AIzaSyD20t9-cmgZ_zgDgJO3R4y-tehsscNnHkA

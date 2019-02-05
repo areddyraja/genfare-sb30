@@ -35,6 +35,11 @@ class GFMyPassesViewModel {
     }
     
     func fetchWalletContents() {
+        guard NetworkManager.Reachability else {
+            isSuccess.value = true
+            return
+        }
+        
         let products:GFWalletContentsService = GFWalletContentsService(walletID: GFWalletsService.walletID!)
         isLoading.value = true
         isSuccess.value = false

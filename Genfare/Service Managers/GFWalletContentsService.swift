@@ -53,43 +53,57 @@ class GFWalletContentsService {
     }
     
     func saveWalletContents(data:Array<Any>) {
-        GFDataService.deleteAllRecords(entity: "WalletContents")
-
         let managedContext = GFDataService.context
         let walletContents = NSEntityDescription.entity(forEntityName: "WalletContents", in: managedContext)
         
         for item in data {
-            let userObj:WalletContents = NSManagedObject(entity: walletContents!, insertInto: managedContext) as! WalletContents
+            var userObj:WalletContents
             
             if let wItem = item as? [String:Any] {
-                userObj.agencyId = wItem["agencyId"] as? NSNumber
-                userObj.balance = wItem["balance"] as? String
-                userObj.descriptation = wItem["description"] as? String
-                userObj.designator = wItem["designator"] as? NSNumber
-                userObj.fare = wItem["fare"] as? NSNumber
-                userObj.group = wItem["group"] as? String
-                userObj.identifier = wItem["identifier"] as? String
-                userObj.instanceCount = wItem["instanceCount"] as? NSNumber
-                userObj.purchasedDate = wItem["purchasedDate"] as? NSNumber
-                userObj.slot = wItem["slot"] as? NSNumber
-                userObj.status = wItem["status"] as? String
-                userObj.ticketIdentifier = wItem["ticketIdentifier"] as? String
-                userObj.type = wItem["type"] as? String
-                userObj.valueOriginal = wItem["valueOriginal"] as? NSNumber
-                userObj.valueRemaining = wItem["valueRemaining"] as? NSNumber
-                if let attbs = wItem["attributes"] as? [String:Any], let attb = attbs["Attribute"] as? Array<Any> {
-                    if attb.count > 1 {
-                        if let subItem = attb[1] as? [String:Any] {
-                            userObj.member = subItem["value"] as? String
+                do {
+                    let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
+                    fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == %@", (wItem["ticketIdentifier"] as? String)!)
+                    let fetchResults = try managedContext.fetch(fetchRequest) as! Array<WalletContents>
+                    if fetchResults.count <= 0 {
+                        userObj = NSManagedObject(entity: walletContents!, insertInto: managedContext) as! WalletContents
+                    }else{
+                        userObj = fetchResults.first!
+                    }
+                    userObj.activationCount = wItem["activationCount"] as? NSNumber
+                    userObj.expirationDate = wItem["expirationDate"] as? String
+                    userObj.agencyId = wItem["agencyId"] as? NSNumber
+                    userObj.balance = wItem["balance"] as? String
+                    userObj.descriptation = wItem["description"] as? String
+                    userObj.designator = wItem["designator"] as? NSNumber
+                    userObj.fare = wItem["fare"] as? NSNumber
+                    userObj.group = wItem["group"] as? String
+                    userObj.identifier = wItem["identifier"] as? String
+                    userObj.instanceCount = wItem["instanceCount"] as? NSNumber
+                    userObj.purchasedDate = wItem["purchasedDate"] as? NSNumber
+                    userObj.slot = wItem["slot"] as? NSNumber
+                    userObj.status = wItem["status"] as? String
+                    userObj.ticketIdentifier = wItem["ticketIdentifier"] as? String
+                    userObj.type = wItem["type"] as? String
+                    userObj.valueOriginal = wItem["valueOriginal"] as? NSNumber
+                    userObj.valueRemaining = wItem["valueRemaining"] as? NSNumber
+                    userObj.ticketEffectiveDate = wItem["ticketEffectiveDate"] as? NSNumber
+                    userObj.ticketExpiryDate = wItem["ticketExpiryDate"] as? NSNumber
+                    if let attbs = wItem["attributes"] as? [String:Any], let attb = attbs["Attribute"] as? Array<Any> {
+                        if attb.count > 1 {
+                            if let subItem = attb[1] as? [String:Any] {
+                                userObj.member = subItem["value"] as? String
+                            }
+                        }
+                        if attb.count > 0 {
+                            if let subItem = attb[0] as? [String:Any] {
+                                userObj.ticketGroup = subItem["value"] as? String
+                            }
                         }
                     }
-                    if attb.count > 0 {
-                        if let subItem = attb[0] as? [String:Any] {
-                            userObj.ticketGroup = subItem["value"] as? String
-                        }
-                    }
+                    print(userObj)
+                }catch{
+                    print("saving failed ")
                 }
-                print(userObj)
             }
         }
         GFDataService.saveContext()

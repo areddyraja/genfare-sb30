@@ -86,11 +86,17 @@ class GFMyPassesTableViewController: UITableViewController {
         cell.inactiveBtn.isHidden = true
         cell.activeRideBtn.isHidden = true
 
-        if let product:WalletContents = viewModel.model[indexPath.row] as WalletContents {
-            cell.titleLabel.text = product.descriptation
-            cell.subTitleLabel.text = product.type
+        if let wc:WalletContents = viewModel.model[indexPath.row] as WalletContents {
+            cell.titleLabel.text = wc.descriptation
+            cell.subTitleLabel.text = wc.type
+            
+            if wc.status == Constants.Ticket.InActive {
+                cell.inactiveBtn.isHidden = false
+            }else{
+                cell.activeBtn.isHidden = false
+            }
         }
-        
+
         return cell
     }
 

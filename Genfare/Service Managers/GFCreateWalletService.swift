@@ -41,12 +41,16 @@ class GFCreateWalletService {
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)
-                    completionHandler(true,nil)
+                    if let json = JSON as? [String:Any], let walletData = json["result"] as? [String:Any] {
+                        GFWalletsService.saveWalletData(data: walletData)
+                        completionHandler(true,nil)
+                    }else{
+                        completionHandler(false,"Unknown error")
+                    }
                 case .failure(let error):
                     print("Request failed with error: \(error)")
                     completionHandler(false,error.localizedDescription)
                 }
         }
     }
-
 }

@@ -90,6 +90,13 @@ struct Constants {
         static let PayAsYouGoList = "PAYASYOUGOPASSES"
         static let MyPassesList = "MYPASSESLIST"
         static let MyHistoryList = "PASSACTIVITYLIST"
+        static let PurchaseProducts = "GFPurchaseTicketListViewController"
+    }
+    
+    struct Ticket {
+        static let InActive = "pending_activation"
+        static let Active = "active"
+        static let ActiveRide = "active_ride"
     }
 }
 

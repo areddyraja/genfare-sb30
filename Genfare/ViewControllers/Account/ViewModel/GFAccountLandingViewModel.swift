@@ -28,7 +28,11 @@ class GFAccountLandingViewModel {
     }
 
     func checkWalletStatus() {
-        fetchProducts()
+        if NetworkManager.Reachability {
+            fetchProducts()
+        }else{
+            isSuccess.value = true
+        }
     }
     
     func fetchProducts() {

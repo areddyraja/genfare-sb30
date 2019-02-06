@@ -14,37 +14,33 @@ class GFTicketCardSeletionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        OrderProducts()
         // Do any additional setup after loading the view.
         if self.productsCartArray.count > 0{
         }
     }
-
     
-//    func fetchConfigurationValues(completionHandler:@escaping (_ success:Bool?,_ error:Any?) -> Void) {
-//        let endpoint = GFEndpoint.GetProductForWallet()
-//
-//        Alamofire.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: URLEncoding.default, headers: endpoint.headers)
-//            .responseJSON { response in
-//                switch response.result {
-//                case .success(let JSON):
-//                    print(JSON)
-//                    self.saveData(datas:JSON as! [[String : Any]])
-//                case .failure(let error):
-//                    print("Request failed with error: \(error)")
-//                    completionHandler(false,error)
-//                }
-//        }
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func OrderProducts() {
+        let orderedService = GFCreateOrderForProductsService(order:productsCartArray, walletID: GFWalletsService.walletID!)
+        orderedService.createOrderService { (success,error) in
+            if success! {
+                print("ordered")
+            }
+            else{
+                print("error")
+            }
+            
+        }
     }
-    */
 
+    @IBAction func paymentButtonPressed(_ sender: Any) {
+        let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
+      let  walletID =  GFWalletsService.walletID!
+        var orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
+        let  url1 = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&saveForFuture=true"
+        let url =  Utilities.apiHost()+url1
+        navController?.weburl = url
+       navigationController?.pushViewController(navController!, animated: true)
+        
+    }
 }

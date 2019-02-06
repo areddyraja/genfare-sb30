@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GFTicketDetailsViewController: GFBaseViewController,UITableViewDelegate,UITableViewDataSource {
+class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var seletedProducts = [[String:Any]]()
     var arrNotStoredProds = [[String:Any]]()
     var arrStoredProds  = [[String:Any]]()
@@ -72,10 +72,15 @@ class GFTicketDetailsViewController: GFBaseViewController,UITableViewDelegate,UI
         cancelButton.tag = indexPath.row + 1
         let image = UIImage(named: "cancel") as UIImage?
         cancelButton.setImage(image, for: .normal)
-       // cancelButton.addTarget(self, action: #selector(self.onClickofCancel(_:)), for: .touchUpInside)
+       cancelButton.addTarget(self, action:#selector(onClickofCancel(sender:)), for: .touchUpInside)
         cell.accessoryView = cancelButton
         return cell
     }
+    @objc func onClickofCancel(sender: GFMenuButton){
+        seletedProducts.remove(at: sender.tag - 1)
+        productsTableView.reloadData()
+    }
+
 
     @IBAction func onClickOfAddMoreProducts(_ sender: UIButton) {
          self.navigationController?.popViewController(animated: true)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GFPurchaseTicketListViewController:GFBaseViewController,UITableViewDelegate,UITableViewDataSource {
+class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var ProductsTableView: UITableView!
     var quantityValue = 0

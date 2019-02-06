@@ -9,23 +9,23 @@
 import UIKit
 
 class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    
     @IBOutlet var ProductsTableView: UITableView!
     var quantityValue = 0
     
     @IBOutlet var ContinueButton: GFMenuButton! //continueButton.
     @IBOutlet var MailLabel: UILabel!
     @IBOutlet var PayAsYouGoLabel: UILabel!
-   @IBOutlet var DollarSymbolLabel: UILabel!
-  @IBOutlet var PayAsYouGoTextField: UITextField!
+    @IBOutlet var DollarSymbolLabel: UILabel!
+    @IBOutlet var PayAsYouGoTextField: UITextField!
     var products:Array<Product> =  GFFetchProductsService.getProducts()
     var productsListArray = [[String:Any]]()
-     var productsListArrayPayAsYouGo = [AnyObject]()
+    var productsListArrayPayAsYouGo = [AnyObject]()
     var totalProdcutArray = [AnyObject]()
     var fare = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
-       targetMethod()
+        targetMethod()
         
         var payAsYouGoText =  returnStoredValueWithActivation()
         for i in payAsYouGoText{
@@ -65,24 +65,22 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         if let fare = prodObj["price"] as? String{
             cell.TicketAmount.text = String(format: "Fare $%@.00",fare)
         }
-       
+        
         if let individualFare = prodObj["total_ticket_fare"] as? Float{
             cell.TotalTicketFare.text = String(describing: individualFare)
         }
         
         return cell
     }
-
+    
     
     func targetMethod(){
-       
+        
         if products.count > 0{
-         var  filteredProdcutArray = returnStoredValueProducts()
+            var  filteredProdcutArray = returnStoredValueProducts()
             print(filteredProdcutArray)
-        for i in filteredProdcutArray{
-            var dict = [String:Any]()
-               // var payasyougo = i["ticketTypeDescription"] as? String
-
+            for i in filteredProdcutArray{
+                var dict = [String:Any]()
                 dict["productDescription"] = i.productDescription
                 dict["offeringId"] = i.offeringId
                 dict["ticketId"] = i.ticketId
@@ -91,7 +89,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 dict["ticket_count"] = quantityValue
                 dict["total_ticket_fare"] = fare
                 self.productsListArray.append(dict)
-
+                
             }
             print(productsListArray)
             
@@ -105,29 +103,28 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
             print(filteredProductArrayPayAsYouGo)
             for i in filteredProductArrayPayAsYouGo{
                 if(!(self.PayAsYouGoTextField.text?.isEmpty)!){
-              //  if(self.PayAsYouGoTextField.text.length>0){
-                var dict: [AnyHashable : Any] = [:]
-                dict["productDescription"] = i.productDescription
-                dict["offeringId"] = i.offeringId
-                dict["ticketId"] = i.ticketId
-                dict["price"] = i.price
-                dict["ticketTypeDescription"] = i.ticketTypeDescription
-                dict["ticket_count"] = 0
-                dict["total_ticket_fare"] = self.PayAsYouGoTextField.text
-                productsListArrayPayAsYouGo.append(dict as AnyObject)
-            }
+                    //  if(self.PayAsYouGoTextField.text.length>0){
+                    var dict: [AnyHashable : Any] = [:]
+                    dict["productDescription"] = i.productDescription
+                    dict["offeringId"] = i.offeringId
+                    dict["ticketId"] = i.ticketId
+                    dict["price"] = i.price
+                    dict["ticketTypeDescription"] = i.ticketTypeDescription
+                    dict["ticket_count"] = 0
+                    dict["total_ticket_fare"] = self.PayAsYouGoTextField.text
+                    productsListArrayPayAsYouGo.append(dict as AnyObject)
+                }
             }
             print(productsListArrayPayAsYouGo)
-
+            
         }
-
+        
     }
     func dictForPayAsYouGo() {
         var payasyougovalue = self.PayAsYouGoTextField.text
-       // PayAsYouGoTextField.delegate = self as! UITextFieldDelegate
         UserDefaults.standard.set(payasyougovalue, forKey: "payasyougoamount")
     }
-//
+    //
     func returnStoredValueWithActivation() -> [Product]{
         var arrStoredProds = [Product]()
         for prod in products{
@@ -142,7 +139,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         return arrStoredProds
     }
     func returnStoredValueProducts() -> [Product]{
-       var arrStoredProds = [Product]()
+        var arrStoredProds = [Product]()
         for prod in products{
             if let objProd = prod as? Product{
                 if let ticetDesc = objProd.ticketTypeDescription{
@@ -158,31 +155,29 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         if let dictObj = self.productsListArray[sender.tag] as? AnyObject{
             if let convertDict = dictObj as? Dictionary<String, Any>{
                 quantityValue = convertDict["ticket_count"] as! Int
-                  if(quantityValue>=1){
-             //   if let count = convertDict["ticket_count"] as? Int{
+                if(quantityValue>=1){
                     quantityValue = quantityValue - 1
-                    
-                }
+                    }
                 var price = convertDict["price"] as! String
                 let fare =  Float(quantityValue) * Float(price)!
                 var Newdict: [AnyHashable : Any] = [:]
                 var temp = NSMutableDictionary(dictionary: Newdict);
                 Newdict.merge(dict: convertDict)
                 Newdict["ticket_count"] = quantityValue
-                  Newdict["total_ticket_fare"] = fare
+                Newdict["total_ticket_fare"] = fare
                 productsListArray[sender.tag] = Newdict as! [String : Any]
                 
-            
+                
             }
         }
-         self.ProductsTableView.reloadData()
+        self.ProductsTableView.reloadData()
         
     }
     @objc func plusbuttonClicked(sender: GFMenuButton){
-       
+        
         if let dictObj = self.productsListArray[sender.tag] as? AnyObject{
             if let convertDict = dictObj as? Dictionary<String, Any>{
-              
+                
                 if let count = convertDict["ticket_count"] as? Int{
                     quantityValue = count + 1
                     
@@ -192,19 +187,13 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 var Newdict: [AnyHashable : Any] = [:]
                 var temp = NSMutableDictionary(dictionary: Newdict);
                 Newdict.merge(dict: convertDict)
-                  Newdict["ticket_count"] = quantityValue
-                  Newdict["total_ticket_fare"] = fare
+                Newdict["ticket_count"] = quantityValue
+                Newdict["total_ticket_fare"] = fare
                 productsListArray[sender.tag] = Newdict as! [String : Any]
-                }
             }
-          
+        }
+        self.ProductsTableView.reloadData()
         
-          self.ProductsTableView.reloadData()
-//        if let count = dictObj["ticket_count"] as? Int{
-//            self.quantityValue = count + 1
-//
-//        }
-      
     }
     func showTotalAmount(){
         
@@ -221,7 +210,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         var seletedArray = [[String:Any]]()
         payasyougo()
         dictForPayAsYouGo()
-       var  totalAmount = 0
+        var  totalAmount = 0
         for j in 0..<productsListArray.count {
             var count = productsListArray[j]["ticket_count"] as? Int
             if !(count == 0) {
@@ -230,34 +219,19 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
             }
         }
         
-      var payAsYouGoAmountValue =   UserDefaults.standard.integer(forKey: "payasyougoamount")
+        var payAsYouGoAmountValue =   UserDefaults.standard.integer(forKey: "payasyougoamount")
         totalAmount = totalAmount + payAsYouGoAmountValue;
-
-      var seletedArraypayasyougo = [[String:Any]]()
+        
+        var seletedArraypayasyougo = [[String:Any]]()
         for j in 0..<productsListArrayPayAsYouGo.count {
-
+            
             seletedArraypayasyougo.append(productsListArrayPayAsYouGo[j] as! [String : Any])
         }
-        print(seletedArray)
-        print(seletedArraypayasyougo)
-       // purchsestory()
-      var newarray = seletedArraypayasyougo + seletedArray
+        var newarray = seletedArraypayasyougo + seletedArray
         let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFTicketDetailsViewController") as? GFTicketDetailsViewController
         navController!.seletedProducts = newarray
         navigationController?.pushViewController(navController!, animated: true)
-       // ticketview.seletedProducts = newArray
-//       var totalAmount = 0
-//        var selectedArray = [AnyObject]()
-//        for i in productsListArray{
-//             let prodObj = i
-//            if let checkArray = prodObj["ticket_count"] as? Int{
-//                if checkArray != 0{
-//                    selectedArray = prodObj.
-//                }
-//            }
-//        }
-//
-   }
+    }
 }
 extension Dictionary {
     mutating func merge(dict: [Key: Value]){

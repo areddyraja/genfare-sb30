@@ -13,6 +13,7 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
     var arrNotStoredProds = [[String:Any]]()
     var arrStoredProds  = [[String:Any]]()
     
+    @IBOutlet var productsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +34,6 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         
         
         var storedlabel = UILabel(frame: CGRect(x: 0, y: 5, width: cell.frame.size.width - 50, height: 20))
-      //  storedlabel.text = selProductsArray[indexPath.row]["productDescription"] as? String
         if let font = UIFont(name: "Helvetica-Bold", size: 17) {
             storedlabel.font = font
         }
@@ -46,8 +46,6 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         cell.contentView.addSubview(storedlabel)
         
         var fare = prodObj["total_ticket_fare"] as? Float
-        
-        
         var storedlabel1 = UILabel(frame: CGRect(x: 0, y: 30, width: cell.frame.size.width - 50, height: 20))
         storedlabel1.text = String(format: " $ %.2f", fare!)
         storedlabel.numberOfLines = 0

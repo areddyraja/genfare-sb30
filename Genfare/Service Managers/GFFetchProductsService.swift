@@ -86,7 +86,7 @@ class GFFetchProductsService: GFBaseService {
                 userObj.isBonusRideEnabled = prodItem["isBonusRideEnabled"] as? NSNumber
                 userObj.isCappedRideEnabled = prodItem["isCappedRideEnabled"] as? NSNumber
                 userObj.offeringId = prodItem["offeringId"] as? NSNumber
-                userObj.price = prodItem["price"] as? String
+                userObj.price = String(describing: prodItem["price"]!) as? String
                 userObj.productDescription = prodItem["productDescription"] as? String
                 userObj.ticketId = prodItem["ticketId"] as? NSNumber
                 userObj.ticketSubTypeId = prodItem["ticketSubTypeId"] as? String

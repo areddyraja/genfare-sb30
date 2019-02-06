@@ -45,7 +45,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
     func createViewModelBinding(){
         addFundsBtn.rx.tap.do(onNext:  { [unowned self] in
         }).subscribe(onNext: { [unowned self] in
-            //show products page
+            self.showProducts()
         }).disposed(by: disposeBag)
         
         acctMgtBtn.rx.tap.do(onNext:  { [unowned self] in
@@ -90,6 +90,12 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
                 NSLog(" \(value)")
                 self.walletTitleLabel.text = value
             }.disposed(by: disposeBag)
+    }
+    
+    func showProducts() {
+        if let controller = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.PurchaseProducts) as? GFPurchaseTicketListViewController {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     func attachPassList() {

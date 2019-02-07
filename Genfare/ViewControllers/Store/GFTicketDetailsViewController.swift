@@ -8,11 +8,12 @@
 
 import UIKit
 
-class GFTicketDetailsViewController: GFBaseViewController,UITableViewDelegate,UITableViewDataSource {
+class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var seletedProducts = [[String:Any]]()
     var arrNotStoredProds = [[String:Any]]()
     var arrStoredProds  = [[String:Any]]()
     
+    @IBOutlet var productsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +34,6 @@ class GFTicketDetailsViewController: GFBaseViewController,UITableViewDelegate,UI
         
         
         var storedlabel = UILabel(frame: CGRect(x: 0, y: 5, width: cell.frame.size.width - 50, height: 20))
-      //  storedlabel.text = selProductsArray[indexPath.row]["productDescription"] as? String
         if let font = UIFont(name: "Helvetica-Bold", size: 17) {
             storedlabel.font = font
         }
@@ -46,8 +46,6 @@ class GFTicketDetailsViewController: GFBaseViewController,UITableViewDelegate,UI
         cell.contentView.addSubview(storedlabel)
         
         var fare = prodObj["total_ticket_fare"] as? Float
-        
-        
         var storedlabel1 = UILabel(frame: CGRect(x: 0, y: 30, width: cell.frame.size.width - 50, height: 20))
         storedlabel1.text = String(format: " $ %.2f", fare!)
         storedlabel.numberOfLines = 0
@@ -72,10 +70,15 @@ class GFTicketDetailsViewController: GFBaseViewController,UITableViewDelegate,UI
         cancelButton.tag = indexPath.row + 1
         let image = UIImage(named: "cancel") as UIImage?
         cancelButton.setImage(image, for: .normal)
-       // cancelButton.addTarget(self, action: #selector(self.onClickofCancel(_:)), for: .touchUpInside)
+       cancelButton.addTarget(self, action:#selector(onClickofCancel(sender:)), for: .touchUpInside)
         cell.accessoryView = cancelButton
         return cell
     }
+    @objc func onClickofCancel(sender: GFMenuButton){
+        seletedProducts.remove(at: sender.tag - 1)
+        productsTableView.reloadData()
+    }
+
 
     @IBAction func onClickOfAddMoreProducts(_ sender: UIButton) {
          self.navigationController?.popViewController(animated: true)

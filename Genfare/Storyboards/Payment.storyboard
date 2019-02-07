@@ -467,6 +467,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pkq-Uo-5JL"/>
                     </view>
+                    <connections>
+                        <outlet property="productsTableView" destination="ePW-ie-B1V" id="6Fl-ZO-NQe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFk-Z5-iJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -755,7 +758,7 @@
                                     <constraint firstItem="2nC-cV-0cI" firstAttribute="leading" secondItem="egP-2F-jmJ" secondAttribute="leading" id="tlM-bb-Nlk"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoF-kO-yed" customClass="ThemeButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoF-kO-yed" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
                                 <rect key="frame" x="20" y="577" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.37254901959999998" green="0.71764705880000002" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -768,6 +771,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="paymentButtonPressed:" destination="UvX-oO-RE1" eventType="touchUpInside" id="EfD-aU-DnJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaI-6n-rSa">
                                 <rect key="frame" x="20" y="627" width="335" height="30"/>
@@ -810,6 +816,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYa-dk-yHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1551" y="86"/>
+        </scene>
+        <!--Purchase Web View Controller-->
+        <scene sceneID="Usd-Nh-7ST">
+            <objects>
+                <viewController storyboardIdentifier="GFPurchaseWebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qpG-aO-IGe" customClass="GFPurchaseWebViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m10-9f-eYh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2gZ-ev-6Tr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKY-dv-dNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2197.5999999999999" y="85.907046476761622"/>
         </scene>
     </scenes>
 </document>

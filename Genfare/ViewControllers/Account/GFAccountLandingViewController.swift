@@ -40,7 +40,7 @@ class GFAccountLandingViewController: GFBaseViewController {
             .bind{ [unowned self] value in
                 NSLog("Successfull \(value)")
                 if value, let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.AccountBased) as? GFAccountBasedHomeViewController {
-                    self.navigationController?.pushViewController(controller, animated: true)
+                    self.navigationController?.pushViewController(controller, animated: false)
                 }
             }.disposed(by: disposeBag)
         
@@ -48,16 +48,7 @@ class GFAccountLandingViewController: GFBaseViewController {
         viewModel.isLoading.asObservable()
             .bind{[unowned self] value in
                 NSLog("Loading \(value)")
-                if value {
-                    if let spinner = self.spinnerView {
-                        spinner.removeFromSuperview()
-                        self.spinnerView = UIViewController.displaySpinner(onView: self.view)
-                    }
-                }else{
-                    if let _ = self.spinnerView {
-                        UIViewController.removeSpinner(spinner: self.spinnerView!)
-                    }
-                }
+                self.attachSpinner(value: value)
             }.disposed(by: disposeBag)
         
         // Show Account based

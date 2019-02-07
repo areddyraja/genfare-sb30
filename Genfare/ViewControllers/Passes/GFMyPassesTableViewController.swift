@@ -88,12 +88,18 @@ class GFMyPassesTableViewController: UITableViewController {
 
         if let wc:WalletContents = viewModel.model[indexPath.row] as WalletContents {
             cell.titleLabel.text = wc.descriptation
-            cell.subTitleLabel.text = wc.type
+            //cell.subTitleLabel.text = wc.type
             
             if wc.status == Constants.Ticket.InActive {
                 cell.inactiveBtn.isHidden = false
             }else{
                 cell.activeBtn.isHidden = false
+            }
+            
+            if let expDate = wc.expirationDate, wc.type == Constants.Ticket.PeriodPass {
+                cell.subTitleLabel.text = "Expires \(Utilities.convertDate(dateStr: expDate, fromFormat: Constants.Ticket.ExpDateFormat, toFormat: Constants.Ticket.DisplayDateFormat))"
+            }else{
+                cell.subTitleLabel.text = ""
             }
         }
 
@@ -103,6 +109,9 @@ class GFMyPassesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         //Handle selection
+        let ticket = viewModel.model[indexPath.row] as WalletContents
+        GFWalletContentsService.updateExpirationDate(ticketID: ticket.ticketIdentifier!)
+        tableView.reloadData()
     }
 
 }

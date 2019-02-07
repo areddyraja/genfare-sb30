@@ -97,6 +97,21 @@ struct Constants {
         static let InActive = "pending_activation"
         static let Active = "active"
         static let ActiveRide = "active_ride"
+        static let PeriodPass = "period_pass"
+        static let ExpDateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        static let DisplayDateFormat = "MM/dd/yy hh:mm aa"
+    }
+    
+    struct WVCommands {
+        static let NativeCommand = "coocoo://"
+        static let TokenCommand = "setauthtoken"
+        static let AlertCommand = "alert"
+        static let TicketsCommand = "ticketshome"
+        static let ForgotPasswordCommand = "forgotpassword"
+        static let AlertTitle = "title"
+        static let AlertMessage = "message"
+        static let TokenTitle = "token"
+        static let TokenEmail = "emailaddress"
     }
 }
 

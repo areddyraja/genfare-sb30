@@ -12,15 +12,14 @@ import WebKit
 class GFPurchaseWebViewController: GFBaseViewController,WKNavigationDelegate{
     
     var weburl:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         let paymentWebview = WKWebView()
-        paymentWebview.frame  = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        self.view.addSubview(paymentWebview)
-        
+        paymentWebview.frame  = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        self.view = paymentWebview
+        paymentWebview.navigationDelegate = self
         
         let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
         let url =  self.weburl
@@ -47,22 +46,18 @@ class GFPurchaseWebViewController: GFBaseViewController,WKNavigationDelegate{
         
         let request = navigationAction.request
         let urlString = request.url?.absoluteString
-        guard let finalWeburl = weburl else{
+        guard weburl != nil else{
+            decisionHandler(WKNavigationActionPolicy.cancel);
             return
         }
-        if (finalWeburl != urlString && !(urlString?.contains("checkout"))!) && !(urlString?.contains("coocoo://"))!{
-            
-        }
-        if (urlString?.hasPrefix("coocoo://"))!{
-            
-        }else if((urlString?.contains("finished"))!){
-            //Need to
-        }else if((urlString?.contains("Thank"))!){
+        
+        if ((urlString?.contains("coocoo://"))!) && ((urlString?.contains("ticketshome"))!) {
             navigationController?.popToRootViewController(animated: true)
-            
         }
         
+        decisionHandler(WKNavigationActionPolicy.allow);
     }
+    
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!){
         
         let urlString = webView.url?.absoluteString
@@ -72,9 +67,11 @@ class GFPurchaseWebViewController: GFBaseViewController,WKNavigationDelegate{
             
         }
     }
+    
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error){
         self.attachSpinner(value: false)
     }
+    
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!){
         
     }
@@ -82,22 +79,5 @@ class GFPurchaseWebViewController: GFBaseViewController,WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
         self.attachSpinner(value: false)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

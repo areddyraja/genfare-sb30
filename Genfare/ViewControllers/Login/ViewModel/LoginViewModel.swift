@@ -124,11 +124,4 @@ class LoginViewModel {
         }
     }
     
-    func fetchProducts(){
-        
-    }
-    
-    func getWalletContents(){
-        
-    }
 }

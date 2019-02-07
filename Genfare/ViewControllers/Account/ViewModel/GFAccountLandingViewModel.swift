@@ -45,7 +45,6 @@ class GFAccountLandingViewModel {
             if success {
                 print("Got Product contents successfully")
                 self.isSuccess.value = true
-                //self.fetchWalletContents()
             }else{
                 self.errorMsg.value = error as! String
             }

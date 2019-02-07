@@ -101,6 +101,18 @@ struct Constants {
         static let ExpDateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         static let DisplayDateFormat = "MM/dd/yy hh:mm aa"
     }
+    
+    struct WVCommands {
+        static let NativeCommand = "coocoo://"
+        static let TokenCommand = "setauthtoken"
+        static let AlertCommand = "alert"
+        static let TicketsCommand = "ticketshome"
+        static let ForgotPasswordCommand = "forgotpassword"
+        static let AlertTitle = "title"
+        static let AlertMessage = "message"
+        static let TokenTitle = "token"
+        static let TokenEmail = "emailaddress"
+    }
 }
 
 //AIzaSyD20t9-cmgZ_zgDgJO3R4y-tehsscNnHkA

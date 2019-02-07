@@ -78,7 +78,6 @@ class GFWalletContentsService {
                     userObj.fare = wItem["fare"] as? NSNumber
                     userObj.group = wItem["group"] as? String
                     userObj.identifier = wItem["identifier"] as? String
-                    userObj.instanceCount = wItem["instanceCount"] as? NSNumber
                     userObj.purchasedDate = wItem["purchasedDate"] as? NSNumber
                     userObj.slot = wItem["slot"] as? NSNumber
                     userObj.status = wItem["status"] as? String

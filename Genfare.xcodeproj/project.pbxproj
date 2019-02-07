@@ -250,6 +250,9 @@
 		279B0238220C1A6D002739F5 /* GFAccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B0237220C1A6D002739F5 /* GFAccountInfoViewModel.swift */; };
 		279B0239220C1A6D002739F5 /* GFAccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B0237220C1A6D002739F5 /* GFAccountInfoViewModel.swift */; };
 		279B023A220C1A6D002739F5 /* GFAccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B0237220C1A6D002739F5 /* GFAccountInfoViewModel.swift */; };
+		279B023C220C4559002739F5 /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279B023B220C4559002739F5 /* Barcode.storyboard */; };
+		279B023D220C4559002739F5 /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279B023B220C4559002739F5 /* Barcode.storyboard */; };
+		279B023E220C4559002739F5 /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279B023B220C4559002739F5 /* Barcode.storyboard */; };
 		27C3D863220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
 		27C3D864220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
 		27C3D865220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
@@ -501,6 +504,7 @@
 		2772BA8A2209CE94003AA1ED /* GFTicketDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFTicketDetailsViewController.swift; sourceTree = "<group>"; };
 		279B0233220B0323002739F5 /* GFAccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAccountInfoViewController.swift; sourceTree = "<group>"; };
 		279B0237220C1A6D002739F5 /* GFAccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAccountInfoViewModel.swift; sourceTree = "<group>"; };
+		279B023B220C4559002739F5 /* Barcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Barcode.storyboard; sourceTree = "<group>"; };
 		27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFWalletActivityService.swift; sourceTree = "<group>"; };
 		27F6C5242202E634009052D0 /* GFFetchProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFetchProductsService.swift; sourceTree = "<group>"; };
 		27F6C5282202F66B009052D0 /* COTA.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = COTA.xcassets; sourceTree = "<group>"; };
@@ -856,6 +860,7 @@
 				2747556421FEE45F00D62268 /* AccountHome.storyboard */,
 				2772BA822209CE4B003AA1ED /* Payment.storyboard */,
 				27F6C53822043C1E009052D0 /* Passes.storyboard */,
+				279B023B220C4559002739F5 /* Barcode.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1126,6 +1131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279B023D220C4559002739F5 /* Barcode.storyboard in Resources */,
 				486DA5AD21674F67006B8BA5 /* Store.storyboard in Resources */,
 				27F6C52E2202FB2F009052D0 /* BCT.xcassets in Resources */,
 				27F6C54022044C23009052D0 /* PayAsYouGoCell.xib in Resources */,
@@ -1158,6 +1164,7 @@
 				4884E6CF2122A85F003A1289 /* LaunchScreen.storyboard in Resources */,
 				4884E6CC2122A85F003A1289 /* Assets.xcassets in Resources */,
 				27F6C53922043C1E009052D0 /* Passes.storyboard in Resources */,
+				279B023C220C4559002739F5 /* Barcode.storyboard in Resources */,
 				4849088821367886008D0B6F /* Sidemenu.storyboard in Resources */,
 				27F6C52D2202FB2F009052D0 /* BCT.xcassets in Resources */,
 				486BD54D21464A3600E88AAA /* Colors.xcassets in Resources */,
@@ -1174,6 +1181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2772BA852209CE4C003AA1ED /* Payment.storyboard in Resources */,
+				279B023E220C4559002739F5 /* Barcode.storyboard in Resources */,
 				2757D2F221F8530200413713 /* Genfare_CDTA_UAT_Info.plist in Resources */,
 				27F6C52B2202F66C009052D0 /* COTA.xcassets in Resources */,
 				27F6C53B22043C1E009052D0 /* Passes.storyboard in Resources */,

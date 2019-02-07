@@ -119,4 +119,33 @@ class GFWalletContentsService {
         return []
     }
 
+    static func updateExpirationDate(ticketID:String) {
+        let managedContext = GFDataService.context
+        do {
+            let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == %@", ticketID)
+            let fetchResults = try managedContext.fetch(fetchRequest) as! Array<WalletContents>
+            if fetchResults.count > 0 {
+                let userObj = fetchResults.first!
+                userObj.expirationDate = calculateExpDate(item: fetchResults.first!)
+                userObj.status = "active"
+                GFDataService.saveContext()
+            }
+        }catch{
+            print("Update failed")
+        }
+    }
+    
+    private static func calculateExpDate(item:WalletContents) -> String {
+        if item.type == Constants.Ticket.PeriodPass {
+            let currentSecs = Date().timeIntervalSince1970
+            let remainingTime = 24*60*60*(item.valueRemaining as! Double)
+            let actualTime = remainingTime+(currentSecs as Double)
+            let df = DateFormatter()
+            df.dateFormat = Constants.Ticket.ExpDateFormat
+            let edate = Date(timeIntervalSince1970: TimeInterval(actualTime))
+            return df.string(from: edate)
+        }
+        return ""
+    }
 }

@@ -97,6 +97,9 @@ struct Constants {
         static let InActive = "pending_activation"
         static let Active = "active"
         static let ActiveRide = "active_ride"
+        static let PeriodPass = "period_pass"
+        static let ExpDateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        static let DisplayDateFormat = "MM/dd/yy hh:mm aa"
     }
 }
 

@@ -17,7 +17,7 @@ class GFFetchProductsService: GFBaseService {
     init(walletID:NSNumber) {
         self.walletID = walletID
     }
-    
+
     func headers() -> HTTPHeaders {
         var headers = GFEndpoint.commonHeaders
         let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!

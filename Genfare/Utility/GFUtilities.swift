@@ -71,4 +71,13 @@ class Utilities {
     class func accessToken() -> String {
         return UserDefaults.standard.value(forKey: "common_key_access_token") as! String
     }
+    
+    class func convertDate(dateStr:String,fromFormat:String, toFormat:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = fromFormat
+        let date = dateFormatter.date(from: dateStr)
+        dateFormatter.dateFormat = toFormat
+        return dateFormatter.string(from: date!)
+    }
 }
+

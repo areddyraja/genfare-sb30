@@ -3,3 +3,5 @@
 //
 
 #import "EncodeUtil.h"
+#import "BarcodeUtilities.h"
+

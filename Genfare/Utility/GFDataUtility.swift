@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-class GFDataUtility {
+class GFDataUtility:NSObject {
     
-    init(){}
+    override init(){}
     
     static func currentAccount() -> Void {
         

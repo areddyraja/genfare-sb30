@@ -5,11 +5,11 @@
 //  Created by vishnu on 04/01/19.
 //  Copyright © 2019 Genfare. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class Utilities {
-
+    
     class func apiHost() -> String {
         guard let info = Bundle.main.infoDictionary,
             let apiHost = info["api_host"] as? String else {
@@ -48,6 +48,14 @@ class Utilities {
                 fatalError("Cannot get auth password from info.plist")
         }
         return authPwd
+    }
+    
+    class func transitID() -> NSNumber {
+        guard let info = Bundle.main.infoDictionary,
+            let tid = info["transit_id"] as? NSNumber else {
+                fatalError("Cannot get transit id from info.plist")
+        }
+        return tid
     }
     
     class func deviceId() -> String {

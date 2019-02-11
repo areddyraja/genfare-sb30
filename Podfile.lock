@@ -29,6 +29,7 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (6.1.0)
   - OHHTTPStubs/Swift (6.1.0):
     - OHHTTPStubs/Default
+  - QRCode (2.0)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - NetworkStack
   - OHHTTPStubs
   - OHHTTPStubs/Swift
+  - QRCode
   - RxCocoa
   - RxSwift
   - SideMenu
@@ -58,6 +60,7 @@ SPEC REPOS:
     - KeychainAccess
     - NetworkStack
     - OHHTTPStubs
+    - QRCode
     - RxAtomic
     - RxCocoa
     - RxSwift
@@ -72,12 +75,13 @@ SPEC CHECKSUMS:
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   NetworkStack: b3b64b19fb27bbe323a7f1b1ca18325df4fc4e2a
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+  QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 88358b008e20606301fac5390335c2293e08fab4
+PODFILE CHECKSUM: d9e1c654298dfa9dc7638cf3e128606b2b5f2b1b
 
 COCOAPODS: 1.5.3

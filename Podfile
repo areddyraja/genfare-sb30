@@ -14,7 +14,8 @@ target 'Genfare' do
   pod 'Decodable'
   pod 'RxSwift'
   pod 'RxCocoa'
-  
+  pod 'QRCode'
+
   target 'GenfareTests' do
     inherit! :search_paths
     pod 'OHHTTPStubs'

@@ -108,4 +108,19 @@ class GFFetchProductsService: GFBaseService {
         
         return []
     }
+    
+    static func getProductFor(id:String) -> Product? {
+        let managedContext = GFDataService.context
+        do {
+            let fetchRequest:NSFetchRequest = Product.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "ticketId == %@", id)
+            let fetchResults = try managedContext.fetch(fetchRequest) as! Array<Product>
+            if fetchResults.count > 0 {
+                return fetchResults.first!
+            }
+        }catch{
+            print("Can't fetch records")
+        }
+        return nil
+    }
 }

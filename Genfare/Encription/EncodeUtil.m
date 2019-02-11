@@ -8,6 +8,7 @@
 
 #import "EncodeUtil.h"
 #import <MapKit/MapKit.h>
+#import "iRide-Swift.h"
 
 @implementation EncodeUtil
 
@@ -53,6 +54,7 @@
         CLLocation *loc = [[CLLocation alloc] initWithLatitude:finalLat longitude:finalLon];
         [array addObject:loc];
     }
+    
     return array;
 }
 

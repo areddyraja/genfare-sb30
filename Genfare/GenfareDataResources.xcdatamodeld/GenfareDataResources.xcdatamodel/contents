@@ -73,13 +73,13 @@
         <attribute name="contentDescriptionIDNum" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="contentIDNum" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
     </entity>
-    <entity name="EncryptionKey" syncable="YES">
+    <entity name="EncryptionKey" representedClassName=".EncryptionKey" syncable="YES">
         <attribute name="algorithm" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="initializationVector" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="keyId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="secretKey" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="EncryptionSet" syncable="YES">
+    <entity name="EncryptionSet" representedClassName=".EncryptionSet" syncable="YES">
         <attribute name="currentKey" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="disableTimestamp" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="enabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
@@ -89,7 +89,7 @@
         <attribute name="primaryData" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="secondaryData" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Event" syncable="YES">
+    <entity name="Event" representedClassName=".Event" syncable="YES">
         <attribute name="amountRemaining" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="clickedTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="fare" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>

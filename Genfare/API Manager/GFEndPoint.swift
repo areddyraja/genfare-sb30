@@ -26,6 +26,7 @@ enum GFEndpoint {
     case FetchWalletActivity(walletId:NSNumber)
     case FetchTickets(walledId:NSNumber)
     case CreateOrder(order:[[String:Any]],walledId:NSNumber)
+    case ChangeUser(email:String,password:String)
     
     
     // MARK: - Public Properties
@@ -73,6 +74,8 @@ enum GFEndpoint {
             return .get
         case .CreateOrder:
             return .post
+        case .ChangeUser:
+            return .put
         }
     }
     
@@ -127,6 +130,10 @@ enum GFEndpoint {
         case .CreateOrder(let walledId):
             let  url = "services/data-api/mobile/wallets/\(walledId)/order?tenant=\(Utilities.tenantId())"
             return Utilities.apiHost()+url
+        case .ChangeUser:
+            let  url = "/services/data-api/mobile/users/\(String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.UserName)!))?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+            
         }
     }
 }

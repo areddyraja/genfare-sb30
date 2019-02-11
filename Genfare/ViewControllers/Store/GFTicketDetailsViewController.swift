@@ -47,7 +47,7 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         
         var fare = prodObj["total_ticket_fare"] as? Float
         var storedlabel1 = UILabel(frame: CGRect(x: 0, y: 30, width: cell.frame.size.width - 50, height: 20))
-        storedlabel1.text = String(format: " $ %.2f", fare!)
+        storedlabel1.text = String(format:"$ %.2f", fare!)
         storedlabel.numberOfLines = 0
         storedlabel.adjustsFontSizeToFitWidth = true
         storedlabel.minimumScaleFactor = 0.5

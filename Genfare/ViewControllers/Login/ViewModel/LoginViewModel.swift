@@ -43,6 +43,16 @@ class LoginViewModel {
         
         return ""
     }
+    
+    func formErrorPasswordString() -> String {
+        if(emailIdViewModel.errorValue.value != ""){
+            return emailIdViewModel.errorValue.value ?? ""
+        }else if(passwordViewModel.errorValue.value != ""){
+            return passwordViewModel.errorValue.value ?? ""
+        }
+        
+        return ""
+    }
 
     func loginUser() {
         isLoading.value = true

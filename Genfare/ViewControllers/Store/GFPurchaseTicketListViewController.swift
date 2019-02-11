@@ -111,7 +111,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                     dict["price"] = i.price
                     dict["ticketTypeDescription"] = i.ticketTypeDescription
                     dict["ticket_count"] = 0
-                    dict["total_ticket_fare"] = self.PayAsYouGoTextField.text
+                    dict["total_ticket_fare"] = (self.PayAsYouGoTextField.text as! NSString).floatValue
                     productsListArrayPayAsYouGo.append(dict as AnyObject)
                 }
             }

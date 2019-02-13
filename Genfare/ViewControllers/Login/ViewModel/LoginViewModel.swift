@@ -23,12 +23,13 @@ class LoginViewModel {
     let isLoading : Variable<Bool> = Variable(false)
     let walletNeeded : Variable<Bool> = Variable(false)
     let showWalletList: Variable<Array> = Variable([])
+    let showRetrieveWallet: Variable<Bool> = Variable(false)
     let smsAuthNeeded: Variable<Bool> = Variable(false)
     let showAccountBased: Variable<Bool> = Variable(false)
     let showCardBased: Variable<Bool> = Variable(false)
     let errorMsg : Variable<String> = Variable("")
     
-    var walletID:String?
+    var walletJson:[String:Any]?
     
     func validateCredentials() -> Bool{
         return emailIdViewModel.validateCredentials() && passwordViewModel.validateCredentials();
@@ -92,6 +93,7 @@ class LoginViewModel {
     func checkForAssignedWallets(list:Array<Any>){
         if list.count <= 0 {
             walletNeeded.value = true
+            return
         }
         
         let cuuid = Utilities.deviceId()
@@ -102,15 +104,42 @@ class LoginViewModel {
             
             if let duuid = item["deviceUUID"] as? String, duuid == cuuid {
                 GFWalletsService.saveWalletData(data: item)
-                assignWallet(wid: item["id"] as! NSNumber)
+                walletJson = item
+                assignWallet()
                 return
+            }
+            
+            if let acctType = item["accountType"] as? String, acctType == "Card-Based" {
+                if (item["deviceUUID"] as? String) != nil {
+                    //show error
+                    errorMsg.value = "Can not assign wallet to this device, as this is already assigned to a different device"
+                    return
+                }else{
+                    GFWalletsService.saveWalletData(data: item)
+                    walletJson = item
+                    showRetrieveWallet.value = true
+                    return
+                }
             }
         }
         showWalletList.value = list
     }
     
-    func assignWallet(wid:NSNumber){
-        let assign = GFAssignWalletService(walletID: wid)
+    func walletRetrieved(value:Bool) {
+        if value {
+            GFWalletsService.saveWalletData(data: walletJson!)
+            assignWallet()
+        }else{
+            GFAccountManager.logout()
+        }
+    }
+    
+    func assignWallet(){
+        guard let waletid = walletJson!["id"] as? NSNumber else {
+            fatalError("No wallet ID found to assign")
+        }
+        
+        let assign = GFAssignWalletService(walletID: waletid)
         
         isLoading.value = true
         assign.assignWallet { [unowned self] (success, error) in

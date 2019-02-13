@@ -60,6 +60,8 @@ class Utilities {
     
     class func deviceId() -> String {
 //        return "76B2B88F48B74E7995E9B70BB08F21BA"
+//        return "621CB9DEA4A345928441D1B3CC227AFC"
+        return "094AF1B6903D49D590F71CC3498E8923"
         return UIDevice.current.identifierForVendor!.uuidString
     }
     
@@ -72,14 +74,23 @@ class Utilities {
     }
     
     class func saveAccessToken(token:String) {
-        UserDefaults.standard.set(token, forKey: "common_key_access_token")
+        UserDefaults.standard.set(token, forKey: Constants.LocalStorage.AccessToken)
         UserDefaults.standard.synchronize()
     }
     
     class func accessToken() -> String {
-        return UserDefaults.standard.value(forKey: "common_key_access_token") as! String
+        return UserDefaults.standard.value(forKey: Constants.LocalStorage.AccessToken) as! String
     }
     
+    class func accountBalance() -> NSNumber {
+        return UserDefaults.standard.value(forKey: Constants.LocalStorage.AccountBalance) as! NSNumber
+    }
+    
+    class func saveAccountBalance(bal:NSNumber) {
+        UserDefaults.standard.set(bal, forKey: Constants.LocalStorage.AccountBalance)
+        UserDefaults.standard.synchronize()
+    }
+
     class func convertDate(dateStr:String,fromFormat:String, toFormat:String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = fromFormat

@@ -32,6 +32,7 @@ class GFAccountLandingViewModel {
             fetchProducts()
         }else{
             isSuccess.value = true
+            updateAccountType()
         }
     }
     
@@ -44,10 +45,24 @@ class GFAccountLandingViewModel {
 
             if success {
                 print("Got Product contents successfully")
-                self.isSuccess.value = true
+                self.updateAccountType()
             }else{
                 self.errorMsg.value = error as! String
             }
+        }
+    }
+    
+    func updateAccountType() {
+        let products = GFFetchProductsService.getProducts()
+        let items = products.filter({ (product:Product) -> Bool in
+            return product.ticketTypeDescription == "Stored Value"
+        })
+        if items.count > 0 {
+            //show account based
+            accountBased.value = true
+        }else{
+            //show card based
+            cardBased.value = true
         }
     }
 }

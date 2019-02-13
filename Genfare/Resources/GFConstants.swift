@@ -69,7 +69,8 @@ struct Constants {
     
     struct LocalStorage {
         static let RecentTrips = "UserRecentTrips"
-        static let accessToken = "common_key_access_token"
+        static let AccessToken = "common_key_access_token"
+        static let AccountBalance = "user_account_balance"
     }
     
     struct KeyChain {
@@ -115,6 +116,10 @@ struct Constants {
         static let AlertMessage = "message"
         static let TokenTitle = "token"
         static let TokenEmail = "emailaddress"
+    }
+    
+    struct Message {
+        static let NoNetwork = "Notwork Not Available"
     }
 }
 

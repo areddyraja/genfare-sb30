@@ -100,5 +100,34 @@ class GFLoginViewController: GFBaseViewController {
                     }
                 }
             }.disposed(by: disposeBag)
+        
+        // Walletsretrieve
+        viewModel.showRetrieveWallet.asObservable()
+            .bind{ [unowned self] value in
+                if value {
+                    self.showRetrieveWalletAlert()
+                }
+            }.disposed(by: disposeBag)
     }
+    
+    func showRetrieveWalletAlert() {
+        let alert = UIAlertController(title: "Retrieve Wallet", message: "Do you want to retreive wallet?", preferredStyle: UIAlertController.Style.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { action in
+            
+            self.viewModel.walletRetrieved(value: false)
+
+        }))
+        alert.addAction(UIAlertAction(title: "Retreive", style: UIAlertAction.Style.destructive, handler: { [unowned self] action in
+            
+            self.viewModel.walletRetrieved(value: true)
+            
+        }))
+        
+        // show the alert
+        present(alert, animated: true, completion: nil)
+        
+    }
+
 }

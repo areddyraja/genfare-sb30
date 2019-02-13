@@ -64,6 +64,12 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xfU-Wu-AC6"/>
                     </view>
+                    <connections>
+                        <outlet property="acctMgtBtn" destination="MHL-Js-mRJ" id="TLh-lG-86L"/>
+                        <outlet property="addFundsBtn" destination="RUH-j0-cXL" id="jRk-N2-jfl"/>
+                        <outlet property="pageControlHolder" destination="GYE-eG-RYt" id="ueo-ns-YyB"/>
+                        <outlet property="walletTitleLabel" destination="aFr-ID-ZJs" id="pey-0H-OX4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNh-zA-zbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

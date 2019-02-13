@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+
 class GFAccountBalanceService{
     
     init(){}
@@ -32,6 +33,9 @@ class GFAccountBalanceService{
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)
+                    if let json = JSON as? [String:Any], let balance = json["balance"] as? NSNumber {
+                        Utilities.saveAccountBalance(bal: balance)
+                    }
                     completionHandler(true,nil)
                 case .failure(let error):
                     print("Request failed with error: \(error)")

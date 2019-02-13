@@ -36,6 +36,7 @@ class GFMyPassesViewModel {
     
     func fetchWalletContents() {
         guard NetworkManager.Reachability else {
+            errorMsg.value = Constants.Message.NoNetwork
             isSuccess.value = true
             return
         }

@@ -9,6 +9,7 @@
 #import "BarcodeUtilities.h"
 #import "NSData+AES128.h"
 #import "NSData+Base64.h"
+#import "iRide-Swift.h"
 
 @implementation BarcodeUtilities
 

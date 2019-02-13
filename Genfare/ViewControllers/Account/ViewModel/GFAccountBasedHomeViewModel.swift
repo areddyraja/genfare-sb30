@@ -21,7 +21,7 @@ class GFAccountBasedHomeViewModel {
     let isSuccess : Variable<Bool> = Variable(false)
     let isLoading : Variable<Bool> = Variable(false)
     let errorMsg : Variable<String> = Variable("")
-    let balance : Variable<CGFloat> = Variable(0.0)
+    let balance : Variable<NSNumber> = Variable(0.0)
     let walletState : Variable<Bool> = Variable(true)
     let walletName : Variable<String> = Variable("-")
     
@@ -36,11 +36,18 @@ class GFAccountBasedHomeViewModel {
     func refreshBalance() -> Void {
         isLoading.value = true
         
+        guard NetworkManager.Reachability else {
+            isLoading.value = false
+            errorMsg.value = Constants.Message.NoNetwork
+            self.balance.value = Utilities.accountBalance()
+            return
+        }
+        
         GFAccountBalanceService.fetchAccountBalance { [unowned self] (success, error) in
             self.isLoading.value = false
             
             if success {
-                //got account balance
+                self.balance.value = Utilities.accountBalance()
             }else{
                 self.errorMsg.value = error as! String
             }
@@ -51,6 +58,7 @@ class GFAccountBasedHomeViewModel {
         if let wallet = GFWalletsService.userWallet() {
             walletName.value = "\(wallet.nickname!) - \(wallet.status!)"
         }
+        refreshBalance()
     }
     
 }

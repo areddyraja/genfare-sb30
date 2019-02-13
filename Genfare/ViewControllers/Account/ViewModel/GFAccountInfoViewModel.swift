@@ -27,8 +27,8 @@ class GFAccountInfoViewModel {
     
     func transferCard() {
         guard NetworkManager.Reachability else {
-            isLoading.value = true
-            errorMsg.value = "Notwork Not Available"
+            isLoading.value = false
+            errorMsg.value = Constants.Message.NoNetwork
             return
         }
         

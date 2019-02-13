@@ -39,9 +39,6 @@ class GFAccountLandingViewController: GFBaseViewController {
         viewModel.isSuccess.asObservable()
             .bind{ [unowned self] value in
                 NSLog("Successfull \(value)")
-                if value, let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.AccountBased) as? GFAccountBasedHomeViewController {
-                    self.navigationController?.pushViewController(controller, animated: false)
-                }
             }.disposed(by: disposeBag)
         
         // Loading
@@ -63,18 +60,17 @@ class GFAccountLandingViewController: GFBaseViewController {
         // Show Account based
         viewModel.accountBased.asObservable()
             .bind{ [unowned self] value in
-                if value {
-                    //show account based
+                if value, let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.AccountBased) as? GFAccountBasedHomeViewController {
+                    self.navigationController?.pushViewController(controller, animated: false)
                 }
             }.disposed(by: disposeBag)
         
         // Show Card based
         viewModel.cardBased.asObservable()
             .bind{ [unowned self] value in
-                if value {
-                    //show card based
+                if value, let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.CardBased) as? GFCardBasedHomeViewController {
+                    self.navigationController?.pushViewController(controller, animated: false)
                 }
             }.disposed(by: disposeBag)
-
     }
 }

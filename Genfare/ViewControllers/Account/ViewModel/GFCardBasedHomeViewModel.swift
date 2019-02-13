@@ -7,3 +7,33 @@
 //
 
 import Foundation
+import RxSwift
+
+class GFCardBasedHomeViewModel {
+    
+    let disposebag = DisposeBag()
+    
+    // Initialise ViewModel's
+    
+    // Fields that bind to our view's
+    let isSuccess : Variable<Bool> = Variable(false)
+    let isLoading : Variable<Bool> = Variable(false)
+    let errorMsg : Variable<String> = Variable("")
+    let walletState : Variable<Bool> = Variable(true)
+    let walletName : Variable<String> = Variable("-")
+    
+    func validateCredentials() -> Bool{
+        return true;
+    }
+    
+    func formErrorString() -> String {
+        return ""
+    }
+    
+    func updateWalletStatus() {
+        if let wallet = GFWalletsService.userWallet() {
+            walletName.value = "\(wallet.nickname!) - \(wallet.status!)"
+        }
+    }
+}
+

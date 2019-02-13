@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "iRide-Swift.h"
+
+@class WalletContents;
+@class Product;
+@class EncryptionKey;
 
 @interface BarcodeUtilities : NSObject
 

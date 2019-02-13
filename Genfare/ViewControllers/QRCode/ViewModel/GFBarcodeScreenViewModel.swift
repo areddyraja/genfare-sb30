@@ -10,10 +10,10 @@ import Foundation
 
 class GFBarcodeScreenViewModel:GFBaseViewModel {
     
-    let walletModel:WalletContents = WalletContents(context: GFDataService.context)
+    var walletModel:WalletContents = WalletContents(context: GFDataService.context)
     
     func barcodeString() -> String {
-        let account:Account = GFAccountManager.currentAccount()
+        let account:Account = GFAccountManager.currentAccount()!
         if let prod = GFFetchProductsService.getProductFor(id: walletModel.ticketIdentifier!) {
             print(prod)
             let encString = BarcodeUtilities.generateBarcode(withTicket: walletModel,
@@ -23,7 +23,7 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
                                                              deviceID: Utilities.deviceId(),
                                                              transitID: Utilities.transitID(),
                                                              accountId: account.accountId)
-            return encString
+            return encString!
         }
         
         return ""

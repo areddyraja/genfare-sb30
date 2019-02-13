@@ -59,7 +59,7 @@ class Utilities {
     }
     
     class func deviceId() -> String {
-        return "76B2B88F48B74E7995E9B70BB08F21BA"
+//        return "76B2B88F48B74E7995E9B70BB08F21BA"
         return UIDevice.current.identifierForVendor!.uuidString
     }
     
@@ -86,6 +86,13 @@ class Utilities {
         let date = dateFormatter.date(from: dateStr)
         dateFormatter.dateFormat = toFormat
         return dateFormatter.string(from: date!)
+    }
+    
+    class func formattedDate(date:Double) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Constants.Ticket.DisplayDateFormat
+        let newDate = NSDate(timeIntervalSince1970: date)
+        return dateFormatter.string(from: newDate as Date)
     }
 }
 

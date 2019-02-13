@@ -51,6 +51,15 @@ class GFAccountLandingViewController: GFBaseViewController {
                 self.attachSpinner(value: value)
             }.disposed(by: disposeBag)
         
+        // errors
+        viewModel.errorMsg.asObservable()
+            .bind {[unowned self] errorMessage in
+                // Show error
+                if errorMessage != "" {
+                    self.showErrorMessage(message: errorMessage)
+                }
+            }.disposed(by: disposeBag)
+        
         // Show Account based
         viewModel.accountBased.asObservable()
             .bind{ [unowned self] value in

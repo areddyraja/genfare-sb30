@@ -15,6 +15,7 @@ class GFMyPassesTableViewController: UITableViewController {
     let viewModel = GFMyPassesViewModel()
     let disposeBag = DisposeBag()
     var spinnerView:UIView?
+    var baseClass:UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,13 @@ class GFMyPassesTableViewController: UITableViewController {
         
     }
     
+    func showBarCodeScreen(ticket:WalletContents) {
+        if let controller:GFBarcodeLandingViewController = UIStoryboard(name: "Barcode", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.BarCodeLanding) as? GFBarcodeLandingViewController {
+            controller.ticket = ticket
+            baseClass!.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -111,18 +119,7 @@ class GFMyPassesTableViewController: UITableViewController {
         //Handle selection
         let ticket = viewModel.model[indexPath.row] as WalletContents
         GFWalletContentsService.updateExpirationDate(ticketID: ticket.ticketIdentifier!)
-        
-        if let prod = GFFetchProductsService.getProductFor(id: ticket.ticketIdentifier!) {
-            print(prod)
-            let encString = BarcodeUtilities.generateBarcode(withTicket: ticket,
-                                                             product: prod,
-                                                             encriptionKey: GFEncryptionKeysService.getEncryptionKey()!,
-                                                             isFreeRide: false,
-                                                             deviceID: Utilities.deviceId(),
-                                                             transitID: Utilities.transitID(),
-                                                             accountId: nil)
-            print(encString)
-        }
+        showBarCodeScreen(ticket: ticket)
         
         tableView.reloadData()
     }

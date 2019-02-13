@@ -91,6 +91,9 @@ struct Constants {
         static let MyPassesList = "MYPASSESLIST"
         static let MyHistoryList = "PASSACTIVITYLIST"
         static let PurchaseProducts = "GFPurchaseTicketListViewController"
+        static let BarCode = "GFBARCODESCREEN"
+        static let BarCodeInfo = "GFBARCODEINFO"
+        static let BarCodeLanding = "GFBARCODELANDING"
     }
     
     struct Ticket {

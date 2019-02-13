@@ -108,6 +108,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         // Example:
         let myPasses : GFMyPassesTableViewController = (UIStoryboard(name: "Passes", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.MyPassesList) as? GFMyPassesTableViewController)!
         myPasses.title = "Passes"
+        myPasses.baseClass = self
         controllerArray.append(myPasses)
         
         let payPasses : GFPayGoPassTableViewController = (UIStoryboard(name: "Passes", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.PayAsYouGoList) as? GFPayGoPassTableViewController)!

@@ -13,6 +13,7 @@ import CoreData
 class GFFetchProductsService: GFBaseService {
     
     var walletID:NSNumber?
+    var cHandler:(Bool,Any?) -> Void = {success,error in}
     
     init(walletID:NSNumber) {
         self.walletID = walletID
@@ -30,41 +31,47 @@ class GFFetchProductsService: GFBaseService {
         return [:]
     }
     
-    func getProducts(completionHandler:@escaping (_ success:Bool,_ error:Any?) -> Void) {
+    func getProducts(completionHandler:((_ success:Bool,_ error:Any?) -> Void)?) {
+        
+        if completionHandler != nil {
+            cHandler = completionHandler!
+        }
         
         let endpoint = GFEndpoint.FetchProducts(walletId: walletID!)
         
         Alamofire.request(endpoint.url, method: endpoint.method, parameters: parameters(), encoding: URLEncoding.default, headers: headers())
-            .responseJSON { response in
+            .responseJSON {response in
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)
                     if let json = JSON as? Array<Any> {
                         self.saveProducts(data: json)
-                        completionHandler(true,nil)
+                        self.cHandler(true,nil)
                     }else{
                         if let json = JSON as? [String:Any] {
-                            if let code = json["code"] as? String, code == "401" {
-                                GFRefreshAuthToken.refresh(completionHandler: { [weak self] (success, error) in
-                                    if success, (self != nil) {
-                                        self!.getProducts(completionHandler: { (success, error) in
-                                            completionHandler(success,error)
-                                        })
-                                    }else{
-                                        completionHandler(false,error)
-                                    }
-                                })
-                            }else{
-                                completionHandler(false,"Unknown Error Occoured")
-                            }
+                            self.checkForRefreshToken(JSON: json)
                         }else{
-                            completionHandler(false,"Unknown Error Occoured")
+                            self.cHandler(false,"Unknown Error Occoured")
                         }
                     }
                 case .failure(let error):
                     print("Request failed with error: \(error)")
-                    completionHandler(false,error.localizedDescription)
+                    self.cHandler(false,error.localizedDescription)
                 }
+        }
+    }
+    
+    func checkForRefreshToken(JSON:[String:Any]) {
+        if let code = JSON["code"] as? String, code == "401" {
+            GFRefreshAuthToken.refresh(completionHandler: { (success, error) in
+                if success {
+                    self.getProducts(completionHandler: nil)
+                }else{
+                    self.cHandler(false,error)
+                }
+            })
+        }else{
+            self.cHandler(false,"Unknown Error Occoured")
         }
     }
     

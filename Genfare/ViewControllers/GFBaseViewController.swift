@@ -24,6 +24,7 @@ class GFBaseViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.isTranslucent = false
         navigationController?.setNavigationBarHidden(true, animated: false)
         view.backgroundColor = UIColor.buttonBGBlue
     }

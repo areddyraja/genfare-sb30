@@ -63,7 +63,7 @@ class GFWalletContentsService {
                 do {
                     let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
                     fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == %@", (wItem["ticketIdentifier"] as? String)!)
-                    let fetchResults = try managedContext.fetch(fetchRequest) as! Array<WalletContents>
+                    let fetchResults = try managedContext.fetch(fetchRequest)
                     if fetchResults.count <= 0 {
                         userObj = NSManagedObject(entity: walletContents!, insertInto: managedContext) as! WalletContents
                     }else{
@@ -87,6 +87,8 @@ class GFWalletContentsService {
                     userObj.valueRemaining = wItem["valueRemaining"] as? NSNumber
                     userObj.ticketEffectiveDate = wItem["ticketEffectiveDate"] as? NSNumber
                     userObj.ticketExpiryDate = wItem["ticketExpiryDate"] as? NSNumber
+                    userObj.instanceCount = wItem["instanceCount"] as? NSNumber
+                    userObj.allowInteraction = 1
                     if let attbs = wItem["attributes"] as? [String:Any], let attb = attbs["Attribute"] as? Array<Any> {
                         if attb.count > 1 {
                             if let subItem = attb[1] as? [String:Any] {
@@ -109,9 +111,23 @@ class GFWalletContentsService {
     }
     
     static func getContents() -> Array<WalletContents> {
-        let records:Array<WalletContents> = GFDataService.fetchRecords(entity: "WalletContents") as! Array<WalletContents>
+        removeInvalidContents()
+        var records:Array<WalletContents> = GFDataService.fetchRecords(entity: "WalletContents") as! Array<WalletContents>
         
         if records.count > 0 {
+            for record in records {
+                if let rcount = record.instanceCount?.intValue {
+                    if rcount > 0 {
+                        for _ in 1..<rcount {
+                            let newrecord = record
+                            newrecord.status = Constants.Ticket.InActive
+                            newrecord.allowInteraction = 0
+                            newrecord.expirationDate = nil
+                            records.append(newrecord)
+                        }
+                    }
+                }
+            }
             return records
         }
         
@@ -123,9 +139,9 @@ class GFWalletContentsService {
         do {
             let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == %@", ticketID)
-            let fetchResults = try managedContext.fetch(fetchRequest) as! Array<WalletContents>
+            let fetchResults = try managedContext.fetch(fetchRequest)
             if fetchResults.count > 0 {
-                let userObj = fetchResults.first!
+                let userObj = fetchResults[0]
                 userObj.expirationDate = calculateExpDate(item: fetchResults.first!)
                 userObj.status = "active"
                 GFDataService.saveContext()
@@ -146,5 +162,20 @@ class GFWalletContentsService {
             return df.string(from: edate)
         }
         return ""
+    }
+    
+    private static func removeInvalidContents() {
+        let managedContext = GFDataService.context
+        do {
+            let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == nil")
+            let fetchResults = try managedContext.fetch(fetchRequest)
+            for item in fetchResults{
+                managedContext.delete(item)
+            }
+            GFDataService.saveContext()
+        }catch{
+            print("Update failed")
+        }
     }
 }

@@ -21,6 +21,7 @@ struct Constants {
         static let PassPurchase = "kPassPurchaseScreenNavNotification"
         static let Settings = "kSettingsScreenNavNotification"
         static let Login = "kLoginScreenNavNotification"
+        static let Logout = "kLogoutNavNotification"
     }
     
     struct SideMenuAction {

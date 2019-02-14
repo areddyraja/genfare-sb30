@@ -37,8 +37,17 @@ class GFBaseViewController: UIViewController {
         return .lightContent
     }
     
-    func updateUIFortenant() {
+    func addMenuObservers() {
+        print("Add MENU Observers")
         
+        //Prevent adding observers multipletimes
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.Login), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showUserLogin(notification:)), name: Notification.Name(Constants.NotificationKey.Login), object: nil)
+    }
+    
+    func updateUIFortenant() {
+        //TODO - need to implement tenant based UI
     }
     
     @IBAction func goBack(_ sender: UIButton) {
@@ -59,31 +68,6 @@ class GFBaseViewController: UIViewController {
         }
     }
     
-    func addMenuObservers() {
-        print("Add MENU Observers")
-
-        //Prevent adding observers multipletimes
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.Settings), object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: Constants.NotificationKey.Login), object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToSettings(notification:)), name: Notification.Name(Constants.NotificationKey.Settings), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showUserLogin(notification:)), name: Notification.Name(Constants.NotificationKey.Login), object: nil)
-    }
-    
-    @objc func navigateToSettings(notification:Notification) {
-        print("SIDEMENU - Settings")
-        if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.Settings {
-            navigationController?.popToRootViewController(animated: false)
-            return
-        }
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        if let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.Settings) as? GFSettingsViewController {
-            let navController = UINavigationController(rootViewController: controller)
-            appDelegate.window?.rootViewController = navController
-        }
-        GFBaseViewController.currentMenuItem = Constants.SideMenuAction.Settings
-    }
-    
     @objc func showUserLogin(notification:Notification) {
         if let controller = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.Login) as? GFLoginViewController {
             let navController = UINavigationController(rootViewController: controller)
@@ -91,17 +75,23 @@ class GFBaseViewController: UIViewController {
         }
     }
 
-    func showUserHome(){
-        let account:Account? = GFAccountManager.currentAccount()
-        var homeID:String = Constants.StoryBoard.CardBased
-        if account?.profileType != "Card Based" {
-            homeID = Constants.StoryBoard.AccountBased
+    @objc func navigateToPlanTrip() {
+        print("SIDEMENU - Plan Trip")
+        if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.PlanTrip {
+            presentedViewController?.navigationController?.popToRootViewController(animated: false)
+            return
         }
-        //show account home
-        if let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateViewController(withIdentifier: homeID) as? GFLoginViewController {
-            let navController = UINavigationController(rootViewController: controller)
-            present(navController, animated: true, completion: nil)
+        
+        if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATEMENUHOME") as? HomeViewController {
+            attachControllerToMainWindow(controller: controller)
         }
+        GFBaseViewController.currentMenuItem = Constants.SideMenuAction.PlanTrip
+    }
+
+    func logoutUser() {
+        GFAccountManager.logout()
+        navigateToPlanTrip()
+        //TODO - Handle any logout related stuff
     }
     
     func updateNavBarUI() {

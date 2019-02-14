@@ -108,13 +108,21 @@ class GFLoginViewController: GFBaseViewController {
                     self.showRetrieveWalletAlert()
                 }
             }.disposed(by: disposeBag)
+        
+        // Logout User
+        viewModel.logoutUser.asObservable()
+            .bind{ [unowned self] value in
+                if value {
+                    self.logoutUser()
+                }
+            }.disposed(by: disposeBag)
     }
     
     func showRetrieveWalletAlert() {
         let alert = UIAlertController(title: "Retrieve Wallet", message: "Do you want to retreive wallet?", preferredStyle: UIAlertController.Style.alert)
         
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { action in
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
             
             self.viewModel.walletRetrieved(value: false)
 

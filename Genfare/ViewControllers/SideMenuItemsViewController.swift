@@ -96,7 +96,6 @@ class SideMenuItemsViewController: UIViewController {
         print("SIDEMENU - Plan Trip")
         if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.PlanTrip {
             presentedViewController?.navigationController?.popToRootViewController(animated: false)
-            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: Constants.NotificationKey.HomeScreen)))
             return
         }
         
@@ -260,6 +259,9 @@ class SideMenuItemsViewController: UIViewController {
         //present(alert, animated: true, completion: nil)
     }
 
+}
+
+extension UIViewController {
     func attachControllerToMainWindow(controller:UIViewController) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let navController = UINavigationController(rootViewController: controller)
@@ -281,5 +283,4 @@ class SideMenuItemsViewController: UIViewController {
         let presentedViewController = rootViewController?.presentedViewController as? UIViewController
         return topViewController(presentedViewController)
     }
-
 }

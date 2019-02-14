@@ -20,6 +20,7 @@ class GFAccountInfoViewModel {
     let isSuccess : Variable<Bool> = Variable(false)
     let isLoading : Variable<Bool> = Variable(false)
     let errorMsg : Variable<String> = Variable("")
+    let logoutUser : Variable<Bool> = Variable(false)
     
     func formErrorString() -> String {
         return ""
@@ -39,7 +40,7 @@ class GFAccountInfoViewModel {
             self.isLoading.value = false
 
             if success {
-                self.isSuccess.value = true
+                self.logoutUser.value = true
             }else{
                 self.errorMsg.value = error as! String
             }

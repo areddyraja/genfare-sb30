@@ -28,6 +28,7 @@ class LoginViewModel {
     let showAccountBased: Variable<Bool> = Variable(false)
     let showCardBased: Variable<Bool> = Variable(false)
     let errorMsg : Variable<String> = Variable("")
+    let logoutUser : Variable<Bool> = Variable(false)
     
     var walletJson:[String:Any]?
     
@@ -115,7 +116,7 @@ class LoginViewModel {
                     errorMsg.value = "Can not assign wallet to this device, as this is already assigned to a different device"
                     return
                 }else{
-                    GFWalletsService.saveWalletData(data: item)
+                    //GFWalletsService.saveWalletData(data: item)
                     walletJson = item
                     showRetrieveWallet.value = true
                     return
@@ -130,7 +131,7 @@ class LoginViewModel {
             GFWalletsService.saveWalletData(data: walletJson!)
             assignWallet()
         }else{
-            GFAccountManager.logout()
+            logoutUser.value = true
         }
     }
     

@@ -58,7 +58,9 @@ class GFAccountInfoViewController: GFBaseViewController {
         // Loading
         viewModel.isLoading.asObservable()
             .bind{[unowned self] value in
-                self.attachSpinner(value: value)
+                if value {
+                    self.attachSpinner(value: value)
+                }
             }.disposed(by: disposeBag)
         
         // errors
@@ -68,8 +70,14 @@ class GFAccountInfoViewController: GFBaseViewController {
                 self.showErrorMessage(message: errorMessage)
             }.disposed(by: disposeBag)
         
+        // Logout
+        viewModel.logoutUser.asObservable()
+            .bind{[unowned self] value in
+                if value {
+                    self.logoutUser()
+                }
+            }.disposed(by: disposeBag)
     }
-
 }
 
 //extension GFAccountInfoViewController : UITableViewDelegate {

@@ -97,5 +97,14 @@ class GFDataService {
         
         return nil
     }
-
+    
+    static func getAddress() -> Array<StoredAddress>?{
+        let records:Array<StoredAddress> = fetchRecords(entity: "StoredAddress") as! Array<StoredAddress>
+        
+        if records.count > 0 {
+            return records
+        }
+        return []
+        
+    }
 }

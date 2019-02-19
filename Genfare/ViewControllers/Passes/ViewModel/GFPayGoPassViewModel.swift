@@ -21,6 +21,7 @@ class GFPayGoPassViewModel {
     let isSuccess : Variable<Bool> = Variable(false)
     let isLoading : Variable<Bool> = Variable(false)
     let errorMsg : Variable<String> = Variable("")
+    let barCode : Variable<Bool> = Variable(false)
     
     func formErrorString() -> String {
         return ""
@@ -33,6 +34,20 @@ class GFPayGoPassViewModel {
             return product.ticketTypeDescription == "Stored Value"
         })
         isSuccess.value = true
+    }
+    
+    func confirmActivation(index:Int) {
+        guard index < model.count else {
+            fatalError("index out of bounds")
+        }
+        
+        let product = model[index]
+        print(product)
+        barCode.value = true
+    }
+    
+    func insertProductIntoWallet(product:Product) -> WalletContents? {
+        return nil
     }
     
     func fetchProducts() {

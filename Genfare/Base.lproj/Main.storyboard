@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +13,7 @@
         <!--Navigate View Controller-->
         <scene sceneID="iCi-8M-1r9">
             <objects>
-                <viewController storyboardIdentifier="GFNAVIGATEHOME" id="6K4-Wg-oGF" customClass="NavigateViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFNAVIGATEHOME" id="6K4-Wg-oGF" customClass="NavigateViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3N-6G-Ygm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,14 +44,14 @@
                                 <color key="backgroundColor" red="0.76746008030000001" green="0.76746008030000001" blue="0.76746008030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ROUTECELL" id="4X5-vU-8Pf" customClass="GFStationListTableViewCell" customModule="Genfare" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ROUTECELL" id="4X5-vU-8Pf" customClass="GFStationListTableViewCell" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4X5-vU-8Pf" id="2Th-hK-I8a">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qa8-Yv-OdV" customClass="GFCustomTableViewCellShadowView" customModule="Genfare" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qa8-Yv-OdV" customClass="GFCustomTableViewCellShadowView" customModule="iRide" customModuleProvider="target">
                                                     <rect key="frame" x="3" y="0.0" width="368" height="56"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -81,14 +80,14 @@
                                             <outlet property="stationName" destination="w3k-yb-kfp" id="Shk-Ff-LmE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HISTORYCELL" rowHeight="70" id="3gS-yq-Opi" customClass="GFHistoryTableViewCell" customModule="Genfare" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HISTORYCELL" rowHeight="70" id="3gS-yq-Opi" customClass="GFHistoryTableViewCell" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3gS-yq-Opi" id="AAc-2M-H9b">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kc2-vb-Syu" customClass="GFCustomTableViewCellShadowView" customModule="Genfare" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kc2-vb-Syu" customClass="GFCustomTableViewCellShadowView" customModule="iRide" customModuleProvider="target">
                                                     <rect key="frame" x="3" y="0.0" width="368" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -124,7 +123,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAB-Y5-dNS" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAB-Y5-dNS" customClass="GFTextFieldBackGround" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="12" y="92" width="310" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zqG-A1-tO4">
@@ -144,7 +143,7 @@
                                     <constraint firstAttribute="height" constant="36" id="ULh-TP-tH9"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFp-bl-XMa" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFp-bl-XMa" customClass="GFTextFieldBackGround" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="12" y="144" width="310" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destination" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WOW-3Q-1ZA">
@@ -172,7 +171,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" image="Hamburger"/>
                                         <connections>
-                                            <segue destination="H5I-Vr-MMo" kind="presentation" id="dMh-5a-AgA"/>
+                                            <action selector="presentSideMenu:" destination="aGd-3I-INN" eventType="touchUpInside" id="e9a-D2-j0c"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="BEU-GZ-pKh">
@@ -251,12 +250,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGd-3I-INN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1607.2" y="635.53223388305855"/>
+            <point key="canvasLocation" x="-1034" y="257"/>
         </scene>
         <!--Navigate Timings View Controller-->
         <scene sceneID="X1B-VO-etK">
             <objects>
-                <viewController storyboardIdentifier="GFTIMETABLE" id="Hjk-8d-TS5" customClass="GFNavigateTimingsViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFTIMETABLE" id="Hjk-8d-TS5" customClass="GFNavigateTimingsViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L2R-4o-HFM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,7 +268,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" image="Hamburger"/>
                                         <connections>
-                                            <segue destination="H5I-Vr-MMo" kind="presentation" id="3H1-7k-VLM"/>
+                                            <action selector="presentSideMenu:" destination="UwJ-gA-tzF" eventType="touchUpInside" id="APL-cu-fSy"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="w7m-zC-48o">
@@ -291,7 +290,7 @@
                                     <constraint firstAttribute="height" constant="225" id="EAu-N2-9c7"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIZ-NW-ge6" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIZ-NW-ge6" customClass="GFTextFieldBackGround" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="10" y="98" width="310" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pxq-PG-li1">
@@ -311,7 +310,7 @@
                                     <constraint firstAttribute="height" constant="36" id="mFs-TC-Vxd"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-HR-3wb" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-HR-3wb" customClass="GFTextFieldBackGround" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="10" y="150" width="310" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destination" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0LD-aI-cht">
@@ -336,14 +335,14 @@
                                 <color key="backgroundColor" red="0.76746008030000001" green="0.76746008030000001" blue="0.76746008030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ROUTECELL" id="5a2-ak-yU8" customClass="GFRouteOptionTableViewCell" customModule="Genfare" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ROUTECELL" id="5a2-ak-yU8" customClass="GFRouteOptionTableViewCell" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5a2-ak-yU8" id="8Sb-cy-KDX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCH-8Y-fHQ" customClass="GFCustomTableViewCellShadowView" customModule="Genfare" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCH-8Y-fHQ" customClass="GFCustomTableViewCellShadowView" customModule="iRide" customModuleProvider="target">
                                                     <rect key="frame" x="3" y="0.0" width="368" height="76"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -415,7 +414,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2y1-Bm-tjP">
                                 <rect key="frame" x="10" y="261" width="355" height="29"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZW-Ig-AHP" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZW-Ig-AHP" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="29"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -432,7 +431,7 @@
                                             <action selector="filterResults:" destination="Hjk-8d-TS5" eventType="touchUpInside" id="LZ4-uk-cfP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbG-x5-80M" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbG-x5-80M" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="91.5" y="0.0" width="81" height="29"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -449,7 +448,7 @@
                                             <action selector="filterResults:" destination="Hjk-8d-TS5" eventType="touchUpInside" id="8xe-2c-eY1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkz-pW-fyN" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkz-pW-fyN" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="182.5" y="0.0" width="81.5" height="29"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -466,7 +465,7 @@
                                             <action selector="filterResults:" destination="Hjk-8d-TS5" eventType="touchUpInside" id="R0u-0l-cwZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0B-6g-63h" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0B-6g-63h" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="274" y="0.0" width="81" height="29"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -488,7 +487,7 @@
                                     <constraint firstAttribute="height" constant="29" id="GNB-JV-Zec"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4q-Vv-AmM" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4q-Vv-AmM" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="10" y="213" width="65" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -558,7 +557,7 @@
                                     <constraint firstAttribute="width" constant="150" id="szi-eZ-3xC"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcY-hi-zBP" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcY-hi-zBP" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="300" y="213" width="65" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -645,7 +644,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwJ-gA-tzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="634.632683658171"/>
+            <point key="canvasLocation" x="-342" y="257"/>
         </scene>
         <!--Sidemenu-->
         <scene sceneID="tjR-rj-KJC">
@@ -653,7 +652,7 @@
                 <viewControllerPlaceholder storyboardName="Sidemenu" id="H5I-Vr-MMo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mp3-gl-i4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1608" y="1169"/>
+            <point key="canvasLocation" x="-1710" y="775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cEC-l0-x62">
@@ -668,12 +667,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWI-Lj-1Cx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3196" y="257"/>
+            <point key="canvasLocation" x="-3154" y="257"/>
         </scene>
         <!--Navigate Route View Controller-->
         <scene sceneID="cVs-wS-bra">
             <objects>
-                <viewController storyboardIdentifier="GFROUTEMAP" id="UtT-rL-5zK" customClass="GFNavigateRouteViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFROUTEMAP" id="UtT-rL-5zK" customClass="GFNavigateRouteViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xQQ-Nt-qhi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -681,7 +680,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvT-Xt-QSL">
                                 <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gm-FP-SAo" customClass="GFCustomTableViewCellShadowView" customModule="Genfare" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gm-FP-SAo" customClass="GFCustomTableViewCellShadowView" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="2" y="76" width="370" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bus 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIt-yX-qcR">
@@ -716,7 +715,7 @@
                                         <rect key="frame" x="7" y="26" width="46" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2r-bz-8T1" customClass="GFRouteLegsScrollView" customModule="Genfare" customModuleProvider="target">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2r-bz-8T1" customClass="GFRouteLegsScrollView" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="184" y="34" width="180" height="35"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                     </scrollView>
@@ -741,7 +740,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" image="Hamburger"/>
                                         <connections>
-                                            <segue destination="H5I-Vr-MMo" kind="presentation" id="uKF-7H-hKe"/>
+                                            <action selector="presentSideMenu:" destination="5v9-am-tSc" eventType="touchUpInside" id="Czp-lP-MG1"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="zbf-Mu-YeN">
@@ -810,12 +809,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5v9-am-tSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2447.1999999999998" y="1168.9655172413793"/>
+            <point key="canvasLocation" x="-2447" y="941"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="GFNAVIGATEMENUHOME" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFNAVIGATEMENUHOME" id="BYZ-38-t0r" customClass="HomeViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -846,7 +845,7 @@
                                     <action selector="gotoCurrentLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cUN-O9-31y"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z28-1F-ZdD" customClass="GFTextFieldBackGround" customModule="Genfare" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z28-1F-ZdD" customClass="GFTextFieldBackGround" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="12" y="96" width="351" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where To?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAU-ct-3Nc">
@@ -874,7 +873,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" image="Hamburger"/>
                                         <connections>
-                                            <segue destination="H5I-Vr-MMo" kind="presentation" id="Zcg-An-uLG"/>
+                                            <action selector="presentSideMenu:" destination="dkx-z0-nzr" eventType="touchUpInside" id="CBC-3K-jhC"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="pQE-o6-Sy3">
@@ -924,7 +923,7 @@
         <!--Recent Trips View Controller-->
         <scene sceneID="aFo-Zb-dh0">
             <objects>
-                <viewController storyboardIdentifier="GFRECENTTRIPS" id="8Xt-od-lay" customClass="GFRecentTripsViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFRECENTTRIPS" id="8Xt-od-lay" customClass="GFRecentTripsViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WMa-kv-Ych">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -935,14 +934,14 @@
                                 <color key="backgroundColor" name="Alto Gray"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HISTORYCELL" rowHeight="70" id="UAp-lv-OeB" customClass="GFHistoryTableViewCell" customModule="Genfare" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HISTORYCELL" rowHeight="70" id="UAp-lv-OeB" customClass="GFHistoryTableViewCell" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UAp-lv-OeB" id="bSt-fu-DJ2">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nf0-Ni-nUZ" customClass="GFCustomTableViewCellShadowView" customModule="Genfare" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nf0-Ni-nUZ" customClass="GFCustomTableViewCellShadowView" customModule="iRide" customModuleProvider="target">
                                                     <rect key="frame" x="3" y="0.0" width="368" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -986,7 +985,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" image="Hamburger"/>
                                         <connections>
-                                            <segue destination="H5I-Vr-MMo" kind="presentation" id="XIe-mM-X5w"/>
+                                            <action selector="presentSideMenu:" destination="ugi-B0-LOZ" eventType="touchUpInside" id="kom-OW-Nqv"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cota-logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="WEy-fN-DxI">
@@ -1016,7 +1015,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugi-B0-LOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-740" y="256.82158920539734"/>
+            <point key="canvasLocation" x="-1735" y="257"/>
         </scene>
     </scenes>
     <resources>
@@ -1046,7 +1045,4 @@
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="dMh-5a-AgA"/>
-    </inferredMetricsTieBreakers>
 </document>

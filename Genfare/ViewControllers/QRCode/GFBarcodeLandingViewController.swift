@@ -46,7 +46,7 @@ class GFBarcodeLandingViewController: GFBaseViewController,CAPSPageMenuDelegate 
         
         let qrInfo : GFBarcodeInfoViewController = (UIStoryboard(name: "Barcode", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.BarCodeInfo) as? GFBarcodeInfoViewController)!
         qrInfo.title = "Information"
-        barCode.baseClass = self
+        qrInfo.baseClass = self
         qrInfo.ticket = ticket
         controllerArray.append(qrInfo)
         

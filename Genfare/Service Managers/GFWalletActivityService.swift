@@ -84,4 +84,15 @@ class GFWalletActivityService {
         
         return []
     }
+    
+    static func updateActivityFor(product:Product,wallet:WalletContents,activity:String) {
+        switch activity {
+        case "activation":
+            //
+            print(product)
+        default:
+            //
+            print(wallet)
+        }
+    }
 }

@@ -113,10 +113,12 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         
         let payPasses : GFPayGoPassTableViewController = (UIStoryboard(name: "Passes", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.PayAsYouGoList) as? GFPayGoPassTableViewController)!
         payPasses.title = "Pay As You Go"
+        payPasses.baseClass = self
         controllerArray.append(payPasses)
         
         let myActivity : GFActivityTableViewController = (UIStoryboard(name: "Passes", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.MyHistoryList) as? GFActivityTableViewController)!
         myActivity.title = "Activity"
+        myActivity.baseClass = self
         controllerArray.append(myActivity)
         
         // Customize page menu to your liking (optional) or use default settings by sending nil for 'options' in the init

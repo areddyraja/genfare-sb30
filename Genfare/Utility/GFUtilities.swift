@@ -61,7 +61,7 @@ class Utilities {
     class func deviceId() -> String {
 //        return "76B2B88F48B74E7995E9B70BB08F21BA"
 //        return "621CB9DEA4A345928441D1B3CC227AFC"
-        return "094AF1B6903D49D590F71CC3498E8923"
+//        return "094AF1B6903D49D590F71CC3498E8923"
         return UIDevice.current.identifierForVendor!.uuidString
     }
     

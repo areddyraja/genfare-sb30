@@ -15,7 +15,9 @@ class GFPayGoPassTableViewController: UITableViewController {
     let viewModel = GFPayGoPassViewModel()
     let disposeBag = DisposeBag()
     var spinnerView:UIView?
-    
+    var selectedIndex:Int = 0
+    var baseClass:UIViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,6 +45,7 @@ class GFPayGoPassTableViewController: UITableViewController {
         viewModel.isLoading.asObservable()
             .bind{[unowned self] value in
                 NSLog("Loading \(value)")
+                //self.attachSpinner(value: value)
                 if value {
                     self.spinnerView = UIViewController.displaySpinner(onView: self.view)
                 }else{
@@ -61,10 +64,25 @@ class GFPayGoPassTableViewController: UITableViewController {
                     print(errorMessage)
                 }
             }.disposed(by: disposeBag)
+        
+        viewModel.barCode.asObservable()
+            .bind{[unowned self] value in
+                NSLog("Loading \(value)")
+                if value {
+                    self.showBarcodeScreen()
+                }
+            }.disposed(by: disposeBag)
     }
     
     func createViewModelBinding(){
         
+    }
+    
+    func showBarcodeScreen() {
+        if let controller:GFBarcodeLandingViewController = UIStoryboard(name: "Barcode", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.BarCodeLanding) as? GFBarcodeLandingViewController {
+            //controller.ticket = ticket
+            baseClass!.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     // MARK: - Table view data source
@@ -92,7 +110,23 @@ class GFPayGoPassTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        //Handle selection
+        selectedIndex = indexPath.row
+        showCofirmAlert()
+    }
+
+    func showCofirmAlert() -> Void {
+        // create the alert
+        let alert = UIAlertController(title: "Activate Pass", message: "Are you sure you want to Activate this pass?", preferredStyle: UIAlertController.Style.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive, handler: { action in
+            
+            self.viewModel.confirmActivation(index: self.selectedIndex)
+            
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
 
 }

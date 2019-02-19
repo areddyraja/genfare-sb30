@@ -116,7 +116,6 @@ class LoginViewModel {
                     errorMsg.value = "Can not assign wallet to this device, as this is already assigned to a different device"
                     return
                 }else{
-                    //GFWalletsService.saveWalletData(data: item)
                     walletJson = item
                     showRetrieveWallet.value = true
                     return
@@ -153,5 +152,4 @@ class LoginViewModel {
             }
         }
     }
-    
 }

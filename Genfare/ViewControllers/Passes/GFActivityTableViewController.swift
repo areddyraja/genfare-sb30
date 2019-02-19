@@ -15,6 +15,7 @@ class GFActivityTableViewController: UITableViewController {
     let viewModel = GFActivityViewModel()
     let disposeBag = DisposeBag()
     var spinnerView:UIView?
+    var baseClass:UIViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()

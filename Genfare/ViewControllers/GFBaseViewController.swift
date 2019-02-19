@@ -62,8 +62,13 @@ class GFBaseViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func presentSideMenu(_ sender: UIButton) {
+        showSideMenu()
+    }
+    
     @objc func showSideMenu() {
         if let controller = UIStoryboard(name: "Sidemenu", bundle: nil).instantiateInitialViewController() {
+            SideMenuItemsViewController.rightNavController = self.navigationController
             present(controller, animated: true, completion: nil)
         }
     }
@@ -78,12 +83,12 @@ class GFBaseViewController: UIViewController {
     @objc func navigateToPlanTrip() {
         print("SIDEMENU - Plan Trip")
         if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.PlanTrip {
-            presentedViewController?.navigationController?.popToRootViewController(animated: false)
+            SideMenuItemsViewController.rightNavController?.popToRootViewController(animated: false)
             return
         }
         
         if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GFNAVIGATEMENUHOME") as? HomeViewController {
-            attachControllerToMainWindow(controller: controller)
+            SideMenuItemsViewController.rightNavController?.viewControllers = [controller]
         }
         GFBaseViewController.currentMenuItem = Constants.SideMenuAction.PlanTrip
     }

@@ -22,8 +22,8 @@ class SideMenuItemsViewController: UIViewController {
     
     @IBOutlet weak var userImage: UIImageView!
     
-    var presentedController:UIViewController?
     var currentAction:String?
+    static var rightNavController:UINavigationController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,6 @@ class SideMenuItemsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presentedController = self.presentedViewController
-
         updateSideMenu()
     }
     
@@ -95,7 +93,7 @@ class SideMenuItemsViewController: UIViewController {
     @objc func navigateToPlanTrip() {
         print("SIDEMENU - Plan Trip")
         if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.PlanTrip {
-            presentedViewController?.navigationController?.popToRootViewController(animated: false)
+            SideMenuItemsViewController.rightNavController?.popToRootViewController(animated: false)
             return
         }
         
@@ -108,7 +106,7 @@ class SideMenuItemsViewController: UIViewController {
     @objc func navigateToPasses() {
         print("SIDEMENU - My Passes")
         if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.PassPurchase {
-            presentedViewController?.navigationController?.popToRootViewController(animated: false)
+            SideMenuItemsViewController.rightNavController?.popToRootViewController(animated: false)
             return
         }
         
@@ -131,7 +129,7 @@ class SideMenuItemsViewController: UIViewController {
     
     @objc func navigateToAlerts() -> Void {
         if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.Alerts {
-            presentedViewController?.navigationController?.popToRootViewController(animated: false)
+            SideMenuItemsViewController.rightNavController?.popToRootViewController(animated: false)
             return
         }
         
@@ -143,7 +141,7 @@ class SideMenuItemsViewController: UIViewController {
     @objc func navigateToSettings() -> Void {
         print("SIDEMENU - Settings")
         if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.Settings {
-            navigationController?.popToRootViewController(animated: false)
+            SideMenuItemsViewController.rightNavController?.popToRootViewController(animated: false)
             return
         }
 
@@ -155,7 +153,7 @@ class SideMenuItemsViewController: UIViewController {
     
     @objc func navigateToContactus() -> Void {
         if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.ContactUs {
-            presentedViewController?.navigationController?.popToRootViewController(animated: false)
+            SideMenuItemsViewController.rightNavController?.popToRootViewController(animated: false)
             return
         }
         
@@ -187,6 +185,7 @@ class SideMenuItemsViewController: UIViewController {
         //TODO - Passes need to be integrated
         if let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateInitialViewController() {
             attachControllerToMainWindow(controller: controller)
+            GFBaseViewController.currentMenuItem = Constants.SideMenuAction.PassPurchase
         }
     }
 
@@ -229,7 +228,7 @@ class SideMenuItemsViewController: UIViewController {
         GFAccountManager.logout()
         
         if GFBaseViewController.currentMenuItem == Constants.SideMenuAction.PlanTrip {
-            presentedViewController?.navigationController?.popToRootViewController(animated: false)
+            SideMenuItemsViewController.rightNavController?.popToRootViewController(animated: false)
             return
         }
         
@@ -259,10 +258,13 @@ class SideMenuItemsViewController: UIViewController {
         //present(alert, animated: true, completion: nil)
     }
 
+    @objc override func attachControllerToMainWindow(controller:UIViewController) {
+        SideMenuItemsViewController.rightNavController?.viewControllers = [controller]
+    }
 }
 
 extension UIViewController {
-    func attachControllerToMainWindow(controller:UIViewController) {
+    @objc func attachControllerToMainWindow(controller:UIViewController) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let navController = UINavigationController(rootViewController: controller)
         appDelegate.window?.rootViewController = navController

@@ -151,7 +151,7 @@ class GFWalletContentsService {
         }
     }
     
-    private static func calculateExpDate(item:WalletContents) -> String {
+    public static func calculateExpDate(item:WalletContents) -> String {
         if item.type == Constants.Ticket.PeriodPass {
             let currentSecs = Date().timeIntervalSince1970
             let remainingTime = 24*60*60*(item.valueRemaining as! Double)

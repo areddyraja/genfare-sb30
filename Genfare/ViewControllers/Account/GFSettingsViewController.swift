@@ -34,7 +34,7 @@ class GFSettingsViewController: GFBaseViewController {
     @IBAction func getEncryptionKeys(_ sender: Any){
         let encryptionkeys = GFEncryptionKeysService()
         encryptionkeys.fetchEncryptionKeys { (success, error) in
-            if success! {
+            if success {
                 print("got keys")
             }
             else{

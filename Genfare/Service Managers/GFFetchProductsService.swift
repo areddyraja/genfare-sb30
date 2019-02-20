@@ -130,4 +130,11 @@ class GFFetchProductsService: GFBaseService {
         }
         return nil
     }
+    
+    static func barcodeTimerFor(pid:String) -> NSNumber {
+        if let product:Product = GFFetchProductsService.getProductFor(id: pid) {
+            return product.barcodeTimer!
+        }
+        return 0
+    }
 }

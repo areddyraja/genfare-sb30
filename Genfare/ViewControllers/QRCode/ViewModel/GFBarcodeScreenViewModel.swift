@@ -10,7 +10,7 @@ import Foundation
 
 class GFBarcodeScreenViewModel:GFBaseViewModel {
     
-    var walletModel:WalletContents = WalletContents(context: GFDataService.context)
+    var walletModel:WalletContents!
     
     func barcodeString() -> String {
         let account:Account = GFAccountManager.currentAccount()!
@@ -34,4 +34,9 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
         return  Int64(NSDate().timeIntervalSince1970 * 1000)
     }
     
+    func eventNeedUpdate() -> Bool {
+        return false
+    }
+    
+
 }

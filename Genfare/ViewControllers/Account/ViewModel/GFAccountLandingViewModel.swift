@@ -45,6 +45,17 @@ class GFAccountLandingViewModel {
 
             if success {
                 print("Got Product contents successfully")
+                self.getEncryptionKeys()
+            }else{
+                self.errorMsg.value = error as! String
+            }
+        }
+    }
+    
+    func getEncryptionKeys() {
+        let encryptionkeys = GFEncryptionKeysService()
+        encryptionkeys.fetchEncryptionKeys { (success, error) in
+            if success {
                 self.updateAccountType()
             }else{
                 self.errorMsg.value = error as! String

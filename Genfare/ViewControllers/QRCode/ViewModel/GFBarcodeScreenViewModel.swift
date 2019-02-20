@@ -10,7 +10,7 @@ import Foundation
 
 class GFBarcodeScreenViewModel:GFBaseViewModel {
     
-    var walletModel:WalletContents = WalletContents(context: GFDataService.context)
+    var walletModel:WalletContents!
     
     func barcodeString() -> String {
         let account:Account = GFAccountManager.currentAccount()!
@@ -29,4 +29,9 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
         return ""
     }
     
+    func eventNeedUpdate() -> Bool {
+        return false
+    }
+    
+
 }

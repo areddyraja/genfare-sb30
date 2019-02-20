@@ -45,7 +45,7 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         }
         cell.contentView.addSubview(storedlabel)
         
-        var fare = prodObj["total_ticket_fare"] as? Float
+        var fare = Float(prodObj["total_ticket_fare"] as! String)
         var storedlabel1 = UILabel(frame: CGRect(x: 0, y: 30, width: cell.frame.size.width - 50, height: 20))
         storedlabel1.text = String(format: " $ %.2f", fare!)
         storedlabel.numberOfLines = 0

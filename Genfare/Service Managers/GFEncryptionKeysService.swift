@@ -26,7 +26,7 @@ class GFEncryptionKeysService{
         return [:]
     }
 
-    func fetchEncryptionKeys(completionHandler:@escaping (_ success:Bool?,_ error:Any?) -> Void) {
+    func fetchEncryptionKeys(completionHandler:@escaping (_ success:Bool,_ error:Any?) -> Void) {
         let endpoint = GFEndpoint.GetEncryptionKeys()
         
         Alamofire.request(endpoint.url, method: endpoint.method, parameters: parameters(), encoding: URLEncoding.default, headers: headers())
@@ -37,6 +37,7 @@ class GFEncryptionKeysService{
                     if let json = JSON as? [String:Any], let values = json["result"] as? [String:Any] {
                         self.saveData(data: values)
                     }
+                    completionHandler(true,nil)
                 case .failure(let error):
                     print("Request failed with error: \(error)")
                     completionHandler(false,error)

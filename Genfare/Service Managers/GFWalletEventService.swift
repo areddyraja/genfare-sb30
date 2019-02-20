@@ -54,11 +54,48 @@ class GFWalletEventService {
     static func updateActivityFor(product:Product,wallet:WalletContents,activity:String) {
         switch activity {
         case "activation":
-            //
-            print(product)
+            let managedContext = GFDataService.context
+            let event = NSEntityDescription.entity(forEntityName: "Event", in: managedContext)
+            let userObj:Event = NSManagedObject(entity: event!, insertInto: managedContext) as! Event
+            let cdate:Double = Date().timeIntervalSince1970
+            
+            userObj.clickedTime = cdate as NSNumber
+            userObj.fare = wallet.fare
+            userObj.identifier = wallet.identifier
+            userObj.ticketid = "\(product.ticketId!)"
+            userObj.type = "activation"
+            userObj.ticketActivationExpiryDate = "\(cdate + (product.barcodeTimer as! Double))"
+            
+            GFDataService.saveContext()
+            print(userObj)
         default:
             //
             print(wallet)
+        }
+    }
+    
+    static func activateTicket(ticket:WalletContents) {
+        let barcodeTime = GFFetchProductsService.barcodeTimerFor(pid: ticket.ticketIdentifier!)
+        let cdate:Double = Date().timeIntervalSince1970
+
+        let managedContext = GFDataService.context
+        do {
+            let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "identifier == %@", ticket.identifier!)
+            let fetchResults = try managedContext.fetch(fetchRequest) as! Array<WalletContents>
+            if fetchResults.count > 0 {
+                let activeTicket:WalletContents = fetchResults.first!
+                activeTicket.status = "active"
+                activeTicket.ticketActivationExpiryDate = (cdate + (barcodeTime as! Double)) as NSNumber
+                activeTicket.expirationDate = GFWalletContentsService.calculateExpDate(item: ticket)
+                activeTicket.generationDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
+                activeTicket.activationDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
+                
+                print(activeTicket)
+                GFDataService.saveContext()
+            }
+        }catch{
+            print("Can't fetch records")
         }
     }
 }

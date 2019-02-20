@@ -16,6 +16,8 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
         let account:Account = GFAccountManager.currentAccount()!
         if let prod = GFFetchProductsService.getProductFor(id: walletModel.ticketIdentifier!) {
             print(prod)
+            walletModel.generationDate = NSNumber(value: getCurrentMillis())
+            walletModel.activationDate = NSNumber(value: getCurrentMillis())
             let encString = BarcodeUtilities.generateBarcode(withTicket: walletModel,
                                                              product: prod,
                                                              encriptionKey: GFEncryptionKeysService.getEncryptionKey()!,
@@ -27,6 +29,9 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
         }
         
         return ""
+    }
+    func getCurrentMillis()->Int64{
+        return  Int64(NSDate().timeIntervalSince1970 * 1000)
     }
     
 }

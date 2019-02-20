@@ -31,6 +31,7 @@
     int transitId_int = transitID.intValue;
     long departingStation=0;
     long arrivingStation=0;
+    
     NSString *transitId=[NSString stringWithFormat:@"%d", transitId_int];
     NSString *sellerId=@"App";
     NSString *zone=@"SzTy";
@@ -64,8 +65,10 @@
                      [[self fillString:[self convertToBase36:[self activationTypeForString:activation]] requiredLength:1] UTF8String],
                      
                      [NSString stringWithFormat:@"%lli",[ticket.purchasedDate longLongValue]/1000 ],                                                     // 10 (integer)
-                     [NSString stringWithFormat:@"%lli",[ticket.generationDate longLongValue]/1000 ],                                                   // 10 (integer)
-                     [NSString stringWithFormat:@"%lli",[ticket.generationDate longLongValue]/1000 ],                                                                     // 10 Generated Timestamp (integer)
+                     [NSString stringWithFormat:@"%lli",[ticket.activationDate longLongValue]/1000],                                                   // 10 (integer)
+                     [NSString stringWithFormat:@"%lli",[ticket.generationDate longLongValue]/1000],                                                                     // 10 Generated Timestamp (integer)
+//                     [NSString stringWithFormat:@"%lli",[ticket.generationDate longLongValue]/1000 ],                                                   // 10 (integer)
+//                     [NSString stringWithFormat:@"%lli",[ticket.generationDate longLongValue]/1000 ],                                                                     // 10 Generated Timestamp (integer)
                      [[self fillString:accountId requiredLength:6] UTF8String],                                             // 6  (alphanumeric)
                      [[self fillString:[self convertToBase36:[passengercount intValue]] requiredLength:2] UTF8String],   // 2  Passenger Count (Base36)
                      
@@ -243,5 +246,11 @@
         return 1;
     }
 }
-
++ (long)getBarcodeActivationOffsetInSeconds{
+    int const SECONDS_PER_MINUTE = 60;
+    NSString *const BARCODEACTIVATION_OFFSET_INMINS = @"BARCODEACTIVATION_OFFSET_INMINS";
+    NSNumber * value = [[NSUserDefaults standardUserDefaults] valueForKey:BARCODEACTIVATION_OFFSET_INMINS];
+    long barcodeActivationOffsetInSeconds = [value longValue] * SECONDS_PER_MINUTE; //converting Mins to Seconds
+    return barcodeActivationOffsetInSeconds;
+}
 @end

@@ -39,6 +39,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         viewModel.updateWalletStatus()
+        viewModel.encryptionKeys()
         //attachPassList()
     }
     

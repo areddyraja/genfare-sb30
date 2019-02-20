@@ -60,5 +60,18 @@ class GFAccountBasedHomeViewModel {
         }
         refreshBalance()
     }
+    func encryptionKeys(){
+        let encryptionkeys = GFEncryptionKeysService()
+        encryptionkeys.fetchEncryptionKeys { (success, error) in
+            if success! {
+                print("got keys")
+            }
+            else{
+                print(error)
+            }
+            
+        }
+    }
+    
     
 }

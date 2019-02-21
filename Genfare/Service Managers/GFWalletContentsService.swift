@@ -112,19 +112,29 @@ class GFWalletContentsService {
     
     static func getContents() -> Array<WalletContents> {
         removeInvalidContents()
-        var records:Array<WalletContents> = GFDataService.fetchRecords(entity: "WalletContents") as! Array<WalletContents>
+        let records:Array<WalletContents> = GFDataService.fetchRecords(entity: "WalletContents") as! Array<WalletContents>
         
         if records.count > 0 {
+            return records
+        }
+        
+        return []
+    }
+
+    static func getContentsForDisplay() -> Array<WalletContents> {
+        removeInvalidContents()
+        var records = getContents()
+
+        if records.count > 0 {
             for record in records {
-                if let rcount = record.instanceCount?.intValue {
-                    if rcount > 0 {
-                        for _ in 1..<rcount {
-                            let newrecord = record
-                            newrecord.status = Constants.Ticket.InActive
-                            newrecord.allowInteraction = 0
-                            newrecord.expirationDate = nil
-                            records.append(newrecord)
-                        }
+                if let rcount = record.instanceCount?.intValue, rcount > 0 {
+                    for _ in 1...rcount {
+                        let newrecord:WalletContents = WalletContents(context: record.managedObjectContext!)
+                        newrecord.status = Constants.Ticket.InActive
+                        newrecord.allowInteraction = 0
+                        newrecord.expirationDate = nil
+                        newrecord.descriptation = record.descriptation
+                        records.append(newrecord)
                     }
                 }
             }
@@ -133,7 +143,7 @@ class GFWalletContentsService {
         
         return []
     }
-
+    
     static func updateExpirationDate(ticketID:String) {
         let managedContext = GFDataService.context
         do {

@@ -51,6 +51,10 @@ class GFWalletEventService {
         }
     }
     
+    static func uploadEventTable() {
+        
+    }
+    
     static func updateActivityFor(product:Product,wallet:WalletContents,activity:String) {
         switch activity {
         case "activation":
@@ -63,7 +67,7 @@ class GFWalletEventService {
             userObj.fare = wallet.fare
             userObj.identifier = wallet.identifier
             userObj.ticketid = "\(product.ticketId!)"
-            userObj.type = "activation"
+            userObj.type = wallet.type
             userObj.ticketActivationExpiryDate = "\(cdate + (product.barcodeTimer as! Double))"
             
             GFDataService.saveContext()
@@ -86,7 +90,7 @@ class GFWalletEventService {
             if fetchResults.count > 0 {
                 let activeTicket:WalletContents = fetchResults.first!
                 activeTicket.status = "active"
-                activeTicket.ticketActivationExpiryDate = (cdate + (barcodeTime as! Double)) as NSNumber
+                activeTicket.ticketActivationExpiryDate = Int64(cdate + (barcodeTime as! Double)) as NSNumber
                 activeTicket.expirationDate = GFWalletContentsService.calculateExpDate(item: ticket)
                 activeTicket.generationDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
                 activeTicket.activationDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber

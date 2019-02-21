@@ -27,10 +27,7 @@ class GFMyPassesViewModel {
     }
     
     func showProducts() {
-        model = GFWalletContentsService.getContents()
-//        model = products.filter({ (product:Product) -> Bool in
-//            return product.ticketTypeDescription == "Stored Value"
-//        })
+        model = GFWalletContentsService.getContentsForDisplay()
         isSuccess.value = true
     }
     
@@ -50,6 +47,7 @@ class GFMyPassesViewModel {
             
             if success {
                 print("Got Wallet contents successfully")
+                self.model = GFWalletContentsService.getContentsForDisplay()
                 self.isSuccess.value = true
                 //self.fetchWalletContents()
             }else{

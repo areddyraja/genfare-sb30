@@ -38,5 +38,13 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
         return false
     }
     
-
+    func isActive() -> Bool {
+        let now = Date().timeIntervalSince1970
+        if let expiryDate = walletModel.ticketActivationExpiryDate {
+            if Int64(truncating: expiryDate) > 0 && Int64(truncating: expiryDate) > Int64(now) {
+                return true
+            }
+        }
+        return false
+    }
 }

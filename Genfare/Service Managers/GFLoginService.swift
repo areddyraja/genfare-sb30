@@ -95,3 +95,4 @@ protocol LoginServiceDelegate {
     func didLoginNeedWallet(_ sender:Any)
     func didFailLoginWithError(_ error:Any)
 }
+

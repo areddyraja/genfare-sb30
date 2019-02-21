@@ -31,7 +31,8 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         // Do any additional setup after loading the view.
         createViewModelBinding()
         createCallbacks()
-        updateUI(activated: false)
+        viewModel.walletModel = ticket
+        updateUI(activated: viewModel.isActive())
     }
     
     override func viewWillAppear( _ animated:Bool) {
@@ -40,6 +41,9 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         view.backgroundColor = .white
 
+        if viewModel.isActive() {
+            updateBarCode()
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -54,6 +58,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
             }
 
             self.updateBarCode()
+            self.updateUI(activated: true)
             
         }).disposed(by: disposeBag)
     }
@@ -101,6 +106,5 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         qrCode?.size = qrCodeHolder.frame.size
         qrCodeHolder.image = qrCode?.image
         activateBtn.isHidden = true
-        updateUI(activated: true)
     }
 }

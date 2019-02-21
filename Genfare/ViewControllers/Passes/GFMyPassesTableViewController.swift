@@ -118,9 +118,11 @@ class GFMyPassesTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: false)
         //Handle selection
         let ticket = viewModel.model[indexPath.row] as WalletContents
-        GFWalletContentsService.updateExpirationDate(ticketID: ticket.ticketIdentifier!)
-        showBarCodeScreen(ticket: ticket)
-        
+        if ticket.allowInteraction == 1 {
+            showBarCodeScreen(ticket: ticket)
+        }else{
+            print("Can not activate ticket")
+        }
         tableView.reloadData()
     }
 

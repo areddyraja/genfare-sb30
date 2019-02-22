@@ -16,9 +16,12 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     let viewModel = GFBarcodeScreenViewModel()
     let disposeBag = DisposeBag()
     
+    var countdownTimer: Timer!
+    var remainingActiveTime:Int!
     var ticket:WalletContents!
     var baseClass:UIViewController?
 
+    @IBOutlet var countDownLabel: UILabel!
     @IBOutlet weak var passTitleLabel: UILabel!
     @IBOutlet weak var expiresLabel: UILabel!
     
@@ -33,11 +36,12 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         createCallbacks()
         viewModel.walletModel = ticket
         updateUI(activated: viewModel.isActive())
+       
     }
     
     override func viewWillAppear( _ animated:Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false);
+         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         view.backgroundColor = .white
 
@@ -92,6 +96,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         passTitleLabel.text = ticket.descriptation
         if activated {
             activateBtn.isHidden = true
+            
             if let expDate = ticket.expirationDate, ticket.type == Constants.Ticket.PeriodPass {
                 expiresLabel.text = "Expires \(Utilities.convertDate(dateStr: expDate, fromFormat: Constants.Ticket.ExpDateFormat, toFormat: Constants.Ticket.DisplayDateFormat))"
             }
@@ -106,5 +111,50 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         qrCode?.size = qrCodeHolder.frame.size
         qrCodeHolder.image = qrCode?.image
         activateBtn.isHidden = true
+        UIView.transition(with:self.countDownLabel,
+                          duration: 5.0,
+                          options: [.autoreverse,.repeat],
+                          animations: {
+                            self.countDownLabel.transform = CGAffineTransform(translationX: (-1 * (self.view.frame.size.width / 2) + 20), y:0)
+                            self.countDownLabel.transform = CGAffineTransform(translationX: ((self.view.frame.size.width / 2) - 20), y:0)
+                            
+        }, completion: nil)
+
+        startTimer()
+   
+    }
+    func startTimer() {
+        var time = self.ticket.ticketActivationExpiryDate?.intValue
+        let date = NSDate()
+        let timestamp = Int64(date.timeIntervalSince1970)
+        remainingActiveTime = time! - Int(timestamp)
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+       
+    }
+    
+    @objc func updateTime() {
+   countDownLabel.text = "\(timeFormatted(remainingActiveTime))"
+        if remainingActiveTime != 0 {
+            remainingActiveTime -= 1
+        } else {
+            
+            endTimer()
+        }
+    }
+    
+    func endTimer() {
+        countdownTimer.invalidate()
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        let hours: Int = totalSeconds / 3600
+        if (hours > 0){
+            return String(format: "%02lld:%02d:%02d",hours, minutes, seconds)
+        }
+        return String(format: "%02d:%02d", minutes, seconds)
     }
 }

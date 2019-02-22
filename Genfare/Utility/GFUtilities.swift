@@ -105,5 +105,8 @@ class Utilities {
         let newDate = NSDate(timeIntervalSince1970: date)
         return dateFormatter.string(from: newDate as Date)
     }
+   class func getCurrentMillis()->Int64{
+        return  Int64(NSDate().timeIntervalSince1970 * 1000)
+    }
 }
 

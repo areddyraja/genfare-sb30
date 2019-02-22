@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,19 +91,31 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbg-uP-Fb4">
-                                <rect key="frame" x="107" y="491" width="138" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbg-uP-Fb4">
+                                <rect key="frame" x="117.5" y="532" width="140" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="2mf-Vt-TAr"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="3Wn-TN-bXV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="Hda-Ma-BNL"/>
+                                    <constraint firstAttribute="height" constant="35" id="RZX-Ku-Hzh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85481142997741699" green="0.85495561361312866" blue="0.85479110479354858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="L8y-7M-2qT" firstAttribute="bottom" secondItem="dbg-uP-Fb4" secondAttribute="bottom" constant="100" id="k33-cs-wy7"/>
+                            <constraint firstItem="dbg-uP-Fb4" firstAttribute="centerX" secondItem="WkB-fg-gwo" secondAttribute="centerX" id="lax-rW-ulS"/>
+                            <constraint firstItem="L8y-7M-2qT" firstAttribute="bottom" secondItem="dbg-uP-Fb4" secondAttribute="bottom" constant="100" id="y9D-V2-8gS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="L8y-7M-2qT"/>
                     </view>
                     <connections>
                         <outlet property="activateBtn" destination="Wjv-ZN-QNc" id="pHm-oJ-44F"/>
+                        <outlet property="countDownLabel" destination="dbg-uP-Fb4" id="Bit-sh-Ajf"/>
                         <outlet property="expiresLabel" destination="una-U7-QvP" id="LF4-cl-CxC"/>
                         <outlet property="passTitleLabel" destination="kzV-Sc-3T7" id="6Md-Q3-Kyv"/>
                         <outlet property="qrCodeHolder" destination="TjL-F2-jGO" id="vDx-Vj-HnE"/>

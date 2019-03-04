@@ -30,9 +30,37 @@ class GFAccountLandingViewModel {
     func checkWalletStatus() {
         if NetworkManager.Reachability {
             fetchProducts()
+             fireEvent()
         }else{
             isSuccess.value = true
             updateAccountType()
+        }
+    }
+    
+    func currentEvent() -> Event? {
+        let records:Array<Event> = GFDataService.fetchRecords(entity: "Event") as! Array<Event>
+        
+        if records.count > 0 {
+            
+            return records.first
+        }
+        
+        return nil
+    }
+    func fireEvent(){
+        let event:Event? = self.currentEvent()
+        if event != nil{
+            let eventFired = GFWalletEventService(walletID: GFWalletsService.walletID!, ticketid: NSNumber(value: Int(event!.identifier!)!), clickedTime: event!.clickedTime)
+            
+            eventFired.execute { (success,error) in
+                if success {
+                    GFDataService.deleteFiredEventRecord(entity: "Event", clickedTime:  event!.clickedTime!)
+                }
+                else{
+                    print("error")
+                }
+                
+            }
         }
     }
     

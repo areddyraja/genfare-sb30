@@ -55,6 +55,8 @@ class GFBarcodeScreenViewController: GFBaseViewController {
                 GFWalletEventService.updateActivityFor(product: GFFetchProductsService.getProductFor(id: self.ticket.ticketIdentifier!)!,
                                                        wallet: self.ticket,
                                                        activity: "activation")
+                let model : GFAccountLandingViewModel = GFAccountLandingViewModel()
+                model.fireEvent()
             }
 
             self.updateBarCode()

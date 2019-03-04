@@ -80,7 +80,7 @@ class GFPayGoPassTableViewController: UITableViewController {
     
     func showBarcodeScreen() {
         if let controller:GFBarcodeLandingViewController = UIStoryboard(name: "Barcode", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.BarCodeLanding) as? GFBarcodeLandingViewController {
-            //controller.ticket = ticket
+             controller.ticket = self.viewModel.walletmodelpayasyougo
             baseClass!.navigationController?.pushViewController(controller, animated: true)
         }
     }

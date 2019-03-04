@@ -14,10 +14,12 @@ class GFWalletEventService {
     
     var walletID:NSNumber!
     var ticketID:NSNumber!
+    var clickedTime:Any!
     
-    init(walletID:NSNumber,ticketid:NSNumber) {
+    init(walletID:NSNumber,ticketid:NSNumber,clickedTime:Any!) {
         self.walletID = walletID
         self.ticketID = ticketid
+         self.clickedTime = clickedTime
     }
     
     func headers() -> HTTPHeaders {
@@ -28,11 +30,55 @@ class GFWalletEventService {
         return headers
     }
     
-    func parameters() -> [String:String] {
-        return [:]
+    func parameters() -> [String:Any] {
+        let cdate =  Date().toMillis()
+        let parameters = ["chargeDate":cdate!]
+        return parameters
     }
     
     func execute(completionHandler:@escaping (_ success:Bool,_ error:Any?) -> Void) {
+        var arrProductsList = [[String:Any]]()
+        var storedDict = [String:Any]()
+        let cdate =  Date().toMillis()
+        storedDict["chargeDate"] = self.clickedTime
+        arrProductsList.append(storedDict)
+        let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
+        let url1 = "/services/data-api/mobile/wallets/\(self.walletID!)/contents/\(self.ticketID!)/charge?tenant=\(Utilities.tenantId())"
+        let url =  Utilities.apiHost()+url1
+        var request = URLRequest(url: URL.init(string: url)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(Utilities.appCurrentVersion(), forHTTPHeaderField: "app_version")
+        request.setValue("iOS", forHTTPHeaderField: "app_os")
+        request.setValue(Utilities.deviceId(), forHTTPHeaderField: "DeviceId")
+        request.setValue(String(format: "bearer %@", token), forHTTPHeaderField: "Authorization")
+        let ordervalue:[[String:Any]]
+        ordervalue = arrProductsList
+        let values = ordervalue
+        
+        request.httpBody = try! JSONSerialization.data(withJSONObject: values)
+        
+        Alamofire.request(request)
+            .responseJSON { response in
+                // do whatever you want here
+                switch response.result {
+                case .failure(let error):
+                    print(error)
+                    
+                    if let data = response.data, let responseString = String(data: data, encoding: .utf8) {
+                        print(responseString)
+                        completionHandler(false,error.localizedDescription)
+                    }
+                case .success(let JSON):
+                    if let json = JSON as? [String:Any] {
+                    }
+                    completionHandler(true,nil)
+                }
+        }
+    }
+    
+    func execute1(completionHandler:@escaping (_ success:Bool,_ error:Any?) -> Void) {
         
         let endpoint = GFEndpoint.WalletEvent(walletId: walletID, tickedId: ticketID)
         
@@ -101,5 +147,10 @@ class GFWalletEventService {
         }catch{
             print("Can't fetch records")
         }
+    }
+}
+extension Date {
+    func toMillis() -> Int64! {
+        return Int64(self.timeIntervalSince1970 * 1000)
     }
 }

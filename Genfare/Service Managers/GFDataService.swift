@@ -87,7 +87,21 @@ class GFDataService {
             print("Could not Delete. \(error), \(error.userInfo)")
         }
     }
-    
+    static func deleteFiredEventRecord(entity:String,clickedTime: NSNumber) {
+        let context = persistentContainer.viewContext
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let predicate = NSPredicate(format: "clickedTime == %@", clickedTime as CVarArg)
+        do {
+            let records = try context.fetch(deleteFetch) as! [NSManagedObject]
+            for record in records {
+                context.delete(record)
+                
+            }
+        }catch let error as NSError {
+            print("Could not Delete. \(error), \(error.userInfo)")
+        }
+        
+    }
     static func currentAccount() -> Account? {
         let records:Array<Account> = fetchRecords(entity: "Account") as! Array<Account>
         

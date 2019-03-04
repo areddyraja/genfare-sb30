@@ -30,7 +30,7 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
     }
     
     func eventNeedUpdate() -> Bool {
-        return false
+        return true
     }
     
     func isActive() -> Bool {

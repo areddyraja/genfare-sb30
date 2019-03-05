@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 class GFMyPassesViewModel {
     
@@ -47,12 +48,42 @@ class GFMyPassesViewModel {
             
             if success {
                 print("Got Wallet contents successfully")
-                self.model = GFWalletContentsService.getContentsForDisplay()
+                self.model = self.filteredModel()
                 self.isSuccess.value = true
                 //self.fetchWalletContents()
             }else{
                 self.errorMsg.value = error as! String
             }
+        }
+    }
+    func filteredModel() -> Array<WalletContents>{
+        let filteredModel  = GFWalletContentsService.getContentsForDisplay()
+        var expiryFilteredWalletContent:Array<WalletContents> = []
+        if (filteredModel.count > 0){
+            let now = Date().timeIntervalSince1970
+            for i in filteredModel{
+                if let expiryDate = i.ticketActivationExpiryDate {
+                    if Int64(truncating: expiryDate) > 0 && Int64(truncating: expiryDate) > Int64(now){
+                        expiryFilteredWalletContent.append(i)
+                    }
+                }
+            }
+            //  filtere
+        }
+        return filteredModel
+    }
+    private static func removeInvalidContents() {
+        let managedContext = GFDataService.context
+        do {
+            let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == nil")
+            let fetchResults = try managedContext.fetch(fetchRequest)
+            for item in fetchResults{
+                managedContext.delete(item)
+            }
+            GFDataService.saveContext()
+        }catch{
+            print("Update failed")
         }
     }
 }

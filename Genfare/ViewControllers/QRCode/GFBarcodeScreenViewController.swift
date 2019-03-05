@@ -16,9 +16,12 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     let viewModel = GFBarcodeScreenViewModel()
     let disposeBag = DisposeBag()
     
+    var countdownTimer: Timer!
+    var remainingActiveTime:Int!
     var ticket:WalletContents!
     var baseClass:UIViewController?
 
+    @IBOutlet var countDownLabel: UILabel!
     @IBOutlet weak var passTitleLabel: UILabel!
     @IBOutlet weak var expiresLabel: UILabel!
     
@@ -55,6 +58,8 @@ class GFBarcodeScreenViewController: GFBaseViewController {
                 GFWalletEventService.updateActivityFor(product: GFFetchProductsService.getProductFor(id: self.ticket.ticketIdentifier!)!,
                                                        wallet: self.ticket,
                                                        activity: "activation")
+                let model : GFAccountLandingViewModel = GFAccountLandingViewModel()
+                model.fireEvent()
             }
 
             self.updateBarCode()
@@ -106,5 +111,48 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         qrCode?.size = qrCodeHolder.frame.size
         qrCodeHolder.image = qrCode?.image
         activateBtn.isHidden = true
+         startTimer()
+    }
+    
+    func startTimer() {
+        var time = self.ticket.ticketActivationExpiryDate?.intValue
+        let date = NSDate()
+        let timestamp = Int64(date.timeIntervalSince1970)
+        remainingActiveTime = time! - Int(timestamp)
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        UIView.transition(with:self.countDownLabel,
+                          duration: 5.0,
+                          options: [.autoreverse,.repeat],
+                          animations: {
+                            self.countDownLabel.transform = CGAffineTransform(translationX: (-1 * (self.view.frame.size.width / 2) + 20), y:0)
+                            self.countDownLabel.transform = CGAffineTransform(translationX: ((self.view.frame.size.width / 2) - 20), y:0)
+                            
+        }, completion: nil)
+        
+    }
+    
+    @objc func updateTime() {
+        countDownLabel.text = "\(timeFormatted(remainingActiveTime))"
+        if remainingActiveTime != 0 {
+            remainingActiveTime -= 1
+        } else {
+            
+            endTimer()
+        }
+    }
+    func endTimer() {
+        countdownTimer.invalidate()
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        let hours: Int = totalSeconds / 3600
+        if (hours > 0){
+            return String(format: "%02lld:%02d:%02d",hours, minutes, seconds)
+        }
+        return String(format: "%02d:%02d", minutes, seconds)
     }
 }

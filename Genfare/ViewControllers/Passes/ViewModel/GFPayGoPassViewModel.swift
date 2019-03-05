@@ -8,11 +8,13 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 class GFPayGoPassViewModel {
     
     let disposebag = DisposeBag()
     var model:Array<Product> = []
+    var walletmodelpayasyougo:WalletContents?
     
     // Initialise ViewModel's
     //let firstNameViewModel = NameTextViewModel()
@@ -42,12 +44,40 @@ class GFPayGoPassViewModel {
         }
         
         let product = model[index]
-        print(product)
+       walletmodelpayasyougo = insertProductIntoWallet(product: product)
         barCode.value = true
     }
     
     func insertProductIntoWallet(product:Product) -> WalletContents? {
-        return nil
+        let managedContext = GFDataService.context
+        let walletcontent = NSEntityDescription.entity(forEntityName: "WalletContents", in: managedContext)
+        let walletObj:WalletContents = NSManagedObject(entity: walletcontent!, insertInto: managedContext) as! WalletContents
+        let wallet = GFWalletsService.userWallet()
+        
+        walletObj.fare = 0
+        walletObj.ticketGroup = wallet!.accTicketGroupId
+        
+        walletObj.member = wallet!.accMemberId
+        walletObj.purchasedDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
+        // walletObj.agencyId = wallet.agencyIdNum;
+        walletObj.descriptation = product.productDescription
+        walletObj.type=product.ticketTypeId
+        walletObj.ticketIdentifier = product.ticketId!.stringValue
+        walletObj.allowInteraction = 1
+        walletObj.designator = NSNumber.init( value: Int32(product.designator!)!)
+        walletObj.identifier = String(format: "%@", product.ticketId!)//String(format: "%@$%lli", product.ticketId!, Date().toMillis())
+        
+        walletObj.instanceCount = 0;
+        walletObj.status = "active"
+        walletObj.purchasedDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
+        walletObj.activationDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
+        walletObj.generationDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
+        walletObj.ticketEffectiveDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
+        let cdate:Double = Date().timeIntervalSince1970
+        walletObj.ticketActivationExpiryDate = (cdate + (product.barcodeTimer as! Double)) as NSNumber
+        // walletObj.ticketSource=@"local";
+        
+        return walletObj
     }
     
     func fetchProducts() {

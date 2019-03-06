@@ -142,7 +142,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     }
     func endTimer() {
         countdownTimer.invalidate()
-        self.navigationController?.popViewController(animated: true)
+         baseClass!.navigationController?.popViewController(animated: true)
         
     }
     

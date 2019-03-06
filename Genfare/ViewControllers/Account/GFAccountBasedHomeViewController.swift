@@ -135,7 +135,6 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         // Lastly add page menu as subview of base view controller view
         // or use pageMenu controller in you view hierachy as desired
         self.pageControlHolder.addSubview(pageMenu!.view)
-    //    pageMenu!.didMove(toParentViewController: self)
     }
     
 }

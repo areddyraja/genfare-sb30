@@ -27,9 +27,15 @@ class GFMyPassesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if let pagemenu = self.parent as? CAPSPageMenu{
+            print(pagemenu.didTapMenuItemToScroll)
+        }
         viewModel.showProducts()
         viewModel.fetchWalletContents()
+
     }
+    
+    
     
     func createCallbacks (){
         // success

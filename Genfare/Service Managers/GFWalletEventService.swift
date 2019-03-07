@@ -109,7 +109,7 @@ class GFWalletEventService {
             let userObj:Event = NSManagedObject(entity: event!, insertInto: managedContext) as! Event
             let cdate:Double = Date().timeIntervalSince1970
             
-            userObj.clickedTime = cdate as NSNumber
+            userObj.clickedTime = cdate * 1000 as NSNumber
             userObj.fare = wallet.fare
             userObj.identifier = wallet.identifier
             userObj.ticketid = "\(product.ticketId!)"

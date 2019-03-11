@@ -111,7 +111,15 @@ class GFPayGoPassTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         selectedIndex = indexPath.row
-        showCofirmAlert()
+        let balance = Utilities.accountBalance()
+        if balance.intValue <= 0{
+            let alert = UIAlertController(title: "Not Enough Value", message: "You must first Add Value to your Balance before you can activate this ticket", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+             present(alert, animated: true, completion: nil)
+        }
+        else{
+            showCofirmAlert()
+        }
     }
 
     func showCofirmAlert() -> Void {

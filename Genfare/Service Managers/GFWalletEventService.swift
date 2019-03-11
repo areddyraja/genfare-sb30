@@ -15,11 +15,14 @@ class GFWalletEventService {
     var walletID:NSNumber!
     var ticketID:NSNumber!
     var clickedTime:Any!
+    var event:Event!
     
-    init(walletID:NSNumber,ticketid:NSNumber,clickedTime:Any!) {
+    
+    init(walletID:NSNumber,ticketid:NSNumber,clickedTime:Any!,event:Event) {
         self.walletID = walletID
         self.ticketID = ticketid
          self.clickedTime = clickedTime
+        self.event = event
     }
     
     func headers() -> HTTPHeaders {
@@ -40,7 +43,19 @@ class GFWalletEventService {
         var arrProductsList = [[String:Any]]()
         var storedDict = [String:Any]()
         let cdate =  Date().toMillis()
-        storedDict["chargeDate"] = self.clickedTime
+        if(event.type == Constants.Ticket.PeriodPass){
+            storedDict["chargeDate"] = event.clickedTime
+        }else{
+             storedDict["chargeDate"] = event.clickedTime
+            storedDict["ticketIdentifier"] = self.ticketID
+            storedDict["amountCharged"] = event.fare
+            storedDict["amountRemaining"] = Utilities.accountBalance()
+        }
+       
+     //   storedDict["chargedamount"] = event.ch
+        
+            
+    
         arrProductsList.append(storedDict)
         let token:String = KeychainWrapper.standard.string(forKey: Constants.KeyChain.SecretKey)!
         let url1 = "/services/data-api/mobile/wallets/\(self.walletID!)/contents/\(self.ticketID!)/charge?tenant=\(Utilities.tenantId())"
@@ -109,12 +124,17 @@ class GFWalletEventService {
             let userObj:Event = NSManagedObject(entity: event!, insertInto: managedContext) as! Event
             let cdate:Double = Date().timeIntervalSince1970
             
-            userObj.clickedTime = cdate as NSNumber
-            userObj.fare = wallet.fare
+            userObj.clickedTime = cdate * 1000 as NSNumber
+           // userObj.fare = wallet.fare
             userObj.identifier = wallet.identifier
             userObj.ticketid = "\(product.ticketId!)"
             userObj.type = wallet.type
             userObj.ticketActivationExpiryDate = "\(cdate + (product.barcodeTimer as! Double))"
+            
+           // if wallet.type != Constants.Ticket.PeriodPass {
+                userObj.fare = NumberFormatter().number(from: product.price!)!
+                userObj.amountRemaining = Utilities.accountBalance()
+           // }
             
             GFDataService.saveContext()
             print(userObj)

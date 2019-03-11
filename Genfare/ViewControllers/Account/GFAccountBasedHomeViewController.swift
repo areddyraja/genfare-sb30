@@ -21,6 +21,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
     @IBOutlet weak var acctMgtBtn: GFMenuButton!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var walletTitleLabel: UILabel!
+    var myPasses : GFMyPassesTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +36,35 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
     
     override func viewWillAppear( _ animated:Bool) {
         super.viewWillAppear(animated)
+        
         view.backgroundColor = .black
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         viewModel.updateWalletStatus()
+//        let model : GFAccountLandingViewModel = GFAccountLandingViewModel()
+//        model.fireEvent()
+//        let curre
+        
+//        if !(self.pageMenu?.didTapMenuItemToScroll)!{
+//            self.pageMenu?.moveToPage((self.pageMenu?.currentPageIndex)!)
+//        }
+     //  self.callChildViewWillAppear()
         //attachPassList()
+          //self.attachSpinner(value: false)
     }
-    
+    func callChildViewWillAppear(){
+        if let menu = self.pageMenu{
+            if menu.controllerArray.count > 0{
+                for vc in menu.controllerArray{
+                    if vc.isKind(of: GFMyPassesTableViewController.self){
+                        let myPassesVC  = vc as! GFMyPassesTableViewController
+                        myPassesVC.viewWillAppear(true)
+                    }
+                }
+                
+            }
+        }
+    }
     func createViewModelBinding(){
         addFundsBtn.rx.tap.do(onNext:  { [unowned self] in
         }).subscribe(onNext: { [unowned self] in
@@ -106,10 +129,10 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         // (Can be any UIViewController subclass)
         // Make sure the title property of all view controllers is set
         // Example:
-        let myPasses : GFMyPassesTableViewController = (UIStoryboard(name: "Passes", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.MyPassesList) as? GFMyPassesTableViewController)!
-        myPasses.title = "Passes"
-        myPasses.baseClass = self
-        controllerArray.append(myPasses)
+        myPasses = (UIStoryboard(name: "Passes", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.MyPassesList) as? GFMyPassesTableViewController)!
+        myPasses?.title = "Passes"
+        myPasses?.baseClass = self
+        controllerArray.append(myPasses!)
         
         let payPasses : GFPayGoPassTableViewController = (UIStoryboard(name: "Passes", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.PayAsYouGoList) as? GFPayGoPassTableViewController)!
         payPasses.title = "Pay As You Go"
@@ -135,6 +158,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         // Lastly add page menu as subview of base view controller view
         // or use pageMenu controller in you view hierachy as desired
         self.pageControlHolder.addSubview(pageMenu!.view)
+    //   pageMenu!.didMove(toParentViewController: self)
     }
     
 }

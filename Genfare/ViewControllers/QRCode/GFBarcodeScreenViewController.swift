@@ -25,6 +25,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     @IBOutlet weak var passTitleLabel: UILabel!
     @IBOutlet weak var expiresLabel: UILabel!
     
+    @IBOutlet var tokenImg: UIImageView!
     @IBOutlet weak var activateBtn: GFMenuButton!
     @IBOutlet weak var qrCodeHolder: UIImageView!
     
@@ -36,6 +37,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         createCallbacks()
         viewModel.walletModel = ticket
         updateUI(activated: viewModel.isActive())
+        self.tokenImg.alpha = 0.5
     }
     
     override func viewWillAppear( _ animated:Bool) {
@@ -51,21 +53,31 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     }
 
     func createViewModelBinding(){
-        activateBtn.rx.tap.do(onNext:  { [unowned self] in
-        }).subscribe(onNext: { [unowned self] in
-            GFWalletEventService.activateTicket(ticket: self.ticket)
-            if self.viewModel.eventNeedUpdate() {
-                GFWalletEventService.updateActivityFor(product: GFFetchProductsService.getProductFor(id: self.ticket.ticketIdentifier!)!,
-                                                       wallet: self.ticket,
-                                                       activity: "activation")
-                let model : GFAccountLandingViewModel = GFAccountLandingViewModel()
-                model.fireEvent()
-            }
-
-            self.updateBarCode()
-            self.updateUI(activated: true)
-            
-        }).disposed(by: disposeBag)
+        if self.ticket.type == Constants.Ticket.PeriodPass{
+            activateBtn.rx.tap.do(onNext:  { [unowned self] in
+            }).subscribe(onNext: { [unowned self] in
+                
+                self.viewBinding()
+                
+            }).disposed(by: disposeBag)
+        }else{
+            viewBinding()
+        }
+       
+    }
+    
+    func viewBinding(){
+        GFWalletEventService.activateTicket(ticket: self.ticket)
+        if self.viewModel.eventNeedUpdate() {
+            GFWalletEventService.updateActivityFor(product: GFFetchProductsService.getProductFor(id: self.ticket.ticketIdentifier!)!,
+                                                   wallet: self.ticket,
+                                                   activity: "activation")
+            let model : GFAccountLandingViewModel = GFAccountLandingViewModel()
+            model.fireEvent()
+        }
+        
+        self.updateBarCode()
+        self.updateUI(activated: true)
     }
     
     func createCallbacks (){
@@ -128,6 +140,16 @@ class GFBarcodeScreenViewController: GFBaseViewController {
                             self.countDownLabel.transform = CGAffineTransform(translationX: ((self.view.frame.size.width / 2) - 20), y:0)
                             
         }, completion: nil)
+        UIView.transition(with:self.tokenImg,
+                          duration: 5.0,
+                          options: [.autoreverse,.repeat],
+                          animations: {
+                            self.tokenImg.transform = CGAffineTransform(translationX: (-1 * (self.view.frame.size.width / 2) + 20), y:0)
+                            self.tokenImg.transform = CGAffineTransform(translationX: ((self.view.frame.size.width / 2) - 20), y:0)
+                            
+        }, completion: nil)
+        self.tokenImg.isHidden = false
+
         
     }
     
@@ -142,7 +164,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     }
     func endTimer() {
         countdownTimer.invalidate()
-        self.navigationController?.popViewController(animated: true)
+         baseClass!.navigationController?.popViewController(animated: true)
         
     }
     

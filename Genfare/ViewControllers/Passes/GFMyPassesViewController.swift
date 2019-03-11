@@ -24,6 +24,7 @@ class GFMyPassesViewController: GFBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.backgroundColor = UIColor.formLabelText
+     
     }
 
     override func didReceiveMemoryWarning() {

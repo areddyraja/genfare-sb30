@@ -51,21 +51,31 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     }
 
     func createViewModelBinding(){
-        activateBtn.rx.tap.do(onNext:  { [unowned self] in
-        }).subscribe(onNext: { [unowned self] in
-            GFWalletEventService.activateTicket(ticket: self.ticket)
-            if self.viewModel.eventNeedUpdate() {
-                GFWalletEventService.updateActivityFor(product: GFFetchProductsService.getProductFor(id: self.ticket.ticketIdentifier!)!,
-                                                       wallet: self.ticket,
-                                                       activity: "activation")
-                let model : GFAccountLandingViewModel = GFAccountLandingViewModel()
-                model.fireEvent()
-            }
-
-            self.updateBarCode()
-            self.updateUI(activated: true)
-            
-        }).disposed(by: disposeBag)
+        if self.ticket.type == Constants.Ticket.PeriodPass{
+            activateBtn.rx.tap.do(onNext:  { [unowned self] in
+            }).subscribe(onNext: { [unowned self] in
+                
+                self.viewBinding()
+                
+            }).disposed(by: disposeBag)
+        }else{
+            viewBinding()
+        }
+       
+    }
+    
+    func viewBinding(){
+        GFWalletEventService.activateTicket(ticket: self.ticket)
+        if self.viewModel.eventNeedUpdate() {
+            GFWalletEventService.updateActivityFor(product: GFFetchProductsService.getProductFor(id: self.ticket.ticketIdentifier!)!,
+                                                   wallet: self.ticket,
+                                                   activity: "activation")
+            let model : GFAccountLandingViewModel = GFAccountLandingViewModel()
+            model.fireEvent()
+        }
+        
+        self.updateBarCode()
+        self.updateUI(activated: true)
     }
     
     func createCallbacks (){

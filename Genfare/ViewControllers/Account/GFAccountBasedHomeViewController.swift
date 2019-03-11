@@ -41,12 +41,14 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         viewModel.updateWalletStatus()
+//        let model : GFAccountLandingViewModel = GFAccountLandingViewModel()
+//        model.fireEvent()
 //        let curre
         
 //        if !(self.pageMenu?.didTapMenuItemToScroll)!{
 //            self.pageMenu?.moveToPage((self.pageMenu?.currentPageIndex)!)
 //        }
-       self.callChildViewWillAppear()
+     //  self.callChildViewWillAppear()
         //attachPassList()
           //self.attachSpinner(value: false)
     }

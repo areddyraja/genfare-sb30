@@ -72,7 +72,7 @@ class GFMyPassesViewModel {
             }
             //  filtere
         }
-        self.isLoading.value = false
+       // self.isLoading.value = false
         return expiryFilteredWalletContent
         
     }

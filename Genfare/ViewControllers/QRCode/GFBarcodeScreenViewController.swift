@@ -25,6 +25,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     @IBOutlet weak var passTitleLabel: UILabel!
     @IBOutlet weak var expiresLabel: UILabel!
     
+    @IBOutlet var tokenImg: UIImageView!
     @IBOutlet weak var activateBtn: GFMenuButton!
     @IBOutlet weak var qrCodeHolder: UIImageView!
     
@@ -36,6 +37,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         createCallbacks()
         viewModel.walletModel = ticket
         updateUI(activated: viewModel.isActive())
+        self.tokenImg.alpha = 0.5
     }
     
     override func viewWillAppear( _ animated:Bool) {
@@ -138,6 +140,16 @@ class GFBarcodeScreenViewController: GFBaseViewController {
                             self.countDownLabel.transform = CGAffineTransform(translationX: ((self.view.frame.size.width / 2) - 20), y:0)
                             
         }, completion: nil)
+        UIView.transition(with:self.tokenImg,
+                          duration: 5.0,
+                          options: [.autoreverse,.repeat],
+                          animations: {
+                            self.tokenImg.transform = CGAffineTransform(translationX: (-1 * (self.view.frame.size.width / 2) + 20), y:0)
+                            self.tokenImg.transform = CGAffineTransform(translationX: ((self.view.frame.size.width / 2) - 20), y:0)
+                            
+        }, completion: nil)
+        self.tokenImg.isHidden = false
+
         
     }
     

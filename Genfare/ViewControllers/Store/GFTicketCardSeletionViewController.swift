@@ -12,12 +12,24 @@ class GFTicketCardSeletionViewController: UIViewController {
     
     var productsCartArray = [[String:Any]]()
 
+    @IBOutlet var mailLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         OrderProducts()
         // Do any additional setup after loading the view.
         if self.productsCartArray.count > 0{
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateMailLabel()
+    }
+    func updateMailLabel() {
+        let userAccount:Account? = GFAccountManager.currentAccount()
+        guard userAccount?.emailaddress != nil else {
+            return
+        }
+        mailLabel.text = userAccount?.emailaddress
     }
     
     func OrderProducts() {
@@ -42,5 +54,7 @@ class GFTicketCardSeletionViewController: UIViewController {
         navController?.weburl = url
        navigationController?.pushViewController(navController!, animated: true)
         
+    }
+    @IBAction func backToCartClicked(_ sender: Any) {
     }
 }

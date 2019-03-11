@@ -47,6 +47,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         view.backgroundColor = .white
 
         if viewModel.isActive() {
+            countdownTimer.invalidate()
             updateBarCode()
         }
         // Do any additional setup after loading the view.

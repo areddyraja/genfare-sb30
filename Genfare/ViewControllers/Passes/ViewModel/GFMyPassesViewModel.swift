@@ -67,6 +67,8 @@ class GFMyPassesViewModel {
                     if  Int64(truncating: expiryDate) > Int64(now) || (i.type == Constants.Ticket.PeriodPass) {
                         expiryFilteredWalletContent.append(i)
                     }
+                  
+                    
 
                 }
             }

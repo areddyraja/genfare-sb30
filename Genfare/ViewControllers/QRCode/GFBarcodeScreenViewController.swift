@@ -38,16 +38,26 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         viewModel.walletModel = ticket
         updateUI(activated: viewModel.isActive())
         self.tokenImg.alpha = 0.5
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
     }
-    
+    @objc func appMovedToForeground() {
+        if viewModel.isActive() {
+            countdownTimer.invalidate()
+            updateBarCode()
+        }
+    }
     override func viewWillAppear( _ animated:Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         view.backgroundColor = .white
 
-        if viewModel.isActive() {
+       if viewModel.isActive() {
+        
+        if(countdownTimer != nil){
             countdownTimer.invalidate()
+        }
             updateBarCode()
         }
         // Do any additional setup after loading the view.
@@ -57,7 +67,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         if self.ticket.type == Constants.Ticket.PeriodPass{
             activateBtn.rx.tap.do(onNext:  { [unowned self] in
             }).subscribe(onNext: { [unowned self] in
-                
+                GFWalletEventService.activateTicket(ticket: self.ticket)
                 self.viewBinding()
                 
             }).disposed(by: disposeBag)
@@ -68,7 +78,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     }
     
     func viewBinding(){
-        GFWalletEventService.activateTicket(ticket: self.ticket)
+        
         if self.viewModel.eventNeedUpdate() {
             GFWalletEventService.updateActivityFor(product: GFFetchProductsService.getProductFor(id: self.ticket.ticketIdentifier!)!,
                                                    wallet: self.ticket,

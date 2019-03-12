@@ -92,6 +92,10 @@ class Utilities {
     }
 
     class func convertDate(dateStr:String,fromFormat:String, toFormat:String) -> String {
+        guard dateStr.count > 0 else {
+            return ""
+        }
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = fromFormat
         let date = dateFormatter.date(from: dateStr)

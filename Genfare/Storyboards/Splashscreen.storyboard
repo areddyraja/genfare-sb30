@@ -12,18 +12,19 @@
         <!--Launch View Controller-->
         <scene sceneID="p37-Ye-IgN">
             <objects>
-                <viewController id="j1X-tY-V6C" customClass="GFLaunchViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j1X-tY-V6C" customClass="GFLaunchViewController" customModule="GenfareTests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pgz-oE-SSb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Splash Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhk-wm-Z2h">
-                                <rect key="frame" x="80" y="312" width="215" height="42"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="0dh-lp-fk3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="IgT-T6-TQT">
+                                <rect key="frame" x="169" y="244" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="o9l-95-LC6"/>
@@ -34,4 +35,7 @@
             <point key="canvasLocation" x="-764" y="79"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SplashScreen" width="375" height="812"/>
+    </resources>
 </document>

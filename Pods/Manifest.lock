@@ -14,6 +14,7 @@ PODS:
     - Alamofire (~> 4.0)
     - KeychainAccess (~> 3.1)
     - RxSwift (~> 4.0)
+  - Nimble (8.0.0)
   - OHHTTPStubs (6.1.0):
     - OHHTTPStubs/Default (= 6.1.0)
   - OHHTTPStubs/Core (6.1.0)
@@ -30,6 +31,7 @@ PODS:
   - OHHTTPStubs/Swift (6.1.0):
     - OHHTTPStubs/Default
   - QRCode (2.0)
+  - Quick (2.0.0)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
@@ -44,9 +46,11 @@ DEPENDENCIES:
   - Decodable
   - GoogleMaps
   - NetworkStack
+  - Nimble
   - OHHTTPStubs
   - OHHTTPStubs/Swift
   - QRCode
+  - Quick
   - RxCocoa
   - RxSwift
   - SideMenu
@@ -59,8 +63,10 @@ SPEC REPOS:
     - GoogleMaps
     - KeychainAccess
     - NetworkStack
+    - Nimble
     - OHHTTPStubs
     - QRCode
+    - Quick
     - RxAtomic
     - RxCocoa
     - RxSwift
@@ -74,14 +80,16 @@ SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   NetworkStack: b3b64b19fb27bbe323a7f1b1ca18325df4fc4e2a
+  Nimble: a0e6f95b4b91a4f66b6da3512b6bebc07c9cbf49
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: d9e1c654298dfa9dc7638cf3e128606b2b5f2b1b
+PODFILE CHECKSUM: d53c193f9c55dfb2d165157e634ffe1a68bd7e1e
 
 COCOAPODS: 1.5.3

@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import Alamofire_SwiftyJSON
 
 class GFSampleViewController: GFBaseViewController {
 

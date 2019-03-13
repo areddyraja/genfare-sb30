@@ -20,6 +20,8 @@ target 'Genfare' do
     inherit! :search_paths
     pod 'OHHTTPStubs'
     pod 'OHHTTPStubs/Swift'
+    pod 'Quick'
+    pod 'Nimble'
   end
 
 end

@@ -1,6 +1,0 @@
-framework module Pods_BCTStaging {
-  umbrella header "Pods-BCTStaging-umbrella.h"
-
-  export *
-  module * { export * }
-}

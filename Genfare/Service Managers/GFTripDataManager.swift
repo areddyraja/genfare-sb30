@@ -201,34 +201,6 @@ class TripDataManager {
         return urlRequest
     }
     
-    static func getStopsInBetween() {
-        let stopsEndPoint:String = "https://otp.genfaremobile.com/otp/routers/default/index/stops"
-
-        Alamofire.request(stopsEndPoint, method:.get).responseSwiftyJSON { dataResponse in
-            
-            guard dataResponse.error == nil else {
-                //Got an error in getting the data, need to handle it
-                print("Error connecting to service")
-                return
-            }
-            
-            print(dataResponse.value?.count as Any)
-            
-            guard (dataResponse.value?.count)! > 0 else {
-                stationsList = []
-                return
-            }
-            
-            stationsList = []
-
-            for object in dataResponse.value! {
-                //print(object)
-                //stationsList?.append(GFStation(attributes: object.1.dictionary))
-                appendStation(station: object.1.dictionary as AnyObject)
-            }
-        }
-    }
-    
     static func getRecentTripString(route:GFRoute) -> String {
         //Trip will be saved in string like 40.001654|-83.019736|40.10392484|-83.23553453|BUS,WALK|Ohio State House|Bus 2L, Bus 1
         var busString:String = ""

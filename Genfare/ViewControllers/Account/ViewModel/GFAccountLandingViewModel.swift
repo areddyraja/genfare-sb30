@@ -41,8 +41,11 @@ class GFAccountLandingViewModel {
         let records:Array<Event> = GFDataService.fetchRecords(entity: "Event") as! Array<Event>
         
         if records.count > 0 {
+            for i in records{
+                return i
+            }
             
-            return records.first
+            //return records.first
         }
         
         return nil
@@ -50,7 +53,7 @@ class GFAccountLandingViewModel {
     func fireEvent(){
         let event:Event? = self.currentEvent()
         if event != nil{
-            let eventFired = GFWalletEventService(walletID: GFWalletsService.walletID!, ticketid: NSNumber(value: Int(event!.identifier!)!), clickedTime: event!.clickedTime)
+            let eventFired = GFWalletEventService(walletID: GFWalletsService.walletID!, ticketid: NSNumber(value: Int(event!.identifier!)!), clickedTime: event!.clickedTime, event: event!)
             
             eventFired.execute { (success,error) in
                 if success {

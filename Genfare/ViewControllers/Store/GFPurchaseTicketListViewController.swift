@@ -35,6 +35,18 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateMailLabel()
+    }
+    func updateMailLabel() {
+    let userAccount:Account? = GFAccountManager.currentAccount()
+        guard userAccount?.emailaddress != nil else {
+            return
+        }
+        MailLabel.text = String(format: "Welcome %@", (userAccount?.emailaddress)!)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

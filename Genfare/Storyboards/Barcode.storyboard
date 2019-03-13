@@ -98,6 +98,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="token" translatesAutoresizingMaskIntoConstraints="NO" id="Kra-TP-6bp">
+                                <rect key="frame" x="107" y="491" width="138" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.85481142997741699" green="0.85495561361312866" blue="0.85479110479354858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="L8y-7M-2qT"/>
@@ -108,6 +112,7 @@
                         <outlet property="expiresLabel" destination="una-U7-QvP" id="LF4-cl-CxC"/>
                         <outlet property="passTitleLabel" destination="kzV-Sc-3T7" id="6Md-Q3-Kyv"/>
                         <outlet property="qrCodeHolder" destination="TjL-F2-jGO" id="vDx-Vj-HnE"/>
+                        <outlet property="tokenImg" destination="Kra-TP-6bp" id="hs9-4g-hUF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJr-kp-3Vh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,5 +252,6 @@
     </scenes>
     <resources>
         <image name="BusIcon" width="20" height="20"/>
+        <image name="token" width="523" height="110"/>
     </resources>
 </document>

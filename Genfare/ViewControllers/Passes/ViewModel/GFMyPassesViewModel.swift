@@ -56,22 +56,32 @@ class GFMyPassesViewModel {
             }
         }
     }
+    
     func filteredModel() -> Array<WalletContents>{
         let filteredModel  = GFWalletContentsService.getContentsForDisplay()
         var expiryFilteredWalletContent:Array<WalletContents> = []
+             expiryFilteredWalletContent.removeAll()
         if (filteredModel.count > 0){
             let now = Date().timeIntervalSince1970
             for i in filteredModel{
                 if let expiryDate = i.ticketActivationExpiryDate {
-                    if Int64(truncating: expiryDate) > 0 && Int64(truncating: expiryDate) > Int64(now){
+                    if  Int64(truncating: expiryDate) > Int64(now) || (i.type == Constants.Ticket.PeriodPass) {
                         expiryFilteredWalletContent.append(i)
                     }
+                  
+                    
+
                 }
             }
             //  filtere
         }
-        return filteredModel
+        expiryFilteredWalletContent = expiryFilteredWalletContent.sorted(by: { $0.activationDate!.intValue > $1.activationDate!.intValue } )
+        
+        // self.isLoading.value = false
+        return expiryFilteredWalletContent
+        
     }
+    
     private static func removeInvalidContents() {
         let managedContext = GFDataService.context
         do {

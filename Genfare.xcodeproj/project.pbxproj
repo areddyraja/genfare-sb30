@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188DA9B0659C4F325C59C88A /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68944A2D08C0253DC7626194 /* Pods_Genfare.framework */; };
 		2712E7F121DF862800FF19CA /* GFUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712E7F021DF862800FF19CA /* GFUtilities.swift */; };
 		272D9D66220D59CC00888BF3 /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = 272D9D65220D59CC00888BF3 /* public_key.der */; };
 		272D9DA3220D97B400888BF3 /* GFUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712E7F021DF862800FF19CA /* GFUtilities.swift */; };
@@ -543,7 +544,6 @@
 		27FDDA082237DD4B0010467E /* GFPassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809718F213FFCD100B4445A /* GFPassListViewController.swift */; };
 		27FDDA092237DD560010467E /* GFCustomTableViewCellShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A0048212EA9BE0027D8D4 /* GFCustomTableViewCellShadowView.swift */; };
 		27FDDA0A2237DD5C0010467E /* GFRouteLegsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6BFD32148DA0000E2065F /* GFRouteLegsScrollView.swift */; };
-		414EF68A978E1800338ECFB6 /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F31C3D0ECA7133DDED614D /* Pods_Genfare.framework */; };
 		4809717D2137D23000B4445A /* GFLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809717C2137D23000B4445A /* GFLocation.swift */; };
 		4809717F2137DBF600B4445A /* GFStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4809717E2137DBF600B4445A /* GFStation.swift */; };
 		480971812137DFD900B4445A /* GFSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480971802137DFD900B4445A /* GFSampleViewController.swift */; };
@@ -669,8 +669,7 @@
 		4A4CF16621FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */; };
 		4A4CF16721FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */; };
 		4A4CF16821FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */; };
-		54DD3FE3F38F5EE2F8938E97 /* Pods_GenfareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA461D15E0EBBE0B7252F94 /* Pods_GenfareTests.framework */; };
-		5E9A173730009A33DF73084E /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F31C3D0ECA7133DDED614D /* Pods_Genfare.framework */; };
+		566EA37E5E38785EB4752E4D /* Pods_GenfareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0672E790414451CA717C0C /* Pods_GenfareTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -684,7 +683,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		163B892F27A3A8CA2DEC537C /* Pods-Genfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.debug.xcconfig"; sourceTree = "<group>"; };
+		21EDDD6056593B04C69332AB /* Pods-GenfareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenfareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2493D38CB84561D2A813D7B4 /* Pods-GenfareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenfareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests.release.xcconfig"; sourceTree = "<group>"; };
 		2712E7F021DF862800FF19CA /* GFUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUtilities.swift; sourceTree = "<group>"; };
 		272D9D65220D59CC00888BF3 /* public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key.der; sourceTree = "<group>"; };
 		272D9D9D220D60BF00888BF3 /* GenfareTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GenfareTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -806,6 +806,7 @@
 		27FA9A4922142FE400F926AC /* BCTStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCTStaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FA9A4A22142FE500F926AC /* BCTStaging.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = BCTStaging.plist; path = "/Users/vishnu/Documents/Projects/M2 Swift/master/BCTStaging.plist"; sourceTree = "<absolute>"; };
 		27FDD9D92237D3270010467E /* TestLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewModel.swift; sourceTree = "<group>"; };
+		3B0672E790414451CA717C0C /* Pods_GenfareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenfareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4809717C2137D23000B4445A /* GFLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFLocation.swift; sourceTree = "<group>"; };
 		4809717E2137DBF600B4445A /* GFStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFStation.swift; sourceTree = "<group>"; };
 		480971802137DFD900B4445A /* GFSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSampleViewController.swift; sourceTree = "<group>"; };
@@ -879,11 +880,9 @@
 		4A4CF15D21FEF701007BB42C /* GFEncryptionKeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEncryptionKeysService.swift; sourceTree = "<group>"; };
 		4A4CF16121FF0F0F007BB42C /* GFConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFConfigService.swift; sourceTree = "<group>"; };
 		4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountBalanceService.swift; sourceTree = "<group>"; };
-		61F31C3D0ECA7133DDED614D /* Pods_Genfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Genfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACF89C155A7234D29B252BB6 /* Pods-GenfareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenfareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests.release.xcconfig"; sourceTree = "<group>"; };
-		BBA461D15E0EBBE0B7252F94 /* Pods_GenfareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenfareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C66EE88DD46909DE2B3C892F /* Pods-GenfareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenfareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EF24A24F13E4BC79884C038E /* Pods-Genfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.release.xcconfig"; sourceTree = "<group>"; };
+		68944A2D08C0253DC7626194 /* Pods_Genfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Genfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E3A85C39F6D36F7B36E89BA /* Pods-Genfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.release.xcconfig"; sourceTree = "<group>"; };
+		D4421F53EE55AC6EFD5059D2 /* Pods-Genfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -905,8 +904,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				414EF68A978E1800338ECFB6 /* Pods_Genfare.framework in Frameworks */,
-				5E9A173730009A33DF73084E /* Pods_Genfare.framework in Frameworks */,
+				188DA9B0659C4F325C59C88A /* Pods_Genfare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,22 +912,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54DD3FE3F38F5EE2F8938E97 /* Pods_GenfareTests.framework in Frameworks */,
+				566EA37E5E38785EB4752E4D /* Pods_GenfareTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1604A4C4649CB9F6308E64B8 /* Pods */ = {
+		070365B144241FBDED028FE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C66EE88DD46909DE2B3C892F /* Pods-GenfareTests.debug.xcconfig */,
-				ACF89C155A7234D29B252BB6 /* Pods-GenfareTests.release.xcconfig */,
-				163B892F27A3A8CA2DEC537C /* Pods-Genfare.debug.xcconfig */,
-				EF24A24F13E4BC79884C038E /* Pods-Genfare.release.xcconfig */,
+				68944A2D08C0253DC7626194 /* Pods_Genfare.framework */,
+				3B0672E790414451CA717C0C /* Pods_GenfareTests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2712E7EF21DF850100FF19CA /* Utility */ = {
@@ -1205,6 +1201,17 @@
 			path = QRCode;
 			sourceTree = "<group>";
 		};
+		3C3DC7ADC7D721999F8A05CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4421F53EE55AC6EFD5059D2 /* Pods-Genfare.debug.xcconfig */,
+				8E3A85C39F6D36F7B36E89BA /* Pods-Genfare.release.xcconfig */,
+				21EDDD6056593B04C69332AB /* Pods-GenfareTests.debug.xcconfig */,
+				2493D38CB84561D2A813D7B4 /* Pods-GenfareTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4809718C213FFC8400B4445A /* Passes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1339,8 +1346,8 @@
 				4884E6C02122A85D003A1289 /* Genfare */,
 				4884E6D82122A85F003A1289 /* GenfareTests */,
 				4884E6BF2122A85D003A1289 /* Products */,
-				1604A4C4649CB9F6308E64B8 /* Pods */,
-				FEEB3CAD9ACB06FCB6EAED73 /* Frameworks */,
+				3C3DC7ADC7D721999F8A05CD /* Pods */,
+				070365B144241FBDED028FE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1406,15 +1413,6 @@
 			path = Encription;
 			sourceTree = "<group>";
 		};
-		FEEB3CAD9ACB06FCB6EAED73 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				61F31C3D0ECA7133DDED614D /* Pods_Genfare.framework */,
-				BBA461D15E0EBBE0B7252F94 /* Pods_GenfareTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1456,12 +1454,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4884E6DE2122A85F003A1289 /* Build configuration list for PBXNativeTarget "Genfare" */;
 			buildPhases = (
-				60463A11FA3C3D73F608B77B /* [CP] Check Pods Manifest.lock */,
+				F50C21348D4BD41DDD267CF4 /* [CP] Check Pods Manifest.lock */,
 				4884E6BC2122A85D003A1289 /* Resources */,
-				770A93DB2C32B90FEE05BE8B /* [CP] Embed Pods Frameworks */,
 				4884E6BA2122A85D003A1289 /* Sources */,
 				4884E6BB2122A85D003A1289 /* Frameworks */,
-				670BFCE9868E7FAFA966A9BD /* [CP] Copy Pods Resources */,
+				915773023A660BD6191E0A3B /* [CP] Embed Pods Frameworks */,
+				0EA2FC613843E78A83793589 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1476,11 +1474,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4884E6E12122A85F003A1289 /* Build configuration list for PBXNativeTarget "GenfareTests" */;
 			buildPhases = (
-				375F7E116211DFF4156509DB /* [CP] Check Pods Manifest.lock */,
+				3832CA95C9B42DFD60266137 /* [CP] Check Pods Manifest.lock */,
 				4884E6D32122A85F003A1289 /* Resources */,
 				4884E6D12122A85F003A1289 /* Sources */,
 				4884E6D22122A85F003A1289 /* Frameworks */,
-				FC0F4FA6E4F89FA352119FDD /* [CP] Embed Pods Frameworks */,
+				ADBF3DD162E5631D875ECD9B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1627,51 +1625,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		375F7E116211DFF4156509DB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GenfareTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		60463A11FA3C3D73F608B77B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Genfare-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		670BFCE9868E7FAFA966A9BD /* [CP] Copy Pods Resources */ = {
+		0EA2FC613843E78A83793589 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1693,7 +1647,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		770A93DB2C32B90FEE05BE8B /* [CP] Embed Pods Frameworks */ = {
+		3832CA95C9B42DFD60266137 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GenfareTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		915773023A660BD6191E0A3B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1735,7 +1711,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FC0F4FA6E4F89FA352119FDD /* [CP] Embed Pods Frameworks */ = {
+		ADBF3DD162E5631D875ECD9B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1744,21 +1720,39 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F50C21348D4BD41DDD267CF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Genfare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2640,7 +2634,7 @@
 		};
 		4884E6DF2122A85F003A1289 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 163B892F27A3A8CA2DEC537C /* Pods-Genfare.debug.xcconfig */;
+			baseConfigurationReference = D4421F53EE55AC6EFD5059D2 /* Pods-Genfare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2667,7 +2661,7 @@
 		};
 		4884E6E02122A85F003A1289 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF24A24F13E4BC79884C038E /* Pods-Genfare.release.xcconfig */;
+			baseConfigurationReference = 8E3A85C39F6D36F7B36E89BA /* Pods-Genfare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2693,7 +2687,7 @@
 		};
 		4884E6E22122A85F003A1289 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C66EE88DD46909DE2B3C892F /* Pods-GenfareTests.debug.xcconfig */;
+			baseConfigurationReference = 21EDDD6056593B04C69332AB /* Pods-GenfareTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2718,7 +2712,7 @@
 		};
 		4884E6E32122A85F003A1289 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACF89C155A7234D29B252BB6 /* Pods-GenfareTests.release.xcconfig */;
+			baseConfigurationReference = 2493D38CB84561D2A813D7B4 /* Pods-GenfareTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

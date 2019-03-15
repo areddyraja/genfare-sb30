@@ -29,6 +29,7 @@ class LoginViewModel {
     let showCardBased: Variable<Bool> = Variable(false)
     let errorMsg : Variable<String> = Variable("")
     let logoutUser : Variable<Bool> = Variable(false)
+    var filtered:Array<Any> = []
     
     var walletJson:[String:Any]?
     
@@ -109,6 +110,10 @@ class LoginViewModel {
                 assignWallet()
                 return
             }
+            if((item["deviceUUID"] as? String) == nil){
+                filtered.append(item)
+                
+            }
             
             if let acctType = item["accountType"] as? String, acctType == "Card-Based" {
                 if (item["deviceUUID"] as? String) != nil {
@@ -121,8 +126,13 @@ class LoginViewModel {
                     return
                 }
             }
+            
         }
-        showWalletList.value = list
+        if (filtered.count) == 0{
+            walletNeeded.value = true
+            return
+        }
+        showWalletList.value = filtered
     }
     
     func walletRetrieved(value:Bool) {

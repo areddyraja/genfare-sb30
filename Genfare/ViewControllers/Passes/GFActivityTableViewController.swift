@@ -83,9 +83,12 @@ class GFActivityTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PAYGOCELL", for: indexPath) as! PayAsYouGoCell
         
+        
         if let product:WalletActivity = viewModel.model[indexPath.row] as WalletActivity {
-            cell.titleLabel.text = product.event
-            cell.subTitleLabel.text = "\(product.activityTypeId)"
+            let prod = GFFetchProductsService.getProductFor(id: (product.ticketId?.stringValue)!)
+            cell.titleLabel.text = String.init(format: "%@ $ %@", product.event!,product.amountCharged!)
+            cell.subTitleLabel.text =  prod!.productDescription!
+            cell.dateLabel.text = Utilities.formattedDate(date: Double(((product.date?.intValue)!)/1000))
         }
         
         return cell

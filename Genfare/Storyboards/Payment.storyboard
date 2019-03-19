@@ -12,7 +12,7 @@
         <!--Purchase Ticket List View Controller-->
         <scene sceneID="h6O-EV-kdg">
             <objects>
-                <viewController storyboardIdentifier="GFPurchaseTicketListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ma1-eF-UvG" customClass="GFPurchaseTicketListViewController" customModule="GenfareTests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFPurchaseTicketListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ma1-eF-UvG" customClass="GFPurchaseTicketListViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nKz-0j-F4W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
                                 <rect key="frame" x="0.0" y="135.5" width="375" height="481.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PurchaseTicketTableViewCell" rowHeight="140" id="XkJ-wz-oBx" customClass="PurchaseTicketTableViewCell" customModule="GenfareTests" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PurchaseTicketTableViewCell" rowHeight="140" id="XkJ-wz-oBx" customClass="PurchaseTicketTableViewCell" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XkJ-wz-oBx" id="gzS-aw-tvC">
@@ -134,7 +134,7 @@
                                                     <color key="textColor" red="0.87058823529999996" green="0.2274509804" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLA-2e-Ytp" customClass="GFMenuButton" customModule="GenfareTests" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLA-2e-Ytp" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                                     <rect key="frame" x="325" y="40" width="35" height="35"/>
                                                     <color key="backgroundColor" red="0.92549019610000005" green="0.66274509800000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -153,7 +153,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wK-ES-n7I" customClass="GFMenuButton" customModule="GenfareTests" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wK-ES-n7I" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                                     <rect key="frame" x="245" y="40" width="35" height="35"/>
                                                     <color key="backgroundColor" red="0.92549019610000005" green="0.66274509800000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -213,7 +213,7 @@
                                     <outlet property="delegate" destination="ma1-eF-UvG" id="Lpl-7k-EFR"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sI8-P3-G8W" customClass="GFMenuButton" customModule="GenfareTests" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sI8-P3-G8W" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="10" y="622" width="355" height="40"/>
                                 <color key="backgroundColor" red="0.37254901959999998" green="0.71764705880000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -320,7 +320,7 @@
         <!--Ticket Details View Controller-->
         <scene sceneID="XOY-l0-lz2">
             <objects>
-                <viewController storyboardIdentifier="GFTicketDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H2l-E1-lAj" customClass="GFTicketDetailsViewController" customModule="GenfareTests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFTicketDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H2l-E1-lAj" customClass="GFTicketDetailsViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X6s-bq-s9E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -345,7 +345,7 @@
                                     <action selector="onClickOfAddMoreProducts:" destination="H2l-E1-lAj" eventType="touchUpInside" id="In4-ch-tRL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSr-7l-wI3" customClass="GFMenuButton" customModule="GenfareTests" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSr-7l-wI3" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="20" y="527" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.37254901959999998" green="0.71764705880000002" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -478,7 +478,7 @@
         <!--Ticket Card Seletion View Controller-->
         <scene sceneID="Fx6-7u-dKc">
             <objects>
-                <viewController storyboardIdentifier="GFTicketCardSeletionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UvX-oO-RE1" customClass="GFTicketCardSeletionViewController" customModule="GenfareTests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFTicketCardSeletionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UvX-oO-RE1" customClass="GFTicketCardSeletionViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TX7-DA-zYH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -726,6 +726,70 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="244" id="4kW-jt-Qbm"/>
                                                         </constraints>
+                                                        <prototypes>
+                                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gpY-fI-Op5" customClass="SavedCardsListTableViewCell" customModule="iRide" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gpY-fI-Op5" id="K7s-3Z-FU0">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alt-XO-cEa">
+                                                                            <rect key="frame" x="10" y="5" width="313" height="34"/>
+                                                                            <subviews>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VIK-Pm-FGd">
+                                                                                    <rect key="frame" x="100" y="5" width="48" height="24"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="48" id="0Rg-SK-Bmw"/>
+                                                                                    </constraints>
+                                                                                </imageView>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGY-SL-KYd">
+                                                                                    <rect key="frame" x="158" y="0.0" width="155" height="34"/>
+                                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="bottom" secondItem="dGY-SL-KYd" secondAttribute="bottom" id="58M-aO-QL8"/>
+                                                                                <constraint firstItem="dGY-SL-KYd" firstAttribute="leading" secondItem="VIK-Pm-FGd" secondAttribute="trailing" constant="10" id="MQ1-Bj-2ui"/>
+                                                                                <constraint firstItem="VIK-Pm-FGd" firstAttribute="top" secondItem="Alt-XO-cEa" secondAttribute="top" constant="5" id="Mil-dQ-gsr"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="dGY-SL-KYd" secondAttribute="trailing" id="UTQ-P6-cNz"/>
+                                                                                <constraint firstItem="dGY-SL-KYd" firstAttribute="top" secondItem="Alt-XO-cEa" secondAttribute="top" id="cbi-zF-XIq"/>
+                                                                                <constraint firstItem="VIK-Pm-FGd" firstAttribute="leading" secondItem="Alt-XO-cEa" secondAttribute="leading" constant="100" id="kZR-EO-iuD"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="VIK-Pm-FGd" secondAttribute="bottom" constant="5" id="sro-a0-H5N"/>
+                                                                            </constraints>
+                                                                        </view>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzn-uF-oNi">
+                                                                            <rect key="frame" x="333" y="6" width="32" height="32"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="32" id="K62-RE-Gc2"/>
+                                                                                <constraint firstAttribute="width" constant="32" id="bAh-HJ-mqk"/>
+                                                                            </constraints>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="Alt-XO-cEa" firstAttribute="leading" secondItem="K7s-3Z-FU0" secondAttribute="leading" constant="10" id="8Eg-Kb-Pfm"/>
+                                                                        <constraint firstItem="Nzn-uF-oNi" firstAttribute="centerY" secondItem="K7s-3Z-FU0" secondAttribute="centerY" id="JMt-8v-NLb"/>
+                                                                        <constraint firstItem="Alt-XO-cEa" firstAttribute="top" secondItem="K7s-3Z-FU0" secondAttribute="top" constant="5" id="ejv-CL-bOV"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Nzn-uF-oNi" secondAttribute="trailing" constant="10" id="itg-tb-W1c"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Alt-XO-cEa" secondAttribute="bottom" constant="5" id="oAg-ta-Xlj"/>
+                                                                        <constraint firstItem="Nzn-uF-oNi" firstAttribute="leading" secondItem="Alt-XO-cEa" secondAttribute="trailing" constant="10" id="tQi-XB-eKo"/>
+                                                                    </constraints>
+                                                                </tableViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="CardBgview" destination="Alt-XO-cEa" id="htg-QL-2Tp"/>
+                                                                    <outlet property="Cardimage" destination="VIK-Pm-FGd" id="KG0-Sm-Kxg"/>
+                                                                    <outlet property="canrdNumberLabel" destination="dGY-SL-KYd" id="M75-1G-8Zp"/>
+                                                                    <outlet property="deleteButton" destination="Nzn-uF-oNi" id="Jsb-MH-1lW"/>
+                                                                </connections>
+                                                            </tableViewCell>
+                                                        </prototypes>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="UvX-oO-RE1" id="RwN-lu-ulX"/>
+                                                            <outlet property="delegate" destination="UvX-oO-RE1" id="pOs-Cy-i5m"/>
+                                                        </connections>
                                                     </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -758,7 +822,7 @@
                                     <constraint firstItem="2nC-cV-0cI" firstAttribute="leading" secondItem="egP-2F-jmJ" secondAttribute="leading" id="tlM-bb-Nlk"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoF-kO-yed" customClass="GFMenuButton" customModule="GenfareTests" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoF-kO-yed" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="20" y="577" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.37254901959999998" green="0.71764705880000002" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -817,16 +881,17 @@
                     </view>
                     <connections>
                         <outlet property="mailLabel" destination="eBM-ln-sZo" id="MQf-u8-CZK"/>
+                        <outlet property="tableView" destination="sdZ-A1-cFA" id="a1w-rP-wxo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYa-dk-yHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="86"/>
+            <point key="canvasLocation" x="1549.5999999999999" y="85.907046476761622"/>
         </scene>
         <!--Purchase Web View Controller-->
         <scene sceneID="Usd-Nh-7ST">
             <objects>
-                <viewController storyboardIdentifier="GFPurchaseWebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qpG-aO-IGe" customClass="GFPurchaseWebViewController" customModule="GenfareTests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFPurchaseWebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qpG-aO-IGe" customClass="GFPurchaseWebViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m10-9f-eYh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -881,6 +881,7 @@
                     </view>
                     <connections>
                         <outlet property="mailLabel" destination="eBM-ln-sZo" id="MQf-u8-CZK"/>
+                        <outlet property="saveCardButton" destination="hLX-8I-KBe" id="KeE-6y-uym"/>
                         <outlet property="tableView" destination="sdZ-A1-cFA" id="a1w-rP-wxo"/>
                     </connections>
                 </viewController>

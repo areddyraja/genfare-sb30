@@ -16,6 +16,7 @@ class SavedCardsListTableViewCell: UITableViewCell {
     @IBOutlet weak var CardBgview: UIView!
         override func awakeFromNib() {
         super.awakeFromNib()
+             deleteButton.setImage(UIImage(named: "card_delete_image"), for: .normal)
         // Initialization code
     }
 

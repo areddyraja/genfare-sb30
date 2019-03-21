@@ -13,7 +13,7 @@ import Nimble
 @testable import Pods_Genfare
 
 class LoginViewModelSpec: QuickSpec {
-    var success1 = true
+    var successValue = true
     override func spec() {
         
         
@@ -33,10 +33,10 @@ class LoginViewModelSpec: QuickSpec {
                                                                         lastname:"ttt")
             
                     signUpService.registerUser(completionHandler: {(success, error) in
-                        self.success1 = success
+                        self.successValue = success
                        
                     })
-                    expect(self.success1).toNot(equal(true))
+                    expect(self.successValue).toNot(equal(true))
                 }
             }
         }

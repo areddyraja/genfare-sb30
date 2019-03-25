@@ -66,7 +66,10 @@ class GFMyPassesViewModel {
             for i in filteredModel{
                 if let expiryDate = i.ticketActivationExpiryDate {
                     if  Int64(truncating: expiryDate) > Int64(now) || (i.type == Constants.Ticket.PeriodPass) {
+                        
                         expiryFilteredWalletContent.append(i)
+                    }else{
+                       GFDataService.deletePayAsYouGoWallet(entity: "WalletContents",wallet: i)
                     }
                   
                     

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFAccountInfoViewController: GFBaseViewController {
+class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     let viewModel = GFAccountInfoViewModel()
     let disposeBag = DisposeBag()
@@ -78,12 +78,42 @@ class GFAccountInfoViewController: GFBaseViewController {
                 }
             }.disposed(by: disposeBag)
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardDetailsCell", for: indexPath) as? GFAccountManagementTableViewCell else { return UITableViewCell()}
+        cell.unassignBtn.isHidden = true
+        switch (indexPath.row) {
+        case 0:
+            cell.detailLbl.text = "Account Email"
+            cell.unassignBtn.isHidden = false
+            cell.unassignBtn.isUserInteractionEnabled = true
+             break;
+        case 1:
+            cell.detailLbl.text = "Card Nickname"
+         break;
+        case 2:
+            cell.detailLbl.text = "Card Type"
+        break;
+        case 3:
+            cell.detailLbl.text = "Bonus Accruals"
+            break;
+        case 4:
+           cell.detailLbl.text = "Capped Accruals"
+            break;
+        default:
+            break;
+        }
+        return cell
+    }
 }
 
-//extension GFAccountInfoViewController : UITableViewDelegate {
-//
-//}
-//
-//extension GFAccountInfoViewController : UITableViewDataSource {
-//
-//}

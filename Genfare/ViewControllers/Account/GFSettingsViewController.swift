@@ -15,7 +15,11 @@ class GFSettingsViewController: GFBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let navController = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "GFAccountSettingsViewController") as? GFAccountSettingsViewController {
+            if let navigator = navigationController {
+                navigator.pushViewController(navController, animated: false)
+            }
+        }
         // Do any additional setup after loading the view.
     }
 

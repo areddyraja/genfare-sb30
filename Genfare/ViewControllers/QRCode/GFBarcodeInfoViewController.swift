@@ -44,12 +44,12 @@ class GFBarcodeInfoViewController: GFBaseViewController {
         passStatusLabel.text = ticket.status
         
         if let longDate = ticket.purchasedDate as? Double {
-            soldOnLabel.text = "\(Utilities.formattedDate(date: longDate))"
+            soldOnLabel.text = "\(Utilities.formattedDate(date: longDate/1000))"
         }else{
             soldOnLabel.text = ""
         }
         
-        validFromLabel.text = "\(ticket.activationDate ?? 0)"
+        validFromLabel.text = "\(Utilities.formattedDate(date:(Double(ticket.activationDate!.intValue/1000))))"
         
         if let expDate = ticket.expirationDate {
             expiresOnLabel.text = "\(Utilities.convertDate(dateStr: expDate, fromFormat: Constants.Ticket.ExpDateFormat, toFormat: Constants.Ticket.DisplayDateFormat))"

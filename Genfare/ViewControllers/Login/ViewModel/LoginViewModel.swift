@@ -91,7 +91,8 @@ class LoginViewModel {
         }
     }
     
-    func checkForAssignedWallets(list:Array<Any>){
+    func checkForAssignedWallets(list:Array<[String:Any]>){
+        print(list)
         if list.count <= 0 {
             walletNeeded.value = true
             return
@@ -121,8 +122,15 @@ class LoginViewModel {
                     return
                 }
             }
+            
         }
-        showWalletList.value = list
+
+       showWalletList.value = list.filter {($0["deviceUUID"] as? String) == nil}
+        if( showWalletList.value.count == 0){
+             walletNeeded.value = true
+            return
+        }
+
     }
     
     func walletRetrieved(value:Bool) {

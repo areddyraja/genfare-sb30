@@ -33,6 +33,16 @@ class GFConfigService{
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)
+                    if let json = JSON as? [String:Any],
+                        let walletData = json["orderLimits"] as? [String:Any],
+                        let registeredUser = walletData["registeredUser"] as? [String:Any],
+                        let walletMax = registeredUser["max"] as? [String:Any]
+                    
+                    {
+                        UserDefaults.standard.set(walletMax, forKey: "WalletMax")
+
+                       
+                    }
                 case .failure(let error):
                     print("Request failed with error: \(error)")
                     completionHandler(false,error)

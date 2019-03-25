@@ -31,6 +31,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         for i in payAsYouGoText{
             self.PayAsYouGoLabel.text = i.productDescription
         }
+         let walletmax =   UserDefaults.standard.integer(forKey: "WalletMax")
         self.ProductsTableView.reloadData()
         // Do any additional setup after loading the view.
     }

@@ -102,6 +102,21 @@ class GFDataService {
         }
         
     }
+    static func deletePayAsYouGoWallet(entity:String,wallet:WalletContents) {
+        let context = persistentContainer.viewContext
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let predicate = NSPredicate(format: "wallet == %@",wallet)
+        do {
+            let records = try context.fetch(deleteFetch) as! [NSManagedObject]
+            for wallet in records {
+                context.delete(wallet)
+                
+            }
+        }catch let error as NSError {
+            print("Could not Delete. \(error), \(error.userInfo)")
+        }
+        
+    }
     static func currentAccount() -> Account? {
         let records:Array<Account> = fetchRecords(entity: "Account") as! Array<Account>
         
@@ -110,6 +125,15 @@ class GFDataService {
         }
         
         return nil
+    }
+    static func getAddress() -> Array<StoredAddress>?{
+        let records:Array<StoredAddress> = fetchRecords(entity: "StoredAddress") as! Array<StoredAddress>
+        
+        if records.count > 0 {
+            return records
+        }
+        return []
+        
     }
 
 }

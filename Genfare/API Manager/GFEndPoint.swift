@@ -29,6 +29,7 @@ enum GFEndpoint {
     case WalletEvent(walletId:NSNumber,tickedId:NSNumber)
     case ListOfCards()
     case DeleteCard(cardNumber:Int)
+    case ChangeUser(email:String,password:String)
     
     // MARK: - Public Properties
     static var commonHeaders:HTTPHeaders {
@@ -81,6 +82,8 @@ enum GFEndpoint {
             return .get
         case .DeleteCard:
             return .delete
+        case .ChangeUser:
+            return .put
         }
     }
     
@@ -143,6 +146,9 @@ enum GFEndpoint {
             return Utilities.apiHost()+url
         case .DeleteCard(let cardNumber):
             let  url = "/services/data-api/mobile/payment/options/\(cardNumber)?tenant=\(Utilities.tenantId())"
+            return Utilities.apiHost()+url
+        case .ChangeUser:
+            let  url = "/services/data-api/mobile/users/\(String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.UserName)!))?tenant=\(Utilities.tenantId())"
             return Utilities.apiHost()+url
             
         }

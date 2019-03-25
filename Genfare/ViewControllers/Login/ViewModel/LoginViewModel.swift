@@ -126,6 +126,10 @@ class LoginViewModel {
         }
 
        showWalletList.value = list.filter {($0["deviceUUID"] as? String) == nil}
+        if( showWalletList.value.count == 0){
+             walletNeeded.value = true
+            return
+        }
 
     }
     

@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import CoreData
 
 class GFConfigService{
     
@@ -33,15 +34,11 @@ class GFConfigService{
                 switch response.result {
                 case .success(let JSON):
                     print(JSON)
-                    if let json = JSON as? [String:Any],
-                        let walletData = json["orderLimits"] as? [String:Any],
-                        let registeredUser = walletData["registeredUser"] as? [String:Any],
-                        let walletMax = registeredUser["max"] as? [String:Any]
-                    
-                    {
-                        UserDefaults.standard.set(walletMax, forKey: "WalletMax")
-
-                       
+                    if let json = JSON as? [String:Any] {
+                        self.saveConfiguredValues(data: json)
+                        completionHandler(true,nil)
+                    }else{
+                        completionHandler(false,"Error")
                     }
                 case .failure(let error):
                     print("Request failed with error: \(error)")
@@ -49,5 +46,39 @@ class GFConfigService{
                 }
         }
     }
-    
+    func saveConfiguredValues(data:[String:Any]) {
+        
+        GFDataService.deleteAllRecords(entity: "Configure")
+        
+    let managedContext = GFDataService.context
+    let configureContents = NSEntityDescription.entity(forEntityName: "Configure", in: managedContext)
+    let configObj:Configure = NSManagedObject(entity: configureContents!, insertInto: managedContext) as! Configure
+        
+        configObj.agencyContactNumber = data["AgencyContactNumber"] as? String
+        configObj.agencyId = data["AgencyId"] as? NSNumber
+        configObj.barcodeActivationOffSetInMins = data["barcodeActivationOffsetInMins"] as? NSNumber
+        configObj.key12 = data["key12"] as? String
+        configObj.endOfTransitDay = data["endOfTransitDay"] as? NSNumber
+        if let loyality = data["LoyaltyProgram"] as? [String:Any], let bonus = loyality["BONUS_RIDE"] as? [String:Any],let capped = loyality["CAPPED_RIDE"] as? [String:Any]{
+                  if bonus.count > 1 {
+                        configObj.bonusDelay = bonus["Delay"] as? NSNumber
+                        configObj.bonusFarecode = bonus["FareCode"] as?  String
+                        configObj.bonusThreshold = bonus["Threshold"] as? NSNumber
+                        configObj.bonusTicketid  = bonus["TicketId"] as? NSNumber
+                                      }
+                 if capped.count > 1 {
+                        configObj.cappedDelay = capped["Delay"] as? NSNumber
+                        configObj.cappedFarecode = capped["FareCode"] as?  String
+                        configObj.cappedThreshold = capped["Threshold"] as? NSNumber
+                        configObj.cappedTicketId  = capped["TicketId"] as? NSNumber
+            
+        }
+        }
+        if let orderlimits = data["orderLimits"] as? [String:Any], let value = orderlimits["registeredUser"] as? [String:Any]{
+                        configObj.configMax = value["max"] as? NSNumber
+                        configObj.configMin = value["min"] as? NSNumber
+            
+        }
+         GFDataService.saveContext()
+    }
 }

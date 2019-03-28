@@ -14,6 +14,8 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
     
     func barcodeString() -> String {
         let account:Account = GFAccountManager.currentAccount()!
+         let configure:Configure = GFAccountManager.configuredValues()!
+        let transitId = Int(configure.transitId!)
         if let prod = GFFetchProductsService.getProductFor(id: walletModel.ticketIdentifier!) {
             print(prod)
             let encString = BarcodeUtilities.generateBarcode(withTicket: walletModel,
@@ -21,7 +23,7 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
                                                              encriptionKey: GFEncryptionKeysService.getEncryptionKey()!,
                                                              isFreeRide: false,
                                                              deviceID: Utilities.deviceId(),
-                                                             transitID: Utilities.transitID(),
+                                                             transitID:NSNumber(value:transitId!),
                                                              accountId: account.accountId)
             return encString!
         }

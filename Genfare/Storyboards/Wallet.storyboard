@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="54R-mC-aJy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="54R-mC-aJy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +18,7 @@
         <!--Wallet Selection View Controller-->
         <scene sceneID="45g-Ax-vXd">
             <objects>
-                <viewController storyboardIdentifier="GFSELECTWALLET" id="54R-mC-aJy" customClass="GFWalletSelectionViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFSELECTWALLET" id="54R-mC-aJy" customClass="GFWalletSelectionViewController" customModule="iRidet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="chM-Dn-sqC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,15 +98,18 @@
         <!--Creat Wallet View Controller-->
         <scene sceneID="4dO-6i-jHp">
             <objects>
-                <viewController storyboardIdentifier="CREATEWALLET" id="PF7-4F-Mzy" customClass="GFCreatWalletViewController" customModule="Genfare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CREATEWALLET" id="PF7-4F-Mzy" customClass="GFCreatWalletViewController" customModule="iRidet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6mV-bS-2ca">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Your Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6B-ZM-T1K">
-                                <rect key="frame" x="0.0" y="42" width="375" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6B-ZM-T1K">
+                                <rect key="frame" x="0.0" y="50" width="375" height="71"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.21960784310000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="5f8-pR-cus"/>
+                                    <constraint firstAttribute="width" constant="375" id="Jzu-rd-QGD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -145,9 +149,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.1647058824" green="0.21960784310000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRx-fT-kUw">
-                                <rect key="frame" x="344" y="32" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRx-fT-kUw">
+                                <rect key="frame" x="340" y="35" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Gq8-rY-PmW"/>
+                                    <constraint firstAttribute="height" constant="20" id="uYR-Rj-S2m"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="X">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,10 +163,13 @@
                                     <action selector="dismissCurrent:" destination="M2A-oO-9V7" eventType="touchUpInside" id="A4f-Rw-Jeu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ4-KQ-f5q" customClass="GFMenuButton" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="48" y="333" width="274" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ4-KQ-f5q" customClass="GFMenuButton" customModule="iRidet" customModuleProvider="target">
+                                <rect key="frame" x="48" y="336" width="274" height="51"/>
                                 <color key="backgroundColor" red="0.15601536630000001" green="0.60194826130000001" blue="0.83118385080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="JUd-xo-Grm"/>
+                                    <constraint firstAttribute="height" constant="51" id="WIm-GQ-faP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Create Wallet">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,8 +180,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wallet" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tfn-wO-fME" customClass="GFWhiteButtonTextField" customModule="Genfare" customModuleProvider="target">
-                                <rect key="frame" x="47" y="275" width="275" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wallet" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tfn-wO-fME" customClass="GFWhiteButtonTextField" customModule="iRidet" customModuleProvider="target">
+                                <rect key="frame" x="50" y="275" width="275" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -179,6 +189,16 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.2196078431372549" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QRx-fT-kUw" firstAttribute="top" secondItem="BCK-Qh-hD1" secondAttribute="top" constant="15" id="4e6-8e-Jej"/>
+                            <constraint firstItem="C6B-ZM-T1K" firstAttribute="trailing" secondItem="BCK-Qh-hD1" secondAttribute="trailing" id="C5y-hg-Wzz"/>
+                            <constraint firstItem="BQ4-KQ-f5q" firstAttribute="leading" secondItem="BCK-Qh-hD1" secondAttribute="leading" constant="48" id="GoI-lI-00i"/>
+                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="trailing" secondItem="BQ4-KQ-f5q" secondAttribute="trailing" constant="53" id="NfG-1U-MxD"/>
+                            <constraint firstItem="C6B-ZM-T1K" firstAttribute="top" secondItem="BCK-Qh-hD1" secondAttribute="top" constant="30" id="YKc-hy-9Fq"/>
+                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="bottom" secondItem="BQ4-KQ-f5q" secondAttribute="bottom" constant="280" id="fia-Rq-L0J"/>
+                            <constraint firstItem="C6B-ZM-T1K" firstAttribute="leading" secondItem="BCK-Qh-hD1" secondAttribute="leading" id="yx4-mn-VPV"/>
+                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="trailing" secondItem="QRx-fT-kUw" secondAttribute="trailing" constant="15" id="zts-ye-TIm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BCK-Qh-hD1"/>
                     </view>
                     <connections>

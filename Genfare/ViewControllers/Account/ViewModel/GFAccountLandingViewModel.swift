@@ -36,6 +36,18 @@ class GFAccountLandingViewModel {
             updateAccountType()
         }
     }
+    func getConfigApi(){
+        let configValues = GFConfigService()
+        configValues.fetchConfigurationValues { (success,error) in
+            if success! {
+                print("configured")
+            }
+            else{
+                print("error")
+            }
+            
+        }
+    }
     
     func currentEvent() -> Event? {
         let records:Array<Event> = GFDataService.fetchRecords(entity: "Event") as! Array<Event>

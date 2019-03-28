@@ -28,6 +28,7 @@ class GFAccountLandingViewController: GFBaseViewController {
     override func viewWillAppear( _ animated:Bool){
         super.viewWillAppear(animated)
         viewModel.checkWalletStatus()
+        viewModel.getConfigApi()
     }
 
     func createViewModelBinding(){

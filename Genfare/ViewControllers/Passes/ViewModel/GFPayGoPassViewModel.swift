@@ -52,6 +52,7 @@ class GFPayGoPassViewModel {
         let managedContext = GFDataService.context
         let walletcontent = NSEntityDescription.entity(forEntityName: "WalletContents", in: managedContext)
         let walletObj:WalletContents = NSManagedObject(entity: walletcontent!, insertInto: managedContext) as! WalletContents
+        let configure:Configure = GFAccountManager.configuredValues()!
         let wallet = GFWalletsService.userWallet()
         
         walletObj.fare = 0
@@ -59,7 +60,7 @@ class GFPayGoPassViewModel {
         
         walletObj.member = wallet!.accMemberId
         walletObj.purchasedDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
-        // walletObj.agencyId = wallet.agencyIdNum;
+         walletObj.agencyId = configure.agencyId
         walletObj.descriptation = product.productDescription
         walletObj.type=product.ticketTypeId
         walletObj.ticketIdentifier = product.ticketId!.stringValue

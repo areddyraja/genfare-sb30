@@ -20,6 +20,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     var remainingActiveTime:Int!
     var ticket:WalletContents!
     var baseClass:UIViewController?
+     let date = NSDate()
 
     @IBOutlet var countDownLabel: UILabel!
     @IBOutlet weak var passTitleLabel: UILabel!
@@ -72,7 +73,14 @@ class GFBarcodeScreenViewController: GFBaseViewController {
                 
             }).disposed(by: disposeBag)
         }else{
-            viewBinding()
+            var time = self.ticket.ticketActivationExpiryDate?.intValue
+           
+            let timestamp = Int64(date.timeIntervalSince1970)
+           let barcodeWalletTime = time! - Int(timestamp)
+            let barcodeTime = GFFetchProductsService.barcodeTimerFor(pid: ticket.ticketIdentifier!)
+            if(barcodeWalletTime == Int(barcodeTime)){
+                    viewBinding()
+            }
         }
        
     }
@@ -166,7 +174,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     
     @objc func updateTime() {
         countDownLabel.text = "\(timeFormatted(remainingActiveTime))"
-        if remainingActiveTime != 0 {
+        if remainingActiveTime != 0 && remainingActiveTime > 0 {
             remainingActiveTime -= 1
         } else {
             

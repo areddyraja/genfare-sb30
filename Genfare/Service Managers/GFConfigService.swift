@@ -54,11 +54,12 @@ class GFConfigService{
     let configureContents = NSEntityDescription.entity(forEntityName: "Configure", in: managedContext)
     let configObj:Configure = NSManagedObject(entity: configureContents!, insertInto: managedContext) as! Configure
         
-        configObj.agencyContactNumber = data["AgencyContactNumber"] as? String
+        configObj.agencyContactNumber = data["AgencyContactNumber"] as? NSNumber
         configObj.agencyId = data["AgencyId"] as? NSNumber
         configObj.barcodeActivationOffSetInMins = data["barcodeActivationOffsetInMins"] as? NSNumber
         configObj.key12 = data["key12"] as? String
-        configObj.endOfTransitDay = data["endOfTransitDay"] as? NSNumber
+        configObj.transitId = data["TransitId"] as? String
+        configObj.endOfTransitDay = data["endOfTransitDay"] as? String
         if let loyality = data["LoyaltyProgram"] as? [String:Any], let bonus = loyality["BONUS_RIDE"] as? [String:Any],let capped = loyality["CAPPED_RIDE"] as? [String:Any]{
                   if bonus.count > 1 {
                         configObj.bonusDelay = bonus["Delay"] as? NSNumber

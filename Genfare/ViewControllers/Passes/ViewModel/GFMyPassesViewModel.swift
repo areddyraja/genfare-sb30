@@ -70,7 +70,7 @@ class GFMyPassesViewModel {
                         expiryFilteredWalletContent.append(i)
                     }else{
                        GFDataService.deletePayAsYouGoWallet(entity: "WalletContents",wallet: i)
-                    }
+                    } 
                   
                     
 

@@ -29,8 +29,8 @@ extension Configure {
     @NSManaged public var cappedTicketId: NSNumber?
     @NSManaged public var configMax: NSNumber?
     @NSManaged public var configMin: NSNumber?
-    @NSManaged public var endOfTransitDay: NSNumber?
+    @NSManaged public var endOfTransitDay: String?
     @NSManaged public var key12: String?
-    @NSManaged public var transitId: NSNumber?
+    @NSManaged public var transitId: String?
 
 }

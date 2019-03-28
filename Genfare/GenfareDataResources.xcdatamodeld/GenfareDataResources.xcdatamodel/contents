@@ -53,7 +53,7 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Configure" representedClassName=".Configure" syncable="YES">
-        <attribute name="agencyContactNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="agencyContactNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="agencyId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="barcodeActivationOffSetInMins" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="bonusDelay" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
@@ -66,9 +66,9 @@
         <attribute name="cappedTicketId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="configMax" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="configMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="endOfTransitDay" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="endOfTransitDay" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="key12" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="transitId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="transitId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Content" representedClassName="Content" syncable="YES">
         <attribute name="created" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
@@ -315,6 +315,7 @@
         <element name="Account" positionX="162" positionY="342" width="128" height="435"/>
         <element name="Card" positionX="171" positionY="351" width="128" height="255"/>
         <element name="CardEvent" positionX="162" positionY="342" width="128" height="135"/>
+        <element name="Configure" positionX="207" positionY="342" width="128" height="285"/>
         <element name="Content" positionX="162" positionY="342" width="128" height="148"/>
         <element name="ContentDescription" positionX="162" positionY="342" width="128" height="133"/>
         <element name="ContentReference" positionX="171" positionY="360" width="128" height="75"/>
@@ -333,6 +334,5 @@
         <element name="Wallet" positionX="162" positionY="342" width="128" height="375"/>
         <element name="WalletActivity" positionX="252" positionY="396" width="128" height="150"/>
         <element name="WalletContents" positionX="207" positionY="342" width="128" height="435"/>
-        <element name="Configure" positionX="207" positionY="342" width="128" height="285"/>
     </elements>
 </model>

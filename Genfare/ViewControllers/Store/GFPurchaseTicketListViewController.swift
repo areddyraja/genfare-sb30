@@ -23,6 +23,8 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
     var productsListArrayPayAsYouGo = [AnyObject]()
     var totalProdcutArray = [AnyObject]()
     var fare = 0.0
+    var walletMax = 0
+    var walletMin = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         targetMethod()
@@ -32,6 +34,8 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
             self.PayAsYouGoLabel.text = i.productDescription
         }
         let configure:Configure = GFAccountManager.configuredValues()!
+        walletMax = configure.configMax as! Int
+        walletMin = configure.configMin as! Int
         self.ProductsTableView.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -233,7 +237,30 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         }
         
         var payAsYouGoAmountValue =   UserDefaults.standard.integer(forKey: "payasyougoamount")
-        totalAmount = totalAmount + payAsYouGoAmountValue;
+        totalAmount = totalAmount + payAsYouGoAmountValue
+        if(totalAmount > walletMax){
+            let alert = UIAlertController(title: "Maximum cart value exceeded", message: "You can't add more than $%d to your cart.", preferredStyle: UIAlertController.Style.alert)
+            
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+            }))
+         
+            
+            // show the alert
+            present(alert, animated: true, completion: nil)
+        }
+        else if(totalAmount < walletMin){
+            let alert = UIAlertController(title: "Minimum cart value not exceeded", message: "You cannot add less than $%d to your cart.", preferredStyle: UIAlertController.Style.alert)
+            
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+            }))
+            
+            
+            // show the alert
+            present(alert, animated: true, completion: nil)
+            
+        }
         
         var seletedArraypayasyougo = [[String:Any]]()
         for j in 0..<productsListArrayPayAsYouGo.count {

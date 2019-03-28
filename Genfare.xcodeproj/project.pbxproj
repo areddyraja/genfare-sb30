@@ -38,9 +38,6 @@
 		2747549F21F9979300D62268 /* GFLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747549E21F9979300D62268 /* GFLoginService.swift */; };
 		274754A021F9979300D62268 /* GFLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747549E21F9979300D62268 /* GFLoginService.swift */; };
 		274754A121F9979300D62268 /* GFLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747549E21F9979300D62268 /* GFLoginService.swift */; };
-		274754A321F9BAFA00D62268 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274754A221F9BAFA00D62268 /* Wallet.storyboard */; };
-		274754A421F9BAFA00D62268 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274754A221F9BAFA00D62268 /* Wallet.storyboard */; };
-		274754A521F9BAFA00D62268 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274754A221F9BAFA00D62268 /* Wallet.storyboard */; };
 		274754A821F9BDBA00D62268 /* GFWalletSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274754A721F9BDBA00D62268 /* GFWalletSelectionViewController.swift */; };
 		274754A921F9BDBA00D62268 /* GFWalletSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274754A721F9BDBA00D62268 /* GFWalletSelectionViewController.swift */; };
 		274754AA21F9BDBA00D62268 /* GFWalletSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274754A721F9BDBA00D62268 /* GFWalletSelectionViewController.swift */; };
@@ -329,7 +326,6 @@
 		27F83D5C2211517200232521 /* GFBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D5B2211517200232521 /* GFBaseViewModel.swift */; };
 		27F83D5D2211517200232521 /* GFBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D5B2211517200232521 /* GFBaseViewModel.swift */; };
 		27F83D5E2211517200232521 /* GFBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83D5B2211517200232521 /* GFBaseViewModel.swift */; };
-		27FA999422142FE400F926AC /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274754A221F9BAFA00D62268 /* Wallet.storyboard */; };
 		27FA999522142FE400F926AC /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2772BA822209CE4B003AA1ED /* Payment.storyboard */; };
 		27FA999622142FE400F926AC /* Store.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088621367886008D0B6F /* Store.storyboard */; };
 		27FA999722142FE400F926AC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4849088421367885008D0B6F /* Login.storyboard */; };
@@ -674,6 +670,9 @@
 		4A37B266222D4B4A00EE3644 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A37B25E222D4B4A00EE3644 /* Event+CoreDataClass.swift */; };
 		4A37B267222D4B4A00EE3644 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A37B25F222D4B4A00EE3644 /* Event+CoreDataProperties.swift */; };
 		4A37B268222D4B4A00EE3644 /* CardEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A37B260222D4B4A00EE3644 /* CardEvent+CoreDataProperties.swift */; };
+		4A3E5CEA224C918A005843BE /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274754A221F9BAFA00D62268 /* Wallet.storyboard */; };
+		4A3E5CEB224C919A005843BE /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274754A221F9BAFA00D62268 /* Wallet.storyboard */; };
+		4A3E5CEC224C919C005843BE /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274754A221F9BAFA00D62268 /* Wallet.storyboard */; };
 		4A40EE87223BC36000965898 /* GFListOfCardsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40EE86223BC36000965898 /* GFListOfCardsService.swift */; };
 		4A4C01F9220AE4F80030AE09 /* GFCreateOrderForProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C01F8220AE4F80030AE09 /* GFCreateOrderForProductsService.swift */; };
 		4A4C01FA220AE4F80030AE09 /* GFCreateOrderForProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C01F8220AE4F80030AE09 /* GFCreateOrderForProductsService.swift */; };
@@ -1647,7 +1646,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27FA999422142FE400F926AC /* Wallet.storyboard in Resources */,
 				4A69A051224363D300623427 /* Settings.storyboard in Resources */,
 				27FA999522142FE400F926AC /* Payment.storyboard in Resources */,
 				27FA999622142FE400F926AC /* Store.storyboard in Resources */,
@@ -1665,6 +1663,7 @@
 				27FA99A222142FE400F926AC /* Splashscreen.storyboard in Resources */,
 				27FA99A422142FE400F926AC /* AccountHome.storyboard in Resources */,
 				27FA99A522142FE400F926AC /* COTA.xcassets in Resources */,
+				4A3E5CEC224C919C005843BE /* Wallet.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1673,10 +1672,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				279B023D220C4559002739F5 /* Barcode.storyboard in Resources */,
+				4A3E5CEB224C919A005843BE /* Wallet.storyboard in Resources */,
 				4A69A050224363D300623427 /* Settings.storyboard in Resources */,
 				486DA5AD21674F67006B8BA5 /* Store.storyboard in Resources */,
 				27F6C52E2202FB2F009052D0 /* BCT.xcassets in Resources */,
-				274754A421F9BAFA00D62268 /* Wallet.storyboard in Resources */,
 				2757D2F121F8530200413713 /* Genfare_CDTA_UAT_Info.plist in Resources */,
 				486DA5AE21674F67006B8BA5 /* Login.storyboard in Resources */,
 				27F6C52A2202F66C009052D0 /* COTA.xcassets in Resources */,
@@ -1695,7 +1694,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				274754A321F9BAFA00D62268 /* Wallet.storyboard in Resources */,
 				4A69A04F224363D300623427 /* Settings.storyboard in Resources */,
 				2772BA832209CE4C003AA1ED /* Payment.storyboard in Resources */,
 				4849088921367886008D0B6F /* Store.storyboard in Resources */,
@@ -1713,6 +1711,7 @@
 				273B2CF721E5F07100208012 /* Splashscreen.storyboard in Resources */,
 				2747556521FEE45F00D62268 /* AccountHome.storyboard in Resources */,
 				27F6C5292202F66C009052D0 /* COTA.xcassets in Resources */,
+				4A3E5CEA224C918A005843BE /* Wallet.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1727,7 +1726,6 @@
 				27F6C53B22043C1E009052D0 /* Passes.storyboard in Resources */,
 				273B2CF821E5F07100208012 /* Splashscreen.storyboard in Resources */,
 				27F6C52F2202FB2F009052D0 /* BCT.xcassets in Resources */,
-				274754A521F9BAFA00D62268 /* Wallet.storyboard in Resources */,
 				2747556721FEE45F00D62268 /* AccountHome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

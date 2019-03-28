@@ -49,7 +49,7 @@ class GFAccountBasedHomeViewModel {
             if success {
                 self.balance.value = Utilities.accountBalance()
             }else{
-                self.errorMsg.value = (error as? String)!
+                self.errorMsg.value = "error"
             }
         }
     }

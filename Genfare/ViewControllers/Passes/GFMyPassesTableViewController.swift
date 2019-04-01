@@ -31,11 +31,12 @@ class GFMyPassesTableViewController: UITableViewController {
             print(pagemenu.didTapMenuItemToScroll)
         }
         viewModel.showProducts()
-        viewModel.fetchWalletContents()
-
+        refreshWalletContents()
     }
     
-    
+    func refreshWalletContents() {
+        viewModel.fetchWalletContents()
+    }
     
     func createCallbacks (){
         // success

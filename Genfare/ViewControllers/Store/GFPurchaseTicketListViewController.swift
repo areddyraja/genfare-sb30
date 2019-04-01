@@ -183,8 +183,6 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 Newdict["ticket_count"] = quantityValue
                 Newdict["total_ticket_fare"] = fare
                 productsListArray[sender.tag] = Newdict as! [String : Any]
-                
-                
             }
         }
         self.ProductsTableView.reloadData()

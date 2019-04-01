@@ -51,8 +51,8 @@ class GFMyPassesTableViewController: UITableViewController {
         // Loading
         viewModel.isLoading.asObservable()
             .bind{[unowned self] value in
-                NSLog("Loading \(value)")
-                if value {
+                self.spinnerView?.removeFromSuperview()
+                if value && (self.view.frame.origin.y != 0.0) {
                     self.spinnerView = UIViewController.displaySpinner(onView: self.view)
                 }else{
                     if let _ = self.spinnerView {

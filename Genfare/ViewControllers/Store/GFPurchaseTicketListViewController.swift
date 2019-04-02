@@ -22,6 +22,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
     var productsListArray = [[String:Any]]()
     var productsListArrayPayAsYouGo = [AnyObject]()
     var totalProdcutArray = [AnyObject]()
+    var seletedArray = [[String:Any]]()
     var fare = 0.0
     var walletMax = 0
     var walletMin = 0
@@ -186,6 +187,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 
                 
             }
+            validations()
         }
         self.ProductsTableView.reloadData()
         
@@ -208,6 +210,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 Newdict["total_ticket_fare"] = fare
                 productsListArray[sender.tag] = Newdict as! [String : Any]
             }
+            validations()
         }
         self.ProductsTableView.reloadData()
         
@@ -223,14 +226,14 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         }
     }
     
-    @IBAction func firstPageContinueButtonClicked(_ sender: GFMenuButton) {
-        var seletedArray = [[String:Any]]()
-        payasyougo()
-        dictForPayAsYouGo()
+    func validations(){
+        
         var  totalAmount = 0
+        seletedArray.removeAll()
         for j in 0..<productsListArray.count {
-            var count = productsListArray[j]["ticket_count"] as? Int
+        var count = productsListArray[j]["ticket_count"] as? Int
             if !(count == 0) {
+                
                 seletedArray.append(productsListArray[j] as! [String : Any])
                 totalAmount = totalAmount + ((productsListArray[j]["total_ticket_fare"] as? NSNumber)?.intValue)! ?? 0
             }
@@ -239,18 +242,18 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         var payAsYouGoAmountValue =   UserDefaults.standard.integer(forKey: "payasyougoamount")
         totalAmount = totalAmount + payAsYouGoAmountValue
         if(totalAmount > walletMax){
-            let alert = UIAlertController(title: "Maximum cart value exceeded", message: "You can't add more than $%d to your cart.", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Maximum cart value exceeded", message: (String(format:"You can't add more than $%d to your cart.",walletMax)), preferredStyle: UIAlertController.Style.alert)
             
             // add the actions (buttons)
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
             }))
-         
+            
             
             // show the alert
             present(alert, animated: true, completion: nil)
         }
         else if(totalAmount < walletMin){
-            let alert = UIAlertController(title: "Minimum cart value not exceeded", message: "You cannot add less than $%d to your cart.", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Minimum cart value not exceeded", message:(String(format: "You cannot add less than $%d to your cart.",walletMin)), preferredStyle: UIAlertController.Style.alert)
             
             // add the actions (buttons)
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
@@ -261,7 +264,13 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
             present(alert, animated: true, completion: nil)
             
         }
-        
+    }
+    
+    @IBAction func firstPageContinueButtonClicked(_ sender: GFMenuButton) {
+      //  var seletedArray = [[String:Any]]()
+        payasyougo()
+        dictForPayAsYouGo()
+        validations()
         var seletedArraypayasyougo = [[String:Any]]()
         for j in 0..<productsListArrayPayAsYouGo.count {
             

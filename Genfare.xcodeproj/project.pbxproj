@@ -687,6 +687,18 @@
 		4A4CF16621FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */; };
 		4A4CF16721FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */; };
 		4A4CF16821FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */; };
+		4A534E58224E0F2D00ED0599 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A534E57224E0F2D00ED0599 /* Contact.storyboard */; };
+		4A534E59224E0F2D00ED0599 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A534E57224E0F2D00ED0599 /* Contact.storyboard */; };
+		4A534E5A224E0F2D00ED0599 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A534E57224E0F2D00ED0599 /* Contact.storyboard */; };
+		4A534E5D224E16B700ED0599 /* GFContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E5C224E16B700ED0599 /* GFContactViewController.swift */; };
+		4A534E5E224E16B700ED0599 /* GFContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E5C224E16B700ED0599 /* GFContactViewController.swift */; };
+		4A534E5F224E16B700ED0599 /* GFContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E5C224E16B700ED0599 /* GFContactViewController.swift */; };
+		4A534E61224E413900ED0599 /* GFTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E60224E413900ED0599 /* GFTermsViewController.swift */; };
+		4A534E62224E413900ED0599 /* GFTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E60224E413900ED0599 /* GFTermsViewController.swift */; };
+		4A534E63224E413900ED0599 /* GFTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E60224E413900ED0599 /* GFTermsViewController.swift */; };
+		4A534E65224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E64224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift */; };
+		4A534E66224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E64224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift */; };
+		4A534E67224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E64224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift */; };
 		4A69A04F224363D300623427 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A69A04E224363D300623427 /* Settings.storyboard */; };
 		4A69A050224363D300623427 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A69A04E224363D300623427 /* Settings.storyboard */; };
 		4A69A051224363D300623427 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A69A04E224363D300623427 /* Settings.storyboard */; };
@@ -731,6 +743,9 @@
 		4A7BD27F224A038E006A455D /* Configure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD279224A038E006A455D /* Configure+CoreDataProperties.swift */; };
 		4A7BD280224A038E006A455D /* Configure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD279224A038E006A455D /* Configure+CoreDataProperties.swift */; };
 		4A7BD281224A038E006A455D /* Configure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BD279224A038E006A455D /* Configure+CoreDataProperties.swift */; };
+		4A81632222531CCD004D06C0 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81632122531CCD004D06C0 /* ContactViewModel.swift */; };
+		4A81632322531CCD004D06C0 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81632122531CCD004D06C0 /* ContactViewModel.swift */; };
+		4A81632422531CCD004D06C0 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81632122531CCD004D06C0 /* ContactViewModel.swift */; };
 		4AF61C5D224234FA00C234E5 /* GFAccountManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF61C5C224234FA00C234E5 /* GFAccountManagementTableViewCell.swift */; };
 		4AF61C5E22423E0E00C234E5 /* GFAccountManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF61C5C224234FA00C234E5 /* GFAccountManagementTableViewCell.swift */; };
 		4AF61C5F22423E0E00C234E5 /* GFAccountManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF61C5C224234FA00C234E5 /* GFAccountManagementTableViewCell.swift */; };
@@ -948,6 +963,10 @@
 		4A4CF15D21FEF701007BB42C /* GFEncryptionKeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEncryptionKeysService.swift; sourceTree = "<group>"; };
 		4A4CF16121FF0F0F007BB42C /* GFConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFConfigService.swift; sourceTree = "<group>"; };
 		4A4CF16521FF27E3007BB42C /* GetAccountBalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountBalanceService.swift; sourceTree = "<group>"; };
+		4A534E57224E0F2D00ED0599 /* Contact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
+		4A534E5C224E16B700ED0599 /* GFContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFContactViewController.swift; sourceTree = "<group>"; };
+		4A534E60224E413900ED0599 /* GFTermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTermsViewController.swift; sourceTree = "<group>"; };
+		4A534E64224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFPrivacyAndPolicyViewController.swift; sourceTree = "<group>"; };
 		4A69A04E224363D300623427 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		4A69A0522243648500623427 /* GFSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFSettingsViewController.swift; sourceTree = "<group>"; };
 		4A69A056224364F300623427 /* GFAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFAddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -962,6 +981,7 @@
 		4A69A07B22436AA600623427 /* StoredAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoredAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4A7BD278224A038E006A455D /* Configure+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Configure+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4A7BD279224A038E006A455D /* Configure+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Configure+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4A81632122531CCD004D06C0 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		4AF61C5C224234FA00C234E5 /* GFAccountManagementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAccountManagementTableViewCell.swift; sourceTree = "<group>"; };
 		6191DBCA4C1E00BA7D4FE073 /* Pods_GenfareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenfareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA6AC6F60C87949C47A44E6 /* Pods-Genfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.release.xcconfig"; sourceTree = "<group>"; };
@@ -1328,6 +1348,7 @@
 				273B2CF621E5F07100208012 /* Splashscreen.storyboard */,
 				274754A221F9BAFA00D62268 /* Wallet.storyboard */,
 				2747556421FEE45F00D62268 /* AccountHome.storyboard */,
+				4A534E57224E0F2D00ED0599 /* Contact.storyboard */,
 				2772BA822209CE4B003AA1ED /* Payment.storyboard */,
 				27F6C53822043C1E009052D0 /* Passes.storyboard */,
 				279B023B220C4559002739F5 /* Barcode.storyboard */,
@@ -1338,6 +1359,7 @@
 		48656FFA2122F1D600E94556 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A534E5B224E143F00ED0599 /* Contact */,
 				2772BA862209CE83003AA1ED /* Store */,
 				2747557521FEE55A00D62268 /* Login */,
 				2747557121FEE4F500D62268 /* TripPlanner */,
@@ -1502,6 +1524,17 @@
 			path = StoreModels;
 			sourceTree = "<group>";
 		};
+		4A534E5B224E143F00ED0599 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				4A534E5C224E16B700ED0599 /* GFContactViewController.swift */,
+				4A81632122531CCD004D06C0 /* ContactViewModel.swift */,
+				4A534E60224E413900ED0599 /* GFTermsViewController.swift */,
+				4A534E64224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		66DA03A9071C855C16EAF9A3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1650,6 +1683,7 @@
 				27FA999522142FE400F926AC /* Payment.storyboard in Resources */,
 				27FA999622142FE400F926AC /* Store.storyboard in Resources */,
 				27FA999722142FE400F926AC /* Login.storyboard in Resources */,
+				4A534E5A224E0F2D00ED0599 /* Contact.storyboard in Resources */,
 				27FA999822142FE400F926AC /* Genfare_CDTA_UAT_Info.plist in Resources */,
 				27FA999922142FE400F926AC /* public_key.der in Resources */,
 				27FA999A22142FE400F926AC /* LaunchScreen.storyboard in Resources */,
@@ -1679,6 +1713,7 @@
 				2757D2F121F8530200413713 /* Genfare_CDTA_UAT_Info.plist in Resources */,
 				486DA5AE21674F67006B8BA5 /* Login.storyboard in Resources */,
 				27F6C52A2202F66C009052D0 /* COTA.xcassets in Resources */,
+				4A534E59224E0F2D00ED0599 /* Contact.storyboard in Resources */,
 				2772BA842209CE4C003AA1ED /* Payment.storyboard in Resources */,
 				486DA5AF21674F67006B8BA5 /* LaunchScreen.storyboard in Resources */,
 				486DA5B021674F67006B8BA5 /* Assets.xcassets in Resources */,
@@ -1698,6 +1733,7 @@
 				2772BA832209CE4C003AA1ED /* Payment.storyboard in Resources */,
 				4849088921367886008D0B6F /* Store.storyboard in Resources */,
 				4849088721367886008D0B6F /* Login.storyboard in Resources */,
+				4A534E58224E0F2D00ED0599 /* Contact.storyboard in Resources */,
 				2757D2F021F8530200413713 /* Genfare_CDTA_UAT_Info.plist in Resources */,
 				272D9D66220D59CC00888BF3 /* public_key.der in Resources */,
 				4884E6CF2122A85F003A1289 /* LaunchScreen.storyboard in Resources */,
@@ -1906,10 +1942,12 @@
 				27FA99C022142FE400F926AC /* GFCreateWalletViewModel.swift in Sources */,
 				27FA99C122142FE400F926AC /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				4A69A0552243648600623427 /* GFSettingsViewController.swift in Sources */,
+				4A81632422531CCD004D06C0 /* ContactViewModel.swift in Sources */,
 				27FA99C222142FE400F926AC /* GFTAccessTokenAdapter.swift in Sources */,
 				27FA99C322142FE400F926AC /* PurchaseTicketTableViewCell.swift in Sources */,
 				27FA99C422142FE400F926AC /* GFMenuButton.swift in Sources */,
 				27FA99C522142FE400F926AC /* GFSignupViewController.swift in Sources */,
+				4A534E67224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift in Sources */,
 				27FA99C622142FE400F926AC /* SignUpModel.swift in Sources */,
 				27FA99C722142FE400F926AC /* GFTripHistoryManager.swift in Sources */,
 				27FA99C822142FE400F926AC /* Account+CoreDataProperties.swift in Sources */,
@@ -2006,6 +2044,7 @@
 				27FA9A1C22142FE400F926AC /* RNCryptorEngine.m in Sources */,
 				27FA9A1D22142FE400F926AC /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				27FA9A1E22142FE400F926AC /* GFReachability.swift in Sources */,
+				4A534E5F224E16B700ED0599 /* GFContactViewController.swift in Sources */,
 				27FA9A2122142FE400F926AC /* GFFirstAuthToken.swift in Sources */,
 				27FA9A2222142FE400F926AC /* GFCreateOrderForProductsService.swift in Sources */,
 				27FA9A2322142FE400F926AC /* GFBarcodeInfoViewController.swift in Sources */,
@@ -2037,6 +2076,7 @@
 				27FA9A3922142FE400F926AC /* GFLocation.swift in Sources */,
 				27FA9A3A22142FE400F926AC /* Card+CoreDataProperties.swift in Sources */,
 				27FA9A3B22142FE400F926AC /* GFColor.swift in Sources */,
+				4A534E63224E413900ED0599 /* GFTermsViewController.swift in Sources */,
 				27FA9A3C22142FE400F926AC /* GFSignUpService.swift in Sources */,
 				27FA9A3D22142FE400F926AC /* HomeViewController.swift in Sources */,
 				27FA9A3E22142FE400F926AC /* NSData+Base64.m in Sources */,
@@ -2094,6 +2134,7 @@
 				2772BA5E22059F78003AA1ED /* MenuItemView.swift in Sources */,
 				4A69A0542243648600623427 /* GFSettingsViewController.swift in Sources */,
 				486DA58621674F67006B8BA5 /* GFRouteLegsScrollView.swift in Sources */,
+				4A534E66224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift in Sources */,
 				2767DA99220DAD5E0076887C /* Card+CoreDataProperties.swift in Sources */,
 				486DA58721674F67006B8BA5 /* GFMenuButton.swift in Sources */,
 				486DA58821674F67006B8BA5 /* GFSignupViewController.swift in Sources */,
@@ -2188,6 +2229,7 @@
 				2747555821FADF4A00D62268 /* Ticket+CoreDataProperties.swift in Sources */,
 				2757D2CE21F72DAD00413713 /* GFAPIServiceManager.swift in Sources */,
 				4A4C01FA220AE4F80030AE09 /* GFCreateOrderForProductsService.swift in Sources */,
+				4A534E5E224E16B700ED0599 /* GFContactViewController.swift in Sources */,
 				2757D2C621F5BA9100413713 /* NameTextViewModel.swift in Sources */,
 				27F83D542211508600232521 /* GFBarcodeScreenViewController.swift in Sources */,
 				27F6C54422044DA9009052D0 /* PayAsYouGoCell.swift in Sources */,
@@ -2210,8 +2252,10 @@
 				486DA5A521674F67006B8BA5 /* GFLocation.swift in Sources */,
 				486DA5A621674F67006B8BA5 /* GFColor.swift in Sources */,
 				274754B921F9E2C800D62268 /* GFCreateWalletViewModel.swift in Sources */,
+				4A81632322531CCD004D06C0 /* ContactViewModel.swift in Sources */,
 				486DA5A721674F67006B8BA5 /* HomeViewController.swift in Sources */,
 				2772BA7222082277003AA1ED /* GFActivityTableViewController.swift in Sources */,
+				4A534E62224E413900ED0599 /* GFTermsViewController.swift in Sources */,
 				486DA5A821674F67006B8BA5 /* GFNavigateTimingsViewController.swift in Sources */,
 				2757D2E021F83FCE00413713 /* Api.swift in Sources */,
 				274754AD21F9BF3100D62268 /* GFCreatWalletViewController.swift in Sources */,
@@ -2230,6 +2274,7 @@
 				2747555721FADF4A00D62268 /* Ticket+CoreDataProperties.swift in Sources */,
 				2772BA7A22096C0E003AA1ED /* GFActivityViewModel.swift in Sources */,
 				4A37B263222D4B4A00EE3644 /* EncryptionSet+CoreDataProperties.swift in Sources */,
+				4A534E61224E413900ED0599 /* GFTermsViewController.swift in Sources */,
 				486DA57B21674F4E006B8BA5 /* GFBaseService.swift in Sources */,
 				486570A7212D5DEA00E94556 /* GFConstants.swift in Sources */,
 				2772BA5D22059F78003AA1ED /* MenuItemView.swift in Sources */,
@@ -2358,6 +2403,7 @@
 				2747553C21FADF4A00D62268 /* LoyaltyBonus+CoreDataClass.swift in Sources */,
 				273B2CED21E48A1500208012 /* LoginModel.swift in Sources */,
 				272D9DB1220D9EB500888BF3 /* RNCryptorEngine.m in Sources */,
+				4A81632222531CCD004D06C0 /* ContactViewModel.swift in Sources */,
 				2772BA5722059F78003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				486DA571215CDD58006B8BA5 /* GFReachability.swift in Sources */,
 				274755952201E1FD00D62268 /* GFFirstAuthToken.swift in Sources */,
@@ -2367,6 +2413,7 @@
 				4A37B268222D4B4A00EE3644 /* CardEvent+CoreDataProperties.swift in Sources */,
 				4A69A077224368B200623427 /* GFChangeAccountService.swift in Sources */,
 				274755912201DA6300D62268 /* GFCreateWalletService.swift in Sources */,
+				4A534E65224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift in Sources */,
 				2747552421FADF4A00D62268 /* Wallet+CoreDataClass.swift in Sources */,
 				2712E7F121DF862800FF19CA /* GFUtilities.swift in Sources */,
 				2747554E21FADF4A00D62268 /* LoyaltyCapped+CoreDataClass.swift in Sources */,
@@ -2374,6 +2421,7 @@
 				4A37B265222D4B4A00EE3644 /* EncryptionSet+CoreDataClass.swift in Sources */,
 				4A37B266222D4B4A00EE3644 /* Event+CoreDataClass.swift in Sources */,
 				27C3D863220471F2004B3B0E /* GFWalletActivityService.swift in Sources */,
+				4A534E5D224E16B700ED0599 /* GFContactViewController.swift in Sources */,
 				2747554221FADF4A00D62268 /* Product+CoreDataClass.swift in Sources */,
 				2772BA912209CE94003AA1ED /* GFTicketCardSeletionViewController.swift in Sources */,
 				486BD55121464CAC00E88AAA /* GFIconBadge.swift in Sources */,

@@ -21,5 +21,21 @@ class ContactViewModel {
         return ""
     }
     
+    func openURL() {
+        if let url = URL(string: "http://www.cota.com"), !url.absoluteString.isEmpty {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
     
+    func updateUI(){
+        vistTheWebsiteProperty.backgroundColor = UIColor(hexString:"#459EAC")
+        callNumberProperty.backgroundColor = UIColor(hexString:"#459EAC")
+        commentsProperty.backgroundColor = UIColor(hexString:"#459EAC")
+    }
+    
+    func eMail(){
+        if let url = URL(string:"mailto:Requests@cota.com"), !url.absoluteString.isEmpty{
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }

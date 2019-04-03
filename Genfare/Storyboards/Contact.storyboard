@@ -67,25 +67,11 @@ Mon-Fri: 8:00AM to 5:00PM</string>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="E8H-4o-Fko">
-                                        <rect key="frame" x="63" y="306" width="93" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="93" id="5k0-bO-vwg"/>
-                                            <constraint firstAttribute="height" constant="49" id="NkI-HM-u0H"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtk-pD-2Pi">
                                         <rect key="frame" x="137" y="275" width="101" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="ROI-CU-KDs">
-                                        <rect key="frame" x="217" y="306" width="95" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="95" id="2Hz-ep-wzK"/>
-                                            <constraint firstAttribute="height" constant="49" id="wYs-yF-hpb"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjH-d1-s0G">
                                         <rect key="frame" x="20" y="556" width="120" height="30"/>
                                         <state key="normal" title="Terms of Use">
@@ -104,38 +90,61 @@ Mon-Fri: 8:00AM to 5:00PM</string>
                                             <action selector="goToPrivacy:" destination="EkD-GL-2jU" eventType="touchUpInside" id="bYe-MW-Ksq"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgT-iU-NgT">
+                                        <rect key="frame" x="63" y="306" width="95" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="Qma-Ap-RkT"/>
+                                            <constraint firstAttribute="width" constant="95" id="VkX-hU-cxj"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ic_twitter"/>
+                                        <connections>
+                                            <action selector="twitterButtonClicked:" destination="EkD-GL-2jU" eventType="touchUpInside" id="poQ-gN-iUJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kF-ri-Mzc">
+                                        <rect key="frame" x="217" y="306" width="95" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="6QO-SS-wb2"/>
+                                            <constraint firstAttribute="height" constant="49" id="mHU-6n-X10"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ic_facebook"/>
+                                        <connections>
+                                            <action selector="facebookBtnClkd:" destination="EkD-GL-2jU" eventType="touchUpInside" id="rYa-Nf-vd0"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="S2r-X7-jyf" secondAttribute="centerX" id="0i2-3v-YwU"/>
                                     <constraint firstAttribute="centerX" secondItem="MCA-cA-6RJ" secondAttribute="centerX" id="1eO-iJ-doK"/>
                                     <constraint firstAttribute="bottom" secondItem="V6q-hS-69P" secondAttribute="bottom" constant="20" id="27H-QS-Pll"/>
+                                    <constraint firstItem="FgT-iU-NgT" firstAttribute="top" secondItem="Mtk-pD-2Pi" secondAttribute="bottom" constant="10" id="5AT-GZ-L8K"/>
                                     <constraint firstItem="KWf-nT-sAX" firstAttribute="leading" secondItem="JLs-cp-fHw" secondAttribute="leading" constant="20" id="7aD-DS-p6i"/>
                                     <constraint firstAttribute="centerX" secondItem="KWf-nT-sAX" secondAttribute="centerX" id="8dg-ri-6so"/>
                                     <constraint firstAttribute="centerX" secondItem="3hr-3m-xfO" secondAttribute="centerX" id="ArE-Ah-orz"/>
-                                    <constraint firstAttribute="trailing" secondItem="ROI-CU-KDs" secondAttribute="trailing" constant="63" id="Bbp-Ic-C4q"/>
                                     <constraint firstAttribute="centerX" secondItem="yBM-OH-TyO" secondAttribute="centerX" id="EVH-Fn-7aX"/>
+                                    <constraint firstItem="3kF-ri-Mzc" firstAttribute="top" secondItem="Mtk-pD-2Pi" secondAttribute="bottom" constant="10" id="H5V-tf-Ol1"/>
                                     <constraint firstAttribute="bottom" secondItem="gjH-d1-s0G" secondAttribute="bottom" constant="20" id="IgM-PO-Wg2"/>
-                                    <constraint firstItem="E8H-4o-Fko" firstAttribute="top" secondItem="Mtk-pD-2Pi" secondAttribute="bottom" constant="10" id="NQp-jd-6Jw"/>
+                                    <constraint firstItem="SUe-vT-gWy" firstAttribute="top" secondItem="3kF-ri-Mzc" secondAttribute="bottom" constant="37" id="L4m-hI-DIJ"/>
+                                    <constraint firstItem="FgT-iU-NgT" firstAttribute="leading" secondItem="JLs-cp-fHw" secondAttribute="leading" constant="63" id="MqY-eg-FJ5"/>
                                     <constraint firstItem="gjH-d1-s0G" firstAttribute="top" secondItem="SUe-vT-gWy" secondAttribute="bottom" constant="30" id="OB0-xB-yfH"/>
                                     <constraint firstItem="S2r-X7-jyf" firstAttribute="top" secondItem="KWf-nT-sAX" secondAttribute="bottom" constant="8" id="OH2-Qj-OAg"/>
                                     <constraint firstItem="p58-vF-OXQ" firstAttribute="top" secondItem="3hr-3m-xfO" secondAttribute="bottom" constant="8" id="OIV-Hq-skh"/>
                                     <constraint firstAttribute="trailing" secondItem="SUe-vT-gWy" secondAttribute="trailing" constant="20" id="OQo-rD-gLq"/>
+                                    <constraint firstItem="SUe-vT-gWy" firstAttribute="top" secondItem="FgT-iU-NgT" secondAttribute="bottom" constant="37" id="Oaj-dU-xDe"/>
                                     <constraint firstItem="Mtk-pD-2Pi" firstAttribute="top" secondItem="S2r-X7-jyf" secondAttribute="bottom" constant="29" id="Osj-Eh-Zut"/>
                                     <constraint firstItem="gjH-d1-s0G" firstAttribute="leading" secondItem="JLs-cp-fHw" secondAttribute="leading" constant="20" id="Q3v-wY-YR2"/>
                                     <constraint firstAttribute="trailing" secondItem="yBM-OH-TyO" secondAttribute="trailing" constant="20" id="R8p-OE-EZj"/>
                                     <constraint firstAttribute="centerX" secondItem="Mtk-pD-2Pi" secondAttribute="centerX" id="UIO-Fb-37X"/>
                                     <constraint firstItem="MCA-cA-6RJ" firstAttribute="top" secondItem="yBM-OH-TyO" secondAttribute="bottom" constant="8" id="URh-3K-XsG"/>
                                     <constraint firstItem="yBM-OH-TyO" firstAttribute="top" secondItem="p58-vF-OXQ" secondAttribute="bottom" constant="24" id="VZd-Tc-0nE"/>
-                                    <constraint firstItem="SUe-vT-gWy" firstAttribute="top" secondItem="ROI-CU-KDs" secondAttribute="bottom" constant="37" id="ZBt-XT-MyL"/>
                                     <constraint firstAttribute="centerX" secondItem="p58-vF-OXQ" secondAttribute="centerX" id="b9R-Vv-Dqd"/>
                                     <constraint firstItem="3hr-3m-xfO" firstAttribute="leading" secondItem="JLs-cp-fHw" secondAttribute="leading" constant="20" id="bya-uF-Pv6"/>
                                     <constraint firstItem="yBM-OH-TyO" firstAttribute="leading" secondItem="JLs-cp-fHw" secondAttribute="leading" constant="20" id="cKe-MR-H0t"/>
                                     <constraint firstAttribute="trailing" secondItem="KWf-nT-sAX" secondAttribute="trailing" constant="20" id="cZY-GI-EyP"/>
                                     <constraint firstAttribute="trailing" secondItem="3hr-3m-xfO" secondAttribute="trailing" constant="20" id="gFU-dC-flM"/>
                                     <constraint firstAttribute="trailing" secondItem="V6q-hS-69P" secondAttribute="trailing" constant="20" id="iAZ-oF-0Vs"/>
-                                    <constraint firstItem="E8H-4o-Fko" firstAttribute="leading" secondItem="JLs-cp-fHw" secondAttribute="leading" constant="63" id="m1G-8u-C9M"/>
                                     <constraint firstItem="SUe-vT-gWy" firstAttribute="leading" secondItem="JLs-cp-fHw" secondAttribute="leading" constant="20" id="oLw-Zs-kBo"/>
-                                    <constraint firstItem="ROI-CU-KDs" firstAttribute="top" secondItem="Mtk-pD-2Pi" secondAttribute="bottom" constant="10" id="rO2-5f-xZ3"/>
+                                    <constraint firstAttribute="trailing" secondItem="3kF-ri-Mzc" secondAttribute="trailing" constant="63" id="oRZ-Ba-j2a"/>
                                     <constraint firstItem="V6q-hS-69P" firstAttribute="top" secondItem="SUe-vT-gWy" secondAttribute="bottom" constant="30" id="rsg-mY-ox7"/>
                                     <constraint firstItem="3hr-3m-xfO" firstAttribute="top" secondItem="JLs-cp-fHw" secondAttribute="top" constant="20" id="wb8-sQ-t3b"/>
                                     <constraint firstItem="KWf-nT-sAX" firstAttribute="top" secondItem="MCA-cA-6RJ" secondAttribute="bottom" constant="25" id="xfR-to-6tZ"/>
@@ -154,8 +163,6 @@ Mon-Fri: 8:00AM to 5:00PM</string>
                     <connections>
                         <outlet property="callNumberProperty" destination="yBM-OH-TyO" id="vdH-24-0LU"/>
                         <outlet property="commentsProperty" destination="KWf-nT-sAX" id="2qQ-Cr-zJv"/>
-                        <outlet property="facebookImage" destination="ROI-CU-KDs" id="HlL-fN-zrF"/>
-                        <outlet property="twitterImage" destination="E8H-4o-Fko" id="ltk-J7-anR"/>
                         <outlet property="vistTheWebsiteProperty" destination="3hr-3m-xfO" id="RH9-1h-Q1U"/>
                     </connections>
                 </viewController>
@@ -902,7 +909,7 @@ Some information that you submit to us through this website may be protected by 
         </scene>
     </scenes>
     <resources>
-        <image name="ic_facebook.png" width="16" height="16"/>
-        <image name="ic_twitter.png" width="16" height="16"/>
+        <image name="ic_facebook" width="144" height="144"/>
+        <image name="ic_twitter" width="1139" height="926"/>
     </resources>
 </document>

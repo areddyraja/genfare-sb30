@@ -21,7 +21,7 @@ class GFContactViewController: GFBaseViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.updateUI()
+        self.updateUI()
         createViewModelBinding()
         
         // Do any additional setup after loading the view.
@@ -33,6 +33,11 @@ class GFContactViewController: GFBaseViewController {
         self.navigationItem.title = "Contact"
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+    }
+    func updateUI(){
+        vistTheWebsiteProperty.backgroundColor = UIColor(hexString:"#459EAC")
+        callNumberProperty.backgroundColor = UIColor(hexString:"#459EAC")
+        commentsProperty.backgroundColor = UIColor(hexString:"#459EAC")
     }
     @IBAction func facebookBtnClkd(_ sender: Any) {
         

@@ -27,11 +27,7 @@ class ContactViewModel {
         }
     }
     
-    func updateUI(){
-        vistTheWebsiteProperty.backgroundColor = UIColor(hexString:"#459EAC")
-        callNumberProperty.backgroundColor = UIColor(hexString:"#459EAC")
-        commentsProperty.backgroundColor = UIColor(hexString:"#459EAC")
-    }
+  
     
     func eMail(){
         if let url = URL(string:"mailto:Requests@cota.com"), !url.absoluteString.isEmpty{

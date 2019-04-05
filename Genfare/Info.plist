@@ -31,7 +31,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>UILaunchStoryboardName</key>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fb</string>
+        <string>twitter</string>
+    </array>
+    <key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Splashscreen</string>

@@ -87,6 +87,7 @@ class GFDataService {
             print("Could not Delete. \(error), \(error.userInfo)")
         }
     }
+    
     static func deleteFiredEventRecord(entity:String,clickedTime: NSNumber) {
         let context = persistentContainer.viewContext
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
@@ -102,6 +103,7 @@ class GFDataService {
         }
         
     }
+    
     static func deletePayAsYouGoWallet(entity:String,wallet:WalletContents) {
         let context = persistentContainer.viewContext
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
@@ -117,6 +119,7 @@ class GFDataService {
         }
         
     }
+    
     static func currentAccount() -> Account? {
         let records:Array<Account> = fetchRecords(entity: "Account") as! Array<Account>
         
@@ -126,6 +129,7 @@ class GFDataService {
         
         return nil
     }
+    
     static func getAddress() -> Array<StoredAddress>?{
         let records:Array<StoredAddress> = fetchRecords(entity: "StoredAddress") as! Array<StoredAddress>
         
@@ -133,7 +137,32 @@ class GFDataService {
             return records
         }
         return []
+    }
+    
+    static func getCappedDelay() -> Int {
+        let records:Array<Configure> = fetchRecords(entity: "Configure") as! Array<Configure>
         
+        if records.count > 0 {
+            let record = records.first
+            if let cdelay = record?.cappedDelay as? Int {
+                return cdelay
+            }
+        }
+        
+        return 0
+    }
+
+    static func getTransitOffsetValue() -> Int {
+        let records:Array<Configure> = fetchRecords(entity: "Configure") as! Array<Configure>
+        
+        if records.count > 0 {
+            let record = records.first
+            if let offset = record?.endOfTransitDay as? Int {
+                return offset
+            }
+        }
+        
+        return 0
     }
 
 }

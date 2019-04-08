@@ -269,6 +269,10 @@
 		279B023C220C4559002739F5 /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279B023B220C4559002739F5 /* Barcode.storyboard */; };
 		279B023D220C4559002739F5 /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279B023B220C4559002739F5 /* Barcode.storyboard */; };
 		279B023E220C4559002739F5 /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279B023B220C4559002739F5 /* Barcode.storyboard */; };
+		279D77CB2254C88D0034CDD3 /* GFFreeRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */; };
+		279D77CC2254C88D0034CDD3 /* GFFreeRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */; };
+		279D77CD2254C88D0034CDD3 /* GFFreeRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */; };
+		279D77CE2254C88D0034CDD3 /* GFFreeRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */; };
 		27C3D863220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
 		27C3D864220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
 		27C3D865220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
@@ -846,6 +850,7 @@
 		279B0233220B0323002739F5 /* GFAccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAccountInfoViewController.swift; sourceTree = "<group>"; };
 		279B0237220C1A6D002739F5 /* GFAccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAccountInfoViewModel.swift; sourceTree = "<group>"; };
 		279B023B220C4559002739F5 /* Barcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Barcode.storyboard; sourceTree = "<group>"; };
+		279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFreeRides.swift; sourceTree = "<group>"; };
 		27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFWalletActivityService.swift; sourceTree = "<group>"; };
 		27CFA32D221BBF4100593D8B /* GFWalletEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFWalletEventService.swift; sourceTree = "<group>"; };
 		27F6C5242202E634009052D0 /* GFFetchProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFetchProductsService.swift; sourceTree = "<group>"; };
@@ -1011,6 +1016,7 @@
 				2712E7F021DF862800FF19CA /* GFUtilities.swift */,
 				2747555A21FAE0B500D62268 /* GFDataUtility.swift */,
 				27F83CF9220DAFA000232521 /* GFBarcodeUtility.swift */,
+				279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1916,6 +1922,7 @@
 				27FA99C922142FE400F926AC /* PayAsYouGoCell.swift in Sources */,
 				27FA99CA22142FE400F926AC /* GFDataService.swift in Sources */,
 				27FA99CB22142FE400F926AC /* GFCardBasedHomeViewController.swift in Sources */,
+				279D77CD2254C88D0034CDD3 /* GFFreeRides.swift in Sources */,
 				27FA99CC22142FE400F926AC /* GFTripDataManager.swift in Sources */,
 				27FA99CD22142FE400F926AC /* GFTransitStop.swift in Sources */,
 				27FA99CE22142FE400F926AC /* SignUpViewModel.swift in Sources */,
@@ -2182,6 +2189,7 @@
 				486DA5A021674F67006B8BA5 /* GFAccountManager.swift in Sources */,
 				486DA5A121674F67006B8BA5 /* GFReachability.swift in Sources */,
 				486DA5A221674F67006B8BA5 /* GFIconBadge.swift in Sources */,
+				279D77CC2254C88D0034CDD3 /* GFFreeRides.swift in Sources */,
 				279B0239220C1A6D002739F5 /* GFAccountInfoViewModel.swift in Sources */,
 				486DA5A321674F67006B8BA5 /* GFPassListViewController.swift in Sources */,
 				2757D2CA21F7289C00413713 /* KeychainWrapper.swift in Sources */,
@@ -2266,6 +2274,7 @@
 				4881C42B215BAE690088CF5F /* GFTripHistoryManager.swift in Sources */,
 				4A37B261222D4B4A00EE3644 /* CardEvent+CoreDataClass.swift in Sources */,
 				2747553921FADF4A00D62268 /* Account+CoreDataProperties.swift in Sources */,
+				279D77CB2254C88D0034CDD3 /* GFFreeRides.swift in Sources */,
 				4A69A064224364F500623427 /* GFChangeEmailViewController.swift in Sources */,
 				27F6C54322044DA9009052D0 /* PayAsYouGoCell.swift in Sources */,
 				274754C021FA24B100D62268 /* GFDataService.swift in Sources */,
@@ -2544,6 +2553,7 @@
 				27FDDA082237DD4B0010467E /* GFPassListViewController.swift in Sources */,
 				2767DA97220DAD5E0076887C /* Card+CoreDataClass.swift in Sources */,
 				27FDDA6D224900100010467E /* GFSaveAddressViewController.swift in Sources */,
+				279D77CE2254C88D0034CDD3 /* GFFreeRides.swift in Sources */,
 				2747556B21FEE4B100D62268 /* GFCardBasedHomeViewController.swift in Sources */,
 				274754AA21F9BDBA00D62268 /* GFWalletSelectionViewController.swift in Sources */,
 				2757D2CB21F7289C00413713 /* KeychainWrapper.swift in Sources */,

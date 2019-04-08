@@ -156,13 +156,16 @@ class SideMenuItemsViewController: UIViewController {
             SideMenuItemsViewController.rightNavController?.popToRootViewController(animated: false)
             return
         }
-        
+        showContactPage()
         //TODO - Alerts need to be integrated
-        popupAlert(title: "Alert", message: "Contact Us is not ready yet", actionTitles: ["OK"], actions: [nil])
-
+//        popupAlert(title: "Alert", message: "Contact Us is not ready yet", actionTitles: ["OK"], actions: [nil])
         GFBaseViewController.currentMenuItem = Constants.SideMenuAction.ContactUs
     }
-    
+        func showContactPage() {
+            if let controller = UIStoryboard(name: "Contact", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.Contact) as? GFContactViewController {
+                attachControllerToMainWindow(controller: controller)
+        }
+    }
     func updateSideMenu() {
         let userAccount:Account? = GFAccountManager.currentAccount()
         
@@ -286,3 +289,4 @@ extension UIViewController {
         return topViewController(presentedViewController)
     }
 }
+

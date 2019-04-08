@@ -10,10 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+    @IBOutlet var savedCrdLbl: UILabel!
+    @IBOutlet var continueBtn: GFMenuButton!
     
     @IBOutlet var tableView: UITableView!
-    
+    @IBOutlet var imgCardBtn: UIButton!
     @IBOutlet var saveCardButton: UIButton!
     
     var productsCartArray = [[String:Any]]()
@@ -22,11 +24,14 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
     var spinnerView:UIView?
     var baseClass:UIViewController?
     var card = [String:Any]()
+    var selectedIndex = -1
+   var isSelectedBtnImageCard = false
 
+    @IBOutlet var selectedImg: UIImageView!
     @IBOutlet var mailLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        OrderProducts()
+        
         createCallbacks()
          saveCardButton.setImage(UIImage(named: "ic_uncheckedbox"), for: .normal)
         saveCardButton.addTarget(self, action: #selector(saveCardCliked(sender:)), for: .touchUpInside)
@@ -39,14 +44,29 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         updateMailLabel()
         viewModel.fetchListOfCards()
     }
+    
+    @IBAction func imgCardBtnTapped(_ sender: UIButton) {
+        if(sender.isSelected){
+            sender.isSelected = false
+            imgCardBtn.backgroundColor = UIColor(hexString:"#d1d1d1")
+            
+        }else{
+            sender.isSelected = true
+            imgCardBtn.backgroundColor = UIColor(hexString:"#808080")
+            selectedIndex = -1
+            self.tableView.reloadData()
+        }
+        
+       
+  }
     @objc func saveCardCliked(sender: UIButton){
         
         if(sender.isSelected){
-            sender.isSelected = false
+            isSelectedBtnImageCard = false
           saveCardButton.setImage(UIImage(named: "ic_checkedbox"), for: .normal)
              UserDefaults.standard.set(true, forKey: "savedcards")
         }else{
-            sender.isSelected = true
+            isSelectedBtnImageCard = true
             saveCardButton.setImage(UIImage(named: "ic_uncheckedbox"), for: .normal)
              UserDefaults.standard.set(false, forKey: "savedcards")
         }
@@ -98,6 +118,21 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         orderedService.createOrderService { (success,error) in
             if success! {
                 print("ordered")
+                if(self.selectedIndex != -1){
+                    let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
+                    let  walletID =  GFWalletsService.walletID!
+                    var orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
+                    var savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
+                    self.card = self.viewModel.model[self.selectedIndex] as! [String : Any]
+                    let url1   = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&savedCardId=\(self.card["cardNumber"]!)"
+                    let url =  Utilities.apiHost()+url1
+                    
+                   
+                    
+                    navController?.weburl = url
+                    self.navigationController?.pushViewController(navController!, animated: true)
+                }
+                
             }
             else{
                 print("error")
@@ -123,22 +158,41 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         cell.CardBgview.layer.cornerRadius = 5.0
         cell.CardBgview.layer.borderWidth = 2.0
         cell.CardBgview.clipsToBounds = true
-        cell.CardBgview.layer.borderColor = UIColor(hexString:"#d1d1d1").cgColor
+       cell.CardBgview.layer.borderColor = UIColor(hexString:"#d1d1d1").cgColor
         cell.CardBgview.backgroundColor = UIColor(hexString:"#d1d1d1")
         cell.deleteButton.tag = indexPath.row
+        cell.backgroundColor = UIColor.clear
+
          cell.deleteButton.addTarget(self, action: #selector(deletecardCliked(sender:)), for: .touchUpInside)
         if let cardnumber =  card["lastFour"] as? String{
             cell.canrdNumberLabel.text = "\(cardnumber)"
        }
         if let cardImage = card["paymentTypeId"] as? Int{
-       cell.Cardimage.image = UIImage(named: String(cardImage)) as UIImage? 
-            
+       cell.Cardimage.image = UIImage(named: String(cardImage)) as UIImage?
+
         }
-            
+
         else{
         cell.Cardimage.image = UIImage(named: "Card") as UIImage?
         }
+        if(selectedIndex == indexPath.row){
+            cell.backgroundColor = UIColor(hexString:"#808080")
+        }
         return cell
+    }
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+  
+        selectedIndex = indexPath.row
+        imgCardBtn.backgroundColor = UIColor(hexString:"#d1d1d1")
+               self.tableView.reloadData()
+    
+       
+    }
+    
+     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell:SavedCardsListTableViewCell = tableView.cellForRow(at: indexPath) as! SavedCardsListTableViewCell
+         cell.backgroundColor = UIColor(hexString:"#808080")
     }
      @objc func deletecardCliked(sender: UIButton){
         card = viewModel.model[sender.tag] as! [String : Any]
@@ -171,13 +225,41 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
     }
 
     @IBAction func paymentButtonPressed(_ sender: Any) {
+        if(selectedIndex != -1){
+           let existingPassword = String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.Password)!)
+              let email = (String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.UserName)!))
+            let alert = UIAlertController(title: "Saved Credit Card", message: (String(format:"Enter the password for %@ to use saved cards.\n\nOnce the password is verified, this card will be used for further Payment",email)), preferredStyle: UIAlertController.Style.alert)
+            
+            
+            alert.addTextField { (textField) -> Void in
+                let  passwordTextField = textField
+                passwordTextField.delegate = self 
+                passwordTextField.placeholder = "Password"
+            }
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "verify", style: UIAlertAction.Style.destructive, handler: { action in
+                let passwordText = alert.textFields![0]
+                if(passwordText.text == existingPassword){
+                    self.OrderProducts()
+                }
+                else{
+                    let alert = UIAlertController(title: "Password", message: "Please provide correct password", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            }))
+            
+            present(alert, animated: true, completion: nil)
+        }
+        OrderProducts()
         let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
       let  walletID =  GFWalletsService.walletID!
         var orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
         var savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
         let  url1 = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&saveForFuture=\(savedValue)"
         let url =  Utilities.apiHost()+url1
-        navController?.weburl = url
+      navController?.weburl = url
        navigationController?.pushViewController(navController!, animated: true)
         
     }

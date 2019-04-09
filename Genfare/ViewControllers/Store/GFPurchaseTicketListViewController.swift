@@ -150,8 +150,6 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 Newdict["ticket_count"] = quantityValue
                 Newdict["total_ticket_fare"] = fare
                 viewModel.productsListArrayModel[sender.tag] = Newdict as! [String : Any]
-                
-                
             }
             validations()
         }

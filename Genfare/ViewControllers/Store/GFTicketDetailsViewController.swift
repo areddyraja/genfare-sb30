@@ -29,12 +29,12 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         return 80;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: .default, reuseIdentifier: "Identifier")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "Identifier")
         
         let prodObj = viewModel.seletedProductsModel[indexPath.row]
         
         
-        var riderlabel = UILabel(frame: CGRect(x: 0, y: 5, width: cell.frame.size.width - 50, height: 20))
+        let riderlabel = UILabel(frame: CGRect(x: 0, y: 5, width: cell.frame.size.width - 50, height: 20))
         if let font = UIFont(name: "Helvetica-Bold", size: 17) {
             riderlabel.font = font
         }
@@ -43,14 +43,14 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         }
         cell.contentView.addSubview(riderlabel)
         
-        var fare = prodObj["total_ticket_fare"]
-        var pricelabel = UILabel(frame: CGRect(x: 0, y: 30, width: cell.frame.size.width - 50, height: 20))
+        let fare = prodObj["total_ticket_fare"]
+        let pricelabel = UILabel(frame: CGRect(x: 0, y: 30, width: cell.frame.size.width - 50, height: 20))
         pricelabel.text = String(format: " $ %.2f", fare! as! CVarArg)
         cell.contentView.addSubview(pricelabel)
-        var quantitylabel = UILabel(frame: CGRect(x: 0, y: 55, width: cell.frame.size.width - 50, height: 20))
-        var ticketCountString = prodObj["ticket_count"] as? Int
+        let quantitylabel = UILabel(frame: CGRect(x: 0, y: 55, width: cell.frame.size.width - 50, height: 20))
+        let ticketCountString = prodObj["ticket_count"] as? Int
         if (ticketCountString == 0) {
-            var naStr = "NA"
+            let naStr = "NA"
             quantitylabel.text = " Quantity :  \(naStr)"
         } else {
             if let value = prodObj["ticket_count"] {
@@ -58,7 +58,7 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
             }
         }
         cell.contentView.addSubview(quantitylabel)
-        var cancelButton = UIButton(frame: CGRect(x: 0, y: 5, width: 20, height: 20))
+        let cancelButton = UIButton(frame: CGRect(x: 0, y: 5, width: 20, height: 20))
         cancelButton.tag = indexPath.row + 1
         let image = UIImage(named: "cancel") as UIImage?
         cancelButton.setImage(image, for: .normal)

@@ -142,7 +142,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 if(quantityValue>=1){
                     quantityValue = quantityValue - 1
                     }
-                var price = convertDict["price"] as! String
+                let price = convertDict["price"] as! String
                 let fare =  Float(quantityValue) * Float(price)!
                 var Newdict: [AnyHashable : Any] = [:]
                 var temp = NSMutableDictionary(dictionary: Newdict);
@@ -167,7 +167,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                     quantityValue = count + 1
                     
                 }
-                var price = convertDict["price"] as! String
+                let price = convertDict["price"] as! String
                 let fare =  Float(quantityValue) * Float(price)!
                 var Newdict: [AnyHashable : Any] = [:]
                 var temp = NSMutableDictionary(dictionary: Newdict);
@@ -218,7 +218,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         for j in 0..<viewModel.productsListArrayPayAsYouGoModel.count {
             seletedArraypayasyougo.append(viewModel.productsListArrayPayAsYouGoModel[j] as! [String : Any])
         }
-        var newarray = seletedArraypayasyougo + viewModel.seletedArray
+        let newarray = seletedArraypayasyougo + viewModel.seletedArray
         let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFTicketDetailsViewController") as? GFTicketDetailsViewController
         let ticketViewModel = GFTicketDetailsViewModel()
         ticketViewModel.seletedProductsModel = newarray

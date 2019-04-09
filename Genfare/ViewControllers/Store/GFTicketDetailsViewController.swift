@@ -9,19 +9,20 @@
 import UIKit
 
 class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    let viewModel = GFTicketDetailsViewModel()
     var seletedProducts = [[String:Any]]()
-    var arrNotStoredProds = [[String:Any]]()
-    var arrStoredProds  = [[String:Any]]()
+    var spinnerView:UIView?
     
     @IBOutlet var productsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.seletedProductsModel = seletedProducts
         // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  seletedProducts.count
+        return  viewModel.seletedProductsModel.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
@@ -30,42 +31,33 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .default, reuseIdentifier: "Identifier")
         
-        let prodObj = seletedProducts[indexPath.row]
+        let prodObj = viewModel.seletedProductsModel[indexPath.row]
         
         
-        var storedlabel = UILabel(frame: CGRect(x: 0, y: 5, width: cell.frame.size.width - 50, height: 20))
+        var riderlabel = UILabel(frame: CGRect(x: 0, y: 5, width: cell.frame.size.width - 50, height: 20))
         if let font = UIFont(name: "Helvetica-Bold", size: 17) {
-            storedlabel.font = font
+            riderlabel.font = font
         }
-        storedlabel.numberOfLines = 0
-        storedlabel.adjustsFontSizeToFitWidth = true
-        storedlabel.minimumScaleFactor = 0.5
         if let riderText =  prodObj["productDescription"] as? String{
-            storedlabel.text = riderText
+            riderlabel.text = riderText
         }
-        cell.contentView.addSubview(storedlabel)
+        cell.contentView.addSubview(riderlabel)
         
         var fare = prodObj["total_ticket_fare"]
-        var storedlabel1 = UILabel(frame: CGRect(x: 0, y: 30, width: cell.frame.size.width - 50, height: 20))
-        storedlabel1.text = String(format: " $ %.2f", fare! as! CVarArg)
-        storedlabel.numberOfLines = 0
-        storedlabel.adjustsFontSizeToFitWidth = true
-        storedlabel.minimumScaleFactor = 0.5
-        cell.contentView.addSubview(storedlabel1)
-        var storedlabel2 = UILabel(frame: CGRect(x: 0, y: 55, width: cell.frame.size.width - 50, height: 20))
+        var pricelabel = UILabel(frame: CGRect(x: 0, y: 30, width: cell.frame.size.width - 50, height: 20))
+        pricelabel.text = String(format: " $ %.2f", fare! as! CVarArg)
+        cell.contentView.addSubview(pricelabel)
+        var quantitylabel = UILabel(frame: CGRect(x: 0, y: 55, width: cell.frame.size.width - 50, height: 20))
         var ticketCountString = prodObj["ticket_count"] as? Int
         if (ticketCountString == 0) {
             var naStr = "NA"
-            storedlabel2.text = " Quantity :  \(naStr)"
+            quantitylabel.text = " Quantity :  \(naStr)"
         } else {
             if let value = prodObj["ticket_count"] {
-                storedlabel2.text = " Quantity :  \(value)"
+                quantitylabel.text = " Quantity :  \(value)"
             }
         }
-        storedlabel.numberOfLines = 0
-        storedlabel.adjustsFontSizeToFitWidth = true
-        storedlabel.minimumScaleFactor = 0.5
-        cell.contentView.addSubview(storedlabel2)
+        cell.contentView.addSubview(quantitylabel)
         var cancelButton = UIButton(frame: CGRect(x: 0, y: 5, width: 20, height: 20))
         cancelButton.tag = indexPath.row + 1
         let image = UIImage(named: "cancel") as UIImage?
@@ -75,7 +67,7 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         return cell
     }
     @objc func onClickofCancel(sender: GFMenuButton){
-        seletedProducts.remove(at: sender.tag - 1)
+        viewModel.seletedProductsModel.remove(at: sender.tag - 1)
         productsTableView.reloadData()
     }
 
@@ -84,29 +76,11 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
          self.navigationController?.popViewController(animated: true)
     }
     
-    func getArrayOfProducts() -> [[String:Any]]{
-        var arrProductsList = [[String:Any]]()
-        for (index,_) in self.arrStoredProds.enumerated(){
-            let requiredObj = self.arrStoredProds[index]
-            var storedDict = [String:Any]()
-            storedDict["offeringId"] = requiredObj["offeringId"]
-            storedDict["value"] = requiredObj["total_ticket_fare"]
-            arrProductsList.append(storedDict)
-        }
-        for (index,_) in self.arrNotStoredProds.enumerated(){
-            let requiredObj = self.arrNotStoredProds[index]
-            var notStoredDict = [String:Any]()
-            notStoredDict["offeringId"] = requiredObj["offeringId"]
-            notStoredDict["quantity"] = requiredObj["ticket_count"]
-            arrProductsList.append(notStoredDict)
-            
-        }
-        return arrProductsList
-    }
+    
     @IBAction func SecondContinuePressed(_ sender: Any) {
-        if seletedProducts.count > 0{
-            self.getSelectedProducts()
-            let arrProductsList = self.getArrayOfProducts()
+        if viewModel.seletedProductsModel.count > 0{
+            viewModel.getSelectedProducts()
+            let arrProductsList = viewModel.getArrayOfProducts()
             if arrProductsList.count > 0{
                 let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFTicketCardSeletionViewController") as? GFTicketCardSeletionViewController
                 navController!.productsCartArray = arrProductsList
@@ -115,18 +89,6 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         }
     }
     
-    func getSelectedProducts(){
-        self.arrStoredProds.removeAll()
-        self.arrNotStoredProds.removeAll()
-        for prod in seletedProducts{
-            if let ticketDesc = prod["ticketTypeDescription"] as? String{
-                if ticketDesc != "Stored Value"{
-                    arrNotStoredProds.append(prod)
-                }else{
-                    arrStoredProds.append(prod)
-                }
-            }
-        }
-    }
+
     
 }

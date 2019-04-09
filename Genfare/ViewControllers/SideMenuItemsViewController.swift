@@ -145,7 +145,7 @@ class SideMenuItemsViewController: UIViewController {
             return
         }
 
-        if let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.Settings) as? GFSettingsViewController {
+        if let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "GFAccountSettingsViewController") as? GFAccountSettingsViewController {
             attachControllerToMainWindow(controller: controller)
         }
         GFBaseViewController.currentMenuItem = Constants.SideMenuAction.Settings

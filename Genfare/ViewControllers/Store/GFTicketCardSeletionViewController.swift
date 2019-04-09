@@ -121,7 +121,7 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
                 if(self.selectedIndex != -1){
                     let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
                     let  walletID =  GFWalletsService.walletID!
-                    var orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
+                    let orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
                     var savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
                     self.card = self.viewModel.model[self.selectedIndex] as! [String : Any]
                     let url1   = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&savedCardId=\(self.card["cardNumber"]!)"
@@ -196,7 +196,7 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
     }
      @objc func deletecardCliked(sender: UIButton){
         card = viewModel.model[sender.tag] as! [String : Any]
-        var cardNumber = card["cardNumber"] as? Int
+        let cardNumber = card["cardNumber"] as? Int
         
         let alert = UIAlertController(title: "Delete Card", message: "Are you sure to delete this card", preferredStyle: UIAlertController.Style.alert)
         
@@ -255,14 +255,15 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         OrderProducts()
         let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
       let  walletID =  GFWalletsService.walletID!
-        var orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
-        var savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
+        let orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
+        let savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
         let  url1 = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&saveForFuture=\(savedValue)"
         let url =  Utilities.apiHost()+url1
       navController?.weburl = url
        navigationController?.pushViewController(navController!, animated: true)
         
     }
+    
     @IBAction func backToCartClicked(_ sender: Any) {
     }
 }

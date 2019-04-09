@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UITableViewDataSource {
+class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
     
     @IBOutlet var ProductsTableView: UITableView!
     var quantityValue = 0
@@ -18,32 +20,65 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
     @IBOutlet var PayAsYouGoLabel: UILabel!
     @IBOutlet var DollarSymbolLabel: UILabel!
     @IBOutlet var PayAsYouGoTextField: UITextField!
-    var products:Array<Product> =  GFFetchProductsService.getProducts()
-    var productsListArray = [[String:Any]]()
-    var productsListArrayPayAsYouGo = [AnyObject]()
+    let viewModel = PurchaseTicketListViewModel()
     var totalProdcutArray = [AnyObject]()
-    var seletedArray = [[String:Any]]()
     var fare = 0.0
     var walletMax = 0
     var walletMin = 0
+    let disposeBag = DisposeBag()
+    var spinnerView:UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        targetMethod()
-        
-        var payAsYouGoText =  returnStoredValueWithActivation()
-        for i in payAsYouGoText{
-            self.PayAsYouGoLabel.text = i.productDescription
-        }
         let configure:Configure = GFAccountManager.configuredValues()!
         walletMax = configure.configMax as! Int
         walletMin = configure.configMin as! Int
         self.ProductsTableView.reloadData()
+        createCallbacks()
+        //createViewModelBinding()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.showProducts()
         updateMailLabel()
+  
+    }
+    func createCallbacks (){
+        // success
+        viewModel.isSuccess.asObservable()
+            .bind{ [unowned self] value in
+                NSLog("Successfull \(value)")
+                if value{
+                    self.viewModel.targetMethod()
+                    let payAsYouGoText =  self.viewModel.returnStoredValueWithActivation()
+                    for i in payAsYouGoText{
+                        self.PayAsYouGoLabel.text = i.productDescription
+                    }
+                }
+            }.disposed(by: disposeBag)
+        
+        // Loading
+        viewModel.isLoading.asObservable()
+            .bind{[unowned self] value in
+                NSLog("Loading \(value)")
+                if value {
+                    self.spinnerView = UIViewController.displaySpinner(onView: self.view)
+                }else{
+                    if let _ = self.spinnerView {
+                        UIViewController.removeSpinner(spinner: self.spinnerView!)
+                    }
+                }
+            }.disposed(by: disposeBag)
+        
+        // errors
+        viewModel.errorMsg.asObservable()
+            .bind {[unowned self] errorMessage in
+                // Show error
+                if errorMessage != ""{
+                    print(errorMessage)
+                }
+            }.disposed(by: disposeBag)
     }
     func updateMailLabel() {
     let userAccount:Account? = GFAccountManager.currentAccount()
@@ -58,7 +93,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  productsListArray.count//products.count
+        return  viewModel.productsListArrayModel.count//products.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
@@ -67,8 +102,8 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProductsTableView.dequeueReusableCell(withIdentifier: "PurchaseTicketTableViewCell", for: indexPath) as! PurchaseTicketTableViewCell
         
-        print("Obj is:\(productsListArray[indexPath.row])")
-        let prodObj = productsListArray[indexPath.row]
+       // print("Obj is:\(viewModel.productsListArrayModel[indexPath.row])")
+        let prodObj = viewModel.productsListArrayModel[indexPath.row]
         
         if let riderText =  prodObj["productDescription"] as? String{
             cell.RiderName.text = riderText
@@ -92,98 +127,29 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
     }
     
     
-    func targetMethod(){
-        
-        if products.count > 0{
-            var  filteredProdcutArray = returnStoredValueProducts()
-            print(filteredProdcutArray)
-            for i in filteredProdcutArray{
-                var dict = [String:Any]()
-                dict["productDescription"] = i.productDescription
-                dict["offeringId"] = i.offeringId
-                dict["ticketId"] = i.ticketId
-                dict["price"] = i.price
-                dict["ticketTypeDescription"] = i.ticketTypeDescription
-                dict["ticket_count"] = quantityValue
-                dict["total_ticket_fare"] = fare
-                self.productsListArray.append(dict)
-                
-            }
-            print(productsListArray)
-            
-        }
-        
-    }
-    func payasyougo(){
-        if products.count > 0 {
-            productsListArrayPayAsYouGo.removeAll()
-            var filteredProductArrayPayAsYouGo  = returnStoredValueWithActivation()
-            print(filteredProductArrayPayAsYouGo)
-            for i in filteredProductArrayPayAsYouGo{
-                if(!(self.PayAsYouGoTextField.text?.isEmpty)!){
-                    //  if(self.PayAsYouGoTextField.text.length>0){
-                    var dict: [AnyHashable : Any] = [:]
-                    dict["productDescription"] = i.productDescription
-                    dict["offeringId"] = i.offeringId
-                    dict["ticketId"] = i.ticketId
-                    dict["price"] = i.price
-                    dict["ticketTypeDescription"] = i.ticketTypeDescription
-                    dict["ticket_count"] = 0
-                    dict["total_ticket_fare"] = self.PayAsYouGoTextField.text
-                    productsListArrayPayAsYouGo.append(dict as AnyObject)
-                }
-            }
-            print(productsListArrayPayAsYouGo)
-            
-        }
-        
-    }
+   
     func dictForPayAsYouGo() {
-        var payasyougovalue = self.PayAsYouGoTextField.text
-        UserDefaults.standard.set(payasyougovalue, forKey: "payasyougoamount")
+        viewModel.payAsYouGoTextFieldtext = self.PayAsYouGoTextField.text!
+        UserDefaults.standard.set(viewModel.payAsYouGoTextFieldtext, forKey: "payasyougoamount")
     }
     //
-    func returnStoredValueWithActivation() -> [Product]{
-        var arrStoredProds = [Product]()
-        for prod in products{
-            if let objProd = prod as? Product{
-                if let ticetDesc = objProd.ticketTypeDescription, let active = objProd.isActivationOnly{
-                    if ticetDesc == "Stored Value" && active == 0 {
-                        arrStoredProds.append(objProd)
-                    }
-                }
-            }
-        }
-        return arrStoredProds
-    }
-    func returnStoredValueProducts() -> [Product]{
-        var arrStoredProds = [Product]()
-        for prod in products{
-            if let objProd = prod as? Product{
-                if let ticetDesc = objProd.ticketTypeDescription{
-                    if ticetDesc != "Stored Value"{
-                        arrStoredProds.append(objProd)
-                    }
-                }
-            }
-        }
-        return arrStoredProds
-    }
+  
+ 
     @objc func minusbuttonCliked(sender: GFMenuButton){
-        if let dictObj = self.productsListArray[sender.tag] as? AnyObject{
+        if let dictObj = viewModel.productsListArrayModel[sender.tag] as? AnyObject{
             if let convertDict = dictObj as? Dictionary<String, Any>{
                 quantityValue = convertDict["ticket_count"] as! Int
                 if(quantityValue>=1){
                     quantityValue = quantityValue - 1
                     }
-                var price = convertDict["price"] as! String
+                let price = convertDict["price"] as! String
                 let fare =  Float(quantityValue) * Float(price)!
                 var Newdict: [AnyHashable : Any] = [:]
                 var temp = NSMutableDictionary(dictionary: Newdict);
                 Newdict.merge(dict: convertDict)
                 Newdict["ticket_count"] = quantityValue
                 Newdict["total_ticket_fare"] = fare
-                productsListArray[sender.tag] = Newdict as! [String : Any]
+                viewModel.productsListArrayModel[sender.tag] = Newdict as! [String : Any]
             }
             validations()
         }
@@ -192,53 +158,31 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
     }
     @objc func plusbuttonClicked(sender: GFMenuButton){
         
-        if let dictObj = self.productsListArray[sender.tag] as? AnyObject{
+        if let dictObj = self.viewModel.productsListArrayModel[sender.tag] as? AnyObject{
             if let convertDict = dictObj as? Dictionary<String, Any>{
                 
                 if let count = convertDict["ticket_count"] as? Int{
                     quantityValue = count + 1
                     
                 }
-                var price = convertDict["price"] as! String
+                let price = convertDict["price"] as! String
                 let fare =  Float(quantityValue) * Float(price)!
                 var Newdict: [AnyHashable : Any] = [:]
                 var temp = NSMutableDictionary(dictionary: Newdict);
                 Newdict.merge(dict: convertDict)
                 Newdict["ticket_count"] = quantityValue
                 Newdict["total_ticket_fare"] = fare
-                productsListArray[sender.tag] = Newdict as! [String : Any]
+                viewModel.productsListArrayModel[sender.tag] = Newdict as! [String : Any]
             }
             validations()
         }
         self.ProductsTableView.reloadData()
         
     }
-    func showTotalAmount(){
-        
-    }
-    func purchsestory(){
-        if let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFTicketDetailsViewController") as? GFTicketDetailsViewController {
-            if let navigator = navigationController {
-                navigator.pushViewController(navController, animated: false)
-            }
-        }
-    }
-    
     func validations(){
         
-        var  totalAmount = 0
-        seletedArray.removeAll()
-        for j in 0..<productsListArray.count {
-        var count = productsListArray[j]["ticket_count"] as? Int
-            if !(count == 0) {
-                
-                seletedArray.append(productsListArray[j] as! [String : Any])
-                totalAmount = totalAmount + ((productsListArray[j]["total_ticket_fare"] as? NSNumber)?.intValue)! ?? 0
-            }
-        }
+        let totalAmount = viewModel.getTotalAmountforvalidations()
         
-        var payAsYouGoAmountValue =   UserDefaults.standard.integer(forKey: "payasyougoamount")
-        totalAmount = totalAmount + payAsYouGoAmountValue
         if(totalAmount > walletMax){
             let alert = UIAlertController(title: "Maximum cart value exceeded", message: (String(format:"You can't add more than $%d to your cart.",walletMax)), preferredStyle: UIAlertController.Style.alert)
             
@@ -265,21 +209,27 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
     }
     
     @IBAction func firstPageContinueButtonClicked(_ sender: GFMenuButton) {
-      //  var seletedArray = [[String:Any]]()
-        payasyougo()
         dictForPayAsYouGo()
         validations()
+        viewModel.payasyougo()
         var seletedArraypayasyougo = [[String:Any]]()
-        for j in 0..<productsListArrayPayAsYouGo.count {
-            
-            seletedArraypayasyougo.append(productsListArrayPayAsYouGo[j] as! [String : Any])
+        for j in 0..<viewModel.productsListArrayPayAsYouGoModel.count {
+            seletedArraypayasyougo.append(viewModel.productsListArrayPayAsYouGoModel[j] as! [String : Any])
         }
-        var newarray = seletedArraypayasyougo + seletedArray
+        let newarray = seletedArraypayasyougo + viewModel.seletedArray
         let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFTicketDetailsViewController") as? GFTicketDetailsViewController
+        let ticketViewModel = GFTicketDetailsViewModel()
+        ticketViewModel.seletedProductsModel = newarray
         navController!.seletedProducts = newarray
         navigationController?.pushViewController(navController!, animated: true)
     }
+    func textFieldShouldReturn(_ PayAsYouGoTextField: UITextField) -> Bool {
+        
+        PayAsYouGoTextField.resignFirstResponder()
+        return true
+    }
 }
+
 extension Dictionary {
     mutating func merge(dict: [Key: Value]){
         for (k, v) in dict {

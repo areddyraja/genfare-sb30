@@ -85,9 +85,13 @@ class GFActivityTableViewController: UITableViewController {
         
         
         if let product:WalletActivity = viewModel.model[indexPath.row] as WalletActivity {
-            let prod = GFFetchProductsService.getProductFor(id: (product.ticketId?.stringValue)!)
+            
             cell.titleLabel.text = String.init(format: "%@ $ %@", product.event!,product.amountCharged!)
-            cell.subTitleLabel.text =  prod!.productDescription!
+            if let prod = GFFetchProductsService.getProductFor(id: (product.ticketId?.stringValue)!) {
+                cell.subTitleLabel.text =  prod.productDescription!
+            }else{
+                cell.subTitleLabel.text = ""
+            }
             cell.dateLabel.text = Utilities.formattedDate(date: Double(((product.date?.intValue)!)/1000))
         }
         

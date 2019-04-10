@@ -21,6 +21,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
     @IBOutlet weak var acctMgtBtn: GFMenuButton!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var walletTitleLabel: UILabel!
+    
     var myPasses : GFMyPassesTableViewController?
     
     override func viewDidLoad() {
@@ -41,17 +42,12 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         viewModel.updateWalletStatus()
-//        let model : GFAccountLandingViewModel = GFAccountLandingViewModel()
-//        model.fireEvent()
-//        let curre
-        
-//        if !(self.pageMenu?.didTapMenuItemToScroll)!{
-//            self.pageMenu?.moveToPage((self.pageMenu?.currentPageIndex)!)
-//        }
-     //  self.callChildViewWillAppear()
-        //attachPassList()
-          //self.attachSpinner(value: false)
+        print(pageMenu?.currentPageIndex)
+        if pageMenu?.currentPageIndex == 0 {
+            myPasses?.refreshWalletContents()
+        }
     }
+    
     func callChildViewWillAppear(){
         if let menu = self.pageMenu{
             if menu.controllerArray.count > 0{

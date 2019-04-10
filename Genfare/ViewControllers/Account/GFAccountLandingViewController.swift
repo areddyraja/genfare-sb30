@@ -22,17 +22,18 @@ class GFAccountLandingViewController: GFBaseViewController {
         updateNavBarUI()
         createCallbacks()
         createViewModelBinding()
+        viewModel.getConfigApi()
 
     }
     
     override func viewWillAppear( _ animated:Bool){
         super.viewWillAppear(animated)
         viewModel.checkWalletStatus()
-        viewModel.getConfigApi()
+       
     }
 
     func createViewModelBinding(){
-    
+     
     }
     
     func createCallbacks (){

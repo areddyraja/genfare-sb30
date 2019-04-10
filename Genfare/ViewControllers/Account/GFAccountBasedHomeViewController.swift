@@ -97,7 +97,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         viewModel.balance.asObservable()
             .bind{ [unowned self] value in
                 NSLog(" \(value)")
-                self.balanceLabel.text = "$\(value)"
+                self.balanceLabel.text = String(format: " $ %.2f", value)
             }.disposed(by: disposeBag)
         
         //Update wallet status

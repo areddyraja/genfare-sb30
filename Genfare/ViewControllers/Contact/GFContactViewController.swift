@@ -30,9 +30,9 @@ class GFContactViewController: GFBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.backgroundColor = UIColor.formLabelText
-        self.navigationItem.title = "Contact"
-        navigationController?.setNavigationBarHidden(false, animated: false);
-        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+//        self.navigationItem.title = "Contact"
+//        navigationController?.setNavigationBarHidden(false, animated: false);
+//        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
     }
     func updateUI(){
         vistTheWebsiteProperty.backgroundColor = UIColor(hexString:"#459EAC")

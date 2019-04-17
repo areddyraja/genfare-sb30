@@ -89,7 +89,8 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let userAccount:Account? = GFAccountManager.currentAccount()
+         let wallet = GFWalletsService.userWallet()
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardDetailsCell", for: indexPath) as? GFAccountManagementTableViewCell else { return UITableViewCell()}
         cell.unassignBtn.isHidden = true
         switch (indexPath.row) {
@@ -97,18 +98,23 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
             cell.detailLbl.text = "Account Email"
             cell.unassignBtn.isHidden = false
             cell.unassignBtn.isUserInteractionEnabled = true
+            cell.titleLbl.text = userAccount?.emailaddress
              break;
         case 1:
             cell.detailLbl.text = "Card Nickname"
+            cell.titleLbl.text  =  "\(wallet!.nickname!) - \(wallet!.status!)"
          break;
         case 2:
             cell.detailLbl.text = "Card Type"
+            cell.titleLbl.text  =  String(format: "%@ (%@)", (wallet?.cardType)!,userAccount!.profileType!)
         break;
         case 3:
             cell.detailLbl.text = "Bonus Accruals"
+            cell.titleLbl.text  =  "NA"
             break;
         case 4:
            cell.detailLbl.text = "Capped Accruals"
+           cell.titleLbl.text  =  "NA"
             break;
         default:
             break;

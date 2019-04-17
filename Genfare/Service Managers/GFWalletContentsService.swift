@@ -51,10 +51,43 @@ class GFWalletContentsService {
                 }
         }
     }
+//    func deleteRefunded(data:[String:Any]) -> Array<Any>{
+//        let managedContext = GFDataService.context
+//        let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
+//        let cdate:Double = Date().timeIntervalSince1970
+////        let remainingActiveTime =  Double(i.ticketActivationExpiryDate!) - cdate
+////        if(remainingActiveTime > 0){
+////        }
+//        fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == %@", ((data["ticketIdentifier"] as? String)! ))
+//        let fetchResults = try managedContext.fetch(fetchRequest)
+//
+//        return fetchResults
+////        let walletContentsFromDB:Array<WalletContents> = GFWalletContentsService.getContents()
+////        let sortedArray:Array<Any>
+////        for i in walletContentsFromDB{
+////            let cdate:Double = Date().timeIntervalSince1970
+////            let remainingActiveTime =  Double(i.ticketActivationExpiryDate!) - cdate
+////
+////            if(remainingActiveTime > 0){
+////                let list1 = data.filter { (ticketIdentifier) -> Bool in
+////                    (ticketIdentifier as AnyObject).contains(169)
+////                }
+//             //   let filteredArray = data.filter{ i.contains($0.ticketIdentifier) }
+//                //let filteredArrayFromDb = i.filter{($0.ticketIdentifier) }
+////                for i in data{
+////                    if(i == filteredArrayFromDb){
+////                        sortedArray.append(i)
+////                    }
+////                }
+//         //   }
+//       // }
+//    }
     
     func saveWalletContents(data:Array<Any>) {
         let managedContext = GFDataService.context
         let walletContents = NSEntityDescription.entity(forEntityName: "WalletContents", in: managedContext)
+      //   deleteRefunded(data: data)
+       // GFDataService.deleteAllRecords(entity: "WalletContents")
         
         for item in data {
             var userObj:WalletContents

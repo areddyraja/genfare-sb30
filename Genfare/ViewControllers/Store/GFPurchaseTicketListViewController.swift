@@ -34,6 +34,8 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         walletMin = configure.configMin as! Int
         self.ProductsTableView.reloadData()
         createCallbacks()
+         ContinueButton.backgroundColor = UIColor.lightGray
+      
         //createViewModelBinding()
         // Do any additional setup after loading the view.
     }
@@ -189,7 +191,8 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
             // add the actions (buttons)
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
             }))
-            
+            ContinueButton.backgroundColor = UIColor.lightGray
+            ContinueButton.isUserInteractionEnabled = false
             
             // show the alert
             present(alert, animated: true, completion: nil)
@@ -201,10 +204,15 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
             }))
             
-            
+            ContinueButton.backgroundColor = UIColor.lightGray
+            ContinueButton.isUserInteractionEnabled = false
             // show the alert
             present(alert, animated: true, completion: nil)
             
+        }
+        else{
+            ContinueButton.isUserInteractionEnabled = true
+            ContinueButton.backgroundColor =  UIColor(hexString:" #E9AE0E")
         }
     }
     
@@ -228,7 +236,20 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         PayAsYouGoTextField.resignFirstResponder()
         return true
     }
+   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    if((textField.text?.isEmpty)!){
+        ContinueButton.backgroundColor = UIColor.lightGray
+        ContinueButton.isUserInteractionEnabled = false
+    }
+    else{
+        ContinueButton.isUserInteractionEnabled = true
+        ContinueButton.backgroundColor =  UIColor(hexString:" #E9AE0E")
+    }
+        return true
+    }
 }
+    
+
 
 extension Dictionary {
     mutating func merge(dict: [Key: Value]){

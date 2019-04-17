@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class GFAccountBasedHomeViewModel {
+class GFAccountBasedHomeViewModel:WalletProtocol {
     
     let disposebag = DisposeBag()
     
@@ -55,7 +55,7 @@ class GFAccountBasedHomeViewModel {
     }
     
     func updateWalletStatus() {
-        if let wallet = GFWalletsService.userWallet() {
+        if let wallet = self.userWallet() {
             walletName.value = "\(wallet.nickname!) - \(wallet.status!)"
         }
         refreshBalance()

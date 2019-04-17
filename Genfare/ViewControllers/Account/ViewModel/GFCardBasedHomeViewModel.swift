@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class GFCardBasedHomeViewModel {
+class GFCardBasedHomeViewModel:WalletProtocol {
     
     let disposebag = DisposeBag()
     
@@ -31,7 +31,7 @@ class GFCardBasedHomeViewModel {
     }
     
     func updateWalletStatus() {
-        if let wallet = GFWalletsService.userWallet() {
+        if let wallet = self.userWallet() {
             walletName.value = "\(wallet.nickname!) - \(wallet.status!)"
         }
     }

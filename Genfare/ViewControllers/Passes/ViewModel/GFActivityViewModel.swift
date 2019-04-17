@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class GFActivityViewModel {
+class GFActivityViewModel:WalletProtocol{
     
     let disposebag = DisposeBag()
     var model:Array<WalletActivity> = []
@@ -32,7 +32,7 @@ class GFActivityViewModel {
     }
     
     func fetchWalletActivity() {
-        let history:GFWalletActivityService = GFWalletActivityService(walletID: GFWalletsService.walletID!)
+        let history:GFWalletActivityService = GFWalletActivityService(walletID: self.walledId())
         isLoading.value = true
         isSuccess.value = false
         

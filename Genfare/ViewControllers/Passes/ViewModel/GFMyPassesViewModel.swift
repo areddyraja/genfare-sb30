@@ -10,7 +10,9 @@ import Foundation
 import RxSwift
 import CoreData
 
-class GFMyPassesViewModel {
+
+
+class GFMyPassesViewModel:WalletProtocol{
     
     let disposebag = DisposeBag()
     var model:Array<WalletContents> = []
@@ -39,7 +41,7 @@ class GFMyPassesViewModel {
             return
         }
         
-        let products:GFWalletContentsService = GFWalletContentsService(walletID: GFWalletsService.walletID!)
+        let products:GFWalletContentsService = GFWalletContentsService(walletID: self.walledId())
         isLoading.value = true
         isSuccess.value = false
 

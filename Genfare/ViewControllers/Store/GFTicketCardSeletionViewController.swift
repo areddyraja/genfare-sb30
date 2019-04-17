@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,WalletProtocol {
     @IBOutlet var savedCrdLbl: UILabel!
     @IBOutlet var continueBtn: GFMenuButton!
     
@@ -114,13 +114,13 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
     }
     
     func OrderProducts() {
-        let orderedService = GFCreateOrderForProductsService(order:productsCartArray, walletID: GFWalletsService.walletID!)
+        let orderedService = GFCreateOrderForProductsService(order:productsCartArray, walletID: self.walledId())
         orderedService.createOrderService { (success,error) in
             if success! {
                 print("ordered")
                 if(self.selectedIndex != -1){
                     let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
-                    let  walletID =  GFWalletsService.walletID!
+                    let  walletID =  self.walledId()
                     var orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
                     var savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
                     self.card = self.viewModel.model[self.selectedIndex] as! [String : Any]
@@ -254,7 +254,7 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         }
         OrderProducts()
         let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
-      let  walletID =  GFWalletsService.walletID!
+      let  walletID =  self.walledId()
         var orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
         var savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
         let  url1 = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&saveForFuture=\(savedValue)"

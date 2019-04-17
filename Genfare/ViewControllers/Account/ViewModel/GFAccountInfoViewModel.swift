@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class GFAccountInfoViewModel {
+class GFAccountInfoViewModel:WalletProtocol {
     
     let disposebag = DisposeBag()
     
@@ -33,7 +33,7 @@ class GFAccountInfoViewModel {
             return
         }
         
-        let configValues = GFReleaseWalletService(walletID: GFWalletsService.walletID!)
+        let configValues = GFReleaseWalletService(walletID: self.walledId())
         isLoading.value = true
 
         configValues.releaseWallet { [unowned self] (success,error) in

@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-protocol LoyaltySupport {
+protocol LoyaltySupport:WalletProtocol {
     var cappedThreshold: Int { get }
     var cappedDelay: Int { get }
     var bonusThreshold: Int { get }
@@ -206,7 +206,7 @@ class GFLoyalty: LoyaltySupport {
         
         do {
             let fetchRequest:NSFetchRequest = LoyaltyCapped.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "productId == %@ && walletId == %@", product.ticketId?.stringValue ?? "",GFWalletsService.walletID?.stringValue ?? "")
+            fetchRequest.predicate = NSPredicate(format: "productId == %@ && walletId == %@", product.ticketId?.stringValue ?? "",walledId().stringValue )
             
             let fetchResults = try managedContext.fetch(fetchRequest)
             
@@ -233,7 +233,7 @@ class GFLoyalty: LoyaltySupport {
         
         do {
             let fetchRequest:NSFetchRequest = LoyaltyBonus.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "productId == %@ && walletId == %@", product.ticketId?.stringValue ?? "",GFWalletsService.walletID?.stringValue ?? "")
+            fetchRequest.predicate = NSPredicate(format: "productId == %@ && walletId == %@", product.ticketId?.stringValue ?? "",walledId().stringValue )
             
             let fetchResults = try managedContext.fetch(fetchRequest)
             

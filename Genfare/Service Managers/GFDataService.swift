@@ -92,6 +92,8 @@ class GFDataService {
         let context = persistentContainer.viewContext
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         let predicate = NSPredicate(format: "clickedTime == %@", clickedTime as CVarArg)
+        deleteFetch.predicate = predicate
+        
         do {
             let records = try context.fetch(deleteFetch) as! [NSManagedObject]
             for record in records {

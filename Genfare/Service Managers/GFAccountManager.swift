@@ -40,6 +40,7 @@ class GFAccountManager {
         
         return nil
     }
+    
     static func configuredValues() -> Configure? {
         let records:Array<Configure> = GFDataService.fetchRecords(entity: "Configure") as! Array<Configure>
         

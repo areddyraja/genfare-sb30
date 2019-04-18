@@ -35,7 +35,11 @@ class GFConfigService{
                 case .success(let JSON):
                     print(JSON)
                     if let json = JSON as? [String:Any] {
-                        self.saveConfiguredValues(data: json)
+                        if let code = json["code"] as? String, code == "401" {
+                            //TODO - Auth token expired, refresh token
+                        }else{
+                            self.saveConfiguredValues(data: json)
+                        }
                         completionHandler(true,nil)
                     }else{
                         completionHandler(false,"Error")
@@ -46,20 +50,21 @@ class GFConfigService{
                 }
         }
     }
+    
     func saveConfiguredValues(data:[String:Any]) {
         
         GFDataService.deleteAllRecords(entity: "Configure")
         
-    let managedContext = GFDataService.context
-    let configureContents = NSEntityDescription.entity(forEntityName: "Configure", in: managedContext)
-    let configObj:Configure = NSManagedObject(entity: configureContents!, insertInto: managedContext) as! Configure
-        
-        configObj.agencyContactNumber = data["AgencyContactNumber"] as? NSNumber
+        let managedContext = GFDataService.context
+        let configureContents = NSEntityDescription.entity(forEntityName: "Configure", in: managedContext)
+        let configObj:Configure = NSManagedObject(entity: configureContents!, insertInto: managedContext) as! Configure
+
+        configObj.agencyContactNumber = data["AgencyContactNumber"] as? String
         configObj.agencyId = data["AgencyId"] as? NSNumber
         configObj.barcodeActivationOffSetInMins = data["barcodeActivationOffsetInMins"] as? NSNumber
         configObj.key12 = data["key12"] as? String
         configObj.transitId = data["TransitId"] as? String
-        configObj.endOfTransitDay = data["endOfTransitDay"] as? String
+        configObj.endOfTransitDay = data["EndOfTransitDay"] as? NSNumber
         if let loyality = data["LoyaltyProgram"] as? [String:Any], let bonus = loyality["BONUS_RIDE"] as? [String:Any],let capped = loyality["CAPPED_RIDE"] as? [String:Any]{
                   if bonus.count > 1 {
                         configObj.bonusDelay = bonus["Delay"] as? NSNumber

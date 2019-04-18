@@ -89,6 +89,7 @@ class GFAccountLandingViewModel :WalletProtocol{
             if success {
                 print("Got Product contents successfully")
                 self.getEncryptionKeys()
+                self.getConfigApi()
             }else{
                 self.errorMsg.value = error as! String
             }

@@ -12,36 +12,36 @@ class GFBarcodeScreenViewModel:GFBaseViewModel {
     
     var walletModel:WalletContents!
     
-    func barcodeString() -> String {
-        let account:Account = GFAccountManager.currentAccount()!
-         let configure:Configure = GFAccountManager.configuredValues()!
-        let transitId = Int(configure.transitId!)
-        if let prod = GFFetchProductsService.getProductFor(id: walletModel.ticketIdentifier!) {
-            print(prod)
-            let encString = BarcodeUtilities.generateBarcode(withTicket: walletModel,
-                                                             product: prod,
-                                                             encriptionKey: GFEncryptionKeysService.getEncryptionKey()!,
-                                                             isFreeRide: false,
-                                                             deviceID: Utilities.deviceId(),
-                                                             transitID:NSNumber(value:transitId!),
-                                                             accountId: account.accountId)
-            return encString!
-        }
-        
-        return ""
-    }
+//    func barcodeString() -> String {
+//        let account:Account = GFAccountManager.currentAccount()!
+//         let configure:Configure = GFAccountManager.configuredValues()!
+//        let transitId = Int(configure.transitId!)
+//        if let prod = GFFetchProductsService.getProductFor(id: walletModel.ticketIdentifier!) {
+//            print(prod)
+//            let encString = BarcodeUtilities.generateBarcode(withTicket: walletModel,
+//                                                             product: prod,
+//                                                             encriptionKey: GFEncryptionKeysService.getEncryptionKey()!,
+//                                                             isFreeRide: false,
+//                                                             deviceID: Utilities.deviceId(),
+//                                                             transitID:NSNumber(value:transitId!),
+//                                                             accountId: account.accountId)
+//            return encString!
+//        }
+//
+//        return ""
+//    }
     
     func eventNeedUpdate() -> Bool {
         return true
     }
     
-    func isActive() -> Bool {
-        let now = Date().timeIntervalSince1970
-        if let expiryDate = walletModel.ticketActivationExpiryDate {
-            if Int64(truncating: expiryDate) > 0 && Int64(truncating: expiryDate) > Int64(now) {
-                return true
-            }
-        }
-        return false
-    }
+//    func isActive() -> Bool {
+//        let now = Date().timeIntervalSince1970
+//        if let expiryDate = walletModel.ticketActivationExpiryDate {
+//            if Int64(truncating: expiryDate) > 0 && Int64(truncating: expiryDate) > Int64(now) {
+//                return true
+//            }
+//        }
+//        return false
+//    }
 }

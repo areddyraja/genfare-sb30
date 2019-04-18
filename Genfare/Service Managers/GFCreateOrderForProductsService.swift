@@ -55,11 +55,13 @@ class GFCreateOrderForProductsService{
                     
                     if let data = response.data, let responseString = String(data: data, encoding: .utf8) {
                         print(responseString)
+                    completionHandler(false,"Request failed with error: \(error)")
                     }
                 case .success(let JSON):
                     if let json = JSON as? [String:Any] {
                         if let orderNumber = json["result"]{
                    UserDefaults.standard.set(orderNumber, forKey: "orderNumber")
+                            completionHandler(true,nil)
                             
                         }
                     }

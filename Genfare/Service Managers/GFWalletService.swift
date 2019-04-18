@@ -60,26 +60,28 @@ class GFWalletsService {
         return userObj
     }
     
-    static var walletID:NSNumber? {
-        let wallet = userWallet()
-        return wallet?.walletId
-    }
-    
-    static func userWallet() -> Wallet? {
-        let records:Array<Wallet> = GFDataService.fetchRecords(entity: "Wallet") as! Array<Wallet>
-        
-        if records.count > 0 {
-            return records.first
-        }
-        
-        return nil
-    }
-    
-    static func isWalletAvailable() -> Bool {
-        if userWallet() != nil {
-            return true
-        }else{
-            return false
-        }
-    }
+//    static var walletID:NSNumber? {
+//        let wallet = userWallet()
+//        return wallet?.walletId
+//    }
+//    
+//    static func userWallet() -> Wallet? {
+//        let records:Array<Wallet> = GFDataService.fetchRecords(entity: "Wallet") as! Array<Wallet>
+//        
+//        if records.count > 0 {
+//            return records.first
+//        }
+//        
+//        return nil
+//    }
+//    
+//    static func isWalletAvailable() -> Bool {
+//        if userWallet() != nil {
+//            return true
+//        }else{
+//            return false
+//        }
+//    }
 }
+
+

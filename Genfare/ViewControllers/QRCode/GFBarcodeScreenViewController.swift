@@ -142,7 +142,7 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         qrCode?.size = qrCodeHolder.frame.size
         qrCodeHolder.image = qrCode?.image
         activateBtn.isHidden = true
-         startTimer()
+        startTimer()
     }
     
     func startTimer() {

@@ -114,7 +114,6 @@ class GFDataService {
             let records = try context.fetch(deleteFetch) as! [NSManagedObject]
             for wallet in records {
                 context.delete(wallet)
-                
             }
         }catch let error as NSError {
             print("Could not Delete. \(error), \(error.userInfo)")

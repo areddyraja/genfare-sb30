@@ -16,12 +16,11 @@ protocol LoyaltySupport:WalletProtocol {
     var bonusDelay: Int { get }
     var transitOffsetValue: Int { get }
     
-    var isFirstRide: Bool { get }
-    
     func isCapEnabled(product:Product) -> Bool
-    func numberOfRidesForProduct(product:Product) -> Int
+    func numberOfRidesForProduct(product: Product, type:LoyaltyType) -> Int
     func rideDelayForCappedProduct(product:Product) -> Int
-    func lastRideTimeFor(product:Product,type:LoyaltyType) -> Double
+    func lastRideTimeFor(product:Product,type:LoyaltyType) -> Int
+    func isFirstRideFor(product:Product,type:LoyaltyType) -> Bool
     
     func updateCapRecordWithProduct(product:Product) -> Void
     func updateBonusRecordWithProduct(product:Product) -> Void
@@ -85,21 +84,35 @@ class GFLoyalty: LoyaltySupport {
         return 0
     }
     
-    var isFirstRide: Bool {
+    func isFirstRideFor(product: Product, type: LoyaltyType) -> Bool {
         
-        let timeNow = Date().timeIntervalSince1970
-        
-        if (Int(timeNow) - transitOffsetValue) < cappedDelay {
+        if isFirstRideWithInDelay() {
             return true
-        }else{
-            //TODO - check if there are any previous rides
-            
+        }else if lastRideTimeFor(product: product, type: type) > 0 {
+            return true
         }
         
         return false
     }
     
-    func lastRideTimeFor(product:Product, type:LoyaltyType) -> Double {
+    func isFirstRideWithInDelay() -> Bool {
+        let timeNow = Date().timeIntervalSince1970
+        let eotTimeWithDelay = endOfTransitTime()+cappedDelay
+        
+        return (eotTimeWithDelay > Int(timeNow))
+    }
+    
+    func endOfTransitTime() -> Int {
+        let totalSecs = (transitOffsetValue*60)
+        let hrs = (totalSecs/3600)
+        let mins = (totalSecs - (3600*hrs))/60
+        let secs = (totalSecs - (3600*hrs) - (mins*60))
+        let eotTimeWithDelay = Calendar.current.date(bySettingHour: hrs, minute: mins, second: secs, of: Date())!.timeIntervalSince1970
+        
+        return Int(eotTimeWithDelay)
+    }
+    
+    func lastRideTimeFor(product:Product, type:LoyaltyType) -> Int {
         
         guard let prodID = product.productId else {
             return 0
@@ -113,14 +126,20 @@ class GFLoyalty: LoyaltySupport {
         do {
             let records = try context.fetch(recordFetch)
             if records.count > 0 {
+                
                 switch type {
                 case .capped:
                     if let record = records.first as? LoyaltyCapped {
-                        return Double(truncating: record.activatedTime!)
+                        //Delete any recortds which are older than the next transit day
+                        guard (record.activatedTime?.intValue)! > endOfTransitTime() else {
+                            context.delete(record)
+                            return 0
+                        }
+                        return record.activatedTime!.intValue
                     }
                 case .bonus:
                     if let record = records.first as? LoyaltyBonus {
-                        return Double(truncating: record.activatedTime!)
+                        return record.activatedTime!.intValue
                     }
                 }
             }
@@ -139,20 +158,80 @@ class GFLoyalty: LoyaltySupport {
         }
     }
     
-    func numberOfRidesForProduct(product: Product) -> Int {
-        //TODO - need to get number of rides for product
+    func numberOfRidesForProduct(product: Product, type:LoyaltyType) -> Int {
+        
+        guard let prodID = product.productId else {
+            return 0
+        }
+        
+        let context = GFDataService.context
+        let recordFetch = NSFetchRequest<NSFetchRequestResult>(entityName: type.rawValue)
+        let predicate = NSPredicate(format: "productId == %@", prodID)
+        recordFetch.predicate = predicate
+        
+        do {
+            let records = try context.fetch(recordFetch)
+            if records.count > 0 {
+                
+                switch type {
+                case .capped:
+                    if let record = records.first as? LoyaltyCapped {
+                        return record.rideCount!.intValue
+                    }
+                case .bonus:
+                    if let record = records.first as? LoyaltyBonus {
+                        return record.rideCount!.intValue
+                    }
+                }
+            }
+        }catch _ as NSError {
+            print("Could not fetch records")
+        }
+        
         return 0
     }
     
     func rideDelayForCappedProduct(product: Product) -> Int {
-        //TODO - need to get delay for product
-        
-        return 0
+        return (Int(Date().timeIntervalSince1970) - lastRideTimeFor(product: product, type: .capped))
     }
     
     func updateCapRecordWithProduct(product: Product) {
-        //TODO - Update record
+        guard let prodId = product.productId else {
+            //Dont update or insert any records without valid product id
+            return
+        }
         
+        let managedContext = GFDataService.context
+        let fetchRequest:NSFetchRequest = LoyaltyCapped.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "productId = %@", prodId)
+        
+        do {
+            let fetchresults = try managedContext.fetch(fetchRequest)
+            if fetchresults.count > 0 {
+                //update record
+                let record = fetchresults.first
+                record?.activatedTime = Date().timeIntervalSince1970 as NSNumber
+                if let ridecount = record?.rideCount {
+                    record?.rideCount = (Int(truncating: ridecount) + 1) as NSNumber
+                }else{
+                    record?.rideCount = 1
+                }
+            }else{
+                //Insert new record
+                let loyaltyCapped = NSEntityDescription.entity(forEntityName: "LoyaltyCapped", in: managedContext)
+                let record = NSManagedObject(entity: loyaltyCapped!, insertInto: managedContext) as! LoyaltyCapped
+                
+                record.ticketId = product.ticketId
+                record.productId = "\(prodId)"
+                record.activatedTime = Date().timeIntervalSince1970 as NSNumber
+                record.rideCount = 1
+                record.productName = product.productDescription
+                record.referenceActivatedTime = Date().timeIntervalSince1970 as NSNumber
+            }
+            try managedContext.save()
+        }catch{
+            print("Update failed")
+        }
     }
     
     func updateBonusRecordWithProduct(product: Product) {
@@ -169,22 +248,23 @@ class GFLoyalty: LoyaltySupport {
             return false
         }
         
-        guard !isFirstRide else {
-            //TODO - update record with new time stamp
+        guard !isFirstRideFor(product: product, type: .capped) else {
+            updateCapRecordWithProduct(product: product)
             return false
         }
         
         guard rideDelayForCappedProduct(product: product) >= cappedDelay else {
-            //TODO - update record with new time stamp
+            updateCapRecordWithProduct(product: product)
             return false
         }
         
-        guard numberOfRidesForProduct(product: product) >= cappedThreshold else {
-            //TODO - update record with new time stamp
+        guard numberOfRidesForProduct(product: product, type: .capped) >= cappedThreshold else {
+            updateCapRecordWithProduct(product: product)
             return false
         }
         
-        //TODO - update record with new time stamp
+        updateCapRecordWithProduct(product: product)
+        
         return true
     }
     

@@ -44,7 +44,7 @@ class GFPayGoPassViewModel:WalletProtocol {
         }
         
         let product = model[index]
-       walletmodelpayasyougo = insertProductIntoWallet(product: product)
+        walletmodelpayasyougo = insertProductIntoWallet(product: product)
         barCode.value = true
     }
     

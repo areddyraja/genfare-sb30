@@ -11,6 +11,7 @@ import Nimble
 
 
 @testable import Pods_Genfare
+@testable import iRide
 
 class LoginViewModelSpec: QuickSpec {
     var successValue = true

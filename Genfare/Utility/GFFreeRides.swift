@@ -250,7 +250,7 @@ class GFLoyalty: LoyaltySupport {
             }else{
                 //Insert new record
                 let loyaltyCapped = NSEntityDescription.entity(forEntityName: "LoyaltyCapped", in: managedContext)
-                let record = NSManagedObject(entity: loyaltyCapped!, insertInto: managedContext) as! LoyaltyCapped
+                let record = LoyaltyCapped(entity: loyaltyCapped!, insertInto: managedContext)
                 
                 record.ticketId = product.ticketId
                 record.productId = "\(prodId)"

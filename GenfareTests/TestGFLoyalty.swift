@@ -45,9 +45,46 @@ class GFLoyaltySpec: QuickSpec
                 })
             })
             
-            context("test lastRideTimeFor", {
-                //
+            describe("test isProductEligibleForCappedRide", {
+                
+                let entity = NSEntityDescription.entity(forEntityName: "Product", in: GFDataService.context)
+                let product = Product(entity: entity!, insertInto: GFDataService.context)
+
+                context("when capped rides are disabled", {
+                    beforeEach {
+                        product.isCappedRideEnabled = 0
+                    }
+                    
+                    it("should return false", closure: {
+                        let actual = loyalty.isProductEligibleForCappedRide(product: product)
+                        expect(actual).to(equal(false))
+                    })
+                })
+                
+                context("when cappedThreshold is not available", {
+                    beforeEach {
+                        product.cappedThreshold = 0
+                    }
+                    
+                    it("should return false", closure: {
+                        let actual = loyalty.isProductEligibleForCappedRide(product: product)
+                        expect(actual).to(equal(false))
+                    })
+                })
+
+                context("when taking a ride first time in a trnsit day", {
+                    beforeEach {
+                        product.cappedThreshold = 5
+                        product.isCappedRideEnabled = 1
+                    }
+                    
+                    it("should return false", closure: {
+                        let actual = loyalty.isProductEligibleForCappedRide(product: product)
+                        expect(actual).to(equal(false))
+                    })
+                })
             })
+            
             
         }
     }

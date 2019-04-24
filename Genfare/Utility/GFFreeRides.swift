@@ -16,7 +16,8 @@ protocol LoyaltySupport: WalletProtocol {
     var bonusDelay: Int { get }
     var transitOffsetValue: Int { get }
     var loyaltyCappedProductId: Int { get }
-    
+    var loyaltyCappedTicketId: Int { get }
+
     func isCapEnabled(product:Product) -> Bool
     func numberOfRidesForProduct(product: Product, type:LoyaltyType) -> Int
     func rideDelayForCappedProduct(product:Product) -> Int
@@ -35,46 +36,85 @@ enum LoyaltyType:String {
 class GFLoyalty: LoyaltySupport {
 
     static var isFreeRide = false
+    
+    private var _cappedThreshold: Int
+    private var _cappedDelay: Int
+    private var _bonusThreshold: Int
+    private var _bonusDelay: Int
+    private var _transitOffsetValue: Int
+    private var _loyaltyCappedProductId: Int
+    private var _loyaltyCappedTicketId: Int
 
-    var loyaltyCappedProductId: Int {
+    convenience init() {
         let records:Array<Configure> = GFDataService.fetchRecords(entity: "Configure") as! Array<Configure>
         
-        if records.count > 0 {
-            let record = records.first
-            if let offset = record?.cappedTicketId as? Int {
-                return offset
-            }
+        if records.count > 0, let record = records.first {
+            self.init(config:record)
+        }else{
+            let config = Configure(context: GFDataService.context)
+            config.cappedThreshold = 0
+            config.cappedDelay = 0
+            config.bonusThreshold = 0
+            config.bonusDelay = 0
+            config.endOfTransitDay = 0
+            config.cappedTicketId = 0
+            config.bonusTicketid = 0
+            self.init(config:config)
         }
-        
-        return 0
+    }
+    
+    init(config:Configure) {
+        self._cappedThreshold = config.cappedThreshold as? Int ?? 0
+        self._cappedDelay = config.cappedDelay as? Int ?? 0
+        self._bonusThreshold = config.bonusThreshold as? Int ?? 0
+        self._bonusDelay = config.bonusDelay as? Int ?? 0
+        self._transitOffsetValue = config.endOfTransitDay as? Int ?? 0
+        self._loyaltyCappedTicketId = config.cappedTicketId as? Int ?? 0
+        self._loyaltyCappedProductId = config.cappedTicketId as? Int ?? 0
+    }
+    
+    var loyaltyCappedProductId: Int {
+        get {
+            return _loyaltyCappedProductId
+        }
+    }
+
+    var loyaltyCappedTicketId: Int {
+        get {
+            return _loyaltyCappedTicketId
+        }
     }
 
     var cappedThreshold: Int  {
-        let records:Array<Configure> = GFDataService.fetchRecords(entity: "Configure") as! Array<Configure>
-        
-        if records.count > 0 {
-            let record = records.first
-            if let offset = record?.cappedThreshold as? Int {
-                return offset
-            }
+        get {
+            return _cappedThreshold
         }
-        
-        return 0
     }
 
     var cappedDelay: Int {
-        let records:Array<Configure> = GFDataService.fetchRecords(entity: "Configure") as! Array<Configure>
-        
-        if records.count > 0 {
-            let record = records.first
-            if let offset = record?.cappedDelay as? Int {
-                return offset
-            }
+        get {
+            return _cappedDelay
         }
-        
-        return 0
     }
     
+    var bonusThreshold: Int {
+        get {
+            return _bonusThreshold
+        }
+    }
+    
+    var bonusDelay: Int {
+        get {
+            return _bonusDelay
+        }
+    }
+    
+    var transitOffsetValue: Int {
+        get {
+            return _transitOffsetValue
+        }
+    }
+
     func isFirstRideFor(product: Product, type: LoyaltyType) -> Bool {
         
         if isFirstRideWithInDelay() {
@@ -227,45 +267,6 @@ class GFLoyalty: LoyaltySupport {
     
     func updateBonusRecordWithProduct(product: Product) {
         //TODO -
-    }
-    
-    var bonusThreshold: Int {
-        let records:Array<Configure> = GFDataService.fetchRecords(entity: "Configure") as! Array<Configure>
-        
-        if records.count > 0 {
-            let record = records.first
-            if let bonusT = record?.bonusThreshold as? Int {
-                return bonusT
-            }
-        }
-        
-        return 0
-    }
-    
-    var bonusDelay: Int {
-        let records:Array<Configure> = GFDataService.fetchRecords(entity: "Configure") as! Array<Configure>
-        
-        if records.count > 0 {
-            let record = records.first
-            if let delay = record?.bonusDelay as? Int {
-                return delay
-            }
-        }
-        
-        return 0
-    }
-    
-    var transitOffsetValue: Int {
-        let records:Array<Configure> = GFDataService.fetchRecords(entity: "Configure") as! Array<Configure>
-        
-        if records.count > 0 {
-            let record = records.first
-            if let offset = record?.endOfTransitDay as? Int {
-                return offset
-            }
-        }
-        
-        return 0
     }
     
     func isProductEligibleForCappedRide(product:Product) -> Bool {

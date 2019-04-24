@@ -11,5 +11,7 @@ import CoreData
 
 
 public class Configure: NSManagedObject {
-
+    override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
+    }
 }

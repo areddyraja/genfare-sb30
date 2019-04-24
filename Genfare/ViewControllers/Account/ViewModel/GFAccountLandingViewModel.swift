@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class GFAccountLandingViewModel {
+class GFAccountLandingViewModel :WalletProtocol{
     
     let disposebag = DisposeBag()
     
@@ -65,7 +65,7 @@ class GFAccountLandingViewModel {
     func fireEvent(){
         let event:Event? = self.currentEvent()
         if event != nil{
-            let eventFired = GFWalletEventService(walletID: GFWalletsService.walletID!, ticketid: NSNumber(value: Int(event!.identifier!)!), clickedTime: event!.clickedTime, event: event!)
+            let eventFired = GFWalletEventService(walletID: self.walledId(), ticketid: NSNumber(value: Int(event!.identifier!)!), clickedTime: event!.clickedTime, event: event!)
             
             eventFired.execute { (success,error) in
                 if success {
@@ -80,7 +80,7 @@ class GFAccountLandingViewModel {
     }
     
     func fetchProducts() {
-        let products:GFFetchProductsService = GFFetchProductsService(walletID: GFWalletsService.walletID!)
+        let products:GFFetchProductsService = GFFetchProductsService(walletID: self.walledId())
         isLoading.value = true
 
         products.getProducts { [unowned self] (success, error) in
@@ -89,6 +89,7 @@ class GFAccountLandingViewModel {
             if success {
                 print("Got Product contents successfully")
                 self.getEncryptionKeys()
+                self.getConfigApi()
             }else{
                 self.errorMsg.value = error as! String
             }

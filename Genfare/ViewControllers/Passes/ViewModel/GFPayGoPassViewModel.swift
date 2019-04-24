@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import CoreData
 
-class GFPayGoPassViewModel {
+class GFPayGoPassViewModel:WalletProtocol {
     
     let disposebag = DisposeBag()
     var model:Array<Product> = []
@@ -44,7 +44,7 @@ class GFPayGoPassViewModel {
         }
         
         let product = model[index]
-       walletmodelpayasyougo = insertProductIntoWallet(product: product)
+        walletmodelpayasyougo = insertProductIntoWallet(product: product)
         barCode.value = true
     }
     
@@ -53,7 +53,7 @@ class GFPayGoPassViewModel {
         let walletcontent = NSEntityDescription.entity(forEntityName: "WalletContents", in: managedContext)
         let walletObj:WalletContents = NSManagedObject(entity: walletcontent!, insertInto: managedContext) as! WalletContents
         let configure:Configure = GFAccountManager.configuredValues()!
-        let wallet = GFWalletsService.userWallet()
+        let wallet = self.userWallet()
         
         walletObj.fare = 0
         walletObj.ticketGroup = wallet!.accTicketGroupId
@@ -82,7 +82,7 @@ class GFPayGoPassViewModel {
     }
     
     func fetchProducts() {
-        let products:GFFetchProductsService = GFFetchProductsService(walletID: GFWalletsService.walletID!)
+        let products:GFFetchProductsService = GFFetchProductsService(walletID: self.walledId())
         isLoading.value = true
         isSuccess.value = false
 

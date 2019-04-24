@@ -11,8 +11,8 @@ import RxSwift
 import RxCocoa
 import QRCode
 
-class GFBarcodeScreenViewController: GFBaseViewController {
-
+class GFBarcodeScreenViewController: GFBaseViewController ,WalletContentsProtocol{
+    
     let viewModel = GFBarcodeScreenViewModel()
     let disposeBag = DisposeBag()
     
@@ -36,14 +36,15 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         // Do any additional setup after loading the view.
         createViewModelBinding()
         createCallbacks()
-        viewModel.walletModel = ticket
-        updateUI(activated: viewModel.isActive())
+//        viewModel.walletModel = ticket
+//        updateUI(activated: viewModel.isActive())
+        updateUI(activated: self.isActive(walletcontents:ticket))
         self.tokenImg.alpha = 0.5
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     @objc func appMovedToForeground() {
-        if viewModel.isActive() {
+        if self.isActive(walletcontents:ticket) {
             countdownTimer.invalidate()
             updateBarCode()
         }
@@ -54,11 +55,11 @@ class GFBarcodeScreenViewController: GFBaseViewController {
         navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         view.backgroundColor = .white
 
-       if viewModel.isActive() {
-        
-        if(countdownTimer != nil){
-            countdownTimer.invalidate()
-        }
+        if self.isActive(walletcontents:ticket) {
+            
+            if(countdownTimer != nil){
+                countdownTimer.invalidate()
+            }
             updateBarCode()
         }
         // Do any additional setup after loading the view.
@@ -138,15 +139,15 @@ class GFBarcodeScreenViewController: GFBaseViewController {
     
     func updateBarCode() {
         viewModel.walletModel = ticket
-        var qrCode = QRCode(viewModel.barcodeString())
+        var qrCode = QRCode(self.barcodestring(walletcontents:ticket))
         qrCode?.size = qrCodeHolder.frame.size
         qrCodeHolder.image = qrCode?.image
         activateBtn.isHidden = true
-         startTimer()
+        startTimer()
     }
     
     func startTimer() {
-        var time = self.ticket.ticketActivationExpiryDate?.intValue
+        let time = self.ticket.ticketActivationExpiryDate?.intValue
         let date = NSDate()
         let timestamp = Int64(date.timeIntervalSince1970)
         remainingActiveTime = time! - Int(timestamp)

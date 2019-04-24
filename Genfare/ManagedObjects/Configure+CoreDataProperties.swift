@@ -16,7 +16,7 @@ extension Configure {
         return NSFetchRequest<Configure>(entityName: "Configure")
     }
 
-    @NSManaged public var agencyContactNumber: NSNumber?
+    @NSManaged public var agencyContactNumber: String?
     @NSManaged public var agencyId: NSNumber?
     @NSManaged public var barcodeActivationOffSetInMins: NSNumber?
     @NSManaged public var bonusDelay: NSNumber?
@@ -29,7 +29,7 @@ extension Configure {
     @NSManaged public var cappedTicketId: NSNumber?
     @NSManaged public var configMax: NSNumber?
     @NSManaged public var configMin: NSNumber?
-    @NSManaged public var endOfTransitDay: String?
+    @NSManaged public var endOfTransitDay: NSNumber?
     @NSManaged public var key12: String?
     @NSManaged public var transitId: String?
 

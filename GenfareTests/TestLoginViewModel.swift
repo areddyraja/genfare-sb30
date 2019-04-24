@@ -11,6 +11,7 @@ import Nimble
 
 
 @testable import Pods_Genfare
+@testable import iRide
 
 class LoginViewModelSpec: QuickSpec {
     var successValue = true
@@ -25,7 +26,8 @@ class LoginViewModelSpec: QuickSpec {
 //                        "GFSignupViewController") as! GFSignupViewController
 //                _ = subject.view
             }
-            context("when the view loaded") {
+            
+            context("when the view loaded", {
                 it("should have the right label with the correct text") {
                     let signUpService:GFSignUpService = GFSignUpService(email:"sdfghdefrghyjxcvb",
                                                                         password: "12345678",
@@ -36,9 +38,9 @@ class LoginViewModelSpec: QuickSpec {
                         self.successValue = success
                        
                     })
-                    expect(self.successValue).toNot(equal(true))
+                    expect(self.successValue).to(equal(true))
                 }
-            }
+            })
         }
         
 //

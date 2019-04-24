@@ -167,3 +167,30 @@ extension UIViewController {
         }
     }
 }
+protocol WalletProtocol {
+    func walledId() -> NSNumber
+    func userWallet() -> Wallet?
+    func isWalletAvailable() -> Bool
+}
+extension WalletProtocol{
+    func walledId() -> NSNumber{
+        guard let wallet = userWallet() else{
+            return NSNumber.init(value: 0)
+        }
+        return wallet.walletId!
+    }
+    func userWallet() -> Wallet?{
+        let records:Array<Wallet> = GFDataService.fetchRecords(entity: "Wallet") as! Array<Wallet>
+        if records.count > 0 {
+            return records.first!
+        }
+        return nil
+    }
+    func isWalletAvailable() -> Bool {
+        guard let wallet = userWallet() else{
+            return false
+        }
+        print("wallet desc:\(wallet)")
+        return true
+    }
+}

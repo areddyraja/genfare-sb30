@@ -273,6 +273,14 @@
 		279D77CC2254C88D0034CDD3 /* GFFreeRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */; };
 		279D77CD2254C88D0034CDD3 /* GFFreeRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */; };
 		279D77CE2254C88D0034CDD3 /* GFFreeRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */; };
+		279D77CF226F0FE40034CDD3 /* GFContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E5C224E16B700ED0599 /* GFContactViewController.swift */; };
+		279D77D0226F0FF30034CDD3 /* GFTicketDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5371AF225B01F500E9BB2D /* GFTicketDetailsViewModel.swift */; };
+		279D77D1226F0FFD0034CDD3 /* WalletContentsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0AF8CA22673CF200F4E842 /* WalletContentsProtocol.swift */; };
+		279D77D2226F10220034CDD3 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81632122531CCD004D06C0 /* ContactViewModel.swift */; };
+		279D77D3226F10380034CDD3 /* PurchaseTicketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81632522534D12004D06C0 /* PurchaseTicketListViewModel.swift */; };
+		279D77D4226F10440034CDD3 /* GFTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E60224E413900ED0599 /* GFTermsViewController.swift */; };
+		279D77D5226F104C0034CDD3 /* GFPrivacyAndPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A534E64224E429700ED0599 /* GFPrivacyAndPolicyViewController.swift */; };
+		279D77D7226F10F70034CDD3 /* TestGFLoyalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D77D6226F10F70034CDD3 /* TestGFLoyalty.swift */; };
 		27C3D863220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
 		27C3D864220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
 		27C3D865220471F2004B3B0E /* GFWalletActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */; };
@@ -884,6 +892,7 @@
 		279B0237220C1A6D002739F5 /* GFAccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAccountInfoViewModel.swift; sourceTree = "<group>"; };
 		279B023B220C4559002739F5 /* Barcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Barcode.storyboard; sourceTree = "<group>"; };
 		279D77CA2254C88D0034CDD3 /* GFFreeRides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFreeRides.swift; sourceTree = "<group>"; };
+		279D77D6226F10F70034CDD3 /* TestGFLoyalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGFLoyalty.swift; sourceTree = "<group>"; };
 		27C3D862220471F2004B3B0E /* GFWalletActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFWalletActivityService.swift; sourceTree = "<group>"; };
 		27CFA32D221BBF4100593D8B /* GFWalletEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFWalletEventService.swift; sourceTree = "<group>"; };
 		27F6C5242202E634009052D0 /* GFFetchProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFetchProductsService.swift; sourceTree = "<group>"; };
@@ -1559,6 +1568,7 @@
 			isa = PBXGroup;
 			children = (
 				27FDD9D92237D3270010467E /* TestLoginViewModel.swift */,
+				279D77D6226F10F70034CDD3 /* TestGFLoyalty.swift */,
 				4884E6DB2122A85F003A1289 /* Info.plist */,
 			);
 			path = GenfareTests;
@@ -2539,6 +2549,7 @@
 				274754BE21F9F35300D62268 /* GFSignUpService.swift in Sources */,
 				2747552021FADF4A00D62268 /* WalletActivity+CoreDataClass.swift in Sources */,
 				27FDDA6F224900210010467E /* AccountSettingViewModel.swift in Sources */,
+				279D77D1226F0FFD0034CDD3 /* WalletContentsProtocol.swift in Sources */,
 				2747554721FADF4A00D62268 /* Product+CoreDataProperties.swift in Sources */,
 				27FDD9E82237DBA00010467E /* AppDelegate.swift in Sources */,
 				2772BA6522059F78003AA1ED /* CAPSPageMenu+UIConfiguration.swift in Sources */,
@@ -2563,6 +2574,7 @@
 				27FDD9DD2237DB310010467E /* GFBaseViewController.swift in Sources */,
 				2747553821FADF4A00D62268 /* Account+CoreDataClass.swift in Sources */,
 				2747556F21FEE4CE00D62268 /* GFAccountBasedHomeViewController.swift in Sources */,
+				279D77CF226F0FE40034CDD3 /* GFContactViewController.swift in Sources */,
 				27FDD9F72237DC4D0010467E /* GFTripDataManager.swift in Sources */,
 				2772BA812209BA4A003AA1ED /* GFTicketsService.swift in Sources */,
 				27F83D5A221150BB00232521 /* GFBarcodeScreenViewModel.swift in Sources */,
@@ -2620,6 +2632,7 @@
 				27FDDA6A2248FF800010467E /* GFChangeEmailViewController.swift in Sources */,
 				27FDD9E92237DBA80010467E /* SideMenuItemsViewController.swift in Sources */,
 				4A4CF16821FF27E3007BB42C /* GetAccountBalanceService.swift in Sources */,
+				279D77D5226F104C0034CDD3 /* GFPrivacyAndPolicyViewController.swift in Sources */,
 				27FDDA072237DD3B0010467E /* GFRouteOptionTableViewCell.swift in Sources */,
 				279B0236220B0323002739F5 /* GFAccountInfoViewController.swift in Sources */,
 				274754BA21F9E2C800D62268 /* GFCreateWalletViewModel.swift in Sources */,
@@ -2627,8 +2640,10 @@
 				27F6C54D22045044009052D0 /* GFPayGoPassViewModel.swift in Sources */,
 				2747558F2201BF3B00D62268 /* GFReleaseWalletService.swift in Sources */,
 				27FDDA002237DCC10010467E /* GFStationListTableViewCell.swift in Sources */,
+				279D77D3226F10380034CDD3 /* PurchaseTicketListViewModel.swift in Sources */,
 				2772BA7422085375003AA1ED /* GFSignupViewController.swift in Sources */,
 				27F6C54922044ED6009052D0 /* GFPayGoPassTableViewController.swift in Sources */,
+				279D77D4226F10440034CDD3 /* GFTermsViewController.swift in Sources */,
 				2757D2BF21F5AFE200413713 /* SignUpModel.swift in Sources */,
 				2747555621FADF4A00D62268 /* Ticket+CoreDataClass.swift in Sources */,
 				274754B621F9D22B00D62268 /* GFRefreshAuthToken.swift in Sources */,
@@ -2658,6 +2673,7 @@
 				2757D2B921F47FDF00413713 /* LoginViewModel.swift in Sources */,
 				274754AE21F9BF3100D62268 /* GFCreatWalletViewController.swift in Sources */,
 				2747558622007F7000D62268 /* GFCoreDataContextObserver.swift in Sources */,
+				279D77D0226F0FF30034CDD3 /* GFTicketDetailsViewModel.swift in Sources */,
 				272D9DB9220D9EB500888BF3 /* RNDecryptor.m in Sources */,
 				27F6C54522044DA9009052D0 /* PayAsYouGoCell.swift in Sources */,
 				27FDD9EA2237DBB70010467E /* GFCreateOrderForProductsService.swift in Sources */,
@@ -2683,6 +2699,7 @@
 				274754C221FA24B100D62268 /* GFDataService.swift in Sources */,
 				2772BA5922059F78003AA1ED /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				277935A322117532002864BC /* GFBarcodeInfoViewController.swift in Sources */,
+				279D77D2226F10220034CDD3 /* ContactViewModel.swift in Sources */,
 				273B2D0221E6165A00208012 /* GFTAccessTokenAdapter.swift in Sources */,
 				4A7BD281224A038E006A455D /* Configure+CoreDataProperties.swift in Sources */,
 				27FDD9FE2237DCA90010467E /* GFRoute.swift in Sources */,
@@ -2691,6 +2708,7 @@
 				27FDD9E62237DB8E0010467E /* EncryptionSet+CoreDataProperties.swift in Sources */,
 				2757D2B021F47EAD00413713 /* PasswordViewModel.swift in Sources */,
 				2747552921FADF4A00D62268 /* Wallet+CoreDataProperties.swift in Sources */,
+				279D77D7226F10F70034CDD3 /* TestGFLoyalty.swift in Sources */,
 				27FDD9F92237DC710010467E /* Event+CoreDataProperties.swift in Sources */,
 				27FDDA012237DCCE0010467E /* GFHistoryTableViewCell.swift in Sources */,
 			);
@@ -2878,7 +2896,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2933,7 +2951,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

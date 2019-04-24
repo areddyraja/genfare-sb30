@@ -127,14 +127,20 @@ class GFWalletEventService {
             userObj.clickedTime = cdate * 1000 as NSNumber
            // userObj.fare = wallet.fare
             userObj.identifier = wallet.identifier
-            userObj.ticketid = "\(product.ticketId!)"
             userObj.type = wallet.type
             userObj.ticketActivationExpiryDate = "\(cdate + (product.barcodeTimer as! Double))"
             
-           // if wallet.type != Constants.Ticket.PeriodPass {
+            let loyalty = GFLoyalty()
+            
+            if loyalty.isProductEligibleForCappedRide(product: product) {
+                userObj.ticketid = "\(loyalty.loyaltyCappedProductId)"
+                userObj.fare = 0
+            }else{
+                userObj.ticketid = "\(product.ticketId!)"
                 userObj.fare = NumberFormatter().number(from: product.price!)!
-                userObj.amountRemaining = Utilities.accountBalance()
-           // }
+            }
+            
+            userObj.amountRemaining = Utilities.accountBalance()
             
             GFDataService.saveContext()
             print(userObj)

@@ -39,9 +39,9 @@ class GFLoyaltySpec: QuickSpec
             
             context("test endOfTransitTime", {
                 it("should be", closure: {
-                    let etime = loyalty.endOfTransitTime()
+                    let actual = loyalty.endOfTransitTime()
                     let expected = Int(Calendar.current.date(bySettingHour: 0, minute: 30, second: 0, of: Date())!.timeIntervalSince1970)
-                    expect(etime).to(equal(expected))
+                    expect(actual).to(equal(expected))
                 })
             })
             
@@ -49,9 +49,6 @@ class GFLoyaltySpec: QuickSpec
                 //
             })
             
-            context("test lastRideTimeFor", {
-                //
-            })
         }
     }
 }

@@ -301,7 +301,7 @@ class GFLoyalty: LoyaltySupport {
     
     func isProductEligibleForBonusFreeRide(product:Product) -> Bool {
         
-        guard let capStatus = product.isCappedRideEnabled, capStatus == 1 else {
+        guard let bonusStatus = product.isBonusRideEnabled, bonusStatus == 1 else {
             return false
         }
         

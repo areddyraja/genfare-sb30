@@ -84,7 +84,7 @@ class GFSaveAddressViewController: GFBaseViewController,MKLocalSearchCompleterDe
         if(selectedplacemark != nil){
             savecompleteAddress(response: selectedplacemark)
         }else{
-            print("no")
+        self.popupAlert(title: "Alert", message: "Please select an address from the list", actionTitles: ["OK"], actions: [nil])
         }
         }
     }

@@ -22,6 +22,7 @@ class GFAccountLandingViewController: GFBaseViewController {
         updateNavBarUI()
         createCallbacks()
         createViewModelBinding()
+        viewModel.getConfigApi()
 
     }
     
@@ -31,7 +32,7 @@ class GFAccountLandingViewController: GFBaseViewController {
     }
 
     func createViewModelBinding(){
-    
+     
     }
     
     func createCallbacks (){

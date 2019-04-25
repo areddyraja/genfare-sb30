@@ -12,7 +12,9 @@ class GFPrivacyAndPolicyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "Privacy Policy"
+        navigationController?.setNavigationBarHidden(false, animated: false);
+        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
         // Do any additional setup after loading the view.
     }
     

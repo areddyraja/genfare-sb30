@@ -67,12 +67,12 @@ class GFMyPassesViewModel:WalletProtocol{
             let now = Date().timeIntervalSince1970
             for i in filteredModel{
                 if let expiryDate = i.ticketActivationExpiryDate {
-                    if  Int64(truncating: expiryDate) > Int64(now) || (i.type == Constants.Ticket.PeriodPass) {
-                        
-                        expiryFilteredWalletContent.append(i)
-                    }else{
-                       GFDataService.deletePayAsYouGoWallet(entity: "WalletContents",wallet: i)
-                    } 
+                    if  (Int64(truncating: expiryDate) < Int64(now) && (i.type == String(describing: 1))){
+                        GFDataService.deletePayAsYouGoWallet(entity: "WalletContents",wallet: i)
+                        }
+               else{
+                    expiryFilteredWalletContent.append(i)
+                   }
                   
                     
 

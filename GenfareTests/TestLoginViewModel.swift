@@ -9,14 +9,12 @@
 import Quick
 import Nimble
 
-
 @testable import Pods_Genfare
 @testable import iRide
 
 class LoginViewModelSpec: QuickSpec {
     var successValue = true
     override func spec() {
-        
         
         describe("TestViewController") {
             var subject: GFSignupViewController!

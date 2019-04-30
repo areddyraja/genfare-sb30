@@ -125,15 +125,19 @@ class GFWalletEventService {
             let cdate:Double = Date().timeIntervalSince1970
             
             userObj.clickedTime = cdate * 1000 as NSNumber
-           // userObj.fare = wallet.fare
+            // userObj.fare = wallet.fare
             userObj.identifier = wallet.identifier
             userObj.type = wallet.type
             userObj.ticketActivationExpiryDate = "\(cdate + (product.barcodeTimer as! Double))"
             
-            let loyalty = GFLoyalty()
+            let loyaltyData = GFLoyaltyData(product: product)
+            let loyalty = GFLoyaltyService(dataProvider: loyaltyData)
             
-            if loyalty.isProductEligibleForCappedRide(product: product) {
-                userObj.ticketid = "\(loyalty.loyaltyCappedProductId)"
+            if loyalty.isProductEligibleForCappedRide() {
+                userObj.ticketid = "\(loyalty.dataProvider.cappedTicketId)"
+                userObj.fare = 0
+            }else if loyalty.isProductEligibleForBonusRide() {
+                userObj.ticketid = "\(loyalty.dataProvider.bonusTicketId)"
                 userObj.fare = 0
             }else{
                 userObj.ticketid = "\(product.ticketId!)"

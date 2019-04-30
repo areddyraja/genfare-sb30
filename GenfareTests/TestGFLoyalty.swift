@@ -84,8 +84,6 @@ class GFLoyaltySpec: QuickSpec
                     })
                 })
             })
-            
-            
         }
     }
 }

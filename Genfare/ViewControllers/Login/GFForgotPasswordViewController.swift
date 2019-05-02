@@ -10,6 +10,7 @@ import UIKit
 
 class GFForgotPasswordViewController: GFBaseViewController {
 
+    @IBOutlet var imgUser: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

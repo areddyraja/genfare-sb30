@@ -26,6 +26,7 @@ class HomeViewController: GFBaseViewController, CLLocationManagerDelegate, MKMap
         // Do any additional setup after loading the view, typically from a nib.
         whereToGoText.delegate = self
         mapView.delegate = self
+        navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
         //addMenuObservers()
         //TripDataManager.initService()
         //TripDataManager.getStopsInBetween()

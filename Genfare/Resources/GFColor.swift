@@ -41,7 +41,8 @@ extension UIColor {
     }
     
     static var topNavBarColor :UIColor {
-        return UIColor(red: 24/255, green: 42/255, blue: 71/255, alpha: 1)
+        let topNavBarColorString:String = Utilities.colorHexString(fromId: String.init("TopNavBarColor"))!
+        return UIColor.init(hexString: topNavBarColorString)
     }
     
     static func colorForString(str:String) -> UIColor {

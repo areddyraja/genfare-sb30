@@ -119,23 +119,29 @@ class GFLoginViewController: GFBaseViewController {
     }
     
     func showRetrieveWalletAlert() {
-        let alert = UIAlertController(title: "Retrieve Wallet", message: "Do you want to retreive wallet?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Retrieve Wallet", message: "You may retrieve mobile wallet that were released from other device.", preferredStyle: UIAlertController.Style.alert)
         
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
             
             self.viewModel.walletRetrieved(value: false)
 
         }))
-        alert.addAction(UIAlertAction(title: "Retreive", style: UIAlertAction.Style.destructive, handler: { [unowned self] action in
+        alert.addAction(UIAlertAction(title: "Retrieve", style: UIAlertAction.Style.destructive, handler: { [unowned self] action in
             
             self.viewModel.walletRetrieved(value: true)
-            
+            if let controller = UIStoryboard(name: "AccountHome", bundle: nil).instantiateInitialViewController() {
+                self.attachControllerToMainWindow(controller: controller)
+                GFBaseViewController.currentMenuItem = Constants.SideMenuAction.PassPurchase
+            }
         }))
         
         // show the alert
         present(alert, animated: true, completion: nil)
         
+    }
+    @objc override func attachControllerToMainWindow(controller:UIViewController) {
+        SideMenuItemsViewController.rightNavController?.viewControllers = [controller]
     }
 
 }

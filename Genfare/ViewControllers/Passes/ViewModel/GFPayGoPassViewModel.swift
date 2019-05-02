@@ -98,5 +98,42 @@ class GFPayGoPassViewModel:WalletProtocol {
             }
         }
     }
+    func updateWalletContentsBalance(selectedproduct:Product){
+        let products = GFFetchProductsService.getProducts()
+        let items = products.filter({ (product:Product) -> Bool in
+            product.ticketTypeDescription == "Stored Value" && product.isActivationOnly == 0
+        })
+        if items.count > 0{
+            if let prod = items[0] as? Product{
+                if let ticketId = prod.ticketId?.intValue{
+                    do{
+                        var userObj:WalletContents
+                        let managedContext = GFDataService.context
+                        let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
+                        let strTicketId = String(format: "%d", ticketId)
+                        fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == %@",strTicketId)
+                        let fetchResults = try managedContext.fetch(fetchRequest)
+                        if fetchResults.count >= 0 {
+                            guard let firstObj = fetchResults.first else{ return}
+                            userObj = firstObj
+                            let originalBalance = NumberFormatter().number(from: userObj.balance!)!
+                            let productFare = NumberFormatter().number(from: selectedproduct.price!)!
+                            let remainingBal:Float = originalBalance.floatValue - productFare.floatValue
+                            userObj.balance = String(format: "%.2f",remainingBal)
+                            do {
+                                try managedContext.save()
+                            }catch _ as NSError {
+                                print("Error while updating walletcontnets")
+                            }
+                            
+                        }
+                    }catch{
+                        print("saving failed ")
+                    }
+                }
+            }
+        }
+    }
+    
 }
 

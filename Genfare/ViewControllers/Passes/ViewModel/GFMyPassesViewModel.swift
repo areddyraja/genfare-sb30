@@ -54,7 +54,7 @@ class GFMyPassesViewModel:WalletProtocol{
                 self.isSuccess.value = true
                 //self.fetchWalletContents()
             }else{
-                self.errorMsg.value = error as! String
+                 self.errorMsg.value = error as! String
             }
         }
     }
@@ -67,13 +67,12 @@ class GFMyPassesViewModel:WalletProtocol{
             let now = Date().timeIntervalSince1970
             for i in filteredModel{
                 if let expiryDate = i.ticketActivationExpiryDate {
-                    if  Int64(truncating: expiryDate) > Int64(now) || (i.type == Constants.Ticket.PeriodPass) {
-                        
+                    if  (Int64(truncating: expiryDate) < Int64(now) && (i.type == String(describing: 1))){ //Here 1 is stored value
+                        GFDataService.deletePayAsYouGoWallet(entity: "WalletContents",wallet: i)
+                    }
+                    else{
                         expiryFilteredWalletContent.append(i)
-                    }else{
-                       GFDataService.deletePayAsYouGoWallet(entity: "WalletContents",wallet: i)
-                    } 
-                  
+                    }
                     
 
                 }

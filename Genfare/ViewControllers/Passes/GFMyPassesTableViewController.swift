@@ -43,8 +43,14 @@ class GFMyPassesTableViewController: UITableViewController {
         viewModel.isSuccess.asObservable()
             .bind{ [unowned self] value in
                 NSLog("Successfull \(value)")
+       
                 if value{
                     self.tableView.reloadData()
+                    if Utilities.isLoginCardBased(){
+                        if let accountHomeVC = self.baseClass as? GFAccountBasedHomeViewController{
+                            accountHomeVC.viewModel.updateWalletStatus()
+                        }
+                    }
                 }
             }.disposed(by: disposeBag)
         

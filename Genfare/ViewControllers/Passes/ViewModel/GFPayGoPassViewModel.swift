@@ -114,18 +114,26 @@ class GFPayGoPassViewModel:WalletProtocol {
                         fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == %@",strTicketId)
                         let fetchResults = try managedContext.fetch(fetchRequest)
                         if fetchResults.count >= 0 {
-                            guard let firstObj = fetchResults.first else{ return}
-                            userObj = firstObj
-                            let originalBalance = NumberFormatter().number(from: userObj.balance!)!
-                            let productFare = NumberFormatter().number(from: selectedproduct.price!)!
-                            let remainingBal:Float = originalBalance.floatValue - productFare.floatValue
-                            userObj.balance = String(format: "%.2f",remainingBal)
-                            do {
-                                try managedContext.save()
-                            }catch _ as NSError {
-                                print("Error while updating walletcontnets")
+                            if let firstObj = fetchResults.first{
+                                userObj = firstObj
+                                var originalBalance:NSNumber
+                                var productFare:NSNumber
+                                if let bal =  firstObj.balance{
+                                    originalBalance = NumberFormatter().number(from: bal)!
+                                    if let price = selectedproduct.price{
+                                        productFare = NumberFormatter().number(from: price)!
+                                    }else{
+                                        return
+                                    }
+                                    let remainingBal:Float = originalBalance.floatValue - productFare.floatValue
+                                    userObj.balance = String(format: "%.2f",remainingBal)
+                                    do {
+                                        try managedContext.save()
+                                    }catch _ as NSError {
+                                        print("Error while updating walletcontnets")
+                                    }
+                                }else{ return }
                             }
-                            
                         }
                     }catch{
                         print("saving failed ")

@@ -102,20 +102,20 @@ class Utilities {
                         fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == %@",strTicketId)
                         let fetchResults = try managedContext.fetch(fetchRequest)
                         if fetchResults.count >= 0 {
-                            guard let firstObj = fetchResults.first else{ return NSNumber.init(value: Float(0)) }
+                            guard let firstObj = fetchResults.first else{ return 0}
                             userObj = firstObj
-                            guard let balance = userObj.balance else { return NSNumber.init(value: Float(0)) }
+                            guard let balance = userObj.balance else { return 0 }
                             return NSNumber.init(value: Float(balance)!)
                         }
                     }catch{
                         print("saving failed ")
                     }
-                    return NSNumber.init(value: Float(0))
+                    return 0
                 }
             }
-             return NSNumber.init(value: Float(0))
+             return 0
         }
-         return NSNumber.init(value: Float(0))
+         return 0
     }
     class func isLoginCardBased() -> Bool{
         guard let userAccount:Account = GFAccountManager.currentAccount() else{ return false }

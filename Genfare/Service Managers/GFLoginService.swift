@@ -44,15 +44,19 @@ class GFLoginService {
                 case .success(let JSON):
                     print(JSON)
                     if let dict = JSON as? [String:Any]{
-                        let success:Bool = dict["success"] as! Bool
-                        if(!success){
-                            completionHandler(false,dict["message"])
+                        if let success = dict["success"] as? Bool{
+                            if(success){
+                                KeychainWrapper.standard.set(self.username, forKey:Constants.KeyChain.UserName)
+                                KeychainWrapper.standard.set(self.password, forKey: Constants.KeyChain.Password)
+                                self.saveData(data: dict["result"] as! [String : Any])
+                                completionHandler(true,dict["message"])
+                            }else{
+                                completionHandler(false,dict["message"])
+                            }
                         }else{
-                            KeychainWrapper.standard.set(self.username, forKey:Constants.KeyChain.UserName)
-                            KeychainWrapper.standard.set(self.password, forKey: Constants.KeyChain.Password)
-                            self.saveData(data: dict["result"] as! [String : Any])
-                            completionHandler(true,dict["message"])
+                            completionHandler(false,dict["message"])
                         }
+                        
                     }
                     //testpp@test.comtself.refreshToken(username: username, password: password)
                 case .failure(let error):

@@ -22,6 +22,9 @@ class GFNavigateRouteViewController: GFBaseViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var bannerView: GFCustomTableViewCellShadowView!
     
+    @IBOutlet weak var topNavBar: UIView!
+    @IBOutlet weak var navBarLogo: UIImageView!
+    
     var bannerStartY:CGFloat = 0.0
     var walkPoly:MKPolyline?
     var busPoly:MKPolyline?
@@ -33,6 +36,9 @@ class GFNavigateRouteViewController: GFBaseViewController {
 
         // Do any additional setup after loading the view.
         mapView.delegate = self
+        self.navBarLogo.image = UIImage.init(named: String.init(format: "%@NavBarLogo",Utilities.tenantId().lowercased() ?? ""))
+        self.navBarLogo.backgroundColor = UIColor.clear
+        topNavBar.backgroundColor = UIColor.topNavBarColor
     }
 
     override func viewWillAppear(_ animated: Bool) {

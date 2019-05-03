@@ -30,7 +30,7 @@ class GFBarcodeInfoViewController: GFBaseViewController {
     override func viewWillAppear( _ animated:Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false);
-        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+        navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
         view.backgroundColor = .white
         
         // Do any additional setup after loading the view.

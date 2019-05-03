@@ -21,6 +21,8 @@ class NavigateViewController: GFBaseViewController, UITextFieldDelegate {
     @IBOutlet weak var destinationText: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var swapButton: UIButton!
+    @IBOutlet weak var topNavBar: UIView!
+    @IBOutlet weak var navBarLogo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,10 @@ class NavigateViewController: GFBaseViewController, UITextFieldDelegate {
         destinationText.delegate = self
         startText.delegate = self
         searchCompleter.delegate = self
+        self.navBarLogo.image = UIImage.init(named: String.init(format: "%@NavBarLogo",Utilities.tenantId().lowercased() ?? ""))
+        
+        self.navBarLogo.backgroundColor = UIColor.clear
+        topNavBar.backgroundColor = UIColor.topNavBarColor
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -16,6 +16,8 @@ class GFAccountSettingsViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var homeAddressFld: UITextField!
     @IBOutlet var workAddreessFld: UITextField!
     @IBOutlet var schoolAddressFld: UITextField!
+    @IBOutlet weak var topNavBar: UIView!
+    @IBOutlet weak var navBarLogo: UIImageView!
     @IBAction func changeEmailClicked(_ sender: UIButton) {
         
         if let navController = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "GFChangeEmailViewController") as? GFChangeEmailViewController {
@@ -36,9 +38,12 @@ class GFAccountSettingsViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSavedAddress()
-        self.homeAddressFld.delegate = self;
-        self.workAddreessFld.delegate = self;
-        self.schoolAddressFld.delegate = self;
+        self.homeAddressFld.delegate = self
+        self.workAddreessFld.delegate = self
+        self.schoolAddressFld.delegate = self
+        self.navBarLogo.image = UIImage.init(named: String.init(format: "%@NavBarLogo",Utilities.tenantId().lowercased() ?? ""))
+        self.navBarLogo.backgroundColor = UIColor.clear
+        topNavBar.backgroundColor = UIColor.topNavBarColor
         // Do any additional setup after loading the view.
     }
     

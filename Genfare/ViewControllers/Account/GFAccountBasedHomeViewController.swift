@@ -40,7 +40,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         
         view.backgroundColor = .black
         navigationController?.setNavigationBarHidden(false, animated: false);
-        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+        navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
         viewModel.updateWalletStatus()
         print(pageMenu?.currentPageIndex)
         if pageMenu?.currentPageIndex == 0 {

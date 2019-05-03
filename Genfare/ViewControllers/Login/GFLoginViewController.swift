@@ -20,6 +20,7 @@ class GFLoginViewController: GFBaseViewController {
     @IBOutlet weak var forgotPasswordBtn: UIButton!
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var signUpBtn: UIButton!
+    @IBOutlet var imgUser: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,8 @@ class GFLoginViewController: GFBaseViewController {
         // Do any additional setup after loading the view.
         createViewModelBinding()
         createCallbacks()
+        self.imgUser.image =  UIImage(named: "\(Utilities.tenantId().lowercased())LogoBig")
+        self.signInBtn.backgroundColor = UIColor(hexString:Utilities.colorHexString(resourceId: "BigButtonBGColor" )!)
     }
 
     override func didReceiveMemoryWarning() {

@@ -37,7 +37,7 @@ class GFCardBasedHomeViewController: GFBaseViewController {
         super.viewWillAppear(animated)
         view.backgroundColor = .black
         navigationController?.setNavigationBarHidden(false, animated: false);
-        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+        navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
         viewModel.updateWalletStatus()
     }
     

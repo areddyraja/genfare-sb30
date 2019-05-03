@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContactsHelpText</key>
+	<string>For customer service call (518) 482-8822 or email CDTA at mobilesupport@cdta.org. </string>
+	<key>HelpTextScreensInfo</key>
+	<string>Select Add Fund to add money to your Navigator account.   The products/passes available are listed under the Pay As You Go section. Tap on the desired product to Activate a pass to ride.   The current activations are displayed in the Passes section.   Your pass activations and rides taken are listed in the Activities section ordered by activation date and time.</string>
+	<key>AddAccountsHelpText</key>
+	<string>A Navigator account allows access to your mobile cards from all your devices and to transfer cards between devices. You can save a stored payment for quick checkouts and receive a receipt to the registered email address. 
+
+If your mobile device becomes unavailable (lost, stolen, upgrade, et.c) an account will protect your cards’ balance. You will also be able to have a Customer Service Representative identify your mobile card via your account.</string>
+	<key>HelpTicketPurchase</key>
+	<string>You must select the mobile card that you wish to add products to before continuing to the purchase process. 
+
+Before creating a mobile card, it is recommended to nickname your card in order to quickly identify the card. This is beneficial in the event that you have multiple mobile cards displayed on this page. </string>
+	<key>HelpMyTickets</key>
+	<string>Please name your Navigator mobile card so you can purchase and use a Frequent Rider pass or Pay as You Go value. 
+
+Tap on the Purchase Passes button to make new purchases for your card.
+
+You can view and use your available passes as sorted by purchase date and time. If any active passes have additional rides and can be activated again, they will be displayed at the end of their activation period in the Ready section.
+
+If a pass cannot be activated any more or if it has reached its expiration date, the pass will go into your History.
+</string>
+	<key>HelpTicketPager</key>
+	<string>Pass - View or activate your pass. A pass will only remain active for a certain period of time, during which a fare inspector may check the validity of the pass. There may also be a waiting period before you can reactivate a multi-use pass.
+
+Barcode - A pass will have its unique scannable barcode here.
+
+Information - This page contains additional information regarding your pass that may be helpful to relay to a Customer Service Representative.</string>
+	<key>HelpAlerts</key>
+	<string>An indicator on the Alerts icon in the Home Screen denotes the number of alerts affecting the CDTA transit system, if any. On this present screen, you can quickly see which routes are affected by an alert. Tapping on an alert will show additional details.</string>
+	<key>CreateMobileCard</key>
+	<string>Please name your Navigator mobile card so you can purchase and use a Frequent Rider pass or Pay as You Go value.</string>
+	<key>NoPassesAlert</key>
+	<string>Please name your Navigator mobile card so you can purchase and use a Frequent Rider pass or Pay as You Go value.
+
+Tap on the Purchase Passes button to make new purchases with your mobile card.</string>
+	<key>WalletInstructionsViewController</key>
+	<string>CdtaWalletInstructionsViewController</string>
+	<key>WalletUsingAlreadyMessage</key>
+	<string>You are using this app in another device. If you want to switch to this device, please release the wallet from the other device (or) Call Customer service @ (518) 482 8822)</string>
+</dict>
+</plist>

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -191,6 +192,8 @@ Mon-Fri: 8:00AM to 5:00PM</string>
                     <connections>
                         <outlet property="callNumberProperty" destination="yBM-OH-TyO" id="vdH-24-0LU"/>
                         <outlet property="commentsProperty" destination="KWf-nT-sAX" id="2qQ-Cr-zJv"/>
+                        <outlet property="navBarLogo" destination="mOr-zz-kKr" id="kM0-RN-BIC"/>
+                        <outlet property="topNavBar" destination="Xng-U4-A3y" id="5A2-PJ-BDs"/>
                         <outlet property="vistTheWebsiteProperty" destination="3hr-3m-xfO" id="RH9-1h-Q1U"/>
                         <segue destination="t1W-yo-gg6" kind="presentation" id="Hht-Gy-ohf"/>
                     </connections>

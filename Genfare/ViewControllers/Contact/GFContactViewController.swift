@@ -18,12 +18,16 @@ class GFContactViewController: GFBaseViewController {
     @IBOutlet var vistTheWebsiteProperty: GFMenuButton!
     @IBOutlet var commentsProperty: GFMenuButton!
     @IBOutlet var callNumberProperty: GFMenuButton!
+    @IBOutlet weak var topNavBar: UIView!
+    @IBOutlet weak var navBarLogo: UIImageView!
    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateUI()
         createViewModelBinding()
-        
+        self.navBarLogo.image = UIImage.init(named: String.init(format: "%@NavBarLogo",Utilities.tenantId().lowercased() ?? ""))
+        self.navBarLogo.backgroundColor = UIColor.clear
+        topNavBar.backgroundColor = UIColor.topNavBarColor
         // Do any additional setup after loading the view.
     }
     

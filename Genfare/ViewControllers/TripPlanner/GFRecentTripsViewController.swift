@@ -11,12 +11,18 @@ import UIKit
 class GFRecentTripsViewController: GFBaseViewController,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topNavBar: UIView!
+    @IBOutlet weak var navBarLogo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        self.navBarLogo.image = UIImage.init(named: String.init(format: "%@NavBarLogo",Utilities.tenantId().lowercased() ?? ""))
+        
+        self.navBarLogo.backgroundColor = UIColor.clear
+        topNavBar.backgroundColor = UIColor.topNavBarColor
 
         // Do any additional setup after loading the view.
     }

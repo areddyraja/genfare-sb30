@@ -104,8 +104,6 @@ class GFSignupViewController: GFBaseViewController {
         
     }
     func applyStylesAndColors(){
-        firstNameTxt.textColor = UIColor(hexString:Utilities.colorHexString(fromId:"BigButtonBGColor" )!)
-        lastNameTxt.textColor = UIColor.red
-        self.signUpBtn.backgroundColor = UIColor(hexString:Utilities.colorHexString(fromId:"BigButtonBGColor" )!)
+        self.signUpBtn.backgroundColor = UIColor(hexString:Utilities.colorHexString(resourceId: "BigButtonBGColor" )!)
     }
 }

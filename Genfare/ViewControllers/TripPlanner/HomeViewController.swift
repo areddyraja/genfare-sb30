@@ -15,6 +15,8 @@ class HomeViewController: GFBaseViewController, CLLocationManagerDelegate, MKMap
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var whereToGoText: UITextField!
     @IBOutlet weak var locationPin: UIImageView!
+    @IBOutlet weak var topNavBar: UIView!
+    @IBOutlet weak var navBarLogo: UIImageView!
     
     var locationManager = CLLocationManager()
     var locationLat:String?
@@ -27,6 +29,10 @@ class HomeViewController: GFBaseViewController, CLLocationManagerDelegate, MKMap
         whereToGoText.delegate = self
         mapView.delegate = self
         navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
+        self.navBarLogo.image = UIImage.init(named: String.init(format: "%@NavBarLogo",Utilities.tenantId().lowercased() ?? ""))
+        
+        self.navBarLogo.backgroundColor = UIColor.clear
+        topNavBar.backgroundColor = UIColor.topNavBarColor
         //addMenuObservers()
         //TripDataManager.initService()
         //TripDataManager.getStopsInBetween()

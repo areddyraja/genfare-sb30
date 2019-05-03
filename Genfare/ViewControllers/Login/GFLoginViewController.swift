@@ -29,7 +29,7 @@ class GFLoginViewController: GFBaseViewController {
         createViewModelBinding()
         createCallbacks()
         self.imgUser.image =  UIImage(named: "\(Utilities.tenantId().lowercased())LogoBig")
-        self.signInBtn.backgroundColor = UIColor(hexString:Utilities.colorHexString(fromId:"BigButtonBGColor" )!)
+        self.signInBtn.backgroundColor = UIColor(hexString:Utilities.colorHexString(resourceId: "BigButtonBGColor" )!)
     }
 
     override func didReceiveMemoryWarning() {

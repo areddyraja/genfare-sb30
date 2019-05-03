@@ -109,7 +109,7 @@ class Utilities {
         let newDate = NSDate(timeIntervalSince1970: date)
         return dateFormatter.string(from: newDate as Date)
     }
-   class func colorHexString(fromId resourceId: String?) -> String? {
+   class func colorHexString(resourceId: String?) -> String? {
         var colorHexString = ""
     let colorsPlistPath = Bundle.main.path(forResource:Constants.Plist.COLORS_PLIST, ofType: Constants.Plist.TYPE_PLIST)
         if (colorsPlistPath?.count ?? 0) > 0 {

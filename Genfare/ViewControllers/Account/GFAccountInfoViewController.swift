@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITableViewDataSource {
+class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITableViewDataSource,WalletProtocol {
 
     let viewModel = GFAccountInfoViewModel()
     let disposeBag = DisposeBag()
@@ -90,7 +90,7 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let userAccount:Account? = GFAccountManager.currentAccount()
-         let wallet = GFWalletsService.userWallet()
+         let wallet = self.userWallet()
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardDetailsCell", for: indexPath) as? GFAccountManagementTableViewCell else { return UITableViewCell()}
         cell.unassignBtn.isHidden = true
         switch (indexPath.row) {

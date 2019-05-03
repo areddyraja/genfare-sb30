@@ -26,7 +26,6 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
     var card = [String:Any]()
     var selectedIndex = -1
    var isSelectedBtnImageCard = false
-
     @IBOutlet var selectedImg: UIImageView!
     @IBOutlet var mailLabel: UILabel!
     override func viewDidLoad() {
@@ -122,19 +121,16 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
                     let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
 
                     let  walletID =  self.walledId()
-                    var orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
+                    let orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
 
-                    var savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
+                    let savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
                     self.card = self.viewModel.model[self.selectedIndex] as! [String : Any]
                     let url1   = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&savedCardId=\(self.card["cardNumber"]!)"
                     let url =  Utilities.apiHost()+url1
-                    
-                   
-                    
                     navController?.weburl = url
                     self.navigationController?.pushViewController(navController!, animated: true)
                 }
-                
+                self.pushToWebPage()
             }
             else{
                 print("error")
@@ -254,18 +250,22 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
             
             present(alert, animated: true, completion: nil)
         }
-        OrderProducts()
+        
+            self.OrderProducts()
+    
+        
+        
+    }
+    func pushToWebPage(){
         let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
-
-      let  walletID =  self.walledId()
-        var orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
-        var savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
-
+        
+        let  walletID =  self.walledId()
+        let orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
+        let savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
         let  url1 = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&saveForFuture=\(savedValue)"
         let url =  Utilities.apiHost()+url1
-      navController?.weburl = url
-       navigationController?.pushViewController(navController!, animated: true)
-        
+        navController?.weburl = url
+        navigationController?.pushViewController(navController!, animated: true)
     }
     
     @IBAction func backToCartClicked(_ sender: Any) {

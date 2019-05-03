@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import CoreData
 
 class GFPayGoPassTableViewController: UITableViewController {
 
@@ -111,7 +112,13 @@ class GFPayGoPassTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         selectedIndex = indexPath.row
-        let balance = Utilities.accountBalance()
+        var balance:NSNumber = NSNumber.init(value: 0.0)
+        if Utilities.isLoginCardBased(){
+            balance = Utilities.walletContentsBalance()
+        }else{
+           balance = Utilities.accountBalance()
+        }
+        
         if balance.intValue <= 0{
             let alert = UIAlertController(title: "Not Enough Value", message: "You must first Add Value to your Balance before you can activate this ticket", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
@@ -129,12 +136,15 @@ class GFPayGoPassTableViewController: UITableViewController {
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive, handler: { action in
-            
+            if let product:Product = self.viewModel.model[self.selectedIndex] as Product {
+                self.viewModel.updateWalletContentsBalance(selectedproduct: product)
+            }
             self.viewModel.confirmActivation(index: self.selectedIndex)
             
         }))
         
         present(alert, animated: true, completion: nil)
     }
+
 
 }

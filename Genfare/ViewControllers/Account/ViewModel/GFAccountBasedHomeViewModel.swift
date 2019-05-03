@@ -34,24 +34,33 @@ class GFAccountBasedHomeViewModel:WalletProtocol {
     }
     
     func refreshBalance() -> Void {
-        isLoading.value = true
+        guard let userAccount:Account = GFAccountManager.currentAccount() else{ return }
+        guard let accType = userAccount.profileType else { return }
         
-        guard NetworkManager.Reachability else {
+        if accType == "CARD_BASED"{
             isLoading.value = false
-            errorMsg.value = Constants.Message.NoNetwork
-            self.balance.value = Utilities.accountBalance()
-            return
-        }
-        
-        GFAccountBalanceService.fetchAccountBalance { [unowned self] (success, error) in
-            self.isLoading.value = false
-            
-            if success {
+//            let balance = Utilities.walletContentsBalance()
+            self.balance.value = Utilities.walletContentsBalance()
+        }else{
+            self.isLoading.value = true
+            guard NetworkManager.Reachability else {
+                isLoading.value = false
+                errorMsg.value = Constants.Message.NoNetwork
                 self.balance.value = Utilities.accountBalance()
-            }else{
-                self.errorMsg.value = "error"
+                return
+            }
+            
+            GFAccountBalanceService.fetchAccountBalance { [unowned self] (success, error) in
+                self.isLoading.value = false
+                
+                if success {
+                    self.balance.value = Utilities.accountBalance()
+                }else{
+                    self.errorMsg.value = "error"
+                }
             }
         }
+
     }
     
     func updateWalletStatus() {

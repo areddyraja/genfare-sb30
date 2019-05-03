@@ -472,6 +472,7 @@
                     </view>
                     <connections>
                         <outlet property="productsTableView" destination="ePW-ie-B1V" id="6Fl-ZO-NQe"/>
+                        <outlet property="secondContinueButton" destination="gSr-7l-wI3" id="A2p-yQ-2CQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFk-Z5-iJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -51,11 +51,11 @@ class GFWalletContentsService {
                 }
         }
     }
+
     
     func saveWalletContents(data:Array<Any>) {
         let managedContext = GFDataService.context
         let walletContents = NSEntityDescription.entity(forEntityName: "WalletContents", in: managedContext)
-        
         for item in data {
             var userObj:WalletContents
             

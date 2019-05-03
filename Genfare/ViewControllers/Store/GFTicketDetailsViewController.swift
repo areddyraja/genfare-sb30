@@ -14,6 +14,7 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
     var seletedProducts = [[String:Any]]()
     var spinnerView:UIView?
     
+    @IBOutlet var secondContinueButton: GFMenuButton!
     @IBOutlet var productsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +87,11 @@ class GFTicketDetailsViewController: UIViewController,UITableViewDelegate,UITabl
                 navController!.productsCartArray = arrProductsList
                 navigationController?.pushViewController(navController!, animated: true)
             }
+        }
+        else{
+            secondContinueButton.backgroundColor = UIColor.lightGray
+            secondContinueButton.isUserInteractionEnabled = false
+            
         }
     }
     

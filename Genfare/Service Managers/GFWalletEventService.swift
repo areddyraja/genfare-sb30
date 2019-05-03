@@ -49,7 +49,12 @@ class GFWalletEventService {
              storedDict["chargeDate"] = event.clickedTime
             storedDict["ticketIdentifier"] = self.ticketID
             storedDict["amountCharged"] = event.fare
-            storedDict["amountRemaining"] = Utilities.accountBalance()
+            if Utilities.isLoginCardBased(){
+                storedDict["amountRemaining"] = Utilities.walletContentsBalance()
+            }else{
+                storedDict["amountRemaining"] = Utilities.accountBalance()
+            }
+            
         }
        
      //   storedDict["chargedamount"] = event.ch
@@ -140,7 +145,15 @@ class GFWalletEventService {
                 userObj.fare = NumberFormatter().number(from: product.price!)!
             }
             
-            userObj.amountRemaining = Utilities.accountBalance()
+            if Utilities.isLoginCardBased(){
+                let originalBalance = Utilities.walletContentsBalance()
+                let productFare = NumberFormatter().number(from: product.price!)!
+                let remainingBal:Float = originalBalance.floatValue - productFare.floatValue
+                userObj.amountRemaining = NSNumber.init(value: remainingBal)
+            }else{
+                userObj.amountRemaining = Utilities.accountBalance()
+            }
+            
             
             GFDataService.saveContext()
             print(userObj)

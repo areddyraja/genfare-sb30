@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+import CoreData
 
 class Utilities {
     
@@ -84,6 +85,45 @@ class Utilities {
     
     class func accountBalance() -> NSNumber {
         return UserDefaults.standard.value(forKey: Constants.LocalStorage.AccountBalance) as! NSNumber
+    }
+    class func walletContentsBalance() -> NSNumber{
+        let products = GFFetchProductsService.getProducts()
+        let items = products.filter({ (product:Product) -> Bool in
+             product.ticketTypeDescription == "Stored Value" && product.isActivationOnly == 0
+        })
+        if items.count > 0{
+            if let prod = items[0] as? Product{
+                if let ticketId = prod.ticketId?.intValue{
+                    do{
+                        var userObj:WalletContents
+                        let managedContext = GFDataService.context
+                        let fetchRequest:NSFetchRequest = WalletContents.fetchRequest()
+                        let strTicketId = String(format: "%d", ticketId)
+                        fetchRequest.predicate = NSPredicate(format: "ticketIdentifier == %@",strTicketId)
+                        let fetchResults = try managedContext.fetch(fetchRequest)
+                        if fetchResults.count >= 0 {
+                            guard let firstObj = fetchResults.first else{ return 0}
+                            userObj = firstObj
+                            guard let balance = userObj.balance else { return 0 }
+                            return NSNumber.init(value: Float(balance)!)
+                        }
+                    }catch{
+                        print("saving failed ")
+                    }
+                    return 0
+                }
+            }
+             return 0
+        }
+         return 0
+    }
+    class func isLoginCardBased() -> Bool{
+        guard let userAccount:Account = GFAccountManager.currentAccount() else{ return false }
+        guard let accType = userAccount.profileType else { return  false}
+        if accType == "CARD_BASED"{
+            return true
+        }
+        return false
     }
     
     class func saveAccountBalance(bal:NSNumber) {

@@ -83,7 +83,7 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
     func transferCard() {
         let existingPassword = String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.Password)!)
         let email = (String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.UserName)!))
-        let alert = UIAlertController(title: Utilities.colorHexString(resourceId:"retriveCreditCardAlertTitle"), message: (String(format:"Enter the password for %@ to use saved cards.\n\nOnce the password is verified, this card will be used for further Payment",email)), preferredStyle: UIAlertController.Style.alert)
+         let alert = UIAlertController(title:"View Card Management", message: (String(format:"Enter the password for %@ to view cards assigned to its account.\n\nOnce the password is verified, this card will be released from this device and you will no longer have access to it until you select a device in which to store the card.\n\n You will also be auto logged out from your account",email)), preferredStyle: UIAlertController.Style.alert)
         
         
         alert.addTextField { (textField) -> Void in

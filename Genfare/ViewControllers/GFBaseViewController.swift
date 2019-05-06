@@ -26,7 +26,7 @@ class GFBaseViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.setNavigationBarHidden(true, animated: false)
-        view.backgroundColor = UIColor.buttonBGBlue
+        view.backgroundColor = UIColor.topNavBarColor
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -105,6 +105,7 @@ class GFBaseViewController: UIViewController {
         self.navigationItem.leftItemsSupplementBackButton = false
         self.navigationItem.leftBarButtonItem = barButton
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "\(Utilities.tenantId().lowercased())NavBarLogo"))
+        
     }
 
     func attachSpinner(value:Bool) {

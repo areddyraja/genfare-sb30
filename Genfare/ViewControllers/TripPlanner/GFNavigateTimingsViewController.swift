@@ -21,6 +21,8 @@ class GFNavigateTimingsViewController: GFBaseViewController {
     @IBOutlet weak var swapButton: UIButton!
     
     
+    @IBOutlet weak var topNavBar: UIView!
+    @IBOutlet weak var navBarLogo: UIImageView!
     @IBOutlet weak var costTxtButton: GFMenuButton!
     @IBOutlet weak var arrivalTxtButton: GFMenuButton!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -31,7 +33,10 @@ class GFNavigateTimingsViewController: GFBaseViewController {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-
+        self.navBarLogo.image = UIImage.init(named: String.init(format: "%@NavBarLogo",Utilities.tenantId().lowercased() ?? ""))
+        
+        self.navBarLogo.backgroundColor = UIColor.clear
+        topNavBar.backgroundColor = UIColor.topNavBarColor
         TripDataManager.getRoutsForLocations { (success) in
             print("Got locations successfully")
             DispatchQueue.main.async {

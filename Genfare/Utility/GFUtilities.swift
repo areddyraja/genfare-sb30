@@ -149,5 +149,22 @@ class Utilities {
         let newDate = NSDate(timeIntervalSince1970: date)
         return dateFormatter.string(from: newDate as Date)
     }
+   class func colorHexString(resourceId: String?) -> String? {
+        var colorHexString = ""
+    let colorsPlistPath = Bundle.main.path(forResource:Constants.Plist.COLORS_PLIST, ofType: Constants.Plist.TYPE_PLIST)
+        if (colorsPlistPath?.count ?? 0) > 0 {
+            let colorsDictionary = NSDictionary(contentsOfFile: colorsPlistPath ?? "")
+            colorHexString = colorsDictionary?[resourceId as Any] as? String ?? ""
+        }
+    
+    if colorHexString.hasPrefix("$$@@") {
+        let filename = Bundle.main.object(forInfoDictionaryKey: "ColorsConfigfile") as? String
+        let configPlistPath = Bundle.main.path(forResource: filename, ofType: Constants.Plist.TYPE_PLIST)
+        if (configPlistPath?.count ?? 0) > 0 {
+            colorHexString = NSDictionary(contentsOfFile: configPlistPath ?? "")![resourceId as Any] as! String
+        }
+    }
+        return colorHexString
+    }
 }
 

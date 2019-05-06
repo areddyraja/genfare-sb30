@@ -29,7 +29,7 @@ class GFChangePasswordViewController: GFBaseViewController {
         super.viewWillAppear(animated)
         view.backgroundColor = UIColor.formLabelText
         navigationController?.setNavigationBarHidden(false, animated: false);
-        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+        navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
        self.navigationItem.title = "Change Password"
     }
         func createViewModelBinding(){

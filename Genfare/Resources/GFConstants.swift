@@ -37,7 +37,11 @@ struct Constants {
     struct Path {
         static let KeychainService = "com.genfare.mobile.service.keychain"
     }
-    
+    struct Plist {
+        static let STRINGS_PLIST = "Strings"
+        static let COLORS_PLIST  = "Colors"
+        static let TYPE_PLIST = "plist"
+    }
     struct Address {
         static let Home = "1500 Polaris Pkwy, Columbus, OH 43240"
         static let Work = "SmartPhone Software 1900 Polaris Pkwy, Columbus, OH 43240"

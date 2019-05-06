@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITableViewDataSource,WalletProtocol {
+class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITableViewDataSource,WalletProtocol,UITextFieldDelegate {
 
     let viewModel = GFAccountInfoViewModel()
     let disposeBag = DisposeBag()
@@ -39,11 +39,12 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
         
         transferBtn.rx.tap.do(onNext:  { [unowned self] in
             print(self)
+         
         }).subscribe(onNext: { [unowned self] in
-            self.viewModel.transferCard()
+            self.transferCard()
         }).disposed(by: disposeBag)
     }
-
+  
     func createCallbacks (){
         // success
         viewModel.isSuccess.asObservable()
@@ -79,6 +80,30 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
             }.disposed(by: disposeBag)
     }
     
+    func transferCard() {
+        let existingPassword = String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.Password)!)
+        let email = (String(describing: KeychainWrapper.standard.string(forKey: Constants.KeyChain.UserName)!))
+        let alert = UIAlertController(title: Utilities.colorHexString(resourceId:"retriveCreditCardAlertTitle"), message: (String(format:"Enter the password for %@ to use saved cards.\n\nOnce the password is verified, this card will be used for further Payment",email)), preferredStyle: UIAlertController.Style.alert)
+        
+        
+        alert.addTextField { (textField) -> Void in
+            let  passwordTextField = textField
+            passwordTextField.delegate = self
+            passwordTextField.placeholder = "Password"
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "verify", style: UIAlertAction.Style.destructive, handler: { action in
+            let passwordText = alert.textFields![0]
+            if(passwordText.text == existingPassword){
+                self.viewModel.getConfigValues()
+            }else{
+                let alert = UIAlertController(title: "Password", message: "Please provide correct password", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }))
+         present(alert, animated: true, completion: nil)
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

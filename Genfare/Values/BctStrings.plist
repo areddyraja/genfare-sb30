@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContactsHelpText</key>
+	<string>For customer service call 954-357-8400 or email BCT at cservice@broward.org.</string>
+	<key>HelpTextScreensInfo</key>
+	<string>Select Add Fund to add money to your BCT account.   The products/passes available are listed under the Pay As You Go section. Tap on the desired product to Activate a pass to ride.   The current activations are displayed in the Passes section.   Your pass activations and rides taken are listed in the Activities section ordered by activation date and time.</string>
+	<key>AddAccountsHelpText</key>
+	<string>New Customer : Use this option to setup an account. After an account is setup, you will be prompted to create and name your Mobile Wallet.   Existing Customer: Sign in to your account to Add Fund, access your Mobile Wallet and manage Pass Activations.   You can save a Payment Method, which is stored in the account for quick checkouts. Payment receipts are sent to the registered email address.  In the event your mobile phone becomes unavailable (lost, stolen, device upgrade, etc.), your Mobile Wallet can be transferred to the new device.</string>
+	<key>HelpTicketPurchase</key>
+	<string>Add Fund to your account in order to purchase and activate a pass. Review the amount entered in the cart before checkout, select a payment method and enter a valid email address if you wish to receive a receipt.  You can save your payment method to allow quick future purchases. In order to quick purchase, you will be required to enter your account password. A receipt will be emailed to your registered email address.  After a successful purchase, go to the My Passes screen to check your Account Balance.</string>
+	<key>HelpMyTickets</key>
+	<string>Name your mobile card so you can purchase and use a Frequent Rider pass or Pay as You Go value. 
+
+Tap on the Purchase Passes button to make new purchases for your card.
+
+You can view and use your available passes as sorted by purchase date and time. If any active passes have additional rides and can be activated again, they will be displayed at the end of their activation period in the Ready section.
+
+If a pass cannot be activated any more or if it has reached its expiration date, the pass will go into your Activities.
+</string>
+	<key>HelpTicketPager</key>
+	<string>Tap the QR code on the fare box to ride the bus. The clock represents the time you have remaining before the pass becomes inactive.
+
+This QR code is valid only for a single activation. To see detailed information about the pass, swipe right to the Information tab.</string>
+	<key>HelpAlerts</key>
+	<string>The number of Alerts currently affecting BCT are displayed next to the Alerts icon on the Home screen. Select the Alerts icon to view which lines are affected. Tapping a specific alert will display additional details.</string>
+	<key>CreateMobileCard</key>
+	<string>Naming your Mobile Wallet helps you identify it, when needed (i.e., transfer it to another device).</string>
+	<key>NoPassesAlert</key>
+	<string>Tap on the Purchase Passes button to make new purchases with your mobile card.</string>
+	<key>WalletInstructionsViewController</key>
+	<string>BctWalletInstructionsViewController</string>
+	<key>WalletUsingAlreadyMessage</key>
+	<string>You are using this app in another device. If you want to switch to this device, please release the wallet from the other device (or) Call Customer service @ (518) 482 8822)</string>
+</dict>
+</plist>

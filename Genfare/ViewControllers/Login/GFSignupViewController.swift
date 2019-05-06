@@ -22,13 +22,21 @@ class GFSignupViewController: GFBaseViewController {
     @IBOutlet weak var passwordTxt2: GFWhiteButtonTextField!
     @IBOutlet weak var emailTxt: GFWhiteButtonTextField!
     @IBOutlet weak var signUpBtn: GFMenuButton!
+    @IBOutlet var imgUser: UIImageView!
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         createViewModelBinding()
         createCallbacks()
+        self.imgUser.image =  UIImage(named: "\(Utilities.tenantId().lowercased())LogoBig")
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        applyStylesAndColors()
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,5 +102,8 @@ class GFSignupViewController: GFBaseViewController {
                 self.showErrorMessage(message: errorMessage)
             }.disposed(by: disposeBag)
         
+    }
+    func applyStylesAndColors(){
+        self.signUpBtn.backgroundColor = UIColor(hexString:Utilities.colorHexString(resourceId: "BigButtonBGColor" )!)
     }
 }

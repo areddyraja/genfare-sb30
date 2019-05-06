@@ -52,7 +52,7 @@ class GFBarcodeScreenViewController: GFBaseViewController ,WalletContentsProtoco
     override func viewWillAppear( _ animated:Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false);
-        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+        navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
         view.backgroundColor = .white
 
         if self.isActive(walletcontents:ticket) {

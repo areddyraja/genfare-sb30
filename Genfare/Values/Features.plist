@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>check_for_external_password_change</key>
+	<true/>
+	<key>barcode_after_ticket_activation</key>
+	<true/>
+	<key>count_down</key>
+	<true/>
+	<key>stored_value</key>
+	<true/>
+    <key>check_for_external_password_change</key>
+    <false/>
+    <key>large_ticket_details_font</key>
+    <false/>
+    <key>count_down</key>
+    <false/>
+    <key>stored_value</key>
+    <false/>
+    <key>barcode_after_ticket_activation</key>
+    <false/>
+    <key>skip_activation_alert</key>
+    <false/>
+    <key>display_fare_zone_desc</key>
+    <false/>
+    <key>show_manage_saved_payment</key>
+    <string>YES</string>
+    <key>FEATURE__ACCOUNT__GOTO_HOME_SCREEN_AFTER_LOGIN</key>
+    <false/>
+    <key>FEATURE__ACCOUNT__GOTO_HOME_SCREEN_AFTER_REGISTRATION</key>
+    <false/>
+    <key>FEATURE__ACCOUNT__SETTINGS__SHOW_DEVICE_MANAGMENT</key>
+    <false/>
+</dict>
+</plist>

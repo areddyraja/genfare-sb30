@@ -13,7 +13,7 @@ class GFLaunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     self.splashScreenImg.image =  UIImage(named: "\(Utilities.tenantId().lowercased())SplashScreen")
         let launchScreenViewModel = LaunchScreenViewModel()
         launchScreenViewModel.getAuthToken { [unowned self] (success, error) in
             if(success){
@@ -22,6 +22,7 @@ class GFLaunchViewController: UIViewController {
             self.gotoHomeScreen()
         }
     }
+    @IBOutlet var splashScreenImg: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

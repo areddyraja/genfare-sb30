@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kgf-bJ-1ln">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kgf-bJ-1ln">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -162,6 +163,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="Vks-nz-hzr" id="Ja9-60-v8z"/>
                         <outlet property="forgotPasswordBtn" destination="Axb-eV-U7s" id="qog-rk-LEw"/>
+                        <outlet property="imgUser" destination="90s-hg-ygN" id="hLq-jh-Fl0"/>
                         <outlet property="passwordTxt" destination="MKn-E3-VGj" id="HBQ-Op-B5x"/>
                         <outlet property="signInBtn" destination="gLz-iZ-2Su" id="QX8-PN-ewe"/>
                         <outlet property="signUpBtn" destination="kGO-iP-8GZ" id="dVg-UY-UCX"/>
@@ -260,7 +262,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Sr-Sm-9cx">
-                                <rect key="frame" x="82" y="435" width="206.5" height="36"/>
+                                <rect key="frame" x="82" y="435" width="207" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CM-VY-FZ3">
@@ -293,6 +295,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cVA-RB-aon"/>
                     </view>
+                    <connections>
+                        <outlet property="imgUser" destination="unV-mC-PvL" id="f7M-FU-Ey1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjR-JB-0rU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -315,7 +320,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6AO-WX-yuq">
-                                <rect key="frame" x="80" y="631" width="206.5" height="36"/>
+                                <rect key="frame" x="80" y="631" width="207" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvX-bQ-PLc">
@@ -498,6 +503,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="dFQ-0Y-IMx" id="o7F-eq-7kU"/>
                         <outlet property="firstNameTxt" destination="KJz-GM-MGG" id="YPT-EN-Wfe"/>
+                        <outlet property="imgUser" destination="nrb-Qh-QlM" id="07Q-53-4ZP"/>
                         <outlet property="lastNameTxt" destination="3wl-lu-sin" id="D3D-WG-EOU"/>
                         <outlet property="passwordTxt1" destination="f8b-1M-ppv" id="6Hs-uk-Edl"/>
                         <outlet property="passwordTxt2" destination="Cfm-Wj-Ir4" id="9A9-Js-BVP"/>

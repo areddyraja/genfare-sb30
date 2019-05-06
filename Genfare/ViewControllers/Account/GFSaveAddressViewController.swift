@@ -37,7 +37,7 @@ class GFSaveAddressViewController: GFBaseViewController,MKLocalSearchCompleterDe
         super.viewWillAppear(animated)
         view.backgroundColor = UIColor.formLabelText
         navigationController?.setNavigationBarHidden(false, animated: false);
-        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+        navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
             }
     func showSuggessions(_ letter: String?) {
         let query = "\(String(describing: addressInputField.text!))\(letter!)"

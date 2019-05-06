@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TopNavBarColor</key>
+	<string>#223668</string>
+	<key>LoginBGColor</key>
+	<string>#223668</string>
+	<key>BigButtonBGColor</key>
+	<string>#2899D4</string>
+	<key>NavBarColor</key>
+	<string>#223668</string>
+	<key>PlaceHolderTextColor</key>
+	<string>#9B9B9B</string>
+	<key>LabelTextColor</key>
+	<string>#FFFFFF</string>
+	<key>TextDarkColor</key>
+	<string>#181512</string>
+	<key>HighLightColor</key>
+	<string>#ff1a4f95</string>
+	<key>PagerStripBgColor</key>
+	<string>#ff008c99</string>
+	<key>TicketBorderColor</key>
+	<string>#ff005dab</string>
+	<key>TableBgColor</key>
+	<string>#ff008c99</string>
+	<key>ThemeColor</key>
+	<string>#459EAC</string>
+	<key>LinkTextColor</key>
+	<string>#459EAC</string>
+	<key>ButtonBGColor</key>
+	<string>#459EAC</string>
+	<key>BGColor</key>
+	<string>#4298B5</string>
+	<key>PageMenuColor</key>
+	<string>#112559</string>
+	<key>TableViewHeaderBGColor</key>
+	<string>#042048</string>
+	<key>ContinueBtnBGColor</key>
+	<string>#5FB760</string>
+	<key>MainBgColor</key>
+	<string>#FFFFFF</string>
+	<key>TextInactiveColor</key>
+	<string>#ababab</string>
+	<key>PurchaseButtonBGColor</key>
+	<string>#6CA72F</string>
+	<key>StoredRideCellBorderColor</key>
+	<string>#FFC211</string>
+	<key>StoredValueCellBorderColor</key>
+	<string>#0093E4</string>
+	<key>PeriodPassCellBorderColor</key>
+	<string>#FF7222</string>
+</dict>
+</plist>

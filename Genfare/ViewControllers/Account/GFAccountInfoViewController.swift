@@ -30,7 +30,7 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
         super.viewWillAppear(animated)
         view.backgroundColor = .gray
         navigationController?.setNavigationBarHidden(false, animated: false);
-        navigationController?.navigationBar.barTintColor = UIColor.buttonBGBlue
+        navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
 
         // Do any additional setup after loading the view.
     }

@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>page_unavailable</key>
+	<string>Content unavailable.
+            Please check your Internet connection.</string>
+	<key>search_stops</key>
+	<string>Search Real Time Arrivals</string>
+	<key>search_ticket_types</key>
+	<string>Search Ticket Types</string>
+	<key>registration_bad_parameters</key>
+	<string>The password must be between 8 and 40 characters and contain an upper case letter, a lower case letter, a number, and a special character.</string>
+	<key>email_verification_required</key>
+	<string>The email provided must be verified using the instructions sent to the email address. You may request another verification email.</string>
+	<key>resend_verification_email</key>
+	<string>Resend Email</string>
+	<key>loading_products_title</key>
+	<string>Loading Products</string>
+	<key>Max_value</key>
+	<string>Maximum cart value exceeded</string>
+	<key>Min_value</key>
+	<string>Minimum cart value not exceeded</string>
+	<key>no_products</key>
+	<string>No products available.</string>
+	<key>program_benefit_notification</key>
+	<string>Get FREE rides using Pay As You Go</string>
+	<key>free_rides_notification</key>
+	<string>Your rides are now FREE for the day!</string>
+	<key>my_tickets</key>
+	<string>My Passes</string>
+	<key>id_card_title</key>
+	<string>ID Card</string>
+	<key>purchase_tickets</key>
+	<string>Purchase Passes</string>
+	<key>forgot_password_msg</key>
+	<string>Please enter the registered e-mail account that you wish to perform a password reset on and then press the Send Email button.  Instructions for password reset will be sent to the registered e-mail account you specify.</string>
+	<key>password_no_valid</key>
+	<string>Please enter a valid password.</string>
+	<key>password_no_match</key>
+	<string>The passwords provided do not match.</string>
+	<key>password_reset_fail</key>
+	<string>Request to reset password failed. Please check the information entered.</string>
+	<key>password_reset_success</key>
+	<string>Email sent.</string>
+	<key>forgot_password_title</key>
+	<string>Reset Password</string>
+	<key>password</key>
+	<string>Password</string>
+	<key>email_not_valid</key>
+	<string>Please enter a vaild email address.</string>
+	<key>email_no_match</key>
+	<string>The new email does not match the confirmation email.</string>
+	<key>help_bar_label_close</key>
+	<string>Double-tap to close</string>
+	<key>help_bar_label</key>
+	<string>Double-tap for help</string>
+	<key>ContactsHelpText</key>
+	<string>$$@@ContactsHelpText</string>
+	<key>AddAccountsHelpText</key>
+	<string>$$@@AddAccountsHelpText</string>
+	<key>HelpTicketPurchase</key>
+	<string>$$@@HelpTicketPurchase</string>
+	<key>HelpMyTickets</key>
+	<string>$$@@HelpMyTickets</string>
+	<key>HelpTicketPager</key>
+	<string>$$@@HelpTicketPager</string>
+	<key>cotaHelpPayAsYouGo</key>
+	<string>Select Add Value To Card to add funds to the COTA Connector App.  An activated Pay As You Go pass will be displayed in the Active section of the Passes tab.</string>
+	<key>cdtaHelpPayAsYouGo</key>
+	<string>You can earn FREE rides by activating Pay As You Go passes! Here you will see a list of passes displayed that you can redeem immediately, as long as you have enough Balance. 
+
+Tap on the Add Value to Card button to add value to your mobile card. 
+
+The counters next to each pass tell you how many activations are required until your rides are FREE for the rest of the day. 
+
+Only 1 activation every 10 minutes will count towards the BONUS counter, but you can still activate as many passes as you want at any time. 
+
+An activated Pay As You Go pass will be displayed in Passes in the Active section. </string>
+	<key>cotaHelpTicketHistory</key>
+	<string>Used and expired passes are displayed on the Activities tab from newest to oldest by purchase date and time. These passes cannot be used again.</string>
+	<key>cdtaHelpTicketHistory</key>
+	<string>Your used passes are displayed by purchase date and time. These are your expired passes and cannot be used again.</string>
+	<key>HelpAccountSettings</key>
+	<string>This page allows you to easily manage your account settings. You can change the account’s email and/or password.</string>
+	<key>HelpChangeEmail</key>
+	<string>A verification email will be sent to the new email address you enter.</string>
+	<key>HelpChangePassword</key>
+	<string>Please enter your current password and the new password you wish to set for your account.</string>
+	<key>HelpAlerts</key>
+	<string>$$@@HelpAlerts</string>
+	<key>cotaHelpTripPlanner</key>
+	<string></string>
+	<key>cdtaHelpTripPlanner</key>
+	<string>Plan a new trip or load a previously-searched trip. You can search for a street address or a stop name, or browse available stops by route number.
+                            
+Pressing the Location icon will present a list of nearby locations to depart from. Pressing the Switch icon will swap the departure and arrival locations.</string>
+	<key>cotaHelpRoutes</key>
+	<string></string>
+	<key>cdtaHelpRoutes</key>
+	<string>Select a route from the list to quickly view its iRide schedule, map and relevant route information. The route’s available stops will be displayed in a collapsible list for both directions. A stop can be selected in order to save it as a favorite or set it as your trip’s origin or destination to plan your trip.  </string>
+	<key>cotaHelpRouteDetails</key>
+	<string></string>
+	<key>cdtaHelpRouteDetails</key>
+	<string>View a route&apos;s schedule or map, as well as any additional information you may find helpful by tapping the About button. Expand a direction name to view the list of stops serviced by the route.</string>
+	<key>cotaHelpStops</key>
+	<string></string>
+	<key>cdtaHelpStops</key>
+	<string>Tap on the magnifying glass icon to begin searching for stops by name. You may also view the stops you have marked as favorites, as well as any stops near your current physical location.</string>
+	<key>cotaHelpStopInfo</key>
+	<string></string>
+	<key>cdtaHelpStopInfo</key>
+	<string>View the routes and directions that service this stop. Arrival times with the clock icon are real-time arrivals as reported by the bus. You may also begin planning a trip with this stop as the origin or destination.</string>
+	<key>HelpTextScreensInfo</key>
+	<string>$$@@HelpTextScreensInfo</string>
+	<key>CreateMobileCard</key>
+	<string>$$@@CreateMobileCard</string>
+	<key>NoPassesAlert</key>
+	<string>$$@@NoPassesAlert</string>
+	<key>WalletInstructionsViewController</key>
+	<string>$$@@WalletInstructionsViewController</string>
+	<key>logoutTitle</key>
+	<string>Logout</string>
+	<key>logoutMessage</key>
+	<string>Are you sure you want to logout?</string>
+	<key>logoutButtonTitle</key>
+	<string>logout</string>
+	<key>cdtaConfirmLogoutTitle</key>
+	<string>Alert!!!</string>
+	<key>bvtaPurchaseProductTitle</key>
+	<string>Purchase Product Error</string>
+	<key>deleteCreditCardTitle</key>
+	<string>Delete Card</string>
+	<key>deleteCreditCardMessage</key>
+	<string>Are you sure to delete this card</string>
+	<key>retriveCreditCardAlertTitle</key>
+	<string>Saved Credit Card</string>
+	<key>retriveWalletAlertMessage</key>
+	<string>You may retrieve mobile wallet that were released from other device.</string>
+	<key>retriveWallet</key>
+	<string>Retrieve Wallet</string>
+	<key>retrieve</key>
+	<string>Retrieve</string>
+	<key>locationAlertTitle</key>
+	<string>Location Services disabled</string>
+	<key>locationAlertMessage</key>
+	<string>Some of the feature might not work.
+Please go to Settings and enable Location Services.</string>
+	<key>connectivityAlertTitle</key>
+	<string>Connectivity Alert.</string>
+	<key>connectivityAlertMessage</key>
+	<string>You are not connected to the internet. Please ensure connectivity to receive the latest information</string>
+	<key>purchaseProductTitle</key>
+	<string>Purchase Product Error</string>
+	<key>purchaseProductMessage</key>
+	<string>Unable to retrive products.Please try after some time</string>
+	<key>cdtaPayAsYouGoAlertTitle</key>
+	<string>Pay As You Go</string>
+	<key>cotaPayAsYouGoAlertTitle</key>
+	<string></string>
+	<key>cdtaPayAsYouGoMessage</key>
+	<string>You can now earn FREE rides with CDTA by activating your Pay as You Go value! You will see a list of passes that can be redeemed for FREE trips.
+
+The counter next to each pass tells you how many activations are required until your rides are FREE for the remainder of the day.
+
+Only one activation every %@ minutes will count towards your Daily Cap Bonus but you can activate as many passes as you want.</string>
+	<key>cotaPayAsYouGoMessage</key>
+	<string></string>
+	<key>WalletUsingAlreadyMessage</key>
+	<string>$$@@WalletUsingAlreadyMessage</string>
+	<key>invalidPassword</key>
+	<string>Invalid password</string>
+	<key>enterPassword</key>
+	<string>Please enter password</string>
+	<key>locationServiceDisabledTitle</key>
+	<string>Location service disabled</string>
+	<key>locationServiceDisabledMessage</key>
+	<string>Your location settings are currently disabled. Would you like to review them again?</string>
+	<key>createwalletFailureMessage</key>
+	<string>Unable to add a new wallet to your device. Please try again later.</string>
+	<key>getWalletFailureMessage</key>
+	<string>Unable to get your wallet. Please try again later.</string>
+	<key>smsVerificationFailed</key>
+	<string>Verification Failed</string>
+	<key>walletReleaseErrorTitle</key>
+	<string>Release Error</string>
+	<key>walletReleaseErrorMessage</key>
+	<string>Cards can only be released once within a certain time period. This card cannot be released again until</string>
+	<key>unableToAddWalletMessage</key>
+	<string>Unable to add the wallet to your device. Please try again later.</string>
+	<key>unableToAssignWalletMessage</key>
+	<string>Unable to assign wallet to account, please try again later.</string>
+	<key>notEnoughValueTitle</key>
+	<string>Not Enough Value</string>
+	<key>notEnoughValueMessage</key>
+	<string>You must first Add Value to your Balance before you can activate this ticket.</string>
+	<key>requestErrorTitle</key>
+	<string>Request Error</string>
+	<key>requestErrorMessage</key>
+	<string>There was a problem with your requested action. Please try again later.</string>
+	<key>unableToRegisterDeviceMessage</key>
+	<string>Unable to register this device.</string>
+	<key>cdtaNavigationBarTitle</key>
+	<string>My Navigator</string>
+	<key>cotaNavigationBarTitle</key>
+	<string>My Connector</string>
+	<key>cdtaHistoryTitle</key>
+	<string>Activities</string>
+	<key>cotaHistoryTitle</key>
+	<string>Activities</string>
+	<key>bctHistoryTitle</key>
+	<string>Activities</string>
+	<key>bvtaHistoryTitle</key>
+	<string>Activities</string>
+	<key>cdtaCreateWalletTitle</key>
+	<string>Create Card</string>
+	<key>cotaCreateWalletTitle</key>
+	<string>Create Wallet</string>
+	<key>bctCreateWalletTitle</key>
+	<string>Create Wallet</string>
+	<key>bvtaCreateWalletTitle</key>
+	<string>Create Wallet</string>
+	<key>cdtaAppstoreLink</key>
+	<string>https://itunes.apple.com/us/app/cdta-navigator/id329554386</string>
+	<key>cotaAppstoreLink</key>
+	<string>https://itunes.apple.com/us/app/cota-connector/id1387744692</string>
+	<key>cdtaStagingLink</key>
+	<string>https://rink.hockeyapp.net/apps/f8042834f4084cda93f51614f628eecf?loading=false&amp;secret=</string>
+	<key>cotaStagingLink</key>
+	<string> https://rink.hockeyapp.net/apps/d7ca83b6b4a84db4969242a93b07a847?loading=false&amp;secret=</string>
+	<key>cdtaUatLink</key>
+	<string>https://rink.hockeyapp.net/apps/d1cb15d55af741afbbcbb235a578af2b?loading=false&amp;secret=</string>
+	<key>cotaUatLink</key>
+	<string>https://rink.hockeyapp.net/apps/bde63a4e9d56422da7fa16e1b284095a?loading=false&amp;secret=</string>
+	<key>yes</key>
+	<string>Yes</string>
+	<key>no</key>
+	<string>No</string>
+	<key>ok</key>
+	<string>OK</string>
+	<key>close</key>
+	<string>Close</string>
+	<key>success</key>
+	<string>Success</string>
+	<key>error</key>
+	<string>Error</string>
+	<key>send</key>
+	<string>Send</string>
+	<key>cancel</key>
+	<string>Cancel</string>
+	<key>back</key>
+	<string>Back</string>
+	<key>home</key>
+	<string>Home</string>
+	<key>refresh</key>
+	<string>Refresh</string>
+	<key>my_schedules</key>
+	<string>My Schedules</string>
+	<key>add_balance</key>
+	<string>Add Value To Card</string>
+	<key>search_schedules</key>
+	<string>Search Schedules</string>
+	<key>maps</key>
+	<string>Maps</string>
+	<key>locations</key>
+	<string>Locations</string>
+	<key>alerts</key>
+	<string>Alerts</string>
+	<key>settings</key>
+	<string>Settings</string>
+	<key>welcome</key>
+	<string>Welcome</string>
+	<key>not_logged_in</key>
+	<string>You are not logged in</string>
+	<key>logged_out_msg</key>
+	<string>You have been logged out. Please login again or continue as a guest user.</string>
+	<key>logged_out</key>
+	<string>Logged Out</string>
+	<key>favorites</key>
+	<string>Favorites</string>
+	<key>no_favorites</key>
+	<string>No favorites added. Search for a schedule and click on the Bookmark icon to add that search here.</string>
+	<key>depart_by</key>
+	<string>Depart by</string>
+	<key>arrive_by</key>
+	<string>Arrive by</string>
+	<key>departing_by</key>
+	<string>departing by</string>
+	<key>arriving_by</key>
+	<string>arriving by</string>
+	<key>pm</key>
+	<string>PM</string>
+	<key>remove_schedule</key>
+	<string>Remove Schedule</string>
+	<key>search</key>
+	<string>Search</string>
+	<key>provider_disabled_title</key>
+	<string>Location Services Disabled</string>
+	<key>provider_disabled_msg</key>
+	<string>Please enable Location Services to search for nearby stations.</string>
+	<key>get_location_fail</key>
+	<string>Failed to get your location.</string>
+	<key>stations</key>
+	<string>Stations</string>
+	<key>schedules</key>
+	<string>Schedules</string>
+	<key>add_schedule</key>
+	<string>Add Schedule</string>
+	<key>cached_schedule_title</key>
+	<string>Cached Schedule</string>
+	<key>cached_schedule_msg</key>
+	<string>Unable to retrieve latest schedule. Here is your last requested schedule for these locations.</string>
+	<key>departure</key>
+	<string>Departure</string>
+	<key>canceled</key>
+	<string>Canceled</string>
+	<key>alert</key>
+	<string>Alert</string>
+	<key>no_schedules_msg</key>
+	<string>No schedules found.</string>
+	<key>transit_details</key>
+	<string>Transit Details</string>
+	<key>details</key>
+	<string>Details</string>
+	<key>depart</key>
+	<string>depart</string>
+	<key>transfer</key>
+	<string>transfer</string>
+	<key>arrive</key>
+	<string>arrive</string>
+	<key>duration</key>
+	<string>Duration</string>
+	<key>fares</key>
+	<string>Fares</string>
+	<key>transit_map</key>
+	<string>Transit Map</string>
+	<key>my_account</key>
+	<string>My Account</string>
+	<key>logout_title</key>
+	<string>Logout</string>
+	<key>logout_msg</key>
+	<string>Sign out from your account?</string>
+	<key>account</key>
+	<string>Account</string>
+	<key>email_verified</key>
+	<string>Email Verified</string>
+	<key>email_pending</key>
+	<string>Verification Pending</string>
+	<key>manage_saved_payments</key>
+	<string>Manage Saved Payments</string>
+	<key>login</key>
+	<string>Login</string>
+	<key>register</key>
+	<string>Create New Account</string>
+	<key>login_or_register</key>
+	<string>Login or Create New Account</string>
+	<key>account_settings</key>
+	<string>Account Settings</string>
+	<key>authentication_fail</key>
+	<string>User could not be authenticated.</string>
+	<key>all_fields_required</key>
+	<string>All fields are required.</string>
+	<key>wallet_field_required</key>
+	<string>Please enter the wallet name</string>
+	<key>login_error_title</key>
+	<string>Login Error</string>
+	<key>login_error_msg</key>
+	<string>A problem was detected during login. Please check the username and password that you entered and try again.</string>
+	<key>registration_error_title</key>
+	<string>Create New Account Error</string>
+	<key>registration_error_msg</key>
+	<string>A problem was detected during registration. Please check the username and password that you entered and try again.</string>
+	<key>registration_success_title</key>
+	<string>CDTA</string>
+	<key>registration_success_msg</key>
+	<string>Thank you for registration</string>
+	<key>change_email</key>
+	<string>Change Email</string>
+	<key>replenishment_title</key>
+	<string>Replenishment Barcode</string>
+	<key>remove_account</key>
+	<string>Remove Account</string>
+	<key>change_password</key>
+	<string>Change Password</string>
+	<key>change_email_success</key>
+	<string>Account email updated.</string>
+	<key>change_email_fail</key>
+	<string>Email change request failed. Please check the information entered.</string>
+	<key>incorrect_password</key>
+	<string>The Password is incorrect.</string>
+	<key>change_password_success</key>
+	<string>Account password updated.</string>
+	<key>change_password_fail</key>
+	<string>Password change failed. Please check the information entered.</string>
+	<key>active</key>
+	<string>Active</string>
+	<key>ready</key>
+	<string>Ready</string>
+	<key>history</key>
+	<string>Activities</string>
+	<key>cdtaNoUsedTickets</key>
+	<string>You do not have any used products.</string>
+	<key>cotaNoUsedTickets</key>
+	<string>You do not have any used products.</string>
+	<key>bctNoUsedTickets</key>
+	<string>You do not have any used products.</string>
+	<key>bvtaNoUsedTickets</key>
+	<string>You do not have any used products.</string>
+	<key>tickets_quick_start</key>
+	<string>This tab shows the activated passes</string>
+	<key>pay_as_you_go_quick_start</key>
+	<string>Earn FREE rides by activating Pay As You Go passes! Passes displayed here can be redeemed immediately as long as you have purchased enough Balance.  Counters next to each pass show how many activations are required until rides are FREE for the rest of the day.
+            
+            Only 1 activation every 10 minutes counts towards the BONUS counter, but you can still activate as many passes as you want at any time.
+            
+            
+        </string>
+	<key>loading_tickets_title</key>
+	<string>Loading Passes</string>
+	<key>loading_tickets_msg</key>
+	<string>Please wait...</string>
+	<key>no_payments</key>
+	<string>No saved payment methods found.</string>
+	<key>this_is_your_ticket_active</key>
+	<string>This is your pass
+- ACTIVE -</string>
+	<key>please_activate_ticket</key>
+	<string>Please activate this pass upon boarding</string>
+	<key>cannot_activate</key>
+	<string>This pass can no longer be activated</string>
+	<key>barcode</key>
+	<string>Barcode</string>
+	<key>ticket_heading</key>
+	<string>Pass</string>
+	<key>my_ticket</key>
+	<string>My Pass</string>
+	<key>ticket_label</key>
+	<string>Status</string>
+	<key>information</key>
+	<string>Information</string>
+	<key>ticket_outdated_title</key>
+	<string>Pass Outdated</string>
+	<key>ticket_outdated_msg</key>
+	<string>Please connect to the internet before activating this pass.</string>
+	<key>date_changed_title</key>
+	<string>Date Changed</string>
+	<key>date_changed_msg</key>
+	<string>Your phone&apos;s date/time has been altered. Please use the network-provided date and time. This event has been recorded.</string>
+	<key>walletStatus_title</key>
+	<string>Alert!!!</string>
+	<key>walletStatus_msg</key>
+	<string>Wallet profile has expired, purchases are not allowed with expired profile</string>
+	<key>id_not_available</key>
+	<string>ID Not Available</string>
+	<key>request_sent</key>
+	<string>Service Request Sent</string>
+	<key>barcode_label_left</key>
+	<string>&lt;Barcode</string>
+	<key>information_label_left</key>
+	<string>&lt;Information</string>
+	<key>ticket_label_left</key>
+	<string>&lt;Status</string>
+	<key>barcode_label_right</key>
+	<string>Barcode&gt;</string>
+	<key>information_label_right</key>
+	<string>Information&gt;</string>
+	<key>ticket_label_right</key>
+	<string>Status&gt;</string>
+	<key>activate_max_title</key>
+	<string>Maximum Activations</string>
+	<key>activate_max_msg</key>
+	<string>This pass has reached the maximum number of activations.</string>
+	<key>activate_time_title</key>
+	<string>Invalid Activation Time</string>
+	<key>activate_time_msg</key>
+	<string>Tickets can only be activated from the date specified during first activation</string>
+	<key>activate_reset_title</key>
+	<string>Activation Reset</string>
+	<key>activate_ticket_title</key>
+	<string>Activate Pass</string>
+	<key>activate_msg</key>
+	<string>Are you sure you want to activate your pass now?
+            
+This action cannot be undone.</string>
+	<key>deactivate_brt_ticket_title</key>
+	<string>Deactivate Proof of Payment ?</string>
+	<key>deactivate_brt_ticketmsg</key>
+	<string>Are you sure you want to deactivate your &quot;POP&quot; now?
+
+This action cannot be undone.</string>
+	<key>deactivate_ticket_title</key>
+	<string>Deactivate Pass?</string>
+	<key>deactivate_ticket_msg</key>
+	<string>Are you sure you want to deactivate your Pass now?
+
+This action cannot be undone</string>
+	<key>invalid_qrcode_title</key>
+	<string>Invalid Barcode</string>
+	<key>invalid_qrcode_msg</key>
+	<string>Please scan the valid BRT QR Code</string>
+	<key>name</key>
+	<string>Name</string>
+	<key>ticket_id</key>
+	<string>Pass ID</string>
+	<key>invoice</key>
+	<string>Invoice Number</string>
+	<key>credit_card</key>
+	<string>Credit Card</string>
+	<key>credit_card_mask</key>
+	<string>xxxxxxxxxxxx</string>
+	<key>status</key>
+	<string>Status</string>
+	<key>activated_on</key>
+	<string>Activated On</string>
+	<key>deactivates_on</key>
+	<string>Deactivates On</string>
+	<key>deactivated_on</key>
+	<string>Deactivated On</string>
+	<key>sold_on</key>
+	<string>Sold On</string>
+	<key>valid_from</key>
+	<string>Valid From</string>
+	<key>n/a</key>
+	<string>N/A</string>
+	<key>expires_on</key>
+	<string>Expires On</string>
+	<key>barcode_expires</key>
+	<string>Barcode Expires</string>
+	<key>service_request_title</key>
+	<string>Request Service</string>
+	<key>service_request_msg</key>
+	<string>You can send us a direct service request with this form. Please include your contact information (phone number, email, etc.) along with a description of your requested service.</string>
+	<key>exception_no_tokens</key>
+	<string>User does not have the daily security token</string>
+	<key>map</key>
+	<string>Map</string>
+	<key>routes</key>
+	<string>Routes</string>
+	<key>instructions</key>
+	<string>Instructions</string>
+	<key>version</key>
+	<string>base</string>
+	<key>transit_id</key>
+	<string>coocoo</string>
+	<key>saved_payments</key>
+	<string>Saved Payments</string>
+	<key>payment_methods</key>
+	<string>Payment Methods</string>
+	<key>payment_method</key>
+	<string>Payment Method</string>
+	<key>confirm_delete</key>
+	<string>Confirm Delete</string>
+	<key>confirm_delete_msg</key>
+	<string>Are you sure you want to delete this payment?</string>
+	<key>delete</key>
+	<string>Delete</string>
+	<key>delete_error_msg</key>
+	<string>A problem was detected while deleting this payment method. Please try again later.</string>
+	<key>delete_error_title</key>
+	<string>Request Error</string>
+	<key>content_unavailable_msg</key>
+	<string>Content unavailable. Please check your internet connection.</string>
+	<key>registration_date</key>
+	<string>Registration Date</string>
+	<key>device_management</key>
+	<string>Device Management</string>
+	<key>device_is_registered</key>
+	<string>This device is registered</string>
+	<key>device_not_registered</key>
+	<string>This device is not registered</string>
+	<key>device_name</key>
+	<string>Device Name</string>
+	<key>registered_devices</key>
+	<string>Registered Devices</string>
+	<key>register_this_device</key>
+	<string>Register This Device</string>
+	<key>device_type</key>
+	<string>Device Type</string>
+	<key>no_registered_devices</key>
+	<string>You do not have any registered devices.</string>
+	<key>no_encryption_title</key>
+	<string>Activation Error</string>
+	<key>activation</key>
+	<string>Activation</string>
+	<key>activations</key>
+	<string>Activations</string>
+	<key>no_encryption_msg</key>
+	<string>Cannot activate at this time, please verify that you have internet connectivity and restart the app.</string>
+	<key>stored_value</key>
+	<string>Stored Value</string>
+	<key>another_active_ticket</key>
+	<string>There is another active pass. Are you sure you want to activate this pass?</string>
+	<key>no_stored_value_ticket</key>
+	<string>There are no stored value passes in your Pay As You Go wallet.</string>
+	<key>no_value</key>
+	<string>No value has been selected</string>
+	<key>stored_value_too_low</key>
+	<string>You don&apos;t have enough stored value. please add value and try again</string>
+	<key>confirm_add_value_msg_1</key>
+	<string>Are you sure you want to add </string>
+	<key>confirm_add_value_msg_2</key>
+	<string> to your pass?</string>
+	<key>notification</key>
+	<string>Notification</string>
+	<key>password_error_msg</key>
+	<string>Passwords do not match.</string>
+	<key>password_error_title</key>
+	<string>Password Error</string>
+	<key>LOGOUT__CONFIRM_MSG</key>
+	<string>Sign out from your account?</string>
+	<key>out_of_service_day_title</key>
+	<string>Service Time</string>
+	<key>out_of_service_day_msg</key>
+	<string>This is outside of the operating hours</string>
+	<key>connection_error_title</key>
+	<string>Request Error</string>
+	<key>connection_error_msg</key>
+	<string>Your phone is not connected to the internet.</string>
+	<key>accounts</key>
+	<string>Accounts</string>
+	<key>no_accounts_1</key>
+	<string>An Account allows you to access your mobile cards from all your mobile devices and transfer mobile cards between devices. You can conveniently save a payment that is stored to the account for quick checkouts and receive a receipt to the account’s email address.
+            
+            In the event that your mobile device becomes unavailable (lost, stolen, device upgrade, etc.), an account will protect your mobile cards products, balance and allow a Customer Service Representative to identify your mobile card by its added account.
+        </string>
+	<key>no_accounts_2</key>
+	<string>Tap the button below to add an existing account to your mobile card or create a new account.
+        </string>
+	<key>add_account</key>
+	<string>Add Existing Account</string>
+	<key>view_account_settings</key>
+	<string>View Account Settings</string>
+	<key>verify</key>
+	<string>Verify</string>
+	<key>select_email</key>
+	<string>Select Email</string>
+	<key>view_card_management</key>
+	<string>View Card Management</string>
+	<key>or_enter_new_email</key>
+	<string>or Enter New Email</string>
+	<key>use_new_email</key>
+	<string>Use New Email</string>
+	<key>card_management</key>
+	<string>Card Management</string>
+	<key>assign_to_account</key>
+	<string>Assign To Account</string>
+	<key>assign</key>
+	<string>Assign</string>
+	<key>assign_card</key>
+	<string>Assign Card</string>
+	<key>create_account_and_assign</key>
+	<string>Create Account And Assign</string>
+	<key>claim_cards</key>
+	<string>Claim Cards</string>
+	<key>no_email_history</key>
+	<string>No Email Address History</string>
+	<key>PERIOD_PASS</key>
+	<string>period_pass</string>
+	<key>PLEASE_CHECK_DATE</key>
+	<string>Please check device date</string>
+	<key>invalidactivation</key>
+	<string>Ticket can only be activated from the date specified during first activation (%@) until expiration (%@)</string>
+</dict>
+</plist>

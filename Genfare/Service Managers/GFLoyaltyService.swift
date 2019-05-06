@@ -30,7 +30,7 @@ class GFLoyaltyService {
         }
         
         guard !dataProvider.isFirstRideForType(type: .capped) else {
-            dataProvider.updateCapRecord()
+            dataProvider.updateRecordForLoyalty(type: .capped)
             return false
         }
         
@@ -40,12 +40,12 @@ class GFLoyaltyService {
         }
         
         guard let thold = config.cappedThreshold as? Int, dataProvider.numberOfRidesForType(type: .capped) >= thold else {
-            dataProvider.updateCapRecord()
+            dataProvider.updateRecordForLoyalty(type: .capped)
             return false
         }
         
-        dataProvider.updateCapRecord()
-        
+        dataProvider.updateRecordForLoyalty(type: .capped)
+
         return true
     }
     
@@ -63,12 +63,12 @@ class GFLoyaltyService {
         }
         
         guard let thold = config.bonusThreshold as? Int, dataProvider.numberOfRidesForType(type: .bonus) >= thold else {
-            dataProvider.updateBonusRecord()
+            dataProvider.updateRecordForLoyalty(type: .bonus)
             return false
         }
         
-        dataProvider.updateBonusRecord()
-        
+        dataProvider.updateRecordForLoyalty(type: .bonus)
+
         return true
     }
     

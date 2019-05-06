@@ -20,7 +20,7 @@ protocol LoyaltyDataProtocol {
     var loyaltyType:LoyaltyType { get set }
     var cappedTicketId:Int { get }
     var bonusTicketId:Int { get }
-    
+ 
     var loyaltyCappedRecord:LoyaltyCapped? { get }
     var loyaltyBonusRecord:LoyaltyBonus? { get }
 

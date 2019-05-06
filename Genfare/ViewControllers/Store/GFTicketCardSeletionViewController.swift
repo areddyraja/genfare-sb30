@@ -256,7 +256,7 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         OrderProducts()
         
         
-        let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
+        guard let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController else{ return}
         
         let  walletID =  self.walledId()
         let orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
@@ -264,10 +264,10 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         
         let  url1 = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&saveForFuture=\(savedValue)"
         let url =  Utilities.apiHost()+url1
-        navController?.weburl = url
+        navController.weburl = url
         if let navPush = self.navigationController{
             navPush.navigationItem.setHidesBackButton(false, animated:true);
-            navPush.pushViewController(navController!, animated: true)
+            navPush.pushViewController(navController, animated: true)
         }
         
     }

@@ -26,19 +26,13 @@ class GFAccountInfoViewModel:WalletProtocol {
         return ""
     }
     
-    func transferCard() {
-        guard NetworkManager.Reachability else {
-            isLoading.value = false
-            errorMsg.value = Constants.Message.NoNetwork
-            return
-        }
-        
+   
+    func getConfigValues (){
         let configValues = GFReleaseWalletService(walletID: self.walledId())
         isLoading.value = true
-
         configValues.releaseWallet { [unowned self] (success,error) in
             self.isLoading.value = false
-
+            
             if success {
                 self.logoutUser.value = true
             }else{
@@ -46,5 +40,4 @@ class GFAccountInfoViewModel:WalletProtocol {
             }
         }
     }
-
 }

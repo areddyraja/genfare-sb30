@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -562,14 +563,14 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQm-82-LbS">
                                                                 <rect key="frame" x="107.5" y="90" width="200" height="70"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUv-Nc-fjf">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUv-Nc-fjf">
                                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="70"/>
                                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <connections>
                                                                             <action selector="imgCardBtnTapped:" destination="UvX-oO-RE1" eventType="touchUpInside" id="f3u-s3-ZsC"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card" translatesAutoresizingMaskIntoConstraints="NO" id="eIt-iV-vyh">
+                                                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card" translatesAutoresizingMaskIntoConstraints="NO" id="eIt-iV-vyh">
                                                                         <rect key="frame" x="70" y="10" width="50" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="50" id="gTa-U6-sCV"/>
@@ -731,9 +732,6 @@
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sdZ-A1-cFA">
                                                         <rect key="frame" x="0.0" y="303" width="375" height="222"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="222" id="Fn1-cb-aLR"/>
-                                                        </constraints>
                                                         <prototypes>
                                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gpY-fI-Op5" customClass="SavedCardsListTableViewCell" customModule="iRide" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -802,12 +800,12 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="sdZ-A1-cFA" secondAttribute="trailing" id="BHW-GP-xh4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sdZ-A1-cFA" secondAttribute="trailing" id="0bb-eO-euT"/>
                                                     <constraint firstItem="Nci-4H-jtq" firstAttribute="top" secondItem="OU2-39-Cz9" secondAttribute="top" id="KzQ-hC-YsR"/>
-                                                    <constraint firstItem="sdZ-A1-cFA" firstAttribute="leading" secondItem="OU2-39-Cz9" secondAttribute="leading" id="Q9W-ng-4Sf"/>
+                                                    <constraint firstItem="sdZ-A1-cFA" firstAttribute="leading" secondItem="OU2-39-Cz9" secondAttribute="leading" id="OcS-sh-a1T"/>
                                                     <constraint firstItem="Nci-4H-jtq" firstAttribute="leading" secondItem="OU2-39-Cz9" secondAttribute="leading" id="QJg-z9-UiF"/>
+                                                    <constraint firstItem="sdZ-A1-cFA" firstAttribute="top" secondItem="uMO-G8-ET5" secondAttribute="bottom" constant="7" id="a6R-4h-br3"/>
                                                     <constraint firstAttribute="trailing" secondItem="Nci-4H-jtq" secondAttribute="trailing" id="xvS-ht-hlA"/>
-                                                    <constraint firstAttribute="bottom" secondItem="sdZ-A1-cFA" secondAttribute="bottom" constant="42" id="yNt-Nj-fUY"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -874,6 +872,7 @@
                             <constraint firstAttribute="trailing" secondItem="1rR-Jg-YDo" secondAttribute="trailing" id="5FK-i8-IEg"/>
                             <constraint firstItem="1rR-Jg-YDo" firstAttribute="top" secondItem="TX7-DA-zYH" secondAttribute="top" id="F8n-kS-ndv"/>
                             <constraint firstAttribute="trailing" secondItem="egP-2F-jmJ" secondAttribute="trailing" id="FEC-1f-eeT"/>
+                            <constraint firstItem="FoF-kO-yed" firstAttribute="top" secondItem="sdZ-A1-cFA" secondAttribute="bottom" constant="12" id="IcB-F0-cM8"/>
                             <constraint firstItem="1rR-Jg-YDo" firstAttribute="leading" secondItem="TX7-DA-zYH" secondAttribute="leading" id="Wgo-ir-xAs"/>
                             <constraint firstItem="eaI-6n-rSa" firstAttribute="leading" secondItem="TX7-DA-zYH" secondAttribute="leading" constant="20" id="Xyd-Ji-pml"/>
                             <constraint firstAttribute="bottom" secondItem="eaI-6n-rSa" secondAttribute="bottom" constant="10" id="YZg-cq-2oQ"/>

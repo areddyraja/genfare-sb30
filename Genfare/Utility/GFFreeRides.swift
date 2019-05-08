@@ -238,10 +238,10 @@ extension LoyaltyDataProtocol {
             return true
         }
         
-        let timeNow = Date().timeIntervalSince1970
+        let timeNow = Int(Date().timeIntervalSince1970)
         let eotTimeWithDelay = endOfTransitTime()+cappedDelay
         
-        return (eotTimeWithDelay > Int(timeNow))
+        return (eotTimeWithDelay > timeNow)
     }
 
     func loyaltyRecordForProduct(type:LoyaltyType) -> Any {

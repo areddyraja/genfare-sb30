@@ -149,22 +149,31 @@ class Utilities {
         let newDate = NSDate(timeIntervalSince1970: date)
         return dateFormatter.string(from: newDate as Date)
     }
-    class func colorHexString(resourceId: String?) -> String? {
-        var colorHexString = ""
-        let colorsPlistPath = Bundle.main.path(forResource:Constants.Plist.COLORS_PLIST, ofType: Constants.Plist.TYPE_PLIST)
-        if (colorsPlistPath?.count ?? 0) > 0 {
-            let colorsDictionary = NSDictionary(contentsOfFile: colorsPlistPath ?? "")
-            colorHexString = colorsDictionary?[resourceId as Any] as? String ?? ""
+   class func colorHexString(resourceId: String?) -> String? {
+    var colorHexString = ""
+    guard let colorsPlistPath = Bundle.main.path(forResource:Constants.Plist.COLORS_PLIST, ofType: Constants.Plist.TYPE_PLIST)
+        else {
+            fatalError("Cannot get Colors from info.plist")
+    }
+    if (colorsPlistPath.count) > 0 {
+        let colorsDictionary = NSDictionary(contentsOfFile: colorsPlistPath )
+        colorHexString = colorsDictionary![resourceId] as! String
+    }
+    
+    if colorHexString.hasPrefix("$$@@") {
+        guard  let filename = Bundle.main.object(forInfoDictionaryKey: "ColorsConfigfile") as? String
+            else {
+                fatalError("Cannot get Colors from info.plist")
         }
-        
-        if colorHexString.hasPrefix("$$@@") {
-            let filename = Bundle.main.object(forInfoDictionaryKey: "ColorsConfigfile") as? String
-            let configPlistPath = Bundle.main.path(forResource: filename, ofType: Constants.Plist.TYPE_PLIST)
-            if (configPlistPath?.count ?? 0) > 0 {
-                colorHexString = NSDictionary(contentsOfFile: configPlistPath ?? "")![resourceId as Any] as! String
-            }
+        guard  let configPlistPath = Bundle.main.path(forResource: filename, ofType: Constants.Plist.TYPE_PLIST)
+            else {
+                fatalError("Cannot get Colors from info.plist")
         }
-        return colorHexString
+        if (configPlistPath.count) > 0 {
+            colorHexString = NSDictionary(contentsOfFile: configPlistPath )![resourceId as! String] as! String
+        }
+    }
+    return colorHexString
     }
 }
 

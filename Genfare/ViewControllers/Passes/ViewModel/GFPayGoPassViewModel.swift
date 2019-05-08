@@ -33,7 +33,7 @@ class GFPayGoPassViewModel:WalletProtocol {
         //fetchProducts()
         let products = GFFetchProductsService.getProducts()
         model = products.filter({ (product:Product) -> Bool in
-            return product.ticketTypeDescription == "Stored Value"
+            return product.ticketTypeDescription == "Stored Value" && product.isActivationOnly == 1
         })
         isSuccess.value = true
     }

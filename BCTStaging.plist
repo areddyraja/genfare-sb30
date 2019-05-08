@@ -18,6 +18,8 @@
 	<string>3.1</string>
 	<key>CFBundleVersion</key>
 	<string>12</string>
+	<key>ColorsConfigfile</key>
+	<string>BctColors</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -29,6 +31,8 @@
 	<string>Will you allow this app to always know your location?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Do you allow this app to know your current location?</string>
+	<key>StringsConfigfile</key>
+	<string>BctStrings</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

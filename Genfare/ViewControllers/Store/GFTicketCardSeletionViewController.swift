@@ -32,7 +32,8 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         super.viewDidLoad()
         
         createCallbacks()
-         saveCardButton.setImage(UIImage(named: "ic_uncheckedbox"), for: .normal)
+        saveCardButton.setImage(UIImage(named: "ic_uncheckedbox"), for: .normal)
+        saveCardButton.setImage(UIImage(named: "ic_checkedbox"), for: .selected)
         saveCardButton.addTarget(self, action: #selector(saveCardCliked(sender:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
         if self.productsCartArray.count > 0{
@@ -42,6 +43,10 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         super.viewWillAppear(animated)
         updateMailLabel()
         viewModel.fetchListOfCards()
+        if let cardImgView = selectedImg{
+            cardImgView.bringSubview(toFront: imgCardBtn)
+        }
+        
     }
     
     @IBAction func imgCardBtnTapped(_ sender: UIButton) {
@@ -54,20 +59,20 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
             imgCardBtn.backgroundColor = UIColor(hexString:"#808080")
             selectedIndex = -1
             self.tableView.reloadData()
+
         }
-        
-       
-  }
+   }
+
     @objc func saveCardCliked(sender: UIButton){
         
         if(sender.isSelected){
+            sender.isSelected = false
             isSelectedBtnImageCard = false
-          saveCardButton.setImage(UIImage(named: "ic_checkedbox"), for: .normal)
-             UserDefaults.standard.set(true, forKey: "savedcards")
+            UserDefaults.standard.set(true, forKey: "savedcards")
         }else{
             isSelectedBtnImageCard = true
-            saveCardButton.setImage(UIImage(named: "ic_uncheckedbox"), for: .normal)
-             UserDefaults.standard.set(false, forKey: "savedcards")
+            sender.isSelected = true
+            UserDefaults.standard.set(false, forKey: "savedcards")
         }
     }
     
@@ -119,10 +124,8 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
                 print("ordered")
                 if(self.selectedIndex != -1){
                     let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
-
                     let  walletID =  self.walledId()
                     let orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
-
                     let savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
                     self.card = self.viewModel.model[self.selectedIndex] as! [String : Any]
                     let url1   = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&savedCardId=\(self.card["cardNumber"]!)"
@@ -137,7 +140,6 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
             }
             
         }
-
     }
     
      func numberOfSections(in tableView: UITableView) -> Int {
@@ -182,6 +184,7 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         tableView.deselectRow(at: indexPath, animated: false)
   
         selectedIndex = indexPath.row
+        imgCardBtn.isSelected = false
         imgCardBtn.backgroundColor = UIColor(hexString:"#d1d1d1")
                self.tableView.reloadData()
     
@@ -250,6 +253,7 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
             
             present(alert, animated: true, completion: nil)
         }
+
         
             self.OrderProducts()
     
@@ -257,17 +261,28 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
         
     }
     func pushToWebPage(){
-        let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
+
+        guard let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController else{ return }
         
         let  walletID =  self.walledId()
         let orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
         let savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
+
+        
         let  url1 = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&saveForFuture=\(savedValue)"
         let url =  Utilities.apiHost()+url1
-        navController?.weburl = url
-        navigationController?.pushViewController(navController!, animated: true)
+        navController.weburl = url
+        if let navPush = self.navigationController{
+            navPush.navigationItem.setHidesBackButton(false, animated:true);
+            navPush.pushViewController(navController, animated: true)
+        }
+        
+
     }
     
     @IBAction func backToCartClicked(_ sender: Any) {
+        if let navController = self.navigationController{
+            navController.popViewController(animated: true)
+        }
     }
 }

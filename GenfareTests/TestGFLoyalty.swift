@@ -40,9 +40,11 @@ class MockLoyaltyData:LoyaltyDataProtocol {
     func updateRecordForLoyalty(type:LoyaltyType) -> Void {
         print("Dummy function - Dont update any records")
     }
+    
     func deleteRecordForLoyalty(type:LoyaltyType) -> Void {
         print("Dummy function - Dont update any records")
     }
+    
 }
 
 class GFLoyaltyServiceSpec: QuickSpec

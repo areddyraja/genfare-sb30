@@ -161,7 +161,35 @@ extension LoyaltyDataProtocol {
     }
     
     func deleteRecordForLoyalty(type:LoyaltyType) -> Void {
-        //TODO - Need implement deletion
+        guard let prodId = product.productId else {
+            //Dont update or insert any records without valid product id
+            return
+        }
+        
+        let managedContext = GFDataService.context
+        if let record = loyaltyRecordForProduct(type: type) as? NSManagedObject {
+            managedContext.delete(record)
+            return
+        }
+        
+        var fetchRequest:NSFetchRequest<NSFetchRequestResult>
+        
+        switch type {
+        case .capped:
+           fetchRequest = LoyaltyCapped.fetchRequest()
+        case .bonus:
+            fetchRequest = LoyaltyBonus.fetchRequest()
+        }
+        
+        fetchRequest.predicate = NSPredicate(format: "productId = %@", prodId)
+        do {
+            let fetchresults = try managedContext.fetch(fetchRequest)
+            if let record = fetchresults.first as? NSManagedObject {
+                managedContext.delete(record)
+            }
+        }catch _ as NSError {
+            print("Could not fetch records")
+        }
     }
 
     func rideDelayForCappedProduct() -> Int {
@@ -289,7 +317,42 @@ extension LoyaltyDataProtocol {
     }
     
     func updateBonusRecord() {
-        //TODO -
+        guard let prodId = product.productId else {
+            //Dont update or insert any records without valid product id
+            return
+        }
+        
+        let managedContext = GFDataService.context
+        let fetchRequest:NSFetchRequest = LoyaltyBonus.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "productId = %@", prodId)
+        
+        do {
+            let fetchresults = try managedContext.fetch(fetchRequest)
+            if fetchresults.count > 0 {
+                //update record
+                let record = fetchresults.first
+                record?.activatedTime = Date().timeIntervalSince1970 as NSNumber
+                if let ridecount = record?.rideCount as? Int {
+                    record?.rideCount = (ridecount + 1) as NSNumber
+                }else{
+                    record?.rideCount = 1
+                }
+            }else{
+                //Insert new record
+                let loyaltyCapped = NSEntityDescription.entity(forEntityName: "LoyaltyBonus", in: managedContext)
+                let record = LoyaltyCapped(entity: loyaltyCapped!, insertInto: managedContext)
+                
+                record.ticketId = product.ticketId
+                record.productId = "\(prodId)"
+                record.activatedTime = Date().timeIntervalSince1970 as NSNumber
+                record.rideCount = 1
+                record.productName = product.productDescription
+                record.referenceActivatedTime = Date().timeIntervalSince1970 as NSNumber
+            }
+            try managedContext.save()
+        }catch{
+            print("Update failed")
+        }
     }
 
 }

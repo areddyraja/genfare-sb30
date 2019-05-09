@@ -24,6 +24,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
     
     var myPasses : GFMyPassesTableViewController?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -112,9 +113,13 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
     }
     
     func showProducts() {
-        if let controller = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.PurchaseProducts) as? GFPurchaseTicketListViewController {
-            self.navigationController?.pushViewController(controller, animated: true)
+        if let controller = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.AlertView) as? GFCustomAlertViewController {
+            controller.modalTransitionStyle = .crossDissolve
+            controller.modalPresentationStyle = .overCurrentContext
+             controller.delegate = self
+            self.navigationController?.present(controller, animated: true)
         }
+
     }
     
     func attachPassList() {
@@ -157,4 +162,20 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
     //   pageMenu!.didMove(toParentViewController: self)
     }
     
+}
+extension GFAccountBasedHomeViewController:GFCustomAlertViewControllerDelegate{
+    
+    func selectedOption(selectedIndex: NSInteger) {
+        if (selectedIndex == 0) {
+            if let controller = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.PurchaseProducts) as? GFPurchaseTicketListViewController {
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+        }
+            
+        else if(selectedIndex == 1){
+            if let controller = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.ReplenishmentView) as? GFReplenishmentViewController {
+                self.navigationController?.pushViewController(controller, animated: true)     }
+        }
+        
+    }
 }

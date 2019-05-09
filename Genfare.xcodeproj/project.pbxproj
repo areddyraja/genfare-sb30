@@ -689,6 +689,16 @@
 		4A18B108223F90C500A30092 /* SavedCardsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18B106223F90C500A30092 /* SavedCardsListTableViewCell.swift */; };
 		4A18B109223F90C500A30092 /* SavedCardsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18B106223F90C500A30092 /* SavedCardsListTableViewCell.swift */; };
 		4A18B10A223F90C500A30092 /* SavedCardsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18B106223F90C500A30092 /* SavedCardsListTableViewCell.swift */; };
+		4A1CCF64228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCF63228176F10042FE10 /* GFCustomAlertViewController.swift */; };
+		4A1CCF65228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCF63228176F10042FE10 /* GFCustomAlertViewController.swift */; };
+		4A1CCF66228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCF63228176F10042FE10 /* GFCustomAlertViewController.swift */; };
+		4A1CCF67228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCF63228176F10042FE10 /* GFCustomAlertViewController.swift */; };
+		4A1CCF68228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCF63228176F10042FE10 /* GFCustomAlertViewController.swift */; };
+		4A2A78E42282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A78E32282F91E004F9D37 /* GFReplenishmentViewController.swift */; };
+		4A2A78E52282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A78E32282F91E004F9D37 /* GFReplenishmentViewController.swift */; };
+		4A2A78E62282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A78E32282F91E004F9D37 /* GFReplenishmentViewController.swift */; };
+		4A2A78E72282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A78E32282F91E004F9D37 /* GFReplenishmentViewController.swift */; };
+		4A2A78E82282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A78E32282F91E004F9D37 /* GFReplenishmentViewController.swift */; };
 		4A319FA32240F82000633B69 /* GFDeleteCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A319FA22240F81F00633B69 /* GFDeleteCardService.swift */; };
 		4A37B261222D4B4A00EE3644 /* CardEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A37B259222D4B4900EE3644 /* CardEvent+CoreDataClass.swift */; };
 		4A37B262222D4B4A00EE3644 /* EncryptionKey+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A37B25A222D4B4900EE3644 /* EncryptionKey+CoreDataClass.swift */; };
@@ -1251,6 +1261,8 @@
 		48C6BFD52149244E00E2065F /* GFMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFMenuButton.swift; sourceTree = "<group>"; };
 		4A18B0F7223F646500A30092 /* GFTicketCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTicketCardsViewModel.swift; sourceTree = "<group>"; };
 		4A18B106223F90C500A30092 /* SavedCardsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardsListTableViewCell.swift; sourceTree = "<group>"; };
+		4A1CCF63228176F10042FE10 /* GFCustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFCustomAlertViewController.swift; sourceTree = "<group>"; };
+		4A2A78E32282F91E004F9D37 /* GFReplenishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFReplenishmentViewController.swift; sourceTree = "<group>"; };
 		4A2EE4EB20AA8594F58C5092 /* Pods-GenfareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenfareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenfareTests/Pods-GenfareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A319FA22240F81F00633B69 /* GFDeleteCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDeleteCardService.swift; sourceTree = "<group>"; };
 		4A37B259222D4B4900EE3644 /* CardEvent+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -1576,6 +1588,8 @@
 				2772BA892209CE94003AA1ED /* GFTicketCardSeletionViewController.swift */,
 				2772BA8A2209CE94003AA1ED /* GFTicketDetailsViewController.swift */,
 				4A4C01FB220AFC5E0030AE09 /* GFPurchaseWebViewController.swift */,
+				4A1CCF63228176F10042FE10 /* GFCustomAlertViewController.swift */,
+				4A2A78E32282F91E004F9D37 /* GFReplenishmentViewController.swift */,
 				2772BA872209CE94003AA1ED /* PurchaseTicketTableViewCell.swift */,
 			);
 			path = Store;
@@ -2517,6 +2531,7 @@
 				27FA99AC22142FE400F926AC /* GFConstants.swift in Sources */,
 				4A69A07E22436AA600623427 /* StoredAddress+CoreDataClass.swift in Sources */,
 				27FA99AD22142FE400F926AC /* MenuItemView.swift in Sources */,
+				4A1CCF66228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */,
 				27FA99AE22142FE400F926AC /* GFHistoryTableViewCell.swift in Sources */,
 				27FA99AF22142FE400F926AC /* GFLaunchViewController.swift in Sources */,
 				27FA99B022142FE400F926AC /* GFRecentTripsViewController.swift in Sources */,
@@ -2564,7 +2579,7 @@
 				27FA99D022142FE400F926AC /* GFStationListTableViewCell.swift in Sources */,
 				4A69A066224364F500623427 /* GFChangeEmailViewController.swift in Sources */,
 				4A69A060224364F500623427 /* GFAccountSettingsViewController.swift in Sources */,
-				278D62372272D64E00477405 /* GFLoyaltyService.swift in Sources */,
+				4A2A78E62282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */,
 				27FDDA642248EF280010467E /* GFDeleteCardService.swift in Sources */,
 				27FA99D122142FE400F926AC /* GFOAuthService.swift in Sources */,
 				27FA99D222142FE400F926AC /* GFAPIServiceManager.swift in Sources */,
@@ -2864,9 +2879,11 @@
 				2757D2B321F47EEE00413713 /* EmailIdViewModel.swift in Sources */,
 				4A7BD27B224A038E006A455D /* Configure+CoreDataClass.swift in Sources */,
 				2747553121FADF4A00D62268 /* WalletContents+CoreDataClass.swift in Sources */,
+				4A2A78E52282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */,
 				486DA5A521674F67006B8BA5 /* GFLocation.swift in Sources */,
 				486DA5A621674F67006B8BA5 /* GFColor.swift in Sources */,
 				274754B921F9E2C800D62268 /* GFCreateWalletViewModel.swift in Sources */,
+				4A1CCF65228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */,
 				4A81632322531CCD004D06C0 /* ContactViewModel.swift in Sources */,
 				486DA5A721674F67006B8BA5 /* HomeViewController.swift in Sources */,
 				2772BA7222082277003AA1ED /* GFActivityTableViewController.swift in Sources */,
@@ -2906,6 +2923,7 @@
 				486570A3212C207300E94556 /* SideMenuItemsViewController.swift in Sources */,
 				2772BA942209CE94003AA1ED /* GFTicketDetailsViewController.swift in Sources */,
 				27F83D5C2211517200232521 /* GFBaseViewModel.swift in Sources */,
+				4A1CCF64228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */,
 				486570A5212C29CD00E94556 /* GFMapsUtility.swift in Sources */,
 				4A69A067224364F500623427 /* GFChangePasswordViewController.swift in Sources */,
 				487A004B212EAF070027D8D4 /* GFTextFieldBackGround.swift in Sources */,
@@ -2916,6 +2934,7 @@
 				4A69A0532243648600623427 /* GFSettingsViewController.swift in Sources */,
 				2757D2C921F7289C00413713 /* KeychainWrapper.swift in Sources */,
 				27F83D49220DC8FD00232521 /* Base64ValueTransformer.m in Sources */,
+				4A2A78E42282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */,
 				2747557C22001ED600D62268 /* GFAccountBasedHomeViewModel.swift in Sources */,
 				274754B821F9E2C800D62268 /* GFCreateWalletViewModel.swift in Sources */,
 				2772BA6322059F78003AA1ED /* CAPSPageMenu+UIConfiguration.swift in Sources */,
@@ -3150,12 +3169,14 @@
 				27F6C5272202E634009052D0 /* GFFetchProductsService.swift in Sources */,
 				2772BA902209CE94003AA1ED /* GFPurchaseTicketListViewController.swift in Sources */,
 				2772BA6B22059F78003AA1ED /* CAPSPageMenu.swift in Sources */,
+				4A1CCF67228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */,
 				2747554421FADF4A00D62268 /* Product+CoreDataClass.swift in Sources */,
 				27F6C53322041C3F009052D0 /* GFAccountLandingViewController.swift in Sources */,
 				27CFA331221BBF4100593D8B /* GFWalletEventService.swift in Sources */,
 				2747554121FADF4A00D62268 /* LoyaltyBonus+CoreDataProperties.swift in Sources */,
 				27FDDA6E224900170010467E /* GFChangeAccountService.swift in Sources */,
 				273B2CEE21E48A1500208012 /* LoginModel.swift in Sources */,
+				4A2A78E72282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */,
 				2747554A21FADF4A00D62268 /* TicketActivation+CoreDataClass.swift in Sources */,
 				2747553521FADF4A00D62268 /* WalletContents+CoreDataProperties.swift in Sources */,
 				27FDDA612248EEDD0010467E /* GFSettingsViewController.swift in Sources */,
@@ -3272,6 +3293,7 @@
 				4A6C38EC2276C17D00659383 /* SideMenuItemsViewController.swift in Sources */,
 				4A6C38ED2276C17D00659383 /* GFTicketDetailsViewController.swift in Sources */,
 				4A6C38EE2276C17D00659383 /* GFBaseViewModel.swift in Sources */,
+				4A1CCF68228176F20042FE10 /* GFCustomAlertViewController.swift in Sources */,
 				4A6C38EF2276C17D00659383 /* GFMapsUtility.swift in Sources */,
 				4A6C38F02276C17D00659383 /* GFChangePasswordViewController.swift in Sources */,
 				4A6C38F12276C17D00659383 /* GFTextFieldBackGround.swift in Sources */,
@@ -3282,6 +3304,7 @@
 				4A6C38F62276C17D00659383 /* GFSettingsViewController.swift in Sources */,
 				4A6C38F72276C17D00659383 /* KeychainWrapper.swift in Sources */,
 				4A6C38F82276C17D00659383 /* Base64ValueTransformer.m in Sources */,
+				4A2A78E82282F91E004F9D37 /* GFReplenishmentViewController.swift in Sources */,
 				4A6C38F92276C17D00659383 /* GFAccountBasedHomeViewModel.swift in Sources */,
 				4A6C38FA2276C17D00659383 /* GFCreateWalletViewModel.swift in Sources */,
 				4A6C38FB2276C17D00659383 /* CAPSPageMenu+UIConfiguration.swift in Sources */,

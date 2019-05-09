@@ -101,6 +101,8 @@ struct Constants {
         static let BarCodeInfo = "GFBARCODEINFO"
         static let BarCodeLanding = "GFBARCODELANDING"
         static let Contact = "GFContactViewController"
+        static let AlertView = "GFCustomAlertViewController"
+        static let ReplenishmentView  = "GFReplenishmentViewController"
     }
     
     struct Ticket {

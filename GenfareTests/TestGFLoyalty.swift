@@ -40,9 +40,11 @@ class MockLoyaltyData:LoyaltyDataProtocol {
     func updateRecordForLoyalty(type:LoyaltyType) -> Void {
         print("Dummy function - Dont update any records")
     }
+    
     func deleteRecordForLoyalty(type:LoyaltyType) -> Void {
         print("Dummy function - Dont update any records")
     }
+    
 }
 
 class GFLoyaltyServiceSpec: QuickSpec
@@ -103,6 +105,18 @@ class GFLoyaltyServiceSpec: QuickSpec
                 })
 
                 context("when taking a ride first time in a trnsit day", {
+                    beforeEach {
+                        product.cappedThreshold = 5
+                        product.isCappedRideEnabled = 1
+                    }
+                    
+                    it("should return false", closure: {
+                        let actual = loyalty.isProductEligibleForCappedRide()
+                        expect(actual).to(equal(false))
+                    })
+                })
+                
+                context("when ride time difference is less than cappedDelay", {
                     beforeEach {
                         product.cappedThreshold = 5
                         product.isCappedRideEnabled = 1

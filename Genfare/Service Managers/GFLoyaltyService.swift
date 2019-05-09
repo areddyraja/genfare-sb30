@@ -29,7 +29,7 @@ class GFLoyaltyService {
             return false
         }
         
-        guard !dataProvider.isFirstRideForType(type: .capped) else {
+        guard dataProvider.isFirstRideForType(type: .capped) else {
             dataProvider.updateRecordForLoyalty(type: .capped)
             return false
         }

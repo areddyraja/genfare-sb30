@@ -41,8 +41,6 @@ class GFAccountSettingsViewController: UIViewController,UITextFieldDelegate {
         self.homeAddressFld.delegate = self
         self.workAddreessFld.delegate = self
         self.schoolAddressFld.delegate = self
-        self.navBarLogo.image = UIImage.init(named: String.init(format: "%@NavBarLogo",Utilities.tenantId().lowercased() ?? ""))
-        self.navBarLogo.backgroundColor = UIColor.clear
         topNavBar.backgroundColor = UIColor.topNavBarColor
         // Do any additional setup after loading the view.
     }
@@ -69,6 +67,10 @@ class GFAccountSettingsViewController: UIViewController,UITextFieldDelegate {
     //}
     override func viewWillAppear(_ animated: Bool) {
          loadSavedAddress()
+        if let navController = self.navigationController{
+            navController.setNavigationBarHidden(true, animated: true)
+        }
+        
     }
     func loadSavedAddress()  {
         

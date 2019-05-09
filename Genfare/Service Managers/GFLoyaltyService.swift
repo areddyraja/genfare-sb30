@@ -67,7 +67,7 @@ class GFLoyaltyService {
             return false
         }
         
-        dataProvider.updateRecordForLoyalty(type: .bonus)
+        dataProvider.deleteRecordForLoyalty(type: .bonus)
 
         return true
     }

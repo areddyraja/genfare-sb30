@@ -127,6 +127,18 @@ class GFLoyaltyServiceSpec: QuickSpec
                         expect(actual).to(equal(false))
                     })
                 })
+                
+                context("when ride time difference is less than cappedDelay", {
+                    beforeEach {
+                        product.cappedThreshold = 5
+                        product.isCappedRideEnabled = 1
+                    }
+                    
+                    it("should return false", closure: {
+                        let actual = loyalty.isProductEligibleForCappedRide()
+                        expect(actual).to(equal(false))
+                    })
+                })
             })
         }
     }

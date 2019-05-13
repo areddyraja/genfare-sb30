@@ -80,7 +80,8 @@ class Utilities {
     }
     
     class func accessToken() -> String {
-        return UserDefaults.standard.value(forKey: Constants.LocalStorage.AccessToken) as! String
+        guard let strAccessToken = UserDefaults.standard.value(forKey: Constants.LocalStorage.AccessToken) as? String else{return ""}
+        return strAccessToken
     }
     
     class func accountBalance() -> NSNumber {

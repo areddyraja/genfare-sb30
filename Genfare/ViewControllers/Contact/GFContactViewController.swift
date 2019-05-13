@@ -21,12 +21,13 @@ class GFContactViewController: GFBaseViewController {
     @IBOutlet weak var topNavBar: UIView!
     @IBOutlet weak var navBarLogo: UIImageView!
    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateUI()
         createViewModelBinding()
-        self.navBarLogo.image = UIImage.init(named: String.init(format: "%@NavBarLogo",Utilities.tenantId().lowercased() ?? ""))
-        self.navBarLogo.backgroundColor = UIColor.clear
+
         topNavBar.backgroundColor = UIColor.topNavBarColor
         // Do any additional setup after loading the view.
     }
@@ -35,6 +36,11 @@ class GFContactViewController: GFBaseViewController {
         super.viewWillAppear(animated)
         view.backgroundColor = UIColor.formLabelText
     }
+    override func viewDidAppear(_ animated: Bool) {
+        self.scrollView?.contentSize = CGSize(width: self.scrollView!.contentSize.width, height: 750)
+    }
+    
+
     func updateUI(){
         vistTheWebsiteProperty.backgroundColor = UIColor(hexString:"#459EAC")
         callNumberProperty.backgroundColor = UIColor(hexString:"#459EAC")

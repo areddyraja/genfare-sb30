@@ -37,7 +37,8 @@ class GFContactViewController: GFBaseViewController {
         view.backgroundColor = UIColor.formLabelText
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.scrollView?.contentSize = CGSize(width: self.scrollView!.contentSize.width, height: 750)
+        self.view.backgroundColor = UIColor.white
+        self.scrollView.backgroundColor = UIColor.white
     }
     
 

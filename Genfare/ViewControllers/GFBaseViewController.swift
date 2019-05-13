@@ -107,6 +107,18 @@ class GFBaseViewController: UIViewController {
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "\(Utilities.tenantId().lowercased())NavBarLogo"))
         
     }
+    
+    func showNavBar() {
+        if let navController = self.navigationController{
+            navController.setNavigationBarHidden(false, animated: true)
+        }
+    }
+    
+    func hideNavBar() {
+        if let navController = self.navigationController{
+            navController.setNavigationBarHidden(true, animated: true)
+        }
+    }
 
     func attachSpinner(value:Bool) {
         if value {

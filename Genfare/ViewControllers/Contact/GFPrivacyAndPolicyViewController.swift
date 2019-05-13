@@ -15,6 +15,8 @@ class GFPrivacyAndPolicyViewController: UIViewController {
         self.navigationItem.title = "Privacy Policy"
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+
         // Do any additional setup after loading the view.
     }
     

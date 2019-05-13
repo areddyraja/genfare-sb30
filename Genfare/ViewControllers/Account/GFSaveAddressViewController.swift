@@ -9,7 +9,15 @@
 import UIKit
 import MapKit
 import CoreData
-
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}
 class GFSaveAddressViewController: GFBaseViewController,MKLocalSearchCompleterDelegate,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate{
     @IBOutlet var navigationBtn: UIImageView!
     
@@ -49,24 +57,25 @@ class GFSaveAddressViewController: GFBaseViewController,MKLocalSearchCompleterDe
     }
     
     func barButtonIteams(){
-        var cancelBarBtn = UIBarButtonItem(
+        let cancelBarBtn = UIBarButtonItem(
             title: "Cancel",
-            style: .plain,
+            style: .done,
             target: self,
             action: #selector(cancelClicked)
         )
         self.navigationItem.leftBarButtonItem = cancelBarBtn
        
-    var saveBarBtn = UIBarButtonItem(
-            title: "save",
-            style: .plain,
+    let saveBarBtn = UIBarButtonItem(
+            title: "Save",
+            style: .done,
             target: self,
             action: #selector(saveClicked)
         )
-        var addressTitle = addressFor.uppercased() + "ADDRESS"
+        var addressTitle = addressFor.capitalizingFirstLetter() + " Address"
         self.navigationItem.title = addressTitle
         self.navigationItem.rightBarButtonItem  = saveBarBtn
-         self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     }
    
     
@@ -111,6 +120,7 @@ class GFSaveAddressViewController: GFBaseViewController,MKLocalSearchCompleterDe
         let cell = addressTableview.dequeueReusableCell(withIdentifier: "GFAddressTableViewCell", for: indexPath) as! GFAddressTableViewCell
         cell.titleLabel.text = searchResult.title
         cell.descriptionLabel.text = searchResult.subtitle
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -123,8 +133,9 @@ class GFSaveAddressViewController: GFBaseViewController,MKLocalSearchCompleterDe
         self.addressInputField.text = completion.title   + completion.subtitle
         let search = MKLocalSearch(request: searchRequest)
         search.start { (response, error) in
-             let placemark = response?.mapItems[0].placemark
-            self.selectedplacemark = placemark!
+            if let placemark = response?.mapItems[0].placemark{
+               self.selectedplacemark = placemark
+            }
             self.selectedresponse = response
         }
     }

@@ -245,6 +245,7 @@ Mon-Fri: 8:00AM to 5:00PM</string>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="3fV-S1-PiM" firstAttribute="leading" secondItem="HgC-vG-6v8" secondAttribute="leading" id="6dn-wl-H8h"/>
                                     <constraint firstItem="3fV-S1-PiM" firstAttribute="top" secondItem="HgC-vG-6v8" secondAttribute="top" id="Mwe-z0-TTw"/>
@@ -253,7 +254,7 @@ Mon-Fri: 8:00AM to 5:00PM</string>
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HgC-vG-6v8" firstAttribute="leading" secondItem="kwV-uM-c8z" secondAttribute="leading" id="3y4-ga-erk"/>
                             <constraint firstItem="Xng-U4-A3y" firstAttribute="leading" secondItem="kwV-uM-c8z" secondAttribute="leading" id="Dn3-oX-RnZ"/>
@@ -270,6 +271,7 @@ Mon-Fri: 8:00AM to 5:00PM</string>
                     <connections>
                         <outlet property="callNumberProperty" destination="3KC-75-0yS" id="t8N-qe-8YG"/>
                         <outlet property="commentsProperty" destination="WJ1-eB-0mK" id="1I8-lX-IKz"/>
+                        <outlet property="scrollView" destination="HgC-vG-6v8" id="7Qc-OJ-WGO"/>
                         <outlet property="topNavBar" destination="Xng-U4-A3y" id="5A2-PJ-BDs"/>
                         <outlet property="vistTheWebsiteProperty" destination="nEI-YB-Xfg" id="p8w-1y-mbk"/>
                         <segue destination="t1W-yo-gg6" kind="presentation" id="Hht-Gy-ohf"/>

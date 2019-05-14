@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Montserrat-Regular_0.ttf">
-            <string>Montserrat-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Wallet Selection View Controller-->
         <scene sceneID="45g-Ax-vXd">
@@ -124,44 +119,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6B-ZM-T1K">
-                                <rect key="frame" x="0.0" y="50" width="375" height="71"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.21960784310000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="5f8-pR-cus"/>
-                                    <constraint firstAttribute="width" constant="375" id="Jzu-rd-QGD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T5p-gg-4Yo">
-                                <rect key="frame" x="0.0" y="121" width="368" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5p-gg-4Yo">
+                                <rect key="frame" x="0.0" y="85" width="375" height="85"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hc-MQ-emQ">
-                                        <rect key="frame" x="21" y="20" width="339" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hc-MQ-emQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Naming your ">
                                                 <attributes>
                                                     <color key="NSColor" red="0.97641199827194214" green="0.97663325071334839" blue="0.98447924852371216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Mobile Wallet ">
                                                 <attributes>
                                                     <color key="NSColor" red="0.97641199827194214" green="0.97663325071334839" blue="0.98447924852371216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="14" name="Arial-ItalicMT"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="helps you identify it, when needed (i.e., transfer it to another device).">
                                                 <attributes>
                                                     <color key="NSColor" red="0.97641199827194214" green="0.97663325071334839" blue="0.98447924852371216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -169,12 +151,19 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1647058824" green="0.21960784310000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="7hc-MQ-emQ" secondAttribute="bottom" id="5BJ-ym-Kce"/>
+                                    <constraint firstAttribute="height" constant="85" id="7ch-qm-nkd"/>
+                                    <constraint firstItem="7hc-MQ-emQ" firstAttribute="leading" secondItem="T5p-gg-4Yo" secondAttribute="leading" id="Aus-PU-6IG"/>
+                                    <constraint firstItem="7hc-MQ-emQ" firstAttribute="top" secondItem="T5p-gg-4Yo" secondAttribute="top" id="ODx-zu-94g"/>
+                                    <constraint firstAttribute="trailing" secondItem="7hc-MQ-emQ" secondAttribute="trailing" id="gld-K9-8sv"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRx-fT-kUw">
                                 <rect key="frame" x="340" y="35" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="Gq8-rY-PmW"/>
-                                    <constraint firstAttribute="height" constant="20" id="uYR-Rj-S2m"/>
+                                    <constraint firstAttribute="height" constant="20" id="3G8-xX-5ap"/>
+                                    <constraint firstAttribute="width" constant="20" id="y1S-2D-yJ2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="X">
@@ -185,11 +174,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ4-KQ-f5q" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
-                                <rect key="frame" x="48" y="336" width="274" height="51"/>
+                                <rect key="frame" x="50" y="280" width="275" height="50"/>
                                 <color key="backgroundColor" red="0.15601536630000001" green="0.60194826130000001" blue="0.83118385080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="274" id="JUd-xo-Grm"/>
-                                    <constraint firstAttribute="height" constant="51" id="WIm-GQ-faP"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ore-Yd-qkC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Create Wallet">
@@ -201,24 +189,41 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wallet" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tfn-wO-fME" customClass="GFWhiteButtonTextField" customModule="iRide" customModuleProvider="target">
-                                <rect key="frame" x="50" y="275" width="275" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wallet" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tfn-wO-fME" customClass="GFWhiteButtonTextField" customModule="iRide" customModuleProvider="target">
+                                <rect key="frame" x="50" y="210" width="275" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kFY-fn-4eU"/>
+                                </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="light" textContentType="email"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCP-bb-dJE">
+                                <rect key="frame" x="35" y="35" width="305" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vwP-Rg-efb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.2196078431372549" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QRx-fT-kUw" firstAttribute="top" secondItem="BCK-Qh-hD1" secondAttribute="top" constant="15" id="4e6-8e-Jej"/>
-                            <constraint firstItem="C6B-ZM-T1K" firstAttribute="trailing" secondItem="BCK-Qh-hD1" secondAttribute="trailing" id="C5y-hg-Wzz"/>
-                            <constraint firstItem="BQ4-KQ-f5q" firstAttribute="leading" secondItem="BCK-Qh-hD1" secondAttribute="leading" constant="48" id="GoI-lI-00i"/>
-                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="trailing" secondItem="BQ4-KQ-f5q" secondAttribute="trailing" constant="53" id="NfG-1U-MxD"/>
-                            <constraint firstItem="C6B-ZM-T1K" firstAttribute="top" secondItem="BCK-Qh-hD1" secondAttribute="top" constant="30" id="YKc-hy-9Fq"/>
-                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="bottom" secondItem="BQ4-KQ-f5q" secondAttribute="bottom" constant="280" id="fia-Rq-L0J"/>
-                            <constraint firstItem="C6B-ZM-T1K" firstAttribute="leading" secondItem="BCK-Qh-hD1" secondAttribute="leading" id="yx4-mn-VPV"/>
-                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="trailing" secondItem="QRx-fT-kUw" secondAttribute="trailing" constant="15" id="zts-ye-TIm"/>
+                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="trailing" secondItem="tfn-wO-fME" secondAttribute="trailing" constant="50" id="389-w7-mjd"/>
+                            <constraint firstItem="tfn-wO-fME" firstAttribute="top" secondItem="T5p-gg-4Yo" secondAttribute="bottom" constant="40" id="4Tf-tL-mNO"/>
+                            <constraint firstItem="BQ4-KQ-f5q" firstAttribute="top" secondItem="tfn-wO-fME" secondAttribute="bottom" constant="40" id="7An-C3-8Xp"/>
+                            <constraint firstItem="cCP-bb-dJE" firstAttribute="top" secondItem="BCK-Qh-hD1" secondAttribute="top" constant="15" id="G52-Om-k5P"/>
+                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="trailing" secondItem="cCP-bb-dJE" secondAttribute="trailing" constant="35" id="OSL-TB-x1b"/>
+                            <constraint firstItem="T5p-gg-4Yo" firstAttribute="top" secondItem="QRx-fT-kUw" secondAttribute="bottom" constant="30" id="Pgu-OD-9se"/>
+                            <constraint firstItem="BQ4-KQ-f5q" firstAttribute="leading" secondItem="BCK-Qh-hD1" secondAttribute="leading" constant="50" id="cz0-Nl-ErW"/>
+                            <constraint firstItem="T5p-gg-4Yo" firstAttribute="leading" secondItem="BCK-Qh-hD1" secondAttribute="leading" id="dLR-EX-fQa"/>
+                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="trailing" secondItem="BQ4-KQ-f5q" secondAttribute="trailing" constant="50" id="enF-v6-9Jo"/>
+                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="trailing" secondItem="T5p-gg-4Yo" secondAttribute="trailing" id="iu4-gc-FW6"/>
+                            <constraint firstItem="BCK-Qh-hD1" firstAttribute="trailing" secondItem="QRx-fT-kUw" secondAttribute="trailing" constant="15" id="mmz-fn-Wjk"/>
+                            <constraint firstItem="QRx-fT-kUw" firstAttribute="top" secondItem="6mV-bS-2ca" secondAttribute="top" constant="35" id="rcl-LF-6xP"/>
+                            <constraint firstItem="tfn-wO-fME" firstAttribute="leading" secondItem="BCK-Qh-hD1" secondAttribute="leading" constant="50" id="u00-2d-Ub1"/>
+                            <constraint firstItem="cCP-bb-dJE" firstAttribute="leading" secondItem="BCK-Qh-hD1" secondAttribute="leading" constant="35" id="xOQ-zc-YkY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BCK-Qh-hD1"/>
                     </view>

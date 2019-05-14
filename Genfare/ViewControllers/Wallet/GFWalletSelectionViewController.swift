@@ -29,7 +29,10 @@ class GFWalletSelectionViewController: GFBaseViewController {
         
         tableView.reloadData()
     }
-    
+    @IBAction override func dismissCurrent(_ sender: UIButton) {
+        self.logoutUser()
+        dismiss(animated: true, completion: nil)
+    }
     func assignWallet(walletid:NSNumber){
         let walletService:GFAssignWalletService = GFAssignWalletService(walletID: walletid)
         walletService.assignWallet { [unowned self] (success, error) in

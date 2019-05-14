@@ -58,6 +58,7 @@ class GFPurchaseWebViewController: GFBaseViewController,WKNavigationDelegate{
         }
         
         if ((urlString?.contains("coocoo://"))!) && ((urlString?.contains("ticketshome"))!) {
+            self.attachSpinner(value: false)
             navigationController?.popToRootViewController(animated: true)
         }
         

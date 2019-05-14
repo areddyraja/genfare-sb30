@@ -37,7 +37,7 @@ class GFTicketsService {
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
+                    //print(JSON)
                     completionHandler(true,nil)
                 case .failure(let error):
                     print("Request failed with error: \(error)")

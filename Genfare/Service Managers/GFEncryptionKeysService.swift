@@ -33,7 +33,7 @@ class GFEncryptionKeysService{
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
+                    //print(JSON)
                     if let json = JSON as? [String:Any], let values = json["result"] as? [String:Any] {
                         self.saveData(data: values)
                     }

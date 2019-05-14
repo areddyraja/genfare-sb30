@@ -43,7 +43,7 @@ class GFFetchProductsService: GFBaseService {
             .responseJSON {response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
+                    //print(JSON)
                     if let json = JSON as? Array<Any> {
                         self.saveProducts(data: json)
                         self.cHandler(true,nil)
@@ -103,7 +103,7 @@ class GFFetchProductsService: GFBaseService {
         }
         
         GFDataService.saveContext()
-        print(GFFetchProductsService.getProducts())
+        //print(GFFetchProductsService.getProducts())
     }
     
     static func getProducts() -> Array<Product> {

@@ -45,7 +45,7 @@ class GFSignUpService {
             .responseJSON { [weak self] response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
+                    //print(JSON)
                     let dict = JSON as? [String:Any]
                     if let success = dict!["success"] as? Bool, success {
                         completionHandler(true,nil)

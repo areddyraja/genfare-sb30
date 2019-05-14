@@ -42,7 +42,7 @@ class GFLoginService {
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
+                    //print(JSON)
                     if let dict = JSON as? [String:Any]{
                         if let success = dict["success"] as? Bool{
                             if(success){

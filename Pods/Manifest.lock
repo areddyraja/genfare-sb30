@@ -9,6 +9,7 @@ PODS:
   - GoogleMaps/Base (3.0.3)
   - GoogleMaps/Maps (3.0.3):
     - GoogleMaps/Base
+  - IQKeyboardManagerSwift (6.2.0)
   - KeychainAccess (3.1.2)
   - NetworkStack (0.1.6):
     - Alamofire (~> 4.0)
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - Alamofire-SwiftyJSON
   - Decodable
   - GoogleMaps
+  - IQKeyboardManagerSwift
   - NetworkStack
   - Nimble
   - OHHTTPStubs
@@ -61,6 +63,7 @@ SPEC REPOS:
     - Alamofire-SwiftyJSON
     - Decodable
     - GoogleMaps
+    - IQKeyboardManagerSwift
     - KeychainAccess
     - NetworkStack
     - Nimble
@@ -78,6 +81,7 @@ SPEC CHECKSUMS:
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
   Decodable: f0b95fa2fcf8633dd097aa8f7f09838ab3524f5d
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   NetworkStack: b3b64b19fb27bbe323a7f1b1ca18325df4fc4e2a
   Nimble: a0e6f95b4b91a4f66b6da3512b6bebc07c9cbf49
@@ -90,6 +94,6 @@ SPEC CHECKSUMS:
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: d53c193f9c55dfb2d165157e634ffe1a68bd7e1e
+PODFILE CHECKSUM: e3701229b3c9e3bb11206da87ab61149ce2dd8b5
 
 COCOAPODS: 1.5.3

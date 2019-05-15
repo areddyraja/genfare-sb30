@@ -8,6 +8,7 @@
 
 import UIKit
 import SideMenu
+import IQKeyboardManagerSwift
 
 class GFBaseViewController: UIViewController {
 
@@ -27,6 +28,7 @@ class GFBaseViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.setNavigationBarHidden(true, animated: false)
         view.backgroundColor = UIColor.topNavBarColor
+        IQKeyboardManager.shared.enableAutoToolbar = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {

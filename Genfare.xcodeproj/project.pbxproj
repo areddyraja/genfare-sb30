@@ -262,7 +262,6 @@
 		277935A722118149002864BC /* GFBarcodeLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277935A422118149002864BC /* GFBarcodeLandingViewController.swift */; };
 		278D62352272D64E00477405 /* GFLoyaltyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D62342272D64E00477405 /* GFLoyaltyService.swift */; };
 		278D62362272D64E00477405 /* GFLoyaltyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D62342272D64E00477405 /* GFLoyaltyService.swift */; };
-		278D62372272D64E00477405 /* GFLoyaltyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D62342272D64E00477405 /* GFLoyaltyService.swift */; };
 		278D62382272D64E00477405 /* GFLoyaltyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D62342272D64E00477405 /* GFLoyaltyService.swift */; };
 		279B0234220B0323002739F5 /* GFAccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B0233220B0323002739F5 /* GFAccountInfoViewController.swift */; };
 		279B0235220B0323002739F5 /* GFAccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B0233220B0323002739F5 /* GFAccountInfoViewController.swift */; };
@@ -1033,7 +1032,6 @@
 		4A6C398F2276C17D00659383 /* GFAccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B0233220B0323002739F5 /* GFAccountInfoViewController.swift */; };
 		4A6C39902276C17D00659383 /* GFDeleteCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A319FA22240F81F00633B69 /* GFDeleteCardService.swift */; };
 		4A6C39912276C17D00659383 /* AccountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0B95432268533100451F3D /* AccountProtocol.swift */; };
-		4A6C39932276C17D00659383 /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F3A4F9CB6BC256F811C13F /* Pods_Genfare.framework */; };
 		4A6C399C2276C4C900659383 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C399B2276C4C800659383 /* AppIcons.xcassets */; };
 		4A6C399D2276C4C900659383 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C399B2276C4C800659383 /* AppIcons.xcassets */; };
 		4A6C399E2276C4C900659383 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C399B2276C4C800659383 /* AppIcons.xcassets */; };
@@ -1058,6 +1056,7 @@
 		4AF61C5F22423E0E00C234E5 /* GFAccountManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF61C5C224234FA00C234E5 /* GFAccountManagementTableViewCell.swift */; };
 		4AF61C6022423E0E00C234E5 /* GFAccountManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF61C5C224234FA00C234E5 /* GFAccountManagementTableViewCell.swift */; };
 		9244F73CF1931D1A594E837D /* Pods_GenfareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6191DBCA4C1E00BA7D4FE073 /* Pods_GenfareTests.framework */; };
+		CBBCC2169CC5AA72EF4E5FCF /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F3A4F9CB6BC256F811C13F /* Pods_Genfare.framework */; };
 		E3B822E9FF0767415B998452 /* Pods_Genfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F3A4F9CB6BC256F811C13F /* Pods_Genfare.framework */; };
 /* End PBXBuildFile section */
 
@@ -1197,6 +1196,7 @@
 		27FA9A4922142FE400F926AC /* BCTStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCTStaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FA9A4A22142FE500F926AC /* BCTStaging.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = BCTStaging.plist; path = "/Users/vishnu/Documents/Projects/M2 Swift/master/BCTStaging.plist"; sourceTree = "<absolute>"; };
 		27FDD9D92237D3270010467E /* TestLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewModel.swift; sourceTree = "<group>"; };
+		2ECE4278B2295011CAA5E29E /* Pods-Genfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.release.xcconfig"; sourceTree = "<group>"; };
 		3E0AF8CA22673CF200F4E842 /* WalletContentsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletContentsProtocol.swift; sourceTree = "<group>"; };
 		3E0AF8CE2267414000F4E842 /* BalanceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceProtocol.swift; sourceTree = "<group>"; };
 		3E0B95432268533100451F3D /* AccountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProtocol.swift; sourceTree = "<group>"; };
@@ -1320,9 +1320,8 @@
 		4A81632522534D12004D06C0 /* PurchaseTicketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTicketListViewModel.swift; sourceTree = "<group>"; };
 		4AF61C5C224234FA00C234E5 /* GFAccountManagementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAccountManagementTableViewCell.swift; sourceTree = "<group>"; };
 		6191DBCA4C1E00BA7D4FE073 /* Pods_GenfareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenfareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EA6AC6F60C87949C47A44E6 /* Pods-Genfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.release.xcconfig"; sourceTree = "<group>"; };
+		9D68745C54437AD7B8BA4F9A /* Pods-Genfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.debug.xcconfig"; sourceTree = "<group>"; };
 		A0F3A4F9CB6BC256F811C13F /* Pods_Genfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Genfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E016929F82331BBE21A2ACBA /* Pods-Genfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Genfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Genfare/Pods-Genfare.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1345,6 +1344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B822E9FF0767415B998452 /* Pods_Genfare.framework in Frameworks */,
+				CBBCC2169CC5AA72EF4E5FCF /* Pods_Genfare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1360,7 +1360,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A6C39932276C17D00659383 /* Pods_Genfare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1959,10 +1958,10 @@
 		66DA03A9071C855C16EAF9A3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E016929F82331BBE21A2ACBA /* Pods-Genfare.debug.xcconfig */,
-				9EA6AC6F60C87949C47A44E6 /* Pods-Genfare.release.xcconfig */,
 				4A2EE4EB20AA8594F58C5092 /* Pods-GenfareTests.debug.xcconfig */,
 				0A804FA902F9B6F9C29DB6A1 /* Pods-GenfareTests.release.xcconfig */,
+				9D68745C54437AD7B8BA4F9A /* Pods-Genfare.debug.xcconfig */,
+				2ECE4278B2295011CAA5E29E /* Pods-Genfare.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2057,12 +2056,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A6C39962276C17D00659383 /* Build configuration list for PBXNativeTarget "BVTATicketing Staging" */;
 			buildPhases = (
-				4A6C38C42276C17D00659383 /* [CP] Check Pods Manifest.lock */,
 				4A6C38C52276C17D00659383 /* Resources */,
 				4A6C38D92276C17D00659383 /* Sources */,
 				4A6C39922276C17D00659383 /* Frameworks */,
-				4A6C39942276C17D00659383 /* [CP] Embed Pods Frameworks */,
-				4A6C39952276C17D00659383 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2356,6 +2352,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/NetworkStack/NetworkStack.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
@@ -2372,6 +2369,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NetworkStack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
@@ -2406,92 +2404,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A6C38C42276C17D00659383 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Genfare-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A6C39942276C17D00659383 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/NetworkStack/NetworkStack.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NetworkStack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A6C39952276C17D00659383 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Genfare/Pods-Genfare-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BCFCF53E2FB3C603A7A791A9 /* [CP] Check Pods Manifest.lock */ = {
@@ -3709,7 +3621,7 @@
 		};
 		4884E6DF2122A85F003A1289 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E016929F82331BBE21A2ACBA /* Pods-Genfare.debug.xcconfig */;
+			baseConfigurationReference = 9D68745C54437AD7B8BA4F9A /* Pods-Genfare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -3736,7 +3648,7 @@
 		};
 		4884E6E02122A85F003A1289 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EA6AC6F60C87949C47A44E6 /* Pods-Genfare.release.xcconfig */;
+			baseConfigurationReference = 2ECE4278B2295011CAA5E29E /* Pods-Genfare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -3811,7 +3723,6 @@
 		};
 		4A6C39972276C17D00659383 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E016929F82331BBE21A2ACBA /* Pods-Genfare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = BVTAAppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -3838,7 +3749,6 @@
 		};
 		4A6C39982276C17D00659383 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EA6AC6F60C87949C47A44E6 /* Pods-Genfare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = BVTAAppIcon;
 				CLANG_ENABLE_MODULES = YES;

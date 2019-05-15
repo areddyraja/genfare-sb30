@@ -47,6 +47,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         if pageMenu?.currentPageIndex == 0 {
             myPasses?.refreshWalletContents()
         }
+        self.attachSpinner(value: false)
     }
     
     func callChildViewWillAppear(){

@@ -198,10 +198,10 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
             present(alert, animated: true, completion: nil)
         }
         else if(totalAmount < walletMin){
-            let alert = UIAlertController(title: "Minimum cart value not exceeded", message:(String(format: "You cannot add less than $%d to your cart.",walletMin)), preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title:Utilities.stringResourceForId(resourceId:"Min_value")!, message:(String(format: "You cannot add less than $%d to your cart.",walletMin)), preferredStyle: UIAlertController.Style.alert)
             
             // add the actions (buttons)
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+            alert.addAction(UIAlertAction(title: Utilities.stringResourceForId(resourceId:"close"), style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
             }))
             
             ContinueButton.backgroundColor = UIColor.lightGray

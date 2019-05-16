@@ -236,6 +236,7 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
                 let  passwordTextField = textField
                 passwordTextField.delegate = self 
                 passwordTextField.placeholder = "Password"
+                passwordTextField.isSecureTextEntry = true
             }
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "verify", style: UIAlertAction.Style.destructive, handler: { action in

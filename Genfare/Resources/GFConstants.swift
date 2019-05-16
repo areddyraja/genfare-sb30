@@ -71,6 +71,27 @@ struct Constants {
         static let SERVICE_DATE_FORMAT = "yyyy-MM-dd"
         static let SERVICE_TIME_FORMAT = "HH:mm:00"
     }
+    struct Wallet{
+        static let WALLET_STATUS_UNKNOWN = 1
+        static let WALLET_STATUS_ACTIVE = 2
+        static let WALLET_STATUS_LOST = 3
+        static let WALLET_STATUS_STOLEN = 4
+        static let WALLET_STATUS_DAMAGED = 5
+        static let WALLET_STATUS_DEFECTIVE = 6
+        static let WALLET_STATUS_EXPIRED = 7
+        static let WALLET_STATUS_DISABLED = 8
+        static let WALLET_STATUS_SUSPENDED = 9
+        static let WALLET_STATUS_DEACTIVATED = 10
+        static let WALLET_STATUS_PENDING_DEACTIVATION = 11
+        static let WALLET_STATUS_PENDING_SUSPENSION = 12
+        static let WALLET_STATUS_PENDING_ACTIVATION = 13
+        static let WALLET_STATUS_INACTIVE = 14
+        static let WALLET_STATUS_UNAVAILABLE = 15
+        static let WALLET_STATUS_RESERVERD = 16
+        static let WALLET_STATUS_BAD_LISTED = 17
+        static let WALLET_STATUS_QUARANTINED = 18
+        static let WALLET_FARECODE_STATUS_EXPIRED = 19
+    }
     
     struct LocalStorage {
         static let RecentTrips = "UserRecentTrips"

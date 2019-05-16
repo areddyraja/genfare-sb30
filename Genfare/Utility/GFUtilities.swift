@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import CoreData
 
-class Utilities {
-    
+class Utilities:WalletProtocol{
+    static var utilities = Utilities()
     class func apiHost() -> String {
         guard let info = Bundle.main.infoDictionary,
             let apiHost = info["api_host"] as? String else {
@@ -18,7 +18,9 @@ class Utilities {
         }
         return apiHost
     }
-    
+    class func sharedResource()->Utilities {
+        return self.utilities
+    }
     class func authHost() -> String {
         guard let info = Bundle.main.infoDictionary,
             let authHost = info["auth_host"] as? String else {
@@ -72,6 +74,34 @@ class Utilities {
                 fatalError("Cannot get CFBundleShortVersionString from info.plist")
         }
         return ver
+    }
+    func updateUiBasedOnWalletState(button:UIButton,colorcode:String) -> NSNumber {
+        
+        let walletStatusId = getCurrentWalletState()
+        if(walletStatusId ==  Constants.Wallet.WALLET_STATUS_ACTIVE || walletStatusId ==  Constants.Wallet.WALLET_STATUS_EXPIRED || walletStatusId ==  Constants.Wallet.WALLET_FARECODE_STATUS_EXPIRED) {
+            button.backgroundColor = UIColor(hexString:colorcode)
+            button.isUserInteractionEnabled = true
+            return NSNumber(value:walletStatusId)
+        }
+        else{
+            button.backgroundColor = UIColor.gray
+            button.isUserInteractionEnabled = false
+            return NSNumber(value:walletStatusId)
+        }
+        
+    }
+    func getCurrentWalletState() -> NSInteger{
+        let wallet = self.userWallet()
+        let farecodeExpiryDateTime = wallet!.farecode_expiry?.intValue ?? 0
+        let walletStatusId = wallet!.statusId?.intValue
+        let now = Date().timeIntervalSince1970
+        if(farecodeExpiryDateTime != 0 && farecodeExpiryDateTime < Int(now)){
+            return Constants.Wallet.WALLET_FARECODE_STATUS_EXPIRED
+        }
+        else{
+            return walletStatusId!
+        }
+        
     }
     
     class func saveAccessToken(token:String) {
@@ -176,6 +206,32 @@ class Utilities {
             }
         }
         return colorHexString
+    }
+    class func stringResourceForId(resourceId: String?) -> String? {
+        var string = ""
+        guard let stringsPlistPath = Bundle.main.path(forResource:Constants.Plist.STRINGS_PLIST, ofType: Constants.Plist.TYPE_PLIST)
+            else {
+                fatalError("Cannot get strings from info.plist")
+        }
+        if (stringsPlistPath.count) > 0 {
+            let stringDictionary = NSDictionary(contentsOfFile: stringsPlistPath )
+            string = stringDictionary![resourceId] as! String
+        }
+        
+        if string.hasPrefix("$$@@") {
+            guard  let filename = Bundle.main.object(forInfoDictionaryKey: "StringsConfigfile") as? String
+                else {
+                    fatalError("Cannot get strings from info.plist")
+            }
+            guard  let configPlistPath = Bundle.main.path(forResource: filename, ofType: Constants.Plist.TYPE_PLIST)
+                else {
+                    fatalError("Cannot get strings from info.plist")
+            }
+            if (configPlistPath.count) > 0 {
+                string = NSDictionary(contentsOfFile: configPlistPath )![resourceId as! String] as! String
+            }
+        }
+        return string
     }
 }
 

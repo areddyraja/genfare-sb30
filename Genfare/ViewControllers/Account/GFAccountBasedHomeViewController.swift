@@ -10,11 +10,12 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class GFAccountBasedHomeViewController: GFBaseViewController {
+class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
 
     let viewModel = GFAccountBasedHomeViewModel()
     let disposeBag = DisposeBag()
     var pageMenu:CAPSPageMenu?
+    var walletStatusId = 0
 
     @IBOutlet weak var pageControlHolder: UIView!
     @IBOutlet weak var addFundsBtn: GFMenuButton!
@@ -47,8 +48,15 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
         if pageMenu?.currentPageIndex == 0 {
             myPasses?.refreshWalletContents()
         }
+        let walletStatus:GFGetWalletStatusService = GFGetWalletStatusService(walletID: self.walledId())
+        walletStatus.fetchStatus{ [unowned self] (result, error) in
+           
+        if error == nil {
+            self.walletStatusId =  Int(Utilities.sharedResource().updateUiBasedOnWalletState(button: self.addFundsBtn, colorcode: Utilities.colorHexString(resourceId:"ContinueBtnBGColor")!))
+         }
+        
     }
-    
+    }
     func callChildViewWillAppear(){
         if let menu = self.pageMenu{
             if menu.controllerArray.count > 0{
@@ -65,7 +73,11 @@ class GFAccountBasedHomeViewController: GFBaseViewController {
     func createViewModelBinding(){
         addFundsBtn.rx.tap.do(onNext:  { [unowned self] in
         }).subscribe(onNext: { [unowned self] in
+            if(self.walletStatusId == Constants.Wallet.WALLET_STATUS_ACTIVE){
             self.showProducts()
+            }else if(self.walletStatusId == Constants.Wallet.WALLET_STATUS_EXPIRED || self.walletStatusId == Constants.Wallet.WALLET_FARECODE_STATUS_EXPIRED){
+               
+            }
         }).disposed(by: disposeBag)
         
         acctMgtBtn.rx.tap.do(onNext:  { [unowned self] in

@@ -32,7 +32,7 @@ class GFCheckWalletService {
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
+                    //print(JSON)
                     let records:[String:Any] = JSON as! [String:Any]
                     
                     if let wallets:Array<Any> = records["result"] as! Array<Any> {

@@ -48,6 +48,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
         if pageMenu?.currentPageIndex == 0 {
             myPasses?.refreshWalletContents()
         }
+
         let walletStatus:GFGetWalletStatusService = GFGetWalletStatusService(walletID: self.walledId())
         walletStatus.fetchStatus{ [unowned self] (result, error) in
            
@@ -56,6 +57,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
          }
         
     }
+        self.attachSpinner(value: false)
     }
     func callChildViewWillAppear(){
         if let menu = self.pageMenu{

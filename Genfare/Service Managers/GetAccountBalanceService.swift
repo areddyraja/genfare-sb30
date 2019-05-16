@@ -32,7 +32,7 @@ class GFAccountBalanceService{
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
+                    //print(JSON)
                     if let json = JSON as? [String:Any], let balance = json["balance"] as? NSNumber {
                         Utilities.saveAccountBalance(bal: balance)
                     }

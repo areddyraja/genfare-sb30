@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import IQKeyboardManagerSwift
 
 class GFSignupViewController: GFBaseViewController {
 
@@ -36,6 +37,7 @@ class GFSignupViewController: GFBaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        IQKeyboardManager.shared.enableAutoToolbar = true
         applyStylesAndColors()
     }
 

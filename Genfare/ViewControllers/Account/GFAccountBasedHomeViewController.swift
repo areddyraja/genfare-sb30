@@ -76,7 +76,14 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
             if(self.walletStatusId == Constants.Wallet.WALLET_STATUS_ACTIVE){
             self.showProducts()
             }else if(self.walletStatusId == Constants.Wallet.WALLET_STATUS_EXPIRED || self.walletStatusId == Constants.Wallet.WALLET_FARECODE_STATUS_EXPIRED){
-               
+                let alert = UIAlertController(title: Utilities.stringResourceForId(resourceId: "walletStatus_title")!, message:Utilities.stringResourceForId(resourceId: "walletStatus_msg"), preferredStyle: UIAlertController.Style.alert)
+                
+                
+                alert.addAction(UIAlertAction(title:Utilities.colorHexString(resourceId: "ok"), style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+                }))
+                
+                
+                self.present(alert, animated: true, completion: nil)  
             }
         }).disposed(by: disposeBag)
         

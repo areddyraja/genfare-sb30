@@ -33,7 +33,7 @@ class GFConfigService{
             .responseJSON { response in
                 switch response.result {
                 case .success(let JSON):
-                    print(JSON)
+                    //print(JSON)
                     if let json = JSON as? [String:Any] {
                         if let code = json["code"] as? String, code == "401" {
                             //TODO - Auth token expired, refresh token

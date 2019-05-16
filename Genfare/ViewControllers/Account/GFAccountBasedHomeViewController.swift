@@ -48,6 +48,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
         if pageMenu?.currentPageIndex == 0 {
             myPasses?.refreshWalletContents()
         }
+
         let walletStatus:GFGetWalletStatusService = GFGetWalletStatusService(walletID: self.walledId())
         walletStatus.fetchStatus{ [unowned self] (result, error) in
            
@@ -56,6 +57,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
          }
         
     }
+        self.attachSpinner(value: false)
     }
     func callChildViewWillAppear(){
         if let menu = self.pageMenu{
@@ -79,7 +81,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
                 let alert = UIAlertController(title: Utilities.stringResourceForId(resourceId: "walletStatus_title")!, message:Utilities.stringResourceForId(resourceId: "walletStatus_msg"), preferredStyle: UIAlertController.Style.alert)
                 
                 
-                alert.addAction(UIAlertAction(title:Utilities.colorHexString(resourceId: "ok"), style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+                alert.addAction(UIAlertAction(title:Utilities.stringResourceForId(resourceId: "ok"), style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
                 }))
                 
                 

@@ -141,9 +141,11 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         if let dictObj = viewModel.productsListArrayModel[sender.tag] as? AnyObject{
             if let convertDict = dictObj as? Dictionary<String, Any>{
                 quantityValue = convertDict["ticket_count"] as! Int
+
                 if(quantityValue>=1){
                     quantityValue = quantityValue - 1
                     }
+
                 let price = convertDict["price"] as! String
                 let fare =  Float(quantityValue) * Float(price)!
                 var Newdict: [AnyHashable : Any] = [:]
@@ -153,7 +155,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 Newdict["total_ticket_fare"] = fare
                 viewModel.productsListArrayModel[sender.tag] = Newdict as! [String : Any]
             }
-            validations()
+//            validations()
         }
         self.ProductsTableView.reloadData()
         
@@ -165,6 +167,9 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 
                 if let count = convertDict["ticket_count"] as? Int{
                     quantityValue = count + 1
+                    ContinueButton.isUserInteractionEnabled = true
+                    ContinueButton.backgroundColor =  UIColor(hexString:" #E9AE0E")
+
                     
                 }
                 let price = convertDict["price"] as! String
@@ -176,7 +181,6 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
                 Newdict["total_ticket_fare"] = fare
                 viewModel.productsListArrayModel[sender.tag] = Newdict as! [String : Any]
             }
-            validations()
         }
         self.ProductsTableView.reloadData()
         

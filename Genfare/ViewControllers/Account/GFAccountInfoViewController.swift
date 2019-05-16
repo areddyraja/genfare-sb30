@@ -50,7 +50,7 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
                 let alert = UIAlertController(title: Utilities.stringResourceForId(resourceId: "walletStatus_title")!, message:Utilities.stringResourceForId(resourceId: "walletStatus_msg"), preferredStyle: UIAlertController.Style.alert)
                 
                 
-                alert.addAction(UIAlertAction(title:Utilities.colorHexString(resourceId: "ok"), style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+                alert.addAction(UIAlertAction(title:Utilities.stringResourceForId(resourceId: "ok"), style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
                 }))
                 
                 

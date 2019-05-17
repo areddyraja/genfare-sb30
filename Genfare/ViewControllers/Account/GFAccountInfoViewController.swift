@@ -14,6 +14,7 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
 
     let viewModel = GFAccountInfoViewModel()
     let disposeBag = DisposeBag()
+    var walletStatusId = 0
 
     @IBOutlet weak var transferBtn: GFMenuButton!
     @IBOutlet weak var tableView: UITableView!
@@ -28,9 +29,10 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
     
     override func viewWillAppear( _ animated:Bool) {
         super.viewWillAppear(animated)
-        view.backgroundColor = .gray
+        view.backgroundColor = UIColor.gray.withAlphaComponent(2.0)
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
+         self.walletStatusId =  Int(Utilities.sharedResource().updateUiBasedOnWalletState(button: self.transferBtn, colorcode: Utilities.colorHexString(resourceId:"TopNavBarColor")!))
 
         // Do any additional setup after loading the view.
     }
@@ -39,9 +41,21 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
         
         transferBtn.rx.tap.do(onNext:  { [unowned self] in
             print(self)
-         
+            
         }).subscribe(onNext: { [unowned self] in
-            self.transferCard()
+            if(self.walletStatusId == Constants.Wallet.WALLET_STATUS_ACTIVE){
+                self.transferCard()
+            }
+            else if(self.walletStatusId == Constants.Wallet.WALLET_STATUS_EXPIRED || self.walletStatusId == Constants.Wallet.WALLET_FARECODE_STATUS_EXPIRED){
+                let alert = UIAlertController(title: Utilities.stringResourceForId(resourceId: "walletStatus_title")!, message:Utilities.stringResourceForId(resourceId: "walletStatus_msg"), preferredStyle: UIAlertController.Style.alert)
+                
+                
+                alert.addAction(UIAlertAction(title:Utilities.stringResourceForId(resourceId: "ok"), style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+                }))
+                
+                
+                self.present(alert, animated: true, completion: nil)  }
+            
         }).disposed(by: disposeBag)
     }
   
@@ -90,6 +104,7 @@ class GFAccountInfoViewController: GFBaseViewController,UITableViewDelegate,UITa
             let  passwordTextField = textField
             passwordTextField.delegate = self
             passwordTextField.placeholder = "Password"
+            passwordTextField.isSecureTextEntry = true
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "verify", style: UIAlertAction.Style.destructive, handler: { action in

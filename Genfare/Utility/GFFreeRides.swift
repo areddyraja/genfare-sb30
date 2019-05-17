@@ -21,8 +21,8 @@ protocol LoyaltyDataProtocol {
     var cappedTicketId:Int { get }
     var bonusTicketId:Int { get }
  
-    var loyaltyCappedRecord:LoyaltyCapped? { get }
-    var loyaltyBonusRecord:LoyaltyBonus? { get }
+    var loyaltyCappedRecord:LoyaltyCapped? { get set }
+    var loyaltyBonusRecord:LoyaltyBonus? { get set }
 
     func isCapEnabled() -> Bool
     func isBonusEnabled() -> Bool
@@ -42,6 +42,8 @@ protocol LoyaltyDataProtocol {
 class GFLoyaltyData:LoyaltyDataProtocol {
     var product:Product
     var loyaltyType: LoyaltyType = .capped
+    var loyaltyCappedRecord: LoyaltyCapped? = nil
+    var loyaltyBonusRecord: LoyaltyBonus? = nil
     
     init(product:Product) {
         self.product = product
@@ -65,17 +67,21 @@ extension LoyaltyDataProtocol {
     }
     
     var loyaltyCappedRecord:LoyaltyCapped? {
-        if let record = loyaltyRecordForProduct(type: .capped) as? LoyaltyCapped {
-            return record
+        get {
+            if let record = loyaltyRecordForProduct(type: .capped) as? LoyaltyCapped {
+                return record
+            }
+            return nil
         }
-        return nil
     }
     
     var loyaltyBonusRecord:LoyaltyBonus? {
-        if let record = loyaltyRecordForProduct(type: .bonus) as? LoyaltyBonus {
-            return record
+        get {
+            if let record = loyaltyRecordForProduct(type: .bonus) as? LoyaltyBonus {
+                return record
+            }
+            return nil
         }
-        return nil
     }
 
     var loyaltyConfig: Configure {

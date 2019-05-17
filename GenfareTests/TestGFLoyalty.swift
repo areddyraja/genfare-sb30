@@ -14,9 +14,10 @@ import CoreData
 
 class MockLoyaltyData:LoyaltyDataProtocol {
     var product: Product
-    
     var loyaltyType: LoyaltyType
-    
+    var loyaltyCappedRecord: LoyaltyCapped? = nil
+    var loyaltyBonusRecord: LoyaltyBonus? = nil
+
     init(product:Product) {
         self.product = product
         self.loyaltyType = .capped
@@ -26,8 +27,8 @@ class MockLoyaltyData:LoyaltyDataProtocol {
         let entity = NSEntityDescription.entity(forEntityName: "Configure", in: GFDataService.context)
         let config = Configure(entity: entity!, insertInto: GFDataService.context)
         
-        config.cappedThreshold = 10
-        config.cappedDelay = 10
+        config.cappedThreshold = 2
+        config.cappedDelay = 5
         config.bonusThreshold = 0
         config.bonusDelay = 0
         config.endOfTransitDay = 30
@@ -64,8 +65,17 @@ class GFLoyaltyServiceSpec: QuickSpec
             product.ticketId = 163
             product.offeringId = 83
 
-            let mockData = MockLoyaltyData(product: product)
+            let cappedEntity = NSEntityDescription.entity(forEntityName: "LoyaltyCapped", in: GFDataService.context)
+            let loyaltyCapped = LoyaltyCapped(entity:cappedEntity!,  insertInto: GFDataService.context)
+            
+            loyaltyCapped.activatedTime = 0
+            loyaltyCapped.rideCount = 0
+            loyaltyCapped.ticketId = 0
+            
+            var mockData = MockLoyaltyData(product: product)
             let loyalty = GFLoyaltyService(dataProvider: mockData)
+            
+            mockData.loyaltyCappedRecord = loyaltyCapped
 
             beforeEach {
                 
@@ -104,7 +114,7 @@ class GFLoyaltyServiceSpec: QuickSpec
                     })
                 })
 
-                context("when taking a ride first time in a trnsit day", {
+                context("when taking a ride first time in a transit day", {
                     beforeEach {
                         product.cappedThreshold = 5
                         product.isCappedRideEnabled = 1
@@ -120,6 +130,9 @@ class GFLoyaltyServiceSpec: QuickSpec
                     beforeEach {
                         product.cappedThreshold = 5
                         product.isCappedRideEnabled = 1
+                        let newtime = Int(Date().timeIntervalSince1970)+(60)
+                        loyaltyCapped.activatedTime = newtime as NSNumber
+                        loyaltyCapped.rideCount = 5
                     }
                     
                     it("should return false", closure: {
@@ -132,11 +145,14 @@ class GFLoyaltyServiceSpec: QuickSpec
                     beforeEach {
                         product.cappedThreshold = 5
                         product.isCappedRideEnabled = 1
+                        let newtime = Int(Date().timeIntervalSince1970)+(10*60*60)
+                        loyaltyCapped.activatedTime = newtime as NSNumber
+                        loyaltyCapped.rideCount = 5
                     }
                     
-                    it("should return false", closure: {
+                    it("should return true", closure: {
                         let actual = loyalty.isProductEligibleForCappedRide()
-                        expect(actual).to(equal(false))
+                        expect(actual).to(equal(true))
                     })
                 })
             })

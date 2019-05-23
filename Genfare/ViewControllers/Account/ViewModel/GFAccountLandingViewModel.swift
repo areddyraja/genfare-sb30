@@ -22,6 +22,7 @@ class GFAccountLandingViewModel :WalletProtocol{
     let errorMsg : Variable<String> = Variable("")
     let accountBased : Variable<Bool> = Variable(false)
     let cardBased : Variable<Bool> = Variable(false)
+    var records:Array<Event> = Array<Event>()
     
     func formErrorString() -> String {
         return ""
@@ -50,8 +51,8 @@ class GFAccountLandingViewModel :WalletProtocol{
     }
     
     func currentEvent() -> Event? {
-        let records:Array<Event> = GFDataService.fetchRecords(entity: "Event") as! Array<Event>
-        
+        records = GFDataService.fetchRecords(entity: "Event") as! Array<Event>
+       // tempRecord.addObjects(from: records)
         if records.count > 0 {
             for i in records{
                 return i
@@ -69,7 +70,12 @@ class GFAccountLandingViewModel :WalletProtocol{
             
             eventFired.execute { (success,error) in
                 if success {
+                    if event!.clickedTime != nil{
                     GFDataService.deleteFiredEventRecord(entity: "Event", clickedTime:  event!.clickedTime!)
+                    if self.records.count > 0 {
+                        self.fireEvent()
+                    }
+                    }
                 }
                 else{
                     print("error")

@@ -55,10 +55,9 @@ class GFWalletActivityService {
         GFDataService.deleteAllRecords(entity: "WalletActivity")
         
         let managedContext = GFDataService.context
-        let history = NSEntityDescription.entity(forEntityName: "WalletActivity", in: managedContext)
-        
+ 
         for prod in data {
-            let userObj:WalletActivity = NSManagedObject(entity: history!, insertInto: managedContext) as! WalletActivity
+            let userObj:WalletActivity = WalletActivity(context: managedContext)
             
             if let item = prod as? [String:Any] {
                 userObj.activityId = item["activityId"] as? NSNumber
@@ -72,15 +71,14 @@ class GFWalletActivityService {
         }
         
         GFDataService.saveContext()
-        print(GFWalletActivityService.getHistory())
-    }
+     }
     
-    static func getHistory() -> Array<WalletActivity> {
-        let records:Array<WalletActivity> = GFDataService.fetchRecords(entity: "WalletActivity") as! Array<WalletActivity>
-        
-        if records.count > 0 {
+    static func getHistory() ->  [WalletActivity] {
+        if let records = GFDataService.fetchRecords(entity: "WalletActivity") as? [WalletActivity]
+        {
             return records
         }
+        
         
         return []
     }

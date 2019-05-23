@@ -49,6 +49,7 @@ class GFMyPassesTableViewController: UITableViewController {
                     if Utilities.isLoginCardBased(){
                         if let accountHomeVC = self.baseClass as? GFAccountBasedHomeViewController{
                             accountHomeVC.viewModel.updateWalletStatus()
+                            accountHomeVC.viewModel.updateEventRecord()
                         }
                     }
                 }

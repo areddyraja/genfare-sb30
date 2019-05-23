@@ -44,6 +44,7 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
         viewModel.updateWalletStatus()
+        viewModel.updateEventRecord()
         print(pageMenu?.currentPageIndex)
         if pageMenu?.currentPageIndex == 0 {
             myPasses?.refreshWalletContents()

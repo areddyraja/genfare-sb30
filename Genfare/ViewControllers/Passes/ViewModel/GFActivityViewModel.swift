@@ -12,7 +12,7 @@ import RxSwift
 class GFActivityViewModel:WalletProtocol{
     
     let disposebag = DisposeBag()
-    var model:Array<WalletActivity> = []
+    var model:[WalletActivity] = [WalletActivity]()
     
     // Fields that bind to our view's
     let isSuccess : Variable<Bool> = Variable(false)

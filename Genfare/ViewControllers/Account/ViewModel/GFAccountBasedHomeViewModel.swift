@@ -24,6 +24,7 @@ class GFAccountBasedHomeViewModel:WalletProtocol {
     let balance : Variable<NSNumber> = Variable(0.0)
     let walletState : Variable<Bool> = Variable(true)
     let walletName : Variable<String> = Variable("-")
+    let accountlandingmodel = GFAccountLandingViewModel()
     
     func validateCredentials() -> Bool{
         return true;
@@ -49,13 +50,13 @@ class GFAccountBasedHomeViewModel:WalletProtocol {
                 self.balance.value = Utilities.accountBalance()
                 return
             }
-            
+        
             GFAccountBalanceService.fetchAccountBalance { [unowned self] (success, error) in
                 self.isLoading.value = false
                 
                 if success {
                     self.balance.value = Utilities.accountBalance()
-                }else{
+                }else{     
                     self.errorMsg.value = "error"
                 }
             }
@@ -69,5 +70,7 @@ class GFAccountBasedHomeViewModel:WalletProtocol {
         }
         refreshBalance()
     }
-    
+    func updateEventRecord(){
+        accountlandingmodel.fireEvent()
+    }
 }

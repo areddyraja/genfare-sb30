@@ -84,16 +84,18 @@ class GFActivityTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PAYGOCELL", for: indexPath) as! PayAsYouGoCell
         
         
-        if let product:WalletActivity = viewModel.model[indexPath.row] as WalletActivity {
+         let activity = viewModel.model[indexPath.row]
             
-            cell.titleLabel.text = String.init(format: "%@ $ %@", product.event!,product.amountCharged!)
-            if let prod = GFFetchProductsService.getProductFor(id: (product.ticketId?.stringValue)!) {
+            cell.titleLabel.text =// String(format: "%@ $ %@", product.event!,product.amountCharged!)
+            "\(activity.event!) $ \(activity.amountCharged ?? 0)"
+            
+            if let prod = GFFetchProductsService.getProductFor(id: (activity.ticketId?.stringValue)!) {
                 cell.subTitleLabel.text =  prod.productDescription!
             }else{
                 cell.subTitleLabel.text = ""
             }
-            cell.dateLabel.text = Utilities.formattedDate(date: Double(((product.date?.intValue)!)/1000))
-        }
+            cell.dateLabel.text = Utilities.formattedDate(date: Double(((activity.date?.intValue)!)/1000))
+        
         
         return cell
     }

@@ -26,6 +26,11 @@ class PurchaseTicketListViewModel{
       products =  GFFetchProductsService.getProducts()
         isSuccess.value = true
     }
+    
+    func getProductcount() -> Int{
+        products =  GFFetchProductsService.getProducts()
+        return products.count
+        }
     func formErrorString() -> String {
         return ""
     }

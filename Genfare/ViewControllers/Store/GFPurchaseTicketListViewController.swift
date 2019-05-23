@@ -29,6 +29,17 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
     var spinnerView:UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
+        if viewModel.getProductcount() == 0 {
+        let alert = UIAlertController(title: Utilities.stringResourceForId(resourceId: "purchaseProductTitle")!, message:Utilities.stringResourceForId(resourceId: "purchaseProductMessage"), preferredStyle: UIAlertController.Style.alert)
+        
+        
+        alert.addAction(UIAlertAction(title:Utilities.stringResourceForId(resourceId: "close"), style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+             self.navigationController?.popToRootViewController(animated: true)
+        }))
+        
+        
+        self.present(alert, animated: true, completion: nil)
+        }
         let configure:Configure = GFAccountManager.configuredValues()!
         walletMax = configure.configMax as! Int
         walletMin = configure.configMin as! Int
@@ -44,6 +55,7 @@ class GFPurchaseTicketListViewController:UIViewController,UITableViewDelegate,UI
         super.viewWillAppear(animated)
         viewModel.showProducts()
         updateMailLabel()
+        
   
     }
     func createCallbacks (){

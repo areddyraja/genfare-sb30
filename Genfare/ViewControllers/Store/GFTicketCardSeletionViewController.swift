@@ -119,23 +119,27 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
     
     func OrderProducts() {
         let orderedService = GFCreateOrderForProductsService(order:productsCartArray, walletID: self.walledId())
-        orderedService.createOrderService { (success,error) in
+        orderedService.createOrderService { [weak self] (success,error) in
             if success! {
                 print("ordered")
-                if(self.selectedIndex != -1){
+                if(self!.selectedIndex != -1){
                     let navController = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "GFPurchaseWebViewController") as? GFPurchaseWebViewController
-                    let  walletID =  self.walledId()
+                    let  walletID =  self!.walledId()
                     let orderNumber =   UserDefaults.standard.integer(forKey: "orderNumber")
                     let savedValue =   UserDefaults.standard.bool(forKey: "savedcards")
-                    self.card = self.viewModel.model[self.selectedIndex] as! [String : Any]
-                    let url1   = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&savedCardId=\(self.card["cardNumber"]!)"
+                    self!.card = self!.viewModel.model[self!.selectedIndex] as! [String : Any]
+                    let url1   = "/services/data-api/mobile/payment/page?tenant=\(Utilities.tenantId())&orderId=\(orderNumber)&walletId=\(walletID)&savedCardId=\(self!.card["cardNumber"]!)"
                     let url =  Utilities.apiHost()+url1
                     navController?.weburl = url
-                    self.navigationController?.pushViewController(navController!, animated: true)
+                    self!.navigationController?.pushViewController(navController!, animated: true)
                 }
-                self.pushToWebPage()
+                else{
+                    self!.pushToWebPage()
+                }
             }
             else{
+               
+
                 print("error")
             }
             

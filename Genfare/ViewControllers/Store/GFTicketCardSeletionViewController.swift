@@ -119,7 +119,7 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
     
     func OrderProducts() {
         let orderedService = GFCreateOrderForProductsService(order:productsCartArray, walletID: self.walledId())
-        orderedService.createOrderService { (success,error) in
+        orderedService.createOrderService { [unowned self] (success,error) in
             if success! {
                 print("ordered")
                 if(self.selectedIndex != -1){
@@ -134,7 +134,7 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
                     self.navigationController?.pushViewController(navController!, animated: true)
                 }
                 else{
-                   self.pushToWebPage()
+                    self.pushToWebPage()
                 }
             }
             else{

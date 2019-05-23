@@ -73,24 +73,4 @@ class GFAccountBasedHomeViewModel:WalletProtocol {
     func updateEventRecord(){
         accountlandingmodel.fireEvent()
     }
-//    func getOfflineBalance(){
-//        var offlineBalance = Utilities.walletContentsBalance()
-//        let loyaltyData = GFLoyaltyData(product: product)
-//        let loyalty = GFLoyaltyService(dataProvider: loyaltyData)
-//
-//        if loyalty.isProductEligibleForCappedRide() || loyalty.isProductEligibleForBonusRide() {
-//
-//            fare = 0
-//        }
-//        else{
-//
-//            fare = NumberFormatter().number(from: product.price!)!
-//        }
-//
-//        if Utilities.isLoginCardBased(){
-//            let productFare = NumberFormatter().number(from: product.price!)!
-//            let remainingBal:Float = offlineBalance.floatValue - productFare.floatValue
-//            offlineBalance = NSNumber.init(value: remainingBal)
-//    }
-//    }
 }

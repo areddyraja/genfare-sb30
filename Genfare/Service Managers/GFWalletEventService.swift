@@ -157,7 +157,20 @@ class GFWalletEventService {
             }else{
                 userObj.amountRemaining = Utilities.accountBalance()
             }
-            
+            guard NetworkManager.Reachability else {
+                var currentBalance = Int(Utilities.accountBalance())
+                var fare = 0
+                if loyalty.isProductEligibleForCappedRide() || loyalty.isProductEligibleForBonusRide(){
+                    fare = 0
+                }
+                else{
+                    fare = Int(product.price!)!
+                }
+               var remainingBalance = currentBalance - fare
+                Utilities.saveAccountBalance(bal:NSNumber(value:remainingBalance))
+                return
+            }
+
             
             GFDataService.saveContext()
             print(userObj)

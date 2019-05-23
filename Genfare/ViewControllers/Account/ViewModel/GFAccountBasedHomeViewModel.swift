@@ -24,6 +24,7 @@ class GFAccountBasedHomeViewModel:WalletProtocol {
     let balance : Variable<NSNumber> = Variable(0.0)
     let walletState : Variable<Bool> = Variable(true)
     let walletName : Variable<String> = Variable("-")
+    let accountlandingmodel = GFAccountLandingViewModel()
     
     func validateCredentials() -> Bool{
         return true;
@@ -49,13 +50,13 @@ class GFAccountBasedHomeViewModel:WalletProtocol {
                 self.balance.value = Utilities.accountBalance()
                 return
             }
-            
+        
             GFAccountBalanceService.fetchAccountBalance { [unowned self] (success, error) in
                 self.isLoading.value = false
                 
                 if success {
                     self.balance.value = Utilities.accountBalance()
-                }else{
+                }else{     
                     self.errorMsg.value = "error"
                 }
             }
@@ -69,5 +70,27 @@ class GFAccountBasedHomeViewModel:WalletProtocol {
         }
         refreshBalance()
     }
-    
+    func updateEventRecord(){
+        accountlandingmodel.fireEvent()
+    }
+//    func getOfflineBalance(){
+//        var offlineBalance = Utilities.walletContentsBalance()
+//        let loyaltyData = GFLoyaltyData(product: product)
+//        let loyalty = GFLoyaltyService(dataProvider: loyaltyData)
+//
+//        if loyalty.isProductEligibleForCappedRide() || loyalty.isProductEligibleForBonusRide() {
+//
+//            fare = 0
+//        }
+//        else{
+//
+//            fare = NumberFormatter().number(from: product.price!)!
+//        }
+//
+//        if Utilities.isLoginCardBased(){
+//            let productFare = NumberFormatter().number(from: product.price!)!
+//            let remainingBal:Float = offlineBalance.floatValue - productFare.floatValue
+//            offlineBalance = NSNumber.init(value: remainingBal)
+//    }
+//    }
 }

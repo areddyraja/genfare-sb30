@@ -133,9 +133,13 @@ class GFTicketCardSeletionViewController: UIViewController,UITableViewDelegate,U
                     navController?.weburl = url
                     self.navigationController?.pushViewController(navController!, animated: true)
                 }
-                self.pushToWebPage()
+                else{
+                   self.pushToWebPage()
+                }
             }
             else{
+               
+
                 print("error")
             }
             

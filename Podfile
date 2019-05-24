@@ -16,6 +16,7 @@ target 'Genfare' do
   pod 'RxCocoa'
   pod 'QRCode'
   pod 'IQKeyboardManagerSwift'
+  pod 'CryptoSwift'
 
 
   target 'GenfareTests' do

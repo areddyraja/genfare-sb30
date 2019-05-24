@@ -3,6 +3,7 @@ PODS:
   - Alamofire-SwiftyJSON (3.0.0):
     - Alamofire (~> 4.5)
     - SwiftyJSON (~> 4.0.0)
+  - CryptoSwift (0.14.0)
   - Decodable (0.6.0)
   - GoogleMaps (3.0.3):
     - GoogleMaps/Maps (= 3.0.3)
@@ -44,6 +45,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Alamofire-SwiftyJSON
+  - CryptoSwift
   - Decodable
   - GoogleMaps
   - IQKeyboardManagerSwift
@@ -61,6 +63,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Alamofire-SwiftyJSON
+    - CryptoSwift
     - Decodable
     - GoogleMaps
     - IQKeyboardManagerSwift
@@ -79,6 +82,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
+  CryptoSwift: 35a10419f4dbf0619c13f8c1c180037e115323fa
   Decodable: f0b95fa2fcf8633dd097aa8f7f09838ab3524f5d
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
@@ -94,6 +98,6 @@ SPEC CHECKSUMS:
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: e3701229b3c9e3bb11206da87ab61149ce2dd8b5
+PODFILE CHECKSUM: 80d2e6d66ee26284a6d9cdda9f3678b94c5764e9
 
 COCOAPODS: 1.5.3

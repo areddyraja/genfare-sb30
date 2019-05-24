@@ -87,6 +87,7 @@ class GFFetchProductsService: GFBaseService {
             if let prodItem = prod as? [String:Any] {
                 userObj.barcodeTimer = prodItem["barcodeTimer"] as? NSNumber
                 userObj.designator = prodItem["designator"] as? String
+                UserDefaults.standard.set(userObj.designator, forKey: Constants.Replenishment.Designator)
                 userObj.displayOrder = prodItem["displayOrder"] as? NSNumber
                 userObj.fareCode = prodItem["fareCode"] as? String
                 userObj.isActivationOnly = prodItem["isActivationOnly"] as? NSNumber

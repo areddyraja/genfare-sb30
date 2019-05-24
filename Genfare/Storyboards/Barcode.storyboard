@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
         <!--Barcode Landing View Controller-->
         <scene sceneID="E1k-dg-VUs">
             <objects>
-                <viewController storyboardIdentifier="GFBARCODELANDING" id="2dp-7d-fUo" customClass="GFBarcodeLandingViewController" customModule="GenfareTests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFBARCODELANDING" id="2dp-7d-fUo" customClass="GFBarcodeLandingViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WzM-Xl-Rbz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +43,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-HI-Ie6" customClass="GFCustomTableViewCellShadowView" customModule="GenfareTests" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-HI-Ie6" customClass="GFCustomTableViewCellShadowView" customModule="iRide" customModuleProvider="target">
                                 <rect key="frame" x="23" y="67" width="330" height="331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -69,7 +70,7 @@
                                         <color key="textColor" red="0.52941176469999995" green="0.53017729920000001" blue="0.53017729920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Wjv-ZN-QNc" customClass="GFMenuButton" customModule="GenfareTests" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Wjv-ZN-QNc" customClass="GFMenuButton" customModule="iRide" customModuleProvider="target">
                                         <rect key="frame" x="80" y="113" width="170" height="166"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,7 +123,7 @@
         <!--Barcode Info View Controller-->
         <scene sceneID="LKI-lO-wgz">
             <objects>
-                <viewController storyboardIdentifier="GFBARCODEINFO" id="Zcg-Wh-kFL" customClass="GFBarcodeInfoViewController" customModule="GenfareTests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GFBARCODEINFO" id="Zcg-Wh-kFL" customClass="GFBarcodeInfoViewController" customModule="iRide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNC-OV-5B1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

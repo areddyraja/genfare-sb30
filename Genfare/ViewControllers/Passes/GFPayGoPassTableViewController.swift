@@ -105,10 +105,13 @@ class GFPayGoPassTableViewController: UITableViewController {
             cell.titleLabel.text = product.productDescription
             cell.subTitleLabel.text = product.ticketTypeDescription
         }
-
+       applyBorderColor(cell:cell)
         return cell
     }
-    
+    func applyBorderColor(cell:PayAsYouGoCell){
+        cell.bgView.layer.borderWidth = 1.0
+        cell.bgView.layer.borderColor = UIColor.init(hexString:Utilities.colorHexString(resourceId:Constants.Bordercolors.STOREDVALUE_CELL_BORDER_COLOR)!).cgColor
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         selectedIndex = indexPath.row

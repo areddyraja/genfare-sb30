@@ -48,8 +48,11 @@ class GFMyPassesTableViewController: UITableViewController {
                     self.tableView.reloadData()
                     if Utilities.isLoginCardBased(){
                         if let accountHomeVC = self.baseClass as? GFAccountBasedHomeViewController{
+                            DispatchQueue.main.async {
+                                accountHomeVC.viewModel.updateEventRecord()
+                            }
                             accountHomeVC.viewModel.updateWalletStatus()
-                            accountHomeVC.viewModel.updateEventRecord()
+
                         }
                     }
                 }
@@ -123,9 +126,24 @@ class GFMyPassesTableViewController: UITableViewController {
             }else{
                 cell.subTitleLabel.text = ""
             }
+            applyBorderColor(type: wc.type!,cell:cell)
         }
 
         return cell
+    }
+    func applyBorderColor(type:String,cell:PayAsYouGoCell){
+          cell.bgView.layer.borderWidth = 1.0
+        if(type == Constants.Ticket.PeriodPass){
+            cell.bgView.layer.borderColor = UIColor.init(hexString:Utilities.colorHexString(resourceId:Constants.Bordercolors.PERIODPASS_CELL_BORDER_COLOR)!).cgColor
+          }
+        else if (type == "1"){
+            cell.bgView.layer.borderColor = UIColor.init(hexString:Utilities.colorHexString(resourceId:Constants.Bordercolors.STOREDVALUE_CELL_BORDER_COLOR)!).cgColor
+
+        }
+        else{
+            cell.bgView.layer.borderColor = UIColor.init(hexString:Utilities.colorHexString(resourceId:Constants.Bordercolors.STOREDRIDE_CELL_BORDER_COLOR)!).cgColor
+
+        }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MgN-Nw-DEh" customClass="GFCustomTableViewCellShadowView" customModule="iRide" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="10" width="339" height="60"/>
+                                            <rect key="frame" x="20" y="9" width="339" height="60"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hzC-BS-a2Q">
@@ -67,6 +67,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="bgView" destination="MgN-Nw-DEh" id="8mh-He-Pd0"/>
                                     <outlet property="subTitleLabel" destination="Fkp-aA-2bD" id="FcI-Pp-ijw"/>
                                     <outlet property="titleLabel" destination="uVH-b7-osD" id="zft-Gr-Cc9"/>
                                 </connections>
@@ -140,6 +141,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="bgView" destination="0Tk-om-4KI" id="QgX-1Y-ywG"/>
                                     <outlet property="dateLabel" destination="RXH-9H-Rrv" id="J96-jl-iPM"/>
                                     <outlet property="subTitleLabel" destination="lGI-TH-W8z" id="UzX-fn-o8z"/>
                                     <outlet property="titleLabel" destination="Zcd-yz-Ugm" id="cb2-ji-flG"/>
@@ -261,6 +263,7 @@
                                 <connections>
                                     <outlet property="activeBtn" destination="OOn-ty-Ljf" id="YTD-iS-aoP"/>
                                     <outlet property="activeRideBtn" destination="i0E-QO-NtV" id="8VT-86-CIw"/>
+                                    <outlet property="bgView" destination="IOR-ze-mXK" id="iMq-lR-4QZ"/>
                                     <outlet property="inactiveBtn" destination="aqz-vZ-zHI" id="0la-vp-kmc"/>
                                     <outlet property="subTitleLabel" destination="nkY-HD-PQs" id="RGq-99-hLQ"/>
                                     <outlet property="titleLabel" destination="S8B-EC-hUC" id="7KF-X4-WRG"/>

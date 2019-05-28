@@ -58,6 +58,8 @@ class GFConfigService{
         let managedContext = GFDataService.context
         let configureContents = NSEntityDescription.entity(forEntityName: "Configure", in: managedContext)
         let configObj:Configure = NSManagedObject(entity: configureContents!, insertInto: managedContext) as! Configure
+        let maxAllowedUnSyncedOfflineActivations = data["maxAllowedUnSyncedOfflineActivations"] as? NSNumber
+        UserDefaults.standard.set( maxAllowedUnSyncedOfflineActivations, forKey: "maxAllowedUnSyncedOfflineActivations")
 
         configObj.agencyContactNumber = data["AgencyContactNumber"] as? String
         configObj.agencyId = data["AgencyId"] as? NSNumber

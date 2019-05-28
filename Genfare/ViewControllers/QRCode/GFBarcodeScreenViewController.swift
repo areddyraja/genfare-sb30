@@ -74,7 +74,8 @@ class GFBarcodeScreenViewController: GFBaseViewController ,WalletContentsProtoco
                     self.viewBinding()
 
                 }else{
-                 if(Utilities.eventRecordCount() < 3){
+            let maxAllowedUnSyncedOfflineActivations = UserDefaults.standard.integer(forKey: "maxAllowedUnSyncedOfflineActivations")
+                 if(Utilities.eventRecordCount() < maxAllowedUnSyncedOfflineActivations ?? 3){
                 GFWalletEventService.activateTicket(ticket: self.ticket)
                 self.viewBinding()
                  }

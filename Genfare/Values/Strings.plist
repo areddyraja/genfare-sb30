@@ -35,6 +35,8 @@
 	<string>Purchase Passes</string>
 	<key>forgot_password_msg</key>
 	<string>Please enter the registered e-mail account that you wish to perform a password reset on and then press the Send Email button.  Instructions for password reset will be sent to the registered e-mail account you specify.</string>
+	<key>maxActivationAlertMessage</key>
+	<string>Activation can not be completed, please make sure your phone has Internet connection</string>
 	<key>password_no_valid</key>
 	<string>Please enter a valid password.</string>
 	<key>password_no_match</key>

@@ -68,7 +68,7 @@ class GFMyPassesViewModel:WalletProtocol{
             for i in filteredModel{
                 if let expiryDate = i.ticketActivationExpiryDate {
 
-                    if  (Int64(truncating: expiryDate) < Int64(now) && (i.type == "1")){ //Here 1 is stored value
+                    if  (Int64(truncating: expiryDate) < Int64(now) && (i.type == Constants.Ticket.PayAsYouGo) || (i.type == Constants.Ticket.StoredRide && Int(i.valueRemaining!) <= 0)){ //Here 1 is stored value
 
                         GFDataService.deletePayAsYouGoWallet(entity: "WalletContents",wallet: i)
                     }

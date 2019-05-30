@@ -113,7 +113,10 @@ class Utilities:WalletProtocol{
         guard let strAccessToken = UserDefaults.standard.value(forKey: Constants.LocalStorage.AccessToken) as? String else{return ""}
         return strAccessToken
     }
-    
+    class func eventRecordCount() -> Int {
+        var records = GFDataService.fetchRecords(entity: "Event") as! Array<Event> 
+        return records.count
+    }
     class func accountBalance() -> NSNumber {
         return UserDefaults.standard.value(forKey: Constants.LocalStorage.AccountBalance) as! NSNumber
     }

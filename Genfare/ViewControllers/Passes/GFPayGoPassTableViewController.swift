@@ -105,13 +105,19 @@ class GFPayGoPassTableViewController: UITableViewController {
             cell.titleLabel.text = product.productDescription
             cell.subTitleLabel.text = product.ticketTypeDescription
         }
-
+       applyBorderColor(cell:cell)
         return cell
     }
-    
+    func applyBorderColor(cell:PayAsYouGoCell){
+        cell.bgView.layer.borderWidth = 1.0
+        cell.bgView.layer.borderColor = UIColor.init(hexString:Utilities.colorHexString(resourceId:Constants.Bordercolors.STOREDVALUE_CELL_BORDER_COLOR)!).cgColor
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         selectedIndex = indexPath.row
+//        if let accountHomeVC = self.baseClass as? GFAccountBasedHomeViewController{
+//            accountHomeVC.viewModel.updateEventRecord()
+//        }
         var balance:NSNumber = NSNumber.init(value: 0.0)
         if Utilities.isLoginCardBased(){
             balance = Utilities.walletContentsBalance()
@@ -123,9 +129,27 @@ class GFPayGoPassTableViewController: UITableViewController {
             let alert = UIAlertController(title: "Not Enough Value", message: "You must first Add Value to your Balance before you can activate this ticket", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
              present(alert, animated: true, completion: nil)
-        }
-        else{
-            showCofirmAlert()
+        }         else{
+            if NetworkManager.Reachability  {
+                showCofirmAlert()
+            }
+            else{
+            let maxAllowedUnSyncedOfflineActivations = UserDefaults.standard.integer(forKey: "maxAllowedUnSyncedOfflineActivations")
+                if(Utilities.eventRecordCount() < maxAllowedUnSyncedOfflineActivations ?? 3){
+                    showCofirmAlert()
+                }
+                else{
+                    let alert = UIAlertController(title: "Activation", message: (String(format:Utilities.stringResourceForId(resourceId: "maxActivationAlertMessage")!)), preferredStyle: UIAlertController.Style.alert)
+                    
+                    // add the actions (buttons)
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+                    }))
+                    
+                    // show the alert
+                    present(alert, animated: true, completion: nil)
+                }
+
+            }
         }
     }
 

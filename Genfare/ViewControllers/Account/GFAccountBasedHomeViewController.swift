@@ -43,8 +43,10 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
         view.backgroundColor = .black
         navigationController?.setNavigationBarHidden(false, animated: false);
         navigationController?.navigationBar.barTintColor = UIColor.topNavBarColor
+        DispatchQueue.main.async{
+            self.viewModel.updateEventRecord()
+        }
         viewModel.updateWalletStatus()
-        viewModel.updateEventRecord()
         print(pageMenu?.currentPageIndex)
         if pageMenu?.currentPageIndex == 0 {
             myPasses?.refreshWalletContents()
@@ -77,7 +79,11 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
         addFundsBtn.rx.tap.do(onNext:  { [unowned self] in
         }).subscribe(onNext: { [unowned self] in
             if(self.walletStatusId == Constants.Wallet.WALLET_STATUS_ACTIVE){
-            self.showProducts()
+                if Utilities.isLoginCardBased(){
+              self.paymentPage()
+                }else{
+             self.showProducts()
+                }
             }else if(self.walletStatusId == Constants.Wallet.WALLET_STATUS_EXPIRED || self.walletStatusId == Constants.Wallet.WALLET_FARECODE_STATUS_EXPIRED){
                 let alert = UIAlertController(title: Utilities.stringResourceForId(resourceId: "walletStatus_title")!, message:Utilities.stringResourceForId(resourceId: "walletStatus_msg"), preferredStyle: UIAlertController.Style.alert)
                 
@@ -141,9 +147,13 @@ class GFAccountBasedHomeViewController: GFBaseViewController,WalletProtocol {
              controller.delegate = self
             self.navigationController?.present(controller, animated: true)
         }
-
     }
-    
+    func paymentPage(){
+        if let controller = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: Constants.StoryBoard.PurchaseProducts) as? GFPurchaseTicketListViewController {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+
     func attachPassList() {
         var controllerArray : [UIViewController] = []
         

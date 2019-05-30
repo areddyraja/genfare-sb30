@@ -13,11 +13,13 @@ class PayAsYouGoCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     
+    @IBOutlet var bgView: GFCustomTableViewCellShadowView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet weak var activeBtn: GFMenuButton!
     @IBOutlet weak var activeRideBtn: GFMenuButton!
     @IBOutlet weak var inactiveBtn: GFMenuButton!
     
+    @IBOutlet var timeRemaining: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

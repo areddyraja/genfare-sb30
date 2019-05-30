@@ -66,11 +66,31 @@ class GFBarcodeScreenViewController: GFBaseViewController ,WalletContentsProtoco
     }
 
     func createViewModelBinding(){
-        if self.ticket.type == Constants.Ticket.PeriodPass{
+        if self.ticket.type != Constants.Ticket.PayAsYouGo {
             activateBtn.rx.tap.do(onNext:  { [unowned self] in
             }).subscribe(onNext: { [unowned self] in
+                if NetworkManager.Reachability  {
+                    GFWalletEventService.activateTicket(ticket: self.ticket)
+                    self.viewBinding()
+
+                }else{
+            let maxAllowedUnSyncedOfflineActivations = UserDefaults.standard.integer(forKey: "maxAllowedUnSyncedOfflineActivations")
+                 if(Utilities.eventRecordCount() < maxAllowedUnSyncedOfflineActivations ?? 3){
                 GFWalletEventService.activateTicket(ticket: self.ticket)
                 self.viewBinding()
+                 }
+                 else{
+                    let alert = UIAlertController(title: "Activation", message:(String(format:Utilities.stringResourceForId(resourceId: "maxActivationAlertMessage")!)) , preferredStyle: UIAlertController.Style.alert)
+                    
+                    // add the actions (buttons)
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { [unowned self] action in
+                    }))
+                    
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+                }
                 
             }).disposed(by: disposeBag)
         }else{

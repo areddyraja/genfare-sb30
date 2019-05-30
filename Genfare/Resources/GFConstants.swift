@@ -125,7 +125,11 @@ struct Constants {
         static let AlertView = "GFCustomAlertViewController"
         static let ReplenishmentView  = "GFReplenishmentViewController"
     }
-    
+    struct Bordercolors{
+        static let STOREDRIDE_CELL_BORDER_COLOR = "StoredRideCellBorderColor"
+        static let STOREDVALUE_CELL_BORDER_COLOR = "StoredValueCellBorderColor"
+        static let PERIODPASS_CELL_BORDER_COLOR = "PeriodPassCellBorderColor"
+    }
     struct Ticket {
         static let InActive = "pending_activation"
         static let Active = "active"
@@ -133,6 +137,8 @@ struct Constants {
         static let PeriodPass = "period_pass"
         static let ExpDateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         static let DisplayDateFormat = "MM/dd/yy hh:mm aa"
+        static let StoredRide = "stored_ride"
+        static let PayAsYouGo = "1"
     }
     
     struct WVCommands {

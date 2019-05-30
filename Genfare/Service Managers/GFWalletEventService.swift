@@ -43,7 +43,7 @@ class GFWalletEventService {
         var arrProductsList = [[String:Any]]()
         var storedDict = [String:Any]()
         let cdate =  Date().toMillis()
-        if(event.type == Constants.Ticket.PeriodPass){
+        if(event.type != Constants.Ticket.PayAsYouGo){
             storedDict["chargeDate"] = event.clickedTime
         }else{
              storedDict["chargeDate"] = event.clickedTime
@@ -148,6 +148,7 @@ class GFWalletEventService {
                 userObj.ticketid = "\(product.ticketId!)"
                 userObj.fare = NumberFormatter().number(from: product.price!)!
             }
+        
             
             if Utilities.isLoginCardBased(){
                 let originalBalance = Utilities.walletContentsBalance()
@@ -196,7 +197,10 @@ class GFWalletEventService {
                 activeTicket.expirationDate = GFWalletContentsService.calculateExpDate(item: ticket)
                 activeTicket.generationDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
                 activeTicket.activationDate = Int64(NSDate().timeIntervalSince1970 * 1000) as NSNumber
-                
+                if(activeTicket.type == Constants.Ticket.StoredRide){
+                    let valueremaining = activeTicket.valueRemaining
+                    activeTicket.valueRemaining = Int(valueremaining!) - 1 as NSNumber
+                }
                 print(activeTicket)
                 GFDataService.saveContext()
             }

@@ -137,6 +137,8 @@ struct Constants {
         static let PeriodPass = "period_pass"
         static let ExpDateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         static let DisplayDateFormat = "MM/dd/yy hh:mm aa"
+        static let StoredRide = "stored_ride"
+        static let PayAsYouGo = "1"
     }
     
     struct WVCommands {

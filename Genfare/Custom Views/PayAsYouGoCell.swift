@@ -19,6 +19,7 @@ class PayAsYouGoCell: UITableViewCell {
     @IBOutlet weak var activeRideBtn: GFMenuButton!
     @IBOutlet weak var inactiveBtn: GFMenuButton!
     
+    @IBOutlet var timeRemaining: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

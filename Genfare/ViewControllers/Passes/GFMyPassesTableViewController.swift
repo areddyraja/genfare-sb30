@@ -36,6 +36,7 @@ class GFMyPassesTableViewController: UITableViewController {
     
     func refreshWalletContents() {
         viewModel.fetchWalletContents()
+        self.tableView.reloadData()
     }
     
     func createCallbacks (){
@@ -117,7 +118,10 @@ class GFMyPassesTableViewController: UITableViewController {
             
             if wc.status == Constants.Ticket.InActive {
                 cell.inactiveBtn.isHidden = false
-            }else{
+            }else if(wc.type == Constants.Ticket.StoredRide){
+                cell.activeRideBtn.isHidden = false
+            }
+            else{
                 cell.activeBtn.isHidden = false
             }
             
@@ -125,6 +129,9 @@ class GFMyPassesTableViewController: UITableViewController {
                 cell.subTitleLabel.text = "Expires \(Utilities.convertDate(dateStr: expDate, fromFormat: Constants.Ticket.ExpDateFormat, toFormat: Constants.Ticket.DisplayDateFormat))"
             }else{
                 cell.subTitleLabel.text = ""
+            }
+            if(wc.type == Constants.Ticket.StoredRide){
+                cell.timeRemaining.text = " \(wc.valueRemaining!.stringValue) Rides"
             }
             applyBorderColor(type: wc.type!,cell:cell)
         }
@@ -136,11 +143,11 @@ class GFMyPassesTableViewController: UITableViewController {
         if(type == Constants.Ticket.PeriodPass){
             cell.bgView.layer.borderColor = UIColor.init(hexString:Utilities.colorHexString(resourceId:Constants.Bordercolors.PERIODPASS_CELL_BORDER_COLOR)!).cgColor
           }
-        else if (type == "1"){
+        else if (type == Constants.Ticket.PayAsYouGo){
             cell.bgView.layer.borderColor = UIColor.init(hexString:Utilities.colorHexString(resourceId:Constants.Bordercolors.STOREDVALUE_CELL_BORDER_COLOR)!).cgColor
 
         }
-        else{
+        else if (type == Constants.Ticket.StoredRide){
             cell.bgView.layer.borderColor = UIColor.init(hexString:Utilities.colorHexString(resourceId:Constants.Bordercolors.STOREDRIDE_CELL_BORDER_COLOR)!).cgColor
 
         }

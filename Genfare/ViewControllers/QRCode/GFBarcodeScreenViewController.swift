@@ -66,7 +66,7 @@ class GFBarcodeScreenViewController: GFBaseViewController ,WalletContentsProtoco
     }
 
     func createViewModelBinding(){
-        if self.ticket.type == Constants.Ticket.PeriodPass{
+        if self.ticket.type != Constants.Ticket.PayAsYouGo {
             activateBtn.rx.tap.do(onNext:  { [unowned self] in
             }).subscribe(onNext: { [unowned self] in
                 if NetworkManager.Reachability  {

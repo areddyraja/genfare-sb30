@@ -266,6 +266,7 @@
                                     <outlet property="bgView" destination="IOR-ze-mXK" id="iMq-lR-4QZ"/>
                                     <outlet property="inactiveBtn" destination="aqz-vZ-zHI" id="0la-vp-kmc"/>
                                     <outlet property="subTitleLabel" destination="nkY-HD-PQs" id="RGq-99-hLQ"/>
+                                    <outlet property="timeRemaining" destination="RF8-bb-h4t" id="etv-Io-Gdt"/>
                                     <outlet property="titleLabel" destination="S8B-EC-hUC" id="7KF-X4-WRG"/>
                                 </connections>
                             </tableViewCell>

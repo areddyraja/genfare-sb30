@@ -87,6 +87,20 @@ class GFFetchProductsService: GFBaseService {
             if let prodItem = prod as? [String:Any] {
                 userObj.barcodeTimer = prodItem["barcodeTimer"] as? NSNumber
                 userObj.designator = prodItem["designator"] as? String
+                if let desig = prodItem["designator"] as? String{
+                  var ticketypedesc = ""
+                  var isActivaionOnly = NSNumber.init(value: 0)
+                    if let ticketdesc = prodItem["ticketTypeDescription"] as? String{
+                        ticketypedesc = ticketdesc
+                    }
+                    if let activation = prodItem["isActivationOnly"] as? NSNumber{
+                        isActivaionOnly = activation
+                    }
+                    if ticketypedesc == "Stored Value" && isActivaionOnly.intValue == 0{
+                        UserDefaults.standard.set(desig, forKey: Constants.Replenishment.Designator)
+                        UserDefaults.standard.synchronize()
+                    }
+                }
                 userObj.displayOrder = prodItem["displayOrder"] as? NSNumber
                 userObj.fareCode = prodItem["fareCode"] as? String
                 userObj.isActivationOnly = prodItem["isActivationOnly"] as? NSNumber

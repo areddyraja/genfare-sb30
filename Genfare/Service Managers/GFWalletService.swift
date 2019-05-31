@@ -35,6 +35,10 @@ class GFWalletsService {
         userObj.statusId = data["statusId"] as? NSNumber
         userObj.walletId = data["walletId"] as? NSNumber
         userObj.walletUUID = data["walletUUID"] as? String
+        if let walletprintid = data["printedId"] as? String{
+            UserDefaults.standard.set(walletprintid, forKey: Constants.Replenishment.WalletPrintId)
+            UserDefaults.standard.synchronize()
+        }
         
         GFDataService.saveContext()
     }

@@ -137,6 +137,10 @@ class GFBaseViewController: UIViewController {
             self.popupAlert(title: "ERROR", message: message, actionTitles: ["OK"], actions: [nil])
         }
     }
+    func setNavBarColor(navColor:UIColor){
+        self.navigationController?.navigationBar.tintColor = navColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navColor]
+    }
     
     deinit {
         print("Controller is being removed -============================================== \(self)")
@@ -159,7 +163,6 @@ extension GFBaseViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
-
 extension UIViewController {
     class func displaySpinner(onView : UIView) -> UIView {
         let spinnerView = UIView.init(frame: onView.bounds)

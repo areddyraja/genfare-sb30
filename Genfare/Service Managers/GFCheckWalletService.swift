@@ -35,6 +35,7 @@ class GFCheckWalletService {
                     //print(JSON)
                     let records:[String:Any] = JSON as! [String:Any]
                     
+                    
                     if let wallets:Array<Any> = records["result"] as! Array<Any> {
                         print("Wallet length - \(wallets.count)")
                         if wallets.count < 0 {

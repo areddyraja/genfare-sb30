@@ -63,8 +63,12 @@ class GFConfigService{
 
         configObj.agencyContactNumber = data["AgencyContactNumber"] as? String
         configObj.agencyId = data["AgencyId"] as? NSNumber
+        if let agenId = data["AgencyId"] as? NSNumber{
+           UserDefaults.standard.set("\(agenId)", forKey: Constants.Replenishment.AgencyID)
+        }
         configObj.barcodeActivationOffSetInMins = data["barcodeActivationOffsetInMins"] as? NSNumber
         configObj.key12 = data["key12"] as? String
+        UserDefaults.standard.set(configObj.key12, forKey: Constants.Replenishment.KEY12)
         configObj.transitId = data["TransitId"] as? String
         configObj.endOfTransitDay = data["EndOfTransitDay"] as? NSNumber
         if let loyality = data["LoyaltyProgram"] as? [String:Any], let bonus = loyality["BONUS_RIDE"] as? [String:Any],let capped = loyality["CAPPED_RIDE"] as? [String:Any]{

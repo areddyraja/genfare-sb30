@@ -156,6 +156,17 @@ struct Constants {
     struct Message {
         static let NoNetwork = "Notwork Not Available"
     }
+    struct Replenishment {
+        static let FileVersion = "1"
+        static let Signature   = "GEN"
+        static let KEY12 = "KEY12"
+        static let AgencyID = "AgencyID"
+        static let Designator = "Designator"
+        static let WalletPrintId = "WalletPrintId"
+        static let Group = "3"
+        static let RFU = "000000"
+
+    }
 }
 
 //AIzaSyD20t9-cmgZ_zgDgJO3R4y-tehsscNnHkA

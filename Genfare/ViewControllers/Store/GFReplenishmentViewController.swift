@@ -26,9 +26,11 @@ class GFReplenishmentViewController: UIViewController {
         qrImgView.backgroundColor = UIColor.lightGray
 
         // Do any additional setup after loading the view.
-        viewModel.setupIntialValues()
+        qrImgView.image = viewModel.getQRImage()
+        
     
     }
+    
     
     func setNavBarColor(navColor:UIColor){
         self.navigationController?.navigationBar.tintColor = navColor

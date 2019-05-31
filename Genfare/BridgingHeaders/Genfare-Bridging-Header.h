@@ -4,5 +4,4 @@
 
 #import "EncodeUtil.h"
 #import "BarcodeUtilities.h"
-#import "NSData+CRC32.h"
-#import "NSData+AES128.h"
+

@@ -34,8 +34,8 @@ class GFCheckWalletService {
                 case .success(let JSON):
                     //print(JSON)
                     let records:[String:Any] = JSON as! [String:Any]
-                    //A62E1DA4E8675939 // PrintedId
-                    UserDefaults.standard.set("A62E1DA4E8675939", forKey: Constants.Replenishment.WalletPrintId)
+                    
+                    
                     if let wallets:Array<Any> = records["result"] as! Array<Any> {
                         print("Wallet length - \(wallets.count)")
                         if wallets.count < 0 {

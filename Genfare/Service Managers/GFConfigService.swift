@@ -61,7 +61,9 @@ class GFConfigService{
 
         configObj.agencyContactNumber = data["AgencyContactNumber"] as? String
         configObj.agencyId = data["AgencyId"] as? NSNumber
-        UserDefaults.standard.set("\(configObj.agencyId)", forKey: Constants.Replenishment.AgencyID)
+        if let agenId = data["AgencyId"] as? NSNumber{
+           UserDefaults.standard.set("\(agenId)", forKey: Constants.Replenishment.AgencyID)
+        }
         configObj.barcodeActivationOffSetInMins = data["barcodeActivationOffsetInMins"] as? NSNumber
         configObj.key12 = data["key12"] as? String
         UserDefaults.standard.set(configObj.key12, forKey: Constants.Replenishment.KEY12)

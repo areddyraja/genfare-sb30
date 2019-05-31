@@ -70,7 +70,7 @@
                     </view>
                     <connections>
                         <outlet property="closeBtn" destination="2jf-4p-DeM" id="Sh0-23-Az3"/>
-                        <outlet property="qrImgView" destination="5Xj-I7-Gnv" id="jBw-C1-wzx"/>
+                        <outlet property="qrImgView" destination="5Xj-I7-Gnv" id="dbD-1B-VOm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3w-ng-hGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
